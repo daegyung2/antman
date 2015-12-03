@@ -1,0 +1,8 @@
+create table doctor(
+
+  Did varchar2(200) primary key not null,
+  name varchar2(200),
+  major varchar2(4000),
+  degree varchar2(500),
+  
+  
