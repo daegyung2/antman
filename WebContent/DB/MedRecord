@@ -1,0 +1,21 @@
+create table MedRecord(
+   Mid varchar2(500) primary key not null, //메디컬 레코드 등록 고유 번호
+   id varchar2(200) not null,
+   name varchar2(200) not null,
+   age number,
+   gender varchar2(100),
+   symptom1 varchar2(500), //증상
+   symptom2 varchar2(500),
+   symptom3 varchar2(500),
+   symptom4 varchar2(500),
+   symptom5 varchar2(500),
+   doctor varchar2(200),
+   treatType varchar2(4000) not null,
+   appDate date default sysdate, //진료 예약 날짜 및 시간 
+   treatDate date , // 진료 완료 날짜 및 시간 
+   prescription varchar2(4000),  //처방전 파일 경로 
+   treatConfirm varchar2(4000), //진료 확인서
+   nextAppDate date,   //다음 예약 날짜 
+   price number
+   );
+    
