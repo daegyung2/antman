@@ -1,0 +1,9 @@
+create table health(
+  hid varchar2(200) primary key not null,
+  body-part varchar2(200) not null,
+  decease varchar2(500) not null,
+  symptoms varchar2(1000),
+  R-decease varchar2(1000),
+  R-depart varchar2(500),
+  same-lang varchar2(4000)
+  );

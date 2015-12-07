@@ -1,0 +1,10 @@
+create table QNA(
+  qid number default 1 primary key not null,
+  category varchar2(500) not null,
+  id varchar2(500) not null,
+  relationship varchar2(500) not null,
+  pname varchar2(200) not null,
+  reg-num varchar2(500) not null,
+  subject varchar2(1000) not null,
+  content varchar2(4000) not null
+  );

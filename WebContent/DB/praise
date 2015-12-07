@@ -1,0 +1,8 @@
+create table praise(   //칭찬 테이블 
+   pid number primary key not null,
+   id varchar2(200) not null,
+   pname varchar2(200) not null,
+   subject varchar2(1000) not null,
+   content varchar2(4000) not null,
+   );
+   

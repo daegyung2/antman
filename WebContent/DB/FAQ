@@ -1,0 +1,7 @@
+create table FAQ(
+ Fid number default 1 primary key not null,
+ category varchar2(1000) not null,
+ subject varchar2(1000) not null,
+ content varchar2(4000) not null
+ );
+    

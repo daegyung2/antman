@@ -1,0 +1,6 @@
+create table surgeon(
+  name varchar2(500) not null,
+  body varchar2(200),
+  kind varchar2(500),
+  department varchar2(2000)
+  );
