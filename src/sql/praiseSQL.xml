@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="praise">
+
+	<typeAlias alias="praise" type="praiseboard.PraiseVO" />
+
+		<!-- 리절트 맵 정의 -->
+
+	<resultMap id="boardRes" class="praise">
+		<result property="pid" column="pid"/>
+		<result property="id" column="id"/>
+		<result property="pname" column="pname"/>
+		<result property="subject" column="subject"/>
+		<result property="content" column="content"/>
+		<result property="reg_date" column="reg_date"/>
+	</resultMap>
+	
+		
+		<!-- select 쿼리문 정의 -->
+		<select id="selectAll" resultMap="boardRes">
+		select pid,id,pname,subject,content,reg_date from praise order by pid desc
+		</select>
+		
+			<insert id="insertpraise" parameterClass="praise">
+		
+      		INSERT INTO praise (pid,
+      							id,
+                         		pname,
+                         		subject,
+                         		CONTENT,
+                         		REG_DATE
+                         )
+                	 VALUES (praise_SEQ.NEXTVAL,
+                	 		#id#,
+                         	#pname#,
+                         	#subject#,
+                         	#content#,
+                         	sysdate
+                         )
+		</insert>
+
+</sqlMap>

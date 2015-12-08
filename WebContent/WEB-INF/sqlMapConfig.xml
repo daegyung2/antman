@@ -3,5 +3,6 @@
 "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
 <sqlMapConfig>
     <settings useStatementNamespaces="true"/>
-    <sqlMap resource="/sql/memberSQL.xml"/>
+  
+    <sqlMap resource="/sql/praiseSQL.xml"/>
 </sqlMapConfig>

@@ -12,14 +12,13 @@
        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
        >
 
-      <bean id="before" class="test.aop.advice.BeforeAdvice" />
-    
-       <aop:aspectj-autoproxy />
+
        
        
        
   
   <context:component-scan base-package="test.spring.bean" />
+  <context:component-scan base-package="praiseboard"/>
   <!-- 
   <bean id="viewResolver" 
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -49,8 +48,8 @@
         destroy-method="close"
         p:driverClassName="oracle.jdbc.driver.OracleDriver"
         p:url="jdbc:oracle:thin:@khmaster.iptime.org:7000:orcl"
-        p:username="java16"
-        p:password="java16"
+        p:username="final04"
+        p:password="final04"
   />
 
 
