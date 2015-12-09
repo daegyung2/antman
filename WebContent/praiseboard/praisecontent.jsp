@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8" %>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
@@ -26,50 +27,44 @@
 </head>
 <body>
 <script type="text/javascript" src="http://codemoon.esy.es/code/bootstrap-table.js"></script>   
-
+ <div class="container">
+  <h2>ÄªÂùÇÕ½Ã´Ù</h2>   
   <div class="container">
-  <h2>ì¹­ì°¬í•©ì‹œë‹¤</h2>       
-  <br/>
-  ì¹­ì°¬ì€ í•˜ëŠ” ì‚¬ëžŒê³¼ ë°›ëŠ” ì‚¬ëžŒ, ëª¨ë‘ë¥¼ ì¦ê²ê²Œ í•©ë‹ˆë‹¤.<br/>
-í•˜ë‚˜ì˜ ì¹­ì°¬ì´ ë˜ ë‹¤ë¥¸ ì¹­ì°¬ì„ ë§Œë“¤ì–´ ê°ˆ ìˆ˜ ìžˆë„ë¡<br/>
-ì¹œì ˆí•¨ì´ ë‹ë³´ì¸ ì§ì›ì„ ì¹­ì°¬í•´ ì£¼ì„¸ìš”.              <br/>                     
-  <br/>
-  <form action="/antman/praisewrite.do" method="post">
-  <button type="submit" class="btn btn-primary btn-md" onclick=>ì¹­ì°¬í•˜ê¸°</button>
- 
-  </form>
+
+
   <table data-toggle="table" data-url="data2.json" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true">
     <thead>
       <tr>
-       <th data-field="id" >ë²ˆí˜¸</th>
-<th data-field="name">ë‚´ìš©</th>
+       <th data-field="id" align="center" >Á¦¸ñ</th>
       </tr>
     </thead>
    
-                <c:forEach var="dto" items="${list}">
-		<tr>
-		     <td ><h3>${dto.pid}</h3></td>
-			 <td ><h3><a href="/antman/praisecontent.do?pid=${dto.pid}">${dto.subject}</a></h3>
-				${dto.content } <br/>
-				<FONT size="1">
-				ì¹­ì°¬ë°›ì€ ì§ì› : ${dto.pname } |
-				ìž‘ì„±ìž : ${dto.id } |
-				ë“±ë¡ì¼ : ${dto.reg_date} |
-				
-			</FONT>
-		
-		</tr>
-
-</c:forEach>
-   
-   
-	
+                
+		     
+			 <tr><td colspan="2" align="center"><h3>${dto.subject}</h3></td></tr>
+			 <tr><td width="50%">ÀÛ¼ºÀÚ : ${dto.id}</td><td width="50%">µî·ÏÀÏ : ${dto.reg_date}</td></tr> 
+			<tr><td colspan="2">${dto.content } </td></tr>
+			<tr></tr>
+			
   </table>
 
-</div>
-<script type="text/javascript">
-
-</script>
+<table border="0" width="100%">
+   
+   
+<tr><td border="1" width="30%"><center>»çÁø</center></td><td width="90%"><h3>${dto.pname }</h3><br/>Áø·á°ú	°£ÀÌ½Ä¹×°£´ãµµ¿Ü°ú,Àå±âÀÌ½Ä¼¾ÅÍ,¾Ïº´¿ø,°£¼¾ÅÍ,°£¾Ï¼¾ÅÍ,´ãµµ ¹× ÃéÀå¾Ï¼¾ÅÍ<br/>
+Àü¹®ºÐ¾ß	°£¾Ï,´ãµµ¾Ï,°£ÀÌ½Ä,º¹°­°æ°£ÀýÁ¦¼ú,´ã¼®,°£ÀÌ½Ä±âÁõÀÚ»çÀü°Ë»ç </td>
+		     
+			 
+			
+  </table>
+</tr>
+<br/>
+<HR width=100% >
+<br/>
+  <form action="/spring/praisewrite.do" method="post">
+  <center><button type="submit" class="btn btn-primary btn-md" onclick=>ÄªÂùÇÏ±â</button>
+ <button type="submit" class="btn btn-primary btn-md" onclick=>¸ñ·ÏÀ¸·Î</button></center>
+  </form>
 </body>
 </html>
 
