@@ -1,0 +1,7 @@
+create table schedule(
+   id varchar2(200) primary key not null,
+   sdate1 date,
+   sdate2 date
+   
+   );
+   
