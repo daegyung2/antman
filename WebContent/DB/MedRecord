@@ -19,6 +19,6 @@ create table MedRecord(  //진료 기록 DB
    treatConfirm varchar2(4000), //진료 확인서
    nextAppDate date,   //다음 예약 날짜 
    price number, //진료비 
-   reg-num varchar2(500),//병원 등록 번호 
+   reg_num varchar2(500),//병원 등록 번호 
    );
     

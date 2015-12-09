@@ -4,7 +4,7 @@ create table QNA(
   id varchar2(500) not null,                  //아이디
   relationship varchar2(500) not null,        //대리인일경우 관계
   pname varchar2(200) not null,               //환자 이름
-  reg-num varchar2(500) not null,             //병원등록 번호
+  reg_num varchar2(500) not null,             //병원등록 번호
   subject varchar2(1000) not null,            //제목
   content varchar2(4000) not null             //내용
   );

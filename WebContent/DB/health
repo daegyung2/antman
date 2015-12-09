@@ -1,9 +1,9 @@
 create table health(  //질병 및 부위 별 건강 정보 
   hid varchar2(200) primary key not null,  //건강 정보 아이디 
-  body-part varchar2(200) not null,        // 신체 부위
+  body_part varchar2(200) not null,        // 신체 부위
   decease varchar2(500) not null,          //질병명
   symptoms varchar2(1000),                 //증상
-  R-decease varchar2(1000),                // 관련 질병 
-  R-depart varchar2(500),                  // 관련 진료 과
-  same-lang varchar2(4000)                 //질병 이름 동의어 
+  r_decease varchar2(1000),                // 관련 질병 
+  r_depart varchar2(500),                  // 관련 진료 과
+  same_lang varchar2(4000)                 //질병 이름 동의어 
   );

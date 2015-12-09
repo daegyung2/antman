@@ -11,5 +11,5 @@ create table appointment(  //예약 DB
    Odecease varchar2(400),                  // 기존에 가지고 있는 질병 
    Odrug varchar2(4000),                    // 기존에 먹고 있는 약 
    descripton varchar2(4000),               //처방전
-   reg-number varchar2(500) not null        // 병원 등록 번호 
+   reg_num varchar2(500) not null        // 병원 등록 번호 
    ); 
