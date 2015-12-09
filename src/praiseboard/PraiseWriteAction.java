@@ -27,7 +27,7 @@ public class PraiseWriteAction {
 	public String writepro(PraiseVO dto){
 		sqlMapClient.insert("praise.insertpraise", dto);		
 		
-		return "/antman/praiseboard.jsp";
+		return "praiseboard.do";
 	}
 	
 	
