@@ -1,25 +1,24 @@
-create table MedRecord(
+create table MedRecord(  //진료 기록 DB
    Mid varchar2(500) primary key not null, //메디컬 레코드 등록 고유 번호
-   DoctorId varchar2(200) not null,
-   depart varchar2(200) not null,
-   id varchar2(200) not null,
-   name varchar2(200) not null,
-   jumin1 number,
-   jumin2 number,
-   age number,
-   gender varchar2(100),
+   Did varchar2(200) not null,     //의사 번호 
+   depart varchar2(200) not null,  // 부서 
+   id varchar2(200) not null,       //환자 아이디 
+   name varchar2(200) not null,    // 성명 
+   jumin1 number,                  //주민1
+   jumin2 number,                  //주민2
+   age number,                     //나이 
+   gender varchar2(100),       //성별 
    symptom1 varchar2(500), //증상
    symptom2 varchar2(500),
    symptom3 varchar2(500),
    symptom4 varchar2(500),
-   symptom5 varchar2(500),
-   doctor varchar2(200),
-   treatType varchar2(4000) not null,
-   treatDate date , // 진료 완료 날짜 및 시간 
+   symptom5 varchar2(500),            
+   treatType varchar2(4000) not null,  //진료 종류 
+   treatDate date , // 진료 완료 날짜 및 시간      
    prescription varchar2(4000),  //처방전 파일 경로 
    treatConfirm varchar2(4000), //진료 확인서
    nextAppDate date,   //다음 예약 날짜 
-   price number,
-   reg-num varchar2(500),
+   price number, //진료비 
+   reg-num varchar2(500),//병원 등록 번호 
    );
     

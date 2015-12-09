@@ -1,7 +1,7 @@
-create table hospital(
-  hname varchar2(500),
-  h-info varchar2(4000),
-  location varchar2(4000),
+create table hospital(  //병원 정보 
+  hname varchar2(500),  //병원 이름 
+  h-info varchar2(4000), //병원 정보 
+  location varchar2(4000), //위치
   himg1 varchar2(4000), //병원 이미지
   himg2 varchar2(4000),
   himg3 varchar2(4000),

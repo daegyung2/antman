@@ -1,15 +1,15 @@
-create table appointment(
-   Aid varchar2(500) primary key not null,
-   id varchar2(200),
-   name varchar2(200),
-   agentApp number default 0 not null,
-   jumin1 number not null,
-   jumin2 number not null,
-   Did varchar2(500) not null,
-   Adate date default sysdate,
-   symptom varchar2(4000) not null,
-   Odecease varchar2(400),
-   Odrug varchar2(4000),
-   descripton varchar2(4000),
-   reg-number varchar2(500) not null
+create table appointment(  //예약 DB
+   Aid varchar2(500) primary key not null,  //예약 번호 
+   id varchar2(200),                        //예약한 아이디
+   name varchar2(200),                      //이름
+   agentApp number default 0 not null,      //대리 예약 유무 (1 또는 0)
+   jumin1 number not null,                  //주민 번호1
+   jumin2 number not null,                  //주민 번호2
+   Did varchar2(500) not null,              //예약한 의사 번호 
+   Adate date default sysdate,              //예약 날짜 
+   symptom varchar2(4000) not null,         // 증상
+   Odecease varchar2(400),                  // 기존에 가지고 있는 질병 
+   Odrug varchar2(4000),                    // 기존에 먹고 있는 약 
+   descripton varchar2(4000),               //처방전
+   reg-number varchar2(500) not null        // 병원 등록 번호 
    ); 

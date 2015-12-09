@@ -1,19 +1,18 @@
-create table doctor(
-
-  DId varchar2(200) primary key not null,
-  Dreg_num varchar2(500) not null,
-  name varchar2(200),
-  major varchar2(4000),
-  depart_id varchar2(500),
-  degree1 varchar2(4000),
-  degree2 varchar2(4000),
-  degree3 varchar2(4000),
-  degree4 varchar2(4000),
-  degree5 varchar2(4000),
-  report1 varchar2(4000),
-  report2 varchar2(4000),
-  report3 varchar2(4000),
-  report4 varchar2(4000),
-  report5 varchar2(4000),
+create table doctor(  //의사 정보 테이블 
+  DId varchar2(200) primary key not null, //의사 아이디, 단순 할당 지정 
+  Dreg_num varchar2(500) not null,        //의사 등록 번호
+  dname varchar2(200),                     //의사 성명
+  major varchar2(4000),                   //전공의
+  depart_id varchar2(500),                //부서 
+  degree1 varchar2(4000),                 //학위 1
+  degree2 varchar2(4000),                 //학위 2
+  degree3 varchar2(4000),                 //학위 3
+  degree4 varchar2(4000),                 //학위 4
+  degree5 varchar2(4000),                 //학위 5
+  report1 varchar2(4000),                 //저술한 논문1 
+  report2 varchar2(4000),                 //저술한 논문2
+  report3 varchar2(4000),                 //저술한 논문3
+  report4 varchar2(4000),                 //저술한 논문4
+  report5 varchar2(4000)                  //저술한 논문5
   
   );
