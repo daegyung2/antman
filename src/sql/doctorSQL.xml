@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="doctor">
+   <typeAlias alias="doctor" type="praiseboard.PraiseVO" />
+ <insert id="insertDr" parameterClass="doctor">
+    insert into doctor (Did,Dreg-num,dname,major,depart_id,degree1,degree2,degree3,degree4,degree5,
+    report1,report2,report3,report4,report5) values(#Did#,#Dreg-num#,#dname#,#major#,#depart_id#,#degree1#,
+    #degree2#,#degree3#,#degree4#,#degree5#,#report1#,#report2#,#report3#,#report4#,#report5#)
+ </insert>
+ 
+</sqlMap>
