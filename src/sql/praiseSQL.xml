@@ -21,6 +21,13 @@
 		select pid,id,pname,subject,content,reg_date from praise order by pid desc
 		</select>
 		
+			<select id="viewpraise" resultMap="boardRes" parameterClass="int">
+		
+      		select pid,id,pname,subject,content,reg_date from praise where pid = #pid# 
+		</select>
+		
+		
+
 			<insert id="insertpraise" parameterClass="praise">
 		
       		INSERT INTO praise (pid,
