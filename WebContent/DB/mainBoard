@@ -1,0 +1,6 @@
+create table mainBoard(
+    MBid varchar2(200) primary key not null,
+    subject varchar2(2000) not null,
+    content varchar2(4000) not null,
+    reg-date date default sysdate
+    );
