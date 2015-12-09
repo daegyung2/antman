@@ -1,6 +1,6 @@
 create table department(  //부서
    Depart_id varchar2(200) primary key not null,  //부서 지정 번호
-   dname varchar2(500) not null,                  //부서 이름
+   dpname varchar2(500) not null,                  //부서 이름
    initial varchar2(100) not null,                //진료과 검색시 첫 글자 (ㄱ,ㄴ,ㄷ ...)
    d_info1 varchar2(4000),                        //부서 정보1
    d_info2 varchar2(4000),                        //부서 정보2
