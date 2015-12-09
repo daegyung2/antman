@@ -23,13 +23,11 @@ public class PraiseWriteAction {
 	public String write(){
 		return "/praiseboard/praisewrite.jsp";
 	}
-	@RequestMapping("praisepro.do")
+	@RequestMapping("/praisepro.do")
 	public String writepro(PraiseVO dto){
-		sqlMapClient.insert("praise.insertpraise", dto);
+		sqlMapClient.insert("praise.insertpraise", dto);		
 		
-		
-		
-		return "/praisepro.jsp";
+		return "/antman/praiseboard.jsp";
 	}
 	
 	
