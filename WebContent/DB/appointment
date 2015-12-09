@@ -2,7 +2,6 @@ create table appointment(  //예약 DB
    Aid varchar2(500) primary key not null,  //예약 번호 
    id varchar2(200),                        //예약한 아이디
    name varchar2(200),                      //이름
-   agentApp number default 0 not null,      //대리 예약 유무 (1 또는 0)
    jumin1 number not null,                  //주민 번호1
    jumin2 number not null,                  //주민 번호2
    Did varchar2(500) not null,              //예약한 의사 번호 

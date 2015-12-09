@@ -1,4 +1,4 @@
-package admin.doctor;
+package admin.bean;
 
 public class DoctorDTO {
      private String did;

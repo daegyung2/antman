@@ -9,6 +9,7 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import admin.bean.DoctorDTO;
 import praiseboard.pagingAction;
 
 @Controller
@@ -23,7 +24,7 @@ public class DoctorListBean {
    private int blockPage;
    private String pagingHtml;
    
-   @RequestMapping("doctorList.do")
+   @RequestMapping("/doctorList.do")
    public String doctorList(HttpServletRequest request, DoctorDTO dto ){
 	   doctorList = sqlMapClient.queryForList("doctor.getList", dto);
 

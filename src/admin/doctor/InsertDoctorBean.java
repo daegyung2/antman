@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class InsertDoctorBean {
 	 
 	
-     @RequestMapping("insertDoctor.do")
+     @RequestMapping("/insertDoctor.do")
 	public String insertPage(){
 		return "/admin/doctor/insertDoctor.jsp";
 	}

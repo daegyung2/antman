@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 <sqlMap namespace="doctor">
-   <typeAlias alias="doctor" type="admin.doctor.DoctorDTO" />
+   <typeAlias alias="doctor" type="admin.bean.DoctorDTO" />
  <insert id="insertDr" parameterClass="doctor">
     insert into doctor 
     (Did,Dreg-num,Drname,major,depart_id,degree1,degree2,degree3,degree4,degree5,

@@ -1,20 +1,21 @@
-package admin.doctor;
+package admin.employee;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import admin.bean.DoctorDTO;
+import admin.bean.EmployeeDTO;
 
 @Controller
-public class InsertDoctorProBean {
+public class InsertEmployeeProBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
-	
-	 @RequestMapping("/insertDoctorPro.do")
-     public String insertDoctor(DoctorDTO dto){
-    	 sqlMapClient.insert("doctor.insertDr", dto);
-    	 return "/admin/doctor/insertDoctorPro.jsp";
-     }
+  
+	@RequestMapping("/insertEmployeePro.do")
+	public String insertEmployee(EmployeeDTO dto){
+		sqlMapClient.insert("employee.insertEm", dto);
+		
+		return "/admin/employee/insertEmployeePro.jsp";
+	}
 }
