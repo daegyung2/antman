@@ -61,10 +61,9 @@
 <br/>
 <HR width=100% >
 <br/>
-  <form action="/spring/praisewrite.do" method="post">
-  <center><button type="submit" class="btn btn-primary btn-md" onclick=>칭찬하기</button>
- <button type="submit" class="btn btn-primary btn-md" onclick=>목록으로</button></center>
-  </form>
+  <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praisewrite.do'">칭찬하기</button>
+ <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praiseboard.do'">목록으로</button></center>
+  </center>
 </body>
 </html>
 
