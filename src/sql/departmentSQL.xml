@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="depart">
+   <typeAlias alias="depart" type="admin.bean.DepartmentDTO" />
+   
+<insert id="insert" parameterClass="depart">
+  insert into department (depart_id,dpname,initial,d_info1,d_info2,d_info3
+  ,d_info4,d_info5,d_info6,d_info7,d_info8,d_info9,d_info10) values(depart_id,dpname,initial,d_info1,d_info2,d_info3
+  ,d_info4,d_info5,d_info6,d_info7,d_info8,d_info9,d_info10)
+
+</insert>
+
+
+</sqlMap>
