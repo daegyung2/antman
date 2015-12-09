@@ -1,13 +1,13 @@
-create table member (
-  id varchar2(200) primary key not null, 
-  passwd varchar2(200) not null,
-  name varchar2(100) not null,
-  age number,
-  gender varchar2(100),
-  phone number not null,
-  e-mail varchar2(200),
-  getMail varchar2(200),
-  Eid varchar2(500),
-  Dreg_num varchar2(500),
-  reg-number number default 10000
+create table member (  //멥버 회원가입 DB
+  id varchar2(200) primary key not null, //회원 아이디
+  passwd varchar2(200) not null,  //비밀번호
+  name varchar2(100) not null,// 이름
+  age number,                     //나이
+  gender varchar2(100),          //성별
+  phone number not null,          //핸드폰번호
+  e-mail varchar2(200),           //이메일 
+  getMail varchar2(200),          //메일 수신 확인 yes or no?
+  Eid varchar2(500),              // 직원일 경우, 사번 
+  Dreg_num varchar2(500),          // 의사일 경우, 의사 등록 번호 
+  reg-number number default 10000  // 병원 등록 번호 할당 
   );

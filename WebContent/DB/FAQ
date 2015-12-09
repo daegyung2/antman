@@ -1,7 +1,7 @@
-create table FAQ(
- Fid number default 1 primary key not null,
- category varchar2(1000) not null,
- subject varchar2(1000) not null,
- content varchar2(4000) not null
+create table FAQ(  //FAQ DB
+ Fid number default 1 primary key not null, //FAQ 번호 
+ category varchar2(1000) not null,          //FAQ 종류 
+ subject varchar2(1000) not null,           // 제목 
+ content varchar2(4000) not null            //내용 
  );
     
