@@ -18,6 +18,7 @@
 <td width="200">${dto.d_info1}</td>
 <td width="300">
 <input type="button" value="수정하기" onClick="window.location='/antman/updateDepartment.do?depart_id=${dto.depart_id}'"/>
+<input type="button" value="내용보기" onClick="window.location='/antman/departmentContent.do?depart_id=${dto.depart_id}'" />
 </td>
 </tr>
 </c:forEach>

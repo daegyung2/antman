@@ -11,23 +11,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import admin.bean.DepartmentDTO;
 
 @Controller
-public class UpdateDepartProBean {
-	@Autowired
-	private SqlMapClientTemplate sqlMapClient;
-
+public class DepartmentContentBean {
+    @Autowired
+    SqlMapClientTemplate sqlMapClient;
 	
-	@RequestMapping("/updateDepartPro.do")
-	public String updatePro(DepartmentDTO dto,HttpServletRequest request){
-        request.getAttribute("dto");
-		sqlMapClient.update("depart.update",dto);
-		return "departmentList.do";
+	
+	@RequestMapping("/departmentContent.do")
+	public String content(DepartmentDTO dto,HttpServletRequest request){
+		sqlMapClient.queryForObject("depart.selectOne",dto.getDepart_id());
+		return "/admin/department/departmentContent.jsp";
 	}
 	
 	@ModelAttribute("dto")
-	public Object updateDTO(DepartmentDTO dto){
-		return sqlMapClient.update("depart.update", dto);
+	public Object returnDTO(DepartmentDTO dto){
+		return sqlMapClient.queryForObject("depart.selectOne",dto.getDepart_id());
 	}
-	
-
-	
 }
