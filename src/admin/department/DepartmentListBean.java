@@ -19,6 +19,7 @@ public class DepartmentListBean {
 	  @RequestMapping("/departmentList.do")
 	 public String departList(DepartmentDTO dto){
 		 list = sqlMapClient.queryForList("depart.selectList",dto);
+		 System.out.println(list.size());
 		 return "/admin/department/departmentList.jsp";
 	 }
 	  
