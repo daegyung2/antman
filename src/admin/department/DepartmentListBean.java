@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.DepartmentDTO;
@@ -20,4 +21,9 @@ public class DepartmentListBean {
 		 list = sqlMapClient.queryForList("depart.selectList",dto);
 		 return "/admin/department/departmentList.jsp";
 	 }
+	  
+	  @ModelAttribute("list")
+	  public List returnList(DepartmentDTO dto){
+		  return sqlMapClient.queryForList("depart.selectList", dto);
+	  }
 }

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="insertDepartPro.do" method="post" >
+<form action="/antman/insertDepartPro.do" method="post" >
 <table width="700" border="1" cellpadding="1" cellspacing="0">
 <tr>
 <td width="200">진료과 이름</td>
@@ -15,7 +15,7 @@
 </tr>
 <tr >
 <td width="200">진료과 이니셜</td>
-<td><input type="text" name="initial" size="20" maxlength="20" /></td>
+<td><input type="text" name="init" size="20" maxlength="20" /></td>
 </tr>
 <tr>
 <td width="200">진료과 정보1</td>
@@ -61,7 +61,7 @@
 <td colspan="2">
 <input type="submit" value="등록" />
 <input type="reset" value="초기화" />
-<input type="button" value="진료과 게시판" onClick="window.location:'departmentList.do'" />
+<input type="button" value="진료과 게시판" onClick="window.location='/antman/departmentList.do'" />
 </td>
 </tr>
 </table>

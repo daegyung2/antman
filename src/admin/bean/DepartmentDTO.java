@@ -1,9 +1,9 @@
 package admin.bean;
 
 public class DepartmentDTO {
-	private String depart_id;
+	private int depart_id;
 	private String dpname;
-	private String initial;
+	private String init;
 	private String d_info1;
 	private String d_info2;
 	private String d_info3;
@@ -14,10 +14,10 @@ public class DepartmentDTO {
 	private String d_info8;
 	private String d_info9;
 	private String d_info10;
-	public String getDepart_id() {
+	public int getDepart_id() {
 		return depart_id;
 	}
-	public void setDepart_id(String depart_id) {
+	public void setDepart_id(int depart_id) {
 		this.depart_id = depart_id;
 	}
 	public String getDpname() {
@@ -26,11 +26,11 @@ public class DepartmentDTO {
 	public void setDpname(String dpname) {
 		this.dpname = dpname;
 	}
-	public String getInitial() {
-		return initial;
+	public String getInit() {
+		return init;
 	}
-	public void setInitial(String initial) {
-		this.initial = initial;
+	public void setInit(String init) {
+		this.init = init;
 	}
 	public String getD_info1() {
 		return d_info1;

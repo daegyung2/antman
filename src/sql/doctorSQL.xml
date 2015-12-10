@@ -4,9 +4,9 @@
    <typeAlias alias="doctor" type="admin.bean.DoctorDTO" />
  <insert id="insertDr" parameterClass="doctor">
     insert into doctor 
-    (Did,Dreg-num,Drname,major,depart_id,degree1,degree2,degree3,degree4,degree5,
+    (did,dreg_num,drname,major,depart_id,degree1,degree2,degree3,degree4,degree5,
     report1,report2,report3,report4,report5,drimg1,drimg2,drimg3,drimg4,drimg5) 
-    values(#Did#,#Dreg-num#,#Drname#,#major#,#depart_id#,#degree1#,
+    values(#did#,#dreg_num#,#drname#,#major#,#depart_id#,#degree1#,
     #degree2#,#degree3#,#degree4#,#degree5#,#report1#,#report2#,#report3#,#report4#,#report5#
     ,#drimg1#,#drimg2#,#drimg3#,#drimg4#,#drimg5#)
  </insert>
