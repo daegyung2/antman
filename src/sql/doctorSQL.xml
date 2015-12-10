@@ -11,4 +11,7 @@
     ,#drimg1#,#drimg2#,#drimg3#,#drimg4#,#drimg5#)
  </insert>
  
+ <select id="selectDr" resultMap="doctor" >
+   select * from doctor order by did desc
+ </select>
 </sqlMap>

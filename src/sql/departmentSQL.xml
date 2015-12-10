@@ -2,6 +2,21 @@
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 <sqlMap namespace="depart">
    <typeAlias alias="depart" type="admin.bean.DepartmentDTO" />
+   <resultMap id="depart.dto" class="depart">
+		<result property="depart_id" column="depart_id"/>
+		<result property="dpname" column="dpname"/>
+		<result property="init" column="init"/>
+		<result property="d_info1" column="d_info1"/>
+		<result property="d_info2" column="d_info2"/>
+		<result property="d_info3" column="d_info3"/>
+		<result property="d_info4" column="d_info4"/>
+		<result property="d_info5" column="d_info5"/>
+		<result property="d_info6" column="d_info6"/>
+		<result property="d_info7" column="d_info7"/>
+		<result property="d_info8" column="d_info8"/>
+		<result property="d_info9" column="d_info9"/>
+		<result property="d_info10" column="d_info10"/>
+	</resultMap>
    
 <insert id="insert" parameterClass="depart">
   insert into department (depart_id,dpname,init,d_info1,d_info2,d_info3
@@ -10,7 +25,17 @@
 
 </insert>
 
-<select id="selectList" resultClass="depart">
+<select id="selectList" resultMap="depart.dto">
  select * from department order by depart_id desc
 </select>
+
+<select id="selectOne" resultMap="depart.dto" parameterClass="int">
+ select * from department where depart_id = #depart_id#
+</select>
+
+<update id="update" parameterClass="depart" >
+ update department set DPNAME = #dpname#,INIT = #init#,D_INFO1 = #d_info1#,D_INFO2 = #d_info2#,D_INFO3 = #d_info3#
+ ,D_INFO4 = #d_info4#,D_INFO5 = #d_info5#,D_INFO6 = #d_info6#,D_INFO7 = #d_info7#,D_INFO8 = #d_info8#
+ ,D_INFO9 = #d_info9#,D_INFO10 = #d_info10# where DEPART_ID = #depart_id#
+</update>
 </sqlMap>

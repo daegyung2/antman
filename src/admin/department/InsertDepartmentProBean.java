@@ -16,7 +16,7 @@ public class InsertDepartmentProBean {
     @RequestMapping("/insertDepartPro.do")
 	public String insertPro(DepartmentDTO dto){
     	sqlMapClient.insert("depart.insert", dto);
-    	return "/departmentList.do";
+    	return "departmentList.do";
     	
     }
 	
