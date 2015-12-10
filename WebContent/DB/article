@@ -3,4 +3,4 @@ create table article(
   subject varchar2(2000) not null,
   content varchar2(4000) not null,
   reg_date date default sysdate
- ); 
+ ); //´º½º
