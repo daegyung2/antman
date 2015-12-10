@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.DoctorDTO;
@@ -37,5 +38,11 @@ public class DoctorListBean {
 		if(page.getEndCount() < totalCount)
 			lastCount = page.getEndCount() +1;
 	   return "/admin/doctor/doctorList.jsp";
+   }
+   
+   @ModelAttribute("list")
+   public List getList(DoctorDTO dto){
+	   
+	   return sqlMapClient.queryForList("doctor.getList", dto);
    }
 }
