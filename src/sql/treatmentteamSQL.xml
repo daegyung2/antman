@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="treatment">
+
+	<typeAlias alias="treatment" type="admin.bean.DepartmentDTO" />
+
+		<!-- 리절트 맵 정의 -->
+
+	<resultMap id="boardRes" class="treatment">
+		<result property="depart_id" column="depart_id"/>
+		<result property="dpname" column="dpname"/>
+		<result property="init" column="init"/>
+		<result property="d_info1" column="d_info1"/>
+		<result property="d_info2" column="d_info2"/>
+		<result property="d_info3" column="d_info3"/>
+		<result property="d_info4" column="d_info4"/>
+		<result property="d_info5" column="d_info5"/>
+		<result property="d_info6" column="d_info6"/>
+		<result property="d_info7" column="d_info7"/>
+		<result property="d_info8" column="d_info8"/>
+		<result property="d_info9" column="d_info9"/>
+		<result property="d_info10" column="d_info10"/>	
+	</resultMap>
+	
+				<!-- select 쿼리문 정의 -->
+		<select id="selecttreatment1" resultMap="boardRes">
+		select * from department where init='ㄱ'or init='ㄴ'or init='ㄷ'or init='ㄹ'
+		</select>
+		
+				<select id="selecttreatment2" resultMap="boardRes">
+		select * from department where init='ㅁ'or init='ㅂ'or init='ㅅ'
+		</select>
+		
+		<select id="selecttreatment3" resultMap="boardRes">
+		select * from department where init='ㅇ'or init='ㅈ'
+		</select>
+		
+		<select id="selecttreatment4" resultMap="boardRes">
+		select * from department where init='ㅊ' or init='ㅋ' or init='ㅌ' or init='ㅍ' or init='ㅎ'
+		</select>
+		
+		 <select id="selecttreatment" resultMap="boardRes"> 
+SELECT * FROM table_name
+WHERE
+case when term_name 'ㄱ' then SUBSTRING(term_name, 1, 1) 
+            when ascii('ㄱ') = ascii(term_name) and ascii(term_name)= ascii('q') then term_name
+            when term_name '나' then 'ㄱ'
+            when term_name '다' then 'ㄴ'
+            when term_name '라' then 'ㄷ'
+            when term_name '마' then 'ㄹ'
+            when term_name '바' then 'ㅁ'
+            when term_name '사' then 'ㅂ'
+            when term_name '아' then 'ㅅ'
+            when term_name '자' then 'ㅇ'
+            when term_name '차' then 'ㅈ'
+            when term_name '카' then 'ㅊ'
+            when term_name '타' then 'ㅋ'
+            when term_name '파' then 'ㅌ'
+            when term_name '하' then 'ㅍ'
+            else 'ㅎ'
+         end = #VALUE#
+</select>
+
+		</sqlMap>
+		
+		
+		
+		

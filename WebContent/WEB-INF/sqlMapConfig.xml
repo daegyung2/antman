@@ -6,4 +6,5 @@
      <sqlMap resource="/sql/doctorSQL.xml"/>
     <sqlMap resource="/sql/praiseSQL.xml"/>
      <sqlMap resource="/sql/departmentSQL.xml"/>
+     <sqlMap resource="/sql/treatmentteamSQL.xml"/>
 </sqlMapConfig>
