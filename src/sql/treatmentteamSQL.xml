@@ -39,27 +39,23 @@
 		select * from department where init='ㅊ' or init='ㅋ' or init='ㅌ' or init='ㅍ' or init='ㅎ'
 		</select>
 		
-		 <select id="selecttreatment" resultMap="boardRes"> 
-SELECT * FROM table_name
-WHERE
-case when term_name 'ㄱ' then SUBSTRING(term_name, 1, 1) 
-            when ascii('ㄱ') = ascii(term_name) and ascii(term_name)= ascii('q') then term_name
-            when term_name '나' then 'ㄱ'
-            when term_name '다' then 'ㄴ'
-            when term_name '라' then 'ㄷ'
-            when term_name '마' then 'ㄹ'
-            when term_name '바' then 'ㅁ'
-            when term_name '사' then 'ㅂ'
-            when term_name '아' then 'ㅅ'
-            when term_name '자' then 'ㅇ'
-            when term_name '차' then 'ㅈ'
-            when term_name '카' then 'ㅊ'
-            when term_name '타' then 'ㅋ'
-            when term_name '파' then 'ㅌ'
-            when term_name '하' then 'ㅍ'
-            else 'ㅎ'
-         end = #VALUE#
-</select>
+	<typeAlias alias="treatmentsearch" type="treatmentteamVO.SearchTreatmentTeamVO" />
+
+		<!-- 리절트 맵 정의 -->
+
+	<resultMap id="searchtreat" class="treatmentsearch">
+	<result property="depart_id" column="depart_id"/>
+	<result property="drname" column="drname"/>
+	<result property="dpname" column="dpname"/>
+	</resultMap>
+	
+	
+	<select id="searchtreatmentteam" resultMap="searchtreat">
+		select*from(select department.depart_id,department.dpname,doctor.drname from department join doctor on department.depart_id = doctor.depart_id where department.depart_id = #depart_id# )
+ 
+		</select>
+
+
 
 		</sqlMap>
 		

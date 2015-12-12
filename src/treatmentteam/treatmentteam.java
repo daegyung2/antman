@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 	import praiseboard.PraiseVO;
 	import admin.bean.DepartmentDTO;
+	import treatmentteamVO.SearchTreatmentTeamVO;
 	import java.nio.charset.Charset;
 
 	import com.ibatis.common.resources.Resources;
@@ -30,16 +31,16 @@ public class treatmentteam {
 			@Autowired
 			private SqlMapClientTemplate sqlMapClient;
 	
-			@RequestMapping("/treatmentsearch.do")
+			@RequestMapping("/treatmentsearchlist.do")
 			public String reservationlist(HttpServletRequest request,DepartmentDTO dto){
 	
 				List list = sqlMapClient.queryForList("treatment.selecttreatment1", dto);
 				List lista = sqlMapClient.queryForList("treatment.selecttreatment2", dto);
 				List listb = sqlMapClient.queryForList("treatment.selecttreatment3", dto);
 				List listc = sqlMapClient.queryForList("treatment.selecttreatment4", dto);
-				System.out.println(list.size());
 				
-				return "/treatmentteam/treatmentteam.jsp";
+				
+				return "/antman/treatmentteam/treatmentteam.jsp";
 			}
 			
 			@ModelAttribute("list")
@@ -66,6 +67,8 @@ public class treatmentteam {
 				return sqlMapClient.queryForList("treatment.selecttreatment4",dto);
 				
 			}
+			
+		
 	}
 
 
