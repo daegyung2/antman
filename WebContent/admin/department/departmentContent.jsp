@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>진료과 상세내용</title>
 </head>
 <body>
 <table width="1000" border="1" cellpadding="1" cellspacing="0">
