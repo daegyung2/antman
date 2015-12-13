@@ -1,5 +1,5 @@
 create table employee(  //직원 정보
-  Eid varchar2(500) primary key not null,  //직원 사번
+  Eid number primary key not null,  //직원 사번
   name varchar2(200) not null,             //이름
   major varchar2(4000),                    //전공
   dpname varchar2(500)                 //부서이름

@@ -13,7 +13,7 @@ import admin.bean.DepartmentDTO;
 @Controller
 public class DepartmentContentBean {
     @Autowired
-    SqlMapClientTemplate sqlMapClient;
+    private SqlMapClientTemplate sqlMapClient;
 	
 	
 	@RequestMapping("/departmentContent.do")
