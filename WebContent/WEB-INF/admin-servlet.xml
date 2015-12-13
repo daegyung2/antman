@@ -11,14 +11,17 @@
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
        >
-
-
+ 
+ 
+    <context:component-scan base-package="admin.department" />
+    <context:component-scan base-package="praiseboard" />
+    <context:component-scan base-package="treatmentteam" />
+    <bean id="departDTO" class="admin.bean.DepartmentDTO" />
+    <context:component-scan base-package="treatmentteamVO" />
+ 
        
-  
-  
-
-  
-  <bean id="multipartResolver" 
+       
+    <bean id="multipartResolver" 
   class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
      <property name="maxUploadSize" value="-1" />
      <property name="defaultEncoding" value="utf-8" />
@@ -41,7 +44,8 @@
         p:url="jdbc:oracle:thin:@khmaster.iptime.org:7000:orcl"
         p:username="final04"
         p:password="final04"
-  />
-
-
+  />     
+       
+       
+       
        </beans>
