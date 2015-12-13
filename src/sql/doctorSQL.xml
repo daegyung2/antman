@@ -3,10 +3,26 @@
 <sqlMap namespace="doctor">
    <typeAlias alias="doctor" type="admin.bean.DoctorDTO" />
    <resultMap id="doctor.dto" class="doctor" >
-     <result property="Eid" column="Eid" />
-     <result property="name" column="name" />
+     <result property="did" column="did" />
+     <result property="dreg_num" column="dreg_num" />
+     <result property="drname" column="drname" />
      <result property="major" column="major" />
-     <result property="dpname" column="dpname" />
+     <result property="depart_id" column="depart_id" />
+     <result property="degree1"  column="degree1" />
+     <result property="degree2"  column="degree2" />
+     <result property="degree3"  column="degree3" />
+     <result property="degree4"  column="degree4" />
+     <result property="degree5"  column="degree5" />
+     <result property="report1"  column="report1" />
+     <result property="report2"  column="report2" />
+     <result property="report3"  column="report3" />
+     <result property="report4"  column="report4" />
+     <result property="report5"  column="report5" />
+     <result property="drimg1"  column="drimg1" />
+     <result property="drimg2"  column="drimg2" />
+     <result property="drimg3"  column="drimg3" />
+     <result property="drimg4"  column="drimg4" />
+     <result property="drimg5"  column="drimg5" />
    </resultMap>
  <insert id="insertDr" parameterClass="doctor">
     insert into doctor 
