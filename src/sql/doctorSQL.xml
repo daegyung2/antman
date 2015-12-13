@@ -2,6 +2,12 @@
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 <sqlMap namespace="doctor">
    <typeAlias alias="doctor" type="admin.bean.DoctorDTO" />
+   <resultMap id="doctor.dto" class="doctor" >
+     <result property="Eid" column="Eid" />
+     <result property="name" column="name" />
+     <result property="major" column="major" />
+     <result property="dpname" column="dpname" />
+   </resultMap>
  <insert id="insertDr" parameterClass="doctor">
     insert into doctor 
     (did,dreg_num,drname,major,depart_id,degree1,degree2,degree3,degree4,degree5,
@@ -11,7 +17,7 @@
     ,#drimg1#,#drimg2#,#drimg3#,#drimg4#,#drimg5#)
  </insert>
  
- <select id="selectDr" resultMap="doctor" >
+ <select id="selectDr" resultMap="doctor.dto" >
    select * from doctor order by did desc
  </select>
 </sqlMap>

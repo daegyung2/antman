@@ -1,5 +1,5 @@
 create table doctor(  //의사 정보 테이블 
-  dId varchar2(200) primary key not null, //의사 아이디, 단순 할당 지정 
+  dId number default 10001 primary key not null, //의사 아이디, 단순 할당 지정 
   dreg_num varchar2(500) not null,        //의사 등록 번호
   drname varchar2(200),                     //의사 성명
   major varchar2(4000),                   //전공의
