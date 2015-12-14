@@ -38,4 +38,5 @@
  ,D_INFO4=#d_info4#,D_INFO5=#d_info5#,D_INFO6=#d_info6#,D_INFO7=#d_info7#,D_INFO8=#d_info8#
  ,D_INFO9=#d_info9#,D_INFO10=#d_info10# where DEPART_ID=#depart_id#
 </update>
+
 </sqlMap>

@@ -18,7 +18,7 @@
     <context:component-scan base-package="treatmentteam" />
     <bean id="departDTO" class="admin.bean.DepartmentDTO" />
     <context:component-scan base-package="treatmentteamVO" />
-   
+    
        
        
     <bean id="multipartResolver" 
