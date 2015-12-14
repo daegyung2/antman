@@ -18,12 +18,12 @@ public class FaqUpdateBean {
 	
 	@RequestMapping("/faqUpdate.do")
 	public String content(faqDTO dto,HttpServletRequest request){
-		sqlMapClient.queryForObject("faq.selectOne",dto.getFid());
+		sqlMapClient.queryForObject("faq.selectOne",dto);
 		return "/faq/faqUpdate.jsp";
 	}
 		
 	@ModelAttribute("dto")
 	public Object returnDTO(faqDTO dto){
-		return sqlMapClient.queryForObject("faq.selectOne",dto.getFid());
+		return sqlMapClient.queryForObject("faq.selectOne",dto);
 	}
 }
