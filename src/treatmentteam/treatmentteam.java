@@ -40,7 +40,7 @@ public class treatmentteam {
 				List listc = sqlMapClient.queryForList("treatment.selecttreatment4", dto);
 				
 				
-				return "/antman/treatmentteam/treatmentteam.jsp";
+				return "/treatmentteam/treatmentteam.jsp";
 			}
 			
 			@ModelAttribute("list")

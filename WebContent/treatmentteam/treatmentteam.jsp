@@ -7,6 +7,226 @@
 <head>
     <meta charset="utf-8">
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title>DB Hospital</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        /* Mega Menu */
+
+.navbar-default{
+    color: #fff;
+    background-color: #ccc6c6;
+    border-color: #aca1a2;
+}
+.navbar-default .navbar-nav > li > a{
+    color:#fff;
+}
+.navbar-default .navbar-nav > .dropdown > a .caret{
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+.navbar-default .navbar-brand{
+    color:#fff;
+}
+.menu-large {
+    position: static !important;
+}
+.megamenu{
+    padding: 20px 0px;
+    width:100%;
+}
+.megamenu> li > ul {
+    padding: 0;
+    margin: 0;
+}
+.megamenu> li > ul > li {
+    list-style: none;
+}
+.megamenu> li > ul > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.428571429;
+    color: #333333;
+    white-space: normal;
+}
+.megamenu> li ul > li > a:hover,
+.megamenu> li ul > li > a:focus {
+    text-decoration: none;
+    color: #262626;
+    background-color: #f5f5f5;
+}
+.megamenu.disabled > a,
+.megamenu.disabled > a:hover,
+.megamenu.disabled > a:focus {
+    color: #999999;
+}
+.megamenu.disabled > a:hover,
+.megamenu.disabled > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    cursor: not-allowed;
+}
+.megamenu.dropdown-header {
+    color:  #00CCFF;
+    font-size: 18px;
+}
+@media (max-width: 768px) {
+    .megamenu{
+        margin-left: 0 ;
+        margin-right: 0 ;
+    }
+    .megamenu> li {
+        margin-bottom: 30px;
+    }
+    .megamenu> li:last-child {
+        margin-bottom: 0;
+    }
+    .megamenu.dropdown-header {
+        padding: 3px 15px !important;
+
+    }
+    .navbar-nav .open .dropdown-menu .dropdown-header{
+        color:#fff;
+    }
+}
+
+
+/*
+ * Dropdown on hover 
+ */
+
+@media (min-width:480px) {
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+
+
+
+.navbar { 	
+			
+			font-family:"나눔고딕","nanum gothic", serif;
+			font-weight : bold; 
+			font-color : black;
+		}
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container nav-container">
+
+            <!-- Static navbar -->
+            <div class="navbar navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!--          <a class="navbar-brand" href="#">Project name</a>-->
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="actived"><a href="#"><h5>Apply for a home</h5></a></li>
+                            <li class="dropdown menu-large">
+                                <a href="#"  class="actived" data-toggle="dropdown"><h5>의료진/진료과</h5></a>
+                                <ul class="dropdown-menu megamenu row">
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li class="active"><a href="#">의료진</a></li>
+                                            <li><a href="#">진료과</a></li>
+                                            <li><a href="#">암병원</a></li>
+                                            <li><a href="#">어린이병원 </a></li>
+                                            <li><a href="#">심장병원</a></li>
+                                            <li><a href="#">센터</a></li>
+                                            <li><a href="#">클리닉</a></li>
+                                            <li><a href="#">기타</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li><a href="#" class="nav-child">Living in my home</a></li>
+                                            <li><a href="#">Rent & Payments</a></li>
+                                            <li><a href="#">Block Meetings</a></li>
+                                            <li><a href="#">Complaints & Appeals</a></li>
+                                            <li><a href="#">Neighbour Disputes</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li><a href="#" class="nav-child">Getting involved</a></li>
+                                            <li><a href="#">Building bridges</a></li>
+                                            <li><a href="#">TAG</a></li>
+                                            <li><a href="#">Tenants workshops</a></li>
+                                            <li><a href="#">Aboriginal working group</a></li>
+                                            <li><a href="#">Tenant survey</a></li>
+                                            <li><a href="#">Your views</a></li>
+                                            <li><a href="#">What’s on</a></li>
+                                            <li><a href="#">Photos</a></li>
+                                            <li><a href="#">Stories</a></li>
+                                            <li><a href="#">Community gardens </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li><a href="#" class="nav-child">I Need Help</a></li>
+                                            <li><a href="#">Services</a></li>
+                                            <li><a href="#">Housing team</a></li>
+                                            <li><a href="#">Jobs</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#contact"><h5>이용안내</h5></a></li>
+                            <li><a href="#contact"><h5>건강정보</h5></a></li>
+                            <li><a href="#contact"><h5>웹서비스</h5></a></li>
+                            <li><a href="#contact"><h5>의학정보</h5></a></li>
+                            <li><a href="#contact"><h5>병원이야기</h5></a></li>
+                            <li><a href="#contact" class="last"><h5>병원소개</h5></a></li>
+
+                        </ul>
+
+             
+
+                        <ul class="nav navbar-nav navbar-right hidden-sm hidden-md hidden-lg">
+                            <li><a href=""><i class="fa fa-lock"></i>
+                                    Tenant login</a></li>
+
+                        </ul>
+
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+
+        </div>
+        
+
+<script type="text/javascript">
+jQuery(document).ready(function(){
+    $(".dropdown").hover(
+        function() { $('.dropdown-menu', this).stop().fadeIn("fast");
+        },
+        function() { $('.dropdown-menu', this).stop().fadeOut("fast");
+    });
+});
+</script>
+</body>
+</html>
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
     <title>의료진/진료과</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -115,7 +335,7 @@ Licensed under MIT
 			<strong><h2>의료진</h2></strong>&nbsp;클릭 시 해당 자음으로 시작하는 진료과 목록을 볼 수 있습니다.<br/>
 			<br/>
 			
-			<div class="tabbable-panel">
+<!--  		<div class="tabbable-panel">
 				<div class="tabbable-line">
 					<ul class="nav nav-tabs ">
 						<li class="active">
@@ -156,7 +376,7 @@ Licensed under MIT
   <c:forEach var="dto" items="${list}">
   <table border="0">
           <tr>
-          <td><a href="/antman/treatmentsearch.do?depart_id=${dto.depart_id}">${dto.dpname}</a></td>
+          <td><a href="/spring/treatmentsearch.do?depart_id=${dto.depart_id}">${dto.dpname}</a></td>
           </tr>
            </c:forEach>
           </table>
@@ -196,7 +416,76 @@ Licensed under MIT
 </body>
 </html>
 
-<!--  <html lang="en">
+
+-->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title>Material design tab style - Bootsnipp.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        .nav-tabs { border-bottom: 2px solid #DDD; }
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+    .nav-tabs > li > a { border: none; color: #666; }
+        .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none; color: #4285F4 !important; background: transparent; }
+        .nav-tabs > li > a::after { content: ""; background: #4285F4; height: 4px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+    .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+.tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
+.tab-pane { padding: 15px 0; }
+.tab-content{padding:20px}
+
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+body{  }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		                                <div class="col-md-12">
+                                    <!-- Nav tabs --><div class="card">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">ㄱ-ㅁ</a></li>
+                                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">ㅁ-ㅅ</a></li>
+                                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">ㅇ-ㅈ</a></li>
+                                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">ㅊ-ㅎ</a></li>
+                                         <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">암병원</a></li>
+                                          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">어린이병원</a></li>
+                                           <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">심장병원</a></li>
+                                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">센터</a></li>
+                                    </ul>
+
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="home">
+ <c:forEach var="dto" items="${list}">
+  <table border="0">
+          <tr>
+          <td><a href="/antman/treatmentsearch.do?depart_id=${dto.depart_id}">${dto.dpname}</a></td>
+          </tr>
+           </c:forEach>
+          </table>
+</div>
+                                        
+                                    </div>
+</div>
+                                </div>
+	</div>
+</div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
+
+
+
+
+  <html lang="en">
 <head>
     <meta charset="euc-kr">
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! 
@@ -421,10 +710,21 @@ $(".btn-pref .btn").click(function () {
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<style type="text/css">
+.shit{
+	
+	font-weight : bold; 
+}
+.group{	
+font-family:"나눔고딕","nanum gothic", sans-serif;
+			color : #4285F4 ;
+            font-weight : bold;
+			
+}
+</style>
 <div class="container">
-  <h4>가정의학과 의료진 목록입니다.</h4>
-            
+  <h4 class="shit"><span class="group">${tmsdto.dpname}</span> 의료진 목록입니다.</h4>
+           
   <table class="table">
     <thead>
       <tr>
@@ -436,7 +736,7 @@ $(".btn-pref .btn").click(function () {
     <tbody>
                     <c:forEach var="tmdto" items="${tmslist}">
                         <tr>
-                        	<td height="50">사진</td>
+                        	<td height="50"><img src="treatmentteam/dcimg/youngsik.jpg"></td>
                             <td><h3>${tmdto.drname}</h3><br/>
                              ${tmdto.dpname}</td>
                             
@@ -450,3 +750,5 @@ $(".btn-pref .btn").click(function () {
 </html>
 
 </c:if>
+
+<HR width=100% size=3 color=aqua align=left>
