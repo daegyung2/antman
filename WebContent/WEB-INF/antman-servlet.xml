@@ -13,9 +13,7 @@
        >
 
 
-      <bean id="insertDr" class="admin.doctor.InsertDoctorBean" />
-      <bean id="insertPro" class="admin.doctor.InsertDoctorProBean" />
-      <bean id="drList" class="admin.doctor.DoctorListBean" />
+      <context:component-scan base-package="admin.doctor" />
   
 
   

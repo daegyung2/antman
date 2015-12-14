@@ -16,11 +16,6 @@
 </tr>
 <form action="/antman/insertDoctorPro.do" method="post" enctype="multipart/form-data" >
 <tr>
-<td>의사 아이디</td>
-<td><input type="text" name="did" size="10" maxlength="15" />
-</td>
-</tr>
-<tr>
 <td>의사 성명</td>
 <td><input type="text" size="10" maxlength="15" name="drname"/></td>
 </tr>
