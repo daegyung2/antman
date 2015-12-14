@@ -60,6 +60,7 @@
 </tr>
 <tr>
 <td colspan="2">
+<input type="hidden" value="${dto.depart_id }" name="depart_id" />
 <input type="submit" value="수정완료" />
 <input type="reset" value="초기화" />
 <input type="button" value="진료과 게시판" onClick="window.location='/antman/departmentList.do'" />

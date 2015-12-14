@@ -9,13 +9,20 @@
 </head>
 <body>
 
-<table width="700" border="1" cellpadding="1" cellspacing="0">
+<table width="900" border="1" cellpadding="1" cellspacing="0">
+<tr>
+<td align="center">진료과 이름</td>
+<td align="center">진료과 이니셜</td>
+<td align="center">진료과 정보1</td>
+<td align="center">비고</td>
+</tr>
+
 <c:forEach var="dto" items="${list }" >
 <tr>
 
 <td width="100">${dto.dpname }</td>
-<td width="100">${dto.init }</td>
-<td width="200">${dto.d_info1}</td>
+<td width="200">${dto.init }</td>
+<td width="300">${dto.d_info1}</td>
 <td width="300">
 <input type="button" value="수정하기" onClick="window.location='/antman/updateDepartment.do?depart_id=${dto.depart_id}'"/>
 <input type="button" value="내용보기" onClick="window.location='/antman/departmentContent.do?depart_id=${dto.depart_id}'" />
