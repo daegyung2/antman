@@ -16,7 +16,7 @@
 <c:forEach var="dto" items="${list }">
 <tr>
 <td width="100">${dto.did }</td>
-<td width="100"><a href="/antman/doctorContent.do?did=${dto.did}">${dto.drname }</a></td>
+<td width="100">${dto.drname }</td>
 <td width="200">${dto.dreg_num }</td>
 <td width="150">${dto.major }</td>
 <td width="150">${dto.depart_id }</td>

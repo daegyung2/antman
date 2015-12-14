@@ -8,13 +8,18 @@
 <title>의사정보 입력란</title>
 </head>
 <body>
-<table>
+<table border="1" cellspacing="0" cellpadding="0" >
 <tr>
 <td colspan="2" align="center">
 <font size="3" color="orange" >의사 정보를 입력하는 곳입니다. 상세 정보 입력 부탁 드립니다. </font>
 </td>
 </tr>
 <form action="/antman/insertDoctorPro.do" method="post" enctype="multipart/form-data" >
+<tr>
+<td>의사 아이디</td>
+<td><input type="text" name="did" size="10" maxlength="15" />
+</td>
+</tr>
 <tr>
 <td>의사 성명</td>
 <td><input type="text" size="10" maxlength="15" name="drname"/></td>
@@ -29,11 +34,13 @@
 </tr>
 <tr>
 <td>부서 아이디(선택)</td>
-<td ><select>
+<td ><select name="depart_id">
 <c:forEach var="dto" items="${list}" >
-<option>${dto.depart_id }</option>
+<option value="${dto.depart_id }">${dto.dpname}</option>
 </c:forEach>
-</select></td>
+</select>
+
+</td>
 </tr>
 <tr>
 <td>학위 등록</td>
@@ -58,11 +65,11 @@
 <tr>
 <td>사진 업로드</td>
 <td>
-<input type="file" size="50" name="drimg1" /> <br />
-<input type="file" size="50" name="drimg2" /> <br />
-<input type="file" size="50" name="drimg3" /> <br />
-<input type="file" size="50" name="drimg4" /> <br />
-<input type="file" size="50" name="drimg5" /> <br />
+<input type="file" size="50" name="drimg" /> <br />
+<input type="file" size="50" name="drimg" /> <br />
+<input type="file" size="50" name="drimg" /> <br />
+<input type="file" size="50" name="drimg" /> <br />
+<input type="file" size="50" name="drimg" /> <br />
 </td>
 </tr>
 <tr>
