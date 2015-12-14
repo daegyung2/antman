@@ -8,24 +8,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table width="700" border="1" cellspacing="0" cellpadding="0">
+<table width="1000" border="1" cellspacing="0" cellpadding="0">
 <tr>
 <td width="100">의사 아이디</td>
 <td width="100">의사 이름</td>
 <td width="200">의사 등록번호</td>
 <td width="150">전공</td>
-<td width="150">부서 아이디</td></tr>
+<td width="150">부서 아이디</td>
+<td width="300">비고</td>
+</tr>
 <c:forEach var="dto" items="${list }">
 <tr>
 <td width="100">${dto.drId}</td>
 <td width="100">${dto.drname }</td>
 <td width="200">${dto.dreg_num }</td>
 <td width="150">${dto.major }</td>
-<td width="150">${dto.depart_id }</td>
+<td width="150">${dto.depart_id }&nbsp;${depart.dpname}</td>
+<td width="300">
+<input type="button" value="수정" onClick="javascript:window.location='/antman/updateDoctor.do?drId=${dto.drId}'" />
+<input type="button" value="내용보기"  onClick="javascript:window.location='/antman/doctorContent.do?drId=${dto.drId}'" />
+<input type="button" value="삭제" onClick="javascript:window.location='/antman/deleteDoctor.do?drId=${dto.drId}'" />
 </tr>
 </c:forEach>
 <tr>
-<td colspan="5">
+<td colspan="6" align="right">
 <input type="button" value="등록하기" onClick="javascript:window.location='/antman/insertDoctor.do'" />
 </td>
 </tr>

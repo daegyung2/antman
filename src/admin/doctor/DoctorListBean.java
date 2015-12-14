@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import admin.bean.DepartmentDTO;
 import admin.bean.DoctorDTO;
 
 @Controller
@@ -20,13 +21,19 @@ public class DoctorListBean {
 
    
    @RequestMapping("/doctorList.do")
-   public String doctorList(HttpServletRequest request, DoctorDTO dto ){
-	   list = sqlMapClient.queryForList("doctor.selectDr",dto);
+   public String doctorList(HttpServletRequest request, DoctorDTO dto, DepartmentDTO depart ){
+	   list = sqlMapClient.queryForList("doctor.selectList",dto);
+	   depart = (DepartmentDTO)sqlMapClient.queryForObject("depart.selectOne",dto.getDepart_id());
 	   return "/admin/doctor/doctorList.jsp";
    }
    
    @ModelAttribute("list")
    public List getList(DoctorDTO dto){
-	   return sqlMapClient.queryForList("doctor.selectDr",dto);
+	   return sqlMapClient.queryForList("doctor.selectList",dto);
+   }
+   
+   @ModelAttribute("depart")
+   public DepartmentDTO getDepart(DoctorDTO dto,DepartmentDTO depart){
+	   return (DepartmentDTO)sqlMapClient.queryForObject("depart.selectOne",dto.getDepart_id());
    }
 }
