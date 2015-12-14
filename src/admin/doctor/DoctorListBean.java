@@ -21,14 +21,12 @@ public class DoctorListBean {
    
    @RequestMapping("/doctorList.do")
    public String doctorList(HttpServletRequest request, DoctorDTO dto ){
-	   list = sqlMapClient.queryForList("doctor.selectDr", dto);
-
+	   list = sqlMapClient.queryForList("doctor.selectDr",dto);
 	   return "/admin/doctor/doctorList.jsp";
    }
    
    @ModelAttribute("list")
    public List getList(DoctorDTO dto){
-	   
-	   return sqlMapClient.queryForList("doctor.selectDr", dto);
+	   return sqlMapClient.queryForList("doctor.selectDr",dto);
    }
 }

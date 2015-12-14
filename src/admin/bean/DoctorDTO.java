@@ -1,7 +1,7 @@
 package admin.bean;
 
 public class DoctorDTO {
-     private String did;
+     private String drId;
      private String dreg_num;
      private String drname;
      private String major;
@@ -32,11 +32,11 @@ public class DoctorDTO {
 	public void setExarea(String exarea) {
 		this.exarea = exarea;
 	}
-	public String getDid() {
-		return did;
+	public String getDrId() {
+		return drId;
 	}
-	public void setDid(String did) {
-		this.did = did;
+	public void setDrId(String drId) {
+		this.drId = drId;
 	}
 	public String getDreg_num() {
 		return dreg_num;
