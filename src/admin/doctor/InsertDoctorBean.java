@@ -18,7 +18,7 @@ public class InsertDoctorBean {
 	private List list;
 	 
      @RequestMapping("/insertDoctor.do")
-	public String insertPage(DepartmentDTO dto){
+	public String insertPage(DepartmentDTO dto){ //부서 목록 불러와서 참조 
     	 list = sqlMapClient.queryForList("depart.selectList",dto);
 		return "/admin/doctor/insertDoctor.jsp";
 	}
