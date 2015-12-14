@@ -9,4 +9,6 @@
      <sqlMap resource="/sql/treatmentteamSQL.xml"/>
      <sqlMap resource="/sql/employeeSQL.xml" />
      <sqlMap resource="/sql/faqSQL.xml" />
+     <sqlMap resource="/sql/mainBoardSQL.xml" />
+     
 </sqlMapConfig>
