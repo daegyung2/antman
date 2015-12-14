@@ -4,9 +4,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>의사 정보 확인 페이지</title>
 </head>
 <body>
+<table>
+<tr>
+<td rowspan="5">
+<img src="${dto.drimg1 }" />
+</td>
+<td>성명: ${dto.drname }</td>
+</tr>
+<tr>
+<td>전공: ${dto.major }</td>
+</tr>
+<tr>
+<td>부서 아이디: ${dto.depart_id }</td>
+</tr>
 
+</table>
 </body>
 </html>
