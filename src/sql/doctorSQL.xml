@@ -3,10 +3,11 @@
 <sqlMap namespace="doctor">
    <typeAlias alias="doctor" type="admin.bean.DoctorDTO" />
    <resultMap id="doctor.dto" class="doctor" >
-     <result property="did" column="did" />
+     <result property="drId" column="drId" />
      <result property="dreg_num" column="dreg_num" />
      <result property="drname" column="drname" />
      <result property="major" column="major" />
+     <result property="exarea" column="exarea" />
      <result property="depart_id" column="depart_id" />
      <result property="degree1"  column="degree1" />
      <result property="degree2"  column="degree2" />
@@ -26,14 +27,30 @@
    </resultMap>
  <insert id="insertDr" parameterClass="doctor">
     insert into doctor 
-    (did,dreg_num,drname,major,depart_id,degree1,degree2,degree3,degree4,degree5,
+    (drId,dreg_num,drname,major,exarea,depart_id,degree1,degree2,degree3,degree4,degree5,
     report1,report2,report3,report4,report5,drimg1,drimg2,drimg3,drimg4,drimg5) 
-    values(#did#,#dreg_num#,#drname#,#major#,#depart_id#,#degree1#,
+    values(DOCTOR_SEQ.NEXTVAL,#dreg_num#,#drname#,#major#,#exarea#,#depart_id#,#degree1#,
     #degree2#,#degree3#,#degree4#,#degree5#,#report1#,#report2#,#report3#,#report4#,#report5#
     ,#drimg1#,#drimg2#,#drimg3#,#drimg4#,#drimg5#)
  </insert>
  
  <select id="selectDr" resultMap="doctor.dto" >
-   select * from doctor order by did desc
+   select * from DOCTOR order by drId desc
  </select>
+ 
+ <update id="updateDrimg1" parameterClass="doctor" >
+   update DOCTOR set drimg1=#drimg1# where drId=#drId#
+ </update>
+ <update id="updateDrimg2" parameterClass="doctor" >
+   update DOCTOR set drimg2=#drimg1# where drId=#drId#
+ </update>
+ <update id="updateDrimg3" parameterClass="doctor" >
+   update DOCTOR set drimg3=#drimg1# where drId=#drId#
+ </update>
+ <update id="updateDrimg4" parameterClass="doctor" >
+   update DOCTOR set drimg4=#drimg1# where drId=#drId#
+ </update>
+ <update id="updateDrimg5" parameterClass="doctor" >
+   update DOCTOR set drimg5=#drimg1# where drId=#drId#
+ </update>
 </sqlMap>

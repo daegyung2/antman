@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="faq">
+   <typeAlias alias="faq" type="faq.faqDTO" />
+   <resultMap id="faq.dto" class="faq">
+		<result property="fid" column="fid"/>
+		<result property="category" column="category"/>
+		<result property="subject" column="subject"/>
+		<result property="content" column="content"/>
+	</resultMap>
+   
+<insert id="insert" parameterClass="faq">
+  insert into faq (fid,category,subject,content) values(faq_SEQ.NEXTVAL,#category#,#subject#,#content#)
+
+</insert>
+
+<select id="selectList" resultMap="faq.dto">
+ select * from faq order by fid desc
+</select>
+
+<select id="selectOne" resultMap="faq.dto" parameterClass="int">
+ select * from faq where fid = #fid#
+</select>
+
+<update id="update" parameterClass="faq" >
+ update FAQ set CATEGORY=#CATEGORY#,SUBJECT=#subject#,CONTENT=#content# where FID=#fid#
+</update>
+</sqlMap>

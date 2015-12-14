@@ -11,38 +11,22 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.DoctorDTO;
-import praiseboard.pagingAction;
 
 @Controller
 public class DoctorListBean {
    @Autowired
-   private List doctorList;
    private SqlMapClientTemplate sqlMapClient;
-   private pagingAction page;
-   private int currentPage;
-   private int totalCount;
-   private int blockCount;
-   private int blockPage;
-   private String pagingHtml;
+   private List list;
+
    
    @RequestMapping("/doctorList.do")
    public String doctorList(HttpServletRequest request, DoctorDTO dto ){
-	   doctorList = sqlMapClient.queryForList("doctor.getList", dto);
-
-		
-		page = new pagingAction(currentPage,totalCount,blockCount,blockPage);
-		pagingHtml = page.getPagingHtml().toString();
-		
-		int lastCount = totalCount;
-		
-		if(page.getEndCount() < totalCount)
-			lastCount = page.getEndCount() +1;
+	   list = sqlMapClient.queryForList("doctor.selectDr",dto);
 	   return "/admin/doctor/doctorList.jsp";
    }
    
    @ModelAttribute("list")
    public List getList(DoctorDTO dto){
-	   
-	   return sqlMapClient.queryForList("doctor.getList", dto);
+	   return sqlMapClient.queryForList("doctor.selectDr",dto);
    }
 }
