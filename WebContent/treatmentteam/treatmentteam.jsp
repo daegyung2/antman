@@ -2,226 +2,201 @@
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+  <head>
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>DB Hospital</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-        /* Mega Menu */
+    <meta name="msvalidate.01" content="36A28D9109C077BA3E623651FC1656F4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="fb:admins" content="19908503" />
+    <meta property="fb:app_id" content="112989545392380" /> 
+    <meta property="og:title" content="HTML Snippets for Twitter Boostrap framework : Bootsnipp.com" />
+    <meta property="og:type" content="website" />
+    <meta property="twitter:account_id" content="786331568" />
+      <meta itemprop="name" content="Bootsnipp">
+    <meta itemprop="description" content="Free HTML snippets for Bootstrap HTML CSS JS">
+    <meta property="og:url" content="http://bootsnipp.com" />
+      <meta property="og:image" content="http://bootsnipp.com/img/logo.jpg" />
+    <meta property="og:site_name" content="Bootsnipp.com" />
+      <meta property="og:description" content="A design element gallery for web designers and web developers. Find snippets using HTML, CSS, Javascript, jQuery, Bootstrap, and more." />
+    <meta name="description" content="A design element gallery for web designers and web developers. Find snippets using HTML, CSS, Javascript, jQuery, Bootstrap, and more.">
+      <title>Home of free code snippets for Bootstrap | Bootsnipp.com</title>
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-144x144-precomposed.png">
+    <link rel="alternate" type="application/rss+xml" title="Latest snippets from Bootsnipp.com" href="http://bootsnipp.com/feed.rss" />
 
-.navbar-default{
-    color: #fff;
-    background-color: #ccc6c6;
-    border-color: #aca1a2;
-}
-.navbar-default .navbar-nav > li > a{
-    color:#fff;
-}
-.navbar-default .navbar-nav > .dropdown > a .caret{
-    border-top-color: #fff;
-    border-bottom-color: #fff;
-}
-.navbar-default .navbar-brand{
-    color:#fff;
-}
-.menu-large {
-    position: static !important;
-}
-.megamenu{
-    padding: 20px 0px;
-    width:100%;
-}
-.megamenu> li > ul {
-    padding: 0;
-    margin: 0;
-}
-.megamenu> li > ul > li {
-    list-style: none;
-}
-.megamenu> li > ul > li > a {
-    display: block;
-    padding: 3px 20px;
-    clear: both;
-    font-weight: normal;
-    line-height: 1.428571429;
-    color: #333333;
-    white-space: normal;
-}
-.megamenu> li ul > li > a:hover,
-.megamenu> li ul > li > a:focus {
-    text-decoration: none;
-    color: #262626;
-    background-color: #f5f5f5;
-}
-.megamenu.disabled > a,
-.megamenu.disabled > a:hover,
-.megamenu.disabled > a:focus {
-    color: #999999;
-}
-.megamenu.disabled > a:hover,
-.megamenu.disabled > a:focus {
-    text-decoration: none;
-    background-color: transparent;
-    background-image: none;
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-    cursor: not-allowed;
-}
-.megamenu.dropdown-header {
-    color:  #00CCFF;
-    font-size: 18px;
-}
-@media (max-width: 768px) {
-    .megamenu{
-        margin-left: 0 ;
-        margin-right: 0 ;
-    }
-    .megamenu> li {
-        margin-bottom: 30px;
-    }
-    .megamenu> li:last-child {
-        margin-bottom: 0;
-    }
-    .megamenu.dropdown-header {
-        padding: 3px 15px !important;
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://bootsnipp.com/dist/bootsnipp.min.css?ver=7d23ff901039aef6293954d33d23c066">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+    	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+    <![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    }
-    .navbar-nav .open .dropdown-menu .dropdown-header{
-        color:#fff;
-    }
-}
+  ga('create', 'UA-55581850-1', 'auto', {'allowLinker': true});
+  ga('require', 'linker');
+  ga('linker:autoLink', ['danstools.com','unixtimestamp.com','url-encode-decode.com','cssfontstack.com','hexcolortool.com','htaccessredirect.net','jspretty.com','jsmini.com','jsobfuscate.com','md5hashgenerator.com','regextester.com','cleancss.com','favicon-generator.org','website-performance.org','permissions-calculator.org','conversoes.org','convertissez.fr','convertitore.net','elconvertidor.com','files-conversion.com','henkan-muryo.com','konvertirung.org','konvertor.org','tahwil.net','zhuan-huan.com','bootsnipp.com'] );
+  ga('send', 'pageview');
 
-
-/*
- * Dropdown on hover 
- */
-
-@media (min-width:480px) {
-
-    .dropdown:hover .dropdown-menu {
-        display: block;
-    }
-}
-
-
-
-
-.navbar { 	
-			
-			font-family:"나눔고딕","nanum gothic", serif;
-			font-weight : bold; 
-			font-color : black;
-		}
-    </style>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-</head>
-<body>
-<div class="container nav-container">
-
-            <!-- Static navbar -->
-            <div class="navbar navbar-static-top" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <!--          <a class="navbar-brand" href="#">Project name</a>-->
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="actived"><a href="#"><h5>Apply for a home</h5></a></li>
-                            <li class="dropdown menu-large">
-                                <a href="#"  class="actived" data-toggle="dropdown"><h5>의료진/진료과</h5></a>
-                                <ul class="dropdown-menu megamenu row">
-                                    <li class="col-sm-3">
-                                        <ul>
-                                            <li class="active"><a href="#">의료진</a></li>
-                                            <li><a href="#">진료과</a></li>
-                                            <li><a href="#">암병원</a></li>
-                                            <li><a href="#">어린이병원 </a></li>
-                                            <li><a href="#">심장병원</a></li>
-                                            <li><a href="#">센터</a></li>
-                                            <li><a href="#">클리닉</a></li>
-                                            <li><a href="#">기타</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="col-sm-3">
-                                        <ul>
-                                            <li><a href="#" class="nav-child">Living in my home</a></li>
-                                            <li><a href="#">Rent & Payments</a></li>
-                                            <li><a href="#">Block Meetings</a></li>
-                                            <li><a href="#">Complaints & Appeals</a></li>
-                                            <li><a href="#">Neighbour Disputes</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="col-sm-3">
-                                        <ul>
-                                            <li><a href="#" class="nav-child">Getting involved</a></li>
-                                            <li><a href="#">Building bridges</a></li>
-                                            <li><a href="#">TAG</a></li>
-                                            <li><a href="#">Tenants workshops</a></li>
-                                            <li><a href="#">Aboriginal working group</a></li>
-                                            <li><a href="#">Tenant survey</a></li>
-                                            <li><a href="#">Your views</a></li>
-                                            <li><a href="#">What’s on</a></li>
-                                            <li><a href="#">Photos</a></li>
-                                            <li><a href="#">Stories</a></li>
-                                            <li><a href="#">Community gardens </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="col-sm-3">
-                                        <ul>
-                                            <li><a href="#" class="nav-child">I Need Help</a></li>
-                                            <li><a href="#">Services</a></li>
-                                            <li><a href="#">Housing team</a></li>
-                                            <li><a href="#">Jobs</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="#contact"><h5>이용안내</h5></a></li>
-                            <li><a href="#contact"><h5>건강정보</h5></a></li>
-                            <li><a href="#contact"><h5>웹서비스</h5></a></li>
-                            <li><a href="#contact"><h5>의학정보</h5></a></li>
-                            <li><a href="#contact"><h5>병원이야기</h5></a></li>
-                            <li><a href="#contact" class="last"><h5>병원소개</h5></a></li>
-
-                        </ul>
-
-             
-
-                        <ul class="nav navbar-nav navbar-right hidden-sm hidden-md hidden-lg">
-                            <li><a href=""><i class="fa fa-lock"></i>
-                                    Tenant login</a></li>
-
-                        </ul>
-
-                    </div><!--/.nav-collapse -->
-                </div>
-            </div>
-
-        </div>
-        
-
-<script type="text/javascript">
-jQuery(document).ready(function(){
-    $(".dropdown").hover(
-        function() { $('.dropdown-menu', this).stop().fadeIn("fast");
-        },
-        function() { $('.dropdown-menu', this).stop().fadeOut("fast");
-    });
-});
+        window.onload = function() {
+        setTimeout(function() {
+          var ad = document.querySelector("ins.adsbygoogle[data-ad-slot='6745801727']");
+          var promos = document.querySelectorAll(".vb8xd");
+	  var isblock = 0;
+          for (var i = 0; i < promos.length; i++) {
+                  var promo = promos[i];
+          if (isblock ==1 || (ad && ad.innerHTML.replace(/\s/g, "").length == 0)) {
+	    isblock = 1;
+//            ad.style.cssText = 'display:block !important';
+//          promo.style.cssText = 'display:none !important';
+            promo.innerHTML = '<a href=\"http://www.semrush.com/?ref=15287479\"><img src=\"/img/smr2.png\" /></a><p>';
+	    promo.style.display= 'inline-block';
+	    promo.style.visibility= 'visible';
+            promo.style.maxWidth= '';
+          } else if (promo) {
+            promo.innerHTML = '<center>\
+<div id="vb8xd2" style="background-color:#FCFCFC;width: 728px;height:90px;padding:10px;border:1px solid #cccccc;text-align:left;">\
+<h5 style="margin-top:0px;margin-bottom:2px">\
+<i class="fa fa-area-chart"></i> <a href="http://www.semrush.com/?ref=15287479" >Competitive SEO Data</a></h5>\
+Get competitive SEO intelligence, backlinks, rankings, keyword research, with SEMrush.\
+</div>\
+</center>';
+//            var promotwo = document.querySelector("#toppromo2");
+            promo.childNodes[0].childNodes[0].style.width= '';
+          }
+	  }
+        }, 1000);
+      };
+   
 </script>
-</body>
-</html>
+    <script type="text/javascript">
+    var fb_param = {};
+    fb_param.pixel_id = '6007046190250';
+    fb_param.value = '0.00';
+    (function(){
+      var fpw = document.createElement('script');
+      fpw.async = true;
+      fpw.src = '//connect.facebook.net/en_US/fp.js';
+      var ref = document.getElementsByTagName('script')[0];
+      ref.parentNode.insertBefore(fpw, ref);
+    })();
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6007046190250&amp;value=0" /></noscript>
+  </head>
+  <body>
+    <nav class="navbar navbar-fixed-top navbar-bootsnipp animate" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="animbrand">
+        <a class="navbar-brand animate" href="http://bootsnipp.com">DB Hospital</a>
+      </div>
+    </div>
 
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="visible-xs">
+          <form action="http://bootsnipp.com/search" method="GET" role="search">
+            <div class="input-group">
+              <input type="text" class="form-control" name="q" placeholder="Search for snippets">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                <button class="btn btn-danger" type="reset"><span class="glyphicon glyphicon-remove"></span></button>
+              </span>
+            </div>
+          </form>
+        </li>
+        <li class=""><a href="http://bootsnipp.com/about" class="animate">About</a></li>
+        <li>
+          <a href="#" class="dropdown-toggle animate " data-toggle="dropdown">왜안돼냐고 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+<            <li class=""><a href="http://bootsnipp.com/blog" class="animate">Blog <span class="pull-right glyphicon glyphicon-pencil"></span></a></li>
+            <li class=""><a href="http://bootsnipp.com/resources" class="animate">List of resources <span class="pull-right glyphicon glyphicon-align-justify"></span></a></li>
+            <li><a href="http://getbootstrap.com" target="_blank" class="animate">Download Bootstrap <span class="pull-right glyphicon glyphicon-cloud-download"></span></a></li>
+            <li class="dropdown-header">Bootstrap Templates</li>
+            <li class=""><a href="http://bootsnipp.com/templates" class="animate">Browse Templates <span class="pull-right glyphicon glyphicon-shopping-cart"></span></a></li>
+            <li class="dropdown-header">Builders</li>
+-
+            <li class=""><a href="http://bootsnipp.com/forms" class="animate">sssss<span class="pull-right glyphicon glyphicon-tasks"></span></a></li>
+            <li class=""><a href="http://bootsnipp.com/buttons" class="animate">Button Builder <span class="pull-right glyphicon glyphicon-edit"></span></a></li>
+            <li class=""><a href="http://bootsnipp.com/iconsearch" class="animate">Icon Search <span class="pull-right glyphicon glyphicon-search"></span></a></li>
+            <li class="dropdown-header">Dan's Tools</li>
+            <li class=""><a href="http://www.cleancss.com/diff-compare-merge/" class="animate">Diff / Merge <span class="pull-right glyphicon glyphicon-transfer"></span></a></li>
+            <li class=""><a href="http://www.hexcolortool.com/" class="animate">Color Picker <span class="pull-right glyphicon glyphicon-pencil"></span></a></li>
+            <li class=""><a href="http://www.danstools.com/keyword-tool/" class="animate">Keyword Tool <span class="pull-right glyphicon glyphicon-list-alt"></span></a></li>
+            <li class=""><a href="http://www.cssfontstack.com/Web-Fonts/" class="animate">Web Fonts <span class="pull-right glyphicon glyphicon-font"></span></a></li>
+            <li class=""><a href="http://www.htaccessredirect.net/" class="animate">.htaccess Generator <span class="pull-right glyphicon glyphicon-console"></span></a></li>
+            <li class=""><a href="http://www.favicon-generator.org/" class="animate">Favicon Generator <span class="pull-right glyphicon glyphicon-picture"></span></a></li>
+            <li class=""><a href="http://www.website-performance.org/" class="animate">Site Speed Test <span class="pull-right glyphicon glyphicon-dashboard"></span></a></li>
+
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="http://bootsnipp.com/snippets" class="dropdown-toggle animate" data-toggle="dropdown">Snippets <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li class=""><a href="http://bootsnipp.com/snippets/featured" class="animate">Featured <span class="pull-right glyphicon glyphicon-star"></span></a></li>
+            <li class=""><a href="http://bootsnipp.com/tags" class="animate">Tags  <span class="pull-right glyphicon glyphicon-tags"></span></a></li>
+            <li class="dropdown-header">By Bootstrap Version</li>
+                          <li><a href="http://bootsnipp.com/tags/3.3.0" class="animate">3.3.0</a></li>
+                          <li><a href="http://bootsnipp.com/tags/3.2.0" class="animate">3.2.0</a></li>
+                          <li><a href="http://bootsnipp.com/tags/3.1.0" class="animate">3.1.0</a></li>
+                          <li><a href="http://bootsnipp.com/tags/3.0.3" class="animate">3.0.3</a></li>
+                          <li><a href="http://bootsnipp.com/tags/3.0.1" class="animate">3.0.1</a></li>
+                          <li><a href="http://bootsnipp.com/tags/3.0.0" class="animate">3.0.0</a></li>
+                          <li><a href="http://bootsnipp.com/tags/2.3.2" class="animate">2.3.2</a></li>
+                      </ul>
+        </li>
+        
+                   <li><a href="http://bootsnipp.com/user/snippets/new" class="animate">New Snippet</a></li>
+           <li class="dropdown dropdown-right">
+             <a href="#" class="dropdown-toggle animate" data-toggle="dropdown">Profile <span class="caret"></span></a>
+             <ul class="dropdown-menu" role="menu">
+               <li class=""><a href="http://bootsnipp.com/user" class="animate">My Profile <img src="https://secure.gravatar.com/avatar/a99928dbab492812c1f84aa4706f5473?s=100&r=g&d=mm" width="18px" class="pull-right"></a></li>
+               <li class=""><a href="http://bootsnipp.com/user/favorites" class="animate">Favorited Snippets <span class="pull-right glyphicon glyphicon-star"></span></a></li>
+               <li class=""><a href="http://bootsnipp.com/user/settings" class="animate">Settings <span class="pull-right glyphicon glyphicon-cog"></span></a></li>
+               <li><a href="http://bootsnipp.com/logout" class="animate">Logout <span class="pull-right glyphicon glyphicon-log-out"></span></a></li>
+             </ul>
+           </li>
+        
+        <li class="hidden-xs"><a href="#toggle-search" class="animate"><span class="glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bootsnipp-search animate">
+    <div class="container">
+      <form action="http://bootsnipp.com/search" method="GET" role="search">
+        <div class="input-group">
+          <input type="text" class="form-control" name="q" placeholder="Search for snippets and hit enter">
+          <span class="input-group-btn">
+            <button class="btn btn-danger" type="reset"><span class="glyphicon glyphicon-remove"></span></button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+  
+      
+      
+      
 
 <html lang="en">
 <head>
@@ -449,29 +424,56 @@ body{  }
 		                                <div class="col-md-12">
                                     <!-- Nav tabs --><div class="card">
                                     <ul class="nav nav-tabs" role="tablist">
-                                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">ㄱ-ㅁ</a></li>
-                                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">ㅁ-ㅅ</a></li>
-                                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">ㅇ-ㅈ</a></li>
-                                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">ㅊ-ㅎ</a></li>
-                                         <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">암병원</a></li>
-                                          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">어린이병원</a></li>
-                                           <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">심장병원</a></li>
-                                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">센터</a></li>
+                                        <li role="presentation" class="active"><a href="#a" aria-controls="a" role="tab" data-toggle="tab">ㄱ-ㅁ</a></li>
+                                        <li role="presentation"><a href="#b" aria-controls="b" role="tab" data-toggle="tab">ㅁ-ㅅ</a></li>
+                                        <li role="presentation"><a href="#messages" aria-controls="c" role="tab" data-toggle="tab">ㅇ-ㅈ</a></li>
+                                        <li role="presentation"><a href="#settings" aria-controls="d" role="tab" data-toggle="tab">ㅊ-ㅎ</a></li>
+                                         <li role="presentation"><a href="#settings" aria-controls="e" role="tab" data-toggle="tab">암병원</a></li>
+                                          <li role="presentation"><a href="#settings" aria-controls="f" role="tab" data-toggle="tab">어린이병원</a></li>
+                                           <li role="presentation"><a href="#settings" aria-controls="g" role="tab" data-toggle="tab">심장병원</a></li>
+                                            <li role="presentation"><a href="#settings" aria-controls="h" role="tab" data-toggle="tab">센터</a></li>
                                     </ul>
-
-                                    <!-- Tab panes -->
+                                  <!-- Tab panes -->
                                     <div class="tab-content">
-                                        <div role="tabpanel" class="tab-pane active" id="home">
- <c:forEach var="dto" items="${list}">
-  <table border="0">
-          <tr>
-          <td><a href="/antman/treatmentsearch.do?depart_id=${dto.depart_id}">${dto.dpname}</a></td>
-          </tr>
-           </c:forEach>
-          </table>
-</div>
+                                        <div role="tabpanel" class="tab-pane active" id="a">
+                                        <c:forEach var="dto" items="${list}">
+  										<table border="0">
+          								<tr>
+         							    <td><a href="/antman/treatmentsearch.do?depart_id=${dto.depart_id}">${dto.dpname}</a></td>
+          							    </tr>         
+          								</table>
+         							    </c:forEach>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="b">
+                                        <c:forEach var="dto" items="${lista}">
+  										<table border="0">
+          								<tr>
+         							    <td><a href="/antman/treatmentsearch.do?depart_id=${dto.depart_id}">${dto.dpname}</a></td>
+          							    </tr>         
+          								</table>
+         							    </c:forEach>
                                         
-                                    </div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="messages">
+                                        <c:forEach var="dto" items="${listb}">
+  										<table border="0">
+          								<tr>
+         							    <td><a href="/antman/treatmentsearch.do?depart_id=${dto.depart_id}">${dto.dpname}</a></td>
+          							    </tr>         
+          								</table>
+         							    </c:forEach>
+                                        
+                                        </div>
+                                         <div role="tabpanel" class="tab-pane" id="settings">
+                                         <c:forEach var="dto" items="${listc}">
+  										<table border="0">
+          								<tr>
+         							    <td><a href="/antman/treatmentsearch.do?depart_id=${dto.depart_id}">${dto.dpname}</a></td>
+          							    </tr>         
+          								</table>
+         							    </c:forEach>
+                                        
+                                        </div>
 </div>
                                 </div>
 	</div>
@@ -482,7 +484,7 @@ body{  }
 </body>
 </html>
 
-
+                                 
 
 
   <html lang="en">
