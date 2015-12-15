@@ -2,9 +2,22 @@
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 <sqlMap namespace="employee">
    <typeAlias alias="employee" type="admin.bean.EmployeeDTO" />
+     <resultMap id="employee.dto" class="employee">
+      <result property="Eid" column="Eid" />
+      <result property="name" column="name" />
+      <result property="major" column="major" />
+      <result property="dpname" column="dpname" />  
+     </resultMap> 
    
      <insert id="insertEm" parameterClass="employee">
      insert into employee (Eid,name,major,dpname) values(#Eid#,#name#,#major#,#dpname#)
      </insert>
   
+     <select id="selectList" resultMap="employee.dto" >
+      select * from EMPLOYEE order by Eid desc
+     </select>
+     
+     <select id="eidCheck" resultClass="int" parameterClass="int">
+     select count(*) from EMPLOYEE where Eid=#Eid#
+     </select>
 </sqlMap>

@@ -1,12 +1,12 @@
 package admin.bean;
 
 public class DoctorDTO {
-     private String drId;
+     private int drId;
      private String dreg_num;
      private String drname;
      private String major;
      private String exarea;
-     private String depart_id;
+     private String dpname;
      private String degree1;
      private String degree2;
      private String degree3;
@@ -32,10 +32,10 @@ public class DoctorDTO {
 	public void setExarea(String exarea) {
 		this.exarea = exarea;
 	}
-	public String getDrId() {
+	public int getDrId() {
 		return drId;
 	}
-	public void setDrId(String drId) {
+	public void setDrId(int drId) {
 		this.drId = drId;
 	}
 	public String getDreg_num() {
@@ -56,11 +56,11 @@ public class DoctorDTO {
 	public void setMajor(String major) {
 		this.major = major;
 	}
-	public String getDepart_id() {
-		return depart_id;
+	public String getDpname() {
+		return dpname;
 	}
-	public void setDepart_id(String depart_id) {
-		this.depart_id = depart_id;
+	public void setDpname(String dpname) {
+		this.dpname = dpname;
 	}
 	public String getDegree1() {
 		return degree1;

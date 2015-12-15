@@ -1,17 +1,17 @@
 package admin.bean;
 
 public class EmployeeDTO {
-   private String Eid;
+   private int Eid;
    private String name;
    private String major;
    private String dpname;
    
    
-public String getEid() {
+public int getEid() {
 	return Eid;
 }
-public void setEid(String eid) {
-	Eid = eid;
+public void setEid(int Eid) {
+	this.Eid = Eid;
 }
 public String getName() {
 	return name;

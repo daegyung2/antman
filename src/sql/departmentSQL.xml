@@ -39,4 +39,7 @@
  ,D_INFO9=#d_info9#,D_INFO10=#d_info10# where DEPART_ID=#depart_id#
 </update>
 
+<delete id="delete" parameterClass="int" >
+ delete from DEPARTMENT where depart_id=#depart_id#
+</delete>
 </sqlMap>

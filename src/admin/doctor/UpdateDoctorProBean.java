@@ -29,10 +29,10 @@ public class UpdateDoctorProBean {
 		   String name = file.getOriginalFilename();
 		   File sf = new File("H://antman//WebContent//image//"+name);
 		   file.transferTo(sf);
-		   dto.setDrimg1("/antman/WebContent/image/"+name);
+		   dto.setDrimg1("/antman/image/"+name);
 		   sqlMapClient.update("doctor.updateDrimg"+(i+1),dto);
 		   }else{
-		   dto.setDrimg1("");
+		   dto.setDrimg1("/antman/image/noimage.jpg");
 		   sqlMapClient.update("doctor.updateDrimg"+(i+1),dto);
 		   }
 		   }
