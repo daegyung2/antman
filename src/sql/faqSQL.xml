@@ -23,6 +23,6 @@
 </select>
 
 <update id="update" parameterClass="faq" >
- update FAQ set CATEGORY=#CATEGORY#,SUBJECT=#subject#,CONTENT=#content# where FID=#fid#
+ update FAQ set CATEGORY=#category#,SUBJECT=#subject#,CONTENT=#content# where FID=#fid#
 </update>
 </sqlMap>

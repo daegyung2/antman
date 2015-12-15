@@ -54,11 +54,19 @@
 		select*from(select department.depart_id,department.dpname,doctor.drname from department join doctor on department.depart_id = doctor.depart_id where department.depart_id = #depart_id# )
  
 		</select>
-
-
+		
+		
+	<resultMap id="searchdepartname" class="treatmentsearch">
+	<result property="dpname" column="dpname"/>
+	</resultMap>
+		
+	<select id ="searchname" resultMap="searchdepartname">
+	select dpname from department where depart_id=#depart_id# 
+	</select>
 
 		</sqlMap>
 		
+	
 		
 		
 		

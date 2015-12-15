@@ -15,7 +15,7 @@ public class DeleteDoctorBean {
 	@RequestMapping("/deleteDoctor.do")
 	public String deleteDoctor(DoctorDTO dto){
 		sqlMapClient.delete("doctor.deleteDr",dto.getDrId());
-		return "/admin/doctor/deleteDoctor.jsp";
+		return "doctorList.do";
 	}
 	
 	

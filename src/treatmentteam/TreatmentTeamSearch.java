@@ -21,11 +21,17 @@ public class TreatmentTeamSearch {
 	
 	@RequestMapping("/treatmentsearch.do")
 	public String treatmentsearch(HttpServletRequest request,SearchTreatmentTeamVO tmdto){
-		String depart_id = (String)tmdto.getDepart_id();
+		System.out.println(tmdto.getDepart_id());
 		 List tmslist = sqlMapClient.queryForList("treatment.searchtreatmentteam", tmdto.getDepart_id());
-		
+		  SearchTreatmentTeamVO tmsdto = (SearchTreatmentTeamVO)sqlMapClient.queryForObject("treatment.searchname", tmdto.getDepart_id());
+		 System.out.println(tmsdto);
 		 
-		 request.setAttribute("depart_id",depart_id);
+		 
+		 
+		  request.setAttribute("tmsdto", tmsdto);
+		  String depart_id = (String)tmdto.getDepart_id();
+		  request.setAttribute("depart_id",depart_id);
+		 
 		return "/treatmentsearchlist.do";
 	}
 	@ModelAttribute("tmslist")

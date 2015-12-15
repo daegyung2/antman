@@ -66,6 +66,6 @@
  </update>
  
  <delete id="deleteDr" parameterClass="String" >
-   delete * from DOCTOR where drId=#drId#
+   delete from DOCTOR where drId=#drId#
  </delete>
 </sqlMap>
