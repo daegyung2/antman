@@ -14,7 +14,7 @@
 직원 정보 입력창입니다. *는 필수 입력 대상입니다.
 </td>
 </tr>
-<form action="/antman/insertEmployeePro.do" method="post" >
+<form action="/antman/insertEmployeePro.do" method="post" enctype="multipart/form-data">
 <tr>
 <td>사번</td>
 <td>${Eid }</td>
@@ -46,6 +46,17 @@
 </c:forEach>
 </select>
 </td>
+</tr>
+<tr>
+<td rowspan="5" align="center">사진 업로드</td>
+<td><input type="file" name="emimg" /></td></tr>
+<tr><td><input type="file" name="emimg" /></td></tr>
+<tr><td><input type="file" name="emimg" /></td></tr>
+<tr><td><input type="file" name="emimg" /></td></tr>
+<tr><td><input type="file" name="emimg" /></td></tr>
+<tr>
+<td>직원 설명</td>
+<td><textarea name="emdescription" rows="5" cols="30" ></textarea></td>
 </tr>
 <tr>
 <td colspan="2">

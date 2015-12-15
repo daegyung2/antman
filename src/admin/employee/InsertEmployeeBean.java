@@ -25,7 +25,7 @@ public class InsertEmployeeBean {
 	public String insertEmployee(HttpServletRequest request, DepartmentDTO dto,EmployeeDTO emdto){
 		list = sqlMapClient.queryForList("depart.selectList",dto);
 		for(int i = 1; i > 0; i++){
-		Eid = (int) (Math.random()*100000);
+		Eid = (int) (Math.random()*100000 + 100);
 		x = (int) sqlMapClient.queryForObject("employee.eidCheck",Eid);
         if(x == 0){
         	emdto.setEid(Eid);

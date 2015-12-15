@@ -7,10 +7,17 @@
       <result property="name" column="name" />
       <result property="major" column="major" />
       <result property="dpname" column="dpname" />  
+      <result property="emimg1" column="emimg1" />
+      <result property="emimg2" column="emimg2" />
+      <result property="emimg3" column="emimg3" />
+      <result property="emimg4" column="emimg4" />
+      <result property="emimg5" column="emimg5" />
+      <result property="emdescription" column="emdescription" />
      </resultMap> 
    
      <insert id="insertEm" parameterClass="employee">
-     insert into employee (Eid,name,major,dpname) values(#Eid#,#name#,#major#,#dpname#)
+     insert into employee (Eid,name,major,dpname,emimg1,emimg2,emimg3,emimg4,emimg5,emdescription) 
+     values(#Eid#,#name#,#major#,#dpname#,#emimg1#,#emimg2#,#emimg3#,#emimg4#,#emimg5#,#emdescription#)
      </insert>
   
      <select id="selectList" resultMap="employee.dto" >
@@ -20,4 +27,20 @@
      <select id="eidCheck" resultClass="int" parameterClass="int">
      select count(*) from EMPLOYEE where Eid=#Eid#
      </select>
+     
+  <update id="updateEmimg1" parameterClass="employee" >
+   update employee set emimg1=#emimg1# where Eid=#Eid#
+ </update>
+ <update id="updateEmimg2" parameterClass="employee" >
+   update employee set emimg2=#emimg1# where Eid=#Eid#
+ </update>
+ <update id="updateEmimg3" parameterClass="employee" >
+   update employee set emimg3=#emimg1# where Eid=#Eid#
+ </update>
+ <update id="updateEmimg4" parameterClass="employee" >
+   update employee set emimg4=#emimg1# where Eid=#Eid#
+ </update>
+ <update id="updateEmimg5" parameterClass="employee" >
+   update employee set emimg5=#emimg1# where Eid=#Eid#
+ </update>
 </sqlMap>
