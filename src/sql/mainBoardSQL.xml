@@ -2,7 +2,7 @@
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 <sqlMap namespace="mainBoard">
 
-	<typeAlias alias="mainBoard" type="mainBoard.MainBoardVO" />
+	<typeAlias alias="mainBoard" type="mainboard.MainBoardVO" />
 
 		<!-- 리절트 맵 정의 -->
 
