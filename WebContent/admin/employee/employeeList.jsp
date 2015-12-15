@@ -23,6 +23,11 @@
 <td>${dto.dpname }</td>
 </tr>
 </c:forEach>
+<tr>
+<td colspan="4">
+<input type="button" value="등록하기" onClick="window.location='/antman/insertEmployee.do'" />
+</td>
+</tr>
 </table>
 </body>
 </html>
