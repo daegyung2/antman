@@ -16,6 +16,10 @@
 </tr>
 <form action="/antman/insertEmployeePro.do" method="post" >
 <tr>
+<td>사번</td>
+<td>${Eid }</td>
+</tr>
+<tr>
 <td>
 이름<font color="red">*</font>
 </td>
