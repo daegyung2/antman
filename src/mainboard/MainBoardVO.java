@@ -12,7 +12,7 @@ public class MainBoardVO {
 		return MBid;
 	}
 	public void setMBid(int mBid) {
-		MBid = mBid;
+		this.MBid = mBid;
 	}
 	public String getSubject() {
 		return subject;

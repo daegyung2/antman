@@ -25,6 +25,7 @@ public class PraiseWriteAction {
 	}
 	@RequestMapping("/praisepro.do")
 	public String writepro(PraiseVO dto){
+		
 		sqlMapClient.insert("praise.insertpraise", dto);		
 		
 		return "praiseboard.do";
@@ -33,9 +34,9 @@ public class PraiseWriteAction {
 	
 	@RequestMapping("/praisecontent.do")
 	public String VIEW(HttpServletRequest request,PraiseVO dto)throws Exception{
-		
+		int pid =(int)dto.getPid();
 	dto = (PraiseVO)sqlMapClient.queryForObject("praise.viewpraise",dto.getPid());
-	
+		request.setAttribute("pid",pid);
 		request.setAttribute( "dto",dto );
 		return "/praiseboard/praisecontent.jsp";
 	}

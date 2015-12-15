@@ -31,7 +31,7 @@ public class MainBoardBean {
 		public String listAction (MainBoardVO dto, HttpServletRequest request, String pageNum){ 
 		 
 			
-			List list = sqlMapClient.queryForList("mainBoard.selectAll",dto);
+			list = sqlMapClient.queryForList("mainBoard.selectAll",dto);
 			System.out.println(list.size());
 			
 			
