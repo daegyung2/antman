@@ -18,26 +18,31 @@ public class TreatmentTeamSearch {
 
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
+	private String no;
 	
 	@RequestMapping("/treatmentsearch.do")
 	public String treatmentsearch(HttpServletRequest request,SearchTreatmentTeamVO tmdto){
-		System.out.println(tmdto.getDepart_id());
-		 List tmslist = sqlMapClient.queryForList("treatment.searchtreatmentteam", tmdto.getDepart_id());
-		  SearchTreatmentTeamVO tmsdto = (SearchTreatmentTeamVO)sqlMapClient.queryForObject("treatment.searchname", tmdto.getDepart_id());
-		 System.out.println(tmsdto);
+		  String dpname = (String)tmdto.getDpname();
+		
+		
+		 List tmslist = sqlMapClient.queryForList("treatment.searchtreatmentteam", tmdto.getDpname());
+		  SearchTreatmentTeamVO tmsdto = (SearchTreatmentTeamVO)sqlMapClient.queryForObject("treatment.searchname", tmdto.getDpname());
 		 
 		 
-		 
+		 if(tmslist.size() == 0){
+			 dpname = no;
+		 }
+		 System.out.println(dpname);
+		 request.setAttribute("dpname",dpname);
 		  request.setAttribute("tmsdto", tmsdto);
-		  String depart_id = (String)tmdto.getDepart_id();
-		  request.setAttribute("depart_id",depart_id);
+
 		 
 		return "/treatmentsearchlist.do";
 	}
 	@ModelAttribute("tmslist")
 	public List test(SearchTreatmentTeamVO tmdto) {
 		
-		return sqlMapClient.queryForList("treatment.searchtreatmentteam", tmdto.getDepart_id());
+		return sqlMapClient.queryForList("treatment.searchtreatmentteam", tmdto.getDpname());
 		
 	}
 
