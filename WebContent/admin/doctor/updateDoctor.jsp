@@ -28,10 +28,10 @@
 <td ><input type="text" size="20" maxlength="30" name="major" value="${dto.major }"/></td>
 </tr>
 <tr>
-<td>부서 아이디(선택)</td>
-<td ><select name="depart_id">
+<td>소속 부서(선택)</td>
+<td ><select name="dpname">
 <c:forEach var="dto" items="${list}" >
-<option value="${dto.depart_id }">${dto.dpname}</option>
+<option value="${dto.dpname }">${dto.dpname}</option>
 </c:forEach>
 </select>
 

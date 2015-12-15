@@ -13,7 +13,7 @@
 <tr>
 <td align="center">진료과 이름</td>
 <td align="center">진료과 이니셜</td>
-<td align="center">진료과 정보1</td>
+<td align="center">진료과 정보</td>
 <td align="center">비고</td>
 </tr>
 
@@ -26,6 +26,7 @@
 <td width="300">
 <input type="button" value="수정하기" onClick="window.location='/antman/updateDepartment.do?depart_id=${dto.depart_id}'"/>
 <input type="button" value="내용보기" onClick="window.location='/antman/departmentContent.do?depart_id=${dto.depart_id}'" />
+<input type="button" value="삭제하기" onClick="window.location='/antman/deleteDepart.do?depart_id=${dto.depart_id}'" />
 </td>
 </tr>
 </c:forEach>

@@ -23,7 +23,7 @@ public class InsertDoctorProBean {
 	private List fileList;
 	
 	@RequestMapping("/insertDoctorPro.do")
-	 public String fileUpload(MultipartHttpServletRequest request,@ModelAttribute DoctorDTO dto,HttpServletRequest request2) throws IllegalStateException, IOException{
+	 public String fileUpload(MultipartHttpServletRequest request,DoctorDTO dto,HttpServletRequest request2) throws IllegalStateException, IOException{
 		   sqlMapClient.insert("doctor.insertDr", dto);
 		   fileList = request.getFiles("drimg");
 		   for(int i = 0; i < 5 ; i++){
@@ -32,10 +32,10 @@ public class InsertDoctorProBean {
 		   String name = file.getOriginalFilename();
 		   File sf = new File("H://antman//WebContent//image//"+name);
 		   file.transferTo(sf);
-		   dto.setDrimg1("/antman/WebContent/image/"+name);
+		   dto.setDrimg1("/antman/image/"+name);
 		   sqlMapClient.update("doctor.updateDrimg"+(i+1),dto);
 		   }else{
-		   dto.setDrimg1("");
+		   dto.setDrimg1("/antman/image/noimage.jpg");
 		   sqlMapClient.update("doctor.updateDrimg"+(i+1),dto);
 		   }
 		   }

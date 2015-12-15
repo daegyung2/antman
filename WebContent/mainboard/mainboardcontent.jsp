@@ -58,8 +58,8 @@
 <br/>
 <HR width=100% >
 <br/>
-  <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/mainboardwrite.do'">등록하기</button>
- <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/mainboard.do'">목록으로</button></center>
+  <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/mainboardwrite.do'">등록하기</button>
+ <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/mainboard.do'">목록으로</button></center>
   </center>
 </body>
 </html>

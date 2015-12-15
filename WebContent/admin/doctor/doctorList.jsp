@@ -23,7 +23,7 @@
 <td width="100">${dto.drname }</td>
 <td width="200">${dto.dreg_num }</td>
 <td width="150">${dto.major }</td>
-<td width="150">${dto.depart_id }&nbsp;${depart.dpname}</td>
+<td width="150">${dto.dpname }</td>
 <td width="300">
 <input type="button" value="수정" onClick="javascript:window.location='/antman/updateDoctor.do?drId=${dto.drId}'" />
 <input type="button" value="내용보기"  onClick="javascript:window.location='/antman/doctorContent.do?drId=${dto.drId}'" />

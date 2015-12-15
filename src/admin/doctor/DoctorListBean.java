@@ -21,9 +21,8 @@ public class DoctorListBean {
 
    
    @RequestMapping("/doctorList.do")
-   public String doctorList(HttpServletRequest request,@ModelAttribute DoctorDTO dto, DepartmentDTO depart ){
+   public String doctorList(HttpServletRequest request,DoctorDTO dto, DepartmentDTO depart ){
 	   list = sqlMapClient.queryForList("doctor.selectList",dto);
-	   depart = (DepartmentDTO)sqlMapClient.queryForObject("depart.selectOne",dto.getDepart_id());
 	   return "/admin/doctor/doctorList.jsp";
    }
    
@@ -32,8 +31,5 @@ public class DoctorListBean {
 	   return sqlMapClient.queryForList("doctor.selectList",dto);
    }
    
-   @ModelAttribute("depart")
-   public DepartmentDTO getDepart(DoctorDTO dto,DepartmentDTO depart){
-	   return (DepartmentDTO)sqlMapClient.queryForObject("depart.selectOne",dto.getDepart_id());
-   }
+   
 }

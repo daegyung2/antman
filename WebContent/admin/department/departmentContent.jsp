@@ -60,6 +60,9 @@
 <tr>
 <td colspan="2">
 <input type="button" value="진료과 게시판" onClick="window.location='/antman/departmentList.do'" />
+<input type="button" value="수정하기" onClick="window.location='/antman/updateDepart.do?depart_id=${dto.depart_id}'" />
+<input type="button" value="삭제하기" onClick="window.location='/antman/deleteDepart.do?depart_id=${dto.depart_id}'" />
+
 </td>
 </tr>
 </table>

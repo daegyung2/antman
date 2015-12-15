@@ -1,5 +1,7 @@
 package admin.doctor;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
@@ -13,7 +15,7 @@ public class DeleteDoctorBean {
 	private SqlMapClientTemplate sqlMapClient;
 
 	@RequestMapping("/deleteDoctor.do")
-	public String deleteDoctor(DoctorDTO dto){
+	public String deleteDoctor(DoctorDTO dto,HttpServletRequest request){
 		sqlMapClient.delete("doctor.deleteDr",dto.getDrId());
 		return "doctorList.do";
 	}

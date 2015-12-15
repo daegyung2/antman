@@ -4,7 +4,7 @@ create table doctor(  //의사 정보 테이블
   drname varchar2(200),                     //의사 성명
   major varchar2(4000),                   //전공의
   exarea varchar2(4000),                  //전문분야
-  depart_id varchar2(500),                //부서 
+  depart_id number,                //부서 
   degree1 varchar2(4000),                 //학위 1
   degree2 varchar2(4000),                 //학위 2
   degree3 varchar2(4000),                 //학위 3
