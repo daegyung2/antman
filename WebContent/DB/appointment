@@ -1,10 +1,10 @@
 create table appointment(  //예약 DB
-   Aid varchar2(500) primary key not null,  //예약 번호 
+   Aid number(500) primary key not null,  //예약 번호 
    id varchar2(200),                        //예약한 아이디
    name varchar2(200),                      //이름
    jumin1 number not null,                  //주민 번호1
    jumin2 number not null,                  //주민 번호2
-   Did varchar2(500) not null,              //예약한 의사 번호 
+   drname varchar2(500) not null,              //예약한 의사 이름 
    Adate date default sysdate,              //예약 날짜 
    symptom varchar2(4000) not null,         // 증상
    Odecease varchar2(400),                  // 기존에 가지고 있는 질병 

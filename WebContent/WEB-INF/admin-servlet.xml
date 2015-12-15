@@ -19,7 +19,7 @@
     <bean id="departDTO" class="admin.bean.DepartmentDTO" />
     <context:component-scan base-package="treatmentteamVO" />
     <context:component-scan base-package="admin.employee" />
-
+	<context:component-scan base-package="reservation" />
        
        
     <bean id="multipartResolver" 

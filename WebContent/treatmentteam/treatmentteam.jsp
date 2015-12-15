@@ -439,7 +439,7 @@ body{  }
                                         <c:forEach var="dto" items="${list}">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/treatmentsearch.do?depart_id=${dto.depart_id}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
           							    </tr>         
           								</table>
          							    </c:forEach>
@@ -448,7 +448,7 @@ body{  }
                                         <c:forEach var="dto" items="${lista}">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/treatmentsearch.do?depart_id=${dto.depart_id}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
           							    </tr>         
           								</table>
          							    </c:forEach>
@@ -458,7 +458,7 @@ body{  }
                                         <c:forEach var="dto" items="${listb}">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/treatmentsearch.do?depart_id=${dto.depart_id}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
           							    </tr>         
           								</table>
          							    </c:forEach>
@@ -468,7 +468,7 @@ body{  }
                                          <c:forEach var="dto" items="${listc}">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/treatmentsearch.do?depart_id=${dto.depart_id}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
           							    </tr>         
           								</table>
          							    </c:forEach>
@@ -701,7 +701,7 @@ $(".btn-pref .btn").click(function () {
 
 
 
-<c:if test="${depart_id != null}">
+<c:if test="${dpname != null}">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -753,4 +753,5 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 
 </c:if>
 
-<HR width=100% size=3 color=aqua align=left>
+<c:if test="${dpname == no}">
+검색결과가 없습니다.</c:if>
