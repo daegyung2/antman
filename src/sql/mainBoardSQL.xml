@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="mainBoard">
+
+	<typeAlias alias="mainBoard" type="mainBoard.MainBoardVO" />
+
+		<!-- 리절트 맵 정의 -->
+
+	<resultMap id="boardRes" class="mainBoard">
+		<result property="MBid" column="MBid"/>
+		<result property="subject" column="subject"/>
+		<result property="content" column="content"/>
+		<result property="reg_date" column="reg_date"/>
+	</resultMap>
+	
+		
+		<!-- select 쿼리문 정의 -->
+		<select id="selectAll" resultMap="boardRes">
+		select MBid,subject,content,reg_date from mainBoard order by MBid desc
+		</select>
+		
+			<select id="viewmainboard" resultMap="boardRes" parameterClass="int">
+		
+      		select MBid,subject,content,reg_date from mainBoard where MBid = #MBid# 
+		</select>
+		
+		
+
+			<insert id="insertmainboard" parameterClass="mainBoard">
+		
+      		INSERT INTO mainBoard (MBid,
+                         		subject,
+                         		content,
+                         		reg_date
+                         )
+                	 VALUES (mainBoard_SEQ.NEXTVAL,
+                          	#subject#,
+                         	#content#,
+                         	sysdate
+                         )
+		</insert>
+
+</sqlMap>
