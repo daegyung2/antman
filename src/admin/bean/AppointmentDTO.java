@@ -1,8 +1,6 @@
-package reservation;
-
+package admin.bean;
 import java.sql.Date;
-
-public class ReservationVO {
+public class AppointmentDTO {
 
 	String aid;
 	String id;
@@ -155,7 +153,6 @@ public class ReservationVO {
 		this.minute = minute;
 	}
 
-	
 	
 	
 }

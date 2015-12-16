@@ -33,7 +33,7 @@
 로그인 후 본인의 진료예약 및 조회를<br/>
 하실 수 있습니다.
 
-<input type="button" value="본인 예약하기" onclick="location.href='reservationform.do'"/>
+<input type="button" value="본인 예약하기" onclick="location.href='appointmentform.do'"/>
 <input type="button" value="본인 예약 조회하기"/>
 </td>
 <td width="300">

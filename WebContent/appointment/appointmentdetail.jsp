@@ -55,7 +55,7 @@ body{  }
                                         <c:forEach var="dto" items="${list}">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/detailreservationsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${dto.dpname}</a></td>
           							    </tr>         
           								</table>
          							    </c:forEach>
@@ -64,7 +64,7 @@ body{  }
                                         <c:forEach var="dto" items="${lista}">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/detailreservationsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${dto.dpname}</a></td>
           							    </tr>         
           								</table>
          							    </c:forEach>
@@ -74,7 +74,7 @@ body{  }
                                         <c:forEach var="dto" items="${listb}">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/detailreservationsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${dto.dpname}</a></td>
           							    </tr>         
           								</table>
          							    </c:forEach>
@@ -84,7 +84,7 @@ body{  }
                                          <c:forEach var="dto" items="${listc}">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/detailreservationsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${dto.dpname}</a></td>
           							    </tr>         
           								</table>
          							    </c:forEach>
@@ -142,8 +142,13 @@ font-family:"³ª´®°íµñ","nanum gothic", sans-serif;
                     <c:forEach var="tmdto" items="${tmslist}">
                         <tr>
                         	<td height="50"><img src="treatmentteam/dcimg/youngsik.jpg"></td>
-                            <td><h3><a href="/antman/detailreservationsearch.do?drname=${tmdto.drname}&dpname=${tmdto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${tmdto.drname}</a></h3><br/>
-                             ${tmdto.dpname}</td>
+                            <td class="shit"><h3 ><a href="/antman/appointmentdetailsearch.do?drname=${tmdto.drname}&dpname=${tmdto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${tmdto.drname}</a></h3><br/>
+                             Áø·á°ú : ${tmdto.dpname}<br/>
+                             <br/>
+                             
+                             Àü¹®ºÐ¾ß  <h6>${tmdto.exarea}</h6>
+                             
+                             </td>
                             
                         </tr>
                         </c:forEach>
@@ -158,7 +163,7 @@ font-family:"³ª´®°íµñ","nanum gothic", sans-serif;
 
 <br/>
 <br/>
-<form action="/antman/detailreservationpro.do" method="post">
+<form action="/antman/appointmentdetailpro.do" method="post">
 <table width="800" border="1">
 <tr>
 <td width="800" colspan="2">ÀÇ»çÀÌ¸§<input type="text" name="drname" value="${drname }"/></td></tr>

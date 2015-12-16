@@ -16,7 +16,7 @@
 
 <h4>진료받으실 분의 주민등록번호(외국인등록번호) 또는 병원등록번호 중 하나의 정보를 입력해 주세요.<br/>
 보건복지부 고시에 의거 가족이 아닌 제3자에 의한 대리진료가 제한됨을 알려드립니다.</h4>
-<form action="detailreservation.do" method="post">
+<form action="appointmentdetail.do" method="post">
 <input type="text" name="name" value="송선호"/></br>
 <input type="text" name="jumin1"/>-<input type="text" name="jumin2"/><br/>
 

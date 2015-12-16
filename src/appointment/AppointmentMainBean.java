@@ -1,36 +1,29 @@
-package reservation;
-
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
+package appointment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
-
-
 @Controller
-public class ReservationMain {
-	
+public class AppointmentMainBean {
+
 	
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 
-	@RequestMapping("/reservationmain.do")
+	@RequestMapping("/appointmentmain.do")
 	public String reservationmain(){
 
-		return "/reservation/reservationmain.jsp";
+		return "/appointment/appointmentmain.jsp";
 	}
 
-	@RequestMapping("/reservationform.do")
+	@RequestMapping("/appointmentform.do")
 	public String reservationform(){
 
-		return "/reservation/reservationform.jsp";
+		return "/appointment/appointmentform.jsp";
 	}
 	
 
-
+	
 }
