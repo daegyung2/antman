@@ -29,16 +29,16 @@ public class InsertEmployeeBean {
 		Eid = 10000;
 		emdto.setEid(Eid);
 		}else{
-	    Eid = (int) sqlMapClient.queryForObject("select.max",emdto) + 1;
+	    Eid = (int) sqlMapClient.queryForObject("employee.max",emdto) + 1;
 	    emdto.setEid(Eid);
 		}
 		
 		return "/admin/employee/insertEmployee.jsp";
 	}
     
-    @ModelAttribute("Eid")
-    public int getEid(){
-    	return Eid;
+    @ModelAttribute("emdto")
+    public EmployeeDTO getEid(EmployeeDTO emdto){
+    	return emdto;
     }
     
     @ModelAttribute("list")
