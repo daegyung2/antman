@@ -11,4 +11,5 @@
      <sqlMap resource="/sql/faqSQL.xml" />
      <sqlMap resource="/sql/mainBoardSQL.xml" />
      <sqlMap resource="/sql/appointmentSQL.xml" />
+     <sqlMap resource="/sql/p_departmentSQL.xml" /> 
 </sqlMapConfig>
