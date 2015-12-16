@@ -42,6 +42,10 @@
    select * from DOCTOR where drId=#drId#
  </select>
  
+ <select id="max" resultClass="int">
+   select max(drId) from DOCTOR 
+ </select>
+ 
  <update id="updateDrimg1" parameterClass="doctor" >
    update DOCTOR set drimg1=#drimg1# where drId=#drId#
  </update>
