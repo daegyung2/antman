@@ -67,4 +67,4 @@
 </body>
 </html>
 
-
+<input type="hidden" name="pid" value="${pid}"/>

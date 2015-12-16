@@ -1,8 +1,8 @@
-package mainboard;
+package admin.bean;
 
 import java.sql.Date;
 
-public class MainBoardVO {
+public class MainBoardDTO {
 
 	private int MBid;
 	private String subject;
@@ -12,7 +12,7 @@ public class MainBoardVO {
 		return MBid;
 	}
 	public void setMBid(int mBid) {
-		MBid = mBid;
+		this.MBid = mBid;
 	}
 	public String getSubject() {
 		return subject;

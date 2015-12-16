@@ -4,19 +4,39 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>홈페이지이용문의 | 고객서비스 | 웹서비스</title>
+<title>콘텐츠제공안내 | 고객서비스 | 웹서비스</title>
 
 <style type="text/css">
 	body{margin:0px; padding:0px;}
 	a{ text-decoration:none; }
 	#container{ width:1100px; height:1500px; margin:0 auto; position:relative;}
 	#container .main{ width:1000px; height:1400px; margin-left:50px; position:relative}
-	#container .main #main_top{ width:970px; height:70px; margin-top:35px; font-size:15px; line-height:1.8;}
-	#container .main #btn{ width:150px; height:30px; margin-top:-38px; margin-right:20px; background:#5586EB; font-size:14px; position:relative; float:right;}
-	#container .main #btn a{ width:140px; height:20px; padding-left:9px; padding-top:9px;}
 	#container .main #title_1{font-size:30px; left:0px; position:relative; margin-top:30px;}
+	#container .main #main_top{ width:970px; height:70px; margin-top:25px; font-size:15px; line-height:1.8;}
+	#container .main .con_table{width:950px; height:280px; margin-top:10px;}
+	#container .main .con_table #title_2{font-size:22px; color:#5586EB; position:relative;  }
+	#container .main .con_table #table_sub{margin-top:15px;}
+	#container .main .con_table #table_sub table{border:1px solid #BDBDBD; border-top:2px solid #5586EB;  border-collapse:collapse;}
+	#container .main .con_table #table_sub th{color:#5586EB; height:30px;}
+	#container .main .con_table #table_sub td{text-align:center; height:50px; }
+	#container .main .con_table #table_sub td.textinput{ text-align:left; padding-left:15px; }
+	#container .main .con_table #table_sub #TVbtn{width:120px; height:20px; margin-left:13px; border:1px solid #BDBDBD;}
+	#container .main .con_table #table_sub #TVbtn a{width:110px; height:20px; padding-top:10px; padding-left:5px; color:#121212; font-size:12px;}
+	#container .main .con_table #table_sub #medinfobtn{width:120px; height:20px; margin-left:13px; border:1px solid #BDBDBD;}
+	#container .main .con_table #table_sub #medinfobtn a{width:110px; height:20px; padding-top:10px; padding-left:5px; color:#121212; font-size:12px;}
+	#container .main .con_table #table_sub #healthbtn{width:120px; height:20px; margin-left:13px; margin-top:5px; border:1px solid #BDBDBD;} 
+	#container .main .con_table #table_sub #healthbtn a{width:110px; height:20px; padding-top:10px; padding-left:5px; color:#121212; font-size:12px;}
+	#container .main .con_img{width:950px; height:200px; margin-top:10px;}
+	#container .main .con_img #title_3{font-size:22px; color:#5586EB; position:relative;  }
+	#container .main .con_img #img{width:950px; height:180px; border:1px solid #BDBDBD;  }
+	#container .main .con_img p{ font-size:12px; text-align:right; margin-top:5px;}
+	#container .main .con_last{width:950px; height:150px; margin-top:30px;}
+	#container .main .con_last #title_4{font-size:22px; color:#5586EB; position:relative;  }
+	#container .main .con_last #title_5{font-size:20px; position:relative; margin-top:5px;}
+	#container .main .con_last #title_6{position:relative; margin-top:3px;}
+	
+	#container .main .content{width:950px; height:280px; border:1px solid #CFCFCF; background:rgba(233,233,233,0.65); margin-top:0px;}
 	#container .main .content #title_2{font-size:18px; position:relative; margin-top:15px; margin-left:18px;}
-	#container .main .content{width:950px; height:280px; border:1px solid #CFCFCF; background:rgba(233,233,233,0.65); margin-top:10px;}
 	#container .main .content #main_text{width:880px; height:135px; font-size:14px; line-height:1.8em; padding:10px; overflow:auto; 
 		text-align:justify; margin-top:20px; margin-left:25px; background:#FFFFFF; border:1px solid #CFCFCF;}
 	#container .main .content #radio{width:880px; height:20px; margin-top:20px; margin-left:25px;}
@@ -35,11 +55,11 @@
 	#container .main .writeform .sub td.phoneinput input { width:79px;}
 	#container .main .writeform .sub td.emailinput select,
 	#container .main .writeform .sub td.emailinput input { margin-left:10px; width:152px;}
-	#container .main .writeform .sub td.titletd input { margin-left:10px;}
+	#container .main .writeform .sub td.titletd input{ margin-left:10px;}
 	#container .main .writeform .sub td.titletd .infotxt { margin-left:10px; margin-top:-30px;}
 	#container .main .writeform .sub td.titletd textarea { margin-left:10px;}
-	#container .main .writeform #sendbtn{ width:70px; height:30px; margin-top:20px; margin-left:450px; background:#5586EB; position:relative; float:left;}
-	#container .main .writeform #sendbtn a{ width:60px; height:30px; padding-left:10px; color:#FFFFFF;}
+	#container .main .writeform #sendbtn{ width:80px; height:30px; margin-top:20px; margin-left:440px; background:#5586EB; position:relative; float:left;}
+	#container .main .writeform #sendbtn a{ width:70px; height:30px; padding-left:10px; color:#FFFFFF;}
 	#container .main .writeform #cancelbtn{ width:70px; height:30px; margin-top:20px; margin-left:530px; position:relative; border:1px solid #BDBDBD;}
 	#container .main .writeform #cancelbtn a{ width:60px; height:30px; padding-top:10px; padding-left:18px; color:#121212;}
 </style>
@@ -48,13 +68,63 @@
 <body>
 <div id="container">	
 	<div class="main">
-		<div id="title_1"><b>홈페이지이용문의</b></div>
+		<div id="title_1"><b>콘텐츠제공안내</b></div>
 		<div id="main_top">	
 		<font>
-		보내주신 문의사항 및 콘텐츠 제공 요청은 담당자가 확인 후 빠른 시간 내에 답변을 드리겠습니다. <br/>
-		서울아산병원 이용 시 불편사항 및 건의, 칭찬 등에 대해서는 ‘고객의 소리’ 메뉴를 이용해 주시기 바랍니다.<br/>
+		서울아산병원은 신뢰도 있는 건강정보 콘텐츠를 무상으로 제공하여 더 건강한 사회 만들기에 도움이 되고자 합니다. <br/>
+		단, 상업적 용도로 사용하거나 재가공해 사용할 수 없습니다.
 		</font>
-		<div id="btn"><a href="#"><font color="#FFFFFF">고객의소리 바로가기</font></a></div>
+		</div>
+		
+		<div class="con_table">
+			<div id="title_2"><b>제공하는 콘텐츠</b></div>
+			<div id="table_sub">
+				<table cellpadding="0" cellspacing="0" border="1" width="950px" height="230px;" class="tablelayout" >
+				<col width="180px;" />
+				<col width="620px;" />
+				<col width="150px;" />
+				<tbody>
+					<tr>
+						<th scope="col"><label for="name">구분</label></th>
+						<th scope="col">내용</th>
+						<th scope="col">바로가기</th>
+					</tr>
+					<tr>
+						<th scope="row"><label for="video_con">동영상 콘텐츠</label></th>
+						<td class="textinput">
+						건강에 관한 기초 정보, 인체에 대한 설명, 병원에서 시행하는 검사의 원리를 <br/>
+						일반인의 눈높이에 맞춰 설명하는 동영상입니다. <br/>
+						(건강플러스, 내 몸 둘러보기, 영상으로 보는 검사 등)
+						</td>
+						<td class="div_input">
+						<div id="TVbtn"><a href="#" class="TV">건강TV</a></div>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="text_con">텍스트 콘텐츠</label></th>
+						<td class="textinput">
+						질환정보와 식단 정보, 의료진의 이야기 등 다양한 텍스트입니다. <br/>
+						(질환백과, 식사요법, 메디컬칼럼, 생활속건강 등)
+						</td>
+						<td class="div_input">
+						<div id="medinfobtn"><a href="#" class="medinfo">의료정보</a></div>
+						<div id="healthbtn"><a href="#" class="health">건강이야기</a></div>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+			</div>
+		</div>
+		<div class="con_img">
+			<div id="title_3"><b>콘텐츠 제공 절차</b></div>
+			<div id="img">img</div>
+			<p>※ 콘텐츠 제공 형태 : 홈페이지 링크 또는 원본파일 전달</p>
+		</div>
+		<div class="con_last">
+			<div id="title_4"><b>콘텐츠 제공 신청</b></div>
+			<div id="title_5"><b>전화 문의</b></div>
+			<div id="title_6">서울아산병원 e-med팀 장철호 주임(T.02-3010-5412)</div><br/>
+			<div id="title_5"><b>이메일 문의</b></div>
 		</div>
 		
 		<div class="content">
@@ -91,7 +161,7 @@
 							<option value='010'>010</option><option value='011'>011</option>
 							<option value='016'>016</option><option value='017'>017</option>
 							<option value='018'>018</option><option value='019'>019</option></select>
- -
+ 							-
 							<input type="text" class="inputtext" name="phone2" id="phone2" maxlength="4" value="" /> -
 							<input type="text" class="inputtext" name="phone2" id="phone2" maxlength="4" value="" />
 						</td>
@@ -127,10 +197,12 @@
 					</tbody>
 					</table>
 			</div>
-				<div id="sendbtn"><a href="#" class="send">보내기</a></div>
+				<div id="sendbtn"><a href="#" class="send">신청하기</a></div>
 				<div id="cancelbtn"><a href="#" class="cancel">취소</a></div>
 		</div>
 	</div>
+	
+	
 </div>
 </body>
 </html>
