@@ -1,8 +1,8 @@
-package mainboard;
+package admin.bean;
 
 import java.sql.Date;
 
-public class MainBoardVO {
+public class MainBoardDTO {
 
 	private int MBid;
 	private String subject;
