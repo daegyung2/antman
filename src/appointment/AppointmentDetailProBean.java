@@ -1,5 +1,7 @@
 package appointment;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +29,11 @@ public class AppointmentDetailProBean {
 			dto.setAdate(adate);
 			System.out.println(adate);
 		
+			
 			sqlMapClient.insert("appointment.appointmentinsert",dto);
+			
+		
+					
 			return "/appointment/appointmentdetailpro.jsp";
 		}
 	}

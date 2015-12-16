@@ -5,10 +5,12 @@ create table appointment(  //예약 DB
    jumin1 number not null,                  //주민 번호1
    jumin2 number not null,                  //주민 번호2
    drname varchar2(500) not null,              //예약한 의사 이름 
+   dpname varchar2(500),
    Adate date default sysdate,              //예약 날짜 
    symptom varchar2(4000) not null,         // 증상
    Odecease varchar2(400),                  // 기존에 가지고 있는 질병 
    Odrug varchar2(4000),                    // 기존에 먹고 있는 약 
    descripton varchar2(4000),               //처방전
    reg_num varchar2(500) not null        // 병원 등록 번호 
+   
    ); 

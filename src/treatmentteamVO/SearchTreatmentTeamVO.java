@@ -1,6 +1,9 @@
 package treatmentteamVO;
 
+import java.sql.Date;
+
 public class SearchTreatmentTeamVO {
+	private int aid;
     private String did;
     private String dreg_num;
     private String drname;
@@ -34,6 +37,7 @@ public class SearchTreatmentTeamVO {
 	private String d_info8;
 	private String d_info9;
 	private String d_info10;
+	private Date adate;
 	
 	
 	
@@ -236,6 +240,12 @@ public class SearchTreatmentTeamVO {
 	}
 	public void setExarea(String exarea) {
 		this.exarea = exarea;
+	}
+	public int getAid() {
+		return aid;
+	}
+	public void setAid(int aid) {
+		this.aid = aid;
 	}
 	
 	

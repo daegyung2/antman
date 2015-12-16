@@ -167,8 +167,9 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 <table width="800" border="1">
 <tr>
 <td width="800" colspan="2">의사이름<input type="text" name="drname" value="${drname }"/></td></tr>
-<td width="800" colspan="2">주민1<input type="text" name="jumin1" value="${jumin1 }"/></td></tr>
-<td width="800" colspan="2">주민2<input type="text" name="jumin2" value="${jumin2 }"/></td></tr>
+<td width="800" colspan="2">진료과명<input type="text" name="dpname" value="${dpname }"/></td></tr>
+<td width="800" colspan="2">주민1<input type="hidden" name="jumin1" value="${jumin1 }"/></td></tr>
+<td width="800" colspan="2">주민2<input type="hidden" name="jumin2" value="${jumin2 }"/></td></tr>
 <td width="800" colspan="2">예약자성함<input type="text" name="name" value="${name }"/></td></tr>
 <td width="300">년도</td><td width="500"><input type="text" name="year"/></td></tr>
 <td width="300">월</td><td width="500"><input type="text" name="month"/></td></tr>
