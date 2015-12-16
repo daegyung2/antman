@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import faq.faqDTO;
+import admin.bean.FaqDTO;
 
 @Controller
 public class FaqDeleteBean {
@@ -17,7 +17,7 @@ public class FaqDeleteBean {
 		
 	
 	@RequestMapping("/faqDelete.do")
-	public String content(faqDTO dto,HttpServletRequest request){
+	public String content(FaqDTO dto,HttpServletRequest request){
 		sqlMapClient.queryForObject("faq.selectOne",dto.getFid());
 		return "/faq/faqDelete.jsp";
 	}
