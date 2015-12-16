@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="appointment">
+ <typeAlias alias="appoint" type="admin.bean.AppointmentDTO" />
+
+<insert id="appointmentinsert"  parameterClass="appoint">
+  INSERT INTO appointment(aid,name,jumin1,jumin2,drname,adate) values(praise_SEQ.NEXTVAL,#name#,#jumin1#,#jumin2#,#drname#,to_date(#adate#,'YYYY-MM-DD HH24:MI'))</insert>
+
+</sqlMap>

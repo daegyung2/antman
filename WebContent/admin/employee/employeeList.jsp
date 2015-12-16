@@ -8,12 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
+<table width="900" border="1" cellpadding="0" cellspacing="0">
 <tr>
-<td>사번</td>
-<td>이름</td>
-<td>전공</td>
-<td>부서명</td>
+<td width="150">사번</td>
+<td width="150">이름</td>
+<td width="150">전공</td>
+<td width="150">부서명</td>
+<td width="200">비고</td>
 </tr>
 <c:forEach var="dto" items="${list }">
 <tr>
@@ -21,10 +22,14 @@
 <td>${dto.name }</td>
 <td>${dto.major }</td>
 <td>${dto.dpname }</td>
+<td>
+<input type="button" value="수정하기" onClick="window.location='/antman/updateEmployee.do?Eid=${dto.eid }'" />
+<input type="button" value="삭제" onClick="window.location='/antman/deleteEmployee.do?Eid=${dto.eid}'" />
+</td>
 </tr>
 </c:forEach>
 <tr>
-<td colspan="4">
+<td colspan="5">
 <input type="button" value="등록하기" onClick="window.location='/antman/insertEmployee.do'" />
 </td>
 </tr>

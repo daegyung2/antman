@@ -11,7 +11,7 @@
 <table border="1" cellpadding="0" cellspacing="0" width="700">
 <tr>
 <td width="350" height="150" rowspan="3" align="center">
-<img src="${dto.drimg1 }" />
+<img src="${dto.drimg1 }" width="150" height="150"/>
 </td>
 <td height="50">ΌΊΈν: ${dto.drname }</td>
 </tr>

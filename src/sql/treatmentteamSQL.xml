@@ -44,15 +44,15 @@
 		<!-- 리절트 맵 정의 -->
 
 	<resultMap id="searchtreat" class="treatmentsearch">
-	<result property="depart_id" column="depart_id"/>
+	
 	<result property="drname" column="drname"/>
 	<result property="dpname" column="dpname"/>
+	<result property="exarea" column="exarea"/>
 	</resultMap>
 	
 	
 	<select id="searchtreatmentteam" resultMap="searchtreat">
-		select*from(select department.depart_id,department.dpname,doctor.drname from department join doctor on department.depart_id = doctor.depart_id where department.depart_id = #depart_id# )
- 
+		select drname,dpname,exarea from(select department.dpname,doctor.drname,doctor.exarea from department join doctor on department.dpname = doctor.dpname where department.dpname = #dpname#)
 		</select>
 		
 		
@@ -61,7 +61,7 @@
 	</resultMap>
 		
 	<select id ="searchname" resultMap="searchdepartname">
-	select dpname from department where depart_id=#depart_id# 
+	select dpname from department where dpname = #dpname# 
 	</select>
 
 		</sqlMap>

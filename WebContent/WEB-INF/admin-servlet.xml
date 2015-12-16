@@ -22,6 +22,8 @@
     <context:component-scan base-package="mainboard" />
     <context:component-scan base-package="admin.bean" />
 
+	<context:component-scan base-package="appointment" />
+
        
        
     <bean id="multipartResolver" 
