@@ -23,7 +23,7 @@ public class FaqListBean {
 	}
 		
 	@ModelAttribute("dto")
-	public Object returnDTO(faqDTO dto){
+	public Object returnDTO(FaqDTO dto){
 		return sqlMapClient.queryForObject("faq.selectOne",dto.getFid());
 	}
 }
