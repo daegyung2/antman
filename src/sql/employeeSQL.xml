@@ -28,6 +28,18 @@
      select count(*) from EMPLOYEE where Eid=#Eid#
      </select>
      
+     <select id="count" resultClass="int" >
+     select count(*) from EMPLOYEE
+     </select>
+     
+     <select id="max" resultClass="int">
+     select max(Eid) from EMPLOYEE
+     </select>
+     
+     <select id="selectEm" parameterClass="employee" resultMap="employee.dto">
+     select * from EMPLOYEE where Eid=#Eid#
+     </select>
+     
   <update id="updateEmimg1" parameterClass="employee" >
    update employee set emimg1=#emimg1# where Eid=#Eid#
  </update>
@@ -43,4 +55,13 @@
  <update id="updateEmimg5" parameterClass="employee" >
    update employee set emimg5=#emimg1# where Eid=#Eid#
  </update>
+ 
+ <update id="updateAll" parameterClass="employee" >
+   update EMPLOYEE set Eid=#Eid#,name=#name#,major=#major#,dpname=#dpname#,emimg1=#emimg1#,emimg2=#emimg2#,
+   emimg3=#emimg3#,emimg4=#emimg4#,emimg5=#emimg5#,emdescription=#emdescription# where Eid=#Eid#
+ </update>
+ 
+ <delete id="delete" parameterClass="int" >
+   delete from EMPLOYEE where Eid=#Eid#
+ </delete>
 </sqlMap>

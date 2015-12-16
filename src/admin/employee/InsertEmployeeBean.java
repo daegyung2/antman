@@ -22,25 +22,23 @@ public class InsertEmployeeBean {
 	private int Eid;
 	
 	@RequestMapping("/insertEmployee.do")
-	public String insertEmployee(HttpServletRequest request, DepartmentDTO dto,EmployeeDTO emdto){
+	public String insertEmployee(HttpServletRequest request, DepartmentDTO dto,@ModelAttribute EmployeeDTO emdto){
 		list = sqlMapClient.queryForList("depart.selectList",dto);
-		for(int i = 1; i > 0; i++){
-		Eid = (int) (Math.random()*100000 + 100);
-		x = (int) sqlMapClient.queryForObject("employee.eidCheck",Eid);
-        if(x == 0){
-        	emdto.setEid(Eid);
-        	i = -1;
-        }else{
-        	i = 1;
-        }
+		x = (int) sqlMapClient.queryForObject("employee.count",emdto);
+		if(x == 0){
+		Eid = 10000;
+		emdto.setEid(Eid);
+		}else{
+	    Eid = (int) sqlMapClient.queryForObject("employee.max",emdto) + 1;
+	    emdto.setEid(Eid);
 		}
 		
 		return "/admin/employee/insertEmployee.jsp";
 	}
     
-    @ModelAttribute("Eid")
-    public int getEid(EmployeeDTO emdto){
-    	return Eid;
+    @ModelAttribute("emdto")
+    public EmployeeDTO getEid(EmployeeDTO emdto){
+    	return emdto;
     }
     
     @ModelAttribute("list")

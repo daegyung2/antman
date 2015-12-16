@@ -8,7 +8,7 @@
 <title>직원 정보 입력창</title>
 </head>
 <body>
-<table>
+<table border="1" cellpadding="0" cellspacing="0">
 <tr>
 <td colspan="2">
 직원 정보 입력창입니다. *는 필수 입력 대상입니다.
@@ -17,7 +17,7 @@
 <form action="/antman/insertEmployeePro.do" method="post" enctype="multipart/form-data">
 <tr>
 <td>사번</td>
-<td>${Eid }</td>
+<td>${emdto.eid }</td>
 </tr>
 <tr>
 <td>
@@ -60,9 +60,10 @@
 </tr>
 <tr>
 <td colspan="2">
-<input type="hidden" name="Eid" value="${Eid }" />
+<input type="hidden" name="Eid" value="${emdto.eid }" />
 <input type="submit" value="직원 등록" />
 <input type="reset" value="다시입력" />
+<input type="button" value="직원게시판"  onClick="window.location='/antman/employeeList.do'" />
 </td>
 </tr>
 </form>

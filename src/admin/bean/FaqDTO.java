@@ -1,6 +1,6 @@
-package faq;
+package admin.bean;
 
-public class faqDTO {
+public class FaqDTO {
 	private int fid;
 	private String category;
 	private String subject;
