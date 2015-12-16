@@ -28,6 +28,13 @@
 <td ><input type="text" size="20" maxlength="30" name="major" value="${dto.major }"/></td>
 </tr>
 <tr>
+<td>전문 분야(,쉼표로 구분)</td>
+<td>
+<textarea rows="5" cols="50" name="exarea" value="${dto.exarea }" >
+</textarea>
+</td>
+</tr>
+<tr>
 <td>소속 부서(선택)</td>
 <td ><select name="dpname">
 <c:forEach var="dto" items="${list}" >
