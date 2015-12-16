@@ -1,8 +1,8 @@
 create table therapy(    //치료 및 수술 종류 - 건강 정보와 연동하여 사용 예정 
-  Depart_id varchar2(200) not null, //시행 진료과 
+  tid number primary key not null, 치료 번호(시퀀스)
   t_name varchar2(500) not null,   //치료 이름
-  body varchar2(200),             //관련 신체부위 
   kind varchar2(500),             //종류 
   t_inform varchar2(4000),        //상세 내역 
-  hid varchar2(200)              //건강 정보 아이디 
+  hid number,              //건강 정보 아이디 
+
   );
