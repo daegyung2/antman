@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import admin.bean.MainBoardDTO;
+
 @Controller
 public class MainBoardBean {
 	
@@ -28,10 +30,10 @@ public class MainBoardBean {
 		
 
 		@RequestMapping("/mainboard.do")
-		public String listAction (MainBoardVO dto, HttpServletRequest request, String pageNum){ 
+		public String listAction (MainBoardDTO dto, HttpServletRequest request, String pageNum){ 
 		 
 			
-			List list = sqlMapClient.queryForList("mainBoard.selectAll",dto);
+			list = sqlMapClient.queryForList("mainBoard.selectAll",dto);
 			System.out.println(list.size());
 			
 			
@@ -51,7 +53,7 @@ public class MainBoardBean {
 		}
 		
 		@ModelAttribute("list")
-		public List test(MainBoardVO dto) {
+		public List test(MainBoardDTO dto) {
 			return sqlMapClient.queryForList("mainBoard.selectAll",dto);
 			
 		}

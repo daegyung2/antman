@@ -47,12 +47,12 @@
 	
 	<result property="drname" column="drname"/>
 	<result property="dpname" column="dpname"/>
+	<result property="exarea" column="exarea"/>
 	</resultMap>
 	
 	
 	<select id="searchtreatmentteam" resultMap="searchtreat">
-		select drname,dpname from(select department.dpname,doctor.drname from department join doctor on department.dpname = doctor.dpname where department.dpname = #dpname# )
- 
+		select drname,dpname,exarea from(select department.dpname,doctor.drname,doctor.exarea from department join doctor on department.dpname = doctor.dpname where department.dpname = #dpname#)
 		</select>
 		
 		

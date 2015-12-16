@@ -6,6 +6,8 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import admin.bean.MainBoardDTO;
+
 @Controller
 public class MainBoardWriteAction {
 
@@ -17,14 +19,14 @@ public class MainBoardWriteAction {
 		return "/mainboard/mainboardwrite.jsp";
 	}
 	@RequestMapping("/mainboardpro.do")
-	public String writepro(MainBoardVO dto){
+	public String writepro(MainBoardDTO dto){
 		sqlMapClient.insert("mainBoard.insertmainboard",dto);
 		return "mainboard.do";
 	}
 	@RequestMapping("/mainboardcontent.do")
-	public String VIEW(HttpServletRequest request, MainBoardVO dto){
+	public String VIEW(HttpServletRequest request, MainBoardDTO dto){
 		
-		dto = (MainBoardVO)sqlMapClient.queryForObject("mainBoard.viewmainboard", dto.getMBid());
+		dto = (MainBoardDTO)sqlMapClient.queryForObject("mainBoard.viewmainboard", dto.getMBid());
 		request.setAttribute("dto", dto);
 		return "/mainboard/mainboardcontent.jsp";
 	}

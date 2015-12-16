@@ -28,12 +28,14 @@
 <script type="text/javascript" src="http://codemoon.esy.es/code/bootstrap-table.js"></script>   
 
   <div class="container">
-  <h2>칭찬합시다</h2>       
+  <h2>칭찬합시다 </h2>  
+       
   <br/>
   칭찬은 하는 사람과 받는 사람, 모두를 즐겁게 합니다.<br/>
 하나의 칭찬이 또 다른 칭찬을 만들어 갈 수 있도록<br/>
 친절함이 돋보인 직원을 칭찬해 주세요.              <br/>                     
   <br/>
+  
   <form action="/antman/praisewrite.do" method="post">
   <button type="submit" class="btn btn-primary btn-md" onclick=>칭찬하기</button>
  
@@ -67,7 +69,11 @@
   </table>
 
 </div>
+
+
 <script type="text/javascript">
+
+
 
 </script>
 </body>

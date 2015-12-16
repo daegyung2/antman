@@ -5,6 +5,7 @@ public class SearchTreatmentTeamVO {
     private String dreg_num;
     private String drname;
     private String major;
+    private String exarea;
     private String depart_id;
     private String degree1;
     private String degree2;
@@ -33,6 +34,11 @@ public class SearchTreatmentTeamVO {
 	private String d_info8;
 	private String d_info9;
 	private String d_info10;
+	
+	
+	
+	
+	
 	public String getDid() {
 		return did;
 	}
@@ -224,6 +230,12 @@ public class SearchTreatmentTeamVO {
 	}
 	public void setD_info10(String d_info10) {
 		this.d_info10 = d_info10;
+	}
+	public String getExarea() {
+		return exarea;
+	}
+	public void setExarea(String exarea) {
+		this.exarea = exarea;
 	}
 	
 	
