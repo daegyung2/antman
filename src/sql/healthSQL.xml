@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="health">
+ <typeAlias alias="health" type="admin.bean.HealthDTO" />
+  <resultMap id="health.dto" class="health" >
+     <result property="hid" column="hid" />
+     <result property="hname" column="hname" />
+     <result property="body_part" column="body_part"/>
+     <result property="decease" column="decease" />
+     <result property="symptoms" column="symptoms"/>
+     <result property="r_decease" column="r_decease"/>
+     <result property="dpname" column="dpname" />
+     <result property="same_lang" column="same_lang"/>
+     <result property="himg" column="himg" />
+  </resultMap>
+
+
+  <insert id="insertHl" parameterClass="health" >
+   insert into HEALTH (hid,hname,body_part,decease,symptoms,r_decease,dpname,same_lang,himg)
+    values(HEALTH_SEQ.NEXTVAL,#hname#,#body_part#,#decease#,#symptoms#,#r_decease#,#dpname#,#same_lang#,#himg#)
+  </insert>
+
+   <select id="selectList" resultMap="health.dto" >
+    select * from HEALTH order by hid desc
+   </select>
+</sqlMap>

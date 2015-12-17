@@ -36,7 +36,7 @@
 	#container .main .writeform .sub td.emailinput select,
 	#container .main .writeform .sub td.emailinput input { margin-left:10px; width:152px;}
 	#container .main .writeform .sub td.titletd input { margin-left:10px;}
-	#container .main .writeform .sub td.titletd .infotext { margin-left:10px; margin-top:0px;}
+	#container .main .writeform .sub td.titletd .infotxt { margin-left:10px; margin-top:-30px;}
 	#container .main .writeform .sub td.titletd textarea { margin-left:10px;}
 	#container .main .writeform #sendbtn{ width:70px; height:30px; margin-top:20px; margin-left:450px; background:#5586EB; position:relative; float:left;}
 	#container .main .writeform #sendbtn a{ width:60px; height:30px; padding-left:10px; color:#FFFFFF;}
@@ -114,14 +114,14 @@
 					<tr>
 						<th scope="row" class="thtype"><label for="inquirytitle">제목</label></th>
 						<td class="titletd">
-							<input type="text" id="inquirytitle" name="inquirytitle" class="titleinput" maxlength="100" style="width: 740px;"/>
+							<input type="text" id="inquirytitle" name="inquirytitle" class="titleinput" maxlength="100" style="width: 720px;"/>
 						</td>
 					</tr>
 					<tr>
 						<th scope="row" class="thtype"><label for="inquirycontent">내용</label></th>
 						<td class="titletd" style="height: 350px;">
 							<p class="infotxt">* <span id="byteView" >0</span> byte / 최대 4000 byte(한글 2000자, 영문 4000자)</p>
-							<textarea rows="" cols="100" id="inquirycontent" name="inquirycontent" class="conttxtarea" style="width: 740px;"></textarea>
+							<textarea rows="" cols="100" id="inquirycontent" name="inquirycontent" class="conttxtarea" style="width: 720px;"></textarea>
 						</td>
 					</tr>
 					</tbody>

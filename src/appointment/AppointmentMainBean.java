@@ -21,7 +21,7 @@ public class AppointmentMainBean {
 	@RequestMapping("/appointmentform.do")
 	public String reservationform(){
 
-		return "/appointment/appointmentform.jsp";
+		return "/appointment/detail/appointmentform.jsp";
 	}
 	
 

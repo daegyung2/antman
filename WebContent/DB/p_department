@@ -1,0 +1,6 @@
+create table p_department( 
+   p_depart_id number primary key not null,   //부모 진료과 번호, 시퀀스 사용
+   p_dpname varchar2(500) not null    //부모 진료과 이름
+   
+   );
+   

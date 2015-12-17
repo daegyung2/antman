@@ -1,5 +1,6 @@
 create table department(  
    depart_id number primary key not null,
+   p_depart_id number not null,   
    dpname varchar2(500) not null,               
    init varchar2(100) not null,                
    d_info1 varchar2(4000) default null,                       

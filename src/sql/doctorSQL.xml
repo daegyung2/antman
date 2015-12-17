@@ -34,11 +34,11 @@
     ,#drimg1#,#drimg2#,#drimg3#,#drimg4#,#drimg5#)
  </insert>
  
- <select id="selectList" resultMap="doctor.dto" >
+ <select id="selectList" resultClass="doctor"  >
    select * from DOCTOR order by drId desc
  </select>
  
- <select id="selectDr" resultMap="doctor.dto" >
+ <select id="selectDr" resultMap="doctor.dto" parameterClass="doctor">
    select * from DOCTOR where drId=#drId#
  </select>
  

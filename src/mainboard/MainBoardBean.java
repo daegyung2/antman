@@ -19,13 +19,14 @@ public class MainBoardBean {
 		@Autowired
 		private SqlMapClientTemplate sqlMapClient;
 		private List list;
-		
+	
 		private int currentPage= 1;
 		private int totalCount;
 		private int blockCount = 10;
 		private int blockPage = 5;
 		private String pagingHtml;
 		private pagingAction page;
+	
 
 		
 

@@ -2,6 +2,7 @@ package admin.bean;
 
 public class DepartmentDTO {
 	private int depart_id;
+	private int p_depart_id;
 	private String dpname;
 	private String init;
 	private String d_info1;
@@ -14,11 +15,20 @@ public class DepartmentDTO {
 	private String d_info8;
 	private String d_info9;
 	private String d_info10;
+	
+	
 	public int getDepart_id() {
 		return depart_id;
 	}
 	public void setDepart_id(int depart_id) {
 		this.depart_id = depart_id;
+	}
+	
+	public int getP_depart_id() {
+		return p_depart_id;
+	}
+	public void setP_depart_id(int p_depart_id) {
+		this.p_depart_id = p_depart_id;
 	}
 	public String getDpname() {
 		return dpname;

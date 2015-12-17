@@ -12,7 +12,7 @@
 연락처를 남겨 주시면 상담 간호사가 전화를 드려<br/>
 예약을 도와드립니다
 
-<input type="button" value="첫방문 고객 예약하기"/><br/>
+<input type="button" value="첫방문 고객 예약하기" onclick="location.href='appointmentsimpleform.do'"/><br/>
 첫방문고객 예약번호 안내
 심장병원 02-3010-0600
 암병원 02-3010-1300

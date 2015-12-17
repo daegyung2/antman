@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="p_depart">
+   <typeAlias alias="p_depart" type="admin.bean.P_departmentDTO" />
+   <resultMap id="p_depart.dto" class="p_depart" >
+    <result property="p_depart_id" column="p_depart_id" />
+    <result property="p_dpname" column="p_dpname" />
+   </resultMap>
+   
+   <insert id="insertPdp" parameterClass="p_depart" >
+    insert into p_department (p_depart_id,p_dpname) values(P_DEPARTMENT_SEQ.NEXTVAL,#p_dpname#)
+   </insert>
+
+   <select id="selectList" resultMap="p_depart.dto">
+    select * from P_DEPARTMENT order by p_depart_id asc
+   </select>
+   
+   <select id="selectPdp" parameterClass="p_depart" resultMap="p_depart.dto" >
+    select * from P_DEPARTMENT where p_depart_id=#p_depart_id#
+   </select>
+   
+   <update id="updatePdp" parameterClass="p_depart" >
+    update P_DEPARTMENT set p_dpname=#p_dpname# where p_depart_id=#p_depart_id#
+   </update>
+   
+   <delete id="delete" parameterClass="int" >
+     delete from P_DEPARTMENT where p_depart_id=#p_depart_id#
+   </delete>
+</sqlMap>

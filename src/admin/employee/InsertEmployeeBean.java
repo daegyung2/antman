@@ -22,7 +22,7 @@ public class InsertEmployeeBean {
 	private int Eid;
 	
 	@RequestMapping("/insertEmployee.do")
-	public String insertEmployee(HttpServletRequest request, DepartmentDTO dto,@ModelAttribute EmployeeDTO emdto){
+	public String insertEmployee(HttpServletRequest request, DepartmentDTO dto, EmployeeDTO emdto){
 		list = sqlMapClient.queryForList("depart.selectList",dto);
 		x = (int) sqlMapClient.queryForObject("employee.count",emdto);
 		if(x == 0){
