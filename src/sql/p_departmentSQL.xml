@@ -8,14 +8,14 @@
    </resultMap>
    
    <insert id="insertPdp" parameterClass="p_depart" >
-    insert into p_department (p_depart_id,p_dpname) values(#p_depart_id#,#p_dpname#)
+    insert into p_department (p_depart_id,p_dpname) values(P_DEPARTMENT_SEQ.NEXTVAL,#p_dpname#)
    </insert>
 
    <select id="selectList" resultMap="p_depart.dto">
-    select * from P_DEPARTMENT order by p_depart_id desc
+    select * from P_DEPARTMENT order by p_depart_id asc
    </select>
    
-   <select id="selectPdp" parameterClass="int" resultMap="p_depart.dto" >
+   <select id="selectPdp" parameterClass="p_depart" resultMap="p_depart.dto" >
     select * from P_DEPARTMENT where p_depart_id=#p_depart_id#
    </select>
    

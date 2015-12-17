@@ -11,6 +11,17 @@
 <form action="/antman/updateDepartPro.do" method="post" >
 <table width="1000" border="1" cellpadding="1" cellspacing="0">
 <tr>
+<td>부모 부서</td>
+<td>
+<select name="p_depart_id" >
+<c:forEach var="dto" items="${list }">
+<option>${dto.p_depart_id }</option>
+</c:forEach>
+</select>
+${pdto.p_dpname}
+</td>
+</tr>
+<tr>
 <td width="200">진료과 이름</td>
 <td><input type="text" name="dpname" size="50" maxlength="30" value="${dto.dpname }" /></td>
 </tr>
