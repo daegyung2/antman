@@ -9,7 +9,7 @@ public class TreatmentteamDTO {
     private String drname;
     private String major;
     private String exarea;
-    private String depart_id;
+    private int depart_id;
     private String degree1;
     private String degree2;
     private String degree3;
@@ -39,12 +39,21 @@ public class TreatmentteamDTO {
 	private String d_info10;
 	private Date adate;
 	private String name;
+	private int drid;
+	
+	
 	
 	
 	
 	
 	public Date getAdate() {
 		return adate;
+	}
+	public int getDrid() {
+		return drid;
+	}
+	public void setDrid(int drid) {
+		this.drid = drid;
 	}
 	public void setAdate(Date adate) {
 		this.adate = adate;
@@ -79,10 +88,10 @@ public class TreatmentteamDTO {
 	public void setMajor(String major) {
 		this.major = major;
 	}
-	public String getDepart_id() {
+	public int getDepart_id() {
 		return depart_id;
 	}
-	public void setDepart_id(String depart_id) {
+	public void setDepart_id(int depart_id) {
 		this.depart_id = depart_id;
 	}
 	public String getDegree1() {

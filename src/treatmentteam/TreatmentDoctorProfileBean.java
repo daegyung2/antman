@@ -17,10 +17,10 @@ public class TreatmentDoctorProfileBean {
 		
 		@RequestMapping("doctorprofile.do")
 		public String doctorprofile (HttpServletRequest request , TreatmentteamDTO dto){
+			System.out.println(dto.getDrid());
+			dto =(TreatmentteamDTO)sqlMapClient.queryForObject("treatment.doctorprofile",dto.getDrid());
 			
-			sqlMapClient.queryForObject("treatment.doctorprofile",dto);
-			
-			
+			request.setAttribute("dto",dto);
 			
 		return "treatmentteam/doctorprofile.jsp";
 		}

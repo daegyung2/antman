@@ -30,7 +30,7 @@ public class TreatmentTeamSearchBean {
 		 if(tmslist.size() == 0){
 			 dpname = no;
 		 }
-		 System.out.println(dpname);
+		 
 		 request.setAttribute("dpname",dpname);
 		  request.setAttribute("tmsdto", tmsdto);
 
