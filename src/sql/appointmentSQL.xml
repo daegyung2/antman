@@ -5,6 +5,9 @@
  <typeAlias alias="appoint" type="admin.bean.AppointmentDTO" />
 
 <insert id="appointmentinsert"  parameterClass="appoint">
-  INSERT INTO appointment(aid,name,jumin1,jumin2,drname,adate) values(praise_SEQ.NEXTVAL,#name#,#jumin1#,#jumin2#,#drname#,to_date(#adate#,'YYYY-MM-DD HH24:MI'))</insert>
+  INSERT INTO appointment(aid,name,jumin1,jumin2,drname,adate,dpname) values(praise_SEQ.NEXTVAL,#name#,#jumin1#,#jumin2#,#drname#,to_date(#adate#,'YYYY-MM-DD HH24:MI'),#dpname#)</insert>
+
+
+
 
 </sqlMap>

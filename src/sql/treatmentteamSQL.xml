@@ -41,7 +41,7 @@
 		
 	<typeAlias alias="treatmentsearch" type="treatmentteamVO.SearchTreatmentTeamVO" />
 
-		<!-- 리절트 맵 정의 -->
+		<!-- 진료과 선생님 선택 -->
 
 	<resultMap id="searchtreat" class="treatmentsearch">
 	
@@ -55,7 +55,6 @@
 		select drname,dpname,exarea from(select department.dpname,doctor.drname,doctor.exarea from department join doctor on department.dpname = doctor.dpname where department.dpname = #dpname#)
 		</select>
 		
-		
 	<resultMap id="searchdepartname" class="treatmentsearch">
 	<result property="dpname" column="dpname"/>
 	</resultMap>
@@ -64,9 +63,22 @@
 	select dpname from department where dpname = #dpname# 
 	</select>
 
-		</sqlMap>
+
+
+		<!-- 예약 결과 표시 -->
+
+
 		
 	
 		
+		
+
+		
+		
+		
+		</sqlMap>
+		
+	
+	
 		
 		
