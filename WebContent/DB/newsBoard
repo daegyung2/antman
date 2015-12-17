@@ -1,0 +1,6 @@
+create table newsBoard(
+    NEid number primary key not null, //뉴스게시판
+    subject varchar2(2000) not null,
+    content varchar2(4000) not null,
+    reg_date date default sysdate
+    );  ㄴ
