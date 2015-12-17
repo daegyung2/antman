@@ -10,6 +10,10 @@
 <body>
 <table width="1000" border="1" cellpadding="1" cellspacing="0">
 <tr>
+<td width="200">부모 부서</td>
+<td>${dto.p_depart_id }.${pdto.p_dpname}</td>
+</tr>
+<tr>
 <td width="200">진료과 이름</td>
 <td>${dto.dpname }</td>
 </tr>
@@ -60,8 +64,8 @@
 <tr>
 <td colspan="2">
 <input type="button" value="진료과 게시판" onClick="window.location='/antman/departmentList.do'" />
-<input type="button" value="수정하기" onClick="window.location='/antman/updateDepart.do?depart_id=${dto.depart_id}'" />
-<input type="button" value="삭제하기" onClick="window.location='/antman/deleteDepart.do?depart_id=${dto.depart_id}'" />
+<input type="button" value="수정하기" onClick="window.location='/antman/updateDepartment.do?depart_id=${dto.depart_id}'" />
+<input type="button" value="삭제하기" onClick="window.location='/antman/deleteDepartment.do?depart_id=${dto.depart_id}'" />
 
 </td>
 </tr>

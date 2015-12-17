@@ -14,13 +14,13 @@ public class UpdateP_departmentBean {
 	private SqlMapClientTemplate sqlMapClient;
 	
 	@RequestMapping("/updateP_department.do")
-	public String updateP_depart(P_departmentDTO dto){
-    dto = (P_departmentDTO)sqlMapClient.queryForObject("p_depart.selectPdp",dto.getP_depart_id());
+	public String updateP_depart(@ModelAttribute P_departmentDTO dto){
+    dto = (P_departmentDTO)sqlMapClient.queryForObject("p_depart.selectPdp",dto);
 		return "/admin/p_department/updateP_department.jsp";
 	}
     
 	@ModelAttribute("dto")
 	public P_departmentDTO getP_depart(P_departmentDTO dto){
-		return (P_departmentDTO)sqlMapClient.queryForObject("p_depart.selectPdp",dto.getP_depart_id());
+		return (P_departmentDTO)sqlMapClient.queryForObject("p_depart.selectPdp",dto);
 	}
 }
