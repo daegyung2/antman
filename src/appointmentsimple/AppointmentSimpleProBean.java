@@ -8,10 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.AppointmentSimpleDTO;
-
 @Controller
-public class AppointmentSimplePro {
-	
+public class AppointmentSimpleProBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 	

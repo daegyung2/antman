@@ -39,7 +39,7 @@
 		select * from department where init='ㅊ' or init='ㅋ' or init='ㅌ' or init='ㅍ' or init='ㅎ'
 		</select>
 		
-	<typeAlias alias="treatmentsearch" type="treatmentteamVO.SearchTreatmentTeamVO" />
+	<typeAlias alias="treatmentsearch" type="admin.bean.TreatmentteamDTO" />
 
 		<!-- 진료과 선생님 선택 -->
 
@@ -67,14 +67,6 @@
 
 		<!-- 예약 결과 표시 -->
 
-
-		
-	
-		
-		
-
-		
-		
 		
 		</sqlMap>
 		

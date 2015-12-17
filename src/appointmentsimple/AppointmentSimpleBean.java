@@ -1,7 +1,5 @@
 package appointmentsimple;
 
-
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import admin.bean.AppointmentSimpleDTO;
 
 @Controller
-public class AppointmentSimple {
+public class AppointmentSimpleBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 	
@@ -29,3 +27,4 @@ public class AppointmentSimple {
 	
 	
 }
+

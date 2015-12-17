@@ -1,8 +1,8 @@
-package treatmentteamVO;
+package admin.bean;
 
 import java.sql.Date;
 
-public class SearchTreatmentTeamVO {
+public class TreatmentteamDTO {
 	private int aid;
     private String did;
     private String dreg_num;
@@ -38,11 +38,23 @@ public class SearchTreatmentTeamVO {
 	private String d_info9;
 	private String d_info10;
 	private Date adate;
+	private String name;
 	
 	
 	
 	
-	
+	public Date getAdate() {
+		return adate;
+	}
+	public void setAdate(Date adate) {
+		this.adate = adate;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getDid() {
 		return did;
 	}
@@ -250,3 +262,5 @@ public class SearchTreatmentTeamVO {
 	
 	
 }
+
+

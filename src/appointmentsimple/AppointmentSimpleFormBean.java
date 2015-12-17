@@ -1,7 +1,5 @@
 package appointmentsimple;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.AppointmentSimpleDTO;
-
-
 @Controller
-public class AppointmentSimpleForm {
+public class AppointmentSimpleFormBean {
 
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;

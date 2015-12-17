@@ -740,7 +740,9 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
                         <tr>
                         	<td height="50"><img src="treatmentteam/dcimg/youngsik.jpg"></td>
                             <td><h3>${tmdto.drname}</h3><br/>
-                             ${tmdto.dpname}</td>
+                             ${tmdto.dpname}</br>
+                             <input type="button" value="의료진 소개 더보기" onClick="location.href='/doctorprofile.do'" />
+                             </td>
                             
                         </tr>
                         </c:forEach>

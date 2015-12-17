@@ -52,7 +52,7 @@ public class PraiseBoardBean {
 			pagingHtml = page.getPagingHtml().toString();
 			
 			
-			list = list.subList(page.getStartCount(), lastCount);
+			//list = list.subList(page.getStartCount(), lastCount);
 			System.out.println(list.size());
 			request.setAttribute("list", list);
 			
