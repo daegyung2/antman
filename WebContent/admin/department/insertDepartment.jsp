@@ -2,20 +2,6 @@
     pageEncoding="EUC-KR"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<SCRIPT LANGUAGE="JavaScript">
-<!-- 
-function display(info)  {
-
-// 메세지들을 설정 하세요
-   
-  if (document.depart.p_depart_id.options[1].selected)  {
-    document.depart.p_dpname.value= "진료과"
-   
-  }
-
-}
-//-->
-</SCRIPT>
 
 <html>
 <head>
@@ -28,11 +14,11 @@ function display(info)  {
 <tr>
 <td>부모 부서</td>
 <td>
-<select name="p_depart_id" onChange="display(this)">
-<option selected>선택하세요</option>
+<select name="p_depart_id" >
 <c:forEach var="dto" items="${list}" >
-<option value="${dto.p_depart_id }">${dto.p_depart_id }</option>
+<option value="${dto.p_dpname }">${dto.p_depart_id }</option>
 </c:forEach>
+<input type="button" value="선택" />
 <input type="text" size="10" maxlength="10" name="p_dpname" />
 </select>
 </td>

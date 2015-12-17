@@ -1,6 +1,6 @@
 create table MedRecord(  //진료 기록 DB
    Mid number primary key not null, //메디컬 레코드 등록 고유 번호 시퀀스사용
-   drId varchar2(200) not null,     //의사 번호 
+   drId number not null,     //의사 번호 
    dpname varchar2(500) not null,  // 부서 이름
    appointment varchar2(4000),     //예약 정보 선택가능 
    id varchar2(200),              //환자 아이디 

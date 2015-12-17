@@ -6,14 +6,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class InsertMedRecordBean {
+public class MemberSearchBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
-
-	@RequestMapping("/insertMedRecord.do")
-	public String insertMedRecord(){
+	
+	@RequestMapping("/memberSearch.do")
+	public String memberSearch(){
 		
 		
-		return "/admin/MedRecord/insertMedRecord.jsp";
+		return "insertMedRecord.do";
 	}
+
 }

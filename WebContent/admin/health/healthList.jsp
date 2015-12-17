@@ -7,21 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
-<tr>
-<td>Áúº´¸í
-</td>
-<td>
-<input type="text" name="hname" />
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td>
-</td>
-</tr>
 
-</table>
 </body>
 </html>

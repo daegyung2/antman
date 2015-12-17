@@ -1,0 +1,8 @@
+create table body_category(
+  bcid number primary key not null,  //body 카테고리 번호
+  class1 number default 1 not null,
+  parent number default 0 not null,
+  class2 number default 1 not null
+  bcname varchar2(500) not null
+  );
+  
