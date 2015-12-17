@@ -47,7 +47,7 @@ public class AppointmentDetailBean {
 		
 		
 		
-		return "/appointment/appointmentdetail.jsp";
+		return "/appointment/detail/appointmentdetail.jsp";
 	}
 	
 

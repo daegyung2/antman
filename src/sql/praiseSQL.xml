@@ -7,6 +7,7 @@
 		<!-- 리절트 맵 정의 -->
 
 	<resultMap id="boardRes" class="praise">
+
 		<result property="pid" column="pid"/>
 		<result property="id" column="id"/>
 		<result property="pname" column="pname"/>
@@ -20,7 +21,10 @@
 		<select id="selectAll" resultMap="boardRes">
 		select pid,id,pname,subject,content,reg_date from praise order by pid desc
 		</select>
-		
+
+
+
+			
 			<select id="viewpraise" resultMap="boardRes" parameterClass="int">
 		
       		select pid,id,pname,subject,content,reg_date from praise where pid = #pid# 
@@ -46,4 +50,10 @@
                          )
 		</insert>
 
+
+	
+	<select id="selectLastNo" resultClass="int" >
+			SELECT count(*) count from praise 
+		</select>
+			
 </sqlMap>

@@ -1,0 +1,14 @@
+create table simpleappointment(  //간편 예약 또는 비회원예약
+
+   Aid number(500) primary key not null,  //예약 번호 
+   id varchar2(200),                        //예약한 아이디
+   name varchar2(200),                      //이름
+   jumin1 number not null,                  //주민 번호1
+   jumin2 number not null,                  //주민 번호2
+   phone1 number not null,					//전화번호
+   phone2 number not null,
+   phone3 number not null,   
+   Adate date default sysdate,              //간편예약등록 날짜 
+   symptom varchar2(4000)         			// 증상
+   talk varchar2(4000) 						//하고싶은말 
+   ); 

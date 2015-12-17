@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class PraiseVO {
 
-	
+		private int no;
 		private int pid;
 		private	String id;
 		private String pname;
@@ -48,6 +48,12 @@ public class PraiseVO {
 		}
 		public void setReg_date(Date reg_date) {
 			this.reg_date = reg_date;
+		}
+		public int getNo() {
+			return no;
+		}
+		public void setNo(int no) {
+			this.no = no;
 		}
 		
 		
