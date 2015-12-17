@@ -34,7 +34,7 @@ public class AppointmentDetailProBean {
 			
 		
 					
-			return "/appointment/appointmentdetailpro.jsp";
+			return "/appointment/detail/appointmentdetailpro.jsp";
 		}
 	}
 

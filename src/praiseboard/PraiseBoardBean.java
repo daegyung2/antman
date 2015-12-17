@@ -25,7 +25,7 @@ public class PraiseBoardBean {
 		
 		private int currentPage= 1;
 		private int totalCount;
-		private int blockCount = 10;
+		private int blockCount = 3;
 		private int blockPage = 5;
 		private String pagingHtml;
 		private pagingAction page;
@@ -33,34 +33,32 @@ public class PraiseBoardBean {
 		
 
 		@RequestMapping("/praiseboard.do")
-		public String listAction (PraiseVO dto, HttpServletRequest request, String pageNum){ 
+		public String ModelAndView (PraiseVO dto, HttpServletRequest request, String pageNum){ 
 		 
 			
+			ModelAndView mv = new ModelAndView();
+			
+			totalCount =(Integer)sqlMapClient.queryForObject("praise.selectLastNo",dto);
+			System.out.println(totalCount);
+			
+			page = new pagingAction(currentPage,totalCount,blockCount,blockPage);
+			int lastCount = totalCount;
+		    if (page.getEndCount() < totalCount) {
+		    	lastCount = page.getEndCount() + 1;
+		    }
 			List list = sqlMapClient.queryForList("praise.selectAll",dto);
 			System.out.println(list.size());
 			
-			
-			page = new pagingAction(currentPage,totalCount,blockCount,blockPage);
 			pagingHtml = page.getPagingHtml().toString();
 			
-			int lastCount = totalCount;
 			
-			if(page.getEndCount() < totalCount)
-				lastCount = page.getEndCount() +1;
-			
-			//list = list.subList(page.getStartCount(), lastCount);
-			
-			//request.setAttribute("list", list);
+			list = list.subList(page.getStartCount(), lastCount);
+			System.out.println(list.size());
+			request.setAttribute("list", list);
 			
 			return "/praiseboard/praiseboard.jsp";
 		}
 		
-		@ModelAttribute("list")
-		public List test(PraiseVO dto) {
-			
-			return sqlMapClient.queryForList("praise.selectAll",dto);
-			
-		}
 
 
 	}

@@ -28,7 +28,7 @@ public class PraiseWriteAction {
 		
 		sqlMapClient.insert("praise.insertpraise", dto);		
 		
-		return "praiseboard.do";
+		return "redirect:praiseboard.do";
 	}
 	
 	
