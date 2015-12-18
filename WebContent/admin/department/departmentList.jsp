@@ -49,7 +49,7 @@
 <td width="200">${dto.init }</td>
 <td width="300">${dto.d_info1}</td>
 <td width="300">
-<input type="button" value="수정하기" id="update" />
+<input type="button" value="수정하기" id="update" onClick="window.location='/antman/updateDepartPro.do?depart_id=${dto.depart_id}'"/>
 <input type="button" value="내용보기" id="content" onClick="window.location='/antman/departmentContent.do?depart_id=${dto.depart_id}'" />
 <input type="button" value="삭제하기" id="delete" onClick="window.location='/antman/deleteDepart.do?depart_id=${dto.depart_id}'" />
 </td>
