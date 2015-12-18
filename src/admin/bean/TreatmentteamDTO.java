@@ -40,6 +40,7 @@ public class TreatmentteamDTO {
 	private Date adate;
 	private String name;
 	private int drid;
+	private int p_depart_id	;
 	
 	
 	
@@ -267,6 +268,12 @@ public class TreatmentteamDTO {
 	}
 	public void setAid(int aid) {
 		this.aid = aid;
+	}
+	public int getP_depart_id() {
+		return p_depart_id;
+	}
+	public void setP_depart_id(int p_depart_id) {
+		this.p_depart_id = p_depart_id;
 	}
 	
 	
