@@ -23,11 +23,11 @@ public class AppointmentDetailSearch {
 	
 	@RequestMapping("/appointmentdetailsearch.do")
 	public String detailreservationsearch(HttpServletRequest request,AppointmentDTO dto,TreatmentteamDTO tmdto){
-		String drname = (String)tmdto.getDrname();
-		String dpname = (String)tmdto.getDpname();
-		String jumin1 =(String)dto.getJumin1();
-		String jumin2 =(String)dto.getJumin2();
-		String name =(String)dto.getName();
+		String drname = tmdto.getDrname();
+		String dpname = tmdto.getDpname();
+		String jumin1 = dto.getJumin1();
+		String jumin2 = dto.getJumin2();
+		String name = dto.getName();
 		
 		 List tmslist = sqlMapClient.queryForList("treatment.searchtreatmentteam", tmdto.getDpname());
 		 TreatmentteamDTO tmsdto = (TreatmentteamDTO)sqlMapClient.queryForObject("treatment.searchname", tmdto.getDpname());

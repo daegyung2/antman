@@ -16,11 +16,11 @@ public class TreatmentDoctorProfileBean {
 		private SqlMapClientTemplate sqlMapClient;
 		
 		@RequestMapping("doctorprofile.do")
-		public String doctorprofile (HttpServletRequest request , TreatmentteamDTO dto){
-			System.out.println(dto.getDrid());
-			dto =(TreatmentteamDTO)sqlMapClient.queryForObject("treatment.doctorprofile",dto.getDrid());
+		public String doctorprofile (HttpServletRequest request , TreatmentteamDTO dpfdto){
+			System.out.println(dpfdto.getDrid());
+			dpfdto =(TreatmentteamDTO)sqlMapClient.queryForObject("treatment.doctorprofile",dpfdto.getDrid());
 			
-			request.setAttribute("dto",dto);
+			request.setAttribute("dpfdto",dpfdto);
 			
 		return "treatmentteam/doctorprofile.jsp";
 		}
