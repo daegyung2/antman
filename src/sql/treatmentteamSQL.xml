@@ -106,10 +106,15 @@
 		</select>
 		
 		
+		<resultMap id="treatmentchoice" class="treatmentsearch">
+		<result property="p_depart_id" column="p_depart_id"/>
+		<result property="dpname" column="dpname"/>
+
+		</resultMap>
 		
-		
-		
-		
+		<select id="treatmentchoice" resultMap="treatmentchoice">
+		select p_depart_id,dpname from department where p_depart_id = 1	
+		</select>
 		</sqlMap>
 		
 	

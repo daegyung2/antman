@@ -11,6 +11,12 @@ public class PraiseVO {
 		private String subject;
 		private String content;
 		private Date reg_date;
+		private String drname;
+		private String dpname;
+		private String major;
+		private String exarea;
+		private String drimg1;
+		
 		
 		
 		public int getPid() {
@@ -54,6 +60,36 @@ public class PraiseVO {
 		}
 		public void setNo(int no) {
 			this.no = no;
+		}
+		public String getDrname() {
+			return drname;
+		}
+		public void setDrname(String drname) {
+			this.drname = drname;
+		}
+		public String getDpname() {
+			return dpname;
+		}
+		public void setDpname(String dpname) {
+			this.dpname = dpname;
+		}
+		public String getMajor() {
+			return major;
+		}
+		public void setMajor(String major) {
+			this.major = major;
+		}
+		public String getExarea() {
+			return exarea;
+		}
+		public void setExarea(String exarea) {
+			this.exarea = exarea;
+		}
+		public String getDrimg1() {
+			return drimg1;
+		}
+		public void setDrimg1(String drimg1) {
+			this.drimg1 = drimg1;
 		}
 		
 		
