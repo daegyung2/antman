@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="body" >
+ <typeAlias alias="body" type="admin.bean.Body_partDTO" />
+ <resultMap id="body.dto" class="body" >
+  <result property="bid" column="bid" />
+  <result property="name" column="name" />
+ </resultMap>
+
+  <select id="count" resultClass="int" >
+   select count(*) from BODY_PART
+  </select>
+
+  <select id="max" resultClass="int" >
+   select max(bid) from BODY_PART
+  </select>
+  
+  <select id="selectList" resultMap="body.dto">
+   select * from BODY_PART order by BID desc
+  </select>
+  
+  <select id="selectOne" parameterClass="body" resultMap="body.dto" >
+   select * from BODY_PART where bid=#bid#
+  </select>
+  
+  <insert id="insertBody" parameterClass="body">
+   insert into BODY_PART (bid,name) values(BODY_PART_SEQ.NEXTVAL,#name#)
+  </insert>
+
+
+  <update id="update" parameterClass="body" >
+   update BODY_PART set name=#name# where bid=#bid#
+  </update>
+</sqlMap>

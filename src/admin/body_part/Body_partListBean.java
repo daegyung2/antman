@@ -1,4 +1,4 @@
-package admin.health;
+package admin.body_part;
 
 import java.util.List;
 
@@ -8,23 +8,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import admin.bean.HealthDTO;
+import admin.bean.Body_partDTO;
 
 @Controller
-public class HealthListBean {
+public class Body_partListBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
-	private List healthList;
-	
-	@RequestMapping("/healthList.do")
-	public String healthList(HealthDTO dto){
-     healthList = sqlMapClient.queryForList("health.selectList",dto);
-	 return "/admin/health/healthList.jsp";
+	private List list;
+
+	@RequestMapping("body_partList.do")
+	public String bodyList(Body_partDTO dto){
+		list = sqlMapClient.queryForList("body.selectList",dto);
+		return "/admin/body_part/body_partList.jsp";
 	}
 	
 	@ModelAttribute("list")
-	public List getHList(HealthDTO dto){
-		return sqlMapClient.queryForList("health.selectList",dto);
+	public List getList(Body_partDTO dto){
+		return sqlMapClient.queryForList("body.selectList",dto);
 	}
-
 }
