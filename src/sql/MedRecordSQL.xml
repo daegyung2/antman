@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="medrecord">
+ <typeAlias alias="MedRecord" type="admin.bean.MedRecordDTO" />
+ 
+
+<insert id="insertMed" parameterClass="MedRecord" >
+ insert into MEDRECORD values(MEDRECORD_SEQ.NEXTVAL,#drId#,
+ #dpname#,#appointment#,#id#,#name#,#jumin1#,#jumin2#,#age#,#gender#,
+ #symptom1#,#symptom2#,#symptom3#,#symptom4#,#symptom5#,#treatType#,#treatDate#
+ ,#prescription#,#treatConfirm#,#nextAppDate#,#price#,#reg_num#)
+</insert>
+
+
+</sqlMap>

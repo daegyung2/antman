@@ -40,4 +40,8 @@ public class UpdateDepartmentBean {
 		return (P_departmentDTO)sqlMapClient.queryForObject("p_depart.selectPdp",p_dto);
 	}
 	
+	@ModelAttribute("dto")
+	public DepartmentDTO getDto(DepartmentDTO dto){
+		return (DepartmentDTO)sqlMapClient.queryForObject("depart.selectOne", dto.getDepart_id());
+	}
 }

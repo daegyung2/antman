@@ -8,6 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+<table>
+<tr>
+<td>
+환자 이름
+</td>
+<td><input type="text" name="name" /> <input type="button" value="검색" onClick="window.location='/antman/memberSearch.do'"/>
+</td>
+</tr>
 
+
+
+</table>
 </body>
 </html>

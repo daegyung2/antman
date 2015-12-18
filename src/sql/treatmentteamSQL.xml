@@ -39,20 +39,21 @@
 		select * from department where init='ㅊ' or init='ㅋ' or init='ㅌ' or init='ㅍ' or init='ㅎ'
 		</select>
 		
-	<typeAlias alias="treatmentsearch" type="treatmentteamVO.SearchTreatmentTeamVO" />
+	<typeAlias alias="treatmentsearch" type="admin.bean.TreatmentteamDTO" />
 
 		<!-- 진료과 선생님 선택 -->
 
 	<resultMap id="searchtreat" class="treatmentsearch">
-	
+	<result property="drid" column="drid"/>
 	<result property="drname" column="drname"/>
 	<result property="dpname" column="dpname"/>
 	<result property="exarea" column="exarea"/>
+	<result property="drimg1" column="drimg1"/>
 	</resultMap>
 	
 	
 	<select id="searchtreatmentteam" resultMap="searchtreat">
-		select drname,dpname,exarea from(select department.dpname,doctor.drname,doctor.exarea from department join doctor on department.dpname = doctor.dpname where department.dpname = #dpname#)
+		select drid,drname,dpname,exarea,drimg1 from(select department.dpname,doctor.drid,doctor.drname,doctor.exarea,doctor.drimg1 from department join doctor on department.dpname = doctor.dpname where department.dpname = #dpname#)
 		</select>
 		
 	<resultMap id="searchdepartname" class="treatmentsearch">
@@ -65,14 +66,47 @@
 
 
 
-		<!-- 예약 결과 표시 -->
-
-
+		<resultMap id="doctorprofile" class="treatmentsearch">
 		
-	
+		<result property="depart_id" column="depart_id"/>
+		<result property="dpname" column="dpname"/>
+		<result property="d_info1" column="d_info1"/>
+		<result property="d_info2" column="d_info2"/>
+		<result property="d_info3" column="d_info3"/>
+		<result property="d_info4" column="d_info4"/>
+		<result property="d_info5" column="d_info5"/>
+		<result property="d_info6" column="d_info6"/>
+		<result property="d_info7" column="d_info7"/>
+		<result property="d_info8" column="d_info8"/>
+		<result property="d_info9" column="d_info9"/>
+		<result property="d_info10" column="d_info10"/>
+		<result property="drid" column="drid"/>	
+		<result property="dreg_num" column="dreg_num"/>
+	<result property="drname" column="drname"/>
+	<result property="major" column="major"/>
+	<result property="exarea" column="exarea"/>
+	<result property="degree1" column="degree1"/>
+	<result property="degree1" column="degree2"/>
+	<result property="degree1" column="degree3"/>
+	<result property="degree1" column="degree4"/>
+	<result property="degree1" column="degree5"/>
+	<result property="report1" column="report1"/>
+	<result property="report2" column="report2"/>
+	<result property="report3" column="report3"/>
+	<result property="report4" column="report4"/>
+	<result property="report5" column="report5"/>
+	<result property="drimg1" column="drimg1"/>
+	<result property="drimg2" column="drimg2"/>
+	<result property="drimg3" column="drimg3"/>
+	<result property="drimg4" column="drimg4"/>
+	<result property="drimg5" column="drimg5"/>
+	</resultMap>
+		<select id ="doctorprofile" resultMap="doctorprofile">
+		select * from(select a.depart_id,a.dpname,a.d_info1,a.d_info2 ,a.d_info3 ,a.d_info4 ,a.d_info5,a.d_info6 ,a.d_info7 ,a.d_info8 ,a.d_info9 ,a.d_info10,b.drid,b.dreg_num,b.drname,b.major,b.exarea,b.degree1,b.degree2,b.degree3,b.degree4,b.degree5, b.report1, b.report2, b.report3, b.report4,b.report5,b.drimg1,b.drimg2,b.drimg3,b.drimg4,b.drimg5 from department a join doctor b on a.dpname = b.dpname where drid = #drid#)
+		</select>
 		
 		
-
+		
 		
 		
 		

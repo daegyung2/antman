@@ -32,8 +32,8 @@ public class InsertDoctorProBean {
 		   fileList = request.getFiles("drimg");
 		   for(int i = 0; i < 5 ; i++){
 		   MultipartFile file = (MultipartFile) fileList.get(i);
-		   if(!file.isEmpty()){
-		   String name = file.getOriginalFilename();
+		   if(!file.isEmpty()){//
+		   String name = file.getOriginalFilename();//C:\Users\downmemory\git\antman
 		   File sf = new File("H://antman//WebContent//image//"+name);
 		   file.transferTo(sf);
 		   dto.setDrimg1("/antman/image/"+name);
