@@ -56,4 +56,25 @@
 			SELECT count(*) count from praise 
 		</select>
 			
+			
+			
+		<resultMap id="finddoctor" class="praise">
+
+		<result property="pid" column="pid"/>
+		<result property="pname" column="pname"/>
+		<result property="subject" column="subject"/>
+		<result property="reg_date" column="reg_date"/>
+		<result property="drname" column="drname"/>
+		<result property="dpname" column="dpname"/>
+		<result property="major" column="major"/>
+		<result property="exarea" column="exarea"/>
+		<result property="drimg1" column="drimg1"/>
+		<result property="content" column="content"/>
+		
+	</resultMap>		
+			
+	
+		<select id="finddoctor" resultMap="finddoctor">	
+		select * from(select aa.pid,aa.pname,aa.subject,aa.content,aa.reg_date,bb.drname,bb.dpname,bb.major,bb.exarea,bb.drimg1 from praise aa join doctor bb on aa.drname = bb.drname)
+		</select>	
 </sqlMap>
