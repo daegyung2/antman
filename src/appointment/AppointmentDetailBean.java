@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import admin.bean.AppointmentDTO;
 import admin.bean.DepartmentDTO;
 
-import treatmentteamVO.SearchTreatmentTeamVO;
+import admin.bean.TreatmentteamDTO;
 
 @Controller
 public class AppointmentDetailBean {
@@ -23,7 +23,7 @@ public class AppointmentDetailBean {
 	
 	
 	@RequestMapping("/appointmentdetail.do")
-	public String detailreservation(HttpServletRequest request,AppointmentDTO dto,DepartmentDTO dpdto,SearchTreatmentTeamVO tmdto){
+	public String detailreservation(HttpServletRequest request,AppointmentDTO dto,DepartmentDTO dpdto,TreatmentteamDTO tmdto){
 		String jumin1 =(String)dto.getJumin1();
 		String jumin2 =(String)dto.getJumin2();
 		String name =(String)dto.getName();

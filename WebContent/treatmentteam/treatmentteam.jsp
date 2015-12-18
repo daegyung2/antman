@@ -738,9 +738,11 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
     <tbody>
                     <c:forEach var="tmdto" items="${tmslist}">
                         <tr>
-                        	<td height="50"><img src="treatmentteam/dcimg/youngsik.jpg"></td>
+                        	<td height="50"><img src="${tmdto.drimg1}" width="181" height="236"></td>
                             <td><h3>${tmdto.drname}</h3><br/>
-                             ${tmdto.dpname}</td>
+                             ${tmdto.dpname}</br>
+                             <input type="button" value="의료진 소개 더보기" onClick="location.href='/antman/doctorprofile.do?drid=${tmdto.drid}'" />
+                             </td>
                             
                         </tr>
                         </c:forEach>

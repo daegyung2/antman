@@ -1,15 +1,15 @@
-package treatmentteamVO;
+package admin.bean;
 
 import java.sql.Date;
 
-public class SearchTreatmentTeamVO {
+public class TreatmentteamDTO {
 	private int aid;
     private String did;
     private String dreg_num;
     private String drname;
     private String major;
     private String exarea;
-    private String depart_id;
+    private int depart_id;
     private String degree1;
     private String degree2;
     private String degree3;
@@ -38,11 +38,32 @@ public class SearchTreatmentTeamVO {
 	private String d_info9;
 	private String d_info10;
 	private Date adate;
+	private String name;
+	private int drid;
 	
 	
 	
 	
 	
+	
+	public Date getAdate() {
+		return adate;
+	}
+	public int getDrid() {
+		return drid;
+	}
+	public void setDrid(int drid) {
+		this.drid = drid;
+	}
+	public void setAdate(Date adate) {
+		this.adate = adate;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getDid() {
 		return did;
 	}
@@ -67,10 +88,10 @@ public class SearchTreatmentTeamVO {
 	public void setMajor(String major) {
 		this.major = major;
 	}
-	public String getDepart_id() {
+	public int getDepart_id() {
 		return depart_id;
 	}
-	public void setDepart_id(String depart_id) {
+	public void setDepart_id(int depart_id) {
 		this.depart_id = depart_id;
 	}
 	public String getDegree1() {
@@ -250,3 +271,5 @@ public class SearchTreatmentTeamVO {
 	
 	
 }
+
+

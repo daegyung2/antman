@@ -10,7 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.AppointmentDTO;
-import treatmentteamVO.SearchTreatmentTeamVO;
+import admin.bean.TreatmentteamDTO;
+
 
 @Controller
 public class AppointmentDetailSearch {
@@ -21,7 +22,7 @@ public class AppointmentDetailSearch {
 	private String no;
 	
 	@RequestMapping("/appointmentdetailsearch.do")
-	public String detailreservationsearch(HttpServletRequest request,AppointmentDTO dto,SearchTreatmentTeamVO tmdto){
+	public String detailreservationsearch(HttpServletRequest request,AppointmentDTO dto,TreatmentteamDTO tmdto){
 		String drname = (String)tmdto.getDrname();
 		String dpname = (String)tmdto.getDpname();
 		String jumin1 =(String)dto.getJumin1();
@@ -29,7 +30,7 @@ public class AppointmentDetailSearch {
 		String name =(String)dto.getName();
 		
 		 List tmslist = sqlMapClient.queryForList("treatment.searchtreatmentteam", tmdto.getDpname());
-		  SearchTreatmentTeamVO tmsdto = (SearchTreatmentTeamVO)sqlMapClient.queryForObject("treatment.searchname", tmdto.getDpname());
+		 TreatmentteamDTO tmsdto = (TreatmentteamDTO)sqlMapClient.queryForObject("treatment.searchname", tmdto.getDpname());
 		  System.out.println(tmslist.size());
 		 
 		 if(tmslist.size() == 0){
