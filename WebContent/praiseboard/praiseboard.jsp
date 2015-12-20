@@ -54,7 +54,7 @@
 			 <td ><h3><a href="/antman/praisecontent.do?pid=${dto.pid}">${dto.subject}</a></h3>
 				${dto.content } <br/>
 				<FONT size="1">
-				칭찬받은 직원 : ${dto.pname } |
+				글쓴이 : ${dto.name } |
 				작성자 : ${dto.id } |
 				등록일 : ${dto.reg_date} |
 				

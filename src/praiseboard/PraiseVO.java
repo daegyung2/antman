@@ -7,7 +7,7 @@ public class PraiseVO {
 		private int no;
 		private int pid;
 		private	String id;
-		private String pname;
+		private String name;
 		private String subject;
 		private String content;
 		private Date reg_date;
@@ -31,11 +31,11 @@ public class PraiseVO {
 		public void setId(String id) {
 			this.id = id;
 		}
-		public String getPname() {
-			return pname;
+		public String getName() {
+			return name;
 		}
-		public void setPname(String pname) {
-			this.pname = pname;
+		public void setName(String name) {
+			this.name = name;
 		}
 		public String getSubject() {
 			return subject;
