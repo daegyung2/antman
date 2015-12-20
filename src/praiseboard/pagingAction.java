@@ -50,7 +50,7 @@ public class pagingAction {
 		// 이전 block 페이지
 		pagingHtml = new StringBuffer();
 		if (currentPage > blockPage) {
-			pagingHtml.append("<a href=praiseboard.do?currentPage="
+			pagingHtml.append("<a href=/antman/praiseboard.do?PageNum="
 					+ (startPage - 1) + ">");
 			pagingHtml.append("이전");
 			pagingHtml.append("</a>");
@@ -64,12 +64,12 @@ public class pagingAction {
 				break;
 			}
 			if (i == currentPage) {
-				pagingHtml.append("&nbsp;<b> <font color='red'>");
+				pagingHtml.append("&nbsp;<b> <font size='6' color='blue'>");
 				pagingHtml.append(i);
 				pagingHtml.append("</font></b>");
 			} else {
 				pagingHtml
-						.append("&nbsp;<a href='praiseboard.do?currentPage=");
+						.append("&nbsp;<a href='/antman/praiseboard.do?PageNum=");
 				pagingHtml.append(i);
 				pagingHtml.append("'>");
 				pagingHtml.append(i);
@@ -83,7 +83,7 @@ public class pagingAction {
 
 		// 다음 block 페이지
 		if (totalPage - startPage >= blockPage) {
-			pagingHtml.append("<a href=praiseboard.do?currentPage="
+			pagingHtml.append("<a href=/antman/praiseboard.do?PageNum="
 					+ (endPage + 1) + ">");
 			pagingHtml.append("다음");
 			pagingHtml.append("</a>");

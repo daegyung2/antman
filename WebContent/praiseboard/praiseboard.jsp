@@ -71,6 +71,36 @@
 </div>
 
 
+   <!--   <c:if test="${count > 0 }">
+    	<c:set var="pageCount" value="${count/pageSize+(count%pageSize == 0 ? 0 : 1) }"/>
+    	<c:set var="pageBlock" value="${10}"/>
+    	
+    	<fmt:parseNumber var="result" value="${currPage / 10 }" integerOnly="true"/>
+    	<c:set var="startPage" value="${result * 10 + 1}" />
+    	<c:set var="endPage" value="${startPage + pageBlock-1}" />
+    	
+    	<c:if test="${endPage > pageCount }">
+    		<c:set var="endPage" value="${pageCount}"/>
+    		</c:if>
+    		
+    		<c:if test="${StartPage >10 }">
+    			<a href="/antman/praiseboard.do?pageNum=${startPage -10 }">[Prev]</a>
+    		</c:if>
+    		
+    		<c:forEach var="i" begin="${startPage }" end="${endPage }">
+    			<a href="/antman/praiseboard.do?pageNum=${i}">[${i}]]</a>
+    		</c:forEach>
+    		
+    		<c:if test="${endPage < pageCount }">
+    			<a href="/antman/praiseboard.do?pageNum=${startPage + 10 }">[Next]</a>
+    		</c:if>
+    		
+    		</c:if>-->
+    
+    <!-- 페이징 출력  -->
+    	                   
+  ${pagingHtml }
+
 <script type="text/javascript">
 
 
