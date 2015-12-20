@@ -99,7 +99,7 @@
     
     <!-- 페이징 출력  -->
     	                   
-  ${pagingHtml }
+  ${pagingHtml } <!-- 위에방식으로 하려면 귀차너서 그냥 페이징액션을 활용함 왼쪽 pagingHtml 만 출력해주면 됨.. -->
 
 <script type="text/javascript">
 
