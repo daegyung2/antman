@@ -86,7 +86,7 @@
 		select * from(select aa.pid,aa.id,aa.name,aa.subject,aa.content,aa.reg_date,aa.drname,bb.major,bb.exarea,bb.dpname,bb.drimg1 from praise aa join doctor bb on aa.drname = bb.drname)where pid = #pid#    
   </select>	
   
-  <resultMap id="selectdoctor" class="praise">
+  <resultMap id="selectdoctor" class="doctor.doctor">
 
 		<result property="dpname" column="dpname"/>
 		

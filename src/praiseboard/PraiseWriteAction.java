@@ -20,22 +20,26 @@ public class PraiseWriteAction {
 	
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
+	private List dplist;
 	
 	@RequestMapping("/praisewrite.do")
 	public String write(HttpServletRequest request , PraiseVO dto){
 	
-		List dplist = sqlMapClient.queryForList("praise.selectdepart",dto);
+		 dplist = sqlMapClient.queryForList("praise.selectdepart",dto);
 		
 		
 		
 		System.out.println(dplist.size());
 		System.out.println(dplist);
 		
-		request.setAttribute("dplist",dplist);
+		
 		return "/praiseboard/praisewrite.jsp";
 	} 
 	
-
+	@ModelAttribute("dplist")
+    public List getDplist(PraiseVO dto){
+    	return sqlMapClient.queryForList("praise.selectdepart",dto);
+    }
 	
 	
 	@RequestMapping("/praisepro.do")
