@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/antman/updateBodyPro.do" method="post" id="insertBody" >
+<form action="/antman/updateBodyPro.do" method="post" >
 <table width="350" border="1">
 <tr>
 <td colspan="2" align="center">신체부위 정보 수정</td>
@@ -22,7 +22,7 @@
 <tr>
 <td colspan="2">
 <input type="hidden" name="bid" value="${dto.bid }" />
-<input type="submit" value="수정" onClick="win_close()"/>
+<input type="submit" value="수정" />
 <input type="button" id="board" value="게시판" />
 </td>
 </tr>
