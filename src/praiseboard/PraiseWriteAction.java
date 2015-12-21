@@ -20,18 +20,29 @@ public class PraiseWriteAction {
 	
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
-	
+	String view;
 	@RequestMapping("/praisewrite.do")
-	public String write(HttpServletRequest request , PraiseVO dto){
-	
+	public String write(HttpServletRequest request , PraiseVO dto , String drname){
+		
+		
 		List dplist = sqlMapClient.queryForList("praise.selectdepart",dto);
 		
+		List drlist = sqlMapClient.queryForList("praise.selectdoctor",dto.getDpname());
 		
+		System.out.println(drname);
+		if(drlist == null){
+		view= "0";
+		}else if(drlist != null){
+		view="1";
+		}
 		
 		System.out.println(dplist.size());
 		System.out.println(dplist);
-		
+
 		request.setAttribute("dplist",dplist);
+		request.setAttribute("drlist",drlist);
+		request.setAttribute("view",view);
+		request.setAttribute("drname",drname);
 		return "/praiseboard/praisewrite.jsp";
 	} 
 	
