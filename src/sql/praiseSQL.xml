@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="praise">
+
+   <typeAlias alias="praise" type="praiseboard.PraiseVO" />
+
+      <!-- 리절트 맵 정의 -->
+
+   <resultMap id="boardRes" class="praise">
+
+      <result property="pid" column="pid"/>
+      <result property="id" column="id"/>
+      <result property="name" column="name"/>
+      <result property="drname" column="drname"/>
+      <result property="subject" column="subject"/>
+      <result property="content" column="content"/>
+      <result property="reg_date" column="reg_date"/>
+   </resultMap>
+   
+      
+      <!-- select 쿼리문 정의 -->
+      <select id="selectAll" resultMap="boardRes">
+      select pid,id,name,drname,subject,content,reg_date from praise order by pid desc
+      </select>
+   
+      <select id="viewpraise" resultMap="boardRes" parameterClass="int">
+         select pid,id,name,drname,subject,content,reg_date from praise where pid = #pid# 
+      </select>
+      
+      <update id="updatepraise" parameterClass="praise">   
+      update praise set drname = #drname#, id = #id#,  subject = #subject#, name = #name#, content = #content# where pid = #pid#
+      </update>
+
+      <insert id="insertpraise" parameterClass="praise">
+      INSERT INTO praise (pid,
+                           id,
+                               name,
+                               drname,
+                               subject,
+                               CONTENT,
+                               REG_DATE
+                         )
+                    VALUES (praise_SEQ.NEXTVAL,
+                          #id#,
+                            #name#,
+                            #drname#,
+                            #subject#,
+                            #content#,
+                            sysdate
+                         )
+      </insert>
+
+
+   
+        <delete id="deletepraise" parameterClass="praise">
+         DELETE FROM praise where pid = #pid#
+          </delete>
+   
+   
+   
+   
+   <select id="selectLastNo" resultClass="int" >
+         SELECT count(*) count from praise 
+      </select>
+         
+         
+         
+      <resultMap id="finddoctor" class="praise">
+
+      <result property="pid" column="pid"/>
+      <result property="id" column="id"/>
+      <result property="name" column="name"/>
+      <result property="subject" column="subject"/>
+      <result property="reg_date" column="reg_date"/>
+      <result property="drname" column="drname"/>
+      <result property="dpname" column="dpname"/>
+      <result property="major" column="major"/>
+      <result property="exarea" column="exarea"/>
+      <result property="drimg1" column="drimg1"/>
+      <result property="content" column="content"/>
+      
+   </resultMap>      
+         
+   
+      <select id="finddoctor" resultMap="finddoctor">   
+      select * from(select aa.pid,aa.id,aa.name,aa.subject,aa.content,aa.reg_date,aa.drname,bb.major,bb.exarea,bb.dpname,bb.drimg1 from praise aa join doctor bb on aa.drname = bb.drname)where pid = #pid#    
+  </select>   
+  
+  <resultMap id="selectdepart" class="praise">
+
+      <result property="dpname" column="dpname"/>
+
+  </resultMap>
+  
+     <select id="selectdepart" resultMap="selectdepart">
+     select dpname from doctor group by dpname
+     </select>
+     
+  <resultMap id="selectdoctor" class="praise">
+  <result property="drname" column="drname"/>
+  </resultMap>
+     
+          <select id="selectdoctor" resultMap="selectdoctor" >
+     select drname from doctor where dpname = #dpname#
+     </select>
+
+ 
+  
+</sqlMap>
