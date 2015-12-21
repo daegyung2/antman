@@ -55,7 +55,7 @@ body{  }
                                         <c:forEach var="dto" items="${list}">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
           							    </tr>         
           								</table>
          							    </c:forEach>
@@ -64,7 +64,7 @@ body{  }
                                         <c:forEach var="dto" items="${lista}">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
           							    </tr>         
           								</table>
          							    </c:forEach>
@@ -74,7 +74,7 @@ body{  }
                                         <c:forEach var="dto" items="${listb}">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
           							    </tr>         
           								</table>
          							    </c:forEach>
@@ -84,7 +84,7 @@ body{  }
                                          <c:forEach var="dto" items="${listc}">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
           							    </tr>         
           								</table>
          							    </c:forEach>
@@ -142,7 +142,7 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
                     <c:forEach var="tmdto" items="${tmslist}">
                         <tr>
                         	<td height="50"><img src="${tmdto.drimg1 }"  width="181" height="236"></td>
-                            <td class="shit"><h3 ><a href="/antman/appointmentdetailsearch.do?drname=${tmdto.drname}&dpname=${tmdto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}">${tmdto.drname}</a></h3><br/>
+                            <td class="shit"><h3 ><a href="/antman/appointmentdetailsearch.do?drname=${tmdto.drname}&dpname=${tmdto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${tmdto.drname}</a></h3><br/>
                              진료과 : ${tmdto.dpname}<br/>
                              <br/>
                              
@@ -171,6 +171,7 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 <td width="800" colspan="2">진료과명<input type="text" name="dpname" value="${dpname }"/></td></tr>
 <td width="800" colspan="2">주민1<input type="hidden" name="jumin1" value="${jumin1 }"/></td></tr>
 <td width="800" colspan="2">주민2<input type="hidden" name="jumin2" value="${jumin2 }"/></td></tr>
+<td width="800" colspan="2">예약자id<input type="text" name="id" value="${id}"/></td></tr>
 <td width="800" colspan="2">예약자성함<input type="text" name="name" value="${name }"/></td></tr>
 <td width="300">년도</td><td width="500"><input type="text" name="year"/></td></tr>
 <td width="300">월</td><td width="500"><input type="text" name="month"/></td></tr>

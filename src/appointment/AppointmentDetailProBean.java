@@ -32,8 +32,9 @@ public class AppointmentDetailProBean {
 			
 			sqlMapClient.insert("appointment.appointmentinsert",dto);
 			
-		
-					
+			List list = sqlMapClient.queryForList("appointment.appointresult",dto.getId());
+			System.out.println(list.size());
+			request.setAttribute("list", list);	
 			return "/appointment/detail/appointmentdetailpro.jsp";
 		}
 	}
