@@ -54,7 +54,7 @@
 			 <td ><h3><a href="/antman/praisecontent.do?pid=${dto.pid}">${dto.subject}</a></h3>
 				${dto.content } <br/>
 				<FONT size="1">
-				칭찬받은 직원 : ${dto.pname } |
+				글쓴이 : ${dto.name } |
 				작성자 : ${dto.id } |
 				등록일 : ${dto.reg_date} |
 				
@@ -70,6 +70,36 @@
 
 </div>
 
+
+   <!--   <c:if test="${count > 0 }">
+    	<c:set var="pageCount" value="${count/pageSize+(count%pageSize == 0 ? 0 : 1) }"/>
+    	<c:set var="pageBlock" value="${10}"/>
+    	
+    	<fmt:parseNumber var="result" value="${currPage / 10 }" integerOnly="true"/>
+    	<c:set var="startPage" value="${result * 10 + 1}" />
+    	<c:set var="endPage" value="${startPage + pageBlock-1}" />
+    	
+    	<c:if test="${endPage > pageCount }">
+    		<c:set var="endPage" value="${pageCount}"/>
+    		</c:if>
+    		
+    		<c:if test="${StartPage >10 }">
+    			<a href="/antman/praiseboard.do?pageNum=${startPage -10 }">[Prev]</a>
+    		</c:if>
+    		
+    		<c:forEach var="i" begin="${startPage }" end="${endPage }">
+    			<a href="/antman/praiseboard.do?pageNum=${i}">[${i}]]</a>
+    		</c:forEach>
+    		
+    		<c:if test="${endPage < pageCount }">
+    			<a href="/antman/praiseboard.do?pageNum=${startPage + 10 }">[Next]</a>
+    		</c:if>
+    		
+    		</c:if>-->
+    
+    <!-- 페이징 출력  -->
+    	                   
+  ${pagingHtml } <!-- 위에방식으로 하려면 귀차너서 그냥 페이징액션을 활용함 왼쪽 pagingHtml 만 출력해주면 됨.. -->
 
 <script type="text/javascript">
 

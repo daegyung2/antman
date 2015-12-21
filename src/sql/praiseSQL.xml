@@ -10,7 +10,8 @@
 
 		<result property="pid" column="pid"/>
 		<result property="id" column="id"/>
-		<result property="pname" column="pname"/>
+		<result property="name" column="name"/>
+		<result property="drname" column="drname"/>
 		<result property="subject" column="subject"/>
 		<result property="content" column="content"/>
 		<result property="reg_date" column="reg_date"/>
@@ -19,31 +20,30 @@
 		
 		<!-- select 쿼리문 정의 -->
 		<select id="selectAll" resultMap="boardRes">
-		select pid,id,pname,subject,content,reg_date from praise order by pid desc
+		select pid,id,name,drname,subject,content,reg_date from praise order by pid desc
 		</select>
-
-
-
-			
-			<select id="viewpraise" resultMap="boardRes" parameterClass="int">
-		
-      		select pid,id,pname,subject,content,reg_date from praise where pid = #pid# 
+	
+		<select id="viewpraise" resultMap="boardRes" parameterClass="int">
+      	select pid,id,name,drname,subject,content,reg_date from praise where pid = #pid# 
 		</select>
 		
-		
+		<update id="updatepraise" parameterClass="praise">	
+		update praise set drname = #drname#, id = #id#,  subject = #subject#, name = #name#, content = #content# where pid = #pid#
+		</update>
 
-			<insert id="insertpraise" parameterClass="praise">
-		
-      		INSERT INTO praise (pid,
+		<insert id="insertpraise" parameterClass="praise">
+		INSERT INTO praise (pid,
       							id,
-                         		pname,
+                         		name,
+                         		drname,
                          		subject,
                          		CONTENT,
                          		REG_DATE
                          )
                 	 VALUES (praise_SEQ.NEXTVAL,
                 	 		#id#,
-                         	#pname#,
+                         	#name#,
+                         	#drname#,
                          	#subject#,
                          	#content#,
                          	sysdate
@@ -51,6 +51,13 @@
 		</insert>
 
 
+	
+	  	<delete id="deletepraise" parameterClass="praise">
+			DELETE FROM praise where pid = #pid#
+   		 </delete>
+	
+	
+	
 	
 	<select id="selectLastNo" resultClass="int" >
 			SELECT count(*) count from praise 
@@ -61,7 +68,8 @@
 		<resultMap id="finddoctor" class="praise">
 
 		<result property="pid" column="pid"/>
-		<result property="pname" column="pname"/>
+		<result property="id" column="id"/>
+		<result property="name" column="name"/>
 		<result property="subject" column="subject"/>
 		<result property="reg_date" column="reg_date"/>
 		<result property="drname" column="drname"/>
@@ -75,6 +83,19 @@
 			
 	
 		<select id="finddoctor" resultMap="finddoctor">	
-		select * from(select aa.pid,aa.pname,aa.subject,aa.content,aa.reg_date,bb.drname,bb.dpname,bb.major,bb.exarea,bb.drimg1 from praise aa join doctor bb on aa.drname = bb.drname)
-		</select>	
+		select * from(select aa.pid,aa.id,aa.name,aa.subject,aa.content,aa.reg_date,aa.drname,bb.major,bb.exarea,bb.dpname,bb.drimg1 from praise aa join doctor bb on aa.drname = bb.drname)where pid = #pid#    
+  </select>	
+  
+  <resultMap id="selectdoctor" class="doctor.doctor">
+
+		<result property="dpname" column="dpname"/>
+		
+  </resultMap>
+  
+  	<select id="selectdepart" resultMap="selectdoctor">
+  	select dpname from doctor group by dpname
+  	</select>
+  	
+ 
+  
 </sqlMap>

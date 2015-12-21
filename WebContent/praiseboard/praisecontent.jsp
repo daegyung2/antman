@@ -28,7 +28,7 @@
     </thead>
     <tbody>
       <tr>
- <tr><td width="50%">작성자 : ${dto.id}</td><td width="50%">등록일 : ${dto.reg_date}</td></tr> 
+ <tr><td width="50%">작성자 : ${dto.name}</td><td width="50%">등록일 : ${dto.reg_date}</td></tr> 
       </tr>
       <tr>
 <td colspan="2" height="200">${dto.content} </td>
@@ -42,20 +42,30 @@
 </html>
 
 
-<table border="0" width="100%">
-   
-   
-<tr><td border="1" width="30%"><center>사진</center></td><td width="90%"><h3>${dto.pname }</h3><br/>진료과	간이식및간담도외과,장기이식센터,암병원,간센터,간암센터,담도 및 췌장암센터<br/>
-전문분야	간암,담도암,간이식,복강경간절제술,담석,간이식기증자사전검사 </td>
-		     
-			 
-			
+<div class="container">
+<p></p>            
+  <table class="table">
+
+    <tbody>
+      <tr>
+ <tr><td width="50%"><img src="${dto.drimg1 }" weight="190" height="240"></td><td><h3>${dto.drname}</h3><br/> <h4> ${dto.dpname}</h4>${dto.exarea }</td></tr> 
+      </tr>
+  
+    </tbody>
   </table>
+</div>
+
+</body>
+</html>
+
+
 </tr>
 <br/>
 <HR width=100% >
 <br/>
-  <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praisewrite.do'">칭찬하기</button>
+<center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praiseupdate.do?pid=${dto.pid}'">수정하기</button>
+<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praisewrite.do'">칭찬하기</button> 
+<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praisedelete.do?pid=${dto.pid}'">삭제하기</button> 
  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praiseboard.do'">목록으로</button></center>
   </center>
 </body>

@@ -1,9 +1,10 @@
 create table praise(   //칭찬 테이블 
    pid number primary key not null,  //칭찬 글 번호 
    id varchar2(200) not null,        // 작성자 아이디
-   praise_name varchar2(200) not null,     //칭찬하는 사람 이름
+   name varchar2(200) not null,     //칭찬하는 사람 이름
    subject varchar2(1000) not null,  // 제목 
    content varchar2(4000) not null  // 내용 
+   reg_date date //날짜
    drname varchar2(200) //의사샘이름
    );
    
