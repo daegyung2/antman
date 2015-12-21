@@ -1,9 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
-    <script lang="javascript">
-    function openUpdate(){      
-        url = "updateBody_part.do?bid=" + body.bid.value;
+    <script language="JavaScript">
+    function openUpdate(list){   
+    	if(list.bid.value == 0){
+    		alert("등록 번호가 없습니다.");
+    		return;
+    	}
+        url = "updateBody_part.do?bid=" + list.bid.value;
         
         open(url,"confirm","toolbar=no,location=no,status=no,width=300,height=200,menuber=no");
         }
@@ -16,18 +20,20 @@
 <title>신체부위 목록</title>
 </head>
 <body>
-<form id="body" >
+
 <table border="1">
 <tr><td>신체 부위</td><td>기타</td></tr>
+<form name="list">
 <c:forEach var="dto" items="${list }" >
-<tr><td>${dto.name }<input type="hidden" id="bid" name="bid" value="${dto.bid }" /></td>
-<td><input type="button" value="수정하기" id="update" onClick="openUpdate()" /></td></tr>
+<tr><td><input type="hidden" name="bid" id="bid" value="${dto.bid }" />${dto.name }</td>
+<td><input type="button" value="수정하기" id="update" onClick="openUpdate(this.form)" /></td></tr>
 </c:forEach>
+</form>
 <tr>
 <td colspan="2"><input type="button" value="입력하기" onClick="window.location='/antman/insertBody_part.do'" />
 </td>
 </tr>
 </table>
-</form>
+
 </body>
 </html>

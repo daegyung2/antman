@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="member">
+ <typeAlias alias="dto" type="admin.bean.MemberDTO"/>
+
+<select id="userCheck" resultClass="int" parameterClass="dto">
+  select count(*) from MEMBER where id = #id# and passwd = #passwd#
+</select>
+
+<insert id="insertUser" parameterClass="dto">
+ insert into MEMBER(id,passwd,name,age,gender,phone,e_mail,getMail) values(#id#,#passwd#,#name#,#age#,#gender#,#phone#,#e_mail#,#getMail#)
+</insert>
+
+
+</sqlMap>

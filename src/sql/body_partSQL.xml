@@ -16,10 +16,10 @@
   </select>
   
   <select id="selectList" resultMap="body.dto">
-   select * from BODY_PART order by BID desc
+   select * from BODY_PART order by bid desc
   </select>
   
-  <select id="selectOne" parameterClass="body" resultMap="body.dto" >
+  <select id="selectOne" parameterClass="int" resultMap="body.dto" >
    select * from BODY_PART where bid=#bid#
   </select>
   
