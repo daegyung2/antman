@@ -5,10 +5,35 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>고객의소리 | 고객서비스 | 웹서비스</title>
-
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	/* 만약에 클릭한 개체의 다음개체의 display값이 none값과 같은때만 실행 */
+	$('.title').click(function(){
+	 if($(this).next().css('display')=='none'){
+		$('.sub').slideUp(200);
+		$(this).next().slideDown(200);
+	 }
+		/*
+		$('.sub').hide();
+		$(this).next().show();
+		*/
+	});
+})
+</script>
 <style type="text/css">
 	body{margin:0px; padding:0px;}
 	a{ text-decoration:none; }
+	ul{ list-style:none; margin:0px; padding:0px;}
+	li{ margin:0px; padding:0px; }
+	
+	#nav{ width:200px; margin:30px auto; text-indent:10px;}
+	#nav .title{ display:block; height:36px; background:; line-height:3em; color:; }
+	#nav .sub li{ height:36px; line-height:3em; background:#CFF;}
+	#nav .sub li a{ display:block; width:100%; height:100%; color:#222;}
+	#nav .sub{ display:none;}
+	#nav li:first-child a.title{ border-top:none;}
+	
 	#container{ width:1100px; height:1300px; margin:0 auto; position:relative;}
 	#container .main{ width:1000px; height:1200px; margin-left:50px; position:relative}
 	#container .main #main_top{ width:950px; height:130px; margin-top:20px; line-height:1.6;}
@@ -24,6 +49,33 @@
 
 </head>
 <body>
+<div class="sidebar">
+<ul id="nav">
+	<li>
+    	<a href="#" class="title"> 발급안내 </a>
+        <ul class="sub">
+        	<li><a href="#">의무기록사본</a></li>
+            <li><a href="#">증명서</a></li>
+            <li><a href="#">중간진료비결제</a></li>
+            <li><a href="#">위변조문서확인</a></li>
+        </ul>
+    </li>
+    <li>
+    	<a href="#" class="title"> 고객서비스 </a>
+        <ul class="sub">
+        	<li><a href="#">자주하는질문</a></li>
+            <li><a href="#">고객의소리</a></li>
+            <li><a href="#">칭찬코너</a></li>
+            <li><a href="#">홈페이지이용문의</a></li>
+            <li><a href="#">콘텐츠제공안내</a></li>
+        </ul>
+    </li>
+</ul>
+	<div id="bookinfo">
+		<p>예약문의 <br/>
+		1688-7575</p>
+	</div>
+</div>
 <div id="container">	
 	<div class="main">
 		<div id="title_1"><b>고객의소리</b></div>

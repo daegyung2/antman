@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
-    <script language="JavaScript">
+    <script language="JavaScript" type="text/javascript">
     function openUpdate(list){   
     	if(list.bid.value == 0){
     		alert("등록 번호가 없습니다.");
@@ -23,10 +23,10 @@
 
 <table border="1">
 <tr><td>신체 부위</td><td>기타</td></tr>
-<form name="list">
+<form name="list" action="/antman/updateBody_part.do" method="post">
 <c:forEach var="dto" items="${list }" >
 <tr><td><input type="hidden" name="bid" id="bid" value="${dto.bid }" />${dto.name }</td>
-<td><input type="button" value="수정하기" id="update" onClick="openUpdate(this.form)" /></td></tr>
+<td><input type="button" value="수정하기" id="update" onSubmit="openUpdate(this.form)" /></td></tr>
 </c:forEach>
 </form>
 <tr>
