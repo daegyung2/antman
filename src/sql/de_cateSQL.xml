@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="de_cate" >
+   <typeAlias alias="de_cate" type="admin.bean.De_cateDTO" />
+   
+   <resultMap id="de_cate.dto" class="de_cate" >
+     <result property="deid" column="deid" />
+     <result property="de_catename" column="de_catename" />
+   </resultMap>
+
+ <insert id="insert" parameterClass="de_cate" >
+  insert into DE_CATE (deid,de_catename) values(#deid#,#de_catename#)
+ </insert>
+
+ <select id="count" resultClass="int" >
+  select COUNT(*) from DE_CATE
+ </select>
+
+<select id="max" resultClass="int" >
+ select MAX(deid) from DE_CATE 
+</select>
+
+<select id="selectList" resultMap="de_cate.dto" >
+ select * from DE_CATE order by deid desc
+</select>
+
+<select id="selectOne" parameterClass="String" resultMap="de_cate.dto" >
+ select * from DE_CATE where deid=#deid#
+</select>
+
+</sqlMap>
