@@ -1,0 +1,11 @@
+create table decease(  //질병 및 부위 별 건강 정보 
+  deid number primary key not null,  //건강 정보 아이디 시퀀스
+  dename varchar2(1000), 
+  bid number,        // 신체 부위 아이디 
+  deidhigh number,          //질병 카테고리 아이디
+  symptoms varchar2(4000),                 //증상
+  r_decease varchar2(1000),                // 관련 질병 
+  depart_id number,                  // 관련 진료 과
+  same_lang varchar2(4000),                 //질병 이름 동의어 
+  deimg varchar2(4000)                     //질병 사진
+  );
