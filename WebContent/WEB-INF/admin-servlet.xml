@@ -23,7 +23,10 @@
     <context:component-scan base-package="admin.p_department" />
 	<context:component-scan base-package="appointment" />
 	<context:component-scan base-package="appointmentsimple" />
+	<context:component-scan base-package="member" />
+	<context:component-scan base-package="appointmentsimple" />
     <context:component-scan base-package="admin.body_part" />
+ 
        
        
     <bean id="multipartResolver" 
