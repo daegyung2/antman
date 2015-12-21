@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
     <form action="/antman/praisepro.do" method="post">
   
@@ -12,10 +13,10 @@
     
     <tr><td>ÄªÂùÇÒ¼±»ý´Ô</td><td>
     <select name="dpname">
-<c:forEach var="dto" items="${dplist}" >
-<option value="${dto.dpname}">${dto.dpname}</option>
-</c:forEach>
-</select>    
+	<c:forEach var="dto" items="${dplist}" >
+	<option value="${dto.dpname }">${dto.dpname}</option>
+	</c:forEach>
+	</select>    
     
 
     
@@ -25,6 +26,3 @@
     
    
     </table>
-<c:forEach var="sdto" items="${dplist }">
-	${sdto.dpname }
-</c:forEach>
