@@ -16,14 +16,9 @@ public class FaqDeleteBean {
 	private SqlMapClientTemplate sqlMapClient;
 		
 	
-	@RequestMapping("/faqDelete.do")
-	public String content(FaqDTO dto,HttpServletRequest request){
-		sqlMapClient.queryForObject("faq.selectOne",dto.getFid());
-		return "/faq/faqDelete.jsp";
-	}
-		
-	@ModelAttribute("dto")
-	public Object returnDTO(FaqDTO dto){
-		return sqlMapClient.queryForObject("faq.selectOne",dto.getFid());
+	@RequestMapping("/faqdelete.do")
+	public String faqupdate(HttpServletRequest request,FaqDTO dto){		
+		sqlMapClient.delete("faq.deletefaq",dto);	
+		return "redirect:faqboard.do";
 	}
 }
