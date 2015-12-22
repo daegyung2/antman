@@ -28,11 +28,12 @@ public class AppointmentDetailSearch {
 		String jumin1 = dto.getJumin1();
 		String jumin2 = dto.getJumin2();
 		String name = dto.getName();
-		String adate  = dto.getAdate();
-		
+		String adate = (String)dto.getAdate();
+		int drid = dto.getDrid();		
 		List tmslist = sqlMapClient.queryForList("treatment.searchtreatmentteam", tmdto.getDpname());
 		TreatmentteamDTO tmsdto = (TreatmentteamDTO)sqlMapClient.queryForObject("treatment.searchname", tmdto.getDpname());
-		System.out.println(tmslist.size());
+		System.out.println(drid);
+		System.out.println(dto.getAdate());
 		 
 		if(tmslist.size() == 0){
 			 dpname = no;
@@ -49,7 +50,7 @@ public class AppointmentDetailSearch {
 		 request.setAttribute("tmsdto", tmsdto);
 		 request.setAttribute("tmslist", tmslist);
 		 request.setAttribute("adlist", adlist);
-		 request.setAttribute("drid",dto.getDrid());
+		 request.setAttribute("drid",drid);
 	
 		 return "/appointmentdetail.do";
 	}

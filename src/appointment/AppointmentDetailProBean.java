@@ -20,14 +20,9 @@ public class AppointmentDetailProBean {
 
 		@RequestMapping("/appointmentdetailpro.do")
 		public String detailreservationpro(HttpServletRequest request,AppointmentDTO dto){
-			String year =(String)dto.getYear();
-			String month =(String)dto.getMonth();
-			String day =(String)dto.getDay();
-			String hour =(String)dto.getHour();
-			String minute =(String)dto.getMinute();
-			String adate = year+month+day+hour+':'+minute;
-			dto.setAdate(adate);
-			System.out.println(adate);
+		
+			
+			System.out.println(dto.getAdate());
 		
 			
 			sqlMapClient.insert("appointment.appointmentinsert",dto);

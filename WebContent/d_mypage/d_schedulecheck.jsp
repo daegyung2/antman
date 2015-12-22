@@ -3,6 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <h2>진료스케쥴조회</h2>
 
+<form action="/schedulecheck.do" method="post">
+선생님이름<input type="text" name="drname"/>
+<input type="submit" value="스케쥴 조회"/>
+</form>
+
 
 <table width="1000" border="1">
 <tr><td width="100">진료선생님</td>

@@ -22,7 +22,7 @@
 	</insert>
 
 	<select id="scheduleselect" resultMap="dsc">
-	select * from schedule where drid= #drid#
+	select sid,drid,drname,dpname,to_char(adate ,'yyyy-MM-DD HH:mm') adate,ttview,stevent from schedule where drid = #drid#
 	</select>
 	<!-- 의사 꺼 -->
 

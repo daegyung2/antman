@@ -171,6 +171,7 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 <br/>
 <br/>
 <h2>진료가능시간입니다.</h2>
+<form action="/antman/appointmentdetailsearch.do" method="post">
 
 <table width="800" border="1"> 
 <tr>
@@ -178,11 +179,15 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 
 <tr>
 <c:forEach var="addto" items="${adlist}">
-<td width="200">${addto.drname}</td><td width="200">${addto.dpname}</td><td width="400">${addto.adate}
-<input type="button" value="시간선택" name="adate" onclick="location.href='/antman/appointmentdetailsearch.do?drname=${tmdto.drname}&drid=${tmdto.drid }&dpname=${tmdto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}&adate=${adate}'"></td></tr>
+
+<td width="300">${addto.drname}</td><td width="200">${addto.dpname}</td><td width="300">${addto.adate}<input type="button" value="시간선택하기" onClick="location.href='/antman/appointmentdetailsearch.do?adate=${addto.adate}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}&drname=${drname}&drid=${drid }&dpname=${dpname}'"/>
+                 </td></tr>
+
+
 </c:forEach>
 </table>
 
+</form>
 <br/>
 <br/>
 
@@ -190,10 +195,10 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 <table width="800" border="1">
 <tr>
 <td width="200" >의사이름</td><td><input type="text" name="drname" value="${drname }"/></td></tr>
-<td width="200" >의사아이디</td><td><input type="text" name="drid" value="${drid }"/></td></tr>
+<input type="hidden" name="drid" value="${drid }"/>
 <td width="200">진료과명</td><td><input type="text" name="dpname" value="${dpname }"/></td></tr>
-<td width="200" >주민1</td><td><input type="hidden" name="jumin1" value="${jumin1 }"/></td></tr>
-<td width="200" >주민2</td><td><input type="hidden" name="jumin2" value="${jumin2 }"/></td></tr>
+<input type="hidden" name="jumin1" value="${jumin1 }"/>
+<input type="hidden" name="jumin2" value="${jumin2 }"/>
 <td width="200" >예약자id</td><td><input type="text" name="id" value="${id}"/></td></tr>
 <td width="200" >예약자성함</td><td><input type="text" name="name" value="${name }"/></td></tr>
 <td width="200" >예약시간</td><td><input type="text" name="adate" value="${adate }"/></td></tr>

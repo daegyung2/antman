@@ -26,7 +26,7 @@
       
       
       <select id="appointresult" resultMap="appointRes">
-      select aid,id,name,drname,dpname,adate from appointment where id = #id#
+      select aid,id,name,drname,dpname,adate from appointment where id = #id# order by aid desc 
       </select>
 
 </sqlMap>
