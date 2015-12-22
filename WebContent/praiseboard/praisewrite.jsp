@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-  
+ 
     <table width="600" border="1">
     
         <tr><td>칭찬할선생님</td><td>
@@ -14,18 +14,20 @@
 	</c:forEach>
 	</select><input type="submit" value="선생님보기">   
  	</form>
+
  
- <c:if test="${view == 1}">
  <form action="/antman/praisewrite.do" method="post">  
+ 
     <select name="drname">
 	<c:forEach var="dto" items="${drlist}" >
 	<option value="${dto.drname }">${dto.drname}</option>
 	</c:forEach>	
 </select>
 <input type="submit" value="선생님선택">
-</form>
-</c:if>
 
+</form>
+
+ </td>
 	<form action="/antman/praisepro.do" method="post">	
     <tr>
     <td>아이디</td><td><input type="text" name="id"/></td></tr>
@@ -39,3 +41,4 @@
     
    
     </table>
+ 

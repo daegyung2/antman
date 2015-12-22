@@ -16,9 +16,17 @@ public class PraiseVO {
 		private String major;
 		private String exarea;
 		private String drimg1;
+		private String view;
 		
 		
 		
+		
+		public String getView() {
+			return view;
+		}
+		public void setView(String view) {
+			this.view = view;
+		}
 		public int getPid() {
 			return pid;
 		}
