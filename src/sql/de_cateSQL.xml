@@ -25,15 +25,15 @@
  select * from DE_CATE order by deid desc
 </select>
 
-<select id="selectOne" parameterClass="String" resultMap="de_cate.dto" >
+<select id="selectOne" parameterClass="int" resultMap="de_cate.dto" >
  select * from DE_CATE where deid=#deid#
 </select>
 
 <update id="update" parameterClass="de_cate" >
- update DE_CATE set de_catename=#de_catename# where deid=#deid#
+ update DE_CATE set de_catename=#de_catename#,status=#status# where deid=#deid#
 </update>
 
 <update id="delete" parameterClass="de_cate" >
- update DE_CATE set status=#status# where deid=#deid#
+ update DE_CATE set de_catename=#de_catename#,status=#status# where deid=#deid#
 </update>
 </sqlMap>

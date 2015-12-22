@@ -15,7 +15,7 @@
 <tr><td>${dto.de_catename }</td><td>${dto.status }</td>
 <td>
 <input type="button" value="수정" onClick="window.location='/antman/updateDe_cate.do?deid=${dto.deid }'" />
-<input type="button" value="삭제" onClick="window.location='/antman/deleteDe_catePro,do?deid=${dto.deid}'" />
+<input type="button" value="삭제" onClick="window.location='/antman/deleteDe_catePro.do?deid=${dto.deid}&de_catename=${dto.de_catename }'" />
 </td></tr>
 </c:forEach>
 <tr><td colspan="3"><input type="button" value="등록" onClick="window.location='/antman/insertDe_cate.do'" /></td></tr>

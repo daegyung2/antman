@@ -24,6 +24,14 @@
 </td>
 </tr>
 <tr>
+<td>상태</td>
+<td><c:if test="${dto.status == null }" >${dto.status }</c:if>
+<c:if test="${dto.status != null }" >
+<input type="text" name="status" value="${dto.status }"/>
+</c:if>
+</td>
+</tr>
+<tr>
 <td colspan="2">
 <input type="submit" value="수정" />
 <input type="button" value="게시판" onclick="window.location='/antman/de_cateList.do'" />

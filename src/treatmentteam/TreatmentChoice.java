@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.TreatmentteamDTO;
-
+ 
 @Controller
 public class TreatmentChoice {
 
