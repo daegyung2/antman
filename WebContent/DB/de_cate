@@ -1,4 +1,5 @@
 create table de_cate(  //질병 카테고리 
     deid number primary key not null,
-    de_catename varchar2(1000) 
+    de_catename varchar2(1000), 
+    status varchar2(1000)
     );

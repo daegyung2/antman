@@ -8,9 +8,28 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
-
-
+<form action="/antman/updateDe_catePro.do" method="post" >
+<table border="1" cellpadding="0" cellspacing="0">
+<tr>
+<td>질병 카테고리 번호
+</td>
+<td>${dto.deid }<input type="hidden" name="deid" value="${ dto.deid}" />
+</td>
+</tr>
+<tr>
+<td>질병 카테고리	
+</td>
+<td>
+<input type="text" name="de_catename" value="${dto.de_catename }"/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<input type="submit" value="수정" />
+<input type="button" value="게시판" onclick="window.location='/antman/de_cateList.do'" />
+</td>
+</tr>
 </table>
+</form>
 </body>
 </html>
