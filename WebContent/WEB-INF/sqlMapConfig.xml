@@ -14,5 +14,5 @@
      <sqlMap resource="/sql/body_partSQL.xml" />
      <sqlMap resource="/sql/p_departmentSQL.xml" /> 
      <sqlMap resource="/sql/memberSQL.xml" /> 
-      
+     <sqlMap resource="/sql/scheduleSQL.xml" /> 
 </sqlMapConfig>

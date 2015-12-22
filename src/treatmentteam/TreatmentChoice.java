@@ -19,7 +19,7 @@ public class TreatmentChoice {
 	
 	private SqlMapClientTemplate sqlMapClient;
 
-	@RequestMapping("/treatmentchoice")
+	@RequestMapping("/treatmentchoice.do")
 	public String treatmentchoice(HttpServletRequest request, TreatmentteamDTO dto ){
 		
 		List cholist = sqlMapClient.queryForList("treatment.treatmentchoice",dto);

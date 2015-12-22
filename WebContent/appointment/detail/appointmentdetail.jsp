@@ -52,13 +52,19 @@ body{  }
                                   <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane active" id="a">
-                                        <c:forEach var="dto" items="${list}">
-  										<table border="0">
+                                        
+                      
+                                      
+  										<table width="600"border="0">
           								<tr>
-         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
-          							    </tr>         
-          								</table>
+          								<c:forEach var="dto" items="${list}" varStatus="status">
+         							    <td width="200"><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td> 
+          							    <c:if test="${status.count%3==0}">		
+          							    <tr>
+										</c:if>	
          							    </c:forEach>
+         							    </tr> 
+         							    </table>
                                         </div>
                                         <div role="tabpanel" class="tab-pane" id="b">
                                         <c:forEach var="dto" items="${lista}">
@@ -142,7 +148,7 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
                     <c:forEach var="tmdto" items="${tmslist}">
                         <tr>
                         	<td height="50"><img src="${tmdto.drimg1 }"  width="181" height="236"></td>
-                            <td class="shit"><h3 ><a href="/antman/appointmentdetailsearch.do?drname=${tmdto.drname}&dpname=${tmdto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${tmdto.drname}</a></h3><br/>
+                            <td class="shit"><h3 ><a href="/antman/appointmentdetailsearch.do?drname=${tmdto.drname}&drid=${tmdto.drid }&dpname=${tmdto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${tmdto.drname}</a></h3><br/>
                              진료과 : ${tmdto.dpname}<br/>
                              <br/>
                              
@@ -164,23 +170,39 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 
 <br/>
 <br/>
+<h2>진료가능시간입니다.</h2>
+
+<table width="800" border="1"> 
+<tr>
+<td width="200">진료선생님</td><td width="200">진료과</td><td width="400">진료가능시간</td></tr>
+
+<tr>
+<c:forEach var="addto" items="${adlist}">
+<td width="200">${addto.drname}</td><td width="200">${addto.dpname}</td><td width="400">${addto.adate}
+<input type="button" value="시간선택" name="adate" onclick="location.href='/antman/appointmentdetailsearch.do?drname=${tmdto.drname}&drid=${tmdto.drid }&dpname=${tmdto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}&adate=${adate}'"></td></tr>
+</c:forEach>
+</table>
+
+<br/>
+<br/>
+
 <form action="/antman/appointmentdetailpro.do" method="post">
 <table width="800" border="1">
 <tr>
-<td width="800" colspan="2">의사이름<input type="text" name="drname" value="${drname }"/></td></tr>
-<td width="800" colspan="2">진료과명<input type="text" name="dpname" value="${dpname }"/></td></tr>
-<td width="800" colspan="2">주민1<input type="hidden" name="jumin1" value="${jumin1 }"/></td></tr>
-<td width="800" colspan="2">주민2<input type="hidden" name="jumin2" value="${jumin2 }"/></td></tr>
-<td width="800" colspan="2">예약자id<input type="text" name="id" value="${id}"/></td></tr>
-<td width="800" colspan="2">예약자성함<input type="text" name="name" value="${name }"/></td></tr>
-<td width="300">년도</td><td width="500"><input type="text" name="year"/></td></tr>
-<td width="300">월</td><td width="500"><input type="text" name="month"/></td></tr>
-<td width="300">일</td><td width="500"><input type="text" name="day"/></td></tr>
-<td width="300">시간</td><td width="500"><input type="text" name="hour"/></td></tr>
-<td width="300">분</td><td width="500"><input type="text" name="minute"/></td></tr>
-<input type="submit" value="예약하기"/>
+<td width="200" >의사이름</td><td><input type="text" name="drname" value="${drname }"/></td></tr>
+<td width="200" >의사아이디</td><td><input type="text" name="drid" value="${drid }"/></td></tr>
+<td width="200">진료과명</td><td><input type="text" name="dpname" value="${dpname }"/></td></tr>
+<td width="200" >주민1</td><td><input type="hidden" name="jumin1" value="${jumin1 }"/></td></tr>
+<td width="200" >주민2</td><td><input type="hidden" name="jumin2" value="${jumin2 }"/></td></tr>
+<td width="200" >예약자id</td><td><input type="text" name="id" value="${id}"/></td></tr>
+<td width="200" >예약자성함</td><td><input type="text" name="name" value="${name }"/></td></tr>
+<td width="200" >예약시간</td><td><input type="text" name="adate" value="${adate }"/></td></tr>
 </table>
+<input type="submit" value="예약하기"/>
 </form>
+
+
+
 
 
 

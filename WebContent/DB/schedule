@@ -1,13 +1,13 @@
 create table schedule(
    sid number primary key not null,  //시퀀스 설정, 스케줄 아이디 
    id varchar2(500),   //멤버 아이디
+   name varchar2(200), //직원 및 멤버이름
    drId number,        //의사 아이디
-   Eid number       //직원 아이디
-   name varchar2(200), //이름
-   apday date,		//예약 년월일
+   drname varchar2(200),//의사이름
+   Eid number,       //직원 아이디
    aptime date,		//예약시간
    ttview varchar2(2000),	//진료내역 입력
-   stevent varchar2(500),	//학술행사
+   stevent varchar2(500)	//학술행사
 
    );
    

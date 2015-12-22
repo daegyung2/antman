@@ -2,27 +2,28 @@ package admin.bean;
 import java.sql.Date;
 public class AppointmentDTO {
 
-	String aid;
-	String id;
-	String name;
-	int agentapp;
-	String jumin1;
-	String jumin2;
-	String did;
-	String adate;
-	String symptom;
-	String odecease;
-	String odrug;
-	String descripton;
-	String reg_num;
-	String phone;
-	String dpname;
-	String drname;
-	String year;
-	String month;
-	String day;
-	String hour;
-	String minute;
+	private String aid;
+	private int drid;
+	private String id;
+	private String name;
+	private int agentapp;
+	private String jumin1;
+	private String jumin2;
+	private String did;
+	private String adate;
+	private String symptom;
+	private String odecease;
+	private String odrug;
+	private String descripton;
+	private String reg_num;
+	private String phone;
+	private String dpname;
+	private String drname;
+	private String year;
+	private String month;
+	private String day;
+	private String hour;
+	private String minute;
 
 	
 
@@ -151,6 +152,12 @@ public class AppointmentDTO {
 	}
 	public void setMinute(String minute) {
 		this.minute = minute;
+	}
+	public int getDrid() {
+		return drid;
+	}
+	public void setDrid(int drid) {
+		this.drid = drid;
 	}
 
 	
