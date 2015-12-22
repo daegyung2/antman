@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="decease" >
+  <typeAlias alias="decease" type="admin.bean.DeceaseDTO" />
+  <resultMap id="decease.dto" class="decease" >
+   <result property="decid" column="decid" />
+   <result property="dename" column="dename" />
+   <result property="bid" column="bid" />
+   <result property="deid" column="deid"/>
+   <result property="symptoms" column="symptoms"/>
+   <result property="r_decease" column="r_decease"/>
+   <result property="depart_id" column="depart_id"/>
+   <result property="same_lang" column="same_lang"/>
+   <result property="deimg" column="deimg"/>
+  </resultMap>
+  
+  <select id="count" resultClass="int" >
+   select COUNT(*) from DECEASE
+  </select>
+
+
+  <select id="max" resultClass="int" >
+   select MAX(decid) from DECEASE 
+  </select>
+
+
+
+
+</sqlMap>

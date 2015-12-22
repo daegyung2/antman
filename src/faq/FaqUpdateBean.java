@@ -16,14 +16,21 @@ public class FaqUpdateBean {
 	private SqlMapClientTemplate sqlMapClient;
 		
 	
-	@RequestMapping("/faqUpdate.do")
-	public String content(FaqDTO dto,HttpServletRequest request){
-		sqlMapClient.queryForObject("faq.selectOne",dto);
-		return "/faq/faqUpdate.jsp";
+	@RequestMapping("/faqupdate.do")
+	public String faqupdate(FaqDTO dto,HttpServletRequest request){
+		int fid =(int)dto.getFid();
+		dto = (FaqDTO)sqlMapClient.queryForObject("faq.selectOne",dto.getFid());
+		request.setAttribute("fid",fid);
+		request.setAttribute("dto",dto);
+		return "/faq/faqupdate.jsp";
 	}
+	
+	@RequestMapping("/faqupdatepro.do")
+	public String faqupdatepro(HttpServletRequest request,FaqDTO dto){
 		
-	@ModelAttribute("dto")
-	public Object returnDTO(FaqDTO dto){
-		return sqlMapClient.queryForObject("faq.selectOne",dto);
+		sqlMapClient.update("faq.updatefaq",dto);
+
+		return "redirect:faqboard.do";
 	}
+	
 }

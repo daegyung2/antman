@@ -1,28 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 <sqlMap namespace="faq">
-   <typeAlias alias="faq" type="admin.bean.FaqDTO" />
-   <resultMap id="faq.dto" class="faq">
+
+	<typeAlias alias="faq" type="faq.faqDTO" />
+
+		<!-- 리절트 맵 정의 -->
+
+	<resultMap id="faq.dto" class="faq">
 		<result property="fid" column="fid"/>
 		<result property="category" column="category"/>
 		<result property="subject" column="subject"/>
 		<result property="content" column="content"/>
 	</resultMap>
-   
-<insert id="insert" parameterClass="faq">
-  insert into faq (fid,category,subject,content) values(faq_SEQ.NEXTVAL,#category#,#subject#,#content#)
+	
+		
+		<!-- select 쿼리문 정의 -->
+		<select id="selectAll" resultMap="faq.dto">
+		select fid,category,subject,content from faq order by fid desc
+		</select>
+	
+		<select id="viewfaq" resultMap="faq.dto" parameterClass="int">
+      	select fid,category,subject,content from faq where fid = #fid# 
+		</select>
+		
+		<update id="updatefaq" parameterClass="faq">	
+		update faq set category = #category#,  subject = #subject#, content = #content# where fid = #fid#
+		</update>
 
-</insert>
+		<insert id="insertfaq" parameterClass="faq">
+		INSERT INTO faq (fid,
+      						category,
+                         	subject,
+                         	content
+                         )
+                	 VALUES (faq_SEQ.NEXTVAL,
+                         	#category#,
+                         	#subject#,
+                         	#content#
+                         )
+		</insert>
 
-<select id="selectList" resultMap="faq.dto">
- select * from faq order by fid desc
-</select>
 
-<select id="selectOne" resultMap="faq.dto" parameterClass="int">
- select * from faq where fid = #fid#
-</select>
-
-<update id="update" parameterClass="faq" >
- update FAQ set CATEGORY=#category#,SUBJECT=#subject#,CONTENT=#content# where FID=#fid#
-</update>
-</sqlMap>
+	
+	  	<delete id="deletefaq" parameterClass="faq">
+			DELETE FROM faq where fid = #fid#
+   		 </delete>
+	
+	
+	
+	
+	<select id="selectLastNo" resultClass="int" >
+			SELECT count(*) count from faq 
+		</select>
+		
+		<select id="selectOne" resultMap="faq.dto" parameterClass="int">
+		 select * from faq where fid = #fid#
+		</select>
+			
+  	
+ 
+  
+</sqlMap>		

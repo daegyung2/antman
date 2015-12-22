@@ -9,12 +9,16 @@
 </head>
 <body>
 <table border="1" cellpadding="0" cellspacing="0">
-<tr><td>질병 카테고리  게시판</td></tr>
-<tr><td>질환 명</td></tr>
+<tr><td colspan="3">질병 카테고리  게시판</td></tr>
+<tr><td width="150">질환 명</td><td width="100">상태</td><td width="100">비고</td></tr>
 <c:forEach var="dto" items="${list }" >
-<tr><td>${dto.de_catename }</td></tr>
+<tr><td>${dto.de_catename }</td><td>${dto.status }</td>
+<td>
+<input type="button" value="수정" onClick="window.location='/antman/updateDe_cate.do?deid=${dto.deid }'" />
+<input type="button" value="삭제" onClick="window.location='/antman/deleteDe_catePro.do?deid=${dto.deid}&de_catename=${dto.de_catename }'" />
+</td></tr>
 </c:forEach>
-<tr><td><input type="button" value="등록" onClick="window.location='/antman/insertDe_cate.do'" /></td></tr>
+<tr><td colspan="3"><input type="button" value="등록" onClick="window.location='/antman/insertDe_cate.do'" /></td></tr>
 </table>
 </body>
 </html>
