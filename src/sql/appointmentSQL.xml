@@ -1,16 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
 <sqlMap namespace="appointment">
  <typeAlias alias="appoint" type="admin.bean.AppointmentDTO" />
-
+<!-- 예약넣기  --> 
 <insert id="appointmentinsert"  parameterClass="appoint">
-  INSERT INTO appointment(aid,name,jumin1,jumin2,drname,adate,dpname) values(appointment_SEQ.NEXTVAL,#name#,#jumin1#,#jumin2#,#drname#,to_date(#adate#,'YYYY-MM-DD HH24:MI'),#dpname#)</insert>
+  INSERT INTO appointment(aid,name,id,jumin1,jumin2,drid,drname,adate,dpname) values(appointment_SEQ.NEXTVAL,#name#,#id#,#jumin1#,#jumin2#,#drid#,#drname#,to_date(#adate#,'YYYY-MM-DD HH24:MI'),#dpname#)</insert>
 
+
+<!-- 간편예약 넣기  --> 
  <typeAlias alias="simpleappoint" type="admin.bean.AppointmentSimpleDTO" />
 <insert id="simpleappointmentinsert"  parameterClass="simpleappoint">
-  INSERT INTO simpleappointment(aid,name,jumin1,jumin2,phone1,phone2,phone3,adate,symptom,talk) values(simpleappointment_SEQ.NEXTVAL,#name#,#jumin1#,#jumin2#,#phone1#,#phone2#,#phone3#,sysdate,#symptom#,#talk#)</insert>
+  INSERT INTO simpleappointment(aid,name,jumin1,jumin2,phone1,phone2,phone3,adate,symptom,talk) values(simpleappointment_SEQ.NEXTVAL,#name#,#jumin1#,#jumin2#,#phone1#,#phone2#,#phone3#,sysdate,#symptom#,#talk#)
+  </insert>
+  
+ <resultMap id="appointRes" class="appoint">
+	  
+	  <result property="aid" column="aid"/>
+      <result property="id" column="id"/>
+      <result property="name" column="name"/>
+      <result property="drname" column="drname"/>
+      <result property="dpname" column="dpname"/>
+      <result property="adate" column="adate"/>
+   
+   </resultMap>
+   
+      
+      <!-- 예약결과조회 출력하기  --> 
+      <select id="appointresult" resultMap="appointRes">
+      select aid,id,name,drname,dpname,adate from appointment where id = #id# order by aid desc 
+      </select>
 
+ <resultMap id="appointRess" class="appoint">
+	  
 
-
+      <result property="adate" column="adate"/>
+   
+   </resultMap>
+<select id="appointscheduleselect" resultMap="appointRess">
+	select to_char(adate ,'yyyy-MM-DD HH:mm') adate from appointment
+</select>
 </sqlMap>

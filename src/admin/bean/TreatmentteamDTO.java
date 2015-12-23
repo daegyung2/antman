@@ -37,33 +37,15 @@ public class TreatmentteamDTO {
 	private String d_info8;
 	private String d_info9;
 	private String d_info10;
-	private Date adate;
+	private String adate;
 	private String name;
 	private int drid;
 	private int p_depart_id	;
-	
-	
-	
-	
-	
-	
-	public Date getAdate() {
-		return adate;
+	public int getAid() {
+		return aid;
 	}
-	public int getDrid() {
-		return drid;
-	}
-	public void setDrid(int drid) {
-		this.drid = drid;
-	}
-	public void setAdate(Date adate) {
-		this.adate = adate;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
+	public void setAid(int aid) {
+		this.aid = aid;
 	}
 	public String getDid() {
 		return did;
@@ -88,6 +70,12 @@ public class TreatmentteamDTO {
 	}
 	public void setMajor(String major) {
 		this.major = major;
+	}
+	public String getExarea() {
+		return exarea;
+	}
+	public void setExarea(String exarea) {
+		this.exarea = exarea;
 	}
 	public int getDepart_id() {
 		return depart_id;
@@ -257,17 +245,23 @@ public class TreatmentteamDTO {
 	public void setD_info10(String d_info10) {
 		this.d_info10 = d_info10;
 	}
-	public String getExarea() {
-		return exarea;
+	public String getAdate() {
+		return adate;
 	}
-	public void setExarea(String exarea) {
-		this.exarea = exarea;
+	public void setAdate(String adate) {
+		this.adate = adate;
 	}
-	public int getAid() {
-		return aid;
+	public String getName() {
+		return name;
 	}
-	public void setAid(int aid) {
-		this.aid = aid;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getDrid() {
+		return drid;
+	}
+	public void setDrid(int drid) {
+		this.drid = drid;
 	}
 	public int getP_depart_id() {
 		return p_depart_id;

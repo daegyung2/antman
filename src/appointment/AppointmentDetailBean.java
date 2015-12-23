@@ -27,8 +27,8 @@ public class AppointmentDetailBean {
 		String jumin1 =(String)dto.getJumin1();
 		String jumin2 =(String)dto.getJumin2();
 		String name =(String)dto.getName();
-
-		
+		String id =(String)dto.getId();
+		System.out.println(name);
 		  
 		List list = sqlMapClient.queryForList("treatment.selecttreatment1", dpdto);
 		List lista = sqlMapClient.queryForList("treatment.selecttreatment2", dpdto);
@@ -43,7 +43,7 @@ public class AppointmentDetailBean {
 		request.setAttribute("jumin1",jumin1);
 		request.setAttribute("jumin2",jumin2);
 		request.setAttribute("name",name);
-
+		request.setAttribute("id",id );
 		
 		
 		

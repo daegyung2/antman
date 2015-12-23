@@ -16,6 +16,8 @@
 <td height="150" align="center" width="150">${dto.dpname}</td>
 	<c:if test="${status.count%6==0}">
 		<tr>
+		
+		
 	</c:if>
 </c:forEach>
 </tr>

@@ -1,4 +1,4 @@
-package faq;
+package admin.de_cate;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,22 +8,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import admin.bean.FaqDTO;
+import admin.bean.De_cateDTO;
 
 @Controller
-public class FaqWriteBean {
+public class DeleteDe_cateProBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
-		
 	
-	@RequestMapping("/faqWrite.do")
-	public String content(FaqDTO dto,HttpServletRequest request){
-		sqlMapClient.queryForObject("faq.selectOne",dto.getFid());
-		return "/faq/faqWrite.jsp";
-	}
-		
-	@ModelAttribute("dto")
-	public Object returnDTO(FaqDTO dto){
-		return sqlMapClient.queryForObject("faq.selectOne",dto.getFid());
+
+	@RequestMapping("/deleteDe_catePro.do")
+	public String deleteDe_cate(@ModelAttribute De_cateDTO dto,HttpServletRequest request){
+		dto.setStatus("ªË¡¶µ ");
+		sqlMapClient.update("de_cate.delete",dto);
+		return "de_cateList.do";
 	}
 }

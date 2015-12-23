@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.TreatmentteamDTO;
-
+ 
 @Controller
 public class TreatmentChoice {
 
@@ -19,7 +19,7 @@ public class TreatmentChoice {
 	
 	private SqlMapClientTemplate sqlMapClient;
 
-	@RequestMapping("/treatmentchoice")
+	@RequestMapping("/treatmentchoice.do")
 	public String treatmentchoice(HttpServletRequest request, TreatmentteamDTO dto ){
 		
 		List cholist = sqlMapClient.queryForList("treatment.treatmentchoice",dto);
