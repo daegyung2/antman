@@ -11,6 +11,7 @@
 	<result property="drid" column="drid"/>
 	<result property="drname" column="drname"/>
 	<result property="dpname" column="dpname"/>
+	<result property="sdate" column="sdate"/>
 	<result property="adate" column="adate"/>
 	<result property="ttview" column="ttview"/>
 	<result property="stevent" column="stevent"/>
@@ -18,12 +19,18 @@
 	</resultMap>
 	
 	<insert id="scheduleinsert" parameterClass ="dsche">
-	INSERT INTO schedule(sid,drid,drname,dpname,adate) values(schedule_SEQ.NEXTVAL,#drid#,#drname#,#dpname#,to_date(#adate#,'YYYY-MM-DD HH24:MI'))
+	INSERT INTO schedule(sid,drid,drname,dpname,sdate) values(schedule_SEQ.NEXTVAL,#drid#,#drname#,#dpname#,to_date(#sdate#,'YYYY-MM-DD HH24:MI'))
 	</insert>
 
-	<select id="scheduleselect" resultMap="dsc">
-	select sid,drid,drname,dpname,to_char(adate ,'yyyy-MM-DD HH:mm') adate,ttview,stevent from schedule where drid = #drid#
-	</select>
+
+	<typeAlias alias="dsche" type="admin.bean.ScheduleDTO"/>
+	
+	<resultMap id="dscd" class="dsche">
+	<result property="sdate" column="sdate"/>	
+	</resultMap>
+	<select id="scheduleselect" resultMap="dscd">
+		select to_char(sdate ,'yyyy-MM-DD HH:mm') sdate from schedule
+</select>
 	<!-- 의사 꺼 -->
 
 

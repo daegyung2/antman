@@ -5,7 +5,7 @@ create table schedule(
    drId number,        //의사 아이디
    drname varchar2(200),//의사이름
    Eid number,       //직원 아이디
-   aptime date,		//예약시간
+   sdate date,		//예약시간
    ttview varchar2(2000),	//진료내역 입력
    stevent varchar2(500)	//학술행사
 

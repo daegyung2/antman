@@ -8,8 +8,8 @@ public class ScheduleDTO {
 	private String id;
 	private int drid;
 	private int eid;
-
 	private String adate;
+	private String sdate;
 	private String ttview;
 	private String stevent;
 	private String year;
@@ -19,6 +19,9 @@ public class ScheduleDTO {
 	private String minute;
 	private String drname;
 	private String dpname;
+	
+	
+	
 	public int getSid() {
 		return sid;
 	}
@@ -43,11 +46,11 @@ public class ScheduleDTO {
 	public void setEid(int eid) {
 		this.eid = eid;
 	}
-	public String getAdate() {
-		return adate;
+	public String getSdate() {
+		return sdate;
 	}
-	public void setAdate(String adate) {
-		this.adate = adate;
+	public void setSdate(String sdate) {
+		this.sdate = sdate;
 	}
 	public String getTtview() {
 		return ttview;
@@ -103,6 +106,13 @@ public class ScheduleDTO {
 	public void setDpname(String dpname) {
 		this.dpname = dpname;
 	}
+	public String getAdate() {
+		return adate;
+	}
+	public void setAdate(String adate) {
+		this.adate = adate;
+	}
+	
 	
 	
 	

@@ -24,10 +24,10 @@ public class D_ScheduleProBean {
 		String hour =(String)dto.getHour();
 		String minute =(String)dto.getMinute();
 		
-		String adate = year+month+day+hour+':'+minute;;
+		String sdate = year+month+day+hour+':'+minute;;
 
 		
-		dto.setAdate(adate);
+		dto.setSdate(sdate);
 		
 		
 		
