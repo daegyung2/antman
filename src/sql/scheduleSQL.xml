@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="schedule">
+	
+	<!-- 의사스케쥴 -->
+	<typeAlias alias="dsche" type="admin.bean.ScheduleDTO"/>
+	
+	<resultMap id="dsc" class="dsche">
+	<result property="sid" column="sid"/>	
+	<result property="drid" column="drid"/>
+	<result property="drname" column="drname"/>
+	<result property="dpname" column="dpname"/>
+	<result property="adate" column="adate"/>
+	<result property="ttview" column="ttview"/>
+	<result property="stevent" column="stevent"/>
+	
+	</resultMap>
+	
+	<insert id="scheduleinsert" parameterClass ="dsche">
+	INSERT INTO schedule(sid,drid,drname,dpname,adate) values(schedule_SEQ.NEXTVAL,#drid#,#drname#,#dpname#,to_date(#adate#,'YYYY-MM-DD HH24:MI'))
+	</insert>
+
+	<select id="scheduleselect" resultMap="dsc">
+	select sid,drid,drname,dpname,to_char(adate ,'yyyy-MM-DD HH:mm') adate,ttview,stevent from schedule where drid = #drid#
+	</select>
+	<!-- 의사 꺼 -->
+
+
+
+
+</sqlMap>

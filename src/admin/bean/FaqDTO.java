@@ -20,6 +20,7 @@ public class FaqDTO {
 		this.category = category;
 	}
 	public String getSubject() {
+		
 		return subject;
 	}
 	public void setSubject(String subject) {

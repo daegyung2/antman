@@ -5,7 +5,7 @@
  <typeAlias alias="appoint" type="admin.bean.AppointmentDTO" />
 
 <insert id="appointmentinsert"  parameterClass="appoint">
-  INSERT INTO appointment(aid,name,id,jumin1,jumin2,drname,adate,dpname) values(appointment_SEQ.NEXTVAL,#name#,#id#,#jumin1#,#jumin2#,#drname#,to_date(#adate#,'YYYY-MM-DD HH24:MI'),#dpname#)</insert>
+  INSERT INTO appointment(aid,name,id,jumin1,jumin2,drid,drname,adate,dpname) values(appointment_SEQ.NEXTVAL,#name#,#id#,#jumin1#,#jumin2#,#drid#,#drname#,to_date(#adate#,'YYYY-MM-DD HH24:MI'),#dpname#)</insert>
 
  <typeAlias alias="simpleappoint" type="admin.bean.AppointmentSimpleDTO" />
 <insert id="simpleappointmentinsert"  parameterClass="simpleappoint">
@@ -26,7 +26,7 @@
       
       
       <select id="appointresult" resultMap="appointRes">
-      select aid,id,name,drname,dpname,adate from appointment where id = #id#
+      select aid,id,name,drname,dpname,adate from appointment where id = #id# order by aid desc 
       </select>
 
 </sqlMap>
