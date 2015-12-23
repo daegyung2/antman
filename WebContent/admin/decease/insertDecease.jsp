@@ -11,7 +11,7 @@
 <form action="/antman/insertDeceasePro.do" method="post" name="choiceForm" enctype="multipart/form-data">
 <table border="1" cellpadding="0" cellspacing="0" >
 <tr><td colspan="2">징병 정보를 기입하세요.</td></tr>
-<tr><td>질병 번호</td><td>${decid }</td></tr>
+<tr><td>질병 번호</td><td>${decid }<input type="hidden" name="decid" value="${decid }" /></td></tr>
 <tr><td>질병 이름</td><td><input type="text" name="dename" size="20" maxlength="20" /></td></tr>
 <tr><td>신체 부위</td>
 <td>

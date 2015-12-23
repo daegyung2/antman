@@ -11,6 +11,7 @@ public class DeceaseDTO {
 	private int depart_id;
 	private String same_lang;
 	private String deimg;
+	
 	public int getDecid() {
 		return decid;
 	}

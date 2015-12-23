@@ -14,6 +14,14 @@
    <result property="deimg" column="deimg"/>
   </resultMap>
   
+  <select id="selectList" resultMap="decease.dto" >
+   select * from DECEASE order by decid desc
+  </select>
+  
+  <select id="selectOne" resultMap="decease.dto" parameterClass="decease" >
+   select * from DECEASE where decid=#decid#
+  </select>
+  
   <select id="count" resultClass="int" >
    select COUNT(*) from DECEASE
   </select>
@@ -24,8 +32,8 @@
   </select>
 
   <insert id="insert" parameterClass="decease" >
-   insert into DECEASE (decid,dename,bid,deid,symptoms,r_decease,depart_id,same_lang) 
-   values(#decid#,#dename#,#bid#,#deid#,#symptoms#,#r_decease#,#depart_id#,#same_lang#)
+   insert into DECEASE (decid,dename,bid,deid,symptoms,r_decease,depart_id,same_lang,deimg) 
+   values(#decid#,#dename#,#bid#,#deid#,#symptoms#,#r_decease#,#depart_id#,#same_lang#,#deimg#)
   </insert>
   
   <update id="upload" parameterClass="decease" >

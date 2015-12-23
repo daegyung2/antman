@@ -3,7 +3,7 @@
     
     <script lang="javascript" >
     function win_close() {
-    	window.close();
+    	window.location = '/antman/body_partList.do';
     	}
     
     </script>
@@ -14,7 +14,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-수정이 완료 되었습니다.
+<center><h2>수정이 완료 되었습니다.</h2></center>
 <center><input type="button" value="수정완료" onClick="win_close()" /></center>
 </body>
 </html>

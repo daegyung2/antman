@@ -19,7 +19,7 @@
    select * from BODY_PART order by bid desc
   </select>
   
-  <select id="selectOne" parameterClass="int" resultMap="body.dto" >
+  <select id="selectOne" parameterClass="body" resultMap="body.dto" >
    select * from BODY_PART where bid=#bid#
   </select>
   
@@ -29,6 +29,10 @@
 
 
   <update id="update" parameterClass="body" >
+   update BODY_PART set name=#name# where bid=#bid#
+  </update>
+  
+  <update id="delete" parameterClass="body" >
    update BODY_PART set name=#name# where bid=#bid#
   </update>
 </sqlMap>

@@ -14,13 +14,11 @@ import admin.bean.Body_partDTO;
 public class UpdateBody_partBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
-	private int bid;
+	
 
 	@RequestMapping("/updateBody_part.do")
-	public String updateBody(@ModelAttribute Body_partDTO dto,HttpServletRequest request){
-		bid = (int) request.getAttribute("bid");
-		System.out.println(bid);
-		dto = (Body_partDTO)sqlMapClient.queryForObject("body.selectOne",bid);
+	public String updateBody(HttpServletRequest request,Body_partDTO dto){
+		dto = (Body_partDTO)sqlMapClient.queryForObject("body.selectOne",dto);
 		return "/admin/body_part/updateBody_part.jsp";
 	}
 	
