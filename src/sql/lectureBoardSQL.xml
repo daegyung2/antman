@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="lectureBoard">
+
+	<typeAlias alias="lectureBoard" type="lectureBoard.LectureBoardDTO" />
+    
+		<!-- 리절트 맵 정의 -->
+
+	<resultMap id="boardRes" class="lectureBoard">
+		<result property="LEid" column="LEid"/>
+		<result property="subject" column="subject"/>
+		<result property="content" column="content"/>
+		<result property="reg_date" column="reg_date"/>
+	</resultMap>
+	
+		
+		<!-- select 쿼리문 정의 -->
+		<select id="selectAll" resultMap="boardRes">
+		select * from lectureBoard order by LEid desc
+		</select>	
+		
+		<select id="viewlectureboard" resultMap="boardRes" parameterClass="int">
+		
+      		select LEid,subject,content,reg_date from lectureBoard where LEid = #LEid# 
+		</select>
+		
+		
+
+			<insert id="insertlectureboard" parameterClass="lectureBoard">
+		
+      		INSERT INTO lectureBoard (LEid,
+                         			subject,
+                         			content,
+                         			reg_date
+                         )
+                	 VALUES (lectureBoard_SEQ.NEXTVAL,
+                          	#subject#,
+                         	#content#,
+                         	sysdate
+                         )
+		</insert>
+		
+		 <select id="selectLastNo" resultClass="int" >
+        	 select count(*) count from lectureBoard 
+      	</select>
+      	
+      	 <delete id="deleteboard" parameterClass="int">
+			DELETE FROM lectureBoard where LEid = #LEid#
+   		 </delete>
+		 			
+		 			
+		 <update id="updateboard" parameterClass="lectureBoard">
+            update lectureBoard set subject=#subject#, CONTENT=#content# where LEid=#LEid#
+   		</update>			
+
+</sqlMap>

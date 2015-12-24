@@ -72,4 +72,8 @@
  <delete id="deleteDr" parameterClass="int" >
    delete from DOCTOR where drId=#drId#
  </delete>
+ 
+ <select id="checkDreg" parameterClass="String" resultClass="int" >
+  select count(*) from DOCTOR where dreg_num=#dreg_num#
+ </select>
 </sqlMap>
