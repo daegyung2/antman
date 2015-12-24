@@ -32,8 +32,8 @@
   </select>
 
   <insert id="insert" parameterClass="decease" >
-   insert into DECEASE (decid,dename,bid,deid,symptoms,r_decease,depart_id,same_lang,deimg) 
-   values(#decid#,#dename#,#bid#,#deid#,#symptoms#,#r_decease#,#depart_id#,#same_lang#,#deimg#)
+   insert into DECEASE (decid,dename,bid,deid,symptoms,r_decease,depart_id,same_lang) 
+   values(#decid#,#dename#,#bid#,#deid#,#symptoms#,#r_decease#,#depart_id#,#same_lang#)
   </insert>
   
   <update id="upload" parameterClass="decease" >

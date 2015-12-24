@@ -20,23 +20,25 @@ public class InsertDeceaseProBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 	private int decid;
-	
+	private MultipartFile file;
 
 	@RequestMapping("/insertDeceasePro.do")
-	public String insertDeceasePro(MultipartHttpServletRequest request,@ModelAttribute DeceaseDTO dto) throws IllegalStateException, IOException{
-			
-		
-	    MultipartFile file = request.getFile("deimg");
+	public String insertDeceasePro(MultipartHttpServletRequest request, DeceaseDTO dto) throws IllegalStateException, IOException{
+		sqlMapClient.insert("decease.insert",dto);
+		decid = (int) sqlMapClient.queryForObject("decease.max",dto);
+		dto.setDecid(decid);
+	    file = request.getFile("upload");
 	    if(!file.isEmpty()){
 	    String name = file.getOriginalFilename();
 	    File sf = new File("H://antman//WebContent//deimage//"+name);
 	    file.transferTo(sf);
 	    dto.setDeimg("/antman/deimage/"+name);
-	    
+	    sqlMapClient.update("decease.upload",dto);
 	    }else{
-	    dto.setDeimg("/antman/deimage/noimg.jpg");
+	    dto.setDeimg("/antman/deimage/noimage.jpg");
+	    sqlMapClient.update("decease.upload",dto);
 	    }
-	    sqlMapClient.insert("decease.insert",dto);
+	    
 		return "deceaseList.do";
 	}
 }
