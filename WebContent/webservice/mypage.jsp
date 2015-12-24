@@ -5,8 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>My Page</title>
-<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
-<script type="text/javascript" src="tabset.js"></script>
+<script type="text/javascript" src="/antman/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="/antman/js/tabset.js"></script>
 <style type="text/css">
 	body { margin:0px; padding:0px; }
 	ul{ list-style:none; margin:0px; padding:0px;}
@@ -89,7 +89,6 @@
     		<div class="left01">
     			<div id="treat_service"><p>진료서비스</p></div>
     			<div id="treat01"><a href="#">본인예약현황</a></div>
-    			<div id="treat02"><a href="#">대리예약현황</a></div>
     			<div id="treat03"><a href="#">진료내역</a></div>
     			<div id="treat04"><a href="#">투약내역</a></div>
     			<div id="treat05"><a href="#">진단검사결과</a></div>

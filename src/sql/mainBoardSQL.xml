@@ -3,7 +3,7 @@
 <sqlMap namespace="mainBoard">
 
 	<typeAlias alias="mainBoard" type="admin.bean.MainBoardDTO" />
-
+    
 		<!-- 리절트 맵 정의 -->
 
 	<resultMap id="boardRes" class="mainBoard">
@@ -16,15 +16,19 @@
 		
 		<!-- select 쿼리문 정의 -->
 		<select id="selectAll" resultMap="boardRes">
-		select MBid,subject,content,reg_date from mainBoard order by MBid desc
+		select * from mainBoard order by MBid desc
 		</select>
+		
+		 <select id="selectOne" resultClass="mainBoard" parameterClass="int">
+     	 select * from (select * from mainBoard order by MBid desc) where MBid >= #MBid# 
+     	 </select>
 		
 			<select id="viewmainboard" resultMap="boardRes" parameterClass="int">
 		
       		select MBid,subject,content,reg_date from mainBoard where MBid = #MBid# 
 		</select>
 		
-	
+		
 
 			<insert id="insertmainboard" parameterClass="mainBoard">
 		
@@ -39,5 +43,16 @@
                          	sysdate
                          )
 		</insert>
+		
+		 <select id="selectLastNo" resultClass="int" >
+        	 select count(*) count from mainBoard 
+      	</select>
+      	
+      	<delete id="deleteboard" parameterClass="int">
+      	delete from mainBoard where MBid = #MBid#
+      	</delete>
 
+		 <update id="updateboard" parameterClass="mainBoard">
+            update mainBoard set subject=#subject#, CONTENT=#content# where MBid=#MBid#
+   		</update>	
 </sqlMap>

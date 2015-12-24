@@ -25,6 +25,7 @@ public class AppointmentDTO {
 	private String day;
 	private String hour;
 	private String minute;
+	private String sdate;
 
 	
 
@@ -159,6 +160,12 @@ public class AppointmentDTO {
 	}
 	public void setDrid(int drid) {
 		this.drid = drid;
+	}
+	public String getSdate() {
+		return sdate;
+	}
+	public void setSdate(String sdate) {
+		this.sdate = sdate;
 	}
 
 	
