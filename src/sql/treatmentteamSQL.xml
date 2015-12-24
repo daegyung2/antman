@@ -53,7 +53,7 @@
 	
 	
 	<select id="searchtreatmentteam" resultMap="searchtreat">
-		select drid,drname,dpname,exarea,drimg1 from(select department.dpname,doctor.drid,doctor.drname,doctor.exarea,doctor.drimg1 from department join doctor on department.dpname = doctor.dpname where department.dpname = #dpname#)
+		select drid,drname,dpname,exarea,drimg1 from (select department.dpname,doctor.drid,doctor.drname,doctor.exarea,doctor.drimg1 from department join doctor on department.dpname = doctor.dpname where department.dpname = #dpname#)
 		</select>
 		
 	<resultMap id="searchdepartname" class="treatmentsearch">

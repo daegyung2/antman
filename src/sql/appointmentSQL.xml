@@ -26,19 +26,27 @@
    
    </resultMap>
    
+   <typeAlias alias="dsche" type="admin.bean.ScheduleDTO"/>
+	
+	<resultMap id="dscd" class="dsche">
+	<result property="adate" column="sdate"/>
+	<result property="drname" column="drname"/>	
+	<result property="dpname" column="dpname"/>	
+	</resultMap>
+   
       
       <!-- 예약결과조회 출력하기  --> 
       <select id="appointresult" resultMap="appointRes">
       select aid,id,name,drname,dpname,adate from appointment where id = #id# order by aid desc 
       </select>
 
- <resultMap id="appointRess" class="appoint">
-	  
-
+ 	  <resultMap id="appointRess" class="appoint">
+	  <result property="drname" column="drname"/>
+      <result property="dpname" column="dpname"/>
       <result property="adate" column="adate"/>
    
    </resultMap>
-<select id="appointscheduleselect" resultMap="appointRess">
-	select to_char(adate ,'yyyy-MM-DD HH:mm') adate from appointment
+<select id="appointscheduleselect" resultMap="dscd" parameterClass="int">
+	select to_char(adate ,'yyyy-MM-DD HH:mm') sdate,drname,dpname from appointment where drid = #drid#
 </select>
 </sqlMap>

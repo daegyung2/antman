@@ -39,10 +39,13 @@ public class AppointmentDetailSearch {
 		if(tmslist.size() == 0){
 			 dpname = no;
 		}
-		List<String> adlist = sqlMapClient.queryForList("appointment.appointscheduleselect", dto.getDrid());
-		List<String> sdlist = sqlMapClient.queryForList("schedule.scheduleselect", dto.getDrid());
 		
-		for(String aa : adlist){
+		List<ScheduleDTO> adlist = sqlMapClient.queryForList("appointment.appointscheduleselect", dto.getDrid());
+		List<ScheduleDTO> sdlist = sqlMapClient.queryForList("schedule.scheduleselect", dto.getDrid());
+		System.out.println(adlist.size());
+		System.out.println(sdlist.size());
+		
+		for(ScheduleDTO aa : adlist){
 			if(sdlist.contains(aa)){
 				sdlist.remove(aa);
 			}

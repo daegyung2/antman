@@ -26,11 +26,14 @@
 	<typeAlias alias="dsche" type="admin.bean.ScheduleDTO"/>
 	
 	<resultMap id="dscd" class="dsche">
-	<result property="sdate" column="sdate"/>	
+	<result property="sdate" column="sdate"/>
+	<result property="drname" column="drname"/>	
+	<result property="dpname" column="dpname"/>	
 	</resultMap>
-	<select id="scheduleselect" resultMap="dscd">
-		select to_char(sdate ,'yyyy-MM-DD HH:mm') sdate from schedule
-</select>
+	
+	<select id="scheduleselect" resultMap="dscd" parameterClass="int">
+		select to_char(sdate ,'yyyy-MM-DD HH:mm')sdate,dpname,drname from schedule where drid = #drid#
+	</select>
 	<!-- 의사 꺼 -->
 
 
