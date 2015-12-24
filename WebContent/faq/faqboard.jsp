@@ -5,31 +5,82 @@
 <html lang="en" >
 <head>
 <title>FAQ | 자주하는질문</title>
+
+<script language="JavaScript">
+	var isAnswerOpened = false;
+	var openAnswerId = 0;
+	function clickSubject(str){
+		if ( openAnswerId != str ) {
+			//이미 열린 다른 답변 숨기기
+			$('.viewAaqContent').attr("style","display:none");
+			//현재 활성화되어있는 질문 분류를 비활성화 시키기
+			$('.qstOn').attr("class","qstOff");
+			//현재 활성화되어있는 답변을 비활성화 시키기
+			$('.faqOpen').attr("class","faqClose");
+
+			isAnswerOpened = false;
+		}
+
+		//현재 클릭한 질문의 답변 보이기
+		if (isAnswerOpened == false) {
+
+			fnPost(
+					"/antman/faq/faqboard.do",
+					{faqId : str},
+					function(data) {
+					}
+			);
+
+			//현재 클릭한 질문의 답변 보이기
+			$('#tr' + str).removeAttr("style");
+			//현재 클릭한 질문의 분류를 활성화 시키기
+			$('#counselName'+str).attr("class","qstOn");
+			//현재 클릭한 질문의 답변을 활성화 시키기
+			$('#counselSubject'+str).attr("class","faqOpen");
+
+			isAnswerOpened = true;
+			openAnswerId = str;
+		} else {
+			//이미 열린 다른 답변 숨기기
+			$('.viewAaqContent').attr("style","display:none");
+			//$('#tr' + str).attr("style","display:none");
+			//현재 활성화되어있는 질문 분류를 비활성화 시키기
+			$('.qstOn').attr("class","qstOff");
+			//현재 활성화되어있는 답변을 비활성화 시키기
+			$('.faqOpen').attr("class","faqClose");
+
+			isAnswerOpened = false;
+			openAnswerId = 0;
+		}
+	}
+</script>
+
+ 
 <style type="text/css">
-	body, ul, li, div{ margin:0px; padding:0px; }
-	ul{ list-style:none;}
+	body, ul, li, div{margin:0px; padding:0px; }
+	ul{list-style:none;}
 	body{font-size:12px; line-height:1.4; }
-	a{ text-decoration:none; }
+	a{text-decoration:none; }
 	
 	.container {width:1000px; height:1200px; margin:0 auto; position:relative;}
 	.container .content{width:800px; height:1200px; margin-left:100px;}
 	.container .content h2{text-align:center; font-size:25px; margin-top:20px;}
 	.container .content p{text-align:center; font-size:15px; margin-top:5px; margin-right:40px; float:right;}
 	
-	.container .main{ width:800px; height:1000px; margin-top:5px; }
-	.tabset{ width:800px; height:1000px; margin:20px auto; padding:5px; border:1px solid #333;  }
-	.tabset .tabs{ padding:0px 0px; overflow:hidden; margin-left:4px;}
-	.tabset .tabs li{ float:left; margin-right:3px;}
-	.tabset .tabs li a{ display:block; background:#5586EB; color:#FFFFFF; padding:15px 53px; font-weight:bold; }
-	.tabset .tabs li a.on{ border:1px solid #DBDBDB; background:#FFFFFF; color:#333;}
-	.tabset .panels div{ width:750px; height:900px; padding:12px 15px 6px; margin-left:10px; margin-top:20px; align:center; border:1px solid #333;}
+	.container .main{width:800px; height:1000px; margin-top:5px; }
+	.tabset{width:800px; height:1000px; margin:20px auto; padding:5px; border:1px solid #333;  }
+	.tabset .tabs{padding:0px 0px; overflow:hidden; margin-left:4px;}
+	.tabset .tabs li{float:left; margin-right:3px;}
+	.tabset .tabs li a{display:block; background:#5586EB; color:#FFFFFF; padding:15px 53px; font-weight:bold; }
+	.tabset .tabs li a.on{border:1px solid #DBDBDB; background:#FFFFFF; color:#333;}
+	.tabset .panels div{width:750px; height:900px; padding:12px 15px 6px; margin-left:10px; margin-top:20px; align:center; border:1px solid #333;}
 	.tabset .panels div .sub{width:750px; height:70px; border:1px solid #333; }
 	.tabset .panels div .sub #category{width:315px; height:70px; margin-left:10px; position:relative;}
 	.tabset .panels div .sub #title{width:315px; height:70px; margin-left:335px; position:relative;}
 </style>
 
-<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
-<script type="text/javascript" src="tabset.js"></script>
+<script type="text/javascript" src="/antman/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="/antman/js/tabset.js"></script>
 
 </head>
 <body>
@@ -37,7 +88,7 @@
 <div class="container">
 	<div class="content">
 	<h2>자주하는질문</h2>
-	<p><b>총 <font color="#5586EB">${count}건</font>입니다.</b></p>
+	<p><b>총 <font color="#5586EB">${Count}건</font>입니다.</b></p>
 	<form action="/antman/faqwrite.do" method="post">
   	<button type="submit" class="btn btn-primary btn-md" onclick=>질문등록하기</button>
   	</form>                    
@@ -52,12 +103,41 @@
         	<li><a href="#panel05">홈페이지 이용</a></li>
         	</ul>   
      	<div class="panels">
-    		<div id="panel01">test1
-    		<c:forEach var="dto" items="${list}">
-				<table border="1" width="700" height="150" >
-    			<tr><th width="150" height="30px">${dto.category}</th><td>${dto.subject}</td></tr>
-    			<tr><th colspan="2">${dto.content }</th></tr>
-    			</table>
+    		<div id="panel01">   		
+    			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="tableLayout" border="1" >
+					<colgroup>
+						<col width="150px" />
+						<col width="600px" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="bgLine">분류</th>
+							<th scope="col">제목</th>
+						</tr>
+					</thead>
+			<c:forEach var="dto" items="${list}">
+					<tbody>
+						<tr>
+							<td class="leftTd"><span>${dto.category}</span></td>
+							<td class="titleTd"><a href="#answer2" class="faqClose" id="counselSubject518" onclick="clickSubject('518'); return false;">${dto.subject}</a></td>
+						</tr>
+						<tr style="display:block " id="tr518" class="viewAaqContent">
+							<tr><td class="answer" id="answer2" colspan="2" align="center" color="#10620A">
+							<font color="#FF00DD">
+							${dto.content}
+							</font>
+    						</td>
+						</tr>
+						<tr>
+						<td colspan="2">
+						<center>
+						<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqupdate.do?fid=${dto.fid}'">수정하기</button>
+						<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqdelete.do?fid=${dto.fid}'">삭제하기</button> 
+  						</center>
+  						</td>
+						</tr>
+					</tbody>
+			</table>
 			</c:forEach>	
         	</div>
         	<div id="panel02">test2

@@ -1,11 +1,11 @@
-   	<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
-    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-<title>FAQ | 질문등록</title>
+<title>FAQ | 질문수정</title>
 <style type="text/css">
 	body, ul, li, div{margin:0px; padding:0px; }
 	ul{list-style:none;}
@@ -21,15 +21,15 @@
 	#container #container_con table{width:700px; border:1px solid #BDBDBD; border-collapse:collapse; }
 	#container #container_con th{width:100px; text-align:center; padding:5px 0;}
 	#container #container_con td{padding:5px 0 5px 10px;}
-	#container #container_con td.title input{width:650px;}
 </style>
 
 </head>
 
-	<form action="/antman/faqwritepro.do" method="post">
+    <form action="/antman/faqupdatepro.do" method="post">
+    <input type="hidden" name="fid" value="${Fid }"/>
     <div id="sub">
     	<div id="sub_con">
-		<b><font color="#5586EB">질문답변올리기</font></b>
+		<b><font color="#5586EB">질문수정</font></b>
     	</div>
     </div>
     
@@ -38,6 +38,7 @@
     	<table border="1">
     	<tr><th>분류</th>
     	<td><select name="category">
+    		<option value="${dto.category}">${dto.category}</option>
 			<option value="원무정보">원무정보</option>
 			<option value="진료관련">진료관련</option>
 			<option value="병원이용">병원이용</option>
@@ -45,13 +46,14 @@
 		</select>    
     	</td></tr>
     
-    	<tr><th>제목</th><td><input type="text" class="title" maxlength="65" name="subject"/></td></tr>
-    	<tr><th>내용</th><td><textarea name="content" ROWS="15" COLS="75"/></textarea></td></tr>
-    	<tr><th colspan="2"><input type="submit" value="등록하기"/>
+    	<tr><th>제목</th><td><input type="text" name="subject" value="${dto.subject}"/></td></tr>
+    	<tr><th>내용</th><td><textarea name="content" ROWS="15" COLS="75" />${dto.content}</textarea></td></tr>
+    	<tr><th colspan="2"><input type="submit" value="수정하기"/>
     	<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqboard.do'">목록으로</button></th></tr>
     	</table>
     	</div>
 	</div>
 	
 	</form>
+	
 </html>

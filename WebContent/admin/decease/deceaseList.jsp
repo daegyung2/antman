@@ -8,14 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
+<table border="1" cellpadding="0" cellspacing="0">
 <tr><td colspan="2" align="center">질병목록</td></tr>
-<tr><td>질병 아이디</td><td>질병명</td></tr>
+<tr><td align="center">질병 아이디</td><td align="center">질병명</td></tr>
 <c:forEach var="dto" items="${list }" >
 <tr><td>${dto.decid }</td><td>${dto.dename }</td>
 </tr>
 </c:forEach>
-<tr><td><input type="button" value="등록" onClick="window.location='/antman/insertDecease.do'" /></td></tr>
+<tr><td colspan="2"><input type="button" value="등록" onClick="window.location='/antman/insertDecease.do'" /></td></tr>
 </table>
 </body>
 </html>
