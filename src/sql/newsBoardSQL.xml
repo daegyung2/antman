@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="newsBoard">
+
+	<typeAlias alias="newsBoard" type="newsBoard.NewsBoardDTO" />
+
+		<!-- 리절트 맵 정의 -->
+
+	<resultMap id="boardRes" class="newsBoard">
+		<result property="NEid" column="NEid"/>
+		<result property="subject" column="subject"/>
+		<result property="content" column="content"/>
+		<result property="reg_date" column="reg_date"/>
+	</resultMap>
+	
+		
+		<!-- select 쿼리문 정의 -->
+		<select id="selectAll" resultMap="boardRes">
+		select NEid,subject,content,reg_date from newsBoard order by NEid desc
+		</select>
+		
+		<select id="viewnewsboard" resultMap="boardRes" parameterClass="int">
+      	select NEid,subject,content,reg_date from newsBoard where NEid = #NEid# 
+		</select>
+		
+		
+
+			<insert id="insertnewsboard" parameterClass="newsBoard">
+		
+      		INSERT INTO newsBoard (NEid,
+      							   subject,
+                         		   content,
+                         		   REG_DATE
+                         )
+                	 VALUES (newsBoard_SEQ.NEXTVAL,
+                	 		#subject#,
+                         	#content#,
+                         	sysdate
+                         )
+		</insert>
+		
+		 <select id="selectLastNo" resultClass="int" >
+        	 select count(*) count from newsBoard 
+      	</select>
+
+		 	<delete id="deleteboard" parameterClass="int">
+      	delete from newsBoard where NEid = #NEid#
+      	</delete>
+
+		 <update id="updateboard" parameterClass="newsBoard">
+            update newsBoard set subject=#subject#, CONTENT=#content# where NEid=#NEid#
+   		</update>	
+</sqlMap>
