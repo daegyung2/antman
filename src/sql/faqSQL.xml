@@ -2,7 +2,7 @@
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 <sqlMap namespace="faq">
 
-	<typeAlias alias="faq" type="admin.bean.FaqDTO" />
+	<typeAlias alias="faq" type="faq.faqDTO" />
 
 		<!-- 리절트 맵 정의 -->
 
@@ -23,15 +23,19 @@
       	select fid,category,subject,content from faq where fid = #fid# 
 		</select>
 		
+		<select id="selectList" resultMap="faq.dto" >
+      	select * from faq order by fid desc
+     	</select>
+		
 		<update id="updatefaq" parameterClass="faq">	
 		update faq set category = #category#,  subject = #subject#, content = #content# where fid = #fid#
 		</update>
 
 		<insert id="insertfaq" parameterClass="faq">
 		INSERT INTO faq (fid,
-      						category,
-                         	subject,
-                         	content
+      					category,
+                         subject,
+                         content
                          )
                 	 VALUES (faq_SEQ.NEXTVAL,
                          	#category#,
@@ -39,25 +43,31 @@
                          	#content#
                          )
 		</insert>
-
-
+		
 	
 	  	<delete id="deletefaq" parameterClass="faq">
 			DELETE FROM faq where fid = #fid#
-   		 </delete>
+		</delete>
 	
 	
 	
-	
-	<select id="selectLastNo" resultClass="int" >
+		<select id="selectLastNo" resultClass="int" >
 			SELECT count(*) count from faq 
 		</select>
 		
-		<select id="selectOne" resultMap="faq.dto" parameterClass="int">
-		 select * from faq where fid = #fid#
+		
+		<resultMap id="faqs" class="faq">
+		<result property="category" column="category"/>
+		<result property="subject" column="subject"/>
+		<result property="content" column="content"/>
+	</resultMap>
+		
+		<select id="selectOne" parameterClass="int" resultMap="faqs" >
+ 			select subject,content,category from faq where fid = #fid#
 		</select>
 			
-  	
+  		
  
   
 </sqlMap>		
+	
