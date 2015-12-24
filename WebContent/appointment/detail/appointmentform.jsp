@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-
+<%@ page session="true" %>
     <h2>본인 예약하기</h2>
        
     <h4>진료받으실 분의 주민등록번호(외국인등록번호)를 입력하여 주시기 바랍니다.</h4>
@@ -17,7 +17,7 @@
 <h4>진료받으실 분의 주민등록번호(외국인등록번호) 또는 병원등록번호 중 하나의 정보를 입력해 주세요.<br/>
 보건복지부 고시에 의거 가족이 아닌 제3자에 의한 대리진료가 제한됨을 알려드립니다.</h4>
 <form action="appointmentdetail.do" method="post">
-아이디<input type="text" name="id" /><br/>
+아이디&nbsp;${adto.id}<br/>
 이름<input type="text" name="name" /></br>
 주민번호<input type="text" name="jumin1"/>-<input type="text" name="jumin2"/><br/>
 <input type="submit" name="ok" value="확인" />
