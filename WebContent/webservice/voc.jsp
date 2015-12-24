@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>고객의소리 | 고객서비스 | 웹서비스</title>
-<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="/antman/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 $(function(){
 	/* 만약에 클릭한 개체의 다음개체의 display값이 none값과 같은때만 실행 */

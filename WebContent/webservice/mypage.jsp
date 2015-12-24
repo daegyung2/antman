@@ -5,8 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>My Page</title>
-<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
-<script type="text/javascript" src="tabset.js"></script>
+<script type="text/javascript" src="/antman/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="/antman/js/tabset.js"></script>
 <style type="text/css">
 	body { margin:0px; padding:0px; }
 	ul{ list-style:none; margin:0px; padding:0px;}
