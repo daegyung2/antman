@@ -22,7 +22,9 @@
 	INSERT INTO schedule(sid,drid,drname,dpname,sdate) values(schedule_SEQ.NEXTVAL,#drid#,#drname#,#dpname#,to_date(#sdate#,'YYYY-MM-DD HH24:MI'))
 	</insert>
 
-
+	
+	
+	 <!-- 예약스케쥴에서 중복부분 삭제하기   --> 
 	<typeAlias alias="dsche" type="admin.bean.ScheduleDTO"/>
 	
 	<resultMap id="dscd" class="dsche">
@@ -31,8 +33,8 @@
 	<result property="dpname" column="dpname"/>	
 	</resultMap>
 	
-	<select id="scheduleselect" resultMap="dscd" parameterClass="int">
-		select to_char(sdate ,'yyyy-MM-DD HH:mm')sdate,dpname,drname from schedule where drid = #drid#
+	<select id="scheduleselect" resultMap="dscd" parameterClass="dsche">
+		select to_char(sdate ,'yyyy-MM-DD HH24:MI')sdate, drname, dpname from schedule where drid = #drid#
 	</select>
 	<!-- 의사 꺼 -->
 
