@@ -17,4 +17,7 @@
      <sqlMap resource="/sql/scheduleSQL.xml" /> 
      <sqlMap resource="/sql/de_cateSQL.xml" />
      <sqlMap resource="/sql/deceaseSQL.xml" />
+     
+     
+     
 </sqlMapConfig>

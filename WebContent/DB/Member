@@ -7,7 +7,7 @@ create table member (  //멥버 회원가입 DB
   phone number not null,          //핸드폰번호
   e-mail varchar2(200),           //이메일 
   getMail varchar2(200),          //메일 수신 확인 yes or no?
-  Eid varchar2(500),              // 직원일 경우, 사번 
+  Eid number,              // 직원일 경우, 사번 
   Dreg_num varchar2(500),          // 의사일 경우, 의사 등록 번호 
   reg_num number default 10000  // 병원 등록 번호 할당 
   auth varchar2(100) not null, //권한 부여, 의사는 D, 직원은 E, 환자는 P

@@ -28,7 +28,8 @@
     <context:component-scan base-package="admin.body_part" />
  	<context:component-scan base-package="d_mypage" />      
     <context:component-scan base-package="admin.de_cate" />
-    <context:component-scan base-package="admin.decease" />   
+    <context:component-scan base-package="admin.decease" /> 
+    <context:component-scan base-package="intro" />   
 
        
     <bean id="multipartResolver" 
