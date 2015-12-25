@@ -41,6 +41,16 @@ public class TreatmentteamDTO {
 	private String name;
 	private int drid;
 	private int p_depart_id	;
+	private String dpimg;
+	
+	
+	
+	public String getDpimg() {
+		return dpimg;
+	}
+	public void setDpimg(String dpimg) {
+		this.dpimg = dpimg;
+	}
 	public int getAid() {
 		return aid;
 	}
