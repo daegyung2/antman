@@ -25,7 +25,7 @@
 		if (isAnswerOpened == false) {
 
 			fnPost(
-					"/asan/custom/faq/faqDownload.do",
+					"/antman/faq/faqboard.do",
 					{faqId : str},
 					function(data) {
 					}
@@ -79,39 +79,8 @@
 	.tabset .panels div .sub #title{width:315px; height:70px; margin-left:335px; position:relative;}
 </style>
 
-<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
-<script type="text/javascript">
-$(function(){
-	var tabDiv = $('.tabset');
-	var anchors =  tabDiv.find('ul.tabs a');
-	var penels = tabDiv.find('div.panels div');
-	penels.hide();
-	var currentAnchor = anchors.filter('.on'); 
-	/* selector중에서 (~)적용되는 개체 찾기 */
-	var currentPanel = $(currentAnchor.attr('href'));
-	currentPanel.show();
-	
-	anchors.click(function(event){
-		event.preventDefault(); /* 해당 이벤트 기본동작 해제(방지) */
-		var newAnchor = $(this);
-		/* 클릭되는 a를 새로운 선택개체(newAnchor)로 지정 */
-		var newPanel = $(newAnchor.attr('href'));
-		/* 새로운 선택개체의href값을 호출해서 새로운panel 지정 */
-		currentAnchor.removeClass('on');
-		/* 기존에 선택된 a에서 on클래스를 지워서 회색배경으로 처리 */
-		newAnchor.addClass('on');
-		/* 새로운 선택a에 on클래서 적용해서 흰색배경으로 처리 */
-		currentPanel.hide();
-		/* 현재 보여지고 있는 panel 가리기 */
-		newPanel.show();
-		/* 새롭게 정의된 panel을 보이기 */
-		currentAnchor = newAnchor;
-		/* 현재선택된 a를 새로 클릭한 a값으로 정의 */
-		currentPanel = newPanel;
-		/* 현재 보여지고 있는 panel을 새롭게 정의된 panel값으로 정의 */
-	})
-})
-</script>
+<script type="text/javascript" src="/antman/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="/antman/js/tabset.js"></script>
 
 </head>
 <body>
@@ -120,7 +89,7 @@ $(function(){
 	<div class="content">
 	<h2>자주하는질문</h2>
 	<p><b>총 <font color="#5586EB">${Count}건</font>입니다.</b></p>
-	<form action="/spring/faqwrite.do" method="post">
+	<form action="/antman/faqwrite.do" method="post">
   	<button type="submit" class="btn btn-primary btn-md" onclick=>질문등록하기</button>
   	</form>                    
 	<br/>
@@ -162,8 +131,8 @@ $(function(){
 						<tr>
 						<td colspan="2">
 						<center>
-						<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/faqupdate.do?fid=${dto.fid}'">수정하기</button>
-						<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/faqdelete.do?fid=${dto.fid}'">삭제하기</button> 
+						<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqupdate.do?fid=${dto.fid}'">수정하기</button>
+						<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqdelete.do?fid=${dto.fid}'">삭제하기</button> 
   						</center>
   						</td>
 						</tr>

@@ -15,8 +15,17 @@ public class DepartmentDTO {
 	private String d_info8;
 	private String d_info9;
 	private String d_info10;
+	private String dpimg;
 	
 	
+	
+	
+	public String getDpimg() {
+		return dpimg;
+	}
+	public void setDpimg(String dpimg) {
+		this.dpimg = dpimg;
+	}
 	public int getDepart_id() {
 		return depart_id;
 	}
