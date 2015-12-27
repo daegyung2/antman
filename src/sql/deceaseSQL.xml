@@ -41,4 +41,7 @@
   </update>
 
 
+<update id="delete" parameterClass="decease" >
+ update DECEASE set dename=#dename# where decid=#decid#
+</update>
 </sqlMap>

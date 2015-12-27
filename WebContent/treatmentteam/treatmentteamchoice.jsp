@@ -10,10 +10,10 @@
 
 
 
-<table width="900" border="1">
+<table width="900" border="0">
 <tr>
 <c:forEach var="dto" items="${cholist}" varStatus="status">
-<td height="150" align="center" width="150">${dto.dpname}</td>
+<td height="150" align="center" width="150"><center><img src="${dto.dpimg}"/><br/>${dto.dpname}</center></td>
 	<c:if test="${status.count%6==0}">
 		<tr>
 		

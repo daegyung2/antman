@@ -17,6 +17,7 @@
 		<result property="d_info8" column="d_info8"/>
 		<result property="d_info9" column="d_info9"/>
 		<result property="d_info10" column="d_info10"/>
+		<result property="dpimg" column="dpimg"/>
 	</resultMap>
    
 <insert id="insert" parameterClass="depart">
@@ -43,4 +44,12 @@
 <delete id="delete" parameterClass="int" >
  delete from DEPARTMENT where depart_id=#depart_id#
 </delete>
+
+ <select id="max" resultClass="int">
+   select max(depart_id) from department 
+ </select>
+ 
+  <update id="updateDpimg"  parameterClass="depart" >
+   update department set dpimg = #dpimg# where depart_id = #depart_id#
+ </update>
 </sqlMap>
