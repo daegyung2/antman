@@ -1,0 +1,19 @@
+
+직원이 아카데미스케쥴을 등록했을경우 접수자들에게 등록가능화면이 뜨며
+
+접수자가 신청할경우 asmin+1 이되서 asmax의 숫자와 같아질경우 콘트롤러에서 중복삭제를 사용해 사용자들에게
+뜨기않게 함
+
+
+create table appointAcademy (
+
+aaid number //행사접수번호
+name //행사접수자이름
+phone //번호
+email //이메일
+aasubject //신청한 학술행사제목
+aatime //신청한 학술행사시간
+
+)
+
+create sequence appointacardemy_seq nocache
