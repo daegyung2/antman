@@ -2,6 +2,9 @@
     pageEncoding="EUC-KR"%>
 
 
+<jsp:include page="d_mypage_sidebar.jsp" flush="true | false"/>
+
+
 <h2>진료스케쥴등록</h2>
 
 <form action = "schedulepro.do" method="post"><br/>

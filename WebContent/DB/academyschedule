@@ -3,12 +3,12 @@ create table AcademySchedule ( 직원권한으로 등록이 가능
 asid  number          //행사번호
 assubject varchar2(400)          //학술행사제목
 astime date          //학술행사일시
-asfile varchar2(400)       //안내장이나 프로그램일정
+asfile varchar2(400)       //안내장이나 프로그램일정업로드
 asimg  varchar2(400)       //이미지가 있을경우
 asmin number         //신청인원
 asmax number          //신청최대인원
-asrequesttimest date          //일정신청기간
-asrequesttimeen date          //일정신청종료기간
+asstart date          //일정신청기간
+asend date          //일정신청종료기간
 place varchar2(200)          //장소
 host varchar2(200)          //주최
 trainingpoint varchar2(200)          //연수평점

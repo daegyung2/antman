@@ -54,7 +54,7 @@
 </tr>
 <tr>
 <td>질병 관련 사진 업로드</td>
-<td><input type="file" name="upload" value="${ }"/></td>
+<td><input type="file" name="upload" value="${ dto.babo}"/></td>
 </tr>
 <tr>
 <td colspan="2">
