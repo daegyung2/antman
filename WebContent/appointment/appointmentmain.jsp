@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-
+<%@ page session="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <title>진료예약</title>
 
 <h2>진료예약</h2>
@@ -22,8 +23,13 @@
 회원이 본인 예약을 할 경우<br/>
 로그인 후 본인의 진료예약 및 조회를<br/>
 하실 수 있습니다.<br/>
-
+${ sessionScope.memId}
+<c:if test="${sessionScope.memId == null }"> 
+<input type="button" value="본인 예약하기" onclick="location.href='loginform.do'"/>
+</c:if>
+<c:if test="${sessionScope.memId != null }"> 
 <input type="button" value="본인 예약하기" onclick="location.href='appointmentform.do'"/>
+</c:if>
 <input type="button" value="본인 예약 조회하기"/>
 </td></center>
 

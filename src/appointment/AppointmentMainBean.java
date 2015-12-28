@@ -19,18 +19,15 @@ public class AppointmentMainBean {
 	private SqlMapClientTemplate sqlMapClient;
 
 	@RequestMapping("/appointmentmain.do")
-	public String reservationmain(){
+	public String reservationmain(HttpServletRequest request,AppointmentDTO adto){
 
 		return "/appointment/appointmentmain.jsp";
 	}
 
 	@RequestMapping("/appointmentform.do")
-	public String reservationform(HttpServletRequest request,AppointmentDTO adto ,HttpSession session){
+	public String reservationform(){
 			
-		adto.setId((String)session.getAttribute("memId"));
-		
-		
-		request.setAttribute("adto", adto);
+;
 		return "/appointment/detail/appointmentform.jsp";
 	}
 	
