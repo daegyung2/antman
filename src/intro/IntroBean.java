@@ -75,7 +75,7 @@ public class IntroBean {
 			request.setAttribute("lista", lista);
 			request.setAttribute("listb", listb);
 		
-		return "/intro/intro.jsp";
+		return "/antman/intro/intro.jsp";
 	}
 	
 	

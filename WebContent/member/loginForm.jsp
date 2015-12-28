@@ -52,9 +52,9 @@
       <label><input type="checkbox"> Remember me</label>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
-    <button type="button" onclick="javascript:window.location='inputForm.do'" class="btn btn-default">Sign</button>
-    <button type="button" onclick="javascript:window.location='boardList.do'" class="btn btn-default">Board</button>
-
+    <button type="button" onclick="javascript:window.location='loginCheck.do'" class="btn btn-default">Sign</button>
+    <button type="button" onclick="javascript:window.location='newsboard.do'" class="btn btn-default">Board</button>
+    <button type="button" onclick="javascript:window.location='mainboard.do'" class="btn btn-default">mainboard</button>
     
   </form>
 </div>

@@ -21,7 +21,7 @@ public class MemberBean {
 		
 		ModelAndView mv = new ModelAndView();
 		
-		mv.setViewName("/Hospital/login/loginForm.jsp");
+		mv.setViewName("/member/loginForm.jsp");
 				
 		return mv;
 	}
@@ -32,27 +32,27 @@ public class MemberBean {
 		if(check==1){
 			session.setAttribute("memId", dto.getId());		
 		}else if(check != 1){
-			return "/loginForm.do";
+			return "/member/loginForm.do";
 		}
 		
-		return "/Hospital/login/loginPro.jsp";	
+		return "/member/loginPro.jsp";	
 	}
 	
 	@RequestMapping("/logout.do")
 	public String logout(LoginDataBean dto, HttpSession session){
 		session.setAttribute("memId", null);
-		return "/Hospital/login/loginForm.jsp";
+		return "/member/loginForm.jsp";
 	}
 	
 	@RequestMapping("/inputForm.do")
 	public String inputForm(){
-		return "/Hospital/login/inputForm.jsp";
+		return "/member/inputForm.jsp";
 	}
 	
 	@RequestMapping("/inputPro.do")
 	public String inputpro(LoginDataBean dto){
 		sqlMapClient.insert("member.insertUser",dto);
-		return "/Hospital/login/inputPro.jsp";
+		return "/member/inputPro.jsp";
 	}
 	
 	@RequestMapping("/confirmId.do")
@@ -62,7 +62,7 @@ public class MemberBean {
 		
 		request.setAttribute("check", check);
 		
-		return "/Hospital/login/confirmId.jsp";
+		return "/member/confirmId.jsp";
 	}
 	
 

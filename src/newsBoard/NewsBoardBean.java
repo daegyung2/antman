@@ -38,6 +38,7 @@ public class NewsBoardBean {
 		    session.getAttribute("memId");
 		    System.out.println((String)session.getAttribute("memId"));
 			dtoa.setId((String)session.getAttribute("memId"));
+			
 			alist=sqlMapClient.queryForList("appointment.selectAll", dtoa.getId());
 		
 			request.setAttribute("list", list);
