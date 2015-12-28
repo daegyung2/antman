@@ -7,10 +7,10 @@
 <body>
 <c:choose>
 	<c:when test="${check==1 }">
-		<b><font color="red">이미 사용중인 아이디 입니다.</font></b>
+		<center><b><font color="red">이미 사용중인 아이디 입니다.</font></b></center>
 	</c:when>
 	<c:when test="${param.id eq null || param.id == ''}">
-		<b>아이디를 입력하세요.</b>
+		<center><b>아이디를 입력하세요.</b></center>
 	</c:when>
 	<c:otherwise>
 		<center>

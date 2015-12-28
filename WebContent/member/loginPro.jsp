@@ -10,4 +10,5 @@
     <input type="button" value="마이페이지" onclick="javascript:window.location='MyReservation.do'">
     <br/>
     <input type="button" value="공지사항" onclick="javascript:window.location='mainboard.do'">
+     <input type="button" value="마이qna" onclick="javascript:window.location='MyQnA.do'">
     

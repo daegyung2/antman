@@ -51,7 +51,7 @@
             return;
         }
         // url과 사용자 입력 id를 조합합니다.
-        url = "confirmId.jsp?id=" + input.id.value ;
+        url = "/spring/confirmId.do?id=" + input.id.value ;
         
         // 새로운 윈도우를 엽니다.
         open(url, "confirm", 
