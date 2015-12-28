@@ -33,7 +33,8 @@
 	</resultMap>
 	
 	<select id="drschedulecheck" resultMap="ddsc"  >
-	select sid,drname,dpname,sdate from schedule where drname = #drname# order by sdate
+	  select sid,drname,dpname,sdate from schedule where drname = #drname# order by sid desc
+	
 	</select>
 	
 	 <!-- 예약스케쥴에서 중복부분 삭제하기   --> 

@@ -1,5 +1,7 @@
 package d_mypage;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +19,9 @@ public class D_ScheduleBean {
 	
 	@RequestMapping("scheduleform.do")
 	public String scheduleform (HttpServletRequest request, ScheduleDTO dto){
-		
+		System.out.println(dto.getDrname());
+		List list = sqlMapclient.queryForList("schedule.drschedulecheck",dto.getDrname());
+		request.setAttribute("list", list);
 		return "/d_mypage/d_schedule.jsp";
 	}
 }
