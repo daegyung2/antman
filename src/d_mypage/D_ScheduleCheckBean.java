@@ -17,11 +17,20 @@ public class D_ScheduleCheckBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapclient;
 	
+	@RequestMapping("schedulecheckform.do")
+	public String schedulecheckform (HttpServletRequest request, ScheduleDTO dto){
+		
+		
+		return "/d_mypage/d_schedulecheck.jsp";
+	}
+
 	@RequestMapping("schedulecheck.do")
 	public String schedulecheck (HttpServletRequest request, ScheduleDTO dto){
-		
-		List list = sqlMapclient.queryForList("schedule.schedulecheck",dto.getDrname());
+		System.out.println(dto.getDrname());
+		List list = sqlMapclient.queryForList("schedule.drschedulecheck",dto.getDrname());
+		List aplist = sqlMapclient.queryForList("appointment.drappointcheck" , dto.getDrname());
 		request.setAttribute("list",list);
+		request.setAttribute("aplist",aplist);
 		return "/d_mypage/d_schedulecheck.jsp";
 	}
 }

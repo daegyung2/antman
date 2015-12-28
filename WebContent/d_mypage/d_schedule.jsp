@@ -2,11 +2,18 @@
     pageEncoding="EUC-KR"%>
 
 
-<jsp:include page="d_mypage_sidebar.jsp" flush="true | false"/>
+
 
 
 <h2>진료스케쥴등록</h2>
+<table width="1200" border="1">
+<tr>
+<td width="200">
+<jsp:include page="d_mypage_sidebar.jsp" flush="true | false"/>
+</td>
 
+
+<td width="1000" align ="center">
 <form action = "schedulepro.do" method="post"><br/>
 <table width="600" border="1">
 <tr><td>의사drid</td><td><input type="text" name="drid"></td></tr>
@@ -20,3 +27,6 @@
 </table>
 <input type="submit" value="스케쥴 등록">
 </form>
+</td>
+</tr>
+</table>
