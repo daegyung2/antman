@@ -75,7 +75,7 @@ public class MemberBean {
 		
 		request.setAttribute("check", check);
 		
-		return "/antman/member/confirmId.jsp";
+		return "/Hospital/login/confirmId.jsp";
 	}
 	
 
