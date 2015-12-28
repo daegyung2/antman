@@ -39,9 +39,9 @@
 		select * from department where init='ㅊ' or init='ㅋ' or init='ㅌ' or init='ㅍ' or init='ㅎ'
 		</select>
 		
+		
+		<!-- 진료과 선생님 선택 -->	
 	<typeAlias alias="treatmentsearch" type="admin.bean.TreatmentteamDTO" />
-
-		<!-- 진료과 선생님 선택 -->
 
 	<resultMap id="searchtreat" class="treatmentsearch">
 	<result property="drid" column="drid"/>
@@ -105,15 +105,16 @@
 		select * from(select a.depart_id,a.dpname,a.d_info1,a.d_info2 ,a.d_info3 ,a.d_info4 ,a.d_info5,a.d_info6 ,a.d_info7 ,a.d_info8 ,a.d_info9 ,a.d_info10,b.drid,b.dreg_num,b.drname,b.major,b.exarea,b.degree1,b.degree2,b.degree3,b.degree4,b.degree5, b.report1, b.report2, b.report3, b.report4,b.report5,b.drimg1,b.drimg2,b.drimg3,b.drimg4,b.drimg5 from department a join doctor b on a.dpname = b.dpname where drid = #drid#)
 		</select>
 		
-		
+		<!-- 진료과 선택 -->
 		<resultMap id="treatmentchoice" class="treatmentsearch">
 		<result property="p_depart_id" column="p_depart_id"/>
+		<result property="p_dpname" column="p_dpname"/>
 		<result property="dpname" column="dpname"/>
 		<result property="dpimg" column="dpimg"/>	
 		</resultMap>
 		
-		<select id="treatmentchoice" resultMap="treatmentchoice">
-		select p_depart_id,dpname,dpimg from department where p_depart_id = 1	
+		<select id="treatmentchoice" resultMap="treatmentchoice" >
+		select * from (select pd.p_depart_id,pd.p_dpname,dp.dpname,dp.dpimg from p_department pd join department dp on pd.p_depart_id  = dp.p_depart_id) where p_depart_id = #p_depart_id#
 		</select>
 		</sqlMap>
 		

@@ -2,14 +2,20 @@
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<h2>Áø·á°ú</h2>
+<h2></h2>
 
 <br/>
 <br/>
-<center>
+<table width="1200" border="0">
+<tr>
+<td width="200">
+
+<jsp:include page="treatmentsidebar.jsp" flush="true | false"/>
+    
 
 
 
+</td><td width="1000">
 <table width="900" border="0">
 <tr>
 <c:forEach var="dto" items="${cholist}" varStatus="status">
@@ -21,6 +27,14 @@
 	</c:if>
 </c:forEach>
 </tr>
+
+</table>
+</td>
+<center>
+
+
+
+
 
 
 

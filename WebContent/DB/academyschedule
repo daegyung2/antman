@@ -3,12 +3,12 @@ create table AcademySchedule ( 직원권한으로 등록이 가능
 asid  number          //행사번호
 assubject varchar2(400)          //학술행사제목
 astime date          //학술행사일시
-asfile varchar2(400)       //안내장이나 프로그램일정
+asfile varchar2(400)       //안내장이나 프로그램일정업로드
 asimg  varchar2(400)       //이미지가 있을경우
 asmin number         //신청인원
 asmax number          //신청최대인원
-asrequesttimest date          //일정신청기간
-asrequesttimeen date          //일정신청종료기간
+asstart date          //일정신청기간
+asend date          //일정신청종료기간
 place varchar2(200)          //장소
 host varchar2(200)          //주최
 trainingpoint varchar2(200)          //연수평점
@@ -21,3 +21,28 @@ inquiry varchar2(200)          // 문의
 )
 
 create sequence acedemyschedule_seq nocache
+
+
+일단은 의사 이름과 위에 것들을 적고 db에 인서트시키는페이지를 만들고 값을 넣는다
+그리고 리스트를 만들어 학술행사의 제목과 날짜 수강가능인원을 뜨게한다.
+
+
+들어가있는 뷰를 보여줄 수 있는 뷰 페이지를 만든다.
+접수자가 신청할경우 asmin+1 이되서 asmax의 숫자와 같아질경우 콘트롤러에서 중복삭제를 사용해 사용자들에게
+뜨기않게 함
+
+		List<AppointmentDTO> adlist = sqlMapClient.queryForList("appointment.appointscheduleselect", dto);
+		List<ScheduleDTO> sdlist = sqlMapClient.queryForList("schedule.scheduleselect", sddto);
+		List<ScheduleDTO> temp = sqlMapClient.queryForList("schedule.scheduleselect", sddto);		
+
+		int i = 0;
+		
+		for(ScheduleDTO aa : temp){
+			for(AppointmentDTO bb : adlist) {
+				if((aa.getSdate().equals(bb.getAdate()))) {
+					sdlist.remove(i);
+					i--;
+				}			
+			}
+			i++;
+		}

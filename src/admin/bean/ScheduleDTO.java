@@ -19,6 +19,9 @@ public class ScheduleDTO {
 	private String minute;
 	private String drname;
 	private String dpname;
+	private String name;
+	
+	
 	
 	
 	
@@ -111,6 +114,12 @@ public class ScheduleDTO {
 	}
 	public void setAdate(String adate) {
 		this.adate = adate;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	

@@ -21,9 +21,8 @@ public class TreatmentChoice {
 
 	@RequestMapping("/treatmentchoice.do")
 	public String treatmentchoice(HttpServletRequest request, TreatmentteamDTO dto ){
-		
+		System.out.println(dto.getP_depart_id());
 		List cholist = sqlMapClient.queryForList("treatment.treatmentchoice",dto);
-		
 		request.setAttribute("cholist", cholist);
 		return "/treatmentteam/treatmentteamchoice.jsp";
 	}

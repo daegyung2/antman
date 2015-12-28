@@ -25,6 +25,16 @@
       <result property="adate" column="adate"/>
    
    </resultMap>
+   <!-- 선생님마이페이지에서 보는 예약내역 -->
+      <select id="drappointcheck" resultMap="appointRes">
+      select * from appointment where drname = #drname# order by adate 
+     </select>
+   
+
+  <!-- 예약결과조회 출력하기  --> 
+      <select id="appointresult" resultMap="appointRes">
+      select aid,id,name,drname,dpname,adate from appointment where id = #id# order by aid desc 
+      </select>
    
    <typeAlias alias="dsche" type="admin.bean.ScheduleDTO"/>
 	
@@ -34,11 +44,8 @@
 	<result property="dpname" column="dpname"/>	
 	</resultMap>
    
+
       
-      <!-- 예약결과조회 출력하기  --> 
-      <select id="appointresult" resultMap="appointRes">
-      select aid,id,name,drname,dpname,adate from appointment where id = #id# order by aid desc 
-      </select>
 
  <!-- 예약스케쥴에서 중복부분 삭제하기   --> 
  	  <resultMap id="appointRess" class="appoint">

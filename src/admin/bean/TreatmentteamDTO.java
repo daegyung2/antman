@@ -41,7 +41,9 @@ public class TreatmentteamDTO {
 	private String name;
 	private int drid;
 	private int p_depart_id	;
+	private String p_dpname;
 	private String dpimg;
+	
 	
 	
 	
@@ -278,6 +280,12 @@ public class TreatmentteamDTO {
 	}
 	public void setP_depart_id(int p_depart_id) {
 		this.p_depart_id = p_depart_id;
+	}
+	public String getP_dpname() {
+		return p_dpname;
+	}
+	public void setP_dpname(String p_dpname) {
+		this.p_dpname = p_dpname;
 	}
 	
 	
