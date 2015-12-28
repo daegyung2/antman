@@ -21,3 +21,24 @@ inquiry varchar2(200)          // 문의
 )
 
 create sequence acedemyschedule_seq nocache
+
+일단은 의사 이름과 위에 것들을 적을수있는 폼이 있는 뷰를  만들고
+
+들어가있는 뷰를 보여줄 수 있는 뷰 페이지를 만든다.
+
+
+		List<AppointmentDTO> adlist = sqlMapClient.queryForList("appointment.appointscheduleselect", dto);
+		List<ScheduleDTO> sdlist = sqlMapClient.queryForList("schedule.scheduleselect", sddto);
+		List<ScheduleDTO> temp = sqlMapClient.queryForList("schedule.scheduleselect", sddto);		
+
+		int i = 0;
+		
+		for(ScheduleDTO aa : temp){
+			for(AppointmentDTO bb : adlist) {
+				if((aa.getSdate().equals(bb.getAdate()))) {
+					sdlist.remove(i);
+					i--;
+				}			
+			}
+			i++;
+		}
