@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>   
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -110,6 +111,14 @@
         <td>이메일수신동의</td>
         <td>Yes<input type="radio" name="getMail" value="yes"> &nbsp; No<input type="radio" name="getMail" value="no"></td>
       </tr>
+    
+    <c:if test="${drId==null}">
+     <input type="test" name="eid" value="${eid}">
+     </c:if>
+       
+     <c:if test="${eid==null}">
+     <input type="test" name="drId" value="${drId}">
+     </c:if> 
       
     <tr>
     <td><input type="submit" value="가입하기"/>

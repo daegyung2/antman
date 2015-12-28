@@ -64,4 +64,9 @@
  <delete id="delete" parameterClass="int" >
    delete from EMPLOYEE where Eid=#Eid#
  </delete>
+ 
+   <select id="EidCheck" resultClass="int" parameterClass="employee">
+  		select count(*) from EMPLOYEE where Eid = #Eid#
+	  </select>
+ 
 </sqlMap>

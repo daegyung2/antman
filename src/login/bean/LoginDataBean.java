@@ -11,7 +11,7 @@ public class LoginDataBean {
 	private String e_mail;
 	private String getMail;
 	private String Eid;
-	private String Dreg_num;
+	private String drId;
 	private int reg_num;
 	private String auth;
 	
@@ -67,14 +67,9 @@ public class LoginDataBean {
 		return Eid;
 	}
 	public void setEid(String eid) {
-		Eid = eid;
+		this.Eid = eid;
 	}
-	public String getDreg_num() {
-		return Dreg_num;
-	}
-	public void setDreg_num(String dreg_num) {
-		Dreg_num = dreg_num;
-	}
+	
 	public int getReg_num() {
 		return reg_num;
 	}
@@ -86,6 +81,12 @@ public class LoginDataBean {
 	}
 	public void setAuth(String auth) {
 		this.auth = auth;
+	}
+	public String getDrId() {
+		return drId;
+	}
+	public void setDrId(String drId) {
+		this.drId = drId;
 	}
 	
 	
