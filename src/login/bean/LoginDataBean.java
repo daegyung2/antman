@@ -14,7 +14,6 @@ public class LoginDataBean {
 	private int drId;
 	private int reg_num;
 	private String auth;
-	
 	public String getId() {
 		return id;
 	}
@@ -88,5 +87,5 @@ public class LoginDataBean {
 		this.auth = auth;
 	}
 	
-
+	
 }

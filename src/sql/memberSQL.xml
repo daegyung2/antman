@@ -42,15 +42,15 @@
 </select>
 
  	  <update id="updateEid" parameterClass="dto">   
-      update member set eid =#eid#, auth='E' where id=#id#
+      update member set eid =#eid#, drid = 0 , auth='E' where id=#id#
       </update>
       
 	  <update id="updatedrId" parameterClass="dto">   
-      update member set drId = #drId#,auth='D' where id=#id#
+      update member set drId = #drId#, eid = 0, auth='D' where id=#id#
       </update>
       
       <update id="updateP" parameterClass="dto">   
-      update member set auth= 'P' where id=#id#
+      update member set auth= 'P', eid = 0 , drid = 0 where id=#id#
       </update>
  
 

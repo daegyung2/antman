@@ -24,7 +24,8 @@ public class D_ScheduleBean {
 		request.getParameter(drid);
 		System.out.println(drid);	
 		System.out.println(dto.getDrname());
-
+		List list = sqlMapclient.queryForList("schedule.drschedulecheck",dto.getDrname());
+		request.setAttribute("list", list);
 		return "/d_mypage/d_schedule.jsp";
 	}
 }

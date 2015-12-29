@@ -36,7 +36,7 @@
 <td width="200">진료스케쥴</td>
 
 <tr>
-<c:forEach var="dto" items="${list }">
+<c:forEach var="dto" items="${list}">
 <td>${dto.sid}</td>
 <td>${dto.drname}</td>
 <td>${dto.dpname}</td>
