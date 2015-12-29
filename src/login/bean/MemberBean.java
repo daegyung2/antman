@@ -57,11 +57,15 @@ public class MemberBean {
 		System.out.println(dto.getDrId());
 		
 		if(dto.getEid()!=null){
-				sqlMapClient.update("member.updateEid", dto);
-				sqlMapClient.insert("member.insertUser",dto);
+			sqlMapClient.insert("member.insertUser",dto);	
+			sqlMapClient.update("member.updateEid", dto);
+				
+				
 		}else if(dto.getDrId()!=null){
-				sqlMapClient.update("member.updatedrId", dto);
 				sqlMapClient.insert("member.insertUserDR",dto);
+				sqlMapClient.update("member.updatedrId", dto);
+			}else if(dto.getEid()!=null && dto.getDrId()!=null){
+				sqlMapClient.update("member.updateP", dto);
 			}
 		
 		return "/member/inputPro.jsp";

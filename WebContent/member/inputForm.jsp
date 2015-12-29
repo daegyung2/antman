@@ -113,11 +113,11 @@
       </tr>
     
     <c:if test="${drId==null}">
-     <input type="test" name="eid" value="${eid}">
+     <input type="hidden" name="eid" value="${eid}">
      </c:if>
        
      <c:if test="${eid==null}">
-     <input type="test" name="drId" value="${drId}">
+     <input type="hidden" name="drId" value="${drId}">
      </c:if> 
       
     <tr>

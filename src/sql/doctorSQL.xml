@@ -76,4 +76,8 @@
  <select id="checkDreg" parameterClass="String" resultClass="int" >
   select count(*) from DOCTOR where dreg_num=#dreg_num#
  </select>
+ 
+  <select id="drIdCheck" resultClass="int" parameterClass="doctor">
+  		select count(*) from DOCTOR where drId = #drId#
+  </select>
 </sqlMap>
