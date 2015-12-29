@@ -31,7 +31,8 @@
     <context:component-scan base-package="admin.decease" /> 
     <context:component-scan base-package="intro" />   
 	<context:component-scan base-package="faq" /> 
-	<context:component-scan base-package="login.bean" />   
+	<context:component-scan base-package="login.bean" />  
+	<context:component-scan base-package="p_mypage" />    
 	
        
     <bean id="multipartResolver" 

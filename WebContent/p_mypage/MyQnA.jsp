@@ -16,7 +16,7 @@
  	</form>
 
  
- <form action="/spring/MyQnA.do" method="post">  
+ <form action="/antman/MyQnA.do" method="post">  
  
     <select name="drname">
 	<c:forEach var="dto" items="${drlist}" >
