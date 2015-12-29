@@ -20,13 +20,13 @@ public class LoginCheckBean {
 	
 	@RequestMapping("/loginCheck.do")
 	public String LoginCheck(){
-		return "/Hospital/login/loginCheck.jsp";
+		return "/member/loginCheck.jsp";
 	}
 	
 	@RequestMapping("/E_CheckForm.do")
 	public String ECheck(){
 		
-		return "/Hospital/login/E_CheckForm.jsp";
+		return "/member/E_CheckForm.jsp";
 	}
 	
 	@RequestMapping("E_CheckFormPro.do")
@@ -37,18 +37,18 @@ public class LoginCheckBean {
 		
 		if(check == 1){
 			request.setAttribute("eid", dto.getEid());
-			return "/Hospital/login/inputForm.jsp"; //결과가 1이면 DB에 결과가 있다는 뜻이므로 inputForm으로 넘어가야함
+			return "/member/inputForm.jsp"; //결과가 1이면 DB에 결과가 있다는 뜻이므로 inputForm으로 넘어가야함
 		}else if(check != 1){ //결과가 1이 아니면 DB에 결과가 없다는 뜻이므로 inputForm으로 넘어가면 됨..
 			
-			return "/Hospital/login/E_CheckPro.jsp";
+			return "/member/E_CheckPro.jsp";
 		}
 		
-		return "/Hospital/login/E_CheckForm.jsp";
+		return "/member/E_CheckForm.jsp";
 	}
 	
 	@RequestMapping("/D_CheckForm.do")
 	public String DCheck(){
-		return "/Hospital/login/D_CheckForm.jsp";
+		return "/member/D_CheckForm.jsp";
 	}
 	
 	@RequestMapping("/D_CheckPro.do")
@@ -59,12 +59,12 @@ public class LoginCheckBean {
 		
 		if(check == 1){
 			request.setAttribute("drId", dto.getDrId());
-			return "/Hospital/login/inputForm.jsp"; //결과가 1이면 DB에 결과가 있다는 뜻이므로 inputForm으로 넘어가야함
+			return "/member/inputForm.jsp"; //결과가 1이면 DB에 결과가 있다는 뜻이므로 inputForm으로 넘어가야함
 		}else if(check != 1){ //결과가 1이 아니면 DB에 결과가 없다는 뜻이므로 inputForm으로 넘어가면 됨..
 			
-			return "/Hospital/login/D_CheckPro.jsp";
+			return "/member/D_CheckPro.jsp";
 		}
-		return "/Hospital/login/D_CheckForm.jsp";
+		return "/member/D_CheckForm.jsp";
 	}
 }
 
