@@ -121,14 +121,14 @@
 
 <table width="200" border="1">
 <tr>
-<td><center>의사이름<br/>의사등록번호</center></td>
+<td><center><h3>${sessionScope.memname}</h3><br/>의사등록번호${sessionScope.memdrid}</center></td>
 </tr>
 <tr>
 <td><center>진료서비스</center></td>
 </tr>
 <tr>
 <tr>
-<td><a href="/antman/scheduleform.do"><center>나의진료스케쥴등록</center></a></td>
+<td><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid }"><center>나의진료스케쥴등록</center></a></td>
 </tr>
 <tr>
 <td><a href="/antman/schedulecheck.do"><center><center>나의진료스케쥴확인</center></a></td>

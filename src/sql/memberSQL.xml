@@ -4,16 +4,36 @@
 
  <typeAlias alias="dto" type="login.bean.LoginDataBean"/>
 
+
+   <resultMap id="userdata" class="dto">    
+      <result property="id" column="id"/>
+      <result property="passwd" column="passwd"/>
+      <result property="name" column="name"/>
+      <result property="age" column="age"/>
+      <result property="gender" column="gender"/>
+      <result property="phone" column="phone"/>
+      <result property="e_mail" column="e_mail"/>
+      <result property="Eid" column="Eid"/>
+      <result property="drId" column="drId"/>
+      <result property="auth" column="auth"/>
+      
+</resultMap>
+
+<select id="userdata" resultMap="userdata">
+  select id,passwd,name,age,gender,phone,e_mail,Eid,drId,auth from MEMBER where id = #id#
+</select>
+
+
 <select id="userCheck" resultClass="int" parameterClass="dto">
   select count(*) from MEMBER where id = #id# and passwd = #passwd#
 </select>
 
 <insert id="insertUser" parameterClass="dto">
- insert into MEMBER(id,passwd,name,age,gender,phone,e_mail,getMail,eid) values(#id#,#passwd#,#name#,#age#,#gender#,#phone#,#e_mail#,#getMail#,#eid#)
+ insert into MEMBER(id,passwd,name,age,gender,phone,e_mail,getMail) values(#id#,#passwd#,#name#,#age#,#gender#,#phone#,#e_mail#,#getMail#)
 </insert>
 
 <insert id="insertUserDR" parameterClass="dto">
- insert into MEMBER(id,passwd,name,age,gender,phone,e_mail,getMail,drId) values(#id#,#passwd#,#name#,#age#,#gender#,#phone#,#e_mail#,#getMail#,#drId#)
+ insert into MEMBER(id,passwd,name,age,gender,phone,e_mail,getMail) values(#id#,#passwd#,#name#,#age#,#gender#,#phone#,#e_mail#,#getMail#)
 </insert>
 
 
@@ -21,16 +41,16 @@
   select count(*) from MEMBER where id = #id#
 </select>
 
- <update id="updateEid" parameterClass="dto">   
+ 	  <update id="updateEid" parameterClass="dto">   
       update member set eid =#eid#, auth='E' where id=#id#
       </update>
       
-<update id="updatedrId" parameterClass="dto">   
-      update member set drId=#drId#, auth='D' where id=#id#
+	  <update id="updatedrId" parameterClass="dto">   
+      update member set drId = #drId#,auth='D' where id=#id#
       </update>
       
       <update id="updateP" parameterClass="dto">   
-      update member set auth='P' where id=#id#
+      update member set auth= 'P' where id=#id#
       </update>
  
 
