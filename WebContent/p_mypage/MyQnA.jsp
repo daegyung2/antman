@@ -7,7 +7,7 @@
     <table width="600" border="1">
     
     <tr><td>선생님 선택</td><td>
-    <form action="/spring/MyQnA.do" method="post">
+    <form action="/antman/MyQnA.do" method="post">
     <select name="dpname">
 	<c:forEach var="dto" items="${dplist}" >
 	<option value="${dto.dpname }">${dto.dpname}</option>
@@ -28,11 +28,11 @@
 </form>
 
  </td>
-	<form action="/antman/praisepro.do" method="post">	
+	<form action="/antman/MyQnAPro.do" method="post">	
     <tr>
     <td>아이디</td><td>&nbsp; ${sessionScope.memId}</td></tr>
     
-    <tr><td>글쓴이</td><td><input type="text" name="subject"/></td></tr>
+    <tr><td>글쓴이</td><td><input type="text" name="id"/></td></tr>
     <tr><td>글제목</td><td><input type="text" name="subject"/></td></tr>
     <tr><td>선생님</td><td><input type="text" name="drname" value="${drname}"/></td></tr>
     </td></tr>
