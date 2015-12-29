@@ -27,7 +27,7 @@
    </resultMap>
    <!-- 선생님마이페이지에서 보는 예약내역 -->
       <select id="drappointcheck" resultMap="appointRes">
-      select * from appointment where drname = #drname# order by adate 
+      select * from appointment where drname = #drname# order by aid desc
      </select>
    
 
