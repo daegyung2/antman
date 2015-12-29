@@ -7,11 +7,11 @@ public class LoginDataBean {
 	private String name;
 	private int age;
 	private String gender;
-	private int phone;
+	private String phone;
 	private String e_mail;
 	private String getMail;
-	private String Eid;
-	private String drId;
+	private int Eid;
+	private int drId;
 	private int reg_num;
 	private String auth;
 	
@@ -45,10 +45,10 @@ public class LoginDataBean {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	public String getE_mail() {
@@ -63,13 +63,18 @@ public class LoginDataBean {
 	public void setGetMail(String getMail) {
 		this.getMail = getMail;
 	}
-	public String getEid() {
+	public int getEid() {
 		return Eid;
 	}
-	public void setEid(String eid) {
-		this.Eid = eid;
+	public void setEid(int eid) {
+		Eid = eid;
 	}
-	
+	public int getDrId() {
+		return drId;
+	}
+	public void setDrId(int drId) {
+		this.drId = drId;
+	}
 	public int getReg_num() {
 		return reg_num;
 	}
@@ -82,12 +87,6 @@ public class LoginDataBean {
 	public void setAuth(String auth) {
 		this.auth = auth;
 	}
-	public String getDrId() {
-		return drId;
-	}
-	public void setDrId(String drId) {
-		this.drId = drId;
-	}
 	
-	
+
 }

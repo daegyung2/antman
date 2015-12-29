@@ -28,11 +28,21 @@ public class MemberBean {
 		return mv;
 	}
 	@RequestMapping("/loginPro.do")
-	public String formPro(LoginDataBean dto , HttpSession session){
+	public String formPro(LoginDataBean dto , HttpSession session ){
 		int check = (Integer)sqlMapClient.queryForObject("member.userCheck", dto);
 		
 		if(check==1){
-			session.setAttribute("memId", dto.getId());		
+			session.setAttribute("memId", dto.getId());
+			dto = (LoginDataBean)sqlMapClient.queryForObject("member.userdata",dto.getId());
+			session.setAttribute("memname", dto.getName());
+			session.setAttribute("memage", dto.getAge());
+			session.setAttribute("memgender", dto.getGender());
+			session.setAttribute("memphone", dto.getPhone());
+			session.setAttribute("meme_mail", dto.getE_mail());
+			session.setAttribute("memeid", dto.getEid());
+			session.setAttribute("memdrid", dto.getDrId());
+			session.setAttribute("memauth", dto.getAuth());
+			
 		}else if(check != 1){
 			return "/loginForm.do";
 		}
@@ -55,16 +65,17 @@ public class MemberBean {
 	public String inputpro(LoginDataBean dto, HttpServletRequest request){
 	
 		System.out.println(dto.getDrId());
-		
-		if(dto.getEid()!=null){
+		System.out.println(dto.getEid());
+		if(dto.getEid()!= 0){
 			sqlMapClient.insert("member.insertUser",dto);	
 			sqlMapClient.update("member.updateEid", dto);
 				
 				
-		}else if(dto.getDrId()!=null){
+		}else if(dto.getDrId() != 0){
 				sqlMapClient.insert("member.insertUserDR",dto);
 				sqlMapClient.update("member.updatedrId", dto);
-			}else if(dto.getEid()!=null && dto.getDrId()!=null){
+			}else if(dto.getEid() == 0 && dto.getDrId() == 0){
+				sqlMapClient.insert("member.insertUser",dto);
 				sqlMapClient.update("member.updateP", dto);
 			}
 		

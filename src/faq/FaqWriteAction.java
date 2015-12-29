@@ -20,30 +20,16 @@ public class FaqWriteAction {
 		
 	
 	@RequestMapping("/faqwrite.do")
-	public String write(FaqDTO dto,HttpServletRequest request){
-		sqlMapClient.queryForObject("faq.selectOne",dto.getFid());
-		
+	public String faqwrite(HttpServletRequest request){
 		return "/faq/faqwrite.jsp";
 	}
 	
 	@RequestMapping("/faqwritepro.do")
-	public String writepro(FaqDTO dto){
+	public String faqwritepro(FaqDTO dto){
 		
 		sqlMapClient.insert("faq.insertfaq", dto);		
 		
 		return "redirect:faqboard.do";
 	}
-	
-	@RequestMapping("/faqcontent.do")
-	public String VIEW(HttpServletRequest request,FaqDTO dto)throws Exception{
-		int fid =(int)dto.getFid();
-		System.out.println(dto.getFid());
-	dto = (FaqDTO)sqlMapClient.queryForObject("faq.selectOne",dto.getFid());
-	
-		request.setAttribute("fid",fid);
-		request.setAttribute("dto",dto);
-		return "/faq_test/faqcontent.jsp";
-	}
-	
 
 }

@@ -1,5 +1,7 @@
 package faq;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,16 +16,17 @@ import admin.bean.FaqDTO;
 public class FaqUpdateBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
+	private List list;
 		
-	
 	@RequestMapping("/faqupdate.do")
-	public String faqupdate(FaqDTO dto,HttpServletRequest request){
-		int fid =(int)dto.getFid();
+	public String faqupdate(HttpServletRequest request,FaqDTO dto){
+		int Fid = dto.getFid();
 		dto = (FaqDTO)sqlMapClient.queryForObject("faq.selectOne",dto.getFid());
-		request.setAttribute("fid",fid);
-		request.setAttribute("dto",dto);
+		request.setAttribute("dto", dto);
+		request.setAttribute("Fid",Fid);
 		return "/faq/faqupdate.jsp";
 	}
+	
 	
 	@RequestMapping("/faqupdatepro.do")
 	public String faqupdatepro(HttpServletRequest request,FaqDTO dto){
@@ -32,5 +35,32 @@ public class FaqUpdateBean {
 
 		return "redirect:faqboard.do";
 	}
+	
+
+	
+	/*@Autowired
+	private SqlMapClientTemplate sqlMapClient;
+	public String updateBody(@ModelAttribute faqDTO dto,HttpServletRequest request){
+		fid = (int) request.getAttribute("fid");
+		System.out.println(fid);
+		dto = (faqDTO)sqlMapClient.queryForObject("faq.selectOne",fid);
+		return "/faq_test/faqupdate.jsp";
+	}	
+	
+	@RequestMapping("/faqupdate.do")
+	public String faqupdate(faqDTO dto,HttpServletRequest request){
+		sqlMapClient.queryForObject("faq.selectOne",dto.getFid());
+		
+		return "/faq_test/faqupdate.jsp";
+	}
+	
+	@RequestMapping("/faqupdatepro.do")
+	public String faqupdatepro(HttpServletRequest request,faqDTO dto){
+		
+		sqlMapClient.update("faq.updatefaq",dto);
+
+		return "redirect:faqboard.do";
+	}
+	*/
 	
 }
