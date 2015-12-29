@@ -22,7 +22,15 @@
 	#container #container_con th{width:100px; text-align:center; padding:5px 0;}
 	#container #container_con td{padding:5px 0 5px 10px;}
 </style>
-
+<script type="text/javascript">
+	<%
+		//치환 변수 선언
+ 		pageContext.setAttribute("cr", "\r"); //Space
+ 		pageContext.setAttribute("cn", "\n"); //Enter
+ 		pageContext.setAttribute("crcn", "\r\n"); //Space, Enter
+ 		pageContext.setAttribute("br", "<br/>"); //br 태그
+	%> 
+</script>
 </head>
 
     <form action="/antman/faqupdatepro.do" method="post">

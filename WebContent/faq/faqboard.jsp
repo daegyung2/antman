@@ -6,7 +6,63 @@
 <head>
 <title>FAQ | 자주하는질문</title>
 
-<script language="JavaScript">
+<style type="text/css">
+	body, ul, li, div{margin:0px; padding:0px; }
+	ul{list-style:none;}
+	body{font-size:12px; line-height:1.4; }
+	a{text-decoration:none; }
+	
+	.container {width:1000px; height:1200px; margin:0 auto; position:relative;}
+	.container .content{width:800px; height:1200px; margin-left:100px;}
+	.container .content h2{text-align:center; font-size:25px; margin-top:20px;}
+	.container .content p{text-align:center; font-size:15px; margin-top:5px; margin-right:40px; float:right;}
+	
+	.container .main{width:800px; height:1000px; margin-top:5px; }
+	.tabset{width:800px; height:1000px; margin:20px auto; padding:5px; border:1px solid #333;  }
+	.tabset .tabs{padding:0px 0px; overflow:hidden; margin-left:4px;}
+	.tabset .tabs li{float:left; margin-right:3px;}
+	.tabset .tabs li a{display:block; background:#5586EB; color:#FFFFFF; padding:15px 53px; font-weight:bold; }
+	.tabset .tabs li a.on{border:1px solid #DBDBDB; background:#FFFFFF; color:#333;}
+	.tabset .panels div{width:750px; height:900px; padding:12px 15px 6px; margin-left:10px; margin-top:20px; align:center; border:1px solid #333;}
+	.tabset .panels div .sub{width:750px; height:70px; border:1px solid #333; }
+	.tabset .panels div .sub #category{width:315px; height:70px; margin-left:10px; position:relative;}
+	.tabset .panels div .sub #title{width:315px; height:70px; margin-left:335px; position:relative;}
+</style>
+
+<script type="text/javascript" src="/antman/js/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.0rc1.js"></script>
+<script type="text/javascript">
+$(function(){
+	var tabDiv = $('.tabset');
+	var anchors =  tabDiv.find('ul.tabs a');
+	var penels = tabDiv.find('div.panels div');
+	penels.hide();
+	var currentAnchor = anchors.filter('.on'); 
+	/* selector중에서 (~)적용되는 개체 찾기 */
+	var currentPanel = $(currentAnchor.attr('href'));
+	currentPanel.show();
+	
+	anchors.click(function(event){
+		event.preventDefault(); /* 해당 이벤트 기본동작 해제(방지) */
+		var newAnchor = $(this);
+		/* 클릭되는 a를 새로운 선택개체(newAnchor)로 지정 */
+		var newPanel = $(newAnchor.attr('href'));
+		/* 새로운 선택개체의href값을 호출해서 새로운panel 지정 */
+		currentAnchor.removeClass('on');
+		/* 기존에 선택된 a에서 on클래스를 지워서 회색배경으로 처리 */
+		newAnchor.addClass('on');
+		/* 새로운 선택a에 on클래서 적용해서 흰색배경으로 처리 */
+		currentPanel.hide();
+		/* 현재 보여지고 있는 panel 가리기 */
+		newPanel.show();
+		/* 새롭게 정의된 panel을 보이기 */
+		currentAnchor = newAnchor;
+		/* 현재선택된 a를 새로 클릭한 a값으로 정의 */
+		currentPanel = newPanel;
+		/* 현재 보여지고 있는 panel을 새롭게 정의된 panel값으로 정의 */
+	})
+})
+
 	var isAnswerOpened = false;
 	var openAnswerId = 0;
 	function clickSubject(str){
@@ -25,7 +81,7 @@
 		if (isAnswerOpened == false) {
 
 			fnPost(
-					"/antman/faq/faqboard.do",
+					"/asan/custom/faq/faqDownload.do",
 					{faqId : str},
 					function(data) {
 					}
@@ -53,34 +109,8 @@
 			openAnswerId = 0;
 		}
 	}
+	
 </script>
-
- 
-<style type="text/css">
-	body, ul, li, div{margin:0px; padding:0px; }
-	ul{list-style:none;}
-	body{font-size:12px; line-height:1.4; }
-	a{text-decoration:none; }
-	
-	.container {width:1000px; height:1200px; margin:0 auto; position:relative;}
-	.container .content{width:800px; height:1200px; margin-left:100px;}
-	.container .content h2{text-align:center; font-size:25px; margin-top:20px;}
-	.container .content p{text-align:center; font-size:15px; margin-top:5px; margin-right:40px; float:right;}
-	
-	.container .main{width:800px; height:1000px; margin-top:5px; }
-	.tabset{width:800px; height:1000px; margin:20px auto; padding:5px; border:1px solid #333;  }
-	.tabset .tabs{padding:0px 0px; overflow:hidden; margin-left:4px;}
-	.tabset .tabs li{float:left; margin-right:3px;}
-	.tabset .tabs li a{display:block; background:#5586EB; color:#FFFFFF; padding:15px 53px; font-weight:bold; }
-	.tabset .tabs li a.on{border:1px solid #DBDBDB; background:#FFFFFF; color:#333;}
-	.tabset .panels div{width:750px; height:900px; padding:12px 15px 6px; margin-left:10px; margin-top:20px; align:center; border:1px solid #333;}
-	.tabset .panels div .sub{width:750px; height:70px; border:1px solid #333; }
-	.tabset .panels div .sub #category{width:315px; height:70px; margin-left:10px; position:relative;}
-	.tabset .panels div .sub #title{width:315px; height:70px; margin-left:335px; position:relative;}
-</style>
-
-<script type="text/javascript" src="/antman/js/jquery-1.11.2.min.js"></script>
-<script type="text/javascript" src="/antman/js/tabset.js"></script>
 
 </head>
 <body>
