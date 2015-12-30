@@ -112,12 +112,12 @@
         <td>Yes<input type="radio" name="getMail" value="yes"> &nbsp; No<input type="radio" name="getMail" value="no"></td>
       </tr>
     
-    <c:if test="${drId==null}">
-     <input type="hidden" name="eid" value="${eid}">
+    <c:if test="${drId == null}">
+     <input type="text" name="Eid" value="${Eid}">
      </c:if>
        
-     <c:if test="${eid==null}">
-     <input type="hidden" name="drId" value="${drId}">
+     <c:if test="${Eid == null}">
+     <input type="text" name="drId" value="${drId}">
      </c:if> 
       
     <tr>
