@@ -21,8 +21,9 @@ public class MyReservationBean {
 		
 		dto.setId((String)session.getAttribute("memId"));
 		List list=sqlMapClient.queryForList("appointment.selectAll", dto.getId());
-	
+		System.out.println(list);
 		request.setAttribute("list", list);
+		
 		return "/mypage/MyReservation.jsp";
 	}
 	

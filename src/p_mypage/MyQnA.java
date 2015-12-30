@@ -10,7 +10,6 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import admin.bean.MyQnADTO;
 import praiseboard.PraiseVO;
 
 @Controller
@@ -41,12 +40,5 @@ public class MyQnA {
 	      request.setAttribute("session",session);
 	      
 	      return "/p_mypage/MyQnA.jsp";
-	}
-	
-	@RequestMapping("/MyQnAPro.do")
-	public String MyQnAPro(MyQnADTO dto){
-		 sqlMapClient.queryForList("praise.selectdepart", dto);
-		
-		return "/p_mypage/QnA.jsp";
 	}
 }

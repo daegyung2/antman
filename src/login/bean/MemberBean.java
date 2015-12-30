@@ -8,9 +8,9 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import login.bean.LoginDataBean;
 
-import admin.bean.EmployeeDTO;
-import login.bean.*;
+
 
 @Controller
 public class MemberBean {
@@ -63,14 +63,10 @@ public class MemberBean {
 	
 	@RequestMapping("/inputPro.do")
 	public String inputpro(LoginDataBean dto, HttpServletRequest request){
-	
-		System.out.println(dto.getDrId());
-		System.out.println(dto.getEid());
+		
 		if(dto.getEid()!= null){
 			sqlMapClient.insert("member.insertUser",dto);	
-			sqlMapClient.update("member.updateEid", dto);
-				
-				
+			sqlMapClient.update("member.updateEid", dto);			
 		}else if(dto.getDrId() != null){
 				sqlMapClient.insert("member.insertUserDR",dto);
 				sqlMapClient.update("member.updatedrId", dto);
