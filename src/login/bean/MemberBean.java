@@ -66,15 +66,15 @@ public class MemberBean {
 	
 		System.out.println(dto.getDrId());
 		System.out.println(dto.getEid());
-		if(dto.getEid()!= 0){
+		if(dto.getEid()!= null){
 			sqlMapClient.insert("member.insertUser",dto);	
 			sqlMapClient.update("member.updateEid", dto);
 				
 				
-		}else if(dto.getDrId() != 0){
+		}else if(dto.getDrId() != null){
 				sqlMapClient.insert("member.insertUserDR",dto);
 				sqlMapClient.update("member.updatedrId", dto);
-			}else if(dto.getEid() == 0 && dto.getDrId() == 0){
+			}else if(dto.getEid() == null && dto.getDrId() == null){
 				sqlMapClient.insert("member.insertUser",dto);
 				sqlMapClient.update("member.updateP", dto);
 			}
