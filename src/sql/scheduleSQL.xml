@@ -22,7 +22,18 @@
 	INSERT INTO schedule(sid,drid,drname,dpname,sdate) values(schedule_SEQ.NEXTVAL,#drid#,#drname#,#dpname#,to_date(#sdate#,'YYYY-MM-DD HH24:MI'))
 	</insert>
 
-
+	<update id="nextscheduleupdate1"  parameterClass="appoint">
+  update schedule set sdate1 = #sdate1# where id = #id# 
+   </update>
+   
+   <update id="nextscheduleupdate2"  parameterClass="appoint">
+  update schedule set sdate2 = #sdate2# where id = #id# 
+   </update>
+   
+   <update id="nextscheduleupdate3"  parameterClass="appoint">
+  update schedule set sdate3 = #sdate3# where id = #id# 
+   </update>
+	
 	
 	
 	<resultMap id="ddsc" class="dsche">
@@ -33,7 +44,7 @@
 	</resultMap>
 	
 	<select id="drschedulecheck" resultMap="ddsc"  >
-	  select sid,drname,dpname,sdate from schedule where drname = '송선호' order by sid desc
+	  select sid,drname,dpname,sdate from schedule where drname = #drname# order by sid desc
 	
 	</select>
 	

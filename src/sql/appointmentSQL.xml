@@ -9,6 +9,18 @@
   INSERT INTO appointment(aid,name,id,jumin1,jumin2,drid,drname,adate,dpname) values(appointment_SEQ.NEXTVAL,#name#,#id#,#jumin1#,#jumin2#,#drid#,#drname#,to_date(#adate#,'YYYY-MM-DD HH24:MI'),#dpname#)</insert>
 
 
+<update id="nextappointupdate1"  parameterClass="appoint">
+  update appointment set adate1 = to_date(#adate#,'YYYY-MM-DD HH24:MI') where id = #id# 
+   </update>
+   
+   <update id="nextappointupdate2"  parameterClass="appoint">
+  update appointment set adate2 = #adate2# where id = #id# 
+   </update>
+   
+   <update id="nextappointupdate3"  parameterClass="appoint">
+  update appointment set adate3 = #adate3# where id = #id# 
+   </update>
+
 <!-- 간편예약 넣기  --> 
  <typeAlias alias="simpleappoint" type="admin.bean.AppointmentSimpleDTO" />
 <insert id="simpleappointmentinsert"  parameterClass="simpleappoint">
@@ -20,15 +32,19 @@
 	  <result property="aid" column="aid"/>
       <result property="id" column="id"/>
       <result property="name" column="name"/>
+      <result property="drid" column="drid"/>
       <result property="drname" column="drname"/>
       <result property="dpname" column="dpname"/>
+      <result property="dpname" column="dpname"/>
       <result property="adate" column="adate"/>
+      <result property="adate1" column="adate1"/>
+      <result property="adate2" column="adate2"/>
+      <result property="adate3" column="adate3"/>
    
    </resultMap>
    <!-- 선생님마이페이지에서 보는 예약내역 -->
       <select id="drappointcheck" resultMap="appointRes">
-      select * from appointment where drname = #drname# order by aid desc
-     </select>
+        select aid,id,name,drid,drname,dpname,to_char(adate,'yyyy-MM-DD HH:mm')adate,to_char(adate1,'yyyy-MM-DD HH:mm')adate1,to_char(adate2,'yyyy-MM-DD HH:mm')adate2,to_char(adate3,'yyyy-MM-DD HH:mm')adate3 from appointment where drname = #drname# order by aid desc </select>
    
 
   <!-- 예약결과조회 출력하기  --> 

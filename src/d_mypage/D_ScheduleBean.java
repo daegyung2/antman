@@ -11,19 +11,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.ScheduleDTO;
+import login.bean.LoginDataBean;
 
 @Controller
 public class D_ScheduleBean {
 
 	@Autowired
 	private SqlMapClientTemplate sqlMapclient;
-	private String drid;
+	
 	
 	@RequestMapping("scheduleform.do")
-	public String scheduleform (HttpServletRequest request, ScheduleDTO dto,HttpSession session){
-		request.getParameter(drid);
-		System.out.println(drid);	
-		System.out.println(dto.getDrname());
+	public String scheduleform (HttpServletRequest request, LoginDataBean Ldto,ScheduleDTO dto,HttpSession session){
+		int drid = Integer.parseInt(request.getParameter("drid"));		
+		dto.setDrid(drid);
+		
 		List list = sqlMapclient.queryForList("schedule.drschedulecheck",dto.getDrname());
 		request.setAttribute("list", list);
 		return "/d_mypage/d_schedule.jsp";

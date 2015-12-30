@@ -8,8 +8,8 @@
     <input type="button" value="로그아웃" onclick="javascript:window.location='logout.do'">
     <input type="button" value="게시판" onclick="javascript:window.location='newsboard.do'">
     
-    <c:if test="${sessionScope.memauth eq 'd'}"> 
-    <input type="button" value="마이페이지" onclick="javascript:window.location='scheduleform.do?drid=${sessionScope.drid}'">
+    <c:if test="${sessionScope.memauth eq 'D'}"> 
+    <input type="button" value="마이페이지" onclick="javascript:window.location='scheduleform.do?drid=${sessionScope.memdrid}&drname=${sessionScope.memname}'">
     <br/>
     </c:if>
     

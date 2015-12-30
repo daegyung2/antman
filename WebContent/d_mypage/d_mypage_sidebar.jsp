@@ -128,10 +128,10 @@
 </tr>
 <tr>
 <tr>
-<td><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid }"><center>나의진료스케쥴등록</center></a></td>
+<td><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}"><center>나의진료스케쥴등록</center></a></td>
 </tr>
 <tr>
-<td><a href="/antman/schedulecheck.do"><center><center>나의진료스케쥴확인</center></a></td>
+<td><a href="/antman/schedulecheck.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}"><center>나의진료스케쥴확인</center></a></td>
 </tr>
 
 <td><a href="/antman/dscheduleform.do"><center><center>환자진료결과등록하기</center></a></td>
