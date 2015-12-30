@@ -11,48 +11,60 @@ $(function(){
 	/* 만약에 클릭한 개체의 다음개체의 display값이 none값과 같은때만 실행 */
 	$('.title').click(function(){
 	 if($(this).next().css('display')=='none'){
-		$('.sub').slideUp(200);
-		$(this).next().slideDown(200);
+		$('.sub').slideUp(0);
+		$(this).next().slideDown(0);
 	 }
-		/*
+		
 		$('.sub').hide();
 		$(this).next().show();
-		*/
+		
 	});
 })
 </script>
 <style type="text/css">
-	body{margin:0px; padding:0px;}
+	body{margin:0px; padding:0px; }
 	a{ text-decoration:none; }
-	ul{ list-style:none; margin:0px; padding:0px;}
+	ul{ list-style:none; margin:0px; padding:0px; }
 	li{ margin:0px; padding:0px; }
 	
-	#nav{ width:200px; margin:30px auto; text-indent:10px;}
-	#nav .title{ display:block; height:36px; background:; line-height:3em; color:; }
-	#nav .sub li{ height:36px; line-height:3em; background:#CFF;}
-	#nav .sub li a{ display:block; width:100%; height:100%; color:#222;}
-	#nav .sub{ display:none;}
-	#nav li:first-child a.title{ border-top:none;}
+	.sidebar{width:200px; height:1350px; float:left; margin-left:120px; top:0px; position:absolute; border:1px solid #BDBDBD;}
+	.sidebar #sidebar_top{width:200px; height:120px; font-size:22px; margin-top:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD; text-align:right;}
+	.sidebar #sidebar_top b{padding-right:0px;}
+	.sidebar #bookinfo{width:160px; height:100px; margin-left:20px; margin-top:380px; border:1px solid #BDBDBD; text-align:center; font-size:16px; }
+	.sidebar #bookinfo b{font-size:20px;}
+	#nav{width:200px; margin:30px auto; text-indent:10px; float:left; margin-top:25px; margin-bottom:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD;}
+	#nav .title{display:block; height:50px; line-height:3em; font-size:17px; background:#5586EB; color:#FFFFFF; text-align:right; padding-right:20px;}
+	#nav .title:hover{text-decoration:underline; color:#000000;}
+	#nav .sub li{height:36px; line-height:2em; background:rgba(233,233,233,0.65);}
+	#nav .sub li a{display:block; font-size:15px; color:#222; text-align:right; padding-right:20px; }
+	#nav .sub li a:hover{text-decoration:underline; color:#5586EB; }
+	#nav .sub{display:none;}
+	#nav li:first-child a.title{border-top:none;}
 	
-	#container{ width:1100px; height:1300px; margin:0 auto; position:relative;}
-	#container .main{ width:1000px; height:1200px; margin-left:50px; position:relative}
-	#container .main #main_top{ width:950px; height:130px; margin-top:20px; line-height:1.6;}
-	#container .main #btn{ width:70px; height:30px; margin-top:20px; margin-right:10px; background:#5586EB; position:relative; float:right;}
-	#container .main #btn a{ width:60px; height:30px; padding-left:10px;}
-	#container .main #bar{ clear:both; position:absolute; width:950px; height:1px; background:#CFCFCF; margin-top:65px; opacity:0.8; }
+	#container{width:960px; height:1300px; margin:0 auto; margin-left:320px; position:relative;}
+	#container .main{width:900px; height:1200px; margin-left:30px; position:relative}
+	#container .main #main_top{width:850px; height:130px; margin-top:20px; line-height:1.6;}
+	#container .main #btn{width:70px; height:30px; margin-top:20px; margin-right:10px; background:#5586EB; position:relative; float:right;}
+	#container .main #btn a{width:60px; height:30px; padding-left:10px;}
+	#container .main #bar{clear:both; position:absolute; width:850px; height:1px; background:#CFCFCF; margin-top:65px; opacity:0.8; }
 	#container .main #title_1{font-size:24px; left:0px; position:relative; margin-top:30px;}
 	#container .main #title_2{font-size:24px; left:0px; position:relative; margin-top:90px;}
-	#main_video{width:600px; height:420px; border:1px solid #333; float:left; margin-top:40px;}
-	#main_text{width:300px; height:400px; font-size:14px; line-height:1.8em; padding:10px; overflow:auto; text-align:justify; 
-				margin-top:40px; padding-left:50px;}
+	#main_video{width:550px; height:420px; border:1px solid #333; float:left; margin-top:40px;}
+	#main_text{width:250px; height:400px; font-size:14px; line-height:1.8em; padding:10px; overflow:auto; text-align:justify; 
+				margin-top:40px; padding-left:40px;}
 </style>
 
 </head>
 <body>
+
 <div class="sidebar">
+	<div id="sidebar_top">
+		<br/><br/>
+		<font color="#5586EB"><b>웹서비스</b></font>
+	</div>
 <ul id="nav">
 	<li>
-    	<a href="#" class="title"> 발급안내 </a>
+    	<a href="#" class="title" onClick="#5586EB"><b>발급안내</b></a>
         <ul class="sub">
         	<li><a href="#">의무기록사본</a></li>
             <li><a href="#">증명서</a></li>
@@ -61,7 +73,7 @@ $(function(){
         </ul>
     </li>
     <li>
-    	<a href="#" class="title"> 고객서비스 </a>
+    	<a href="#" class="title"><b>고객서비스</b></a>
         <ul class="sub">
         	<li><a href="#">자주하는질문</a></li>
             <li><a href="#">고객의소리</a></li>
@@ -71,11 +83,14 @@ $(function(){
         </ul>
     </li>
 </ul>
-	<div id="bookinfo">
-		<p>예약문의 <br/>
-		1688-7575</p>
-	</div>
+<div id="bookinfo">
+	<p>예약문의 <br/>
+	<b>1688-7575</b></p>
 </div>
+</div>
+
+
+
 <div id="container">	
 	<div class="main">
 		<div id="title_1"><b>고객의소리</b></div>
