@@ -32,7 +32,7 @@
 보건복지부 고시에 의거 가족이 아닌 제3자에 의한 대리진료가 제한됨을 알려드립니다.</h4>
 <form action="appointmentdetail.do" method="post" name="userinput" onSubmit="return checkIt()">
 아이디&nbsp;${ sessionScope.memId}<br/>
-이름<input type="text" name="name" value="${sessionScope.name}"/></br>
+이름<input type="text" name="name" value="${sessionScope.memname}"/></br>
 주민번호<input type="text" name="jumin1"/>-<input type="text" name="jumin2"/><br/>
 <input type="submit" name="ok" value="확인" />
 <input type="button" name="cancle" value="취소"/>

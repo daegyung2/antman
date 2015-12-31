@@ -197,7 +197,7 @@ ${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='
 <table width="800" border="1">
 <tr>
 <td width="200" >의사이름</td><td><input type="text" name="drname" value="${drname }"/></td></tr>
-<input type="hidden" name="drid" value="${drid }"/>
+<input type="text" name="drid" value="${drid }"/>
 <td width="200">진료과명</td><td><input type="text" name="dpname" value="${dpname }"/></td></tr>
 <input type="hidden" name="jumin1" value="${jumin1 }"/>
 <input type="hidden" name="jumin2" value="${jumin2 }"/>

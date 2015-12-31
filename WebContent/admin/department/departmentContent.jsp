@@ -8,7 +8,7 @@
 <title>진료과 상세내용</title>
 </head>
 <body>
-<table width="1000" border="1" cellpadding="1" cellspacing="0">
+<table width="500" border="1" cellpadding="1" cellspacing="0">
 <tr>
 <td width="200">부모 부서</td>
 <td>${dto.p_depart_id }.${pdto.p_dpname}</td>
@@ -20,6 +20,10 @@
 <tr >
 <td width="200">진료과 이니셜</td>
 <td>${dto.init }</td>
+</tr>
+<tr >
+<td width="200">진료과 사진</td>
+<td><img src="${dto.dpimg}"/></td>
 </tr>
 <tr>
 <td width="200">진료과 정보1</td>
