@@ -111,16 +111,7 @@
         <td>이메일수신동의</td>
         <td>Yes<input type="radio" name="getMail" value="yes"> &nbsp; No<input type="radio" name="getMail" value="no"></td>
       </tr>
-    
-       <c:if test="${DrId==null}">
-     <input type="text" name="Eid" value="${Eid}">
-     </c:if>
-       
-     <c:if test="${Eid==null}">
-     <input type="text" name="DrId" value="${DrId}">
-     </c:if>  
-   
-      
+ 
     <tr>
     <td><input type="submit" value="가입하기"/>
     <input type="button" value="돌아가기" onclick="javascript:window.location='loginForm.do'"/></td>

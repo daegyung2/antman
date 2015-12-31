@@ -27,13 +27,16 @@
 <select id="userCheck" resultClass="int" parameterClass="dto">
   select count(*) from MEMBER where id = #id# and passwd = #passwd#
 </select>
-
 <insert id="insertUser" parameterClass="dto">
  insert into MEMBER(id,passwd,name,age,gender,phone,e_mail,getMail) values(#id#,#passwd#,#name#,#age#,#gender#,#phone#,#e_mail#,#getMail#)
 </insert>
 
+<insert id="insertUserEid" parameterClass="dto">
+ insert into MEMBER(id,passwd,name,age,gender,phone,e_mail,getMail,Eid) values(#id#,#passwd#,#name#,#age#,#gender#,#phone#,#e_mail#,#getMail#,#Eid#)
+</insert>
+
 <insert id="insertUserDR" parameterClass="dto">
- insert into MEMBER(id,passwd,name,age,gender,phone,e_mail,getMail) values(#id#,#passwd#,#name#,#age#,#gender#,#phone#,#e_mail#,#getMail#)
+ insert into MEMBER(id,passwd,name,age,gender,phone,e_mail,getMail,DrId) values(#id#,#passwd#,#name#,#age#,#gender#,#phone#,#e_mail#,#getMail#,#DrId#)
 </insert>
 
 
@@ -42,15 +45,15 @@
 </select>
 
  	  <update id="updateEid" parameterClass="dto">   
-      update member set eid =#eid#, auth='E' where id=#id#
+      update member set Eid=#Eid#, auth='E' where id=#id#
       </update>
       
-	  <update id="updatedrId" parameterClass="dto">   
-      update member set drId = #drId#, auth='D' where id=#id#
+	  <update id="updateDrId" parameterClass="dto">   
+      update member set DrId=#DrId#, auth='D' where id=#id#
       </update>
       
       <update id="updateP" parameterClass="dto">   
-      update member set auth= 'P' drid = 0 where id=#id#
+      update member set auth='P' where id=#id#
       </update>
  
 
