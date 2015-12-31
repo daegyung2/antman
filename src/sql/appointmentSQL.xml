@@ -14,11 +14,11 @@
    </update>
    
    <update id="nextappointupdate2"  parameterClass="appoint">
-  update appointment set adate2 = #adate2# where id = #id# 
+  update appointment set adate2 = to_date(#adate#,'YYYY-MM-DD HH24:MI') where id = #id# 
    </update>
    
    <update id="nextappointupdate3"  parameterClass="appoint">
-  update appointment set adate3 = #adate3# where id = #id# 
+  update appointment set adate3 =  to_date(#adate#,'YYYY-MM-DD HH24:MI') where id = #id# 
    </update>
 
 <!-- 간편예약 넣기  --> 

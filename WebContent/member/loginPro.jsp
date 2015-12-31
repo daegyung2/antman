@@ -21,3 +21,7 @@
       <c:if test="${sessionScope.memauth eq 'D'}">
       <input type="button" value="의사qna" onclick="javascript:window.location='doctorAnswer.do?id=${sessionScope.memId}'">
    	  </c:if>
+   	  
+   	        <c:if test="${sessionScope.memauth eq 'P'}">
+      <input type="button" value="진료예약하기" onclick="javascript:window.location='appointmentmain.do?id=${sessionScope.memId}'">
+   	  </c:if>

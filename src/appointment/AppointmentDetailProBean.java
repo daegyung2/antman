@@ -26,7 +26,7 @@ public class AppointmentDetailProBean {
 		
 			
 			sqlMapClient.insert("appointment.appointmentinsert",dto);
-			
+			sqlMapClient.insert("schedule.scheduleupdatename",dto);
 			List list = sqlMapClient.queryForList("appointment.appointresult",dto.getId());
 			System.out.println(list.size());
 			request.setAttribute("list", list);	

@@ -201,7 +201,7 @@ ${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='
 <td width="200">진료과명</td><td><input type="text" name="dpname" value="${dpname }"/></td></tr>
 <input type="hidden" name="jumin1" value="${jumin1 }"/>
 <input type="hidden" name="jumin2" value="${jumin2 }"/>
-<td width="200" >예약자id</td><td><input type="text" name="id" value="${id}"/></td></tr>
+<td width="200" >예약자id</td><td><input type="text" name="id" value="${sessionScope.memname}"/></td></tr>
 <td width="200" >예약자성함</td><td><input type="text" name="name" value="${name }"/></td></tr>
 <td width="200" >예약시간</td><td><input type="text" name="adate" value="${sdate }"/></td></tr>
 </table>

@@ -29,19 +29,23 @@
 <input type="submit" value="스케쥴 등록">
 </form>
 
-<table width="550" border="1">
+<table width="1050" border="1">
 <tr><td width="100">진료번호</td>
 <td width="100">진료선생님</td>
 <td width="150">진료과</td>
 <td width="200">진료스케쥴</td>
-
+<td width="200">2차스케쥴</td>
+<td width="200">3차스케쥴</td>
+<td width="200">4차스케쥴</td>
 <tr>
 <c:forEach var="dto" items="${list}">
 <td>${dto.sid}</td>
 <td>${dto.drname}</td>
 <td>${dto.dpname}</td>
 <td>${dto.sdate}</td>
-
+<td>${dto.sdate1}</td>
+<td>${dto.sdate2}</td>
+<td>${dto.sdate3}</td>
 </tr>
 </c:forEach>
 </table>
