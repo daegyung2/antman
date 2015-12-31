@@ -22,16 +22,16 @@
 	INSERT INTO schedule(sid,drid,drname,dpname,sdate) values(schedule_SEQ.NEXTVAL,#drid#,#drname#,#dpname#,to_date(#sdate#,'YYYY-MM-DD HH24:MI'))
 	</insert>
 
-	<update id="nextscheduleupdate1"  parameterClass="appoint">
-  update schedule set sdate1 = #sdate1# where id = #id# 
+	<update id="nextscheduleupdate1"  parameterClass="dsche">
+  update schedule set sdate1 = #sdate# where id = #id# 
    </update>
    
-   <update id="nextscheduleupdate2"  parameterClass="appoint">
-  update schedule set sdate2 = #sdate2# where id = #id# 
+   <update id="nextscheduleupdate2"  parameterClass="dsche">
+  update schedule set sdate2 = #sdate# where id = #id# 
    </update>
    
-   <update id="nextscheduleupdate3"  parameterClass="appoint">
-  update schedule set sdate3 = #sdate3# where id = #id# 
+   <update id="nextscheduleupdate3"  parameterClass="dsche">
+  update schedule set sdate3 = #sdate# where id = #id# 
    </update>
 	
 	
@@ -41,10 +41,13 @@
 	<result property="drname" column="drname"/>
 	<result property="dpname" column="dpname"/>
 	<result property="sdate" column="sdate"/>
+	<result property="sdate1" column="sdate1"/>
+	<result property="sdate2" column="sdate2"/>
+	<result property="sdate3" column="sdate3"/>
 	</resultMap>
 	
 	<select id="drschedulecheck" resultMap="ddsc"  >
-	  select sid,drname,dpname,sdate from schedule where drname = #drname# order by sid desc
+	  select sid,drname,dpname,sdate,sdate1,sdate2,sdate3 from schedule where drname = #drname# order by sid desc
 	
 	</select>
 	
@@ -53,12 +56,15 @@
 	
 	<resultMap id="dscd" class="dsche">
 	<result property="sdate" column="sdate"/>
+	<result property="sdate1" column="sdate1"/>
+	<result property="sdate2" column="sdate2"/>
+	<result property="sdate3" column="sdate3"/>
 	<result property="drname" column="drname"/>	
 	<result property="dpname" column="dpname"/>	
 	</resultMap>
 	
-	<select id="scheduleselect" resultMap="dscd" parameterClass="dsche">
-		select to_char(sdate ,'yyyy-MM-DD HH24:MI')sdate, drname, dpname from schedule where drid = #drid#
+	<select id="scheduleselect" resultMap="dscd" parameterClass="int">
+		select to_char(sdate ,'YYYY-MM-DD HH:mm')sdate,drid,to_char(sdate1 ,'YYYY-MM-DD HH:mm')sdate1,to_char(sdate2 ,'YYYY-MM-DD HH:mm')sdate2,to_char(sdate3 ,'YYYY-MM-DD HH:mm')sdate3, drname, dpname from schedule where drid = #drid#
 	</select>
 	<!-- 의사 꺼 -->
 
