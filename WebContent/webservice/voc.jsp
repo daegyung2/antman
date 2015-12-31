@@ -14,11 +14,39 @@ $(function(){
 		$('.sub').slideUp(0);
 		$(this).next().slideDown(0);
 	 }
-		
-		$('.sub').hide();
-		$(this).next().show();
-		
+		/*$('.sub').hide();
+		$(this).next().show();*/
 	});
+	
+})
+
+$(function(){
+	var tabDiv = $('#nav');
+	var anchors =  tabDiv.find('ul.sub a');
+	var currentAnchor = anchors.filter('.on'); 
+	/* selector중에서 (~)적용되는 개체 찾기 */
+	var currentPanel = $(currentAnchor.attr('href'));
+	currentPanel.show();
+	
+	anchors.click(function(event){
+		event.preventDefault(); /* 해당 이벤트 기본동작 해제(방지) */
+		var newAnchor = $(this);
+		/* 클릭되는 a를 새로운 선택개체(newAnchor)로 지정 */
+		var newPanel = $(newAnchor.attr('href'));
+		/* 새로운 선택개체의href값을 호출해서 새로운panel 지정 */
+		currentAnchor.removeClass('on');
+		/* 기존에 선택된 a에서 on클래스를 지워서 회색배경으로 처리 */
+		newAnchor.addClass('on');
+		/* 새로운 선택a에 on클래서 적용해서 흰색배경으로 처리 */
+		currentPanel.hide();
+		/* 현재 보여지고 있는 panel 가리기 */
+		newPanel.show();
+		/* 새롭게 정의된 panel을 보이기 */
+		currentAnchor = newAnchor;
+		/* 현재선택된 a를 새로 클릭한 a값으로 정의 */
+		currentPanel = newPanel;
+		/* 현재 보여지고 있는 panel을 새롭게 정의된 panel값으로 정의 */
+	})
 })
 </script>
 <style type="text/css">
@@ -34,10 +62,11 @@ $(function(){
 	.sidebar #bookinfo b{font-size:20px;}
 	#nav{width:200px; margin:30px auto; text-indent:10px; float:left; margin-top:25px; margin-bottom:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD;}
 	#nav .title{display:block; height:50px; line-height:3em; font-size:17px; background:#5586EB; color:#FFFFFF; text-align:right; padding-right:20px;}
-	#nav .title:hover{text-decoration:underline; color:#000000;}
+	#nav .title:hover{text-decoration:underline; }
 	#nav .sub li{height:36px; line-height:2em; background:rgba(233,233,233,0.65);}
 	#nav .sub li a{display:block; font-size:15px; color:#222; text-align:right; padding-right:20px; }
-	#nav .sub li a:hover{text-decoration:underline; color:#5586EB; }
+	#nav .sub li a:hover{text-decoration:underline; }
+	#nav .sub li a.on{text-decoration:underline; color:#5586EB; }
 	#nav .sub{display:none;}
 	#nav li:first-child a.title{border-top:none;}
 	
@@ -64,7 +93,7 @@ $(function(){
 	</div>
 <ul id="nav">
 	<li>
-    	<a href="#" class="title" onClick="#5586EB"><b>발급안내</b></a>
+    	<a href="#" class="title"><b>발급안내</b></a>
         <ul class="sub">
         	<li><a href="#">의무기록사본</a></li>
             <li><a href="#">증명서</a></li>
@@ -76,7 +105,7 @@ $(function(){
     	<a href="#" class="title"><b>고객서비스</b></a>
         <ul class="sub">
         	<li><a href="#">자주하는질문</a></li>
-            <li><a href="#">고객의소리</a></li>
+            <li><a href="#" class="on">고객의소리</a></li>
             <li><a href="#">칭찬코너</a></li>
             <li><a href="#">홈페이지이용문의</a></li>
             <li><a href="#">콘텐츠제공안내</a></li>

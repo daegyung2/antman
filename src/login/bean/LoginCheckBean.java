@@ -58,7 +58,7 @@ public class LoginCheckBean {
 		System.out.println(check);
 		
 		if(check == 1){
-			request.setAttribute("drId", dto.getDrId());
+			request.setAttribute("DrId", dto.getDrId());
 			return "/member/inputForm.jsp"; //결과가 1이면 DB에 결과가 있다는 뜻이므로 inputForm으로 넘어가야함
 		}else if(check != 1){ //결과가 1이 아니면 DB에 결과가 없다는 뜻이므로 inputForm으로 넘어가면 됨..
 			
