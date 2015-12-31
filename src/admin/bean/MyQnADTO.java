@@ -9,7 +9,7 @@ public class MyQnADTO {
 	private String content;
 	private String answer;
 	private String drname;
-	private Date c_time;
+	private Date q_time;
 	private Date a_time;
 	public String getId() {
 		return id;
@@ -42,10 +42,10 @@ public class MyQnADTO {
 		this.drname = drname;
 	}
 	public Date getC_time() {
-		return c_time;
+		return q_time;
 	}
-	public void setC_time(Date c_time) {
-		this.c_time = c_time;
+	public void setC_time(Date q_time) {
+		this.q_time = q_time;
 	}
 	public Date getA_time() {
 		return a_time;

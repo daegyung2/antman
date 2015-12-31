@@ -4,16 +4,21 @@
 
 <typeAlias alias="MyQnA" type="admin.bean.MyQnADTO"/>
 
+	
+
+<select id="selectMyQnA" parameterClass="MyQnA">
+  select id,name,content,drname from MyQnA where id = #id#
+</select>
 
 
-<insert id="insertMyQnA" parameterClass="QnA">
+<insert id="insertMyQnA" parameterClass="MyQnA">
 		
-      		INSERT INTO QnA (id,
+      		INSERT INTO MyQnA (id,
                          	   name,
                          	   content,
                          	   answer,
                          	   drname,
-                         	   c_time,
+                         	   q_time,
                          	   a_time
                          )
                 	 VALUES (#id#,
@@ -21,7 +26,7 @@
                          	#content#,
                          	#answer#,
                          	#drname#,
-                         	#c_time#,
+                         	#q_time#,
                          	#a_time#
                           )
 		</insert>

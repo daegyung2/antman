@@ -10,6 +10,7 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import admin.bean.MyQnADTO;
 import praiseboard.PraiseVO;
 
 @Controller
@@ -20,7 +21,7 @@ public class MyQnA {
 	String view;
 	
 	@RequestMapping("/MyQnA.do")
-	public String MyQnA(HttpServletRequest request, PraiseVO dto, String drname, HttpSession session){
+	public String MyQnA(HttpServletRequest request,MyQnADTO dtoa, PraiseVO dto, String drname, HttpSession session){
 		session.getAttribute("memId");
 		
 		List dplist = sqlMapClient.queryForList("praise.selectdepart", dto);
@@ -38,7 +39,23 @@ public class MyQnA {
 	    
 	      request.setAttribute("drname",drname);
 	      request.setAttribute("session",session);
+	   
+	      
 	      
 	      return "/p_mypage/MyQnA.jsp";
 	}
+	
+	@RequestMapping("/MyQnAPro.do")
+	public String MyQnAPro(HttpServletRequest request, MyQnADTO dto){
+		sqlMapClient.insert("MyQnA.insertMyQnA", dto);
+		
+		List list = sqlMapClient.queryForList("MyQnA.selectMyQnA", dto);
+		request.setAttribute("list", list);
+		System.out.println(list.size());
+		
+		return "/p_mypage/MyQnA.jsp";
+	}
+	
+	
+	
 }

@@ -7,7 +7,7 @@
     <table width="600" border="1">
     
     <tr><td>선생님 선택</td><td>
-    <form action="/spring/MyQnA.do" method="post">
+    <form action="/antman/MyQnA.do" method="post">
     <select name="dpname">
 	<c:forEach var="dto" items="${dplist}" >
 	<option value="${dto.dpname }">${dto.dpname}</option>
@@ -16,7 +16,7 @@
  	</form>
 
  
- <form action="/spring/MyQnA.do" method="post">  
+ <form action="/antman/MyQnA.do" method="post">  
  
     <select name="drname">
 	<c:forEach var="dto" items="${drlist}" >
@@ -28,17 +28,27 @@
 </form>
 
  </td>
-	<form action="/antman/praisepro.do" method="post">	
+	<form action="/antman/MyQnAPro.do" method="post">	
     <tr>
-    <td>아이디</td><td>&nbsp; ${sessionScope.memId}</td></tr>
+    <td>아이디</td><td><input type="text" name="id" value="${sessionScope.memId}"/> </td></tr>
     
-    <tr><td>글쓴이</td><td><input type="text" name="subject"/></td></tr>
+    <tr><td>글쓴이</td><td><input type="text" name="name" value="${sessionScope.memname}"/></td></tr>
     <tr><td>글제목</td><td><input type="text" name="subject"/></td></tr>
     <tr><td>선생님</td><td><input type="text" name="drname" value="${drname}"/></td></tr>
     </td></tr>
     <tr><td>글내용</td><td><textarea name="content" rows="5" ROWS="10" COLS="50"/></textarea></td></tr>
-    <tr><td colspan="2"><input type="submit" value="글쓰기"/><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/mypage.jsp'">목록으로</button></td></tr>
+    <tr><td colspan="2"><input type="submit" value="글쓰기"/><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/mypage.jsp'">목록으로</button></td></tr>
     
    
     </table>
+    </form>
+    <br/><br/>
+    
+
+   
+
+    
+  
+ 
+ 
  
