@@ -42,6 +42,11 @@
       <result property="adate3" column="adate3"/>
    
    </resultMap>
+   
+   <select id="selectAll" parameterClass="String" resultClass="appoint">
+		select * from appointment where id=#id# order by aid desc
+   </select>
+   
    <!-- 선생님마이페이지에서 보는 예약내역 -->
       <select id="drappointcheck" resultMap="appointRes">
         select aid,id,name,drid,drname,dpname,to_char(adate,'yyyy-MM-DD HH:mm')adate,to_char(adate1,'yyyy-MM-DD HH:mm')adate1,to_char(adate2,'yyyy-MM-DD HH:mm')adate2,to_char(adate3,'yyyy-MM-DD HH:mm')adate3 from appointment where drname = #drname# order by aid desc </select>

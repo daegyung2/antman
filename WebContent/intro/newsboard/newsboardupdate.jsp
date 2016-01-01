@@ -3,7 +3,7 @@
    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
  
- <form action="/spring/newsboardupdatepro.do" method="post">
+ <form action="/antman/newsboardupdatepro.do" method="post">
   <input type="hidden" name="NEid" value="${dto.NEid}">
   
     <table width="600" border="1">

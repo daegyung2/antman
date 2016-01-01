@@ -35,7 +35,7 @@
 <br/>
              <br/>                     
   <br/>
-  <form action="/spring/lectureboardwrite.do" method="post">
+  <form action="/antman/lectureboardwrite.do" method="post">
   <button type="submit" class="btn btn-primary btn-md" onclick=>±Û ¾²±â</button>
   </form>
   <table data-toggle="table" data-url="data2.json" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true">
@@ -49,7 +49,7 @@
                 <c:forEach var="dto" items="${list}">
 		<tr>
 		     <td ><h3>${dto.LEid}</h3></td>
-			 <td ><h3><a href="/spring/lectureboardcontent.do?LEid=${dto.LEid}">${dto.subject}</a></h3>
+			 <td ><h3><a href="/antman/lectureboardcontent.do?LEid=${dto.LEid}">${dto.subject}</a></h3>
 				${dto.content} <br/>
 				<FONT size="1">
 			

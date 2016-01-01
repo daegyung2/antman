@@ -50,7 +50,7 @@ public class MainBoardBean {
 			
 			//request.setAttribute("list", list);
 			
-			return "/mainboard/mainboard.jsp";
+			return "/intro/mainboard/mainboard.jsp";
 		}
 		
 		@ModelAttribute("list")

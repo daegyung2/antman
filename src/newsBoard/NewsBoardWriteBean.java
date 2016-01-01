@@ -6,7 +6,8 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import admin.bean.MainBoardDTO;
+
+import admin.bean.NewsBoardDTO;
 
 @Controller
 public class NewsBoardWriteBean {

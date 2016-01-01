@@ -18,6 +18,8 @@
     <context:component-scan base-package="treatmentteam" />
     <context:component-scan base-package="treatmentteamVO" />
     <context:component-scan base-package="admin.employee" />
+    <context:component-scan base-package="lectureBoard" />
+    <context:component-scan base-package="newsBoard" />
     <context:component-scan base-package="mainboard" />
     <context:component-scan base-package="admin.bean" />
     <context:component-scan base-package="admin.p_department" />

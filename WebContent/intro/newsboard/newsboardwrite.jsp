@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 
-    <form action="/spring/newsboardpro.do" method="post">
+    <form action="/antman/newsboardpro.do" method="post">
     <table width="600" border="1">
     <tr>
     <tr><td>±€¡¶∏Ò</td><td><input type="text" name="subject"/></td></tr>

@@ -31,14 +31,14 @@ body{  }
 
     <table border="1" width="1300" align="center" >
     <tr align="center">
-    <td width="320" height="240"><font size="5"><a href="/spring/intro/guide.jsp"/><b>병원소개</b></a></font><br/><br/> 
+    <td width="320" height="240"><font size="5"><a href="/antman/intro/guide.jsp"/><b>병원소개</b></a></font><br/><br/> 
     DB Hospital 은 존경받는 병원으로서의<br/> 사회적 책임을 다하겠습니다.<br/><br/><img src="/spring/img/intro1.png" width="130" height="100"/> </td>
-     <td width="320" height="240"><font size="5"><a href="/spring/intro/mission.jsp"/><b>미션과비전</b></font></a><br/><br/>
+     <td width="320" height="240"><font size="5"><a href="/antman/intro/mission.jsp"/><b>미션과비전</b></font></a><br/><br/>
      글로벌 메디컬 콤플렉스,<br/>DB Hospital이 만들어가고 있습니다.<br/><br/><img src="/spring/img/intro5.png"/></td>
-    <td width="320" height="240"><font size="5"><a href="/spring/intro/present.jsp"/><b>현황</b></a></font><br/><br/>
-          앞선 의술, <br/>더 큰 사랑을 실천하고 있습니다.<br/><br/> <img src="/spring/img/intro2.png"/></td>
-    <td width="320" height="240"><font size="5"><a href="/spring/intro/greet.jsp"/><b>병원장인사말</b></a></font><br/><br/>
-     함께하는 우리사회를 보다 건강하게,<br/> 더불어 행복하게.<br/><br/> <img src="/spring/img/intro3.png"/></td>
+    <td width="320" height="240"><font size="5"><a href="/antman/intro/present.jsp"/><b>현황</b></a></font><br/><br/>
+          앞선 의술, <br/>더 큰 사랑을 실천하고 있습니다.<br/><br/> <img src="/antman/img/intro2.png"/></td>
+    <td width="320" height="240"><font size="5"><a href="/antman/intro/greet.jsp"/><b>병원장인사말</b></a></font><br/><br/>
+     함께하는 우리사회를 보다 건강하게,<br/> 더불어 행복하게.<br/><br/> <img src="/antman/img/intro3.png"/></td>
     <tr>
     </table>
     <br/><br/><br/>
@@ -60,7 +60,7 @@ body{  }
   				      <table border="0">
   						<c:forEach var="dto" items="${list}">
           					<tr>
-         					 <td><a href="/spring/mainboardcontent.do?MBid=${dto.MBid}">${dto.subject}</a></td>
+         					 <td><a href="/antman/mainboardcontent.do?MBid=${dto.MBid}">${dto.subject}</a></td>
           					</tr>  
           			     </c:forEach>
           				</table>
@@ -71,7 +71,7 @@ body{  }
   						<table border="0">
   						<c:forEach var="dto" items="${lista}">
           					<tr>
-         			        <td><a href="/spring/newsboardcontent.do?NEid=${dto.NEid}">${dto.subject}</a></td>
+         			        <td><a href="/antman/newsboardcontent.do?NEid=${dto.NEid}">${dto.subject}</a></td>
           				    </tr>
           				</c:forEach>         
           				</table>
@@ -83,7 +83,7 @@ body{  }
   						<table border="0">
   						<c:forEach var="dto" items="${listb}">
           				<tr>
-         				<td><a href="/spring/lectureboardcontent.do?LEid=${dto.LEid}">${dto.subject}</a></td>
+         				<td><a href="/antman/lectureboardcontent.do?LEid=${dto.LEid}">${dto.subject}</a></td>
           				</tr>   
           				</c:forEach>      
           				</table>
@@ -102,7 +102,7 @@ body{  }
 <tr><td><br/><br/>
 <font size="5">정기간행물</font><br/><br/>
 DB hospital에서 발행되는 정기간행물 입니다.</td>
- <td><img src="/spring/img/intro6.jpg"/>
+ <td><img src="/antman/img/intro6.jpg"/>
  
 
 </td></tr>

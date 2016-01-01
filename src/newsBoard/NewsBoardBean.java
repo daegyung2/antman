@@ -1,8 +1,7 @@
 package newsBoard;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import admin.bean.AppointmentDTO;
-import admin.bean.MainBoardDTO;
+import admin.bean.NewsBoardDTO;
 
 @Controller
 public class NewsBoardBean {
@@ -36,7 +35,7 @@ public class NewsBoardBean {
 		@RequestMapping("/newsboard.do")
 		public String listAction (NewsBoardDTO dto, AppointmentDTO dtoa, HttpServletRequest request, String pageNum, HttpSession session){ 
 		    session.getAttribute("memId");
-		    System.out.println((String)session.getAttribute("memId"));
+		  
 			dtoa.setId((String)session.getAttribute("memId"));
 			
 			alist=sqlMapClient.queryForList("appointment.selectAll", dtoa.getId());
@@ -56,6 +55,7 @@ public class NewsBoardBean {
 			//list = list.subList(page.getStartCount(), lastCount);
 			
 			//request.setAttribute("list", list);
+			
 			
 			return "/intro/newsboard/newsboard.jsp";
 		}

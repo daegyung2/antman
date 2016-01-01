@@ -58,9 +58,9 @@
 <br/>
 <HR width=100% >
 <br/>
-  <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/newsboardupdate.do?NEid=${dto.NEid}'">수정하기</button>
-  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/newsboarddelete.do?NEid=${dto.NEid}'">삭제하기</button>
- <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/newsboard.do'">목록으로</button></center>
+  <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/newsboardupdate.do?NEid=${dto.NEid}'">수정하기</button>
+  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/newsboarddelete.do?NEid=${dto.NEid}'">삭제하기</button>
+ <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/newsboard.do'">목록으로</button></center>
   </center>
 </body>
 </html>

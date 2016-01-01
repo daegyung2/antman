@@ -1,19 +1,19 @@
-package newsBoard;
+package admin.bean;
 
 import java.sql.Date;
 
-public class NewsBoardDTO {
+public class LectureBoardDTO {
 
-	private int NEid;
+	private int LEid;
 	private String subject;
 	private String content;
-	private Date reg_date;
-	
-	public int getNEid() {
-		return NEid;
+	private Date Reg_date;
+
+	public int getLEid() {
+		return LEid;
 	}
-	public void setNEid(int nEid) {
-		this.NEid = nEid;
+	public void setLEid(int LEid) {
+		this.LEid = LEid;
 	}
 	public String getSubject() {
 		return subject;
@@ -28,10 +28,11 @@ public class NewsBoardDTO {
 		this.content = content;
 	}
 	public Date getReg_date() {
-		return reg_date;
+		return Reg_date;
 	}
 	public void setReg_date(Date reg_date) {
-		this.reg_date = reg_date;
+		Reg_date = reg_date;
 	}
+	
 	
 }
