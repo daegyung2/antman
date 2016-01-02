@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.MainBoardDTO;
 
+
+
 @Controller
 public class MainBoardWriteAction {
 
@@ -16,7 +18,7 @@ public class MainBoardWriteAction {
 	
 	@RequestMapping("/mainboardwrite.do")
 	public String write(){
-		return "/mainboard/mainboardwrite.jsp";
+		return "/intro/mainboard/mainboardwrite.jsp";
 	}
 	@RequestMapping("/mainboardpro.do")
 	public String writepro(MainBoardDTO dto){
@@ -28,6 +30,29 @@ public class MainBoardWriteAction {
 		
 		dto = (MainBoardDTO)sqlMapClient.queryForObject("mainBoard.viewmainboard", dto.getMBid());
 		request.setAttribute("dto", dto);
-		return "/mainboard/mainboardcontent.jsp";
+		return "/intro/mainboard/mainboardcontent.jsp";
 	}
+	
+	@RequestMapping("/mainboarddelete.do")
+	public String delete(MainBoardDTO dto){
+		sqlMapClient.delete("mainBoard.deleteboard", dto.getMBid());
+		return "/intro/mainboard/mainboarddelete.jsp";
+	}
+	
+	@RequestMapping("/mainboardupdate.do")
+	   public String update(HttpServletRequest request,MainBoardDTO dto){
+	      int MBid =(int)dto.getMBid();
+	      dto = (MainBoardDTO)sqlMapClient.queryForObject("mainBoard.viewmainboard",dto.getMBid());
+	      request.setAttribute("MBid",MBid);
+	      request.setAttribute("dto",dto);
+	      return "/intro/mainboard/mainboardupdate.jsp";
+	   }
+	   
+	
+	@RequestMapping("/mainboardupdatepro.do")
+	public String updatepro(MainBoardDTO dto){
+		sqlMapClient.update("mainBoard.updateboard",dto);
+		return "/intro/mainboard/mainboardupdatepro.jsp";
+	}
+
 }

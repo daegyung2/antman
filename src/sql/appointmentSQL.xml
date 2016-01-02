@@ -32,9 +32,14 @@
       <result property="dpname" column="dpname"/>
       <result property="dpname" column="dpname"/>
       <result property="adate" column="adate"/>
-      
+
+   </resultMap>
    
-   	  </resultMap>
+   <select id="selectAll" parameterClass="String" resultClass="appoint">
+		select * from appointment where id=#id# order by aid desc
+   </select>
+   
+
    <!-- 선생님마이페이지에서 보는 예약내역 -->
       <select id="drappointcheck" resultClass="appoint">
         select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate from appointment where drid = #drid# order by aid desc 
@@ -44,8 +49,7 @@
       <select id="appointresult" resultClass="appoint">
       select aid,id,name,drname,dpname,adate,nextadate from appointment where id = #id# order by aid desc 
       </select>
-   
-	
+
 
  <!-- 예약스케쥴에서 중복부분 삭제할떄 씀   --> 
  	  <resultMap id="appointRess" class="appoint">

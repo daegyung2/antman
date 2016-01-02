@@ -10,10 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import lectureBoard.LectureBoardDTO;
+import admin.bean.LectureBoardDTO;
 import admin.bean.MainBoardDTO;
 import mainboard.pagingAction;
-import newsBoard.NewsBoardDTO;
+import admin.bean.NewsBoardDTO;
 
 @Controller
 public class IntroBean {
@@ -75,7 +75,7 @@ public class IntroBean {
 			request.setAttribute("lista", lista);
 			request.setAttribute("listb", listb);
 		
-		return "/antman/intro/intro.jsp";
+		return "/intro/intro.jsp";
 	}
 	
 	

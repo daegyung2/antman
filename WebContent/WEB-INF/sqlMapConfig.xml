@@ -10,6 +10,8 @@
      <sqlMap resource="/sql/employeeSQL.xml" />
      <sqlMap resource="/sql/faqSQL.xml" />
      <sqlMap resource="/sql/mainBoardSQL.xml" />
+     <sqlMap resource="/sql/newsBoardSQL.xml" />
+     <sqlMap resource="/sql/lectureBoardSQL.xml" />
      <sqlMap resource="/sql/appointmentSQL.xml" />
      <sqlMap resource="/sql/body_partSQL.xml" />
      <sqlMap resource="/sql/p_departmentSQL.xml" /> 

@@ -36,7 +36,7 @@
 <br/>
              <br/>                     
   <br/>
-  <form action="/spring/newsboardwrite.do" method="post">
+  <form action="/antman/newsboardwrite.do" method="post">
   <button type="submit" class="btn btn-primary btn-md" onclick=>±Û ¾²±â</button>
   </form>
   <table data-toggle="table" data-url="data2.json" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true">
@@ -50,7 +50,7 @@
                 <c:forEach var="dto" items="${list}">
 		<tr>
 		     <td ><h3>${dto.NEid}</h3></td>
-			 <td ><h3><a href="/spring/newsboardcontent.do?NEid=${dto.NEid}">${dto.subject}</a></h3>
+			 <td ><h3><a href="/antman/newsboardcontent.do?NEid=${dto.NEid}">${dto.subject}</a></h3>
 				${dto.content} <br/>
 				<FONT size="1">
 			

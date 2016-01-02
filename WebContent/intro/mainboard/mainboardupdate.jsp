@@ -3,7 +3,7 @@
      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
  
 
-      <form action="/spring/mainboardupdatepro.do" method="post">
+      <form action="/antman/mainboardupdatepro.do" method="post">
   <input type="hidden" name="MBid" value="${dto.MBid}">
   
     <table width="600" border="1">

@@ -3,7 +3,7 @@
 
        <center>
     <h2>글이 수정 되었습니다.</h2>
-    <form action="/spring/lectureboard.do" method="post">
+    <form action="/antman/lectureboard.do" method="post">
     <input type="submit" value="메인으로"/>
    </form>
    </center>

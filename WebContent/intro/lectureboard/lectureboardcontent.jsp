@@ -58,9 +58,9 @@
 <br/>
 <HR width=100% >
 <br/>
-  <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/lectureboardupdate.do?LEid=${dto.LEid}'">수정하기</button>
-  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/lectureboarddelete.do?LEid=${dto.LEid}'">삭제하기</button>
- <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/lectureboard.do'">목록으로</button></center>
+  <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/lectureboardupdate.do?LEid=${dto.LEid}'">수정하기</button>
+  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/lectureboarddelete.do?LEid=${dto.LEid}'">삭제하기</button>
+ <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/lectureboard.do'">목록으로</button></center>
   </center>
 </body>
 </html>
