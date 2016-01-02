@@ -175,14 +175,15 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 
 <table width="800" border="1"> 
 <tr>
+<td width="100">스케쥴번호</td>
 <td width="200">진료선생님</td><td width="200">진료과</td><td width="400">진료가능시간</td></tr>
 
 <tr>
 <c:forEach var="addto" items="${sdlist}">
+<td width="100">${addto.sid}</td>
+<td width="200">${addto.drname}</td><td width="200">${addto.dpname}</td><td width="300">
 
-<td width="300">${addto.drname}</td><td width="200">${addto.dpname}</td><td width="300">
-
-${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='/antman/appointmentdetailsearch.do?sdate=${addto.sdate}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}&drname=${drname}&drid=${drid }&dpname=${dpname}'"/>
+${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='/antman/appointmentdetailsearch.do?sdate=${addto.sdate}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}&drname=${drname}&drid=${drid }&dpname=${dpname}&sid=${addto.sid }'"/>
 </td>
 
 </tr>
@@ -194,6 +195,7 @@ ${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='
 <br/>
 
 <form action="/antman/appointmentdetailpro.do" method="post">
+
 <table width="800" border="1">
 <tr>
 <td width="200" >의사이름</td><td><input type="text" name="drname" value="${drname }"/></td></tr>
@@ -201,8 +203,9 @@ ${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='
 <td width="200">진료과명</td><td><input type="text" name="dpname" value="${dpname }"/></td></tr>
 <input type="hidden" name="jumin1" value="${jumin1 }"/>
 <input type="hidden" name="jumin2" value="${jumin2 }"/>
-<td width="200" >예약자id</td><td><input type="text" name="id" value="${sessionScope.memname}"/></td></tr>
+<td width="200" >예약자id</td><td><input type="text" name="id" value="${sessionScope.memId}"/></td></tr>
 <td width="200" >예약자성함</td><td><input type="text" name="name" value="${name }"/></td></tr>
+<td width="200" >스케쥴번호</td><td><input type="text" name="sid" value="${sid }"/></td></tr>
 <td width="200" >예약시간</td><td><input type="text" name="adate" value="${sdate }"/></td></tr>
 </table>
 <input type="submit" value="예약하기"/>

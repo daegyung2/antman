@@ -22,32 +22,21 @@
 	INSERT INTO schedule(sid,drid,drname,dpname,sdate) values(schedule_SEQ.NEXTVAL,#drid#,#drname#,#dpname#,to_date(#sdate#,'YYYY-MM-DD HH24:MI'))
 	</insert>
 
-	<update id="nextscheduleupdate1"  parameterClass="dsche">
-  update schedule set sdate1 = #sdate# where id = #id# 
-   </update>
-   
-   <update id="nextscheduleupdate2"  parameterClass="dsche">
-  update schedule set sdate2 = #sdate# where id = #id# 
-   </update>
-   
-   <update id="nextscheduleupdate3"  parameterClass="dsche">
-  update schedule set sdate3 = #sdate# where id = #id# 
-   </update>
+		<insert id="nextscheduleinsert" parameterClass ="dsche">
+	INSERT INTO schedule(sid,drid,id,name,drname,dpname,sdate,nextsdate) values(schedule_SEQ.NEXTVAL,#drid#,#id#,#name#,#drname#,#dpname#,to_date(#sdate#,'YYYY-MM-DD HH24:MI'),#nextsdate#)
+	</insert>
+	
+	<update id="scheduleupdatename" parameterClass="dsche" >
+		update schedule set id = #id#, name = #name# , nextsdate = '1차진료' where sid = #sid#
+	</update>
 	
 	
+	<delete id="scheduledelete" parameterClass="int" >
+		delete schedule where sid = #sid#
+	</delete>
 	
-	<resultMap id="ddsc" class="dsche">
-	<result property="sid" column="sid"/>	
-	<result property="drname" column="drname"/>
-	<result property="dpname" column="dpname"/>
-	<result property="sdate" column="sdate"/>
-	<result property="sdate1" column="sdate1"/>
-	<result property="sdate2" column="sdate2"/>
-	<result property="sdate3" column="sdate3"/>
-	</resultMap>
-	
-	<select id="drschedulecheck" resultMap="ddsc"  >
-	  select sid,drname,dpname,sdate,sdate1,sdate2,sdate3 from schedule where drname = #drname# order by sid desc
+	<select id="drschedulecheck" resultClass="dsche" >
+	  select sid,drname,dpname,name,sdate,nextsdate from schedule where drid = #drid# order by sid desc
 	
 	</select>
 	
@@ -56,19 +45,23 @@
 	
 	<resultMap id="dscd" class="dsche">
 	<result property="sdate" column="sdate"/>
-	<result property="sdate1" column="sdate1"/>
-	<result property="sdate2" column="sdate2"/>
-	<result property="sdate3" column="sdate3"/>
 	<result property="drname" column="drname"/>	
 	<result property="dpname" column="dpname"/>	
 	</resultMap>
 	
+	<select id="scheduleselectshit" resultClass="dsche" >
+		select sid,drname,dpname,to_char(sdate ,'YYYY-MM-DD HH:MI')sdate from schedule where drid = #drid#
+	</select>
+	
+	
 	<select id="scheduleselect" resultMap="dscd" parameterClass="int">
-		select to_char(sdate ,'YYYY-MM-DD HH:mm')sdate,drid,to_char(sdate1 ,'YYYY-MM-DD HH:mm')sdate1,to_char(sdate2 ,'YYYY-MM-DD HH:mm')sdate2,to_char(sdate3 ,'YYYY-MM-DD HH:mm')sdate3, drname, dpname from schedule where drid = #drid#
+		select to_char(sdate ,'YYYY-MM-DD HH:MI')sdate,drid, drname, dpname from schedule where drid = #drid#
 	</select>
 	<!-- 의사 꺼 -->
 
 
-
+	<select id="drappointcheck" resultClass="dsche" parameterClass="int">
+		select * from schedule where drid = #drid#
+	</select>
 
 </sqlMap>

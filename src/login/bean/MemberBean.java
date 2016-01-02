@@ -1,5 +1,7 @@
 package login.bean;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -8,6 +10,8 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import admin.bean.AppointmentDTO;
 
 @Controller
 public class MemberBean {
@@ -25,7 +29,7 @@ public class MemberBean {
 		return mv;
 	}
 		@RequestMapping("/loginPro.do")
-		public String formPro(LoginDataBean dto , HttpSession session ){
+		public String formPro(HttpServletRequest request,LoginDataBean dto , HttpSession session ){
 			int check = (Integer)sqlMapClient.queryForObject("member.userCheck", dto);
 			
 			if(check==1){
@@ -44,6 +48,9 @@ public class MemberBean {
 				return "/loginForm.do";
 			}
 			
+			List alist = sqlMapClient.queryForList("appointment.appointresult",dto.getId());
+			
+			request.setAttribute("alist", alist);
 			return "/member/loginPro.jsp";	
 		}	
 		

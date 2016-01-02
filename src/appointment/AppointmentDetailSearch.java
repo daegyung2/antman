@@ -31,6 +31,7 @@ public class AppointmentDetailSearch {
 		String jumin2 = dto.getJumin2();
 		String name = dto.getName();
 		String sdate = (String)sddto.getSdate();
+		int sid = sddto.getSid();
 		int drid = dto.getDrid();		
 		List tmslist = sqlMapClient.queryForList("treatment.searchtreatmentteam", tmdto.getDpname());
 		TreatmentteamDTO tmsdto = (TreatmentteamDTO)sqlMapClient.queryForObject("treatment.searchname", tmdto.getDpname());
@@ -42,8 +43,8 @@ public class AppointmentDetailSearch {
 		}
 		
 		List<AppointmentDTO> adlist = sqlMapClient.queryForList("appointment.appointscheduleselect", dto);
-		List<ScheduleDTO> sdlist = sqlMapClient.queryForList("schedule.scheduleselect", sddto);
-		List<ScheduleDTO> temp = sqlMapClient.queryForList("schedule.scheduleselect", sddto);
+		List<ScheduleDTO> sdlist = sqlMapClient.queryForList("schedule.scheduleselectshit", sddto);
+		List<ScheduleDTO> temp = sqlMapClient.queryForList("schedule.scheduleselectshit", sddto);
 		
 		System.out.println(adlist.size());
 		System.out.println(sdlist.size());
@@ -80,6 +81,7 @@ public class AppointmentDetailSearch {
 		request.setAttribute("tmslist", tmslist);
 		request.setAttribute("sdlist", sdlist);
 		request.setAttribute("drid",drid);
+		request.setAttribute("sid",sid);
 	
 		return "/appointmentdetail.do";
 	}

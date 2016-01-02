@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.ScheduleDTO;
+import admin.bean.TreatmentteamDTO;
 import login.bean.LoginDataBean;
 
 @Controller
@@ -21,12 +22,16 @@ public class D_ScheduleBean {
 	
 	
 	@RequestMapping("scheduleform.do")
-	public String scheduleform (HttpServletRequest request, LoginDataBean Ldto,ScheduleDTO dto,HttpSession session){
+	public String scheduleform (HttpServletRequest request,TreatmentteamDTO tdto ,ScheduleDTO dto){
 		int drid = Integer.parseInt(request.getParameter("drid"));		
 		dto.setDrid(drid);
 		
-		List list = sqlMapclient.queryForList("schedule.drschedulecheck",dto.getDrname());
+		
+		List list = sqlMapclient.queryForList("schedule.drschedulecheck",dto.getDrid());
+		
+		tdto = (TreatmentteamDTO) sqlMapclient.queryForObject("treatment.doctorprofile",tdto.getDrid());
 		request.setAttribute("list", list);
+		request.setAttribute("tdto", tdto);
 		return "/d_mypage/d_schedule.jsp";
 	}
 }

@@ -2,15 +2,19 @@
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<!doctype html>
+
+
+
 
       
 <table width="1200" border="0">
+<tr><td colspan ="2"><jsp:include page="/mainpage/maintop.jsp" flush="true | false"/></td></tr>
 <tr>
 <td width="200">
 <jsp:include page="treatmentsidebar.jsp" flush="true | false"/>
 </td>
 <td>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">

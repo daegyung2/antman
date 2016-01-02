@@ -17,9 +17,9 @@
 <h2>진료스케쥴등록</h2>
 <form action = "schedulepro.do" method="post"><br/>
 <table width="600" border="1">
-<tr><td>의사drid</td><td><input type="text" name="drid" value="${sessionScope.memdrid}"></td></tr>
-<tr><td>의사이름</td><td><input type="text" name="drname" value="${sessionScope.memname}"></td></tr>
-<tr><td>진료과이름</td><td><input type="text" name="dpname"></td></tr>
+<input type="hidden" name="drid" value="${tdto.drid}">
+<input type="hidden" name="drname" value="${tdto.drname}">
+<tr><td>진료과이름</td><td><input type="text" name="dpname" value="${ tdto.dpname}"></td></tr>
 <tr><td>년도</td><td><input type="text" name="year"></td></tr>
 <tr><td>월</td><td><input type="text" name="month"></td></tr>
 <tr><td>일</td><td><input type="text" name="day"></td></tr>
@@ -29,25 +29,27 @@
 <input type="submit" value="스케쥴 등록">
 </form>
 
-<table width="1050" border="1">
+<table width="700" border="1">
 <tr><td width="100">진료번호</td>
 <td width="100">진료선생님</td>
-<td width="150">진료과</td>
+<td width="100">진료과</td>
+<td width="100">진료환자</td>
+<td width="100">진료회차</td>
 <td width="200">진료스케쥴</td>
-<td width="200">2차스케쥴</td>
-<td width="200">3차스케쥴</td>
-<td width="200">4차스케쥴</td>
+
+
 <tr>
 <c:forEach var="dto" items="${list}">
 <td>${dto.sid}</td>
 <td>${dto.drname}</td>
 <td>${dto.dpname}</td>
+<td>${dto.name}</td>
+<td>${dto.nextsdate}</td>
 <td>${dto.sdate}</td>
-<td>${dto.sdate1}</td>
-<td>${dto.sdate2}</td>
-<td>${dto.sdate3}</td>
+<td><input type="button" value="취소" onclick="javascript:window.location='/antman/scheduledelete.do?sid=${dto.sid }&drid=${sessionScope.memdrid }'"></td>
 </tr>
 </c:forEach>
+
 </table>
 
 

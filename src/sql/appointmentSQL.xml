@@ -6,20 +6,13 @@
  <typeAlias alias="appoint" type="admin.bean.AppointmentDTO" />
 <!-- 예약넣기  --> 
 <insert id="appointmentinsert"  parameterClass="appoint">
-  INSERT INTO appointment(aid,name,id,jumin1,jumin2,drid,drname,adate,dpname) values(appointment_SEQ.NEXTVAL,#name#,#id#,#jumin1#,#jumin2#,#drid#,#drname#,to_date(#adate#,'YYYY-MM-DD HH24:MI'),#dpname#)</insert>
+  INSERT INTO appointment(aid,name,id,jumin1,jumin2,drid,drname,adate,dpname,nextadate) values(appointment_SEQ.NEXTVAL,#name#,#id#,#jumin1#,#jumin2#,#drid#,#drname#,to_date(#adate#,'YYYY-MM-DD HH24:MI'),#dpname#,'1차진료')</insert>
 
 
-<update id="nextappointupdate1"  parameterClass="appoint">
-  update appointment set adate1 = to_date(#adate#,'YYYY-MM-DD HH24:MI') where id = #id# 
-   </update>
+<insert id="nextappointupdate1"  parameterClass="appoint">
+  INSERT INTO appointment(aid,name,id,jumin1,jumin2,drid,drname,adate,dpname,nextadate) values(appointment_SEQ.NEXTVAL,#name#,#id#,#jumin1#,#jumin2#,#drid#,#drname#,to_date(#adate#,'YYYY-MM-DD HH24:MI'),#dpname#,#nextadate#) 
+   </insert>
    
-   <update id="nextappointupdate2"  parameterClass="appoint">
-  update appointment set adate2 = to_date(#adate#,'YYYY-MM-DD HH24:MI') where id = #id# 
-   </update>
-   
-   <update id="nextappointupdate3"  parameterClass="appoint">
-  update appointment set adate3 =  to_date(#adate#,'YYYY-MM-DD HH24:MI') where id = #id# 
-   </update>
 
 <!-- 간편예약 넣기  --> 
  <typeAlias alias="simpleappoint" type="admin.bean.AppointmentSimpleDTO" />
@@ -33,41 +26,34 @@
       <result property="id" column="id"/>
       <result property="name" column="name"/>
       <result property="drid" column="drid"/>
+      <result property="jumin1" column="jumin1"/>
+      <result property="jumin2" column="jumin2"/>
       <result property="drname" column="drname"/>
       <result property="dpname" column="dpname"/>
       <result property="dpname" column="dpname"/>
       <result property="adate" column="adate"/>
-      <result property="adate1" column="adate1"/>
-      <result property="adate2" column="adate2"/>
-      <result property="adate3" column="adate3"/>
+      
    
-   </resultMap>
+   	  </resultMap>
    <!-- 선생님마이페이지에서 보는 예약내역 -->
-      <select id="drappointcheck" resultMap="appointRes">
-        select aid,id,name,drid,drname,dpname,to_char(adate,'yyyy-MM-DD HH:mm')adate,to_char(adate1,'yyyy-MM-DD HH:mm')adate1,to_char(adate2,'yyyy-MM-DD HH:mm')adate2,to_char(adate3,'yyyy-MM-DD HH:mm')adate3 from appointment where drname = #drname# order by aid desc </select>
+      <select id="drappointcheck" resultClass="appoint">
+        select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate from appointment where drid = #drid# order by aid desc 
+        </select>
    
-
   <!-- 예약결과조회 출력하기  --> 
-      <select id="appointresult" resultMap="appointRes">
-      select aid,id,name,drname,dpname,adate from appointment where id = #id# order by aid desc 
+      <select id="appointresult" resultClass="appoint">
+      select aid,id,name,drname,dpname,adate,nextadate from appointment where id = #id# order by aid desc 
       </select>
    
-   <typeAlias alias="dsche" type="admin.bean.ScheduleDTO"/>
 	
-	<resultMap id="dscd" class="dsche">
-	<result property="adate" column="sdate"/>
-	<result property="drname" column="drname"/>	
-	<result property="dpname" column="dpname"/>	
-	</resultMap>
-   
 
-      
-
- <!-- 예약스케쥴에서 중복부분 삭제하기   --> 
+ <!-- 예약스케쥴에서 중복부분 삭제할떄 씀   --> 
  	  <resultMap id="appointRess" class="appoint">
       <result property="adate" column="adate"/>
       </resultMap>
-<select id="appointscheduleselect" resultMap="appointRess" parameterClass="appoint">
-	select to_char(adate ,'yyyy-MM-DD HH24:MI') adate from appointment where drid = #drid#
-</select>
+	  
+	  <select id="appointscheduleselect" resultMap="appointRess" parameterClass="appoint">
+	  select to_char(adate ,'yyyy-MM-DD HH24:MI') adate from appointment where drid = #drid#
+	  </select>
+	  
 </sqlMap>

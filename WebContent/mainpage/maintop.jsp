@@ -128,18 +128,18 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#"><h4>DB hospital</h4></a></li>
                             <li class="dropdown menu-large">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><h4>의료진/진료과</h4></a>
+                                <a href="/antman/treatmentsearch.do" class="dropdown-toggle" data-toggle="dropdown"><h4>의료진/진료과</h4></a>
                                 <ul class="dropdown-menu megamenu row">
                                     <li class="col-sm-6">
                                         <ul>
-                                            <li><a href="#" class="nav-child">의료진</a></li>
-                                            <li><a href="#">진료과</a></li>
-                                            <li><a href="#">암병원</a></li>
-                                            <li><a href="#">어린이병원</a></li>
-                                            <li><a href="#">심장병원</a></li>
-                                            <li><a href="#">센터</a></li>
-                                            <li><a href="#">클리닉</a></li>
-                                            <li><a href="#">기타</a></li>
+                                            <li><a href="/antman/treatmentsearch.do" class="nav-child">의료진</a></li>
+                                            <li><a href="/antman/treatmentchoice.do?p_depart_id=1">진료과</a></li>
+                                            <li><a href="/antman/treatmentchoice.do?p_depart_id=3">암병원</a></li>
+                                            <li><a href="/antman/treatmentchoice.do?p_depart_id=4">어린이병원</a></li>
+                                            <li><a href="/antman/treatmentchoice.do?p_depart_id=5">심장병원</a></li>
+                                            <li><a href="/antman/treatmentchoice.do?p_depart_id=6">센터</a></li>
+                                            <li><a href="/antman/treatmentchoice.do?p_depart_id=7">클리닉</a></li>
+                                            <li><a href="/antman/treatmentchoice.do?p_depart_id=8">기타</a></li>
                                         </ul>
                                     </li>
                                    

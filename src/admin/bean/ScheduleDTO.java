@@ -9,13 +9,7 @@ public class ScheduleDTO {
 	private int drid;
 	private int eid;
 	private String adate;
-	private String adate1;
-	private String adate2;
-	private String adate3;
 	private String sdate;
-	private String sdate1;
-	private String sdate2;
-	private String sdate3;
 	private String ttview;
 	private String stevent;
 	private String year;
@@ -26,7 +20,8 @@ public class ScheduleDTO {
 	private String drname;
 	private String dpname;
 	private String name;
-	
+	private String nextsdate;
+	private String nextadate;
 	
 	
 	
@@ -127,42 +122,19 @@ public class ScheduleDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getSdate1() {
-		return sdate1;
+	public String getNextsdate() {
+		return nextsdate;
 	}
-	public void setSdate1(String sdate1) {
-		this.sdate1 = sdate1;
+	public void setNextsdate(String nextsdate) {
+		this.nextsdate = nextsdate;
 	}
-	public String getSdate2() {
-		return sdate2;
+	public String getNextadate() {
+		return nextadate;
 	}
-	public void setSdate2(String sdate2) {
-		this.sdate2 = sdate2;
+	public void setNextadate(String nextadate) {
+		this.nextadate = nextadate;
 	}
-	public String getSdate3() {
-		return sdate3;
-	}
-	public void setSdate3(String sdate3) {
-		this.sdate3 = sdate3;
-	}
-	public String getAdate1() {
-		return adate1;
-	}
-	public void setAdate1(String adate1) {
-		this.adate1 = adate1;
-	}
-	public String getAdate2() {
-		return adate2;
-	}
-	public void setAdate2(String adate2) {
-		this.adate2 = adate2;
-	}
-	public String getAdate3() {
-		return adate3;
-	}
-	public void setAdate3(String adate3) {
-		this.adate3 = adate3;
-	}
+
 	
 	
 	

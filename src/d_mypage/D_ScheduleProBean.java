@@ -18,13 +18,16 @@ public class D_ScheduleProBean {
 	
 	@RequestMapping("schedulepro.do")
 	public String scheduleform (HttpServletRequest request, ScheduleDTO dto){
+		
+		int drid = Integer.parseInt(request.getParameter("drid"));
+		String drname = (String)request.getParameter("drname");
 		String year =(String)dto.getYear();
 		String month =(String)dto.getMonth();
 		String day =(String)dto.getDay();
 		String hour =(String)dto.getHour();
 		String minute =(String)dto.getMinute();
 		
-		String sdate = year+month+day+hour+':'+minute;;
+		String sdate = year+"-"+month+"-"+day+' '+hour+":"+minute;;
 
 		
 		dto.setSdate(sdate);

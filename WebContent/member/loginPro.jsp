@@ -25,3 +25,26 @@
    	        <c:if test="${sessionScope.memauth eq 'P'}">
       <input type="button" value="진료예약하기" onclick="javascript:window.location='appointmentmain.do?id=${sessionScope.memId}'">
    	  </c:if>
+   	  
+   	  <h3>나의 예약 목록</h3>
+   	  
+   	  <table width="1300" border="1">
+<tr>
+<td width="200">예약번호</td>
+<td width="200">예약id</td>
+<td width="200">예약성함</td>
+<td width="200">예약진료과</td>
+<td width="200">예약선생님</td>
+<td width="200">예약시간</td>
+<td width="100">진료회차</td>
+</tr>
+<tr>
+<c:forEach var="dto" items="${alist}">
+<td >${dto.aid }</td>
+<td >${dto.id }</td>
+<td >${dto.name }</td>
+<td >${dto.dpname }</td>
+<td >${dto.drname }</td>
+<td >${dto.adate }</td>
+<td >${dto.nextadate }</td></tr>
+</c:forEach>

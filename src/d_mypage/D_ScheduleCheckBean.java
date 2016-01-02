@@ -27,11 +27,12 @@ public class D_ScheduleCheckBean {
 	}
 
 	@RequestMapping("schedulecheck.do")
-	public String schedulecheck (HttpServletRequest request, ScheduleDTO dto){
-
-		System.out.println(dto.getDrname());
-		List list = sqlMapclient.queryForList("schedule.drschedulecheck",dto.getDrname());
-		List aplist = sqlMapclient.queryForList("appointment.drappointcheck" , dto.getDrname());
+	public String schedulecheck (HttpServletRequest request, ScheduleDTO dto, AppointmentDTO adto){
+		int drid = Integer.parseInt(request.getParameter("drid"));
+		dto.setDrid(drid);
+		System.out.println(dto.getDrid());
+		List list = sqlMapclient.queryForList("schedule.drschedulecheck",dto.getDrid());
+		List aplist = sqlMapclient.queryForList("appointment.drappointcheck" , adto.getDrid());
 		request.setAttribute("list",list);
 		request.setAttribute("aplist",aplist);
 		return "/d_mypage/d_schedulecheck.jsp";
@@ -40,13 +41,17 @@ public class D_ScheduleCheckBean {
 	@RequestMapping("nextscheduleupdate.do")
 	public String nextscheduleupdate (HttpServletRequest request, LoginDataBean ldto ,ScheduleDTO dto ,AppointmentDTO adto){
 	/*String obdrid =(String)request.getParameter("drid");*/
-	int drid = Integer.parseInt(request.getParameter("drid"));
-	dto.setDrid(drid);
-	
+String nextdate = request.getParameter("nextdate");
+int drid = Integer.parseInt(request.getParameter("drid"));
 	System.out.println(drid+1);
+	System.out.println(dto.getDrid());
+	System.out.println(adto.getDrid());
+/*	dto.setDrid(drid);
+	adto.setDrid(drid);*/
 	
-	adto = (AppointmentDTO)sqlMapclient.queryForObject("appointment.drappointcheck",adto.getDrname());
-
+/*	adto.setNextadate(nextdate);
+	dto.setNextsdate(nextdate);
+	
 	String year = dto.getYear();
 	String month = dto.getMonth();
 	String day = dto.getDay();
@@ -55,28 +60,16 @@ public class D_ScheduleCheckBean {
 	
 	String adate = year+"-"+month+"-"+day+" "+hour+":"+minute;
 	String sdate = year+"-"+month+"-"+day+" "+hour+":"+minute;
-
 	adto.setAdate(adate);
+	dto.setSdate(sdate);*/
 	
+/*	sqlMapclient.insert("appointment.nextappointupdate1",adto);
+	System.out.println(dto.getId());
+	System.out.println(dto.getName());
+	sqlMapclient.insert("schedule.nextscheduleinsert",dto);*/
+
 	
-	if(adto.getAdate1() == null){
-		sqlMapclient.update("appointment.nextappointupdate1",adto);
-	}else if(adto.getAdate1() != null){
-		sqlMapclient.update("appointment.nextappointupdate2",adto);
-	}else if(adto.getAdate2() != null){
-		sqlMapclient.update("appointment.nextappointupdate3",adto);
-	}else{}
-	
-	dto = (ScheduleDTO)sqlMapclient.queryForObject("schedule.drappointcheck" , dto.getDrname());
-	dto.setSdate(sdate);
-	if(dto.getSdate1() == null){
-		sqlMapclient.update("schedule.nextscheduleupdate1",dto);
-	}else if(dto.getSdate1() != null){
-		sqlMapclient.update("schedule.nextscheduleupdate2",dto);
-	}else if(dto.getSdate2() != null){
-		sqlMapclient.update("schedule.nextscheduleupdate3",dto);
-	}else{}
-	
+
 
 		return "/d_mypage/d_schedulecheck.jsp";
 	}

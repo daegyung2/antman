@@ -15,17 +15,13 @@
 <h2>진료스케쥴조회</h2>
 
 
-<table width="1260" border="1">
+<table width="890" border="1">
 <tr>
 
 <td width="150">진료받을날짜</td>
-<td width="150">2차진료날짜</td>
-<td width="150">3차진료날짜</td>
-<td width="150">4차진료날짜</td>
+<td width="150">진료회차</td>
 <td width="70">이름</td>
-<td width="70">선생이름</td>
-<td width="50">id</td>
-<td width="50">drid</td>
+<td width="100">회차선택</td>
 <td width="420">다음진료날짜</td>
 </tr>
 <tr>
@@ -33,14 +29,28 @@
 <c:forEach var="dto" items="${aplist }">
 
 <td>${dto.adate}</td>
-<td>${dto.adate1}</td>
-<td>${dto.adate2}</td>
-<td>${dto.adate3}</td>
-<td>${dto.name}</td>
-<td><input type="text" name="drname" value="${dto.drname}" size="1"></td>
-<td><input type="text" name="id" value="${dto.id}" size="1"></td>
-<td><input type="text" name="drid" value="${dto.drid}" size="1"></td></td>
+<td>${dto.nextadate}</td>
+<td>${dto.name}
+<input type="hidden" name="name" value="${dto.name}">
+<input type="text" name="drname" value="${dto.drname}">
+<input type="text" name="dpname" value="${dto.dpname}">
+<input type="text" name="id" value="${dto.id}">
+<input type="text" name="drid" value="${dto.drid}">
+<input type="text" name="jumin1" value="${dto.jumin1}">
+<input type="text" name="jumin2" value="${dto.jumin2}">
+</td>
 
+<td><select name="nextdate" >
+<option value="2차진료">2차진료</option>
+<option>3차진료</option>
+<option>4차진료</option>
+<option>5차진료</option>
+<option>6차진료</option>
+<option>7차진료</option>
+<option>8차진료</option>
+<option>9차진료</option>
+<option>10차진료</option>
+</td>
 
 <td>
 
