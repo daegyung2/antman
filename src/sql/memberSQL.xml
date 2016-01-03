@@ -55,6 +55,10 @@
       <update id="updateP" parameterClass="dto">   
       update member set auth='P' where id=#id#
       </update>
+      
+       <update id="modifymember" parameterClass="dto">   
+      update member set passwd = #passwd# , phone = #phone# , e_mail = #e_mail# where id=#id#
+      </update>
  
 
 </sqlMap>

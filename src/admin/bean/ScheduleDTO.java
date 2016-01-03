@@ -22,10 +22,17 @@ public class ScheduleDTO {
 	private String name;
 	private String nextsdate;
 	private String nextadate;
+	private String view;
 	
 	
 	
 	
+	public String getView() {
+		return view;
+	}
+	public void setView(String view) {
+		this.view = view;
+	}
 	public int getSid() {
 		return sid;
 	}

@@ -168,9 +168,61 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 
 </c:if>
 
+<c:if test="${drname != null}">
 <br/>
 <br/>
-<h2>진료가능시간입니다.</h2>
+<h3>날짜를 선택해주세요</h3>
+<form action="/antman/appointmentdetailsearch.do" method="post">
+<input type="hidden" name="drid" value="${drid }"/>
+<input type="hidden" name="jumin1" value="${jumin1 }"/>
+<input type="hidden" name="jumin2" value="${jumin2 }"/>
+<input type="hidden" name="drname" value="${drname }"/>
+<input type="hidden" name="dpname" value="${dpname }"/>
+<input type="hidden" name="name" value="${name }"/>
+<input type="hidden" name="sid" value="${sid }"/>
+<%@ page import="java.util.Date"%>
+<%@ page import="java.util.Date"%>
+<%@ page import="java.text.SimpleDateFormat"%>
+<%@ page import="java.util.Locale"%>
+<%@ page import="java.util.Calendar"%>
+<%@ page import="java.sql.Timestamp"%>    
+
+<html>
+<head>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script type="text/javascript">
+$(function() {
+   $("#sa_tourgodate").datepicker({
+      dateFormat: 'yy-mm-dd',
+      monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+      dayNamesMin: ['일','월','화','수','목','금','토'],
+      changeMonth: true,         //월 변경 가능
+      changeYear: true,         //년 변경 가능
+      showMonthAfterYear: true,   //년 뒤에 월 표시
+
+   });
+});
+</script>
+</head>
+<body>
+<%
+SimpleDateFormat sdm = new SimpleDateFormat("yyyy-MM-dd");
+Calendar cal = Calendar.getInstance();
+String today = sdm.format(cal.getTime());
+%>
+<p>
+<input type="text" id="sa_tourgodate" name="ymd" value="<%=today%>" size="6"/><%--value="" 안에 오늘 날짜가 표시되도록 코딩해야 함 : tourbackdate 계산 알고리즘을 응용할까?--%>
+</p>
+</body>
+</html>
+<input type="submit" value="진료날짜검색하기">
+</form>
+<c:if test="${sdlist ne null }">
+<h3>진료가능시간입니다.</h3>
 <form action="/antman/appointmentdetailsearch.do" method="post">
 
 <table width="800" border="1"> 
@@ -185,11 +237,16 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 
 ${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='/antman/appointmentdetailsearch.do?sdate=${addto.sdate}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}&drname=${drname}&drid=${drid }&dpname=${dpname}&sid=${addto.sid }'"/>
 </td>
-
 </tr>
 </c:forEach>
 </table>
+</c:if>
 
+<c:if test="${sdlist eq null}">
+예약시간이 없습니다.
+</c:if>
+
+</c:if>
 </form>
 <br/>
 <br/>
@@ -199,7 +256,7 @@ ${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='
 <table width="800" border="1">
 <tr>
 <td width="200" >의사이름</td><td><input type="text" name="drname" value="${drname }"/></td></tr>
-<input type="text" name="drid" value="${drid }"/>
+<input type="hidden" name="drid" value="${drid }"/>
 <td width="200">진료과명</td><td><input type="text" name="dpname" value="${dpname }"/></td></tr>
 <input type="hidden" name="jumin1" value="${jumin1 }"/>
 <input type="hidden" name="jumin2" value="${jumin2 }"/>
