@@ -24,7 +24,7 @@ public class MyReservationBean {
 		System.out.println(list);
 		request.setAttribute("list", list);
 		
-		return "/mypage/MyReservation.jsp";
+		return "/p_mypage/MyReservation.jsp";
 	}
 	
 }

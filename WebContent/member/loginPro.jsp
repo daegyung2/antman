@@ -8,18 +8,20 @@
     <input type="button" value="로그아웃" onclick="javascript:window.location='logout.do'">
     <input type="button" value="회원정보수정" onclick="javascript:window.location='modifyForm.do'">
     <input type="button" value="게시판" onclick="javascript:window.location='newsboard.do'">
-
+	
   
     <c:if test="${sessionScope.memauth eq 'D'}"> 
-    <input type="button" value="마이페이지" onclick="javascript:window.location='scheduleform.do?drid=${sessionScope.memdrid}&drname=${sessionScope.memname}'">
+    <input type="button" value="의사마이페이지" onclick="javascript:window.location='scheduleform.do?drid=${sessionScope.memdrid}&drname=${sessionScope.memname}'">
     <br/>
     </c:if>
     
     <input type="button" value="공지사항" onclick="javascript:window.location='mainboard.do'">
-     <input type="button" value="마이qna" onclick="javascript:window.location='MyQnA.do?id=${sessionScope.memId}'">
+    <c:if test="${sessionScope.memauth eq 'P'}"> 
+     <input type="button" value="환자마이페이지" onclick="javascript:window.location='p_mypage.do?id=${sessionScope.memId}'">
+     </c:if>
      
       <c:if test="${sessionScope.memauth eq 'D'}">
-      <input type="button" value="의사qna" onclick="javascript:window.location='doctorAnswer.do?id=${sessionScope.memId}'">
+      <input type="button" value="의사qna" onclick="javascript:window.location='d_answer.do?id=${sessionScope.memId}'">
    	  </c:if>
    	  
    	        <c:if test="${sessionScope.memauth eq 'P'}">

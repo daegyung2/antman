@@ -48,7 +48,7 @@ public class MemberBean {
 				return "/loginForm.do";
 			}
 			
-			List alist = sqlMapClient.queryForList("appointment.appointresult",dto.getId());
+			List alist = sqlMapClient.queryForList("appointment.selectAll",dto.getId());
 			
 			request.setAttribute("alist", alist);
 			return "/member/loginPro.jsp";	
@@ -67,9 +67,7 @@ public class MemberBean {
 		
 		@RequestMapping("/inputPro.do")
 		public String inputPro(LoginDataBean dto, HttpServletRequest request){
-			System.out.println(dto.getEid());
-			System.out.println(dto.getDrId());
-			
+		
 			if(dto.getEid()!=null){
 				sqlMapClient.insert("member.insertUserEid", dto);
 				sqlMapClient.update("member.updateEid", dto);

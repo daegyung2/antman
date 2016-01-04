@@ -4,11 +4,14 @@
 
 <typeAlias alias="MyQnA" type="admin.bean.MyQnADTO"/>
 
+    <select id="selectAll" parameterClass="MyQnA">
+      select id,name,content,answer,drname,q_time,a_time from MyQnA 
+      </select>
 	
+   <select id="selectMyQnA" parameterClass="String" resultClass="MyQnA">
+		select * from MyQnA where id=#id# 
+   </select>
 
-<select id="selectMyQnA" parameterClass="MyQnA">
-  select id,name,content,drname from MyQnA where id = #id#
-</select>
 
 
 <insert id="insertMyQnA" parameterClass="MyQnA">
