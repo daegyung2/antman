@@ -23,7 +23,7 @@
 </tr>
 <tr >
 <td width="200">진료과 사진</td>
-<td><img src="${dto.dpimg}"/></td>
+<td align="center"><img src="${dto.dpimg}" width="110" height="110"/></td>
 </tr>
 <tr>
 <td width="200">진료과 정보1</td>

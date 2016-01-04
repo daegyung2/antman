@@ -1,5 +1,6 @@
 package admin.department;
 
+import java.io.File;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,12 +19,24 @@ public class UpdateDepartProBean {
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
 
-
+	@RequestMapping("/updateDepartForm.do")
+	public String updateForm(DepartmentDTO dto , HttpServletRequest request){
+		System.out.println(dto.getDepart_id());
+		dto = (DepartmentDTO) sqlMapClient.queryForObject("depart.selectOne",dto.getDepart_id());
+		
+		request.setAttribute("dto", dto);
+		return "/admin/department/updateDepartment.jsp";
+	}
+	
+	
+	
+	
 	
 	@RequestMapping("/updateDepartPro.do")
 	public String updatePro(DepartmentDTO dto,HttpServletRequest request){
 		sqlMapClient.update("depart.update",dto);
 		
+
 		return "departmentList.do";
 		
 	}

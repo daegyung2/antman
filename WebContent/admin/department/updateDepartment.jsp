@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form action="/antman/updateDepartPro.do" method="post" >
+<form action="/antman/updateDepartform.do" method="post" >
 <table width="1000" border="1" cellpadding="1" cellspacing="0">
 <tr>
 <td>부모 부서</td>
@@ -29,6 +29,10 @@ ${pdto.p_dpname}
 <tr >
 <td width="200">진료과 이니셜</td>
 <td><input type="text" name="init" size="20" maxlength="20" value="${dto.init }"/></td>
+</tr>
+<td width="200">진료과 사진</td>
+<td><input type="file" size="50" name="upload" />
+</td>
 </tr>
 <tr>
 <td width="200">진료과 정보1</td>
