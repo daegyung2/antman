@@ -34,11 +34,15 @@ public class D_ScheduleCheckBean {
 	public String schedulecheck (HttpServletRequest request, ScheduleDTO dto, AppointmentDTO adto){
 		int drid = Integer.parseInt(request.getParameter("drid"));
 		dto.setDrid(drid);
-		
+		String shit = request.getParameter("drname");
 		String ymd = request.getParameter("ymd");
 		adto.setAdate(ymd);
-
+		System.out.println(shit);
+		System.out.println(adto.getAdate());
+		System.out.println(adto.getName());
 		List list = sqlMapclient.queryForList("schedule.drschedulecheck",dto);
+		
+		
 		if (adto.getAdate() != null){
 			aplist = sqlMapclient.queryForList("appointment.drappointcheck" , adto);
 			view = yes;
@@ -46,15 +50,17 @@ public class D_ScheduleCheckBean {
 		else if (adto.getAdate() == null){
 			aplist = sqlMapclient.queryForList("appointment.drappointnamecheck" , adto);
 			view = yes;
-		}else if(adto.getDrid() != 0 && adto.getDrname() != null){
-			aplist = sqlMapclient.queryForList("appointment.drtodayappointcheck" , adto);
+		
 		}else{}
 		System.out.println(aplist.size());
-	
+
+		if (shit != null && adto.getAdate() == null && adto.getName() == null){
+		
+		aplist = sqlMapclient.queryForList("appointment.drtodayappointcheck" , adto);
+		}else{}
 		List slist = sqlMapclient.queryForList("schedule.drsnameidcheck",dto);
 		
 		
-		System.out.println(aplist.size());
 		request.setAttribute("aplist", aplist);	
 		request.setAttribute("slist", slist);
 		request.setAttribute("list",list);
