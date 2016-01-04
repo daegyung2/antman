@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
+
 <style type="text/css">
 	body{margin:0px; padding:0px; }
 	a{ text-decoration:none; }
@@ -24,19 +25,20 @@
 
 <div class="sidebar">
 	<div id="sidebar_top" >
-		<td><h3>${sessionScope.memname}</h3><font size="4">의사등록번호 </font><font color="#5586EB"><b>${sessionScope.memdrid}</b></font></td>
+		<td><h3>관리자</h3><font size="4"></font><font color="#5586EB"><b>${sessionScope.memId}</b></font></td>
 	</div>
 <ul id="nav">
-	<li><a href="#" class="title">진료서비스</a></li>
-	<li><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">스케쥴등록/확인</a></li>
-	<li><a href="/antman/schedulecheck.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">진료신청/다음진료확인</a></li>
-	<li><a href="/antman/dscheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">환자진료결과등록하기</a></li>
-	<li><a href="/antman/dpraiseboard.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">칭찬받은글보기</a></li>
-	<li><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">받은 문의</a></li>
-	<li><a href="#" class="title">개인서비스</a></li>
-	<li><a href="/antman/scheduleinfomodify.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">정보수정</a></li>
-	<li><a href="#" class="title">회원탈퇴</a></li>
+	<li><a href="#" class="title">관리자모드</a></li>
+	<li><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">최근업데이트항목</a></li>
+	<li><a href="/antman/doctorList.do" class="title">의사등록</a></li>
+	<li><a href="/antman/employeeList.do" class="title">직원등록</a></li>
+	<li><a href="/antman/departmentList.do" class="title">부서등록</a></li>
+	<li><a href="/antman/p_departmentList.do" class="title">상위부서등록</a></li>
+	<li><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">메인으로</a></li>
+	
+	<li><a font="bold" class="title">개인서비스</a></li>
+	<li><a href="" class="title">정보수정</a></li>
+	<li><a href="" class="title">로그아웃</a></li>
+	
 </ul>
-</div> 
-
-
+</div>

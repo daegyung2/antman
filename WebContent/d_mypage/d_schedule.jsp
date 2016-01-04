@@ -123,6 +123,7 @@
 		</c:forEach>
 		</table>
 		</center>
+		<center>${pagingHtml}</center>
 	</div>
 </div>
 

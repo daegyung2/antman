@@ -88,8 +88,8 @@
     		</div>
     		<div class="left01">
     			<div id="treat_service"><p>진료서비스</p></div>
-    			<div id="treat01"><a href="#">나의진료스케쥴등록</a></div>
-    			<div id="treat02"><a href="#">나의진료신청환자목록</a></div>
+    			<div id="treat01"><a href="#">진료스케쥴등록/확인</a></div>
+    			<div id="treat02"><a href="#">진료신청환자목록/다음진료등록</a></div>
     			<div id="treat03"><a href="#">환자진료결과</a></div>
     			<div id="treat04"><a href="#">진료내역</a></div>
     			<div id="treat05"><a href="#">진단검사결과</a></div>

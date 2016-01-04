@@ -1,6 +1,6 @@
 package d_mypage;
 
-public class pagingAction {
+public class pagingActions {
 
 	private int currentPage;   // 현재페이지
 	private int totalCount;	 // 전체 게시물 수
@@ -11,13 +11,16 @@ public class pagingAction {
 	private int endCount;	 // 한 페이지에서 보여줄 게시글의 끝 번호
 	private int startPage;	 // 시작 페이지
 	private int endPage;	 // 마지막 페이지
+	private int drid;
+	
 
 	private StringBuffer pagingHtml;
+	
 
 	// 페이징 생성자
-	public pagingAction(int currentPage, int totalCount, int blockCount,
-			int blockPage) {
-
+	public pagingActions(int currentPage, int totalCount, int blockCount,
+			int blockPage, int drid) {
+		this.drid = drid;
 		this.blockCount = blockCount;
 		this.blockPage = blockPage;
 		this.currentPage = currentPage;
@@ -50,7 +53,7 @@ public class pagingAction {
 		// 이전 block 페이지
 		pagingHtml = new StringBuffer();
 		if (currentPage > blockPage) {
-			pagingHtml.append("<a href=/antman/dpraiseboard.do?PageNum="
+			pagingHtml.append("<a href=/antman/scheduleform.do?PageNum="
 					+ (startPage - 1) + ">");
 			pagingHtml.append("이전");
 			pagingHtml.append("</a>");
@@ -69,7 +72,7 @@ public class pagingAction {
 				pagingHtml.append("</font></b>");
 			} else {
 				pagingHtml
-						.append("&nbsp;<a href='/antman/dpraiseboard.do?PageNum=");
+						.append("&nbsp;<a href='/antman/scheduleform.do?PageNum=");
 				pagingHtml.append(i);
 				pagingHtml.append("'>");
 				pagingHtml.append(i);
@@ -83,7 +86,7 @@ public class pagingAction {
 
 		// 다음 block 페이지
 		if (totalPage - startPage >= blockPage) {
-			pagingHtml.append("<a href=/antman/dpraiseboard.do?PageNum="
+			pagingHtml.append("<a href=/antman/scheduleform.do?PageNum="
 					+ (endPage + 1) + ">");
 			pagingHtml.append("다음");
 			pagingHtml.append("</a>");
@@ -168,5 +171,13 @@ public class pagingAction {
 
 	public void setPagingHtml(StringBuffer pagingHtml) {
 		this.pagingHtml = pagingHtml;
+	}
+	
+	public int getDrid() {
+		return drid;
+	}
+
+	public void setDrid(int drid) {
+		this.drid = drid;
 	}
 }

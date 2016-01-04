@@ -17,7 +17,10 @@
 	<result property="stevent" column="stevent"/>
 	
 	</resultMap>
-	
+	 <select id="selectLastNo" resultClass="int" >
+         SELECT count(*) count from schedule
+      </select>
+      
 	<insert id="scheduleinsert" parameterClass ="dsche">
 	INSERT INTO schedule(sid,drid,drname,dpname,sdate) values(schedule_SEQ.NEXTVAL,#drid#,#drname#,#dpname#,to_date(#sdate#,'YYYY-MM-DD HH24:MI'))
 	</insert>
