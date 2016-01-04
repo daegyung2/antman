@@ -21,14 +21,15 @@ public class D_ScheduleProBean {
 		
 		int drid = Integer.parseInt(request.getParameter("drid"));
 		String drname = (String)request.getParameter("drname");
+		String ymd = request.getParameter("ymd");
 		String year =(String)dto.getYear();
 		String month =(String)dto.getMonth();
 		String day =(String)dto.getDay();
 		String hour =(String)dto.getHour();
 		String minute =(String)dto.getMinute();
+		System.out.println(ymd);
+		String sdate = ymd+' '+hour+":"+minute;;
 		
-		String sdate = year+"-"+month+"-"+day+' '+hour+":"+minute;;
-
 		
 		dto.setSdate(sdate);
 		

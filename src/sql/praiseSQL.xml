@@ -22,6 +22,10 @@
       <select id="selectAll" resultMap="boardRes">
       select pid,id,name,drname,subject,content,reg_date from praise order by pid desc
       </select>
+      
+      <select id="selectdr" resultMap="boardRes">
+      select pid,id,name,drname,subject,content,reg_date from praise where drname = #drname# order by pid desc
+      </select>
    
       <select id="viewpraise" resultMap="boardRes" parameterClass="int">
          select pid,id,name,drname,subject,content,reg_date from praise where pid = #pid# 
@@ -63,7 +67,9 @@
          SELECT count(*) count from praise 
       </select>
          
-         
+       <select id="selectLastNodr" resultClass="int" >
+         SELECT count(*) count from praise where drname = #drname#   
+      </select>     
          
       <resultMap id="finddoctor" class="praise">
 

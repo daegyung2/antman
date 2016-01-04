@@ -134,19 +134,19 @@
 <td><a href="/antman/schedulecheck.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}"><center>나의진료스케쥴확인</center></a></td>
 </tr>
 
-<td><a href="/antman/dscheduleform.do"><center><center>환자진료결과등록하기</center></a></td>
+<td><a href="/antman/dscheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}"><center><center>환자진료결과등록하기</center></a></td>
 </tr>
 <tr>
-<td><a href="/antman/scheduleform.do"><center><center>칭찬받은글보기</center></a></td>
+<td><a href="/antman/dpraiseboard.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}"><center><center>칭찬받은글보기</center></a></td>
 </tr>
 <tr>
-<td><a href="/antman/scheduleform.do"><center><center>받은문의</center></a></td>
+<td><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}"><center><center>받은문의</center></td>
 </tr>
 <tr>
-<td><center>개인서비스</center></td>
+<td><center>개인서비스</center></a></td>
 </tr>
 <tr>
-<td><center>정보수정</center></td>
+<td><a href="/antman/scheduleinfomodify.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}"><center>정보수정</center></a></td>
 </tr>
 <tr>
 <td><center>회원탈퇴</center></td>

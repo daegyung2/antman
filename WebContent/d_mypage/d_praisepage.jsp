@@ -1,7 +1,14 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<table width="1400" border="0">
+<tr>
+<td width="200">
+<jsp:include page="d_mypage_sidebar.jsp" flush="true | false"/>
+</td>
 
+
+<td width="1200" >
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,16 +35,12 @@
 <script type="text/javascript" src="http://codemoon.esy.es/code/bootstrap-table.js"></script>   
 
   <div class="container">
-  <h2>칭찬합시다 </h2>  
+  <h2>${sessionScope.memname }님 칭찬글 입니다.</h2>  
        
-  <br/>
-  칭찬은 하는 사람과 받는 사람, 모두를 즐겁게 합니다.<br/>
-하나의 칭찬이 또 다른 칭찬을 만들어 갈 수 있도록<br/>
-친절함이 돋보인 직원을 칭찬해 주세요.              <br/>                     
-  <br/>
+
   
   <form action="/antman/praisewrite.do" method="post">
-  <button type="submit" class="btn btn-primary btn-md" onclick=>칭찬하기</button>
+ 
  
   </form>
   <table data-toggle="table" data-url="data2.json" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true">
@@ -71,33 +74,6 @@
 </div>
 
 
-   <!--   <c:if test="${count > 0 }">
-    	<c:set var="pageCount" value="${count/pageSize+(count%pageSize == 0 ? 0 : 1) }"/>
-    	<c:set var="pageBlock" value="${10}"/>
-    	
-    	<fmt:parseNumber var="result" value="${currPage / 10 }" integerOnly="true"/>
-    	<c:set var="startPage" value="${result * 10 + 1}" />
-    	<c:set var="endPage" value="${startPage + pageBlock-1}" />
-    	
-    	<c:if test="${endPage > pageCount }">
-    		<c:set var="endPage" value="${pageCount}"/>
-    		</c:if>
-    		
-    		<c:if test="${StartPage >10 }">
-    			<a href="/antman/praiseboard.do?pageNum=${startPage -10 }">[Prev]</a>
-    		</c:if>
-    		
-    		<c:forEach var="i" begin="${startPage }" end="${endPage }">
-    			<a href="/antman/praiseboard.do?pageNum=${i}">[${i}]]</a>
-    		</c:forEach>
-    		
-    		<c:if test="${endPage < pageCount }">
-    			<a href="/antman/praiseboard.do?pageNum=${startPage + 10 }">[Next]</a>
-    		</c:if>
-    		
-    		</c:if>-->
-    
-    <!-- 페이징 출력  -->
     	                   
  <center> ${pagingHtml }</center> <!-- 위에방식으로 하려면 귀차너서 그냥 페이징액션을 활용함 왼쪽 pagingHtml 만 출력해주면 됨.. -->
 
@@ -109,4 +85,6 @@
 </body>
 </html>
 
-
+</td>
+</tr>
+</table>

@@ -22,9 +22,11 @@ public class AppointmentDetailSearch {
 	
 	private SqlMapClientTemplate sqlMapClient;
 	private String no;
-	
+	private String yes;
+	private String view = null;
 	@RequestMapping("/appointmentdetailsearch.do")
 	public String detailreservationsearch(HttpServletRequest request,AppointmentDTO dto,TreatmentteamDTO tmdto, ScheduleDTO sddto){
+		String ymd = request.getParameter("ymd");
 		String drname = tmdto.getDrname();
 		String dpname = tmdto.getDpname();
 		String jumin1 = dto.getJumin1();
@@ -32,22 +34,22 @@ public class AppointmentDetailSearch {
 		String name = dto.getName();
 		String sdate = (String)sddto.getSdate();
 		int sid = sddto.getSid();
-		int drid = dto.getDrid();		
+		int drid = dto.getDrid();	
+		
 		List tmslist = sqlMapClient.queryForList("treatment.searchtreatmentteam", tmdto.getDpname());
 		TreatmentteamDTO tmsdto = (TreatmentteamDTO)sqlMapClient.queryForObject("treatment.searchname", tmdto.getDpname());
-		System.out.println(drid);
-		System.out.println(dto.getAdate());
-		 
+		System.out.println(ymd);
 		if(tmslist.size() == 0){
 			 dpname = no;
 		}
-		
+		dto.setAdate(ymd);
+		sddto.setSdate(ymd);
 		List<AppointmentDTO> adlist = sqlMapClient.queryForList("appointment.appointscheduleselect", dto);
 		List<ScheduleDTO> sdlist = sqlMapClient.queryForList("schedule.scheduleselectshit", sddto);
 		List<ScheduleDTO> temp = sqlMapClient.queryForList("schedule.scheduleselectshit", sddto);
 		
-		System.out.println(adlist.size());
-		System.out.println(sdlist.size());
+
+		
 		
 		int i = 0;
 		
@@ -70,6 +72,11 @@ public class AppointmentDetailSearch {
 				}
 			}
 		}*/
+	
+		System.out.println(adlist.size());
+		System.out.println(sdlist.size());
+
+		System.out.println(view);
 		
 		request.setAttribute("dpname",dpname);
 		request.setAttribute("drname",drname);
@@ -83,6 +90,7 @@ public class AppointmentDetailSearch {
 		request.setAttribute("drid",drid);
 		request.setAttribute("sid",sid);
 	
+		request.setAttribute("view",view);
 		return "/appointmentdetail.do";
 	}
 	

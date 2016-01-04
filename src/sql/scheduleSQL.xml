@@ -36,8 +36,11 @@
 	</delete>
 	
 	<select id="drschedulecheck" resultClass="dsche" >
-	  select sid,drname,dpname,name,sdate,nextsdate from schedule where drid = #drid# order by sid desc
+	  select sid,drname,dpname,name,to_char(sdate,'YYYY-MM-DD HH:MI')sdate,nextsdate from schedule where drid = #drid# order by sid desc
+	</select>
 	
+	<select id="drsnameidcheck" resultClass="dsche" >
+	 	  select name,id from schedule where drid = #drid#
 	</select>
 	
 	 <!-- 예약스케쥴에서 중복부분 삭제하기   --> 
@@ -50,7 +53,7 @@
 	</resultMap>
 	
 	<select id="scheduleselectshit" resultClass="dsche" >
-		select sid,drname,dpname,to_char(sdate ,'YYYY-MM-DD HH:MI')sdate from schedule where drid = #drid#
+		select sid,drname,dpname,to_char(sdate ,'YYYY-MM-DD HH:MI')sdate from schedule where drid = #drid# and to_char(sdate ,'YYYY-MM-DD') = #sdate#
 	</select>
 	
 	

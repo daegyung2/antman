@@ -18,11 +18,16 @@ public class D_ScheduleCheckBean {
 
 	@Autowired
 	private SqlMapClientTemplate sqlMapclient;
-	
+	List aplist = null;
+	private String view = null;
+	private String no;
+	private String yes;
 	@RequestMapping("schedulecheckform.do")
 	public String schedulecheckform (HttpServletRequest request, ScheduleDTO dto){
+		int drid = Integer.parseInt(request.getParameter("drid"));
+		dto.setDrid(drid);
 		
-		
+
 		return "/d_mypage/d_schedulecheck.jsp";
 	}
 
@@ -30,11 +35,27 @@ public class D_ScheduleCheckBean {
 	public String schedulecheck (HttpServletRequest request, ScheduleDTO dto, AppointmentDTO adto){
 		int drid = Integer.parseInt(request.getParameter("drid"));
 		dto.setDrid(drid);
-		System.out.println(dto.getDrid());
-		List list = sqlMapclient.queryForList("schedule.drschedulecheck",dto.getDrid());
-		List aplist = sqlMapclient.queryForList("appointment.drappointcheck" , adto.getDrid());
+		
+		String ymd = request.getParameter("ymd");
+		adto.setAdate(ymd);
+
+		List list = sqlMapclient.queryForList("schedule.drschedulecheck",dto);
+		if (adto.getAdate() != null){
+			aplist = sqlMapclient.queryForList("appointment.drappointcheck" , adto);
+			view = yes;
+		}
+		else if (adto.getAdate() == null){
+			aplist = sqlMapclient.queryForList("appointment.drappointnamecheck" , adto);
+			view = yes;
+		}else{}
+		System.out.println(aplist.size());
+	
+		List slist = sqlMapclient.queryForList("schedule.drsnameidcheck",dto);
+		System.out.println(view);
+		request.setAttribute("slist", slist);
 		request.setAttribute("list",list);
 		request.setAttribute("aplist",aplist);
+		request.setAttribute("view", view);
 		return "/d_mypage/d_schedulecheck.jsp";
 	}
 	
@@ -43,9 +64,7 @@ public class D_ScheduleCheckBean {
 	/*String obdrid =(String)request.getParameter("drid");*/
 String nextdate = request.getParameter("nextdate");
 int drid = Integer.parseInt(request.getParameter("drid"));
-	System.out.println(drid+1);
-	System.out.println(dto.getDrid());
-	System.out.println(adto.getDrid());
+	
 /*	dto.setDrid(drid);
 	adto.setDrid(drid);*/
 	
