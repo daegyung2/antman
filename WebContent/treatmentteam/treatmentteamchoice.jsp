@@ -9,7 +9,7 @@
 	li{ margin:0px; padding:0px; }
 	
 	#side{width:200px; float:left; margin-left:0px;}
-	#container{width:1100px; height:1300px; margin:0 auto;  margin-left:200px; position:relative;}
+	#container{width:1100px; height:1300px; margin:0 auto;  margin-left:230px; position:relative;}
 	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:100px; position:relative}
 </style>
 

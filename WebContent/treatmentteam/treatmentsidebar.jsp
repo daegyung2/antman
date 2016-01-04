@@ -7,7 +7,7 @@
 	ul{ list-style:none; margin:0px; padding:0px; }
 	li{ margin:0px; padding:0px; }
 	
-	.sidebar{width:200px; height:1350px; float:left; margin-left:25px; top:0px; position:absolute; border:1px solid #BDBDBD;}
+	.sidebar{width:200px; height:1350px; float:left; margin-left:35px; top:0px; position:absolute; border:1px solid #BDBDBD;}
 	.sidebar #sidebar_top{width:200px; height:120px; font-size:22px; margin-top:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD; text-align:right;}
 	.sidebar #sidebar_top b{padding-right:0px;}
 	.sidebar #sidebar_top a{text-decoration:none; color:#5586EB;}
