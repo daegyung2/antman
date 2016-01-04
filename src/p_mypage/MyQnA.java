@@ -24,6 +24,7 @@ public class MyQnA {
 	public String MyQnA(HttpServletRequest request, MyQnADTO dtoa, PraiseVO dto, String drname, HttpSession session){
 		
 		dtoa.setId((String)session.getAttribute("memId"));
+		System.out.println(dtoa.getId());
 		
 		
 		List dplist = sqlMapClient.queryForList("praise.selectdepart", dto);
@@ -52,12 +53,30 @@ public class MyQnA {
 	public String MyQnAPro(HttpServletRequest request, MyQnADTO dtoa, String drname, HttpSession session){
 		sqlMapClient.insert("MyQnA.insertMyQnA", dtoa);
 		
+		System.out.println(dtoa.getDrname());
+		System.out.println(dtoa.getId());
+		System.out.println(dtoa.getContent());
+		
 		List list = sqlMapClient.queryForList("MyQnA.selectMyQnA", dtoa.getId());
 		request.setAttribute("list", list);
 	
 		return "/p_mypage/MyQnA.jsp";
 	}
 	
+	
+	@RequestMapping("/MyQnAanswer.do")
+	public String MyQnAdr(HttpServletRequest request, MyQnADTO dto, String drname,HttpSession session){
+		int drid = Integer.parseInt(request.getParameter("drid"));
+		dto.setDrid(drid);
+	
+		List list = sqlMapClient.queryForList("MyQnA.selectDr", dto.getDrid());
+
+		request.setAttribute("list", list);
+		System.out.println(list.size());
+	
+		return "/d_mypage/d_answer.jsp";
+		
+	}
 	
 	
 }
