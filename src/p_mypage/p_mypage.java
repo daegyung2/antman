@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.AppointmentDTO;
 import admin.bean.DoctorDTO;
+import admin.bean.MyQnADTO;
 
 @Controller
 public class p_mypage {
@@ -24,7 +25,7 @@ public class p_mypage {
 		request.getAttribute("memId");
 		dto.setId((String)session.getAttribute("memId"));
 		List list=sqlMapClient.queryForList("appointment.selectAll", dto.getId());
-		System.out.println(list);
+	
 		request.setAttribute("list", list);
 		
 		return "/p_mypage/p_mypage.jsp";
@@ -32,15 +33,21 @@ public class p_mypage {
 	}
 	
 	@RequestMapping("/d_answer.do")
-	public String d_answer(AppointmentDTO dto,DoctorDTO dtoa, HttpSession session, HttpServletRequest request){
-		request.getAttribute("memId");
+	public String d_answer(AppointmentDTO dto, HttpServletRequest request){
 		
-		List list=sqlMapClient.queryForList("appointment.selectAll", dto.getId());
-		System.out.println(list);
+	
+		List list=sqlMapClient.queryForList("MyQnA.selectDr", dto);
+		
 		request.setAttribute("list", list);
 		
 		return "/p_mypage/d_answer.jsp";
 		
+	}
+	@RequestMapping("/MyQnA_Answer.do")
+	public String MyQnA_Answer(HttpServletRequest request, MyQnADTO dto){
+		
+		sqlMapClient.update("MyQnA.updateAnswer", dto);
+		return "/p_mypage/MyQnA_AnswerPro.jsp";
 	}
 	
 }

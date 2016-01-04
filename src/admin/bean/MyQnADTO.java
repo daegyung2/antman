@@ -4,6 +4,7 @@ import java.sql.Date;
 
 public class MyQnADTO {
 
+	private int drid;
 	private String id;
 	private String name;
 	private String content;
@@ -11,6 +12,20 @@ public class MyQnADTO {
 	private String drname;
 	private Date q_time;
 	private Date a_time;
+	
+	
+	public int getDrid() {
+		return drid;
+	}
+	public void setDrid(int drid) {
+		this.drid = drid;
+	}
+	public Date getQ_time() {
+		return q_time;
+	}
+	public void setQ_time(Date q_time) {
+		this.q_time = q_time;
+	}
 	public String getId() {
 		return id;
 	}

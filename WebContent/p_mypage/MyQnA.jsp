@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
+
  
     <table width="600" border="1">
     
@@ -50,6 +51,12 @@
         <h2>현재 예약한 사항이 없습니다.</h2>
         </c:if>
         
+        <tr align="center">
+        <td>아이디</td>
+        <td>이름</td>
+        <td>내용</td>
+        <td>의료진</td>
+        </tr>
         <c:if test="${list != null }" >
         <c:forEach var="dto" items="${list}">
 		<tr>

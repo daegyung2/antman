@@ -4,12 +4,17 @@
 
 <typeAlias alias="MyQnA" type="admin.bean.MyQnADTO"/>
 
+
     <select id="selectAll" parameterClass="MyQnA">
-      select id,name,content,answer,drname,q_time,a_time from MyQnA 
+      select id,name,content,answer,drname,q_time,a_time,drid from MyQnA 
       </select>
 	
    <select id="selectMyQnA" parameterClass="String" resultClass="MyQnA">
-		select * from MyQnA where id=#id# 
+		select id,name,content,answer,drname,q_time,a_time from MyQnA where id = #id# 
+   </select>
+   
+   <select id="selectDr" parameterClass="Int" resultClass="MyQnA">
+       select id,name,content,answer,drname,q_time,a_time from MyQnA where drid = #drid#
    </select>
 
 
@@ -33,4 +38,8 @@
                          	#a_time#
                           )
 		</insert>
+		
+		 <update id="updateAnswer" parameterClass="MyQnA">
+            update MyQnA set answer=#answer# where drid=#drid#
+   		</update>	
 </sqlMap>

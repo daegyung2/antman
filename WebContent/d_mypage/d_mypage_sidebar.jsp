@@ -140,7 +140,7 @@
 <td><a href="/antman/dpraiseboard.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}"><center><center>칭찬받은글보기</center></a></td>
 </tr>
 <tr>
-<td><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}"><center><center>받은문의</center></td>
+<td><a href="/antman/MyQnAanswer.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}"><center><center>받은문의</center></td>
 </tr>
 <tr>
 <td><center>개인서비스</center></a></td>
