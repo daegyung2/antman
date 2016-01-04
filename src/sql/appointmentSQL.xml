@@ -44,9 +44,16 @@
         select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate from appointment where drid = #drid# and to_char(adate ,'YYYY-MM-DD') = #adate# order by aid desc 
         </select>
         
+         <select id="drtodayappointcheck" resultClass="appoint">
+        select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate from appointment where drid = #drid# and to_char(adate , 'YYYY-MM-DD') = to_char(sysdate ,'YYYY-MM-DD') order by aid desc </select>
+        
+           
+        
             <select id="drappointnamecheck" resultClass="appoint">
         select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate from appointment where name = #name# and id = #id# order by aid desc 
         </select>
+
+   
    
   <!-- 예약결과조회 출력하기  --> 
       <select id="appointresult" resultClass="appoint">

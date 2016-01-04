@@ -23,10 +23,9 @@ public class D_ScheduleCheckBean {
 	private String no;
 	private String yes;
 	@RequestMapping("schedulecheckform.do")
-	public String schedulecheckform (HttpServletRequest request, ScheduleDTO dto){
+	public String schedulecheckform (HttpServletRequest request, ScheduleDTO dto, AppointmentDTO adto){
 		int drid = Integer.parseInt(request.getParameter("drid"));
-		dto.setDrid(drid);
-		
+		adto.setDrid(drid);
 
 		return "/d_mypage/d_schedulecheck.jsp";
 	}
@@ -35,11 +34,15 @@ public class D_ScheduleCheckBean {
 	public String schedulecheck (HttpServletRequest request, ScheduleDTO dto, AppointmentDTO adto){
 		int drid = Integer.parseInt(request.getParameter("drid"));
 		dto.setDrid(drid);
-		
+		String shit = request.getParameter("drname");
 		String ymd = request.getParameter("ymd");
 		adto.setAdate(ymd);
-
+		System.out.println(shit);
+		System.out.println(adto.getAdate());
+		System.out.println(adto.getName());
 		List list = sqlMapclient.queryForList("schedule.drschedulecheck",dto);
+		
+		
 		if (adto.getAdate() != null){
 			aplist = sqlMapclient.queryForList("appointment.drappointcheck" , adto);
 			view = yes;
@@ -47,11 +50,18 @@ public class D_ScheduleCheckBean {
 		else if (adto.getAdate() == null){
 			aplist = sqlMapclient.queryForList("appointment.drappointnamecheck" , adto);
 			view = yes;
+		
 		}else{}
 		System.out.println(aplist.size());
-	
+
+		if (shit != null && adto.getAdate() == null && adto.getName() == null){
+		
+		aplist = sqlMapclient.queryForList("appointment.drtodayappointcheck" , adto);
+		}else{}
 		List slist = sqlMapclient.queryForList("schedule.drsnameidcheck",dto);
-		System.out.println(view);
+		
+		
+		request.setAttribute("aplist", aplist);	
 		request.setAttribute("slist", slist);
 		request.setAttribute("list",list);
 		request.setAttribute("aplist",aplist);

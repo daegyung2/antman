@@ -26,6 +26,7 @@ public class AppointmentDetailSearch {
 	private String view = null;
 	@RequestMapping("/appointmentdetailsearch.do")
 	public String detailreservationsearch(HttpServletRequest request,AppointmentDTO dto,TreatmentteamDTO tmdto, ScheduleDTO sddto){
+		
 		String ymd = request.getParameter("ymd");
 		String drname = tmdto.getDrname();
 		String dpname = tmdto.getDpname();
@@ -34,7 +35,7 @@ public class AppointmentDetailSearch {
 		String name = dto.getName();
 		String sdate = (String)sddto.getSdate();
 		int sid = sddto.getSid();
-		int drid = dto.getDrid();	
+		int drid = dto.getDrid();
 		
 		List tmslist = sqlMapClient.queryForList("treatment.searchtreatmentteam", tmdto.getDpname());
 		TreatmentteamDTO tmsdto = (TreatmentteamDTO)sqlMapClient.queryForObject("treatment.searchname", tmdto.getDpname());
@@ -72,11 +73,19 @@ public class AppointmentDetailSearch {
 				}
 			}
 		}*/
+		
+		if (sdlist.size() == 0){
+			view = no;
+		}else if(sdlist.size() != 0){
+			view = yes;
+	}else{}
 	
+			System.out.println(view);
+			
+		System.out.println(sdlist);
 		System.out.println(adlist.size());
 		System.out.println(sdlist.size());
 
-		System.out.println(view);
 		
 		request.setAttribute("dpname",dpname);
 		request.setAttribute("drname",drname);

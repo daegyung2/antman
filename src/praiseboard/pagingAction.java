@@ -64,7 +64,7 @@ public class pagingAction {
 				break;
 			}
 			if (i == currentPage) {
-				pagingHtml.append("&nbsp;<b> <font size='6' color='blue'>");
+				pagingHtml.append("&nbsp;<b> <font size='3' color='blue'>");
 				pagingHtml.append(i);
 				pagingHtml.append("</font></b>");
 			} else {
