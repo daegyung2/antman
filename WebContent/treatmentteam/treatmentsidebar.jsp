@@ -16,7 +16,8 @@
 	#nav{width:200px; margin:30px auto; text-indent:10px; float:left; margin-top:25px; margin-bottom:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD;}
 	#nav .title{display:block; height:50px; line-height:3em; font-size:17px; background:#FFFFFF; color:#000000; text-align:right; padding-right:20px; border-top:1px solid #BDBDBD;}
 	#nav .title:hover{text-decoration:underline; }
-	#nav .title.on{text-decoration:underline; background:#5586EB; color:#FFFFFF;}
+	#nav li.on{background:#5586EB;}
+	#nav li.on a{font-weight:bold; color:#FFFFFF;}
 	#nav li:first-child a.title{border-top:none;}
 	
 </style>
@@ -41,3 +42,10 @@
 	<b>1688-7575</b></p>
 </div>
 </div>
+
+<script type="text/javascript">
+$('.sidebar #nav li').click(function() {
+ $('.sidebar #nav li').removeClass('on');
+ $(this).addClass('on');
+});
+</script>
