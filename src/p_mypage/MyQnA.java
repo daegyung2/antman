@@ -22,7 +22,9 @@ public class MyQnA {
 	
 	@RequestMapping("/MyQnA.do")
 	public String MyQnA(HttpServletRequest request, MyQnADTO dtoa, PraiseVO dto, String drname, HttpSession session){
-		session.getAttribute("memId");
+		
+		dtoa.setId((String)session.getAttribute("memId"));
+		
 		
 		List dplist = sqlMapClient.queryForList("praise.selectdepart", dto);
 		List drlist = sqlMapClient.queryForList("praise.selectdoctor",dto.getDpname());
@@ -41,19 +43,18 @@ public class MyQnA {
 	      request.setAttribute("session",session);
 	      request.setAttribute("list",list);
 	   
-	      System.out.println(list.size());
+	 
 	      
 	      return "/p_mypage/MyQnA.jsp";
 	}
 	
 	@RequestMapping("/MyQnAPro.do")
-	public String MyQnAPro(HttpServletRequest request, MyQnADTO dto){
-		sqlMapClient.insert("MyQnA.insertMyQnA", dto);
+	public String MyQnAPro(HttpServletRequest request, MyQnADTO dtoa, String drname, HttpSession session){
+		sqlMapClient.insert("MyQnA.insertMyQnA", dtoa);
 		
-		List list = sqlMapClient.queryForList("MyQnA.selectMyQnA", dto);
+		List list = sqlMapClient.queryForList("MyQnA.selectMyQnA", dtoa.getId());
 		request.setAttribute("list", list);
-		System.out.println(list.size());
-		
+	
 		return "/p_mypage/MyQnA.jsp";
 	}
 	
