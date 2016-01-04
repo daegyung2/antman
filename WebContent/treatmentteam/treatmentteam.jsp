@@ -7,13 +7,7 @@
 
 
       
-<table width="1200" border="0">
-<tr><td colspan ="2"><jsp:include page="/mainpage/maintop.jsp" flush="true | false"/></td></tr>
-<tr>
-<td width="200">
-<jsp:include page="treatmentsidebar.jsp" flush="true | false"/>
-</td>
-<td>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,6 +17,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
+    	body{margin:0px; padding:0px; }
+		a{ text-decoration:none; }
+		ul{ list-style:none; margin:0px; padding:0px; }
+		li{ margin:0px; padding:0px; }
         /***
 Bootstrap Line Tabs by @keenthemes
 A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
@@ -110,6 +108,8 @@ Licensed under MIT
   border-bottom: 1px solid #eee;
   padding-bottom: 15px;
 }
+.container{width:1000px; height:1300px; margin:0 auto; margin-left:400px; position:relative;}
+.container .row{width:960px; height:1200px; margin-left:20px; position:relative}
     </style>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -121,7 +121,12 @@ A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themefores
 Licensed under MIT
 -->
 
-<div class="container">
+<div width="200">
+<jsp:include page="treatmentsidebar.jsp" flush="true | false"/>
+</div>  
+
+
+<div class="container" width="1000">
     <div class="row">
 		<div class="col-md-12">
 			<strong><h2>의료진</h2></strong>&nbsp;클릭 시 해당 자음으로 시작하는 진료과 목록을 볼 수 있습니다.<br/>
@@ -566,7 +571,6 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
     </tbody>
   </table>
 </div>
-
 </body>
 </html>
 
@@ -576,7 +580,6 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 검색결과가 없습니다.</c:if>
 
 
-
-</td>
-</tr>
-</table>
+</div>
+</div>
+</div>
