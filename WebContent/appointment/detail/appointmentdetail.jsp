@@ -111,33 +111,7 @@ body{  }
 
 
 <c:if test="${dpname != null}">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</head>
-<body>
-<style type="text/css">
-.shit{
-	
-	font-weight : bold; 
-}
-.group{	
-font-family:"나눔고딕","nanum gothic", sans-serif;
-			color : #4285F4 ;
-            font-weight : bold;
-			
-}
-</style>
-<div class="container">
-  <h4 class="shit"><span class="group">${tmsdto.dpname}</span> 의료진 목록입니다.</h4>
-           
-  <table class="table">
-    <thead>
+	<table width="1200" border= "1">
       <tr>
         <th width="20%" >사진</th>
         <th width="80%">정보</th>
@@ -159,12 +133,10 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
                             
                         </tr>
                         </c:forEach>
-    </tbody>
+    
   </table>
-</div>
 
-</body>
-</html>
+
 
 </c:if>
 
@@ -221,7 +193,7 @@ String today = sdm.format(cal.getTime());
 </html>
 <input type="submit" value="진료날짜검색하기">
 </form>
-<c:if test="${sdlist ne null }">
+<c:if test="${sdlist ne null}">
 <h3>진료가능시간입니다.</h3>
 <form action="/antman/appointmentdetailsearch.do" method="post">
 
