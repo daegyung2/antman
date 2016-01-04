@@ -23,10 +23,9 @@ public class D_ScheduleCheckBean {
 	private String no;
 	private String yes;
 	@RequestMapping("schedulecheckform.do")
-	public String schedulecheckform (HttpServletRequest request, ScheduleDTO dto){
+	public String schedulecheckform (HttpServletRequest request, ScheduleDTO dto, AppointmentDTO adto){
 		int drid = Integer.parseInt(request.getParameter("drid"));
-		dto.setDrid(drid);
-		
+		adto.setDrid(drid);
 
 		return "/d_mypage/d_schedulecheck.jsp";
 	}
@@ -47,11 +46,16 @@ public class D_ScheduleCheckBean {
 		else if (adto.getAdate() == null){
 			aplist = sqlMapclient.queryForList("appointment.drappointnamecheck" , adto);
 			view = yes;
+		}else if(adto.getDrid() != 0 && adto.getDrname() != null){
+			aplist = sqlMapclient.queryForList("appointment.drtodayappointcheck" , adto);
 		}else{}
 		System.out.println(aplist.size());
 	
 		List slist = sqlMapclient.queryForList("schedule.drsnameidcheck",dto);
-		System.out.println(view);
+		
+		
+		System.out.println(aplist.size());
+		request.setAttribute("aplist", aplist);	
 		request.setAttribute("slist", slist);
 		request.setAttribute("list",list);
 		request.setAttribute("aplist",aplist);
