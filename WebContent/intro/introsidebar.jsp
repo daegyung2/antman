@@ -95,7 +95,7 @@ $(function(){
 	<li>
     	<a href="#" class="title"><b>재단소개</b></a>
         <ul class="sub">
-        	<li><a href="/antman/intro/greet.jsp">설립자소개</a></li>
+        	<li><a href="/antman/intro/guide.jsp"/>병원소개</a></li>
             <li><a href="#">이사장인사말</a></li>
             <li><a href="#">설립취지</a></li>
         </ul>
