@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>고객의소리 | 고객서비스 | 웹서비스</title>
 <script type="text/javascript" src="/antman/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -50,12 +49,12 @@ $(function(){
 })
 </script>
 <style type="text/css">
-	body{margin:0px; padding:0px; }
-	a{ text-decoration:none; }
-	ul{ list-style:none; margin:0px; padding:0px; }
-	li{ margin:0px; padding:0px; }
+	body, ul, li, div{margin:0px; padding:0px; }
+	ul{list-style:none;}
+	body{font-size:14px; line-height:1.4; overflow-x:hidden; height:1200px;}
+	a{text-decoration:none; }
 	
-	.sidebar{width:200px; height:1350px; float:left; margin-left:120px; top:95px; position:absolute; border:1px solid #BDBDBD;}
+	.sidebar{width:200px; height:1350px; float:left; margin-left:35px; top:95px; position:absolute; border:1px solid #BDBDBD; border-top:1px solid transparent;}
 	.sidebar #sidebar_top{width:200px; height:120px; font-size:22px; margin-top:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD; text-align:right;}
 	.sidebar #sidebar_top b{padding-right:0px;}
 	.sidebar #bookinfo{width:160px; height:100px; margin-left:20px; margin-top:380px; border:1px solid #BDBDBD; text-align:center; font-size:16px; }
@@ -70,72 +69,38 @@ $(function(){
 	#nav .sub{display:none;}
 	#nav li:first-child a.title{border-top:none;}
 	
-	#container{width:960px; height:1300px; margin:0 auto; margin-left:320px; position:relative;}
-	#container .main{width:900px; height:1200px; margin-left:30px; position:relative}
-	#container .main #main_top{width:850px; height:130px; margin-top:20px; line-height:1.6;}
-	#container .main #btn{width:70px; height:30px; margin-top:20px; margin-right:10px; background:#5586EB; position:relative; float:right;}
-	#container .main #btn a{width:60px; height:30px; padding-left:10px;}
-	#container .main #bar{clear:both; position:absolute; width:850px; height:1px; background:#CFCFCF; margin-top:65px; opacity:0.8; }
-	#container .main #title_1{font-size:24px; left:0px; position:relative; margin-top:30px;}
-	#container .main #title_2{font-size:24px; left:0px; position:relative; margin-top:90px;}
-	#main_video{width:550px; height:420px; border:1px solid #333; float:left; margin-top:40px;}
-	#main_text{width:250px; height:400px; font-size:14px; line-height:1.8em; padding:10px; overflow:auto; text-align:justify; 
-				margin-top:40px; padding-left:40px;}
+	
 </style>
-
 </head>
-<body>
-
 <div class="sidebar">
 	<div id="sidebar_top">
 		<br/><br/>
-		<font color="#5586EB"><b>병원소개</b></font>
+		<font color="#5586EB"><b>웹서비스</b></font>
 	</div>
 <ul id="nav">
 	<li>
-    	<a href="#" class="title"><b>재단소개</b></a>
+    	<a href="#" class="title"><b>발급안내</b></a>
         <ul class="sub">
-        	<li><a href="/antman/intro/greet.jsp">설립자소개</a></li>
-            <li><a href="#">이사장인사말</a></li>
-            <li><a href="#">설립취지</a></li>
+        	<li><a href="#">의무기록사본</a></li>
+            <li><a href="#">증명서</a></li>
+            <li><a href="#">중간진료비결제</a></li>
+            <li><a href="#">위변조문서확인</a></li>
         </ul>
     </li>
-    
     <li>
-    	<a href="#" class="title"><b>병원소개</b></a>
+    	<a href="#" class="title"><b>고객서비스</b></a>
         <ul class="sub">
-        	<li><a href="#" class="on">병원장인사말</a></li>
-            <li><a href="#" >병원안내</a></li>
-            <li><a href="#">미션/비젼</a></li>
-            <li><a href="#">연혁및성과/의료진동정</a></li>
-<li><a href="#">현황</a></li>
-<li><a href="#">기구조직</a></li>
-<li><a href="#">협력기관</a></li>
-    </ul>
-    </li>
-    
-    <li>
-    	<a href="#" class="title"><b>소식</b></a>
-        <ul class="sub">
-        	<li><a href="/antman/mainboard.do">소식/공지</a></li>
-            <li><a href="#" >언론보도</a></li>
-            <li><a href="#" >입찰공고</a></li>
-            <li><a href="#" >강좌안내</a></li>
-            <li><a href="#" >문화갤러리</a></li>
-            
-        </ul>
- 
-       <li>
-    	<a href="#" class="title"><b>교육장안내</b></a>
-        <ul class="sub">
-            <li><a href="#" class="on">대관내규</a></li>
+        	<li><a href="/antman/faqboard.do">자주하는질문</a></li>
+            <li><a href="/antman/webservice/voc.jsp" class="on">고객의소리</a></li>
+            <li><a href="/antman/praiseboard.do">칭찬코너</a></li>
+            <li><a href="/antman/webservice/pageinquiry.jsp">홈페이지이용문의</a></li>
+            <li><a href="/antman/webservice/offerinfo.jsp">콘텐츠제공안내</a></li>
         </ul>
     </li>
- 
-</ul>
 </ul>
 <div id="bookinfo">
 	<p>예약문의 <br/>
 	<b>1688-7575</b></p>
 </div>
 </div>
+</html>

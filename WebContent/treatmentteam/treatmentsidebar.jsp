@@ -16,6 +16,7 @@
 	#nav{width:200px; margin:30px auto; text-indent:10px; float:left; margin-top:25px; margin-bottom:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD;}
 	#nav .title{display:block; height:50px; line-height:3em; font-size:17px; background:#FFFFFF; color:#000000; text-align:center; padding-right:20px; border-top:1px solid #BDBDBD;}
 	#nav .title:hover{text-decoration:underline; }
+	#nav li a:focus{font-weight:bold; color:#000000;}
 	#nav li.on{background:#5586EB;}
 	#nav li.on a{font-weight:bold; color:#FFFFFF;}
 	#nav li:first-child a.title{border-top:none;}
