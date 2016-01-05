@@ -44,6 +44,10 @@
   select count(*) from MEMBER where id = #id#
 </select>
 
+<select id="idpwCheck" resultClass="int" parameterClass="dto">
+select count(*) from member where id=#id# and passwd=#passwd#
+</select>
+
  	  <update id="updateEid" parameterClass="dto">   
       update member set Eid=#Eid#, auth='E' where id=#id#
       </update>

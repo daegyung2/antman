@@ -68,18 +68,25 @@ public class MemberBean {
 		@RequestMapping("/inputPro.do")
 		public String inputPro(LoginDataBean dto, HttpServletRequest request){
 		
-			if(dto.getEid()!=null){
-				sqlMapClient.insert("member.insertUserEid", dto);
-				sqlMapClient.update("member.updateEid", dto);
-			}else if(dto.getDrId()!=null){
-				sqlMapClient.insert("member.insertUserDR", dto);
-				sqlMapClient.update("member.updateDrId", dto);
+			int check = (int)sqlMapClient.queryForObject("member.idpwCheck", dto);
+			if(check==1){
+				return "/inputPro2.do";
+			}else if(check !=1){
 				
-			}else if(dto.getEid()==null && dto.getDrId()==null){
-				sqlMapClient.insert("member.insertUser",dto);
-				sqlMapClient.update("member.updateP", dto);
-			}
+				if(dto.getEid()!=null){
+					sqlMapClient.insert("member.insertUserEid", dto);
+					sqlMapClient.update("member.updateEid", dto);
+				}else if(dto.getDrId()!=null){
+					sqlMapClient.insert("member.insertUserDR", dto);
+					sqlMapClient.update("member.updateDrId", dto);
+					
+				}else if(dto.getEid()==null && dto.getDrId()==null){
+					sqlMapClient.insert("member.insertUser",dto);
+					sqlMapClient.update("member.updateP", dto);
+				}
 			
+			}
+				
 			return "/member/inputPro.jsp";
 		}
 		

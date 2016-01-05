@@ -2,10 +2,12 @@
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<jsp:include page="p_mypage_sidebar.jsp" flush="true | false"/>
+
 <table width="1400" border="0">
 <tr>
 <td width="200">
-<jsp:include page="p_mypage_sidebar.jsp" flush="true | false"/>
+
 </td>
 
 

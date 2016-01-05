@@ -7,13 +7,19 @@ function checkIt() {
         alert("의사번호를 입력하세요");
         return false;
     } 
+    var input = eval("document.input");
+    if(!input.check.value) {
+        alert("의사이름을 입력하세요");
+        return false;
+    } 
 }
 </script>
 
     <center>
     <h2>의사번호</h2><br/>
     <form action="/antman/D_CheckPro.do" method="post" name="input" onSubmit="return checkIt()">
-    <input type="text" name="drId">
+ 의료진이름: <input type="text" name="drname"> &nbsp;&nbsp;
+  의사번호:   <input type="text" name="drId">
     <input type="submit" value="입력">
     
     </form>
