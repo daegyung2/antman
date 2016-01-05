@@ -11,7 +11,9 @@
 	a{ text-decoration:none; }
 	ul{ list-style:none; margin:0px; padding:0px;}
 	li{ margin:0px; padding:0px; }
-	#container{ width:1100px; height:1600px; margin:0 auto; position:relative;}
+	#menutop{width:100%; height:150px; }
+	#side{width:200px; float:left; margin-left:0px; }
+	#container{ width:1100px; height:1600px; margin:0 auto; margin-left:250px; position:relative;}
 	#container .main{ width:1000px; height:1500px; margin-left:50px; position:relative}
 	#container .main #title_1{font-size:30px; left:0px; position:relative; margin-top:30px;}
 	#container .main #main_top{ width:970px; height:70px; margin-top:25px; font-size:15px; line-height:1.8;}
@@ -102,6 +104,16 @@
 
 </head>
 <body>
+
+<div id="menutop">
+	<jsp:include page="webtop.jsp" flush="true | false"/>
+</div>
+
+<!-- container ½ÃÀÛ -->
+<div id="side">
+	<jsp:include page="websidebar.jsp" flush="true | false"/>
+</div>
+
 <div id="container">	
 	<div class="main">
 		<div id="title_1"><b>ÄÜÅÙÃ÷Á¦°ø¾È³»</b></div>

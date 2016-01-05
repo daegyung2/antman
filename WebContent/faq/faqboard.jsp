@@ -12,7 +12,10 @@
 	body{font-size:12px; line-height:1.4; }
 	a{text-decoration:none; }
 	
-	.container {width:1000px; height:1200px; margin:0 auto; position:relative;}
+	#menutop{width:100%; height:150px; }
+	#side{width:200px; float:left; margin-left:0px; }
+	
+	.container {width:1000px; height:1200px; margin:0 auto; margin-left:220px; position:relative;}
 	.container .content{width:800px; height:1200px; margin-left:100px;}
 	.container .content h2{text-align:center; font-size:25px; margin-top:20px;}
 	.container .content p{text-align:center; font-size:15px; margin-top:5px; margin-right:40px; float:right;}
@@ -115,6 +118,16 @@ $(function(){
 </head>
 <body>
 <script type="text/javascript"></script>   
+
+<div id="menutop">
+	<jsp:include page="/webservice/webtop.jsp" flush="true | false"/>
+</div>
+
+<!-- container 시작 -->
+<div id="side">
+	<jsp:include page="/webservice/websidebar.jsp" flush="true | false"/>
+</div>
+
 <div class="container">
 	<div class="content">
 	<h2>자주하는질문</h2>

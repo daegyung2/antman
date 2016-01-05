@@ -55,22 +55,9 @@ $(function(){
 	ul{ list-style:none; margin:0px; padding:0px; }
 	li{ margin:0px; padding:0px; }
 	
-	.sidebar{width:200px; height:1350px; float:left; margin-left:120px; top:0px; position:absolute; border:1px solid #BDBDBD;}
-	.sidebar #sidebar_top{width:200px; height:120px; font-size:22px; margin-top:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD; text-align:right;}
-	.sidebar #sidebar_top b{padding-right:0px;}
-	.sidebar #bookinfo{width:160px; height:100px; margin-left:20px; margin-top:380px; border:1px solid #BDBDBD; text-align:center; font-size:16px; }
-	.sidebar #bookinfo b{font-size:20px;}
-	#nav{width:200px; margin:30px auto; text-indent:10px; float:left; margin-top:25px; margin-bottom:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD;}
-	#nav .title{display:block; height:50px; line-height:3em; font-size:17px; background:#5586EB; color:#FFFFFF; text-align:right; padding-right:20px;}
-	#nav .title:hover{text-decoration:underline; }
-	#nav .sub li{height:36px; line-height:2em; background:rgba(233,233,233,0.65);}
-	#nav .sub li a{display:block; font-size:15px; color:#222; text-align:right; padding-right:20px; }
-	#nav .sub li a:hover{text-decoration:underline; }
-	#nav .sub li a.on{text-decoration:underline; color:#5586EB; }
-	#nav .sub{display:none;}
-	#nav li:first-child a.title{border-top:none;}
-	
-	#container{width:960px; height:1300px; margin:0 auto; margin-left:320px; position:relative;}
+	#menutop{width:100%; height:150px; }
+	#side{width:200px; float:left; margin-left:0px; }
+	#container{width:960px; height:1300px; margin:0 auto; margin-left:250px; position:relative;}
 	#container .main{width:900px; height:1200px; margin-left:30px; position:relative}
 	#container .main #main_top{width:850px; height:130px; margin-top:20px; line-height:1.6;}
 	#container .main #btn{width:70px; height:30px; margin-top:20px; margin-right:10px; background:#5586EB; position:relative; float:right;}
@@ -86,39 +73,14 @@ $(function(){
 </head>
 <body>
 
-<div class="sidebar">
-	<div id="sidebar_top">
-		<br/><br/>
-		<font color="#5586EB"><b>웹서비스</b></font>
-	</div>
-<ul id="nav">
-	<li>
-    	<a href="#" class="title"><b>발급안내</b></a>
-        <ul class="sub">
-        	<li><a href="#">의무기록사본</a></li>
-            <li><a href="#">증명서</a></li>
-            <li><a href="#">중간진료비결제</a></li>
-            <li><a href="#">위변조문서확인</a></li>
-        </ul>
-    </li>
-    <li>
-    	<a href="#" class="title"><b>고객서비스</b></a>
-        <ul class="sub">
-        	<li><a href="#">자주하는질문</a></li>
-            <li><a href="#" class="on">고객의소리</a></li>
-            <li><a href="#">칭찬코너</a></li>
-            <li><a href="#">홈페이지이용문의</a></li>
-            <li><a href="#">콘텐츠제공안내</a></li>
-        </ul>
-    </li>
-</ul>
-<div id="bookinfo">
-	<p>예약문의 <br/>
-	<b>1688-7575</b></p>
-</div>
+<div id="menutop">
+	<jsp:include page="webtop.jsp" flush="true | false"/>
 </div>
 
-
+<!-- container 시작 -->
+<div id="side">
+	<jsp:include page="websidebar.jsp" flush="true | false"/>
+</div>
 
 <div id="container">	
 	<div class="main">
