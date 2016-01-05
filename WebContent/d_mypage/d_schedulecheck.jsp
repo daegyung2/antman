@@ -30,8 +30,8 @@
 <input type="hidden" name ="drid" value="${sessionScope.memdrid}">
 <input type="hidden" name ="drname" value="${sessionScope.memname}">
 <center>
-<table width="320" border="1">
-<tr align="center"><th>일별보기</th><th>검색</th><th>환자이름</th><th>아이디</th><th>검색</th></tr>
+<table width="450" border="1">
+<tr align="center"><th>일별보기</th><th>검색</th><th>환자이름</th><th>검색</th><th>아이디</th><th>검색</th></tr>
 <tr align="center"><td><%@ page import="java.util.Date"%>
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.SimpleDateFormat"%>
@@ -73,11 +73,14 @@ String today = sdms.format(cal.getTime());
 </html>
 </td>
 <td>
-<input type="submit" value="보기"></td><td>
+<input type="submit" value="보기"></td>
 </form>
+
+<td>
 <form action = "/antman/schedulecheck.do" method="post">
 <input type="hidden" name ="drid" value="${sessionScope.memdrid}">
 <input type="hidden" name ="drname" value="${sessionScope.memname}">
+
 <select name="name" >
 <c:forEach var="dtos" items="${slist }">
 <option value="${dtos.name}">${dtos.name}</option>
@@ -87,6 +90,13 @@ String today = sdms.format(cal.getTime());
 
 </td>
 <td>
+<input type="submit" value="보기"></td>
+</form>
+
+<td>
+<form action = "/antman/schedulecheck.do" method="post">
+<input type="hidden" name ="drid" value="${sessionScope.memdrid}">
+<input type="hidden" name ="drname" value="${sessionScope.memname}">
 <select name="id" >
 <c:forEach var="dtoid" items="${slist }">
 <option value="${dtoid.id}">${dtoid.id}</option>

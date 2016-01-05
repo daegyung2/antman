@@ -23,10 +23,16 @@ public class ScheduleDTO {
 	private String nextsdate;
 	private String nextadate;
 	private String view;
+	private String PageNum;
 	
 	
 	
-	
+	public String getPageNum() {
+		return PageNum;
+	}
+	public void setPageNum(String pageNum) {
+		PageNum = pageNum;
+	}
 	public String getView() {
 		return view;
 	}

@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
+
 <!DOCTYPE html>
 
 <style type="text/css">
@@ -100,11 +101,6 @@
  <center> ${pagingHtml }</center> <!-- 위에방식으로 하려면 귀차너서 그냥 페이징액션을 활용함 왼쪽 pagingHtml 만 출력해주면 됨.. -->
 
 <script type="text/javascript">
-
-
-
 </script>
 </body>
 </html>
-
-

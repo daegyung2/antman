@@ -16,6 +16,7 @@
 	.container .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
 	.container .sub b{font-size:22px; color:#000000;}
 	.container .main{width:1000px; height:1100px; margin-left:50px; top:30px; position:relative;}
+		.ssibal {margin-left: 230px;}
 </style>
 
 <div id="menutop">
@@ -28,7 +29,9 @@
 </div>
 
 <div class="container">
-
+		<div class="ssibal">
+			<strong><h2>의료진</h2></strong>&nbsp;클릭 시 해당 자음으로 시작하는 진료과 목록을 볼 수 있습니다.<br/>
+			<br/>
 
 <html lang="en">
 <head>
@@ -48,7 +51,7 @@
 .tab-pane { padding: 15px 0; }
 .tab-content{padding:20px}
 
-.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-left: -10px; margin-bottom: 30px; }
 body{  }
     </style>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -72,39 +75,54 @@ body{  }
                                   <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane active" id="a">
-                                        <c:forEach var="dto" items="${list}">
-  										<table border="0">
+                                        
+                      
+                                      
+  										<table width="600"border="0">
           								<tr>
-         							    <td><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
-          							    </tr>         
-          								</table>
+          								<c:forEach var="dto" items="${list}" varStatus="status">
+         							    <td width="200"><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td> 
+          							    <c:if test="${status.count%3==0}">		
+          							    <tr>
+										</c:if>	
          							    </c:forEach>
+         							    </tr> 
+         							    </table>
                                         </div>
                                         <div role="tabpanel" class="tab-pane" id="b">
-                                        <c:forEach var="dto" items="${lista}">
+                                        <c:forEach var="dto" items="${lista}" varStatus="status">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
+          							    <c:if test="${status.count%3==0}">		
+          							    <tr>
+										</c:if>	
           							    </tr>         
           								</table>
          							    </c:forEach>
                                         
                                         </div>
                                         <div role="tabpanel" class="tab-pane" id="messages">
-                                        <c:forEach var="dto" items="${listb}">
+                                        <c:forEach var="dto" items="${listb}" varStatus="status">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
+          							     <c:if test="${status.count%3==0}">		
+          							    <tr>
+										</c:if>	
           							    </tr>         
           								</table>
          							    </c:forEach>
                                         
                                         </div>
                                          <div role="tabpanel" class="tab-pane" id="settings">
-                                         <c:forEach var="dto" items="${listc}">
+                                         <c:forEach var="dto" items="${listc}" varStatus="status">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
+          							      <c:if test="${status.count%3==0}">		
+          							    <tr>
+										</c:if>	
           							    </tr>         
           								</table>
          							    </c:forEach>
@@ -127,15 +145,39 @@ body{  }
 
 <c:if test="${dpname != null}">
 
-
- <h4> ${tmsdto.dpname} 의료진 목록입니다.</h4>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style type="text/css">
+.shit{
+	
+	font-weight : bold; 
+}
+.group{	
+font-family:"나눔고딕","nanum gothic", sans-serif;
+			color : #4285F4 ;
+            font-weight : bold;
+			
+}
+</style>
+<div class="container">
+  <h4 class="shit"><span class="group">${tmsdto.dpname}</span> 의료진 목록입니다.</h4>
            
-  <table width="1200" border="1">
+  <table class="table">
+    <thead>
       <tr>
         <th width="20%" >사진</th>
         <th width="80%">정보</th>
         
       </tr>
+    </thead>
+    <tbody>
                     <c:forEach var="tmdto" items="${tmslist}">
                         <tr>
                         	<td height="50"><img src="${tmdto.drimg1}" width="181" height="236"></td>

@@ -26,7 +26,7 @@
 
 <div id="container">
 	<div class="main">
-		<div id="title"><title>부서등록/title>
+		<div id="title"><title>부서등록</title>
 </head>
 <body>
 <form action="/antman/insertDepartPro.do" method="post" name="depart"  enctype="multipart/form-data">

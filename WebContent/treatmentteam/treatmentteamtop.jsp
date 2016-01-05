@@ -14,7 +14,7 @@
 	body{font-size:14px; line-height:1.4; overflow-x:hidden; height:1200px;}
 	a{text-decoration:none; }
 	
-	#bar{clear:both; position:absolute; width:100%; height:2px; background:#BCE55C; top:0px; opacity:0.8;}
+	#bar{clear:both; position:absolute; width:100%; height:2px;  background:#BCE55C; top:0px; opacity:0.8;}
 
 	#l_back{ width:100%; height:30px; background:#474747; top:2px; position:absolute;}
 	#l_back #login{width:1100px; height:20px; margin:0 auto; margin-top:5px; position:relative;}
@@ -140,7 +140,7 @@
                 		</ul>
                 	</li>
                 	<li>
-            			<a href="#">웹서비스</a>
+            			<a href="/antman/webservice/voc.jsp">웹서비스</a>
             			<ul>
                 			<li><a href="#">발급안내</a></li>
 							<li><a href="#">고객서비스</a></li>

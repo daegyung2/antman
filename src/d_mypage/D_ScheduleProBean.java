@@ -22,22 +22,26 @@ public class D_ScheduleProBean {
 		int drid = Integer.parseInt(request.getParameter("drid"));
 		String drname = (String)request.getParameter("drname");
 		String ymd = request.getParameter("ymd");
-		String year =(String)dto.getYear();
-		String month =(String)dto.getMonth();
-		String day =(String)dto.getDay();
+
 		String hour =(String)dto.getHour();
 		String minute =(String)dto.getMinute();
-		System.out.println(ymd);
+	
 		String sdate = ymd+' '+hour+":"+minute;;
 		
 		
 		dto.setSdate(sdate);
 		
-		
+		int check = (Integer) sqlMapClient.queryForObject("schedule.schedulejungbok",dto);
+		System.out.println(check);
+		if(check ==1){
+			String jungbok = "중복된 날짜입니다.";
+			request.setAttribute("joungbok", jungbok);
+			return "/scheduleform.do";
+		}else if(check == 0){
 		
 		
 		sqlMapClient.insert("schedule.scheduleinsert", dto);
-		
+		}
 		return "/scheduleform.do";
 	}
 }

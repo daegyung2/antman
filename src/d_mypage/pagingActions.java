@@ -38,11 +38,11 @@ public class pagingActions {
 		}
 
 		// 현재 페이지의 처음과 마지막 글의 번호 가져오기.
-		startCount = (currentPage - 1) * blockCount;
-		endCount = startCount + blockCount - 1;
+		startCount = (currentPage - 1) * blockCount; //10
+		endCount = startCount + blockCount - 1; //19
 
 		// 시작 페이지와 마지막 페이지 값 구하기.
-		startPage = (int) ((currentPage - 1) / blockPage) * blockPage + 1;
+		startPage = (int) ((currentPage - 1) / blockPage) * blockPage + 1; //11
 		endPage = startPage + blockPage - 1;
 
 		// 마지막 페이지가 전체 페이지 수보다 크면 전체 페이지 수로 설정

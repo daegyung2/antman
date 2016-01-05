@@ -18,9 +18,13 @@
 	
 	</resultMap>
 	 <select id="selectLastNo" resultClass="int" >
-         SELECT count(*) count from schedule where drname = #drname#
+         SELECT count(*) count from schedule where drid = #drid#
       </select>
-      
+     
+     	 <select id="schedulejungbok" resultClass="int" >
+  select count(*) from schedule where sdate = to_date(#sdate#,'YYYY-MM-DD HH24:MI') and drid = #drid#
+      </select>
+       
 	<insert id="scheduleinsert" parameterClass ="dsche">
 	INSERT INTO schedule(sid,drid,drname,dpname,sdate) values(schedule_SEQ.NEXTVAL,#drid#,#drname#,#dpname#,to_date(#sdate#,'YYYY-MM-DD HH24:MI'))
 	</insert>
@@ -42,9 +46,7 @@
 	  select sid,drname,dpname,name,to_char(sdate,'YYYY-MM-DD HH:MI')sdate,nextsdate from schedule where drid = #drid# order by sid desc
 	</select>
 	
-	<select id="drsnameidcheck" resultClass="dsche" >
-	 	  select name,id from schedule where drid = #drid#
-	</select>
+
 	
 	 <!-- 예약스케쥴에서 중복부분 삭제하기   --> 
 	<typeAlias alias="dsche" type="admin.bean.ScheduleDTO"/>

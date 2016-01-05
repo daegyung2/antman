@@ -29,14 +29,15 @@ public class D_ScheduleBean {
 	     private pagingActions page;
 	
 	@RequestMapping("scheduleform.do")
-	public String scheduleform (HttpServletRequest request,TreatmentteamDTO tdto ,ScheduleDTO dto, String PageNum){
+	public String scheduleform (HttpServletRequest request,TreatmentteamDTO tdto ,ScheduleDTO dto, String PageNum, String joungbok){
 		PageNum = request.getParameter("PageNum");
 	   	 int drid = Integer.parseInt(request.getParameter("drid"));
 	   	dto.setDrid(drid);
-	   
-	   	  
+	   	
+
 	   	  	if(PageNum == null){
 	   	  		currentPage =1;
+	   	  		PageNum = "1";
 	   	  	}else{
 	   	  		currentPage = Integer.parseInt(PageNum);
 	   	  	}
@@ -51,7 +52,7 @@ public class D_ScheduleBean {
 	            lastCount = page.getEndCount() +1;
 	        }
 	        List list = sqlMapclient.queryForList("schedule.drschedulecheck",dto.getDrid());
-	        
+	        System.out.println(list.size());
 	        if(list.size() != 0) {
 	        
 	        	list = list.subList(page.getStartCount(), lastCount);//여기를 생략하면 총 list 레코드가 전부 넘어간다 - 내가받은 부트스트랩소스 자동으로 10개단위로 끊어주고 1,2,3 페이징처리해줌
@@ -64,11 +65,11 @@ public class D_ScheduleBean {
 	        pagingHtml = page.getPagingHtml().toString();
 	        
 	      
-		
-	        tdto = (TreatmentteamDTO) sqlMapclient.queryForObject("treatment.doctorprofile",tdto.getDrid());
-	        request.setAttribute("totalCount",totalCount);
-	        request.setAttribute("pagingHtml",pagingHtml);
-	           
+	        System.out.println(PageNum);
+	    tdto = (TreatmentteamDTO) sqlMapclient.queryForObject("treatment.doctorprofile",tdto.getDrid());
+	    request.setAttribute("totalCount",totalCount);
+	    request.setAttribute("pagingHtml",pagingHtml);
+	    request.setAttribute("PageNum",PageNum);
 		request.setAttribute("list", list);
 		request.setAttribute("tdto", tdto);
 		return "/d_mypage/d_schedule.jsp";

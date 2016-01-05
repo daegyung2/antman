@@ -16,6 +16,7 @@
 	.container .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
 	.container .sub b{font-size:22px; color:#000000;}
 	.container .main{width:1000px; height:1100px; margin-left:50px; top:30px; position:relative;}
+	.ssibal {margin-left: 230px;}
 </style>
 
 <div id="menutop">
@@ -31,9 +32,9 @@
     <title>거지같아서 그냥 기본으로</title>
     
     
-    <div class="container">
-    <div class="row">
-		<div class="col-md-12">
+ 
+    
+		<div class="ssibal">
 			<strong><h2>의료진</h2></strong>&nbsp;클릭 시 해당 자음으로 시작하는 진료과 목록을 볼 수 있습니다.<br/>
 			<br/>
 			
@@ -55,7 +56,7 @@
 .tab-pane { padding: 15px 0; }
 .tab-content{padding:20px}
 
-.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-left:-10px; margin-bottom: 30px; }
 body{  }
     </style>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -64,7 +65,7 @@ body{  }
 <body>
 <div class="container">
 	<div class="row">
-		                                <div class="col-md-12">
+		                                <div class="col-md-8">
                                     <!-- Nav tabs --><div class="card">
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li role="presentation" class="active"><a href="#a" aria-controls="a" role="tab" data-toggle="tab">ㄱ-ㅁ</a></li>
@@ -94,30 +95,39 @@ body{  }
          							    </table>
                                         </div>
                                         <div role="tabpanel" class="tab-pane" id="b">
-                                        <c:forEach var="dto" items="${lista}">
+                                        <c:forEach var="dto" items="${lista}" varStatus="status">
   										<table border="0">
           								<tr>
          							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
+          							    <c:if test="${status.count%3==0}">		
+          							    <tr>
+										</c:if>	
           							    </tr>         
           								</table>
          							    </c:forEach>
                                         
                                         </div>
                                         <div role="tabpanel" class="tab-pane" id="messages">
-                                        <c:forEach var="dto" items="${listb}">
+                                        <c:forEach var="dto" items="${listb}" varStatus="status">
   										<table border="0">
           								<tr>
          							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
+          							     <c:if test="${status.count%3==0}">		
+          							    <tr>
+										</c:if>	
           							    </tr>         
           								</table>
          							    </c:forEach>
                                         
                                         </div>
                                          <div role="tabpanel" class="tab-pane" id="settings">
-                                         <c:forEach var="dto" items="${listc}">
+                                         <c:forEach var="dto" items="${listc}" varStatus="status">
   										<table border="0">
           								<tr>
          							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
+          							      <c:if test="${status.count%3==0}">		
+          							    <tr>
+										</c:if>	
           							    </tr>         
           								</table>
          							    </c:forEach>
@@ -138,10 +148,40 @@ body{  }
 
 
 <c:if test="${dpname != null}">
-	<table width="1200" border= "1">
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style type="text/css">
+.shit{
+	
+	font-weight : bold; 
+}
+.group{	
+font-family:"나눔고딕","nanum gothic", sans-serif;
+			color : #4285F4 ;
+            font-weight : bold;
+			
+}
+.table{
+ margin-left : -15px
+}
+</style>
+<div class="container">
+	<div class="table">
+  <h4 class="shit"><span class="group">${tmsdto.dpname}</span> 의료진 목록입니다.</h4>
+           
+  <table class="table">
+    <thead>
       <tr>
         <th width="20%" >사진</th>
-        <th width="80%">정보</th>
+        <th width="50%">정보</th>
         
       </tr>
     </thead>
@@ -251,8 +291,21 @@ ${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='
 <br/>
 
 <form action="/antman/appointmentdetailpro.do" method="post">
-
-<table width="800" border="1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>회원가입 폼</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+    
+    function checkIt() {
+        var userinput = eval("document.userinput");
+        if(!userinput.sdate.value )
+        {
+            alert("날짜를 선택하세요.");
+            return false;
+        }
+    }
+    </script>
+<table width="800" border="1" name="userinput" onSubmit="return checkIt()">
 <tr>
 <td width="200" >의사이름</td><td><input type="text" name="drname" value="${drname }"/></td></tr>
 <input type="hidden" name="drid" value="${drid }"/>
@@ -267,6 +320,26 @@ ${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='
 <input type="submit" value="예약하기"/>
 </form>
 
+<table width="400" border="1">
+<tr>
+<input type="hidden" name="drid" value="${drid }"/>
+<input type="hidden" name="jumin1" value="${jumin1 }"/>
+<input type="hidden" name="jumin2" value="${jumin2 }"/>
+<input type="hidden" name="sid" value="${sid }"/>
+<td width="60" >의사이름</td>
+<td width="60">진료과명</td>
+<td width="60" >예약자id</td>
+<td width="60" >예약성함</td>
+<td width="100" >예약시간</td></tr>
+<tr>
+<td><input type="text" name="drname" value="${drname }"/></td>
+<td><input type="text" name="dpname" value="${dpname }"/></td>
+<td><input type="text" name="id" value="${sessionScope.memId}"/></td>
+<td><input type="text" name="name" value="${name }"/></td>
+<td><input type="text" name="adate" value="${sdate }"/></td></tr>
+</table>
+<input type="submit" value="예약하기"/>
+</form>
 </div>
 </div>
 

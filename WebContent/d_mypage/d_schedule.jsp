@@ -75,7 +75,7 @@
 		</body>
 		</html>
 		</td><td><select name="hour">
-		<option value="1">9</option>
+		<option value="9">9</option>
 		<option>10</option>
 		<option>11</option>
 		<option>12</option>
@@ -89,16 +89,18 @@
 		<option>8</option></td>
 		<td>
 		<select name="minute">
-		<option value="1">00</option>
-		<option>10</option>
+		<option value="00">00</option>
 		<option>20</option>
-		<option>30</option>
 		<option>40</option>
-		<option>50</option>
+		
 		</td></tr>
 		</table>
 		<center><input type="submit" value="스케쥴 등록"></center>
 		</form>
+		
+		<c:if test="${joungbok ne null }">
+		<center>중복된 날짜가 있습니다. 다른날짜를 선택하여 주십시오.</center>
+		</c:if><br/>
 		<center>
 		<table width="680" border="1">
 		<tr>
@@ -118,12 +120,13 @@
 		<td>${dto.name}</td>
 		<td>${dto.nextsdate}</td>
 		<td>${dto.sdate}</td>
-		<td><input type="button" value="취소" onclick="javascript:window.location='/antman/scheduledelete.do?sid=${dto.sid }&drid=${sessionScope.memdrid }'"></td>
+		<td><input type="button" value="취소" onclick="javascript:window.location='/antman/scheduledelete.do?sid=${dto.sid }&drid=${sessionScope.memdrid }&PageNum=${PageNum}'"></td>
 		</tr>
 		</c:forEach>
 		</table>
 		</center>
 		<center>${pagingHtml}</center>
+		pagenum = ${PageNum}
 	</div>
 </div>
 

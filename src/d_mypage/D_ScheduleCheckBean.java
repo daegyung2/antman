@@ -47,18 +47,23 @@ public class D_ScheduleCheckBean {
 			aplist = sqlMapclient.queryForList("appointment.drappointcheck" , adto);
 			view = yes;
 		}
-		else if (adto.getAdate() == null){
+		else if (adto.getAdate() == null && adto.getName() ==null){
+			aplist = sqlMapclient.queryForList("appointment.drappointidcheck" , adto);
+			view = yes;
+		
+		}else if(adto.getAdate() == null && adto.getId() ==null)
+		{
 			aplist = sqlMapclient.queryForList("appointment.drappointnamecheck" , adto);
 			view = yes;
 		
-		}else{}
+		}
 		System.out.println(aplist.size());
 
-		if (shit != null && adto.getAdate() == null && adto.getName() == null){
+		if (shit != null && adto.getAdate() == null && adto.getName() == null && adto.getId() == null){
 		
 		aplist = sqlMapclient.queryForList("appointment.drtodayappointcheck" , adto);
 		}else{}
-		List slist = sqlMapclient.queryForList("schedule.drsnameidcheck",dto);
+		List slist = sqlMapclient.queryForList("appointment.drsnameidcheck",adto);
 		
 		
 		request.setAttribute("aplist", aplist);	

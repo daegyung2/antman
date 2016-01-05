@@ -35,6 +35,12 @@
 
    </resultMap>
    
+   
+   	<select id="drsnameidcheck" resultClass="appoint" >
+	 	   select name,id from appointment where drid = #drid# group by id,name
+	</select>
+	
+	
    <select id="selectAll" parameterClass="String" resultClass="appoint">
 		select * from appointment where id=#id# order by aid desc
    </select>
@@ -50,10 +56,12 @@
            
         
             <select id="drappointnamecheck" resultClass="appoint">
-        select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate from appointment where name = #name# and id = #id# order by aid desc 
+        select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate from appointment where name = #name#  order by aid desc 
         </select>
 
-   
+         <select id="drappointidcheck" resultClass="appoint">
+        select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate from appointment where  id = #id# order by aid desc 
+        </select>
    
   <!-- 예약결과조회 출력하기  --> 
       <select id="appointresult" resultClass="appoint">

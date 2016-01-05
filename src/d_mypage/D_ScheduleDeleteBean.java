@@ -22,7 +22,7 @@ public class D_ScheduleDeleteBean {
 	
 	
 	@RequestMapping("scheduledelete.do")
-	public String scheduledelete(ScheduleDTO dto,TreatmentteamDTO tdto, HttpServletRequest request){
+	public String scheduledelete(ScheduleDTO dto,TreatmentteamDTO tdto, HttpServletRequest request, String PageNum){
 			int drid = Integer.parseInt(request.getParameter("drid"));
 			dto.setDrid(drid);
 		System.out.println(dto.getSid());
@@ -34,8 +34,16 @@ public class D_ScheduleDeleteBean {
 			
 			tdto = (TreatmentteamDTO) sqlMapclient.queryForObject("treatment.doctorprofile",tdto.getDrid());
 			
+			if(PageNum != null){
+				request.setAttribute("PageNum", PageNum);
+				request.setAttribute("drid", drid);
+				return "/scheduleform.do";
+			}
+			
 			request.setAttribute("tdto", tdto);
 			request.setAttribute("list", list);
+			
+			
 		return "/d_mypage/d_schedule.jsp";
 	}
 }
