@@ -38,6 +38,7 @@
       <input type="button" value="관리자페이지" onclick="javascript:window.location='/antman/admin/adminsidebar.jsp'">
    	  </c:if>
    	 
+   	  <input type="button" value="" onclick="javascript:window.location='praiseboard.do?id=${sessionScope.memId}'">
    	 
    	  <c:if test="${sessionScope.memauth eq 'P'}">
    	  <h3>나의 예약 목록</h3>

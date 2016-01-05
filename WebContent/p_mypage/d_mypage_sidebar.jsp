@@ -24,17 +24,19 @@
 
 <div class="sidebar">
 	<div id="sidebar_top" >
-		<td>${sessionScope.memname}님의 <br/> 마이페이지</td>
+		<td><h3>${sessionScope.memname}</h3><font size="4">의사등록번호 </font><font color="#5586EB"><b>${sessionScope.memdrid}</b></font></td>
 	</div>
 <ul id="nav">
-	<li><a href="/antman/appointmentmain.do" class="title">진료예약</a></li>
-	<li><a href="/antman/p_mypage.do" class="title">나의예약현황</a></li>
-	<li><a href="/antman/praiseboard.do" class="title">칭찬하기</a></li>
-	<li><a href="/antman/MyQnA.do" class="title">나의상담</a></li>
-	<li><a href="/antman/modifyForm.do?drid=${sessionScope.memId }&drname=${sessionScope.memname}" class="title">회원정보수정</a></li>
+	<li><a href="#" class="title">진료서비스</a></li>
+	<li><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">스케쥴등록/확인</a></li>
+	<li><a href="/antman/schedulecheck.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">진료신청/다음진료확인</a></li>
+	<li><a href="/antman/dscheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">환자진료결과등록하기</a></li>
+	<li><a href="/antman/dpraiseboard.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">칭찬받은글보기</a></li>
+	<li><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">받은 문의</a></li>
+	<li><a href="#" class="title">개인서비스</a></li>
+	<li><a href="/antman/scheduleinfomodify.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">정보수정</a></li>
 	<li><a href="#" class="title">회원탈퇴</a></li>
 </ul>
 </div> 
 
 
- 

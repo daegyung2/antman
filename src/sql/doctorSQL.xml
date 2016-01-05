@@ -78,6 +78,6 @@
  </select>
  
   <select id="drIdCheck" resultClass="int" parameterClass="doctor">
-  		select count(*) from DOCTOR where drId = #drId#
+  		select count(*) from DOCTOR where drId = #drId# and drname=#drname#
   </select>
 </sqlMap>

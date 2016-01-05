@@ -54,7 +54,7 @@ public class pagingActions {
 		pagingHtml = new StringBuffer();
 		if (currentPage > blockPage) {
 			pagingHtml.append("<a href=/antman/scheduleform.do?PageNum="
-					+ (startPage - 1) + ">");
+					+ (startPage - 1) + "&drid=" + drid + ">");
 			pagingHtml.append("이전");
 			pagingHtml.append("</a>");
 		}
@@ -74,6 +74,7 @@ public class pagingActions {
 				pagingHtml
 						.append("&nbsp;<a href='/antman/scheduleform.do?PageNum=");
 				pagingHtml.append(i);
+				pagingHtml.append("&drid=" + drid);
 				pagingHtml.append("'>");
 				pagingHtml.append(i);
 				pagingHtml.append("</a>");
@@ -87,7 +88,7 @@ public class pagingActions {
 		// 다음 block 페이지
 		if (totalPage - startPage >= blockPage) {
 			pagingHtml.append("<a href=/antman/scheduleform.do?PageNum="
-					+ (endPage + 1) + ">");
+					+ (endPage + 1) + "&drid=" + drid + ">");
 			pagingHtml.append("다음");
 			pagingHtml.append("</a>");
 		}
