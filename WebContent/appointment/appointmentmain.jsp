@@ -1,10 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%@ page session="true" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<title>진료예약</title>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<h2>진료예약</h2>
+
+<style type="text/css">
+	body, ul, li, div{margin:0px; padding:0px; }
+	ul{list-style:none;}
+	body{font-size:14px; line-height:1.4; overflow-x:hidden;}
+	a{text-decoration:none; }
+
+	#menutop{width:100%; height:150px; }
+	#side{width:200px; float:left; margin-left:0px; }
+	#top{width:200px; float:top; margin-left:100px; }
+	.container{width:1100px; height:1300px; margin:0 auto;  margin-left:230px; position:relative;}
+	.container .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
+	.container .sub b{font-size:22px; color:#000000;}
+	.container .main{width:1000px; height:1100px; margin-left:50px; top:30px; position:relative;}
+</style>
+
+<div id="menutop">
+	<jsp:include page="/treatmentteam/treatmentteamtop.jsp" flush="true | false"/>
+</div>
+
+<!-- container 시작 -->
+<div id="side">
+	<jsp:include page="appointmentsidebar.jsp" flush="true | false"/>
+</div>
+
+<div class="container">
+<center><title>진료예약</title></center>
+<center><h2>진료예약</h2></center>
 
 <center>
 <table width="800" border="1">
@@ -24,7 +49,7 @@
 로그인 후 본인의 진료예약 및 조회를<br/>
 하실 수 있습니다.<br/>
 ${ sessionScope.memId}
-<c:if test="${sessionScope.memId == null }"> 
+<c:if test="${sessionScope.memauth eq 'P'}"> 
 <input type="button" value="본인 예약하기" onclick="location.href='loginform.do'"/>
 </c:if>
 <c:if test="${sessionScope.memId != null }"> 
@@ -42,3 +67,6 @@ ${ sessionScope.memId}
 </center>
 </table>
 
+
+</div>
+</div>

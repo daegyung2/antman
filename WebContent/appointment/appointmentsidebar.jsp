@@ -55,13 +55,13 @@ $(function(){
 	ul{ list-style:none; margin:0px; padding:0px; }
 	li{ margin:0px; padding:0px; }
 	
-	.sidebar{width:200px; height:1350px; float:left; margin-left:120px; top:0px; position:absolute; border:1px solid #BDBDBD;}
-	.sidebar #sidebar_top{width:200px; height:120px; font-size:22px; margin-top:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD; text-align:right;}
+	.sidebar{width:200px; height:1350px; float:left; margin-left:35px; top:95px; position:absolute; border:1px solid #BDBDBD; border-top:1px solid transparent;}
+	.sidebar #sidebar_top{width:200px; height:120px; font-size:22px; margin-top:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD; text-align:center;}
 	.sidebar #sidebar_top b{padding-right:0px;}
 	.sidebar #bookinfo{width:160px; height:100px; margin-left:20px; margin-top:380px; border:1px solid #BDBDBD; text-align:center; font-size:16px; }
 	.sidebar #bookinfo b{font-size:20px;}
 	#nav{width:200px; margin:30px auto; text-indent:10px; float:left; margin-top:25px; margin-bottom:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD;}
-	#nav .title{display:block; height:50px; line-height:3em; font-size:17px; background:#5586EB; color:#FFFFFF; text-align:right; padding-right:20px;}
+	#nav .title{display:block; height:50px; line-height:3em; font-size:17px; background:#5586EB; color:#FFFFFF; text-align:center; padding-right:20px;}
 	#nav .title:hover{text-decoration:underline; }
 	#nav .sub li{height:36px; line-height:2em; background:rgba(233,233,233,0.65);}
 	#nav .sub li a{display:block; font-size:15px; color:#222; text-align:right; padding-right:20px; }

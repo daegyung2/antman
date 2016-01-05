@@ -55,7 +55,7 @@ $(function(){
 	ul{ list-style:none; margin:0px; padding:0px; }
 	li{ margin:0px; padding:0px; }
 	
-	.sidebar{width:200px; height:1350px; float:left; margin-left:120px; top:0px; position:absolute; border:1px solid #BDBDBD;}
+	.sidebar{width:200px; height:1350px; float:left; margin-left:120px; top:95px; position:absolute; border:1px solid #BDBDBD;}
 	.sidebar #sidebar_top{width:200px; height:120px; font-size:22px; margin-top:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD; text-align:right;}
 	.sidebar #sidebar_top b{padding-right:0px;}
 	.sidebar #bookinfo{width:160px; height:100px; margin-left:20px; margin-top:380px; border:1px solid #BDBDBD; text-align:center; font-size:16px; }
