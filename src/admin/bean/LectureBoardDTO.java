@@ -8,7 +8,15 @@ public class LectureBoardDTO {
 	private String subject;
 	private String content;
 	private Date Reg_date;
+	private String leimg;
 
+
+	public String getLeimg() {
+		return leimg;
+	}
+	public void setLeimg(String leimg) {
+		this.leimg = leimg;
+	}
 	public int getLEid() {
 		return LEid;
 	}
@@ -33,6 +41,7 @@ public class LectureBoardDTO {
 	public void setReg_date(Date reg_date) {
 		Reg_date = reg_date;
 	}
+
 	
 	
 }

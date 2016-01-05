@@ -4,8 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import admin.bean.DepartmentDTO;
 import admin.bean.LectureBoardDTO;
 
 
@@ -27,10 +29,13 @@ public class LectureBoardWriteBean {
 	@RequestMapping("/lectureboardcontent.do")
 	public String VIEW(HttpServletRequest request, LectureBoardDTO dto){
 		
-		dto = (LectureBoardDTO)sqlMapClient.queryForObject("lectureBoard.viewlectureboard", dto.getLEid());
+		
+		dto = (LectureBoardDTO)sqlMapClient.queryForObject("lectureBoard.selectOne", dto.getLEid());
 		request.setAttribute("dto", dto);
 		return "/intro/lectureboard/lectureboardcontent.jsp";
 	}
+	
+
 	
 	@RequestMapping("/lectureboarddelete.do")
 	public String delete(LectureBoardDTO dto){
@@ -52,6 +57,11 @@ public class LectureBoardWriteBean {
 	public String updatepro(LectureBoardDTO dto){
 		sqlMapClient.update("lectureBoard.updateboard",dto);
 		return "/intro/lectureboard/lectureboardupdatepro.jsp";
+	}
+	
+	@ModelAttribute("dto")
+	public Object returnDTO(LectureBoardDTO dto){
+		return sqlMapClient.queryForObject("lectureBoard.selectOne",dto.getLEid());
 	}
 	
 }

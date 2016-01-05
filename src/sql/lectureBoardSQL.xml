@@ -11,6 +11,7 @@
 		<result property="subject" column="subject"/>
 		<result property="content" column="content"/>
 		<result property="reg_date" column="reg_date"/>
+		<result property="leimg" column="leimg"/>
 	</resultMap>
 	
 		
@@ -19,10 +20,17 @@
 		select * from lectureBoard order by LEid desc
 		</select>	
 		
-		<select id="viewlectureboard" resultMap="boardRes" parameterClass="int">
-		
+		<select id="viewlectureboard" resultMap="boardRes" parameterClass="int">		
       		select LEid,subject,content,reg_date from lectureBoard where LEid = #LEid# 
 		</select>
+		
+		<select id="selectOne" resultMap="boardRes" parameterClass="int">
+ 		select * from lectureBoard where LEid = #LEid#
+		</select>
+		
+		 <select id="max" resultClass="int">
+   		select max(LEid) from lectureBoard
+ 		</select>	
 		
 		
 
@@ -32,11 +40,13 @@
                          			subject,
                          			content,
                          			reg_date
+                         			
                          )
                 	 VALUES (lectureBoard_SEQ.NEXTVAL,
                           	#subject#,
                          	#content#,
                          	sysdate
+                         	
                          )
 		</insert>
 		
@@ -51,6 +61,12 @@
 		 			
 		 <update id="updateboard" parameterClass="lectureBoard">
             update lectureBoard set subject=#subject#, CONTENT=#content# where LEid=#LEid#
-   		</update>			
+   		</update>
+   		
+   		 <update id="updateleimg"  parameterClass="lectureBoard" >
+  		 update lectureBoard set leimg = #leimg# where LEid = #LEid#
+ 		</update>
+   		
+   				
 
 </sqlMap>

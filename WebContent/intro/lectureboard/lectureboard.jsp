@@ -72,8 +72,6 @@
 			 <td ><h3><a href="/antman/lectureboardcontent.do?LEid=${dto.LEid}">${dto.subject}</a></h3>
 				${dto.content} <br/>
 				<FONT size="1">
-			
-				
 				µÓ∑œ¿œ : ${dto.reg_date} |
 				
 			</FONT>
