@@ -33,7 +33,7 @@
 	#h_back #header .grid #title #box a{display:block; width:100%; height:100%; padding-top:20px;}
 	
 	#gnb{ height:40px; margin-top:-10px; border-bottom:1px solid #5586EB; padding-left:375px; position:relative;}
-	#gnb>li{ float:left; line-height:10px; background:#FFFFFF; position:relative;}
+	#gnb>li{ float:left; line-height:10px; background:#FFFFFF; position:relative; z-index:200;}
 	#gnb li.title{padding-left:-300px;}
 	#gnb li a{ display:block; font-size:14px; font-weight:bold; padding:5px 15px; color:#000000; width:120px; }
 	#gnb li ul{ position:absolute; left:0px; opacity:0; width:160px; background:#FFFFFF;}
@@ -41,9 +41,9 @@
 	#gnb li:hover ul{margin-top:29px; opacity:1;  }
 	#gnb li:hover ul li{ height:40px;}
 	#gnb li a:hover, #gnb li a:focus{text-decoration:underline; color:#5586EB;}
-	#gnb li a{ transition:all 0.5s;}
-	#gnb li ul{ transition:all 0.5s;}
-	#gnb li ul li{ transition:all 0.5s;}
+	#gnb li a{ transition:all 0.6s;}
+	#gnb li ul{ transition:all 0.6s;}
+	#gnb li ul li{ transition:all 0.6s;}
 	
 	
 </style>
