@@ -95,7 +95,7 @@ $(function(){
 	<li>
     	<a href="#" class="title"><b>재단소개</b></a>
         <ul class="sub">
-        	<li><a href="#">설립자소개</a></li>
+        	<li><a href="/antman/intro/greet.jsp">설립자소개</a></li>
             <li><a href="#">이사장인사말</a></li>
             <li><a href="#">설립취지</a></li>
         </ul>
@@ -117,7 +117,7 @@ $(function(){
     <li>
     	<a href="#" class="title"><b>소식</b></a>
         <ul class="sub">
-        	<li><a href="/antman/mainboard.do" class="on">소식/공지</a></li>
+        	<li><a href="/antman/mainboard.do">소식/공지</a></li>
             <li><a href="#" >언론보도</a></li>
             <li><a href="#" >입찰공고</a></li>
             <li><a href="#" >강좌안내</a></li>
