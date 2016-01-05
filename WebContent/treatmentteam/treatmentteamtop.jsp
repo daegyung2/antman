@@ -41,9 +41,9 @@
 	#gnb li:hover ul{margin-top:29px; opacity:1;  }
 	#gnb li:hover ul li{ height:40px;}
 	#gnb li a:hover, #gnb li a:focus{text-decoration:underline; color:#5586EB;}
-	#gnb li a{ transition:all 0.5s;}
-	#gnb li ul{ transition:all 0.5s;}
-	#gnb li ul li{ transition:all 0.5s;}
+	#gnb li a{ transition:all 0.7s;}
+	#gnb li ul{ transition:all 0.7s;}
+	#gnb li ul li{ transition:all 0.7s;}
 	
 	
 </style>
