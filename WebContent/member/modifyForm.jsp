@@ -11,7 +11,8 @@
 
 <jsp:include page="p_mypage_sidebar.jsp" flush="true | false"/>
 
-<center><div>
+<center>
+<div>
   <h2>회원정보수정</h2><br/>
                                                                                    
   <div class="table-responsive">    
