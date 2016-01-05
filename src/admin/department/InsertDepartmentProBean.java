@@ -26,7 +26,7 @@ public class InsertDepartmentProBean {
     	
     	sqlMapClient.insert("depart.insert", dto);
     	   
-    		depart_id = (int) sqlMapClient.queryForObject("depart.max",dto);
+    	/*	depart_id = (int) sqlMapClient.queryForObject("depart.max",dto);
 		   dto.setDepart_id(depart_id);
 		   System.out.println(dto.getDepart_id());
 		   file = request.getFile("upload");
@@ -40,7 +40,7 @@ public class InsertDepartmentProBean {
 		   }else{
 		   dto.setDpimg("/antman/image/noimage.jpg");
 		   sqlMapClient.update("depart.updateDpimg",dto);
-		   }
+		   }*/
 		   
     	return "departmentList.do";
     	

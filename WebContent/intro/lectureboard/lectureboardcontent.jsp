@@ -66,6 +66,7 @@
 			 <tr><td colspan="2" align="center"><h3>${dto.subject}</h3></td></tr>
 			 <tr><td width="50%">µÓ∑œ¿œ : ${dto.reg_date}</td></tr> 
 			<tr><td colspan="2">${dto.content } </td></tr>
+			<tr><td><img src="${dto.leimg}" width="300" height="200"/></td></tr>
 			<tr></tr>
 			
   </table>
