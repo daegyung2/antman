@@ -117,11 +117,11 @@ $(function(){
     <li>
     	<a href="#" class="title"><b>소식</b></a>
         <ul class="sub">
-        	<li><a href="#">소식/공지</a></li>
-            <li><a href="#" class="on">언론보도</a></li>
-            <li><a href="#" class="on">입찰공고</a></li>
-            <li><a href="#" class="on">강좌안내</a></li>
-            <li><a href="#" class="on">문화갤러리</a></li>
+        	<li><a href="/antman/mainboard.do" class="on">소식/공지</a></li>
+            <li><a href="#" >언론보도</a></li>
+            <li><a href="#" >입찰공고</a></li>
+            <li><a href="#" >강좌안내</a></li>
+            <li><a href="#" >문화갤러리</a></li>
             
         </ul>
  
