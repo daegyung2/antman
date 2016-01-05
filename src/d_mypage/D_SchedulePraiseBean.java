@@ -24,7 +24,7 @@ public class D_SchedulePraiseBean {
      private int blockCount = 10; // 여기를 조절하면 한페이지당 레코드 몇개 출력할것인지 선택가능
      private int blockPage = 5;
      private String pagingHtml;
-     private pagingAction page;
+     private pagingActions page;
 
      
 
@@ -42,7 +42,7 @@ public class D_SchedulePraiseBean {
    	  	}
         ModelAndView mv = new ModelAndView();
         totalCount = (Integer)sqlMapClient.queryForObject("praise.selectLastNodr" , dto);
-        page = new pagingAction(currentPage,totalCount,blockCount,blockPage);
+        page = new pagingActions(currentPage,totalCount,blockCount,blockPage,drid);
         
         
         int lastCount = totalCount;

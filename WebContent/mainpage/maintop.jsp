@@ -231,6 +231,7 @@
                                    
                                 </ul>
                             </li>  
+                                   
                             <!-- <li><a href="#contact"><h4>이용안내</h4></a></li> -->
                           <!--   <li><a href="#contact"><h4>건강정보</h4></a></li> -->
            <!--                  <li><a href="#contact"><h4>웹서비스</h4></a></li>
@@ -264,3 +265,4 @@ jQuery(document).ready(function(){
 </body>
 </html>
 
+<input type="submit" value="로그인">

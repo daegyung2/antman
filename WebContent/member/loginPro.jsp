@@ -14,18 +14,31 @@
     <br/>
     </c:if>
     
+     <c:if test="${sessionScope.memauth eq 'D'}">
+      <input type="button" value="의사qna" onclick="javascript:window.location='MyQnAanswer.do?drid=${sessionScope.memdrid}&drname=${sessionScope.memname}'">
+   	  </c:if>
+   	  
     <input type="button" value="공지사항" onclick="javascript:window.location='mainboard.do'">
+   
     <c:if test="${sessionScope.memauth eq 'P'}"> 
      <input type="button" value="환자마이페이지" onclick="javascript:window.location='p_mypage.do?id=${sessionScope.memId}'">
      </c:if>
      
-      <c:if test="${sessionScope.memauth eq 'D'}">
-      <input type="button" value="의사qna" onclick="javascript:window.location='MyQnAanswer.do?drid=${sessionScope.memdrid}&drname=${sessionScope.memname}'">
-   	  </c:if>
-   	  
-   	        <c:if test="${sessionScope.memauth eq 'P'}">
+   	  <c:if test="${sessionScope.memauth eq 'P'}">
       <input type="button" value="진료예약하기" onclick="javascript:window.location='appointmentmain.do?id=${sessionScope.memId}'">
    	  </c:if>
+   	 
+   	  <c:if test="${sessionScope.memauth eq 'P' || sessionScope.memauth eq 'D'}">
+      <input type="button" value="칭찬게시판" onclick="javascript:window.location='praiseboard.do?id=${sessionScope.memId}'">
+   	  </c:if>
+   	  
+   	  
+   	  
+   	  <c:if test="${sessionScope.memauth eq 'G'}">
+      <input type="button" value="관리자페이지" onclick="javascript:window.location='/antman/admin/adminsidebar.jsp'">
+   	  </c:if>
+   	 
+   	 
    	  <c:if test="${sessionScope.memauth eq 'P'}">
    	  <h3>나의 예약 목록</h3>
    	  

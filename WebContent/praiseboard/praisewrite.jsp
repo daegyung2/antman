@@ -30,9 +30,10 @@
  </td>
 	<form action="/antman/praisepro.do" method="post">	
     <tr>
-    <td>아이디</td><td><input type="text" name="id"/></td></tr>
+    <input type="text" name="drid" value=""
+    <td>아이디</td><td><input type="hidden" name="name" value="${sessionScope.memId }"/>${sessionScope.memId }</td></tr>
     
-    <tr><td>글쓴이</td><td><input type="text" name="name"/></td></tr>
+    <tr><td>글쓴이</td><td><input type="hidden" name="name" value="${sessionScope.memname }"/>${sessionScope.memname }</td></tr>
     <tr><td>글제목</td><td><input type="text" name="subject"/></td></tr>
     <tr><td>선생님</td><td><input type="text" name="drname" value="${drname}"/></td></tr>
     </td></tr>

@@ -30,6 +30,7 @@ public class PraiseWriteBean {
       
       List drlist = sqlMapClient.queryForList("praise.selectdoctor",dto.getDpname());
       
+      dto = (PraiseVO)sqlMapClient.queryForObject("priase.selectdridname",dto.getDrname());
      
  	 if(drlist.size() == 0){
 		 view = "no";

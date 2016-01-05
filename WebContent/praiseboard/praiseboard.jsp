@@ -36,10 +36,12 @@
 친절함이 돋보인 직원을 칭찬해 주세요.              <br/>                     
   <br/>
   
+  <c:if test="${sessionScope.memauth eq 'P'}">
   <form action="/antman/praisewrite.do" method="post">
   <button type="submit" class="btn btn-primary btn-md" onclick=>칭찬하기</button>
  
   </form>
+  </c:if>
   <table data-toggle="table" data-url="data2.json" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true">
     <thead>
       <tr>
