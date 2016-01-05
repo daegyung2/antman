@@ -30,6 +30,7 @@ public class PraiseWriteBean {
       
       List drlist = sqlMapClient.queryForList("praise.selectdoctor",dto.getDpname());
       
+      /*dto = (PraiseVO)sqlMapClient.queryForObject("priase.selectdridname",drname);*/
      
  	 if(drlist.size() == 0){
 		 view = "no";
@@ -42,7 +43,7 @@ public class PraiseWriteBean {
       request.setAttribute("view", view);
       request.setAttribute("dplist",dplist);
       request.setAttribute("drlist",drlist);
-    
+      /*request.setAttribute("drid",dto);*/
       request.setAttribute("drname",drname);
       return "/praiseboard/praisewrite.jsp";
    } 

@@ -107,9 +107,12 @@
   </resultMap>
      
           <select id="selectdoctor" resultMap="selectdoctor" >
-     select drname from doctor where dpname = #dpname#
+     select drname,drid from doctor where dpname = #dpname#
      </select>
 
- 
+          <select id="selectdridname" parameterClass="String" resultClass="praise" >
+     select drname,drid from doctor where drname = #drname#
+     </select>
+
   
 </sqlMap>
