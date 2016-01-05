@@ -44,6 +44,7 @@ public class LectureBoardInsert {
 	   sqlMapClient.update("lectureBoard.updateleimg",dto);
 	   }
 	   
+	  
 	return "lectureboard.do";
 	
 	}

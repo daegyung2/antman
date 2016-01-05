@@ -60,9 +60,7 @@
        <th data-field="id" align="center" >제목</th>
       </tr>
     </thead>
-   
-                
-		     
+   		     
 			 <tr><td colspan="2" align="center"><h3>${dto.subject}</h3></td></tr>
 			 <tr><td width="50%">등록일 : ${dto.reg_date}</td></tr> 
 			<tr><td colspan="2">${dto.content } </td></tr>
