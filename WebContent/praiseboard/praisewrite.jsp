@@ -30,7 +30,7 @@
  </td>
 	<form action="/antman/praisepro.do" method="post">	
     <tr>
-    <input type="text" name="drid" value=""
+    <input type="text" name="drid" value="${drid}">
     <td>아이디</td><td><input type="hidden" name="name" value="${sessionScope.memId }"/>${sessionScope.memId }</td></tr>
     
     <tr><td>글쓴이</td><td><input type="hidden" name="name" value="${sessionScope.memname }"/>${sessionScope.memname }</td></tr>

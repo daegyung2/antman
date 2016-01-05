@@ -6,6 +6,7 @@ public class PraiseVO {
 
 		private int no;
 		private int pid;
+		private String drid;
 		private	String id;
 		private String name;
 		private String subject;
@@ -21,6 +22,12 @@ public class PraiseVO {
 		
 		
 		
+		public String getDrid() {
+			return drid;
+		}
+		public void setDrid(String drid) {
+			this.drid = drid;
+		}
 		public String getView() {
 			return view;
 		}
