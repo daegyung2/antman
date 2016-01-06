@@ -32,6 +32,7 @@ public class AppointmentDetailSearch {
 		String dpname = tmdto.getDpname();
 		String jumin1 = dto.getJumin1();
 		String jumin2 = dto.getJumin2();
+		String drimg1 = tmdto.getDrimg1();
 		String name = dto.getName();
 		String sdate = (String)sddto.getSdate();
 		int sid = sddto.getSid();
@@ -47,10 +48,19 @@ public class AppointmentDetailSearch {
 		sddto.setSdate(ymd);
 		List<AppointmentDTO> adlist = sqlMapClient.queryForList("appointment.appointscheduleselect", dto);
 		List<ScheduleDTO> sdlist = sqlMapClient.queryForList("schedule.scheduleselectshit", sddto);
+		if (sdlist.size() == 0){
+			ymd = null;
+		}
 		List<ScheduleDTO> temp = sqlMapClient.queryForList("schedule.scheduleselectshit", sddto);
-		
+		System.out.println(sdlist.size());
 
-		
+		/*if (sdlist.size() == 0){
+			ymd = no;
+		}else if(sdlist.size() != 0){
+			ymd = yes;
+	}else{}
+		System.out.println(sdlist.size());
+			System.out.println(ymd);*/
 		
 		int i = 0;
 		
@@ -64,6 +74,7 @@ public class AppointmentDetailSearch {
 			i++;
 		}
 		
+		
 		/*for(int i=0; i < sdlist.size(); i++) {
 			System.out.println(sdlist.get(i));
 			for(int j=0; j < adlist.size(); j++) {
@@ -74,19 +85,8 @@ public class AppointmentDetailSearch {
 			}
 		}*/
 		
-		if (sdlist.size() == 0){
-			view = no;
-		}else if(sdlist.size() != 0){
-			view = yes;
-	}else{}
 	
-			System.out.println(view);
 			
-		System.out.println(sdlist);
-		System.out.println(adlist.size());
-		System.out.println(sdlist.size());
-
-		
 		request.setAttribute("dpname",dpname);
 		request.setAttribute("drname",drname);
 		request.setAttribute("jumin1",jumin1);
@@ -98,8 +98,9 @@ public class AppointmentDetailSearch {
 		request.setAttribute("sdlist", sdlist);
 		request.setAttribute("drid",drid);
 		request.setAttribute("sid",sid);
-	
+		request.setAttribute("drimg1",drimg1);
 		request.setAttribute("view",view);
+		request.setAttribute("ymd",ymd);
 		return "/appointmentdetail.do";
 	}
 	

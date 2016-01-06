@@ -37,35 +37,54 @@
 수집ㆍ이용목적 : 의료보험 적용 여부와 진료예약을 위한 목적<br/>
 보유 및 이용 기간 : 의료법에 준함<br/>
 개인의 고유식별정보 제공동의는 거부하실 수 있으며, 거부할 경우 서비스 사용이 일부 제한될 수 있습니다.<br/>
-<INPUT type=radio name="agree" value="yes" checked>동의합니다.
-<INPUT type=radio name="agree" value="no" >동의하지 않습니다.
-<br/>
-<br/>
-
-[개인정보 수집 이용에 대한 안내]
-수집하는 개인정보 항목 : 이름, 휴대전화번호
-수집ㆍ이용목적 : 진료 예약 및 진료 안내
-보유 및 이용 기간 : 의료법에 준함
-개인정보 수집 이용 동의는 거부하실 수 있으며, 거부할 경우 서비스 사용이 일부 제한될 수 있습니다.<br/>
-<INPUT type=radio name="agree" value="yes" checked>동의합니다.
-<INPUT type=radio name="agree" value="no" >동의하지 않습니다.
-<br/>
-<br/>
-
 <link href="style.css" rel="stylesheet" type="text/css">
+
 <script language="JavaScript">
     
+var pattern1 = /[0-9]/; // 숫자만 입력
+var pattern2 = /[a-zA-Z]/; // 문자만 입력
+var pattern3 = /[~!@#$%^&*()_+|<>?:{}]/; // 특수문자 입력
+var pattern4 = /[0-9a-zA-Z.;\-]/;   // 문자+숫자+특문  가능한 정규식
+
     function checkIt() {
         var userinput = eval("document.userinput");
         if(!userinput.jumin1.value  || !userinput.jumin2.value )
         {
             alert("주민등록번호를 입력하세요");
             return false;
+        }else if(userinput.agree.value == "no" ){
+        	
+            alert("고유식별처리에 동의하셔야합니다.");
+            return false;
+        }else if(userinput.agreee.value == "no" ){
+        	
+            alert("개인정보처리에 동의하셔야합니다.");
+            return false;
+     
         }
-    }
+        }
+       
     </script>
     
 <form action="appointmentsimple.do" method="post" name="userinput" onSubmit="return checkIt()">
+<INPUT type=radio name="agree" id="yes" value="yes" checked>동의합니다.&nbsp;
+<INPUT type=radio name="agree" id="no" value="no" >동의하지 않습니다.<BR><BR>
+[개인정보 수집 이용에 대한 안내]
+<br/>
+<br/>
+
+
+수집하는 개인정보 항목 : 이름, 휴대전화번호
+수집ㆍ이용목적 : 진료 예약 및 진료 안내
+보유 및 이용 기간 : 의료법에 준함
+개인정보 수집 이용 동의는 거부하실 수 있으며, 거부할 경우 서비스 사용이 일부 제한될 수 있습니다.<br/>
+<INPUT type=radio name="agreee" value="yes" checked>동의합니다.
+<INPUT type=radio name="agreee"  value="no">동의하지 않습니다.
+<br/>
+<br/>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+
 <input type="text" name="name" value="${sessionScope.memname}"/></br>
 <input type="text" name="jumin1"/>-<input type="text" name="jumin2"/><br/>
 
