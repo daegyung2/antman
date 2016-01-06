@@ -34,6 +34,11 @@
     ,#drimg1#,#drimg2#,#drimg3#,#drimg4#,#drimg5#)
  </insert>
  
+    <select id="selectLastNo" resultClass="int" >
+     SELECT count(*) count from doctor 
+    </select>
+      
+      
  <select id="selectList" resultClass="doctor"  >
    select * from DOCTOR order by drId desc
  </select>

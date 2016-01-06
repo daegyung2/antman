@@ -48,15 +48,20 @@
 회원이 본인 예약을 할 경우<br/>
 로그인 후 본인의 진료예약 및 조회를<br/>
 하실 수 있습니다.<br/>
-${ sessionScope.memId}
-<c:if test="${sessionScope.memauth eq 'P'}"> 
-<input type="button" value="본인 예약하기" onclick="location.href='loginform.do'"/>
+
+<c:if test="${sessionScope.memId eq null}"> 
+<input type="button" value="본인 예약하기" onclick="location.href='loginForm.do'"/>
 </c:if>
-<c:if test="${sessionScope.memId != null }"> 
+
+<c:if test="${sessionScope.memauth ne 'D' && sessionScope.memId ne null}"> 
 <input type="button" value="본인 예약하기" onclick="location.href='appointmentform.do'"/>
 </c:if>
+<c:if test="${sessionScope.memId ne null}"> 
 <input type="button" value="본인 예약 조회하기"/>
-</td></center>
+</c:if>
+</td>
+
+</center>
 
 
 <h2>전화문의 1688-7575</h2>&nbsp; 서울병원은 편안한 진료와 만족스러운 서비스 제공을 위해 항상 노력하겠습니다

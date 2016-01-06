@@ -35,16 +35,16 @@
 <center><h2>의료진 | ${dpfdto.dpname}</h2></center>
 <br/>
 <br/>
-<center><table width="900" border="1">
-<td width="300"><center>${dpfdto.drname} 의료진 소개</center></td>
-<td width="300"><center>같은 진료과 의료진 전체 보기</center></td>
-<td width="300"><center>전체 의료진 검색</center></td>
+<center><table width="750" border="1">
+<td width="250"><center>${dpfdto.drname} 의료진 소개</center></td>
+<td width="250"><center>같은 진료과 의료진 전체 보기</center></td>
+<td width="250"><center>전체 의료진 검색</center></td>
 </table>
 <br/>
 
-<table width="900" border="1">
+<table width="750" border="1">
 <tr>
-<td width="400" height="400" rowspan="2"><img src="${dpfdto.drimg1}" width="400" height="500"></td><td width="250"><img src="${dpfdto.drimg2}" width="200" height="250"></td><td width="250"><img src="${dpfdto.drimg3}" width="200" height="250"></td></tr>
+<td width="300" height="300" rowspan="2"><img src="${dpfdto.drimg1}" width="300" height="400"></td><td width="200"><img src="${dpfdto.drimg2}" width="200" height="250"></td><td width="200"><img src="${dpfdto.drimg3}" width="200" height="250"></td></tr>
 <tr>
 <td width="250" height="200"><center><h2>${dpfdto.drname} </h2></center></td><td width="250"><img src="${dpfdto.drimg4}" width="200" height="250"></td></tr>
 <tr>

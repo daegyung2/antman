@@ -40,13 +40,13 @@
 <br/>
 <center>
 <form action="/antman/appointmentsimplepro.do" method="post">
-<input type="text" name="jumin1" value="${jumin1 }"/>
-<input type="text" name="jumin2" value="${jumin2 }"/>
-<input type="text" name="name" value="${name}"/>
+<input type="hidden" name="jumin1" value="${jumin1 }"/>
+<input type="hidden" name="jumin2" value="${jumin2 }"/>
+<input type="hidden" name="name" value="${name}"/>
 <table width="900" border="1">
 
 <tr>
-<td width="500">성명</td><td width="400">"${name}"</td></tr>
+<td width="500">성명</td><td width="400">${name}</td></tr>
 <tr>
 <td width="500">휴대전화</td><td width="400">
 <input type="text" name="phone1">-<input type="text" name="phone2">-<input type="text" name="phone3">
@@ -54,13 +54,13 @@
 </tr>
 <tr>
 <td width="500">주요증상</td><td width="400">
-<TEXTAREA name="symptom" rows="5" cols="100">쓰셈</TEXTAREA><BR/>
+<TEXTAREA name="symptom" rows="5" cols="100" placeholder="증상을 입력해주세요"></TEXTAREA><BR/>
 * 0 byte / 최대 200 byte(한글 100자, 영문 200자)
 </td>
 </tr>
 <tr>
 <td width="500">남기고 싶은말</td><td width="400">
-<TEXTAREA name="talk" rows="5" cols="100">쓰셈</TEXTAREA><BR/>
+<TEXTAREA name="talk" rows="5" cols="100" placeholder="남기고싶은말을 입력해주세요" ></TEXTAREA><BR/>
 * 0 byte / 최대 200 byte(한글 100자, 영문 200자)
 </td>
 </tr>

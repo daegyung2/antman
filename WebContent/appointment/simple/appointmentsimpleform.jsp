@@ -52,8 +52,21 @@
 <br/>
 <br/>
 
-<form action="appointmentsimple.do" method="post">
-<input type="text" name="name" /></br>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+    
+    function checkIt() {
+        var userinput = eval("document.userinput");
+        if(!userinput.jumin1.value  || !userinput.jumin2.value )
+        {
+            alert("주민등록번호를 입력하세요");
+            return false;
+        }
+    }
+    </script>
+    
+<form action="appointmentsimple.do" method="post" name="userinput" onSubmit="return checkIt()">
+<input type="text" name="name" value="${sessionScope.memname}"/></br>
 <input type="text" name="jumin1"/>-<input type="text" name="jumin2"/><br/>
 
 <input type="submit" name="ok" value="확인" />

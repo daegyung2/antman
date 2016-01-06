@@ -64,33 +64,29 @@
   				<c:if test="${sessionScope.memId eq null}">
     			<li class="first"><a href="/antman/loginForm.do">로그인</a></li>
     			</c:if>
-    			<c:if test="${ sessionScope.memId ne null}">
+    			<c:if test="${sessionScope.memId ne null}">
     			<%-- ${sessionScope.memId }님 반갑습니다.당신의 권한은 ${session.Scope.memauth}입니다. --%>
     			<li class="first"><a href="/antman/logout.do">로그아웃</a></li>
     			</c:if>
     			
+    			<c:if test="${sessionScope.memId eq null}">
     			<li><a href="/antman/loginCheck.do">회원가입</a></li>
+    			</c:if>
     			<li><a href="#">병원둘러보기</a></li>
     			<li><a href="#">오시는길</a></li>
-    			<li><a href="#">English</a></li>
-    			<li><a href="#">中文</a></li>
-    			<li><a href="#">日本語</a></li>		
-    			<li><a href="#">日本語</a></li>	
+    		
     			
-    			<c:if test="${sessionScope.memauth eq 'P' }">
+    			<c:if test="${sessionScope.memId ne null && sessionScope.memauth eq 'P' }">
     			<li><a href="/antman/p_mypage.do?id=${sessionScope.memId}">마이페이지</a></li>
     		    </c:if>
     		    
-    		    <c:if test="${sessionScope.memauth eq 'D' }">
+    		    <c:if test="${sessionScope.memId ne null && sessionScope.memauth eq 'D' }">
     			<li><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid}&drname=${sessionScope.memname}">의사마이페이지</a></li>
     		    </c:if>
     		    
-    		    <c:if test="${sessionScope.memauth eq 'E' }">
-    			<li><a href="#">마이페이지</a></li>
-    		    </c:if>
-    		    
-    		     <c:if test="${sessionScope.memauth eq 'G' }">
-    			<li><a href="/antman/admin/adminsidebar.jsp">관리자페이지</a></li>
+
+    		     <c:if test="${sessionScope.memId ne null && sessionScope.memauth eq 'G' }">
+    			<li class="last"><a href="/antman/adminmain.do">관리자페이지</a></li>
     		    </c:if>
     			<li class="last"><a href="#">русский</a></li>
   			</ul>

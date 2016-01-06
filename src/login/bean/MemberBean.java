@@ -51,13 +51,13 @@ public class MemberBean {
 			List alist = sqlMapClient.queryForList("appointment.selectAll",dto.getId());
 			
 			request.setAttribute("alist", alist);
-			return "/treatmentsearch.do";	
+			return "/dbmain.do";	
 		}	
 		
 		@RequestMapping("/logout.do")
 		public String logout(LoginDataBean dto, HttpSession session){
 			session.setAttribute("memId", null);
-			return "/treatmentsearch.do";
+			return "/dbmain.do";
 		}
 		
 		@RequestMapping("/inputForm.do")
