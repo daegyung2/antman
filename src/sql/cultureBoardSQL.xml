@@ -19,8 +19,9 @@
 		<select id="selectAll" resultClass="cultureBoard">
 		select cuid,subject,content,reg_date,cuimg from cultureBoard order by cuid desc
 		</select>	
-		
-	
+			<select id="viewcultureboard" resultMap="boardRes" parameterClass="int">		
+      		select cuid,subject,content,reg_date,cuimg from cultureBoard where cuid = #cuid# 
+		</select>
 		
 		<select id="selectOne" resultMap="boardRes" parameterClass="int">
  		select * from cultureBoard where cuid = #cuid#
@@ -56,6 +57,16 @@
    		 <update id="updatecuimg"  parameterClass="cultureBoard" >
   		 update cultureBoard set cuimg = #cuimg# where cuid = #cuid#
  		</update>
+ 		
+ 		 <delete id="deletecultureboard" parameterClass="int">
+			DELETE FROM cultureBoard where cuid = #cuid#
+   		 </delete>
+		 			
+		 			
+		 <update id="updatecultureboard" parameterClass="cultureBoard">
+            update cultureBoard set subject=#subject#, content=#content#, cuimg=#cuimg# where cuid=#cuid#
+   		</update>
+   		
    		
 		
    		
