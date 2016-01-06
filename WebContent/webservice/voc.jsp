@@ -96,7 +96,9 @@ $(function(){
 		</div>
 		<div id="title_2"><font color="#5586EB"><b>불만고충처리안내</b></font></div>
 		<div id="main_video">
-		동영상
+	
+<!-- <iframe width="560" height="315" src="https://youtube/zco1JtgSrWs" frameborder="0" allowfullscreen></iframe> -->
+		<iframe width="550" height="420" src="https://www.youtube.com/embed/zco1JtgSrWs" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<div id="main_text">
 		우리 병원은 고객 여러분께서 보다 편리하게 진료를 받을 수 있도록 끊임없이 노력하고 있습니다. 

@@ -1,7 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-  
+  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<style type="text/css">
+	body, ul, li, div{margin:0px; padding:0px; }
+	ul{list-style:none;}
+	body{font-size:14px; line-height:1.4; overflow-x:hidden;}
+	a{text-decoration:none; }
+
+	#menutop{width:100%; height:150px; }
+	#side{width:200px; float:left; margin-left:0px; }
+	#top{width:200px; float:top; margin-left:100px; }
+	.container{width:1100px; height:1300px; margin:0 auto;  margin-left:230px; position:relative;}
+	.container .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
+	.container .sub b{font-size:22px; color:#000000;}
+	.container .main{width:1000px; height:1100px; margin-left:50px; top:30px; position:relative;}
+</style>
+
+<div id="menutop">
+	<jsp:include page="/treatmentteam/treatmentteamtop.jsp" flush="true | false"/>
+</div>
    <link href="style.css" rel="stylesheet" type="text/css">
 <script language="JavaScript">
    function goDel(depart_id,dpname) {

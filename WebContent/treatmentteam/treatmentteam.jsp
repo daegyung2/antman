@@ -81,7 +81,7 @@ body{  }
   										<table width="600"border="0">
           								<tr>
           								<c:forEach var="dto" items="${list}" varStatus="status">
-         							    <td width="200"><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td> 
+         							    <td width="200"><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td> 
           							    <c:if test="${status.count%3==0}">		
           							    <tr>
 										</c:if>	
@@ -93,7 +93,7 @@ body{  }
                                         <c:forEach var="dto" items="${lista}" varStatus="status">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
           							    <c:if test="${status.count%3==0}">		
           							    <tr>
 										</c:if>	
@@ -106,7 +106,7 @@ body{  }
                                         <c:forEach var="dto" items="${listb}" varStatus="status">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
           							     <c:if test="${status.count%3==0}">		
           							    <tr>
 										</c:if>	
@@ -119,7 +119,7 @@ body{  }
                                          <c:forEach var="dto" items="${listc}" varStatus="status">
   										<table border="0">
           								<tr>
-         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
+         							    <td><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
           							      <c:if test="${status.count%3==0}">		
           							    <tr>
 										</c:if>	
@@ -182,7 +182,9 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
                         <tr>
                         	<td height="50"><img src="${tmdto.drimg1}" width="181" height="236"></td>
                             <td><h3>${tmdto.drname}</h3><br/>
-                             ${tmdto.dpname}</br>
+                            진료과 : ${tmdto.dpname}</br>
+                            </br>
+                             전문분야  <h6>${tmdto.exarea}</h6>
                              <input type="button" value="의료진 소개 더보기" onClick="location.href='/antman/doctorprofile.do?drid=${tmdto.drid}'" />
                              </td>
                             
