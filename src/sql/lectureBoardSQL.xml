@@ -61,7 +61,7 @@
 		 			
 		 			
 		 <update id="updateboard" parameterClass="lectureBoard">
-            update lectureBoard set subject=#subject#, CONTENT=#content# where LEid=#LEid#
+            update lectureBoard set subject=#subject#, leimg=#leimg#, CONTENT=#content# where LEid=#LEid#
    		</update>
    		
    		 <update id="updateleimg"  parameterClass="lectureBoard" >

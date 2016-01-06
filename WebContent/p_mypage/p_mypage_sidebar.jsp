@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
+
 <style type="text/css">
 	body{margin:0px; padding:0px; }
 	a{ text-decoration:none; }
@@ -24,7 +25,7 @@
 
 <div class="sidebar">
 	<div id="sidebar_top" >
-		<td>${sessionScope.memname}님의 <br/> 마이페이지</td>
+			<td><h3>${sessionScope.memname}</h3><font size="4"> </font><font color="#5586EB"><b>${sessionScope.memId}</b></font></td>
 	</div>
 <ul id="nav">
 	<li><a href="/antman/appointmentmain.do" class="title">진료예약</a></li>
