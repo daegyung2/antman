@@ -68,9 +68,10 @@
    
                 <c:forEach var="dto" items="${list}">
 		<tr>
-		     <td ><h3>${dto.LEid}</h3></td>
-			 <td ><h3><a href="/antman/lectureboardcontent.do?LEid=${dto.LEid}">${dto.subject}</a></h3>
-				${dto.content} <br/>
+		     <td ><h3>${dto.cuid}</h3></td>
+			 <td ><h3><a href="/antman/cultureboardcontent.do?cuid=${dto.cuid}">${dto.subject}</a></h3>
+				<br/>
+				<a href="/antman/cultureboardcontent.do?cuid=${dto.cuid}"><img src="${dto.cuimg}" width="220" height="250"></a><br/>
 				<FONT size="1">
 				µÓ∑œ¿œ : ${dto.reg_date} |
 				

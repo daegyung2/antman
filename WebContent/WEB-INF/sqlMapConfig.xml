@@ -23,5 +23,8 @@
      <sqlMap resource="/sql/cultureBoardSQL.xml" />
      
      
+    
+     
+     
      
 </sqlMapConfig>

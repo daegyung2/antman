@@ -64,7 +64,7 @@
 			 <tr><td colspan="2" align="center"><h3>${dto.subject}</h3></td></tr>
 			 <tr><td width="50%">등록일 : ${dto.reg_date}</td></tr> 
 			<tr><td colspan="2">${dto.content } </td></tr>
-			<tr><td><img src="${dto.cuimg}" width="300" height="200"/></td></tr>
+			<tr><td><img src="${dto.cuimg}"/></td></tr>
 			<tr></tr>
 			
   </table>
@@ -79,8 +79,8 @@
 <br/>
 <HR width=100% >
 <br/>
-  <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboardupdate.do?LEid=${dto.Cuid}'">수정하기</button>
-  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboarddelete.do?LEid=${dto.Cuid}'">삭제하기</button>
+  <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboardupdate.do?cuid=${dto.cuid}'">수정하기</button>
+  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboarddelete.do?cuid=${dto.cuid}'">삭제하기</button>
  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboard.do'">목록으로</button></center>
   </center>
 </body>

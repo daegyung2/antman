@@ -1,25 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
-
 <sqlMap namespace="cultureBoard">
 
-<typeAlias alias="cultureBoard"  type="admin.bean.CultureBoardDTO"/>
+	<typeAlias alias="cultureBoard" type="admin.bean.CultureBoardDTO" />
+    
+		<!-- 리절트 맵 정의 -->
 
-<resultMap id="boardRes" class="cultureBoard">
-		<result property="Cuid" column="Cuid"/>
+	<resultMap id="boardRes" class="cultureBoard">
+		<result property="cuid" column="cuid"/>
 		<result property="subject" column="subject"/>
 		<result property="content" column="content"/>
 		<result property="reg_date" column="reg_date"/>
 		<result property="cuimg" column="cuimg"/>
 	</resultMap>
-
-<select id="selectAll" resultMap="boardRes">
-select * from cultureBoard order by Cuid desc
-</select>
-
-<insert id="insertcultureboard" parameterClass="cultureBoard">
+	
 		
-      		INSERT INTO cultureBoard (Cuid,
+		<!-- select 쿼리문 정의 -->
+		<select id="selectAll" resultClass="cultureBoard">
+		select cuid,subject,content,reg_date,cuimg from cultureBoard order by cuid desc
+		</select>	
+		
+	
+		
+		<select id="selectOne" resultMap="boardRes" parameterClass="int">
+ 		select * from cultureBoard where cuid = #cuid#
+		</select>
+		
+		 <select id="max" resultClass="int">
+   		select max(cuid) from cultureBoard
+ 		</select>	
+		
+		
+
+			<insert id="insertcultureboard" parameterClass="cultureBoard">
+		
+      		INSERT INTO cultureBoard (cuid,
                          			subject,
                          			content,
                          			reg_date
@@ -33,6 +48,17 @@ select * from cultureBoard order by Cuid desc
                          )
 		</insert>
 		
-
+		 			
+		 <update id="updateboard" parameterClass="cultureBoard">
+            update cultureBoard set subject=#subject#, CONTENT=#content# where cuid=#cuid#
+   		</update>
+   		
+   		 <update id="updatecuimg"  parameterClass="cultureBoard" >
+  		 update cultureBoard set cuimg = #cuimg# where cuid = #cuid#
+ 		</update>
+   		
+		
+   		
+   				
 
 </sqlMap>

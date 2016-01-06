@@ -4,15 +4,19 @@ import java.sql.Date;
 
 public class CultureBoardDTO {
 
-	private int Cuid;
+	private int cuid;
 	private String subject;
 	private String content;
 	private Date reg_date;
+	private String cuimg;
+	
+	
+
 	public int getCuid() {
-		return Cuid;
+		return cuid;
 	}
 	public void setCuid(int cuid) {
-		Cuid = cuid;
+		this.cuid = cuid;
 	}
 	public String getSubject() {
 		return subject;
@@ -32,6 +36,10 @@ public class CultureBoardDTO {
 	public void setReg_date(Date reg_date) {
 		this.reg_date = reg_date;
 	}
-	
-	
+	public String getCuimg() {
+		return cuimg;
+	}
+	public void setCuimg(String cuimg) {
+		this.cuimg = cuimg;
+	}
 }
