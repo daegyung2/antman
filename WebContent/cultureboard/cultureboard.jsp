@@ -22,10 +22,8 @@
 
 <div id="container">
 	<div class="main">
+	
 
-
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>DB Hospital</title>
@@ -38,7 +36,7 @@
 <head>
     <meta charset="utf-8">
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>DB Hospital</title>
+    <title>문화갤러리</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
@@ -49,43 +47,50 @@
 </head>
 <body>
 <script type="text/javascript" src="http://codemoon.esy.es/code/bootstrap-table.js"></script>   
- <div class="container">
-  <h2>강의정보 게시판 입니다.</h2>   
+
   <div class="container">
-
-
+  <h2>문화갤러리</h2>       
+  <br/>
+ 문화갤러리 입니다.<br/>
+			 <br/>
+             <br/>                     
+  <br/>
+  <form action="/antman/cultureboardwrite.do" method="post">
+  <button type="submit" class="btn btn-primary btn-md" onclick=>글 쓰기</button>
+  </form>
   <table data-toggle="table" data-url="data2.json" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true">
     <thead>
       <tr>
-       <th data-field="id" align="center" >제목</th>
+       <th data-field="id" >번호</th>
+<th data-field="name">내용</th>
       </tr>
     </thead>
-   		     
-			 <tr><td colspan="2" align="center"><h3>${dto.subject}</h3></td></tr>
-			 <tr><td width="50%">등록일 : ${dto.reg_date}</td></tr> 
-			<tr><td colspan="2">${dto.content } </td></tr>
-			<tr><td><img src="${dto.leimg}" width="800" height="850" align="center"/></td></tr>
-			<tr></tr>
-			
-  </table>
+   
+                <c:forEach var="dto" items="${list}">
+		<tr>
+		     <td ><h3>${dto.cuid}</h3></td>
+			 <td ><h3><a href="/antman/cultureboardcontent.do?cuid=${dto.cuid}">${dto.subject}</a></h3>
+				<br/>
+				<a href="/antman/cultureboardcontent.do?cuid=${dto.cuid}"><img src="${dto.cuimg}" width="220" height="250"></a><br/>
+				<FONT size="1">
+				등록일 : ${dto.reg_date} |
+				
+			</FONT>
+		
+		</tr>
 
-<table border="0" width="100%">
+</c:forEach>
    
    
-
-			
+	
   </table>
-</tr>
-<br/>
-<HR width=100% >
-<br/>
-  <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/lectureboardupdate.do?LEid=${dto.LEid}'">수정하기</button>
-  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/lectureboarddelete.do?LEid=${dto.LEid}'">삭제하기</button>
- <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/lectureboard.do'">목록으로</button></center>
-  </center>
+
+</div>
+<script type="text/javascript">
+
+</script>
 </body>
 </html>
-
 </div>
 </div>
 

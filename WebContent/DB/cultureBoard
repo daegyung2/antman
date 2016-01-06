@@ -1,0 +1,12 @@
+create table cultureBoard(
+ 
+ 	Cuid number primary key, //문화갤러리 게시판  
+    subject varchar2(2000),
+    content varchar2(4000),
+    reg_date date default sysdate
+    cuimg varchar(200)
+      
+);
+
+create sequence cultureBoard_SEQ nocache;
+

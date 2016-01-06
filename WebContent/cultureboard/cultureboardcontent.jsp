@@ -50,7 +50,7 @@
 <body>
 <script type="text/javascript" src="http://codemoon.esy.es/code/bootstrap-table.js"></script>   
  <div class="container">
-  <h2>강의정보 게시판 입니다.</h2>   
+  <h2>문화갤러리</h2>   
   <div class="container">
 
 
@@ -64,7 +64,7 @@
 			 <tr><td colspan="2" align="center"><h3>${dto.subject}</h3></td></tr>
 			 <tr><td width="50%">등록일 : ${dto.reg_date}</td></tr> 
 			<tr><td colspan="2">${dto.content } </td></tr>
-			<tr><td><img src="${dto.leimg}" width="800" height="850" align="center"/></td></tr>
+			<tr><td><img src="${dto.cuimg}"/></td></tr>
 			<tr></tr>
 			
   </table>
@@ -79,9 +79,9 @@
 <br/>
 <HR width=100% >
 <br/>
-  <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/lectureboardupdate.do?LEid=${dto.LEid}'">수정하기</button>
-  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/lectureboarddelete.do?LEid=${dto.LEid}'">삭제하기</button>
- <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/lectureboard.do'">목록으로</button></center>
+  <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboardupdate.do?cuid=${dto.cuid}'">수정하기</button>
+  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboarddelete.do?cuid=${dto.cuid}'">삭제하기</button>
+ <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboard.do'">목록으로</button></center>
   </center>
 </body>
 </html>
