@@ -68,7 +68,7 @@ public class CultureBoardWriteBean {
 	
 	@RequestMapping("/cultureboardupdatepro.do")
 	public String updatepro(CultureBoardDTO dto,MultipartHttpServletRequest request)throws IllegalStateException, IOException{
-		sqlMapClient.update("cultureBoard.updatecultureboard",dto);//여기 쿼리가 실행이 안되는듯 함.
+		sqlMapClient.update("cultureBoard.updatecultureboard",dto);
 		
 		 file = request.getFile("upload");
 		  
