@@ -79,9 +79,15 @@
 <br/>
 <HR width=100% >
 <br/>
+
+<c:if test="${sessionScope.memauth eq 'G'}"> 
   <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/lectureboardupdate.do?LEid=${dto.LEid}'">수정하기</button>
   <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/lectureboarddelete.do?LEid=${dto.LEid}'">삭제하기</button>
+ </c:if>
+ 
+ <c:if test="${sessionScope.memauth eq 'P'}">
  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/lectureboard.do'">목록으로</button></center>
+  </c:if>
   </center>
 </body>
 </html>

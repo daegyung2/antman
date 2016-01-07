@@ -79,10 +79,14 @@
 <br/>
 <HR width=100% >
 <br/>
+  <c:if test="${sessionScope.memauth eq 'G'}"> 
   <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboardupdate.do?cuid=${dto.cuid}'">수정하기</button>
   <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboarddelete.do?cuid=${dto.cuid}'">삭제하기</button>
+ </c:if>
+ 
+ <c:if test="${sessionScope.memauth eq 'P'}">
  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboard.do'">목록으로</button></center>
-  </center>
+  </c:if>
 </body>
 </html>
 

@@ -79,10 +79,14 @@
 <br/>
 <HR width=100% >
 <br/>
+  <c:if test="${sessionScope.memauth eq 'G'}"> 
   <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/newsboardupdate.do?NEid=${dto.NEid}'">수정하기</button>
   <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/newsboarddelete.do?NEid=${dto.NEid}'">삭제하기</button>
+ </c:if>
+ 
+ <c:if test="${sessionScope.memauth eq 'P'}">
  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/newsboard.do'">목록으로</button></center>
-  </center>
+  </c:if>
 </body>
 </html>
 

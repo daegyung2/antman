@@ -21,7 +21,7 @@
 		</select>	
 		
 		<select id="viewlectureboard" resultMap="boardRes" parameterClass="int">		
-      		select LEid,subject,content,reg_date from lectureBoard where LEid = #LEid# 
+      		select LEid,subject,content,reg_date, leimg from lectureBoard where LEid = #LEid# 
 		</select>
 		
 		<select id="selectOne" resultMap="boardRes" parameterClass="int">
@@ -61,7 +61,11 @@
 		 			
 		 			
 		 <update id="updateboard" parameterClass="lectureBoard">
-            update lectureBoard set subject=#subject#, leimg=#leimg#, CONTENT=#content# where LEid=#LEid#
+            update lectureBoard set subject=#subject#, CONTENT=#content# where LEid=#LEid#
+   		</update>
+   		
+   		<update id="updatelectureboard" parameterClass="lectureBoard">
+            update lectureBoard set subject=#subject#, content=#content#, leimg=#leimg# where LEid=#LEid#
    		</update>
    		
    		 <update id="updateleimg"  parameterClass="lectureBoard" >
