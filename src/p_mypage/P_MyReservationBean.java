@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import admin.bean.AppointmentDTO;
 
 @Controller
-public class MyReservationBean {
+public class P_MyReservationBean {
 
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;

@@ -15,7 +15,7 @@ import admin.bean.MyQnADTO;
 import praiseboard.PraiseVO;
 
 @Controller
-public class MyQnA {
+public class P_MyQnABean {
 
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;

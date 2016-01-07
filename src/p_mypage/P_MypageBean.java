@@ -15,7 +15,7 @@ import admin.bean.MyQnADTO;
 
 
 @Controller
-public class p_mypage {
+public class P_MypageBean {
 
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
