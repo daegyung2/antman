@@ -57,6 +57,7 @@ $(function(){
 	
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
+	#footer{width:100%; height:300px; margin-bottom:0px;}
 	#container{width:1100px; height:1300px; margin:0 auto; margin-left:250px; position:relative;}
 	#container .main{width:1000px; height:1200px; margin-left:50px; position:relative}
 	#container .main #main_top{width:970px; height:130px; margin-top:20px; line-height:1.6;}
@@ -118,5 +119,8 @@ $(function(){
 	</div>
 </div>
 
+<div id="footer">
+	<jsp:include page="footer.jsp" flush="true | false"/>
+</div>
 </body>
 </html>
