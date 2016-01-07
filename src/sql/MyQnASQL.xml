@@ -8,6 +8,7 @@
     <select id="selectAll" parameterClass="MyQnA">
       select id,name,content,answer,drname,q_time,a_time,drid from MyQnA 
       </select>
+      
       <select id="viewMyQnA" parameterClass="int">
       	select id,name,content,answer,drname,q_time,a_time,drid,qid from MyQnA where qid = #qid# 
 		</select>
@@ -17,7 +18,7 @@
    </select>
    
    <select id="selectDr" parameterClass="int" resultClass="MyQnA">
-       select id,name,content,answer,drname,q_time,a_time from MyQnA where drid = #drid#
+       select qid,id,name,content,answer,drname,q_time,a_time from MyQnA where drid = #drid#
    </select>
 
 
@@ -48,6 +49,6 @@
 		</insert>
 		
 		 <update id="updateAnswer" parameterClass="MyQnA">
-            update MyQnA set answer=#answer# where qid=#qid#
+            update MyQnA set answer = #answer# where qid = #qid#
    		</update>	
 </sqlMap>

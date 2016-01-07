@@ -6,15 +6,15 @@
 
 
 <table width="700" border="1" align="center">
+
        
         <c:if test="${list eq null }" >
         <h2>현재 질문한 사항이 없습니다.</h2>
         </c:if>
        
-       
-       
-           <c:if test="${list ne null }" >
-        <tr align="center"> 
+        <c:if test="${list ne null }" >
+        <tr align="center">
+		<td>글번호</td>	
 		<td>아이디</td>
 		<td>이름</td>
 		<td>내용</td>
@@ -25,15 +25,19 @@
 
         <c:forEach var="dto" items="${list}">
 		<tr align="center">
+		<td><h2>${dto.qid }<input type="hidden"  name="qid" value="${dto.qid}"></h2>
 		     <td><h2>${dto.id}</h2></td>
 			 <td><h2>${dto.name}</h2></td>
 			 <td><h2>${dto.content}</h2></td>
 			 <td><h2>${dto.drname}</h2></td>
-			 <td><input type="button" name="answer" value="답글" onclick="javascript:window.location='/antman/MyQnA_Answer.do'"></td>
+		       <input type="hidden"  name="drid" value="" >
+      
+			 <td><input type="button" value="답글" onclick="javascript:window.location='/antman/MyQnA_Answer.do?drid=${sessionScope.memdrid}&drname=${sessionScope.memdrname}&qid=${dto.qid}&id=${dto.id}&name=${dto.name}&content=${dto.content}&drname=${dto.drname}'"></td>
 		</tr>
 	
 </c:forEach>
 </c:if> 
+
 <!--  <tr>
 	<td colspan ="5">
 
