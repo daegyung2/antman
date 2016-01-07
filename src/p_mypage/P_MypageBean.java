@@ -11,11 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.AppointmentDTO;
-import admin.bean.DoctorDTO;
 import admin.bean.MyQnADTO;
 
+
 @Controller
-public class p_mypage {
+public class P_MypageBean {
 
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
@@ -34,12 +34,12 @@ public class p_mypage {
 	
 	@RequestMapping("/d_answer.do")
 	public String d_answer(MyQnADTO dto, HttpServletRequest request){
-		
+		System.out.println(dto.getDrid());
 		int drid = Integer.parseInt(request.getParameter("drid"));
 		dto.setDrid(drid);
-		System.out.println(drid);
+	
 		List list=sqlMapClient.queryForList("MyQnA.selectDr", dto.getDrid());
-		System.out.println(list.size());
+	
 		request.setAttribute("list", list);
 		
 		return "/d_mypage/d_answer.jsp";
@@ -48,13 +48,19 @@ public class p_mypage {
 	@RequestMapping("/MyQnA_Answer.do")
 	public String MyQnA_Answer(HttpServletRequest request, MyQnADTO dto){
 		
+		
+		 int qid =(int)dto.getQid();
+		 System.out.println(dto.getQid());
+	      dto = (MyQnADTO)sqlMapClient.queryForObject("MyQnA.viewMyQnA",dto.getQid());
+	      request.setAttribute("qid",qid);
+	      request.setAttribute("dto",dto);
 		return "/p_mypage/MyQnA_Answer.jsp";
 	}
 	
 	@RequestMapping("/MyQnA_AnswerPro.do")
 	public String MyQnA_AnswerPro(HttpServletRequest request, MyQnADTO dto){
-		
-		System.out.println(dto.getDrid());
+		System.out.println(dto.getQid());
+		System.out.println(dto.getAnswer());
 		sqlMapClient.update("MyQnA.updateAnswer", dto);
 		return "/p_mypage/MyQnA_AnswerPro.jsp";
 	}

@@ -69,7 +69,7 @@
     </form>
     <br/><br/>
     
-<table width="800" border="1" align="center">
+<table width="1000" border="1" align="center">
        
         <c:if test="${list == null }" >
         <h2>현재 받은 질문이 없습니다.</h2>
@@ -80,6 +80,7 @@
         <td>이름</td>
         <td>내용</td>
         <td>의료진</td>
+        <td>답변</td>
         </tr>
         <c:if test="${list != null }" >
         <c:forEach var="dto" items="${list}">
@@ -88,7 +89,14 @@
 			 <td><h3>${dto.name}</h3></td>
 			 <td><h3>${dto.content}</h3></td>
 			 <td><h3>${dto.drname}</h3></td>
+			<c:if test="${dto.answer != null}">
+			<td><h3>${dto.answer}</h3></td>
+			</c:if>
+			<c:if test="${dto.answer ==null }">
+			<td><h3>답변대기중입니다.</h3></td>
+			</c:if>
 		</tr>
+		
 
 </c:forEach>
 </c:if>

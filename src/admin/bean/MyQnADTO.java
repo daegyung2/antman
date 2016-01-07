@@ -12,8 +12,15 @@ public class MyQnADTO {
 	private String drname;
 	private Date q_time;
 	private Date a_time;
+	private int qid;
 	
 	
+	public int getQid() {
+		return qid;
+	}
+	public void setQid(int qid) {
+		this.qid = qid;
+	}
 	public int getDrid() {
 		return drid;
 	}

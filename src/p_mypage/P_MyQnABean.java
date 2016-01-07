@@ -15,7 +15,7 @@ import admin.bean.MyQnADTO;
 import praiseboard.PraiseVO;
 
 @Controller
-public class MyQnA {
+public class P_MyQnABean {
 
 	@Autowired
 	private SqlMapClientTemplate sqlMapClient;
@@ -25,8 +25,7 @@ public class MyQnA {
 	public String MyQnA(HttpServletRequest request,DoctorDTO ddto,MyQnADTO dtoa, PraiseVO dto, String drname, HttpSession session){
 		
 		dtoa.setId((String)session.getAttribute("memId"));
-		System.out.println(dtoa.getId());
-		System.out.println(dtoa.getDrname());
+	
 		
 		List dplist = sqlMapClient.queryForList("praise.selectdepart", dto);
 		List drlist = sqlMapClient.queryForList("praise.selectdoctor",dto.getDpname());
@@ -68,10 +67,11 @@ public class MyQnA {
 	public String MyQnAdr(HttpServletRequest request, MyQnADTO dto, String drname,HttpSession session){
 		int drid = Integer.parseInt(request.getParameter("drid"));
 		dto.setDrid(drid);
-	
+		int qid = dto.getQid();
 		List list = sqlMapClient.queryForList("MyQnA.selectDr", dto.getDrid());
 
 		request.setAttribute("list", list);
+		request.setAttribute("qid", qid);
 		System.out.println(list.size());
 	
 		return "/d_mypage/d_answer.jsp";

@@ -8,21 +8,24 @@
 	ul{ list-style:none; margin:0px; padding:0px; }
 	li{ margin:0px; padding:0px; }
 	
+	.sidebar{width:200px; height:1350px; float:left; margin-left:35px; top:95px; position:absolute; border:1px solid #BDBDBD; border-top:1px solid transparent;}
+	.sidebar #sidebar_top{ width:200px; height:120px; font-size:22px; margin-top:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD; text-align:center;}
+	.sidebar #sidebar_top b{padding-right:0px;}
+	.sidebar #sidebar_top a{text-decoration:none; color:#5586EB;}
+	.sidebar #sidebar_top th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65);}
+	#nav{width:200px; margin:30px auto; text-indent:10px; float:left; margin-top:25px; margin-bottom:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD;}
+	#nav .title{display:block; height:50px; line-height:3em; font-size:17px; background:#FFFFFF; color:#000000; text-align:center; padding-right:10px; border-top:1px solid #BDBDBD;}
+	#nav .title:hover{text-decoration:underline; }
+	#nav li.on{background:#5586EB;}
+	#nav li.on a{font-weight:bold; color:#FFFFFF; }
+	#nav li:first-child a.title{border-top:none;}
 	
-	#side{width:200px; float:left; margin-left:0px;}
-	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
-	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:100px; position:relative}
-	#container .main #title{width:800px; margin-left:100px; text-align:center;}
-	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
-	#container .main tr{padding:5px 5px;}
-	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:left; }
-	#container .main td{padding:5px 5px 5px 5px; }
 </style>
+
 
 <div id="side">
 <jsp:include page="p_mypage_sidebar.jsp" flush="true | false"/>
 </div>
-
 <table width="1400" border="0">
 <tr>
 <td width="200">
@@ -66,5 +69,8 @@
    
 </table>
 </form>
+
+
+
 
 
