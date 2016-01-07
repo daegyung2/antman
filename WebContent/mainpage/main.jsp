@@ -110,7 +110,7 @@ $(function(){
 <body>
 
 <div id="menutop">
-	<jsp:include page="/webservice/webtop.jsp" flush="true | false"/>
+	<jsp:include page="main_top.jsp" flush="true | false"/>
 </div>
 
 <!-- container ½ÃÀÛ -->
