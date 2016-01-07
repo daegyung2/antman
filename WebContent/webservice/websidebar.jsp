@@ -91,10 +91,10 @@ $(function(){
     	<a href="#" class="title"><b>고객서비스</b></a>
         <ul class="sub">
         	<li><a href="/antman/faqboard.do">자주하는질문</a></li>
-            <li><a href="/antman/webservice/voc.jsp" class="on">고객의소리</a></li>
+            <li><a href="/antman/voc.do" class="on">고객의소리</a></li>
             <li><a href="/antman/praiseboard.do">칭찬코너</a></li>
-            <li><a href="/antman/webservice/pageinquiry.jsp">홈페이지이용문의</a></li>
-            <li><a href="/antman/webservice/offerinfo.jsp">콘텐츠제공안내</a></li>
+            <li><a href="/antman/pageinquiry.do">홈페이지이용문의</a></li>
+            <li><a href="/antman/offerinfo.do">콘텐츠제공안내</a></li>
         </ul>
     </li>
 </ul>
