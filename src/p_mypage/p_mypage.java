@@ -48,6 +48,10 @@ public class p_mypage {
 	@RequestMapping("/MyQnA_Answer.do")
 	public String MyQnA_Answer(HttpServletRequest request, MyQnADTO dto){
 		
+		int qid = (int)dto.getQid();
+		dto =(MyQnADTO)sqlMapClient.queryForObject("MyQnA.viewMyQnA", dto.getQid());
+		request.setAttribute("qid",qid);
+		request.setAttribute("dto",dto);
 		return "/p_mypage/MyQnA_Answer.jsp";
 	}
 	

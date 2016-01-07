@@ -8,6 +8,9 @@
     <select id="selectAll" parameterClass="MyQnA">
       select id,name,content,answer,drname,q_time,a_time,drid from MyQnA 
       </select>
+      <select id="viewMyQnA" parameterClass="int">
+      	select id,name,content,answer,drname,q_time,a_time,drid,qid from MyQnA where qid = #qid# 
+		</select>
 	
    <select id="selectMyQnA" parameterClass="String" resultClass="MyQnA">
 		select id,name,content,answer,drname,q_time,a_time from MyQnA where id = #id# 
@@ -21,7 +24,8 @@
 
 <insert id="insertMyQnA" parameterClass="MyQnA">
 		
-      		INSERT INTO MyQnA (id,
+      		INSERT INTO MyQnA (qid,
+      						   id,
       						   drid,
                          	   name,
                          	   content,
@@ -29,8 +33,10 @@
                          	   drname,
                          	   q_time,
                          	   a_time
+                         	   
                          )
-                	 VALUES (#id#,
+                	 VALUES (MyQnA_SEQ.NEXTVAL,
+                	 		#id#,
                 	 		#drid#,
                 	 		#name#,
                          	#content#,
@@ -42,6 +48,6 @@
 		</insert>
 		
 		 <update id="updateAnswer" parameterClass="MyQnA">
-            update MyQnA set answer=#answer# where drid=#drid#
+            update MyQnA set answer=#answer# where qid=#qid#
    		</update>	
 </sqlMap>

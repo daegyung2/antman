@@ -39,7 +39,7 @@ public class NewsBoardWriteBean {
 	}
 	
 	@RequestMapping("/newsboardupdate.do")
-	   public String update(HttpServletRequest request,NewsBoardDTO dto){
+	   public String update(HttpServletRequest request, NewsBoardDTO dto){
 	      int NEid =(int)dto.getNEid();
 	      dto = (NewsBoardDTO)sqlMapClient.queryForObject("newsBoard.viewnewsboard",dto.getNEid());
 	      request.setAttribute("NEid",NEid);
