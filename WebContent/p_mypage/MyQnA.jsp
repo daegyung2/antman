@@ -54,6 +54,7 @@
  </td>
 	<form action="/antman/MyQnAPro.do" method="post">	
     <tr>
+    <input type="hidden" name="drid" value="${ddto.drId }">
     <td>아이디</td><td><input type="text" name="id" value="${sessionScope.memId}"/> </td></tr>
     
     <tr><td>글쓴이</td><td><input type="text" name="name" value="${sessionScope.memname}"/></td></tr>

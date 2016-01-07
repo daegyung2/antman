@@ -47,6 +47,14 @@
    select * from DOCTOR where drId=#drId#
  </select>
  
+    <resultMap id="doctorssibal" class="doctor" >
+     <result property="drId" column="drId" />
+     </resultMap>
+     
+  <select id="doctordrid" resultMap="doctorssibal" parameterClass="String">
+   select drId from DOCTOR where drname = #drname#
+ </select>
+ 
  <select id="max" resultClass="int">
    select max(drId) from DOCTOR 
  </select>
