@@ -75,32 +75,23 @@ public class D_ScheduleCheckBean {
 	}
 	
 	@RequestMapping("nextscheduleupdate.do")
-	public String nextscheduleupdate (HttpServletRequest request, LoginDataBean ldto ,ScheduleDTO dto ,AppointmentDTO adto){
-	/*String obdrid =(String)request.getParameter("drid");*/
-String nextdate = request.getParameter("nextdate");
-int drid = Integer.parseInt(request.getParameter("drid"));
+	public String nextscheduleupdate (String ymds,HttpServletRequest request, LoginDataBean ldto ,ScheduleDTO dto ,AppointmentDTO adto){
 	
-/*	dto.setDrid(drid);
-	adto.setDrid(drid);*/
-	
-/*	adto.setNextadate(nextdate);
+		String nextdate = request.getParameter("nextdate");
+		ymds = request.getParameter(ymds);
+		String hour = dto.getHour();
+		String minute = dto.getMinute();
+		String adate = ymds+" "+hour+":"+minute;
+		String sdate = ymds+" "+hour+":"+minute;
+		adto.setAdate(adate);
+		dto.setSdate(sdate);
+
+	adto.setNextadate(nextdate);
 	dto.setNextsdate(nextdate);
 	
-	String year = dto.getYear();
-	String month = dto.getMonth();
-	String day = dto.getDay();
-	String hour = dto.getHour();
-	String minute = dto.getMinute();
-	
-	String adate = year+"-"+month+"-"+day+" "+hour+":"+minute;
-	String sdate = year+"-"+month+"-"+day+" "+hour+":"+minute;
-	adto.setAdate(adate);
-	dto.setSdate(sdate);*/
-	
-/*	sqlMapclient.insert("appointment.nextappointupdate1",adto);
-	System.out.println(dto.getId());
-	System.out.println(dto.getName());
-	sqlMapclient.insert("schedule.nextscheduleinsert",dto);*/
+	sqlMapclient.insert("appointment.nextappointupdate1",adto);
+
+	sqlMapclient.insert("schedule.nextscheduleinsert",dto);
 
 	
 

@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>DB병원</title>
 
-<script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="/antman/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 $(function(){
 	var visual = $('#visual');
@@ -32,61 +32,45 @@ $(function(){
 
 <style type="text/css">
 	body, ul, li, div{margin:0px; padding:0px; }
-	ul{list-style:none;}
-	body{font-size:14px; line-height:1.4; overflow-x:hidden; height:700px;}
+	ul{list-style:none; margin:0px; padding:0px; }
+	li{ margin:0px; padding:0px; }
+	body{font-size:14px; line-height:1.4; overflow-x:hidden; height:700px; margin:0px; padding:0px;}
 	a{text-decoration:none; }
-	
-	#bar{clear:both; position:absolute; width:100%; height:2px; background:#BCE55C; top:0px; opacity:0.8;}
 
-	#l_back{ width:100%; height:30px; background:#474747; top:2px; position:absolute;}
-	#l_back #login{width:1100px; height:20px; margin:0 auto; margin-top:5px; position:relative;}
-	#l_back #login .grid{ width:1050px; height:20px; margin-left:20px; position:relative; }
-	#l_back #login .grid .login_innerbox{width:700px; height:20px; margin:0 auto; margin-right:-220px; position:relative;}
-	#l_back #login .grid .login_innerbox ul{margin-top:-3px; }
-	#l_back #login .grid .login_innerbox li{float:left; padding:0 10px; position:relative;}
-	#l_back #login .grid .login_innerbox li.first{padding-left:0px;}
-	#l_back #login .grid .login_innerbox li.last{padding-right:0px; border:0 none;}
-	#l_back #login .grid .login_innerbox li a{color:#FFFFFF; font-size:12px;}
-	#l_back #login .grid .login_innerbox li a:hover{color:#FAED7D; font-size:12px;}
-	
-	#h_back{ width:100%; height:40px; margin-top:0px; position:absolute;}
-	#h_back #header{height:40px; margin:0 auto; position:relative;}
-	#h_back #header .grid{height:40px; position:relative; }
-	#h_back #header .grid #title{width:120px; height:30px; margin-top:15px; position:relative;}
-	#h_back #header .grid #title #box{width:110px; margin-left:80px; top:20px; position:relative;}
-	#h_back #header .grid #title #box a{display:block; width:100%; height:100%; padding-top:-15px;}
-	
-	#gnb{ height:40px; margin-top:-10px; border-bottom:1px solid #5586EB; padding-left:375px; position:relative;}
-	#gnb>li{ float:left; line-height:10px; background:#FFFFFF; position:relative; z-index:200;}
-	#gnb li.title{padding-left:-300px;}
-	#gnb li a{ display:block; font-size:14px; font-weight:bold; padding:5px 15px; color:#000000; width:120px; }
-	#gnb li ul{ position:absolute; left:0px; opacity:0; width:160px; background:#FFFFFF;}
-	#gnb li ul li{ height:0px; overflow:hidden;}
-	#gnb li:hover ul{margin-top:29px; opacity:1; }
-	#gnb li:hover ul li{ height:40px;}
-	#gnb li a:hover, #gnb li a:focus{text-decoration:underline; color:#5586EB;}
-	#gnb li a{ transition:all 0.4s;}
-	#gnb li ul{ transition:all 0.4s;}
-	#gnb li ul li{ transition:all 0.4s;}
+	#menutop{width:100%; height:40px; z-index:200; }
 	
 	/* container 시작 */
 	
-	#container{width:1300px; height:1300px; margin:0 auto; position:relative;}
-	#container .main{width:1280px; height:1200px; position:relative; margin-left:10px;}
+	#container{width:1300px; height:800px; margin:0 auto; margin-top:-40px; position:relative;}
+	#container .main{width:1280px; height:700px; position:relative; margin-left:10px;}
 	
 	#visual{ width:1280px; margin:20px auto; top:120px; position:relative; }
 	#visual>ul{ width:1280px; height:400px; position:relative;}
 	#visual>ul>li{ position:absolute; left:0px; top:0px; }
 	#visual>ul>li:not(:first-child){ display:none;}
-	#visual>#btns{ position:absolute; bottom:10px; left:600px; }
+	#visual>#btns{ position:absolute; bottom:10px; left:610px; }
 	
 	#container .main .quickbtn{width:1280px; height:200px; margin-top:120px; }
-	#container .main .quickbtn #btn01{float:left; width:640px; height:120px; background:#5586EB; font-size:16px; font-color:#FFFFFF; text-align:center; line-height:3em;}
-	#container .main .quickbtn #btn02{width:640px; height:120px; background:#CFCFCF; margin-left:640px; font-size:16px; font-color:#FFFFFF; text-align:center; line-height:3em;}
+	#container .main .quickbtn #btn01{float:left; width:640px; height:120px; background:#5586EB; font-size:16px; text-align:center; line-height:3em;}
+	#container .main .quickbtn #btn02{width:640px; height:120px; background:rgba(71,71,71,0.8); margin-left:640px; font-size:16px; text-align:center; line-height:3em;}
+	
+	#container .main .boards{width:1280px; height:300px; margin-top:-20px; }
+	#container .main .boards #board01{float:left; width:310px; height:300px; font-size:18px; text-align:center; border:2px dashed rgba(71,71,71,0.8); line-height:15em; }
+	#container .main .boards #board01 a{display:block; width:100%; height:100%;}
+	#container .main .boards #board01:hover{border:2px dashed #5586EB; background:rgba(71,71,71,0.25);}
+	#container .main .boards #board02{width:310px; height:300px; margin-left:320px; font-size:18px; text-align:center; border:2px dashed rgba(71,71,71,0.8); line-height:15em; }
+	#container .main .boards #board02 a{display:block; width:100%; height:100%;}
+	#container .main .boards #board02:hover{border:2px dashed #5586EB; background:rgba(71,71,71,0.25);}
+	#container .main .boards #board03{width:310px; height:300px; margin-left:640px; margin-top:-305px; font-size:18px; text-align:center; border:2px dashed rgba(71,71,71,0.8); line-height:15em; }
+	#container .main .boards #board03 a{display:block; width:100%; height:100%;}
+	#container .main .boards #board03:hover{border:2px dashed #5586EB; background:rgba(71,71,71,0.25);}
+	#container .main .boards #board04{width:310px; height:300px; margin-left:960px; margin-top:-305px; font-size:18px; text-align:center; border:2px dashed rgba(71,71,71,0.8); line-height:15em; }
+	#container .main .boards #board04 a{display:block; width:100%; height:100%;}
+	#container .main .boards #board04:hover{border:2px dashed #5586EB; background:rgba(71,71,71,0.25);}
 	
 	
 	/* footer 시작 */
-	#f_back{clear:both; width:100%; height:300px; background:#474747; margin:0 auto; top:700px; position:relative;}
+	#f_back{clear:both; width:100%; height:300px; background:#474747; margin:0 auto; top:100px; position:relative;}
 	#f_back .footer{width:1300px; height:300px; margin:0 auto; position:relative;}
 	#f_back .footer .firstline{width:1200px; height:80px; position:relative;}
 	#f_back .footer .firstline #logo{width:120px; height:40px; border:1px solid #FFFFFF; top:40px; margin-left:60px; position:relative; color:#FFFFFF;}
@@ -124,122 +108,45 @@ $(function(){
 </head>
 
 <body>
-<div id="bar"></div>
 
-<!-- loginForm 시작 -->
-<div id="l_back">
-	<div id="login">
-	<div class="grid">
-		<div class="login_innerbox">
-  			<ul>
-    			<li class="first"><a href="#">로그인</a></li>
-    			<li><a href="#">회원가입</a></li>
-    			<li><a href="#">병원둘러보기</a></li>
-    			<li><a href="#">오시는길</a></li>
-    			<li><a href="#">English</a></li>
-    			<li><a href="#">中文</a></li>
-    			<li><a href="#">日本語</a></li>
-    			<li class="last"><a href="#">русский</a></li>
-  			</ul>
-		</div>
-	</div>
-	</div>
-</div>
-
-<!-- header 시작 -->
-<div id="h_back">
-	<div id="header">
-	<div class="grid">
-		<div id="title"><div id="box"><font size="4" color="000000"><b>DB Hospital</a></b></font></div></div>
-		<div id="gnbWrap">
-			<nav>
-    			<ul id="gnb">
-            		<li>
-            			<a href="#">의료진/진료과</a>
-                		<ul>
-                			<li><a href="#">의료진</a></li>
-                    		<li><a href="#">진료과</a></li>
-                    		<li><a href="#">암병원</a></li>
-                    		<li><a href="#">어린이병원</a></li>
-							<li><a href="#">심장병원</a></li>
-							<li><a href="#">센터</a></li>
-							<li><a href="#">클리닉</a></li>
-							<li><a href="#">기타</a></li>
-                		</ul>
-            		</li>
-            		<li>
-            			<a href="#">이용안내</a>
-                		<ul>
-                			<li><a href="#">병원안내</a></li>
-							<li><a href="#">외래진료안내</a></li>
-							<li><a href="#">응급진료안내</a></li>
-							<li><a href="#">입원진료안내</a></li>
-							<li><a href="#">가정간호안내</a></li>
-							<li><a href="#">검사실안내</a></li>
-                		</ul>
-            		</li>
-            		<li>
-            			<a href="#">건강정보</a>
-            			<ul>
-                			<li><a href="#">의료정보</a></li>
-							<li><a href="#">건강TV</a></li>
-							<li><a href="#">건강이야기</a></li>
-                		</ul>
-                	</li>
-                	<li>
-            			<a href="#">웹서비스</a>
-            			<ul>
-                			<li><a href="#">발급안내</a></li>
-							<li><a href="#">고객서비스</a></li>
-                		</ul>
-                	</li>
-                	<li>
-            			<a href="#">의학교육</a>
-            			<ul>
-                			<li><a href="#">학술행사일정</a></li>
-							<li><a href="#">학술영상다시보기</a></li>
-							<li><a href="#">의학포스터</a></li>
-							<li><a href="#">3D자료</a></li>
-                		</ul>
-                	</li>
-                	<li>
-            			<a href="#">병원소개</a>
-            			<ul>
-                			<li><a href="#">재단소개</a></li>
-							<li><a href="#">병원소개</a></li>
-							<li><a href="#">소식</a></li>
-							<li><a href="#">정기간행물</a></li>
-							<li><a href="#">교육장안내</a></li>
-                		</ul>
-                	</li>
-        		</ul>
-    		</nav>
-    		</div>
-    	</div>
-    </div>
+<div id="menutop">
+	<jsp:include page="/webservice/webtop.jsp" flush="true | false"/>
 </div>
 
 <!-- container 시작 -->
 <div id="container">	
 	<div class="main">
-		<div id="visual">
-			<ul>
-    			<li class="bg0"><img src="\antman\img\main_image_01.jpg" alt="" /></li>
-        		<li class="bg1"><img src="\antman\img\main_image_02.jpg" alt="" /></li>
-        		<li class="bg2"><img src="\antman\img\main_image_03.jpg" alt="" /></li>
-    		</ul>
+	<div id="visual">
+		<ul>
+    		<li class="bg0"><img src="\antman\img\main_image_01.jpg" alt="" /></li>
+        	<li class="bg1"><img src="\antman\img\main_image_02.jpg" alt="" /></li>
+        	<li class="bg2"><img src="\antman\img\main_image_03.jpg" alt="" /></li>
+    	</ul>
 
-		<div id="btns">
-			<a href="#">1</a> || <a href="#">2</a> || <a href="#">3</a>
-		</div>
-		</div>
+	<div id="btns">
+		<a href="#">
+		<font color="#FFFFFF">1</font>
+		</a> 
+		<font color="#FFFFFF"> || </font>
+		<a href="#">
+		<font color="#FFFFFF">2</font>
+		</a>
+		<font color="#FFFFFF"> || </font>
+		<a href="#">
+		<font color="#FFFFFF">3</font>
+		</a>
+	</div>
+	</div>
 	<div class="quickbtn">
 		<a href="#"><div id="btn01"><font color="#FFFFFF"><b>온라인 예약<br/>온라인으로 바로 예약하실 수 있습니다.</b></font></div></a>
-		<a href="#"><div id="btn02"><font color="#000000"><b>진료 조회<br/>진료예약 및 내역조회가 가능합니다.</b></font></div></a>
+		<a href="#"><div id="btn02"><font color="#FFFFFF"><b>진료 조회<br/>진료예약 및 내역조회가 가능합니다.</b></font></div></a>
 	</div>
 	
-	<div class="bstrap">
-	
+	<div class="boards">
+		<div id="board01"><a href="#"><font color="#000000"><b>공지사항</b></font></a></div>
+		<div id="board02"><a href="#"><font color="#000000"><b>뉴스</b></font></a></div>
+		<div id="board03"><a href="#"><font color="#000000"><b>강좌안내</b></font></a></div>
+		<div id="board04"><a href="#"><font color="#000000"><b>학술행사</b></font></a></div>
 	</div>
 	
 	</div>
