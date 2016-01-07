@@ -13,7 +13,7 @@
 		select id,name,content,answer,drname,q_time,a_time from MyQnA where id = #id# 
    </select>
    
-   <select id="selectDr" parameterClass="Int" resultClass="MyQnA">
+   <select id="selectDr" parameterClass="int" resultClass="MyQnA">
        select id,name,content,answer,drname,q_time,a_time from MyQnA where drid = #drid#
    </select>
 

@@ -33,14 +33,16 @@ public class p_mypage {
 	}
 	
 	@RequestMapping("/d_answer.do")
-	public String d_answer(AppointmentDTO dto, HttpServletRequest request){
+	public String d_answer(MyQnADTO dto, HttpServletRequest request){
 		
-	
-		List list=sqlMapClient.queryForList("MyQnA.selectDr", dto);
-		
+		int drid = Integer.parseInt(request.getParameter("drid"));
+		dto.setDrid(drid);
+		System.out.println(drid);
+		List list=sqlMapClient.queryForList("MyQnA.selectDr", dto.getDrid());
+		System.out.println(list.size());
 		request.setAttribute("list", list);
 		
-		return "/p_mypage/d_answer.jsp";
+		return "/d_mypage/d_answer.jsp";
 		
 	}
 	@RequestMapping("/MyQnA_Answer.do")

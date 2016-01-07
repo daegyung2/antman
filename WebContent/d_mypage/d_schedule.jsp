@@ -16,14 +16,7 @@
 	.container .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
 	.container .sub b{font-size:22px; color:#000000;}
 	.container .main{width:1000px; height:1100px; margin-left:50px; top:30px; position:relative;}
-</style>
-
-<div id="menutop">
-	<jsp:include page="/treatmentteam/treatmentteamtop.jsp" flush="true | false"/>
-</div>
-
-<style type="text/css">
-	body{margin:0px; padding:0px; }
+		body{margin:0px; padding:0px; }
 	a{ text-decoration:none; }
 	ul{ list-style:none; margin:0px; padding:0px; }
 	li{ margin:0px; padding:0px; }
@@ -38,6 +31,10 @@
 	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65);}
 	#container .main td{padding:5px 5px 5px 5px;}
 </style>
+
+<div id="menutop">
+	<jsp:include page="/treatmentteam/treatmentteamtop.jsp" flush="true | false"/>
+</div>
 
 <div id="side">
 <jsp:include page="d_mypage_sidebar.jsp" flush="true | false"/>
