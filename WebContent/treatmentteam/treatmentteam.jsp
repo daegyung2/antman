@@ -51,7 +51,7 @@
 .tab-pane { padding: 15px 0; }
 .tab-content{padding:20px}
 
-.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-left: -10px; margin-bottom: 30px; }
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-left:10px; margin-bottom: 30px; }
 body{  }
     </style>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
