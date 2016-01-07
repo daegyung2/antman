@@ -29,13 +29,118 @@
 </div>
 
 <div class="container">
-    <title>거지같아서 그냥 기본으로</title>
+    <title>상세예약</title>
     
+    <style type="text/css">
+	body{margin:0px; padding:0px; }
+	a{ text-decoration:none; }
+	ul{ list-style:none; margin:0px; padding:0px; }
+	li{ margin:0px; padding:0px; }
+	
+	
+	#side{width:200px; float:left; margin-left:0px;}
+	#container{width:1100px; height:270px; margin:0 auto;  margin-left:180px; position:relative; margin-bottom: 50px;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:-17px; position:relative}
+	#container .mains{width:1000px; height:1100px; margin-left:50px; margin-top:-17px; position:relative}
+	#container .mains table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; width:765px;}
+	 
+	#container .main #title{width:500px; margin-left:-140px; text-align:center;}
+	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; width:765px;}
+	#container .main tr{padding:5px 5px;}
+	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65);}
+	#container .main td{padding:5px 5px 5px 5px;}
+	.table{
+ margin-left : -15px;
+ width: 780px;
+}
+.shitsd{font-size : 15pt; font-weight : bold;}
+.shit{
+	
+	font-weight : bold; 
+}
+.shits{
+	font-size : 20pt;
+	font-weight : bold; 
+}
+.group{	
+font-family:"나눔고딕","nanum gothic", sans-serif;
+			color : #4285F4 ;
+            font-weight : bold;
+			
+}
+</style>
+<div id="container">
+	<div class="main">
+		<div id="title"><h2>선택내역입니다.</h2></div>
+<form action="/antman/appointmentdetailpro.do" method="post">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">
     
+function checkIt() {
+    var userinput = eval("document.userinput");
+    if(!userinput.sdate.value )
+    {
+        alert("날짜를 선택하세요.");
+        return false;
+    }else if(!userinput.dpname.value ){
+        alert("진료과을 선택하세요.");
+        return false;
+    }else if(!userinput.drname.value ){
+        alert("선생님을 선택하세요.");
+        return false;
+    }else
+}
+    
+    </script>
+<%-- <table width="800" border="1" name="userinput" onSubmit="return checkIt()">
+<tr>
+<td width="200" >의사이름</td><td><input type="text" name="drname" value="${drname }"/></td></tr>
+<input type="hidden" name="drid" value="${drid }"/>
+<td width="200">진료과명</td><td><input type="text" name="dpname" value="${dpname }"/></td></tr>
+<input type="hidden" name="jumin1" value="${jumin1 }"/>
+<input type="hidden" name="jumin2" value="${jumin2 }"/>
+<td width="200" >예약자id</td><td><input type="text" name="id" value="${sessionScope.memId}"/></td></tr>
+<td width="200" >예약자성함</td><td><input type="text" name="name" value="${name }"/></td></tr>
+<td width="200" >스케쥴번호</td><td><input type="text" name="sid" value="${sid }"/></td></tr>
+<td width="200" >예약시간</td><td><input type="text" name="adate" value="${sdate }"/></td></tr>
+</table>
+<input type="submit" value="예약하기"/>
+</form>
+ --%>
+<table width="400" border="3" >
+<tr align="center">
+<input type="hidden" name="drid" value="${drid }"/>
+<input type="hidden" name="jumin1" value="${jumin1 }"/>
+<input type="hidden" name="jumin2" value="${jumin2 }"/>
+<input type="hidden" name="id" value="${sessionScope.memId}"/>
+<input type="hidden" name="name" value="${name}"/>
+<input type="hidden" name="drname" value="${drname }"/>
+<input type="hidden" name="dpname" value="${dpname }"/>
+<input type="hidden" name="sid" value="${sid }"/>
+<input type="hidden" name="adate" value="${sdate }"/>
+<td width="10" ><h4 class="shit"><span class="group">선생님</span></h4></td>
+<td width="10"><h4 class="shit"><span class="group">진료과</span></h4></td>
+<td width="10" ><h4 class="shit"><span class="group">예약자</span></td>
+<td width="40" ><h4 class="shit"><span class="group">예약일</span></td>
+<td width="40" ><h4 class="shit"><span class="group">예약완료</span></td></tr>
+<tr align = "center">
+<td><img src="${drimg1 }"  width="80" height="100"></br><h4 class="shit">${drname}</h4></td>
+<td><h4><h4 class="shit">${dpname}</h4></h4></td>
+<td><h4><h4 class="shit">${name}</h4></h4></td>
+<td><h4><h4 class="shit">${sdate}</h4></h4></td>
+<td><input type="submit" value="예약하기"/></td></tr>
+</table>
+
+</form>
+</div>
+</div>
+
+<br/>
  
-    
+    <c:if test="${tmslist == null}">
 		<div class="ssibal">
-			<strong><h2>의료진</h2></strong>&nbsp;클릭 시 해당 자음으로 시작하는 진료과 목록을 볼 수 있습니다.<br/>
+			<h4 class="shit"><span class="group">진료과</span>를 선택하세요</h4>
 			<br/>
 			
 <html lang="en">
@@ -142,12 +247,11 @@ body{  }
 </script>
 </body>
 </html>
-    
+ </c:if>   
     
 <br/>
 
-
-<c:if test="${dpname != null}">
+<c:if test="${dpname != null && drname == null}">
 
 <html lang="en">
 <head>
@@ -159,8 +263,8 @@ body{  }
 </head>
 <body>
 <style type="text/css">
-.shit{
-	
+.shitsd{
+	margin-left : 110px;
 	font-weight : bold; 
 }
 .group{	
@@ -169,13 +273,15 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
             font-weight : bold;
 			
 }
+
 .table{
- margin-left : -15px
+ margin-left : 110px;
+ width: 780px;
 }
 </style>
 <div class="container">
 	<div class="table">
-  <h4 class="shit"><span class="group">${tmsdto.dpname}</span> 의료진 목록입니다.</h4>
+  <h4 class="shitsd"><span class="group">${tmsdto.dpname}</span> 선생님을 선택하세요</h4>
            
   <table class="table">
     <thead>
@@ -189,7 +295,7 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
                     <c:forEach var="tmdto" items="${tmslist}">
                         <tr>
                         	<td height="50"><img src="${tmdto.drimg1 }"  width="181" height="236"></td>
-                            <td class="shit"><h3 ><a href="/antman/appointmentdetailsearch.do?drname=${tmdto.drname}&drid=${tmdto.drid }&dpname=${tmdto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${tmdto.drname}</a></h3><br/>
+                            <td class="shit"><h3 ><a href="/antman/appointmentdetailsearch.do?drname=${tmdto.drname}&drid=${tmdto.drid }&dpname=${tmdto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}&drimg1=${tmdto.drimg1}">${tmdto.drname}</a></h3><br/>
                              진료과 : ${tmdto.dpname}<br/>
                              <br/>
                              
@@ -208,9 +314,13 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 </c:if>
 
 <c:if test="${drname != null}">
+
 <br/>
 <br/>
-<h3>날짜를 선택해주세요</h3>
+
+<div id="container">
+	<div class="mains">
+  <h4 class="shitsd"><span class="group">진료날짜</span>를 선택하세요</h4>
 <form action="/antman/appointmentdetailsearch.do" method="post">
 <input type="hidden" name="drid" value="${drid }"/>
 <input type="hidden" name="jumin1" value="${jumin1 }"/>
@@ -219,6 +329,7 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 <input type="hidden" name="dpname" value="${dpname }"/>
 <input type="hidden" name="name" value="${name }"/>
 <input type="hidden" name="sid" value="${sid }"/>
+<input type="hidden" name="drimg1" value="${drimg1 }"/>
 <%@ page import="java.util.Date"%>
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.SimpleDateFormat"%>
@@ -261,88 +372,38 @@ String today = sdm.format(cal.getTime());
 <input type="submit" value="진료날짜검색하기">
 </form>
 <c:if test="${sdlist ne null}">
-<h3>진료가능시간입니다.</h3>
+  <h4 class="shitsd"><span class="group">${ymd}</span> 진료가능 시간입니다.</h4>
 <form action="/antman/appointmentdetailsearch.do" method="post">
 
-<table width="800" border="1"> 
-<tr>
-<td width="100">스케쥴번호</td>
+<table width="600" border="1"> 
+<tr align="center">
+
 <td width="200">진료선생님</td><td width="200">진료과</td><td width="400">진료가능시간</td></tr>
 
-<tr>
+<tr align="center">
 <c:forEach var="addto" items="${sdlist}">
-<td width="100">${addto.sid}</td>
-<td width="200">${addto.drname}</td><td width="200">${addto.dpname}</td><td width="300">
 
-${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='/antman/appointmentdetailsearch.do?sdate=${addto.sdate}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}&drname=${drname}&drid=${drid }&dpname=${dpname}&sid=${addto.sid }'"/>
+<td width="200" align="center" >${addto.drname}</td><td width="200" align="center" >${addto.dpname}</td><td width="300" align="center">
+${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='/antman/appointmentdetailsearch.do?sdate=${addto.sdate}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}&drname=${drname}&drid=${drid }&dpname=${dpname}&drimg1=${drimg1}&sid=${addto.sid }'"/>
 </td>
 </tr>
 </c:forEach>
 </table>
 </c:if>
-
-<c:if test="${sdlist eq null}">
+<c:if test="${sdlist eq null }">
 예약시간이 없습니다.
 </c:if>
 
+
+</form>
+<br/>
+<br/>
+
+</div>
+</div>
+
 </c:if>
-</form>
-<br/>
-<br/>
-
-<form action="/antman/appointmentdetailpro.do" method="post">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>회원가입 폼</title>
-<link href="style.css" rel="stylesheet" type="text/css">
-<script language="JavaScript">
-    
-    function checkIt() {
-        var userinput = eval("document.userinput");
-        if(!userinput.sdate.value )
-        {
-            alert("날짜를 선택하세요.");
-            return false;
-        }
-    }
-    </script>
-<table width="800" border="1" name="userinput" onSubmit="return checkIt()">
-<tr>
-<td width="200" >의사이름</td><td><input type="text" name="drname" value="${drname }"/></td></tr>
-<input type="hidden" name="drid" value="${drid }"/>
-<td width="200">진료과명</td><td><input type="text" name="dpname" value="${dpname }"/></td></tr>
-<input type="hidden" name="jumin1" value="${jumin1 }"/>
-<input type="hidden" name="jumin2" value="${jumin2 }"/>
-<td width="200" >예약자id</td><td><input type="text" name="id" value="${sessionScope.memId}"/></td></tr>
-<td width="200" >예약자성함</td><td><input type="text" name="name" value="${name }"/></td></tr>
-<td width="200" >스케쥴번호</td><td><input type="text" name="sid" value="${sid }"/></td></tr>
-<td width="200" >예약시간</td><td><input type="text" name="adate" value="${sdate }"/></td></tr>
-</table>
-<input type="submit" value="예약하기"/>
-</form>
-
-<table width="400" border="1">
-<tr>
-<input type="hidden" name="drid" value="${drid }"/>
-<input type="hidden" name="jumin1" value="${jumin1 }"/>
-<input type="hidden" name="jumin2" value="${jumin2 }"/>
-<input type="hidden" name="sid" value="${sid }"/>
-<td width="60" >의사이름</td>
-<td width="60">진료과명</td>
-<td width="60" >예약자id</td>
-<td width="60" >예약성함</td>
-<td width="100" >예약시간</td></tr>
-<tr>
-<td><input type="text" name="drname" value="${drname }"/></td>
-<td><input type="text" name="dpname" value="${dpname }"/></td>
-<td><input type="text" name="id" value="${sessionScope.memId}"/></td>
-<td><input type="text" name="name" value="${name }"/></td>
-<td><input type="text" name="adate" value="${sdate }"/></td></tr>
-</table>
-<input type="submit" value="예약하기"/>
-</form>
 </div>
-</div>
-
 
 
 

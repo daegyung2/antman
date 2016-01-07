@@ -57,15 +57,16 @@ $(function(){
 	
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
-	#container{width:960px; height:1300px; margin:0 auto; margin-left:250px; position:relative;}
-	#container .main{width:900px; height:1200px; margin-left:30px; position:relative}
-	#container .main #main_top{width:850px; height:130px; margin-top:20px; line-height:1.6;}
+	#footer{width:100%; height:300px; margin-bottom:0px;}
+	#container{width:1100px; height:1300px; margin:0 auto; margin-left:250px; position:relative;}
+	#container .main{width:1000px; height:1200px; margin-left:50px; position:relative}
+	#container .main #main_top{width:970px; height:130px; margin-top:20px; line-height:1.6;}
 	#container .main #btn{width:70px; height:30px; margin-top:20px; margin-right:10px; background:#5586EB; position:relative; float:right;}
 	#container .main #btn a{width:60px; height:30px; padding-left:10px;}
-	#container .main #bar{clear:both; position:absolute; width:850px; height:1px; background:#CFCFCF; margin-top:65px; opacity:0.8; }
-	#container .main #title_1{font-size:24px; left:0px; position:relative; margin-top:30px;}
+	#container .main #bar{clear:both; position:absolute; width:970px; height:1px; background:#CFCFCF; margin-top:230px; opacity:0.8; }
+	#container .main #title_1{font-size:30px; left:0px; position:relative; margin-top:30px;}
 	#container .main #title_2{font-size:24px; left:0px; position:relative; margin-top:90px;}
-	#main_video{width:550px; height:420px; border:1px solid #333; float:left; margin-top:40px;}
+	#main_video{width:650px; height:420px; border:1px solid #333; float:left; margin-top:40px;}
 	#main_text{width:250px; height:400px; font-size:14px; line-height:1.8em; padding:10px; overflow:auto; text-align:justify; 
 				margin-top:40px; padding-left:40px;}
 </style>
@@ -98,7 +99,7 @@ $(function(){
 		<div id="main_video">
 	
 <!-- <iframe width="560" height="315" src="https://youtube/zco1JtgSrWs" frameborder="0" allowfullscreen></iframe> -->
-		<iframe width="550" height="420" src="https://www.youtube.com/embed/zco1JtgSrWs" frameborder="0" allowfullscreen></iframe>
+		<iframe width="650" height="420" src="https://www.youtube.com/embed/zco1JtgSrWs" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<div id="main_text">
 		우리 병원은 고객 여러분께서 보다 편리하게 진료를 받을 수 있도록 끊임없이 노력하고 있습니다. 
@@ -118,5 +119,8 @@ $(function(){
 	</div>
 </div>
 
+<div id="footer">
+	<jsp:include page="footer.jsp" flush="true | false"/>
+</div>
 </body>
 </html>

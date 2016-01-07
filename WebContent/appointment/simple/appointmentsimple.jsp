@@ -46,7 +46,7 @@
 <table width="900" border="1">
 
 <tr>
-<td width="500">성명</td><td width="400">${name}</td></tr>
+<td width="500">성명</td><td width="400">${sessionScope.memname}</td></tr>
 <tr>
 <td width="500">휴대전화</td><td width="400">
 <input type="text" name="phone1">-<input type="text" name="phone2">-<input type="text" name="phone3">
