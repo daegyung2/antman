@@ -32,7 +32,7 @@
 	<li><a href="/antman/schedulecheck.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">진료신청/다음진료확인</a></li>
 	<li><a href="/antman/dscheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">환자진료결과등록하기</a></li>
 	<li><a href="/antman/dpraiseboard.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">칭찬받은글보기</a></li>
-	<li><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">받은 문의</a></li>
+	<li><a href="/antman/d_answer.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">받은 문의</a></li>
 	<li><a href="#" class="title">개인서비스</a></li>
 	<li><a href="/antman/scheduleinfomodify.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">정보수정</a></li>
 	<li><a href="#" class="title">회원탈퇴</a></li>

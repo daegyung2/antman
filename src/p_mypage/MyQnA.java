@@ -10,6 +10,7 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import admin.bean.DoctorDTO;
 import admin.bean.MyQnADTO;
 import praiseboard.PraiseVO;
 
@@ -21,17 +22,19 @@ public class MyQnA {
 	String view;
 	
 	@RequestMapping("/MyQnA.do")
-	public String MyQnA(HttpServletRequest request, MyQnADTO dtoa, PraiseVO dto, String drname, HttpSession session){
+	public String MyQnA(HttpServletRequest request,DoctorDTO ddto,MyQnADTO dtoa, PraiseVO dto, String drname, HttpSession session){
 		
 		dtoa.setId((String)session.getAttribute("memId"));
 		System.out.println(dtoa.getId());
-		
+		System.out.println(dtoa.getDrname());
 		
 		List dplist = sqlMapClient.queryForList("praise.selectdepart", dto);
 		List drlist = sqlMapClient.queryForList("praise.selectdoctor",dto.getDpname());
 		List list=sqlMapClient.queryForList("MyQnA.selectMyQnA", dtoa.getId());
+	    ddto = (DoctorDTO) sqlMapClient.queryForObject("doctor.doctordrid",dtoa.getDrname());
+
 		
-		if(drlist.size() == 0){
+		 if(drlist.size() == 0){
 			 view = "no";
 		 }else if (drlist.size() != 0){
 			 view = "yes";
@@ -43,6 +46,7 @@ public class MyQnA {
 	      request.setAttribute("drname",drname);
 	      request.setAttribute("session",session);
 	      request.setAttribute("list",list);
+	      request.setAttribute("ddto", ddto);
 	   
 	 
 	      
@@ -52,10 +56,6 @@ public class MyQnA {
 	@RequestMapping("/MyQnAPro.do")
 	public String MyQnAPro(HttpServletRequest request, MyQnADTO dtoa, String drname, HttpSession session){
 		sqlMapClient.insert("MyQnA.insertMyQnA", dtoa);
-		
-		System.out.println(dtoa.getDrname());
-		System.out.println(dtoa.getId());
-		System.out.println(dtoa.getContent());
 		
 		List list = sqlMapClient.queryForList("MyQnA.selectMyQnA", dtoa.getId());
 		request.setAttribute("list", list);

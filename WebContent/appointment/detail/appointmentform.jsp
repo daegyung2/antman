@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>홈페이지이용문의 | 고객서비스 | 웹서비스</title>
+<title>상세예약페이지</title>
 
 <style type="text/css">
 	body{margin:0px; padding:0px;}

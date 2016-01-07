@@ -17,7 +17,7 @@
 <!-- 간편예약 넣기  --> 
  <typeAlias alias="simpleappoint" type="admin.bean.AppointmentSimpleDTO" />
 <insert id="simpleappointmentinsert"  parameterClass="simpleappoint">
-  INSERT INTO simpleappointment(aid,name,jumin1,jumin2,phone1,phone2,phone3,adate,symptom,talk) values(simpleappointment_SEQ.NEXTVAL,#name#,#jumin1#,#jumin2#,#phone1#,#phone2#,#phone3#,sysdate,#symptom#,#talk#)
+  INSERT INTO simpleappointment(aid,id,name,jumin1,jumin2,phone1,phone2,phone3,adate,symptom,talk) values(simpleappointment_SEQ.NEXTVAL,#id#,#name#,#jumin1#,#jumin2#,#phone1#,#phone2#,#phone3#,sysdate,#symptom#,#talk#)
   </insert>
   
  <resultMap id="appointRes" class="appoint">

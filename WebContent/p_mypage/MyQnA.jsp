@@ -54,6 +54,7 @@
  </td>
 	<form action="/antman/MyQnAPro.do" method="post">	
     <tr>
+    <input type="hidden" name="drid" value="${ddto.drId }">
     <td>아이디</td><td><input type="text" name="id" value="${sessionScope.memId}"/> </td></tr>
     
     <tr><td>글쓴이</td><td><input type="text" name="name" value="${sessionScope.memname}"/></td></tr>
@@ -71,7 +72,7 @@
 <table width="800" border="1" align="center">
        
         <c:if test="${list == null }" >
-        <h2>현재 예약한 사항이 없습니다.</h2>
+        <h2>현재 받은 질문이 없습니다.</h2>
         </c:if>
         
         <tr align="center">

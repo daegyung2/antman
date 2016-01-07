@@ -151,7 +151,7 @@ String today = sdms.format(cal.getTime());
 <th width="50">등록</th>
 </tr>
 <tr>
-<form action = "/antman/schedulecheck" method="post">
+<form action = "/antman/nextscheduleupdate.do" method="post">
 <c:forEach var="dto" items="${aplist }">
 
 <td>${dto.adate}</td>
@@ -171,15 +171,11 @@ String today = sdms.format(cal.getTime());
 <option value="2차진료">2차진료</option>
 <option>3차진료</option>
 <option>4차진료</option>
-<option>5차진료</option>
-<option>6차진료</option>
-<option>7차진료</option>
-<option>8차진료</option>
-<option>9차진료</option>
-<option>10차진료</option>
+
 </td>
 
 <td>
+<%@ page import="java.util.Date"%>
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.Locale"%>
@@ -211,10 +207,10 @@ $(function() {
 <%
 SimpleDateFormat sdm = new SimpleDateFormat("yyyy-MM-dd");
 Calendar cals = Calendar.getInstance();
-String todays = sdms.format(cals.getTime());
+String todays = sdm.format(cals.getTime());
 %>
 <p>
-<input type="text" id="sa_tourgodate" name="ymd" value="<%=todays%>" size="6"/><%--value="" 안에 오늘 날짜가 표시되도록 코딩해야 함 : tourbackdate 계산 알고리즘을 응용할까?--%>
+<input type="text" id="sa_tourgodate" name="ymds" value="<%=todays%>" size="6"/><%--value="" 안에 오늘 날짜가 표시되도록 코딩해야 함 : tourbackdate 계산 알고리즘을 응용할까?--%>
 </p>
 </body>
 </html>

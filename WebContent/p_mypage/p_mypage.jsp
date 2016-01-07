@@ -2,8 +2,6 @@
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
-
 <style type="text/css">
 	body{margin:0px; padding:0px; }
 	a{ text-decoration:none; }

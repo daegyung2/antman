@@ -136,7 +136,7 @@
                 		</ul>
                 	</li>
                 	<li>
-            			<a href="/antman/webservice/voc.jsp">웹서비스</a>
+            			<a href="/antman/voc.do">웹서비스</a>
             			<ul>
                 			<li><a href="#">발급안내</a></li>
 							<li><a href="#">고객서비스</a></li>
