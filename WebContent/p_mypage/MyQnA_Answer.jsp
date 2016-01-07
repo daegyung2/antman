@@ -47,7 +47,7 @@
 <h2>답변등록</h2>
 
 
-<form action="/antman/MyQnA_Answer.do">
+<form action="/antman/MyQnA_AnswerPro.do">
 <textarea size="50" rows="5" cols="50" name="answer"></textarea>
 &nbsp;<input type="submit" value="등록">
 </form>
