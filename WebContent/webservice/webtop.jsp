@@ -84,18 +84,18 @@
             		<li>
             			<a href="#">의료진/진료과</a>
                 		<ul>
-                			<li><a href="#">의료진</a></li>
-                    		<li><a href="#">진료과</a></li>
-                    		<li><a href="#">암병원</a></li>
-                    		<li><a href="#">어린이병원</a></li>
-							<li><a href="#">심장병원</a></li>
-							<li><a href="#">센터</a></li>
-							<li><a href="#">클리닉</a></li>
-							<li><a href="#">기타</a></li>
+                			<li><a href="/antman/treatmentsearch.do">의료진</a></li>
+                    		<li><a href="/antman/treatmentchoice.do?p_depart_id=1">진료과</a></li>
+                    		<li><a href="/antman/treatmentchoice.do?p_depart_id=3">암병원</a></li>
+                    		<li><a href="/antman/treatmentchoice.do?p_depart_id=4">어린이병원</a></li>
+							<li><a href="/antman/treatmentchoice.do?p_depart_id=5">심장병원</a></li>
+							<li><a href="/antman/treatmentchoice.do?p_depart_id=6">센터</a></li>
+							<li><a href="/antman/treatmentchoice.do?p_depart_id=7">클리닉</a></li>
+							<li><a href="/antman/treatmentchoice.do?p_depart_id=8">기타</a></li>
                 		</ul>
             		</li>
             		<li>
-            			<a href="#">이용안내</a>
+            			<a href="/antman/appointmentmain.do">이용안내</a>
                 		<ul>
                 			<li><a href="#">병원안내</a></li>
 							<li><a href="#">외래진료안내</a></li>
@@ -114,7 +114,7 @@
                 		</ul>
                 	</li>
                 	<li>
-            			<a href="#">웹서비스</a>
+            			<a href="/antman/voc.do">웹서비스</a>
             			<ul>
                 			<li><a href="#">발급안내</a></li>
 							<li><a href="#">고객서비스</a></li>
@@ -130,7 +130,7 @@
                 		</ul>
                 	</li>
                 	<li>
-            			<a href="#">병원소개</a>
+            			<a href="/antman/intro.do">병원소개</a>
             			<ul>
                 			<li><a href="#">재단소개</a></li>
 							<li><a href="#">병원소개</a></li>

@@ -72,44 +72,37 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 <div id="container">
 	<div class="main">
 		<div id="title"><h2>선택내역입니다.</h2></div>
-<form action="/antman/appointmentdetailpro.do" method="post">
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="style.css" rel="stylesheet" type="text/css">
+
+    <link href="style.css" rel="stylesheet" type="text/css">
 <script language="JavaScript">
-    
-function checkIt() {
-    var userinput = eval("document.userinput");
-    if(!userinput.sdate.value )
-    {
-        alert("날짜를 선택하세요.");
-        return false;
-    }else if(!userinput.dpname.value ){
-        alert("진료과을 선택하세요.");
-        return false;
-    }else if(!userinput.drname.value ){
-        alert("선생님을 선택하세요.");
-        return false;
-    }else
-}
-    
+
+
+    function checkIt() {
+        var userinput = eval("document.userinput");
+        if(!userinput.dpname.value)
+        {
+            alert("진료과를선택하세요");
+            return false;
+        }else if(!userinput.drname.value){
+        	
+            alert("의사를 선택하세요");
+            return false;
+        }else if(!userinput.adate.value){
+        	
+            alert("진료시간을 선택하세요");
+            return false;
+     
+        }else{}
+    }
     </script>
-<%-- <table width="800" border="1" name="userinput" onSubmit="return checkIt()">
-<tr>
-<td width="200" >의사이름</td><td><input type="text" name="drname" value="${drname }"/></td></tr>
-<input type="hidden" name="drid" value="${drid }"/>
-<td width="200">진료과명</td><td><input type="text" name="dpname" value="${dpname }"/></td></tr>
-<input type="hidden" name="jumin1" value="${jumin1 }"/>
-<input type="hidden" name="jumin2" value="${jumin2 }"/>
-<td width="200" >예약자id</td><td><input type="text" name="id" value="${sessionScope.memId}"/></td></tr>
-<td width="200" >예약자성함</td><td><input type="text" name="name" value="${name }"/></td></tr>
-<td width="200" >스케쥴번호</td><td><input type="text" name="sid" value="${sid }"/></td></tr>
-<td width="200" >예약시간</td><td><input type="text" name="adate" value="${sdate }"/></td></tr>
-</table>
-<input type="submit" value="예약하기"/>
-</form>
- --%>
+
+ <form action="/antman/appointmentdetailpro.do" name="userinput" onSubmit="return checkIt()">
 <table width="400" border="3" >
 <tr align="center">
+
+<td width="10" >
 <input type="hidden" name="drid" value="${drid }"/>
 <input type="hidden" name="jumin1" value="${jumin1 }"/>
 <input type="hidden" name="jumin2" value="${jumin2 }"/>
@@ -119,7 +112,7 @@ function checkIt() {
 <input type="hidden" name="dpname" value="${dpname }"/>
 <input type="hidden" name="sid" value="${sid }"/>
 <input type="hidden" name="adate" value="${sdate }"/>
-<td width="10" ><h4 class="shit"><span class="group">선생님</span></h4></td>
+<h4 class="shit"><span class="group">선생님</span></h4></td>
 <td width="10"><h4 class="shit"><span class="group">진료과</span></h4></td>
 <td width="10" ><h4 class="shit"><span class="group">예약자</span></td>
 <td width="40" ><h4 class="shit"><span class="group">예약일</span></td>
