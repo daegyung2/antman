@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap namespace="academy">
+ <typeAlias alias="academy" type="admin.bean.AcademyDTO" />
+
+<insert id="insertacademy" parameterClass="academy">
+insert into academyschedule(asid,assubject,ascontent,astime,astimeend,asmin,asmax,asstart,asend,place,host,auth,register,asphone,asemail)
+values(academyschedule_SEQ.NEXTVAL,#assubject#,#ascontent#,to_date(#astime#,'YYYY-MM-DD HH24:MI'),to_date(#astimeend#,'YYYY-MM-DD HH24:MI'),0,#asmax#,to_date(#asstart#,'YYYY-MM-DD HH24:MI'),to_date(#asend#,'YYYY-MM-DD HH24:MI'),#place#,#host#,#auth#,#register#,#asphone#,#asemail#)
+</insert>
+  
+  
+  <update id="academyasimg"  parameterClass="academy" >
+   update academyschedule set asimg = #asimg# where asid = #asid#
+ </update>
+ 
+ <select id="max" resultClass="int">
+   select max(asid) from academyschedule 
+ </select>
+ 
+    <select id="selectLastNo" resultClass="int" >
+         SELECT count(*) count from academyschedule 
+      </select>
+      
+            <select id="selectAll" resultClass="academy">
+      select asid,assubject,to_char(astime,'YYYY-MM-DD HH:MI') astime,to_char(astimeend,'YYYY-MM-DD HH:MI') astimeend,asimg,asmin,asmax,to_char(asstart,'YYYY-MM-DD HH:MI') asstart,
+      to_char(asend,'YYYY-MM-DD HH:MI') asend,place,host,auth,register,asphone,asemail,ascontent from academyschedule order by asid desc
+      </select>
+      
+      <select id="selectcontent" resultClass="academy">   
+      select asid,assubject,to_char(astime,'YYYY-MM-DD HH:MI') astime,to_char(astimeend,'YYYY-MM-DD HH:MI') astimeend,asimg,asmin,asmax,to_char(asstart,'YYYY-MM-DD') asstart,
+      to_char(asend,'YYYY-MM-DD') asend,place,host,auth,register,asphone,asemail,ascontent from academyschedule where asid = #asid#    
+  </select> 
+
+<insert id="insertappoint" parameterClass="academy">
+insert into appointacademy(aaid,name,phone,email,aasubject,aatime) 
+values(appointacademy_seq.NEXTVAL,#name#,#phone#,#email#,#aasubject#,sysdate)
+</insert>
+ <update id="minupdate"  parameterClass="academy" >
+ <![CDATA[UPDATE academyschedule SET asmin=asmin+1 where asmin <= #asmax# ]]>
+    </update>
+
+     
+</sqlMap>

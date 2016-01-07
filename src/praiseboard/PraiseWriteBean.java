@@ -64,7 +64,9 @@ public class PraiseWriteBean {
    public String VIEW(HttpServletRequest request,PraiseVO dto)throws Exception{
       int pid =(int)dto.getPid();
       System.out.println(dto.getPid());
-   dto = (PraiseVO)sqlMapClient.queryForObject("praise.finddoctor",dto.getPid());
+   
+      
+      dto = (PraiseVO)sqlMapClient.queryForObject("praise.finddoctor",dto.getPid());
    
       request.setAttribute("pid",pid);
       request.setAttribute( "dto",dto );

@@ -20,7 +20,7 @@ inquiry varchar2(200)          // 문의
 
 )
 
-create sequence acedemyschedule_seq nocache
+create sequence academyschedule_seq nocache
 
 
 일단은 의사 이름과 위에 것들을 적고 db에 인서트시키는페이지를 만들고 값을 넣는다
