@@ -15,7 +15,7 @@ public class AppointmentSimpleProBean {
 	
 	@RequestMapping("/appointmentsimplepro")
 	public String appointmentsimplepro(HttpServletRequest request,AppointmentSimpleDTO dto){
-
+		
 		sqlMapClient.insert("appointment.simpleappointmentinsert",dto);
 
 		return "/appointment/simple/appointmentsimplepro.jsp";
