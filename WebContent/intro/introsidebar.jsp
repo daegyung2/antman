@@ -95,7 +95,7 @@ $(function(){
 	<li>
     	<a href="#" class="title"><b>재단소개</b></a>
         <ul class="sub">
-        	<li><a href="/antman/intro/guide.jsp"/>병원소개</a></li>
+        	<li><a href="/antman/guide.do"/>병원소개</a></li>
             <li><a href="#">이사장인사말</a></li>
             <li><a href="#">설립취지</a></li>
         </ul>
@@ -105,10 +105,10 @@ $(function(){
     	<a href="#" class="title"><b>병원소개</b></a>
         <ul class="sub">
         	<li><a href="#" class="on">병원장인사말</a></li>
-            <li><a href="#" >병원안내</a></li>
-            <li><a href="#">미션/비젼</a></li>
+            <li><a href="/antman/guide.do" >병원안내</a></li>
+            <li><a href="/antman/mission.do">미션/비젼</a></li>
             <li><a href="#">연혁및성과/의료진동정</a></li>
-<li><a href="#">현황</a></li>
+<li><a href="/antman/present.do">현황</a></li>
 <li><a href="#">기구조직</a></li>
 <li><a href="#">협력기관</a></li>
     </ul>
@@ -120,8 +120,8 @@ $(function(){
         	<li><a href="/antman/mainboard.do">소식/공지</a></li>
             <li><a href="#" >언론보도</a></li>
             <li><a href="#" >입찰공고</a></li>
-            <li><a href="#" >강좌안내</a></li>
-            <li><a href="#" >문화갤러리</a></li>
+            <li><a href="/antman/lectureboard.do" >강좌안내</a></li>
+            <li><a href="/antman/cultureboard.do" >문화갤러리</a></li>
             
         </ul>
  

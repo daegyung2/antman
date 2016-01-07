@@ -78,7 +78,25 @@ public class IntroBean {
 		return "/intro/intro.jsp";
 	}
 	
+	@RequestMapping("/guide.do")
+	public String guide(){
 	
+		return "/intro/guide.jsp";
+	}
+	
+	@RequestMapping("/mission.do")
+	public String mission(){
+	
+		return "/intro/mission.jsp";
+	}
+	
+	@RequestMapping("/present.do")
+	public String present(){
+	
+		return "/intro/present.jsp";
+	}
+	
+
 }
 
 
