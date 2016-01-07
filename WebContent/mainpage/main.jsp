@@ -6,6 +6,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>DB병원</title>
 
+<script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var visual = $('#visual');
+	var btns = $('#btns a');
+	var imgs = visual.find('li');
+	var currentNum = 0;
+	function rotateImg(){
+		currentNum++;
+		currentNum = currentNum%3;
+		imgs.stop().fadeOut();
+		$('.bg'+currentNum).stop().fadeIn();
+	}
+	var timer = setInterval(rotateImg, 2000);
+	btns.click(function(){
+		clearInterval(timer);
+		currentNum = parseInt($(this).text())-1;
+		imgs.stop().fadeOut();
+		$('.bg'+currentNum).stop().fadeIn();
+		timer = setInterval(rotateImg,2000);
+	})
+})
+</script>
+
 <style type="text/css">
 	body, ul, li, div{margin:0px; padding:0px; }
 	ul{list-style:none;}
@@ -17,7 +41,7 @@
 	#l_back{ width:100%; height:30px; background:#474747; top:2px; position:absolute;}
 	#l_back #login{width:1100px; height:20px; margin:0 auto; margin-top:5px; position:relative;}
 	#l_back #login .grid{ width:1050px; height:20px; margin-left:20px; position:relative; }
-	#l_back #login .grid .login_innerbox{width:600px; height:20px; margin:0 auto; margin-right:-160px; position:relative;}
+	#l_back #login .grid .login_innerbox{width:700px; height:20px; margin:0 auto; margin-right:-220px; position:relative;}
 	#l_back #login .grid .login_innerbox ul{margin-top:-3px; }
 	#l_back #login .grid .login_innerbox li{float:left; padding:0 10px; position:relative;}
 	#l_back #login .grid .login_innerbox li.first{padding-left:0px;}
@@ -25,21 +49,20 @@
 	#l_back #login .grid .login_innerbox li a{color:#FFFFFF; font-size:12px;}
 	#l_back #login .grid .login_innerbox li a:hover{color:#FAED7D; font-size:12px;}
 	
-	#h_back{ width:100%; height:40px; position:absolute;}
+	#h_back{ width:100%; height:40px; margin-top:0px; position:absolute;}
 	#h_back #header{height:40px; margin:0 auto; position:relative;}
 	#h_back #header .grid{height:40px; position:relative; }
-	#h_back #header .grid #title{width:120px; position:relative;}
-	#h_back #header .grid #title #box{width:110px; margin-left:80px; position:relative;}
-	#h_back #header .grid #title #box h1{float:left; width:130px; height:50px; margin-top:30px; margin-left:130px; }
-	#h_back #header .grid #title #box a{display:block; width:100%; height:100%; background:; padding-top:45px;}
+	#h_back #header .grid #title{width:120px; height:30px; margin-top:15px; position:relative;}
+	#h_back #header .grid #title #box{width:110px; margin-left:80px; top:20px; position:relative;}
+	#h_back #header .grid #title #box a{display:block; width:100%; height:100%; padding-top:-15px;}
 	
-	#gnb{ height:40px; margin-top:-30px; border-bottom:1px solid #5586EB; padding-left:380px; position:relative;}
-	#gnb>li{ float:left; line-height:30px; background:#FFFFFF; position:relative;}
+	#gnb{ height:40px; margin-top:-10px; border-bottom:1px solid #5586EB; padding-left:375px; position:relative;}
+	#gnb>li{ float:left; line-height:10px; background:#FFFFFF; position:relative; z-index:200;}
 	#gnb li.title{padding-left:-300px;}
-	#gnb li a{ display:block; font-size:14px; font-weight:bold; padding:5px 24px; color:#000000; width:100px; }
+	#gnb li a{ display:block; font-size:14px; font-weight:bold; padding:5px 15px; color:#000000; width:120px; }
 	#gnb li ul{ position:absolute; left:0px; opacity:0; width:160px; background:#FFFFFF;}
 	#gnb li ul li{ height:0px; overflow:hidden;}
-	#gnb li:hover ul{margin-top:1px; opacity:1; }
+	#gnb li:hover ul{margin-top:29px; opacity:1; }
 	#gnb li:hover ul li{ height:40px;}
 	#gnb li a:hover, #gnb li a:focus{text-decoration:underline; color:#5586EB;}
 	#gnb li a{ transition:all 0.4s;}
@@ -47,11 +70,20 @@
 	#gnb li ul li{ transition:all 0.4s;}
 	
 	/* container 시작 */
-	#visual{ width:960px; margin:20px auto; top:120px; position:relative;}
-	#visual>ul{ width:960px; height:403px; position:relative;}
+	
+	#container{width:1300px; height:1300px; margin:0 auto; position:relative;}
+	#container .main{width:1280px; height:1200px; position:relative; margin-left:10px;}
+	
+	#visual{ width:1280px; margin:20px auto; top:120px; position:relative; }
+	#visual>ul{ width:1280px; height:400px; position:relative;}
 	#visual>ul>li{ position:absolute; left:0px; top:0px; }
 	#visual>ul>li:not(:first-child){ display:none;}
-	#visual>#btns{ position:absolute; bottom:10px; left:450px; }
+	#visual>#btns{ position:absolute; bottom:10px; left:600px; }
+	
+	#container .main .quickbtn{width:1280px; height:200px; margin-top:120px; }
+	#container .main .quickbtn #btn01{float:left; width:640px; height:120px; background:#5586EB; font-size:16px; font-color:#FFFFFF; text-align:center; line-height:3em;}
+	#container .main .quickbtn #btn02{width:640px; height:120px; background:#CFCFCF; margin-left:640px; font-size:16px; font-color:#FFFFFF; text-align:center; line-height:3em;}
+	
 	
 	/* footer 시작 */
 	#f_back{clear:both; width:100%; height:300px; background:#474747; margin:0 auto; top:700px; position:relative;}
@@ -88,29 +120,7 @@
 	#f_back .footer .secondline .selectbox2 #select04 #box04 #move04 a{color:#FFFFFF; font-size:12px;  }
 </style>
 
-<script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>
-<script type="text/javascript">
-$(function(){
-	var visual = $('#visual');
-	var btns = $('#btns a');
-	var imgs = visual.find('li');
-	var currentNum = 0;
-	function rotateImg(){
-		currentNum++;
-		currentNum = currentNum%3;
-		imgs.stop().fadeOut();
-		$('.bg'+currentNum).stop().fadeIn();
-	}
-	var timer = setInterval(rotateImg, 2000);
-	btns.click(function(){
-		clearInterval(timer);
-		currentNum = parseInt($(this).text())-1;
-		imgs.stop().fadeOut();
-		$('.bg'+currentNum).stop().fadeIn();
-		timer = setInterval(rotateImg,2000);
-	})
-})
-</script>
+
 </head>
 
 <body>
@@ -122,7 +132,8 @@ $(function(){
 	<div class="grid">
 		<div class="login_innerbox">
   			<ul>
-    			<li class="first"><a href="#">회원가입</a></li>
+    			<li class="first"><a href="#">로그인</a></li>
+    			<li><a href="#">회원가입</a></li>
     			<li><a href="#">병원둘러보기</a></li>
     			<li><a href="#">오시는길</a></li>
     			<li><a href="#">English</a></li>
@@ -139,11 +150,10 @@ $(function(){
 <div id="h_back">
 	<div id="header">
 	<div class="grid">
-		<div id="title"><div id="box"><font size="4"><b><a href="#">DB Hospital</a></b></font></div></div>
+		<div id="title"><div id="box"><font size="4" color="000000"><b>DB Hospital</a></b></font></div></div>
 		<div id="gnbWrap">
 			<nav>
     			<ul id="gnb">
-        			<!-- <li class="title"><font color="#5586EB"><a href="#">DB Hospital</a></font></li> -->
             		<li>
             			<a href="#">의료진/진료과</a>
                 		<ul>
@@ -210,18 +220,30 @@ $(function(){
 </div>
 
 <!-- container 시작 -->
-<div id="visual">
-	<ul>
-    	<li class="bg0"><img src="img/main_image_01.jpg" alt="" /></li>
-        <li class="bg1"><img src="img/main_image_02.jpg" alt="" /></li>
-        <li class="bg2"><img src="img/main_image_03.jpg" alt="" /></li>
-    </ul>
+<div id="container">	
+	<div class="main">
+		<div id="visual">
+			<ul>
+    			<li class="bg0"><img src="\antman\img\main_image_01.jpg" alt="" /></li>
+        		<li class="bg1"><img src="\antman\img\main_image_02.jpg" alt="" /></li>
+        		<li class="bg2"><img src="\antman\img\main_image_03.jpg" alt="" /></li>
+    		</ul>
 
-<div id="btns">
-	<a href="#">1</a> || <a href="#">2</a> || <a href="#">3</a>
+		<div id="btns">
+			<a href="#">1</a> || <a href="#">2</a> || <a href="#">3</a>
+		</div>
+		</div>
+	<div class="quickbtn">
+		<a href="#"><div id="btn01"><font color="#FFFFFF"><b>온라인 예약<br/>온라인으로 바로 예약하실 수 있습니다.</b></font></div></a>
+		<a href="#"><div id="btn02"><font color="#000000"><b>진료 조회<br/>진료예약 및 내역조회가 가능합니다.</b></font></div></a>
+	</div>
+	
+	<div class="bstrap">
+	
+	</div>
+	
+	</div>
 </div>
-</div>
-
 <!-- footer 시작 -->
 <div id="f_back">
 	<div class="footer">
