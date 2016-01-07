@@ -72,7 +72,7 @@
 <table width="800" border="1" align="center">
        
         <c:if test="${list == null }" >
-        <h2>현재 예약한 사항이 없습니다.</h2>
+        <h2>현재 받은 질문이 없습니다.</h2>
         </c:if>
         
         <tr align="center">

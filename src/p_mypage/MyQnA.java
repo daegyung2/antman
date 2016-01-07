@@ -57,10 +57,6 @@ public class MyQnA {
 	public String MyQnAPro(HttpServletRequest request, MyQnADTO dtoa, String drname, HttpSession session){
 		sqlMapClient.insert("MyQnA.insertMyQnA", dtoa);
 		
-		System.out.println(dtoa.getDrname());
-		System.out.println(dtoa.getId());
-		System.out.println(dtoa.getContent());
-		
 		List list = sqlMapClient.queryForList("MyQnA.selectMyQnA", dtoa.getId());
 		request.setAttribute("list", list);
 	

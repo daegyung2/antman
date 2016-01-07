@@ -48,8 +48,16 @@ public class p_mypage {
 	@RequestMapping("/MyQnA_Answer.do")
 	public String MyQnA_Answer(HttpServletRequest request, MyQnADTO dto){
 		
+		return "/p_mypage/MyQnA_Answer.jsp";
+	}
+	
+	@RequestMapping("/MyQnA_AnswerPro.do")
+	public String MyQnA_AnswerPro(HttpServletRequest request, MyQnADTO dto){
+		
+		System.out.println(dto.getDrid());
 		sqlMapClient.update("MyQnA.updateAnswer", dto);
 		return "/p_mypage/MyQnA_AnswerPro.jsp";
 	}
+	
 	
 }

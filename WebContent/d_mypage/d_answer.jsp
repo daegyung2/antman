@@ -29,11 +29,12 @@
 			 <td><h2>${dto.name}</h2></td>
 			 <td><h2>${dto.content}</h2></td>
 			 <td><h2>${dto.drname}</h2></td>
-			 <td><input type="button" name="answer" value="답글" onclick="javascript:window.location='/antman/p_mypage/MyQnA_Answer.jsp'"></td>
+			 <td><input type="button" name="answer" value="답글" onclick="javascript:window.location='/antman/MyQnA_Answer.do'"></td>
 		</tr>
 	
 </c:forEach>
-<tr>
+</c:if> 
+<!--  <tr>
 	<td colspan ="5">
 
 		 <h2>답변등록</h2>
@@ -47,8 +48,8 @@
 	</tr>
 
 
-</c:if>
-  
+
+   -->
    
 </table>
 
