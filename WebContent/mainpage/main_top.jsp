@@ -77,7 +77,7 @@
 <div id="h_back">
 	<div id="header">
 	<div class="grid">
-		<div id="title"><div id="box"><a href="/antman/main.do"><img src="\antman\img\main_logo.png"/></a></div></div>
+		<div id="title"><div id="box"><a href="/antman/loginForm.do"><img src="\antman\img\main_logo.png"/></a></div></div>
 		<div id="gnbWrap">
 			<nav>
     			<ul id="gnb">
