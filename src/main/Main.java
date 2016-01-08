@@ -30,7 +30,7 @@ public class Main {
 	@RequestMapping("/dbmain.do")
 	public String bdmain(HttpServletRequest request){
 	
-	return "/treatmentteam/treatmentteamtop.jsp";
+	return "/mainpage/main.jsp";
 }
 	//관리자페이지 메인 
 	@RequestMapping("/adminmain.do")

@@ -4,7 +4,7 @@ public class AppointmentDTO {
 
 	private String aid;
 	private int drid;
-	
+	private int asid;
 	private String id;
 	private String name;
 	private int agentapp;
@@ -203,6 +203,12 @@ public class AppointmentDTO {
 	}
 	public void setAdate3(String adate3) {
 		this.adate3 = adate3;
+	}
+	public int getAsid() {
+		return asid;
+	}
+	public void setAsid(int asid) {
+		this.asid = asid;
 	}
 
 

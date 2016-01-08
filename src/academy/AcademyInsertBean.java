@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import admin.bean.AcademyDTO;
+import praiseboard.PraiseVO;
 
 
 
@@ -27,8 +28,9 @@ public class AcademyInsertBean {
 	private MultipartFile file;
 	
 	@RequestMapping("/academyform.do")
-	public String form(HttpServletRequest request, AcademyDTO dto,String ymd){
-
+	public String form(HttpServletRequest request ){
+	      
+		
 		return "/academy/academyinsert.jsp";
 	}
 	
@@ -51,7 +53,7 @@ public class AcademyInsertBean {
 	  
 	   if(!file.isEmpty()){
 	   String name = file.getOriginalFilename();//C:\Users\downmemory\git\antman
-	   File sf = new File("c://Users//downmemory//git//antman//WebContent//image//academyimg//"+name);
+	   File sf = new File("c://Users//user1//git//antman//WebContent//image//academyimg//"+name);
 	   file.transferTo(sf);
 	   dto.setAsimg("/antman/image/academyimg/"+name);
 	   sqlMapClient.update("academy.academyasimg",dto);

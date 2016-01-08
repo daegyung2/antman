@@ -5,8 +5,8 @@
  <typeAlias alias="academy" type="admin.bean.AcademyDTO" />
 
 <insert id="insertacademy" parameterClass="academy">
-insert into academyschedule(asid,assubject,ascontent,astime,astimeend,asmin,asmax,asstart,asend,place,host,auth,register,asphone,asemail)
-values(academyschedule_SEQ.NEXTVAL,#assubject#,#ascontent#,to_date(#astime#,'YYYY-MM-DD HH24:MI'),to_date(#astimeend#,'YYYY-MM-DD HH24:MI'),0,#asmax#,to_date(#asstart#,'YYYY-MM-DD HH24:MI'),to_date(#asend#,'YYYY-MM-DD HH24:MI'),#place#,#host#,#auth#,#register#,#asphone#,#asemail#)
+insert into academyschedule(asid,drname,drid,assubject,ascontent,astime,astimeend,asmin,asmax,asstart,asend,place,host,auth,register,asphone,asemail)
+values(academyschedule_SEQ.NEXTVAL,#drname#,#drid#,#assubject#,#ascontent#,to_date(#astime#,'YYYY-MM-DD HH24:MI'),to_date(#astimeend#,'YYYY-MM-DD HH24:MI'),0,#asmax#,to_date(#asstart#,'YYYY-MM-DD HH24:MI'),to_date(#asend#,'YYYY-MM-DD HH24:MI'),#place#,#host#,#auth#,#register#,#asphone#,#asemail#)
 </insert>
   
   
@@ -21,24 +21,39 @@ values(academyschedule_SEQ.NEXTVAL,#assubject#,#ascontent#,to_date(#astime#,'YYY
     <select id="selectLastNo" resultClass="int" >
          SELECT count(*) count from academyschedule 
       </select>
+
       
-            <select id="selectAll" resultClass="academy">
-      select asid,assubject,to_char(astime,'YYYY-MM-DD HH:MI') astime,to_char(astimeend,'YYYY-MM-DD HH:MI') astimeend,asimg,asmin,asmax,to_char(asstart,'YYYY-MM-DD HH:MI') asstart,
-      to_char(asend,'YYYY-MM-DD HH:MI') asend,place,host,auth,register,asphone,asemail,ascontent from academyschedule order by asid desc
+      <select id="selectAll" resultClass="academy">
+      select asid, drid, drname, assubject,to_char(astime,'YYYY-MM-DD HH:MI') astime,to_char(astimeend,'YYYY-MM-DD HH:MI') astimeend,asimg,asmin,asmax,to_char(asstart,'YYYY-MM-DD HH:MI') asstart, to_char(asend,'YYYY-MM-DD HH:MI') asend, place, host, auth, register, asphone, asemail, ascontent from academyschedule order by asid desc
       </select>
       
       <select id="selectcontent" resultClass="academy">   
-      select asid,assubject,to_char(astime,'YYYY-MM-DD HH:MI') astime,to_char(astimeend,'YYYY-MM-DD HH:MI') astimeend,asimg,asmin,asmax,to_char(asstart,'YYYY-MM-DD') asstart,
-      to_char(asend,'YYYY-MM-DD') asend,place,host,auth,register,asphone,asemail,ascontent from academyschedule where asid = #asid#    
+      select asid,assubject,to_char(astime,'YYYY-MM-DD HH:MI') astime,to_char(astimeend,'HH:MI') astimeend,asimg,asmin,asmax,to_char(asstart,'YYYY-MM-DD') asstart,
+      to_char(asend,'YYYY-MM-DD') asend,place,host,auth,register,asphone,asemail,ascontent,drname,drid from academyschedule where asid = #asid#    
   </select> 
 
 <insert id="insertappoint" parameterClass="academy">
-insert into appointacademy(aaid,name,phone,email,aasubject,aatime) 
-values(appointacademy_seq.NEXTVAL,#name#,#phone#,#email#,#aasubject#,sysdate)
+insert into appointacademy(aaid,name,phone,email,aasubject,aatime,drid,drname,id) 
+values(appointacademy_seq.NEXTVAL,#name#,#phone#,#email#,#aasubject#,sysdate,#drid#,#drname#,#id#) 
 </insert>
+
  <update id="minupdate"  parameterClass="academy" >
- <![CDATA[UPDATE academyschedule SET asmin=asmin+1 where asmin <= #asmax# ]]>
+ <![CDATA[UPDATE academyschedule SET asmin=asmin+1 where asmin < #asmax# and asid = #asid#]]>
     </update>
 
-     
+     <select id="idcheck" resultClass="int" parameterClass="academy">
+  select count(*) from appointacademy where id = #id# 
+</select>
+
+     <select id="findid" resultClass="int" parameterClass="academy">
+  select aaid from appointacademy where id = #id# 
+</select>
+
+        <delete id="deleteappoint" parameterClass="academy">
+         DELETE FROM appointacademy where aaid = #aaid#
+         </delete>
+          
+           <update id="deletemin"  parameterClass="academy" >
+ <![CDATA[UPDATE academyschedule SET asmin=asmin-1 where asmin < #asmax# and asid = #asid#]]>
+    </update>
 </sqlMap>
