@@ -34,11 +34,13 @@
     <context:component-scan base-package="intro" />   
 	<context:component-scan base-package="faq" /> 
 	<context:component-scan base-package="login.bean" />  
-	<context:component-scan base-package="p_mypage" /> 
+	<context:component-scan base-package="p_mypage" />
+    <context:component-scan base-package="e_mypage"/>
 	<context:component-scan base-package="cultureBoard"/>    
 	<context:component-scan base-package="main"/>
 	<context:component-scan base-package="webservice"/>
 	<context:component-scan base-package="academy"/>
+  
        
     <bean id="multipartResolver" 
   class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
