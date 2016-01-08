@@ -82,7 +82,7 @@
 			<nav>
     			<ul id="gnb">
             		<li>
-            			<a href="#">의료진/진료과</a>
+            			<a href="/antman/treatmentsearch.do">의료진/진료과</a>
                 		<ul>
                 			<li><a href="/antman/treatmentsearch.do">의료진</a></li>
                     		<li><a href="/antman/treatmentchoice.do?p_depart_id=1">진료과</a></li>
