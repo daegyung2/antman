@@ -27,7 +27,7 @@ public class Main {
     private String pagingHtml;
     private paigingActiondb page;
     //메인페이지
-	@RequestMapping("/dbmain.do")
+	@RequestMapping("/main.do")
 	public String bdmain(HttpServletRequest request){
 	
 	return "/mainpage/main.jsp";

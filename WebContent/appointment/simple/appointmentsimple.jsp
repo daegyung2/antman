@@ -33,7 +33,7 @@
 </style>
 
 <div id="menutop">
-	<jsp:include page="/treatmentteam/treatmentteamtop.jsp" flush="true | false"/>
+	<jsp:include page="/webservice/webtop.jsp" flush="true | false"/>
 </div>
 
 <!-- container ½ÃÀÛ -->

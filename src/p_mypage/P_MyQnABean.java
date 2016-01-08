@@ -68,7 +68,7 @@ public class P_MyQnABean {
 		int drid = Integer.parseInt(request.getParameter("drid"));
 		dto.setDrid(drid);
 		int qid = dto.getQid();
-		List list = sqlMapClient.queryForList("MyQnA.selectDr", dto.getDrid());
+		List list = sqlMapClient.queryForList("MyQnA.selectAll", dto.getDrid());
 
 		request.setAttribute("list", list);
 		request.setAttribute("qid", qid);

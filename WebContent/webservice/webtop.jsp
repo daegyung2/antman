@@ -59,7 +59,7 @@
 	<div class="grid">
 		<div class="login_innerbox">
   			<ul>
-    			<li class="first"><a href="#">로그인</a></li>
+    			<li class="first"><a href="/antman/loginForm.do">로그인</a></li>
     			<li><a href="#">회원가입</a></li>
     			<li><a href="#">병원둘러보기</a></li>
     			<li><a href="#">오시는길</a></li>
@@ -77,7 +77,7 @@
 <div id="h_back">
 	<div id="header">
 	<div class="grid">
-		<div id="title"><div id="box"><a href="/antman/loginForm.do"><img src="\antman\img\main_logo.png"/></a></div></div>
+		<div id="title"><div id="box"><a href="/antman/main.do"><img src="\antman\img\main_logo.png"/></a></div></div>
 		<div id="gnbWrap">
 			<nav>
     			<ul id="gnb">
