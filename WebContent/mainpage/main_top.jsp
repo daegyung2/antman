@@ -59,7 +59,7 @@
 	<div class="grid">
 		<div class="login_innerbox">
   			<ul>
-    			<li class="first"><a href="#">로그인</a></li>
+    			<li class="first"><a href="/antman/loginForm.do">로그인</a></li>
     			<li><a href="#">회원가입</a></li>
     			<li><a href="#">병원둘러보기</a></li>
     			<li><a href="#">오시는길</a></li>
