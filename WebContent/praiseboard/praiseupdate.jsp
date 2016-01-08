@@ -1,7 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 
-    <form action="/antman/praiseupdatepro.do" method="post">
+    <style type="text/css">
+	body{margin:0px; padding:0px;}
+	a{ text-decoration:none; }
+	ul{ list-style:none; margin:0px; padding:0px;}
+	li{ margin:0px; padding:0px; }
+	#menutop{width:100%; height:150px; }
+	#side{width:200px; float:left; margin-left:0px; }
+	
+</style>
+
+<div id="menutop">
+	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
+</div>
+
+<!-- container ½ÃÀÛ -->
+<div id="side">
+	<jsp:include page="/webservice/websidebar.jsp" flush="true | false"/>
+</div>
+  <div><form action="/antman/praiseupdatepro.do" method="post">
   
     <table width="600" border="1">
     <tr>
@@ -16,3 +34,6 @@
     
    
     </table>
+    </form>
+    </div>
+    
