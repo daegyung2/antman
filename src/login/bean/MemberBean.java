@@ -51,7 +51,7 @@ public class MemberBean {
 			List alist = sqlMapClient.queryForList("appointment.selectAll",dto.getId());
 			
 			request.setAttribute("alist", alist);
-			return "/dbmain.do";	
+			return "/main.do";	
 		}	
 		
 		@RequestMapping("/logout.do")

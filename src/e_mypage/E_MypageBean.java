@@ -20,14 +20,24 @@ public class E_MypageBean {
 	@RequestMapping("/e_mypage.do")
 	public String e_mypage(ScheduleDTO dto, HttpServletRequest request, HttpSession session){
 		
-		request.getAttribute("memdrid");
+	    System.out.println(dto.getDrid());
 	
-		List list = sqlMapClient.queryForList("schedule.selectAll", dto.getDrid());
-		
+	
+		List list=sqlMapClient.queryForList("schdule.selectAll", dto.getDrid());
+	
 		request.setAttribute("list", list);
-		
+	
 		return "/e_mypage/e_mypage.jsp";
 		
 	}
+	
+	@RequestMapping("/e_mypagePraise.do")
+	public String e_mypagePraise(){
+		
+		
+		return "/e_mypage/e_mypagePraise.jsp";
+	}
+	
+
 
 }

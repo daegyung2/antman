@@ -57,7 +57,7 @@
        
         <c:if test="${list != null }" >
         <c:forEach var="dto" items="${list}">
-	
+	<td><h2>${dto.drid}<input type="hidden"  name="drid" value="${dto.drid}"></h2>
 		<tr>
 		     <td><h2>${dto.id}</h2></td>
 			 <td><h2>${dto.drmane}</h2></td>
