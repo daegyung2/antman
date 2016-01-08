@@ -27,7 +27,7 @@
 	</div>
 <ul id="nav">
 	<li><a href="/antman/appointmentmain.do" class="title">간편예약현황</a></li>
-	<li><a href="/antman/p_mypage.do" class="title">의료진스케줄</a></li>
+	<li><a href="/antman/.do" class="title">의료진스케줄</a></li>
 	<li><a href="/antman/praiseboard.do" class="title">나의칭찬</a></li>
 	<li><a href="/antman/modifyForm.do?Eid=${sessionScope.memEid}&drname=${sessionScope.memname}" class="title">회원정보수정</a></li>
 	<li><a href="#" class="title">회원탈퇴</a></li>

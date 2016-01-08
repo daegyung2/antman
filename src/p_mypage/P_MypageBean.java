@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import admin.bean.AppointmentDTO;
 import admin.bean.MyQnADTO;
 
-
 @Controller
 public class P_MypageBean {
 
