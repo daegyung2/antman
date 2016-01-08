@@ -13,7 +13,7 @@ public class WebServiceBean {
 	private SqlMapClientTemplate sqlMapClient;
 	
 	@RequestMapping("/voc.do")
-	public String vod(){
+	public String voc(){
 		
 		return "/webservice/voc.jsp";
 	}
@@ -24,7 +24,7 @@ public class WebServiceBean {
 		return "/webservice/offerinfo.jsp";
 	}
 	
-	@RequestMapping("/offerinfo.do")
+	@RequestMapping("/pageinquiry.do")
 	public String pageinquiry(){
 		
 		return "/webservice/pageinquiry.jsp";
