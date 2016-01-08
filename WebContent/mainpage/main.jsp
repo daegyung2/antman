@@ -57,16 +57,16 @@ $(function(){
 	#container .main .boards{width:1280px; height:300px; margin-top:-20px; }
 	#container .main .boards #board01{float:left; width:310px; height:300px; font-size:18px; text-align:center; border:2px dashed rgba(71,71,71,0.8); line-height:15em; }
 	#container .main .boards #board01 a{display:block; width:100%; height:100%;}
-	#container .main .boards #board01:hover{border:2px dashed #5586EB; background:rgba(71,71,71,0.25);}
+	#container .main .boards #board01:hover{border:2px dashed #5586EB; background:rgba(71,71,71,0.15);}
 	#container .main .boards #board02{width:310px; height:300px; margin-left:320px; font-size:18px; text-align:center; border:2px dashed rgba(71,71,71,0.8); line-height:15em; }
 	#container .main .boards #board02 a{display:block; width:100%; height:100%;}
-	#container .main .boards #board02:hover{border:2px dashed #5586EB; background:rgba(71,71,71,0.25);}
+	#container .main .boards #board02:hover{border:2px dashed #5586EB; background:rgba(71,71,71,0.15);}
 	#container .main .boards #board03{width:310px; height:300px; margin-left:640px; margin-top:-305px; font-size:18px; text-align:center; border:2px dashed rgba(71,71,71,0.8); line-height:15em; }
 	#container .main .boards #board03 a{display:block; width:100%; height:100%;}
-	#container .main .boards #board03:hover{border:2px dashed #5586EB; background:rgba(71,71,71,0.25);}
+	#container .main .boards #board03:hover{border:2px dashed #5586EB; background:rgba(71,71,71,0.15);}
 	#container .main .boards #board04{width:310px; height:300px; margin-left:960px; margin-top:-305px; font-size:18px; text-align:center; border:2px dashed rgba(71,71,71,0.8); line-height:15em; }
 	#container .main .boards #board04 a{display:block; width:100%; height:100%;}
-	#container .main .boards #board04:hover{border:2px dashed #5586EB; background:rgba(71,71,71,0.25);}
+	#container .main .boards #board04:hover{border:2px dashed #5586EB; background:rgba(71,71,71,0.15);}
 	
 	
 	/* footer Ω√¿€ */
