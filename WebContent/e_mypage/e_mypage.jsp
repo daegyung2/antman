@@ -36,14 +36,14 @@
 
 
 <td width="1200" align ="center">
-<h2>나의 예약현황</h2>
-<form action = "MyReservation.do" method="post"><br/>
+<h2>의료진 스케줄 현황</h2>
+
     
 
 <table width="700" border="1" align="center">
        
         <c:if test="${list == null }">
-        <h2>현재 예약한 사항이 없습니다.</h2>
+        <h2>현재 의료진 스케줄이 없습니다.</h2>
         </c:if>
         
        
@@ -60,9 +60,9 @@
 	
 		<tr>
 		     <td><h2>${dto.id}</h2></td>
-			 <td><h2>${dto.name}</h2></td>
-			 <td><h2>${dto.drname}</h2></td>
-			 <td><h2>${dto.adate}</h2></td>
+			 <td><h2>${dto.drmane}</h2></td>
+			 <td><h2>${dto.dpname}</h2></td>
+			 <td><h2>${dto.sdate}</h2></td>
 		</tr>
 
 </c:forEach>
@@ -70,7 +70,7 @@
 
    
 </table>
-</form>
+
 
 
 

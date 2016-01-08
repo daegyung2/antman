@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import admin.bean.ScheduleDTO;
 
 @Controller
@@ -22,7 +21,7 @@ public class E_MypageBean {
 	public String e_mypage(ScheduleDTO dto, HttpServletRequest request, HttpSession session){
 		
 		request.getAttribute("memdrid");
-		dto.setDrid((int)session.getAttribute("memdrid"));
+	
 		List list = sqlMapClient.queryForList("schedule.selectAll", dto.getDrid());
 		
 		request.setAttribute("list", list);
