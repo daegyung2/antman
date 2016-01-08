@@ -17,6 +17,10 @@
 	<result property="stevent" column="stevent"/>
 	
 	</resultMap>
+	<select id="selectAll" resultMap="dsc">
+	select*from schedule where drid=#drid#
+	</select>
+	
 	 <select id="selectLastNo" resultClass="int" >
          SELECT count(*) count from schedule where drid = #drid#
       </select>
