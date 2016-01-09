@@ -13,10 +13,14 @@
 </tr>
 
 <tr>
-<td colspan="2"><img src="${dto.asimg}">
+<td colspan="2"><img src="${dto.asimg} ">
 <br/>
 ${dto.ascontent}</td>
 </tr>
+
+<tr>
+<td>°­ÀÇ¼±»ý´Ô:${ddto.drname}</td><td><img src="${ddto.drimg1}" width="181" height="236"></td>
+
 
 <tr>
 <td colspan="2">Infomation <br/>

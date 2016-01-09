@@ -18,7 +18,7 @@
 </style>
 
 <div id="menutop">
-	<jsp:include page="/treatmentteam/treatmentteamtop.jsp" flush="true | false"/>
+	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
    <link href="style.css" rel="stylesheet" type="text/css">
 <script language="JavaScript">

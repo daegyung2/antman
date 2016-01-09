@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -58,9 +59,31 @@
 	<div id="login">
 	<div class="grid">
 		<div class="login_innerbox">
-  			<ul>
-    			<li class="first"><a href="/antman/loginForm.do">로그인</a></li>
-    			<li><a href="#">회원가입</a></li>
+  			<ul><c:if test="${sessionScope.memId ne null && sessionScope.memauth eq 'P' }">
+    			<li><a href="/antman/p_mypage.do?id=${sessionScope.memId}">마이페이지</a></li>
+    		    </c:if>
+    		    
+    		    <c:if test="${sessionScope.memId ne null && sessionScope.memauth eq 'D' }">
+    			<li><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid}&drname=${sessionScope.memname}">의사마이페이지</a></li>
+    		    </c:if>
+    		    
+    		    <c:if test="${sessionScope.memId ne null && sessionScope.memauth eq 'G' }">
+    			<li><a href="/antman/adminmain.do">관리자페이지</a></li>
+    		    </c:if>
+    		   
+    		   <c:if test="${sessionScope.memId ne null && sessionScope.memauth eq 'E' }">
+    			<li ><a href="/antman/e_mypage.do">직원마이페이지</a></li>
+    		    </c:if>
+    		    
+  				<c:if test="${sessionScope.memId eq null}">
+    			<li class="first"><a href="/antman/loginForm.do">로그인</a></li>			
+    			<li><a href="/antman/loginCheck.do">회원가입</a></li>
+    			</c:if>
+    			<c:if test="${sessionScope.memId ne null}">
+    			${sessionScope.memId }님 반갑습니다.
+    			<li class="first"><a href="/antman/logout.do">로그아웃</a></li>
+    			</c:if>
+
     			<li><a href="#">병원둘러보기</a></li>
     			<li><a href="#">오시는길</a></li>
     			<li><a href="#">English</a></li>
@@ -123,7 +146,7 @@
                 	<li>
             			<a href="#">의학교육</a>
             			<ul>
-                			<li><a href="#">학술행사일정</a></li>
+                			<li><a href="/antman/academylist.do?id=${sessionScope.memId}">학술행사일정</a></li>
 							<li><a href="#">학술영상다시보기</a></li>
 							<li><a href="#">의학포스터</a></li>
 							<li><a href="#">3D자료</a></li>

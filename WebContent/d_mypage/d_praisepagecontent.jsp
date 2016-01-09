@@ -19,7 +19,7 @@
 </style>
 
 <div id="menutop">
-	<jsp:include page="/treatmentteam/treatmentteamtop.jsp" flush="true | false"/>
+	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
 
 <style type="text/css">

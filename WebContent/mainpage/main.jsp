@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -138,8 +139,8 @@ $(function(){
 	</div>
 	</div>
 	<div class="quickbtn">
-		<a href="#"><div id="btn01"><font color="#FFFFFF"><b>온라인 예약<br/>온라인으로 바로 예약하실 수 있습니다.</b></font></div></a>
-		<a href="#"><div id="btn02"><font color="#FFFFFF"><b>진료 조회<br/>진료예약 및 내역조회가 가능합니다.</b></font></div></a>
+		<a href="/antman/appointmentmain.do"><div id="btn01"><font color="#FFFFFF"><b>온라인 예약<br/>온라인으로 바로 예약하실 수 있습니다.</b></font></div></a>
+		<a href="/antman/p_mypage.do"><div id="btn02"><font color="#FFFFFF"><b>진료 조회<br/>진료예약 및 내역조회가 가능합니다.</b></font></div></a>
 	</div>
 	
 	<div class="boards">

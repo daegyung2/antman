@@ -57,7 +57,7 @@ public class MemberBean {
 		@RequestMapping("/logout.do")
 		public String logout(LoginDataBean dto, HttpSession session){
 			session.setAttribute("memId", null);
-			return "/dbmain.do";
+			return "/main.do";
 		}
 		
 		@RequestMapping("/inputForm.do")

@@ -44,7 +44,7 @@
  </select>
  
  <select id="selectDr" resultMap="doctor.dto" parameterClass="doctor">
-   select * from DOCTOR where drId=#drId#
+   select * from DOCTOR where drId = #drId#
  </select>
  
     <resultMap id="doctorssibal" class="doctor" >

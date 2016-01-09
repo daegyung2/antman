@@ -22,9 +22,9 @@
 	
 	.container .main{width:800px; height:1000px; margin-top:5px; }
 	.tabset{width:800px; height:1000px; margin:20px auto; padding:5px; border:1px solid #333;  }
-	.tabset .tabs{padding:0px 0px; overflow:hidden; margin-left:4px;}
+	.tabset .tabs{padding:0px 0px; overflow:hidden; margin-left:5px;}
 	.tabset .tabs li{float:left; margin-right:3px;}
-	.tabset .tabs li a{display:block; background:#5586EB; color:#FFFFFF; padding:15px 53px; font-weight:bold; }
+	.tabset .tabs li a{display:block; background:#5586EB; color:#FFFFFF; padding:15px 49px; font-weight:bold; }
 	.tabset .tabs li a.on{border:1px solid #DBDBDB; background:#FFFFFF; color:#333;}
 	.tabset .panels div{width:750px; height:900px; padding:12px 15px 6px; margin-left:10px; margin-top:20px; align:center; border:1px solid #333;}
 	.tabset .panels div .sub{width:750px; height:70px; border:1px solid #333; }
@@ -120,7 +120,7 @@ $(function(){
 <script type="text/javascript"></script>   
 
 <div id="menutop">
-	<jsp:include page="/webservice/webtop.jsp" flush="true | false"/>
+	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
 
 <!-- container 시작 -->
@@ -147,14 +147,14 @@ $(function(){
         	</ul>   
      	<div class="panels">
     		<div id="panel01">   		
-    			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="tableLayout" border="1" >
+    			<table cellpadding="0" cellspacing="0" width="100%" class="tableLayout" border="1" >
 					<colgroup>
-						<col width="150px" />
-						<col width="600px" />
+						<col width="230px" />
+						<col width="570px" />
 					</colgroup>
 					<thead>
 						<tr>
-							<th scope="col" class="bgLine">분류</th>
+							<th scope="col">분류</th>
 							<th scope="col">제목</th>
 						</tr>
 					</thead>
@@ -162,10 +162,10 @@ $(function(){
 					<tbody>
 						<tr>
 							<td class="leftTd"><span>${dto.category}</span></td>
-							<td class="titleTd"><a href="#answer2" class="faqClose" id="counselSubject518" onclick="clickSubject('518'); return false;">${dto.subject}</a></td>
+							<td class="titleTd"><a href="#" class="faqClose"  onclick="clickSubject('518'); return false;">${dto.subject}</a></td>
 						</tr>
-						<tr style="display:block " id="tr518" class="viewAaqContent">
-							<tr><td class="answer" id="answer2" colspan="2" align="center" color="#10620A">
+						<tr style="display:block" class="viewAaqContent">
+							<tr><td class="answer" colspan="2" align="center" color="#10620A">
 							<font color="#FF00DD">
 							${dto.content}
 							</font>
@@ -173,15 +173,16 @@ $(function(){
 						</tr>
 						<tr>
 						<td colspan="2">
-						<center>
-						<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqupdate.do?fid=${dto.fid}'">수정하기</button>
-						<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqdelete.do?fid=${dto.fid}'">삭제하기</button> 
-  						</center>
+							<center>
+							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqupdate.do?fid=${dto.fid}'">수정하기</button>
+							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqdelete.do?fid=${dto.fid}'">삭제하기</button> 
+  							</center>
   						</td>
 						</tr>
 					</tbody>
+					</c:forEach>
 			</table>
-			</c:forEach>	
+				
         	</div>
         	<div id="panel02">test2
         		

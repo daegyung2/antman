@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import admin.bean.AcademyDTO;
+import praiseboard.PraiseVO;
 import praiseboard.pagingAction;
 
 @Controller
@@ -31,11 +32,11 @@ public class AcademyListBean {
 	private String view;
 	
 	@RequestMapping("/academylist.do")
-	public String list(HttpServletRequest request, String PageNum , AcademyDTO dto ){
+	public String list(HttpServletRequest request, String PageNum , AcademyDTO dto,String drname ){
   	  PageNum = request.getParameter("PageNum");
+  	 System.out.println(dto.getId());
   	int asid =(int)dto.getAsid();
-  	  System.out.println(PageNum);
-  	System.out.println(dto.getName());
+  
   	  	if(PageNum == null){
   	  		currentPage =1;
   	  	}else{
@@ -44,7 +45,7 @@ public class AcademyListBean {
        ModelAndView mv = new ModelAndView();
        totalCount = (Integer)sqlMapClient.queryForObject("academy.selectLastNo" , dto);
        page = new pagingActionaca(currentPage,totalCount,blockCount,blockPage);
-       System.out.println(totalCount);
+       
        
        int lastCount = totalCount;
        if(page.getEndCount() < totalCount){
@@ -52,19 +53,18 @@ public class AcademyListBean {
        }
        List list = sqlMapClient.queryForList("academy.selectAll",dto);
        list = list.subList(page.getStartCount(), lastCount);
+     
        pagingHtml = page.getPagingHtml().toString();
        	
-       if(dto.getName() != null){
-    	   sqlMapClient.insert("academy.insertappoint", dto);
- 	      sqlMapClient.update("academy.minupdate",dto);
-          }
+       int check = (int)sqlMapClient.queryForObject("academy.idcheck",dto);
+       System.out.println(check);
 
-       System.out.println(dto.getName());
       request.setAttribute("totalCount",totalCount);
       request.setAttribute("list",list);
+      request.setAttribute("check",check);
       request.setAttribute("pagingHtml",pagingHtml);
       request.setAttribute("view",view);
-       
+      request.setAttribute("2drname",drname);       
        
        
        

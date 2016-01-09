@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <form action="/antman/academyinsert.do" method="post"  enctype="multipart/form-data">
 <table width="400" border="1">
 <tr>
@@ -9,6 +10,10 @@
 <tr>
 <td colspan="4">모시는글</td></tr>
 <tr><td colspan="4"><textarea name="ascontent" rows="5" cols="60" placeholder="내용을 입력하세요"></textarea></tr>
+
+<tr>
+<td>선생님</td><td colspan="3"><input type="text" name="drname" value="${sessionScope.memname}"><input type="text" name="drid" value="${sessionScope.memdrid}"></tr>
+<tr>
 
 <tr>
 <td>학술행사시간</td><td><%@ page import="java.util.Date"%>
@@ -70,7 +75,7 @@
 		<option>40</option></td></tr>
 		
 		<tr>
-<td>학술행사종료시간</td><td><select name="houre">
+<td>학술행사종료시간</td><td colspan="2"><select name="houre">
 		<option value="9">9</option>
 		<option>10</option>
 		<option>11</option>
@@ -96,7 +101,13 @@
 		</tr>
 		
 		<tr>
-		<td>최대신청인원</td><td colspan="3"><input type="text" name="asmax"></tr>
+		<td>최대신청인원</td><td colspan="3"><select name="asmax">
+		<option value="10">10</option>
+		<option>20</option>
+		<option>30</option>
+		<option>40</option>
+		<option>50</option>
+</select></td></tr>
 		
 		<tr>
 		<td >일정신청시작기간</td><td colspan="3"><%@ page import="java.util.Date"%>
