@@ -32,5 +32,80 @@ ${dto.ascontent}</td>
 문의메일&nbsp;&nbsp;${dto.asemail}<br/>
 </td>
 </tr>
+<tr align ="center">
+<td colspan ="2">
+
+<c:if test="${check == 0 && asendcheck == 1 }"> 
+
+<script language="javascript">
+
+function popup()
+{
+	var yn = window.confirm("신청하시겠습니까?");
+	
+	if(yn) {
+		document.ggform.submit();
+	}
+	
+	
+  /* var url    ="/antman/appointacademy.do";
+  var title  = "testpop";
+  
+  
+  frm.target = title;                    //form.target 이 부분이 빠지면 form값 전송이 되지 않습니다. 
+  frm.action = url;                    //form.action 이 부분이 빠지면 action값을 찾지 못해서 제대로 된 팝업이 뜨질 않습니다.
+  frm.method = "post";
+  frm.submit();   */   
+  }
+</script>
+
+<form name="ggform" action="/antman/appointacademy.do" method="post">
+<input type="hidden" value="${dto.drid }" name="drid">
+<input type="hidden" value="${dto.drname}" name="drname">
+<input type="hidden" value="${dto.asid}" name="asid">
+<input type="hidden" value="${dto.asmin}" name="asmin">
+<input type="hidden" value="${dto.asmax}" name="asmax">
+<input type="hidden" value="${sessionScope.memname}" name="name">
+<input type="hidden" value="${sessionScope.memphone}" name="phone">
+<input type="hidden" value="${sessionScope.memId }" name="id">
+<input type="hidden" value="${sessionScope.meme_mail }" name="email">
+<input type="hidden" value="${dto.assubject}" name="aasubject">
+ <input type="button"  value="신청하기" onclick="javascript:popup();"></td>
+ </form>
+
+
+ </c:if>
+ 
+ 
+<c:if test="${check == 1 && asendcheck==1}">
+
+<script language="javascript">
+
+function popups()
+{
+	var yn = window.confirm("취소 하시겠습니까?");
+	
+	if(yn) {
+		document.deleteform.submit();
+	}
+	
+	
+ 
+  }
+</script>
+<form name="deleteform" action="/antman/deleteacademy.do" method="post">
+<input type="hidden" value="${dto.asid }" name="asid">
+<input type="hidden" value="${sessionScope.memId}" name="id">
+</form>
+<input type="button" value = "취소하기" onclick="javascript:popups();" >
+</c:if>
+
+<c:if test="${asendcheck == 0 }">
+신청기간이 종료되었습니다.
+</c:if>
+</td>
+</tr>
+
+
 
 </table>

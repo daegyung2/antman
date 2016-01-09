@@ -136,18 +136,19 @@ String today = sdms.format(cal.getTime());
 <br/>
 <c:if test="${view eq yes}">
 <center>
-<table width="870" border="1">
+<table width="1000" border="1">
 
 <tr>
 
-<th width="170">진료받을날짜</th>
-<th width="90">회차</th>
-<th width="90">아이디</th>
+<th width="200">진료받을날짜</th>
+<th width="100">회차</th>
+<th width="70">아이디</th>
 <th width="90">이름</th>
-<th width="90">회차선택</th>
-<th width="120">다음진료날짜</th>
-<th width="70">시간</th>
-<th width="70">분</th>
+<th width="240">증상입력</th>
+<th width="70">회차선택</th>
+<th width="80">다음진료</th>
+<th width="50">시간</th>
+<th width="50">분</th>
 <th width="50">등록</th>
 </tr>
 <tr>
@@ -166,7 +167,8 @@ String today = sdms.format(cal.getTime());
 <input type="hidden" name="jumin1" value="${dto.jumin1}">
 <input type="hidden" name="jumin2" value="${dto.jumin2}">
 </td>
-
+<td>
+<input type="text"  name="symptom" value="${adto.symptom }"placeholder="증상을 입력하세요">&nbsp;<input type="button" value="입력" onclick="javascript:window.location='/antman/symptomupdate.do?aid=${dto.aid }&id=${dto.id}&nextadate=${dto.nextadate}'">
 <td><select name="nextdate" >
 <option value="2차진료">2차진료</option>
 <option>3차진료</option>
@@ -191,7 +193,7 @@ String today = sdms.format(cal.getTime());
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script type="text/javascript">
 $(function() {
-   $("#sa_tourgodate").datepicker({
+   $("#sa_tourgodate1").datepicker({
       dateFormat: 'yy-mm-dd',
       monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
       dayNamesMin: ['일','월','화','수','목','금','토'],
@@ -205,12 +207,12 @@ $(function() {
 </head>
 <body>
 <%
-SimpleDateFormat sdm = new SimpleDateFormat("yyyy-MM-dd");
-Calendar cals = Calendar.getInstance();
-String todays = sdm.format(cals.getTime());
+SimpleDateFormat sdm1 = new SimpleDateFormat("yyyy-MM-dd");
+Calendar cal1 = Calendar.getInstance();
+String todays = sdm1.format(cal1.getTime());
 %>
 <p>
-<input type="text" id="sa_tourgodate" name="ymds" value="<%=todays%>" size="6"/><%--value="" 안에 오늘 날짜가 표시되도록 코딩해야 함 : tourbackdate 계산 알고리즘을 응용할까?--%>
+<input type="text" id="sa_tourgodate1" name="ymds" value="<%=todays%>" size="6"/><%--value="" 안에 오늘 날짜가 표시되도록 코딩해야 함 : tourbackdate 계산 알고리즘을 응용할까?--%>
 </p>
 </body>
 </html>

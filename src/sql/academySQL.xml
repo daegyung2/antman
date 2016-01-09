@@ -13,9 +13,13 @@ values(academyschedule_SEQ.NEXTVAL,#drname#,#drid#,#assubject#,#ascontent#,to_da
   <update id="academyasimg"  parameterClass="academy" >
    update academyschedule set asimg = #asimg# where asid = #asid#
  </update>
- 
+
  <select id="max" resultClass="int">
    select max(asid) from academyschedule 
+ </select>
+ 
+  <select id=" selectassubject" resultClass="int">
+   select assubject from academyschedule 
  </select>
  
     <select id="selectLastNo" resultClass="int" >
@@ -33,16 +37,20 @@ values(academyschedule_SEQ.NEXTVAL,#drname#,#drid#,#assubject#,#ascontent#,to_da
   </select> 
 
 <insert id="insertappoint" parameterClass="academy">
-insert into appointacademy(aaid,name,phone,email,aasubject,aatime,drid,drname,id) 
-values(appointacademy_seq.NEXTVAL,#name#,#phone#,#email#,#aasubject#,sysdate,#drid#,#drname#,#id#) 
+insert into appointacademy(aaid,name,phone,email,aasubject,aatime,drid,drname,id,asid ) 
+values(appointacademy_seq.NEXTVAL,#name#,#phone#,#email#,#aasubject#,sysdate,#drid#,#drname#,#id#,#asid#) 
 </insert>
 
  <update id="minupdate"  parameterClass="academy" >
  <![CDATA[UPDATE academyschedule SET asmin=asmin+1 where asmin < #asmax# and asid = #asid#]]>
     </update>
 
+ <update id="deletemin"  parameterClass="academy" >
+ <![CDATA[UPDATE academyschedule SET asmin=asmin-1 where asmin > 0 and asid = #asid#]]>
+    </update>
+     
      <select id="idcheck" resultClass="int" parameterClass="academy">
-  select count(*) from appointacademy where id = #id# 
+ select count(*) from appointacademy where id = #id# and aasubject = #aasubject# and asid = #asid#
 </select>
 
      <select id="findid" resultClass="int" parameterClass="academy">
@@ -53,7 +61,13 @@ values(appointacademy_seq.NEXTVAL,#name#,#phone#,#email#,#aasubject#,sysdate,#dr
          DELETE FROM appointacademy where aaid = #aaid#
          </delete>
           
-           <update id="deletemin"  parameterClass="academy" >
- <![CDATA[UPDATE academyschedule SET asmin=asmin-1 where asmin < #asmax# and asid = #asid#]]>
-    </update>
+     
+    
+    <select id="selectasid" resultClass="int" parameterClass="academy">
+  select asid from appointacademy where id = 'testP'
+</select>
+
+     <select id="asendcheck" resultClass="int" parameterClass="academy">
+      <![CDATA[select count(*) from academyschedule where asend >= sysdate AND asid = #asid#]]>
+</select>
 </sqlMap>

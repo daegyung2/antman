@@ -30,7 +30,7 @@
 	#h_back #header{height:40px; margin:0 auto; position:relative;}
 	#h_back #header .grid{height:40px; position:relative; }
 	#h_back #header .grid #title{width:140px; height:38px; margin-top:7px; margin-left:0px; position:relative; z-index:200;}
-	#h_back #header .grid #title #box{width:140px; height:38px; padding-left:80px; padding-top:10px; position:relative;}
+	#h_back #header .grid #title #box{width:140px; height:38px; padding-left:80px; padding-top:0px; position:relative;}
 	#h_back #header .grid #title #box a{display:block; width:100%; height:100%; padding-top:10px;}
 	
 	#gnb{ height:40px; margin-top:-10px; border-bottom:1px solid #5586EB; padding-left:375px; position:relative;}
@@ -100,7 +100,7 @@
 <div id="h_back">
 	<div id="header">
 	<div class="grid">
-		<div id="title"><div id="box"><a href="/antman/main.do"><img src="\antman\img\main_logo.png"/></a></div></div>
+		<div id="title"><div id="box"><a href="/antman/main.do"><img src="\antman\img\main_logo.png" width="200" height="50"/></a></div></div>
 		<div id="gnbWrap">
 			<nav>
     			<ul id="gnb">

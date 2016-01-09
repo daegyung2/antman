@@ -56,7 +56,7 @@ public class D_ScheduleCheckBean {
 			aplist = sqlMapclient.queryForList("appointment.drappointnamecheck" , adto);
 			view = yes;
 		
-		}
+		} 
 		System.out.println(aplist.size());
 
 		if (shit != null && adto.getAdate() == null && adto.getName() == null && adto.getId() == null){
@@ -99,4 +99,17 @@ public class D_ScheduleCheckBean {
 		return "/d_mypage/d_schedulecheck.jsp";
 	}
 	
+	@RequestMapping("/symptomupdate.do")
+	public String syptomupdate (HttpServletRequest request, LoginDataBean ldto ,ScheduleDTO dto ,AppointmentDTO adto){
+		
+		
+	sqlMapclient.update("appointment.symptomupdate",adto);
+	adto = (AppointmentDTO) sqlMapclient.queryForObject("appointment.symptomselect",adto);
+/*	sqlMapclient.insert("schedule.syptomupdate",dto);*/
+	
+	
+	request.setAttribute("adto",adto);
+
+		return "/d_mypage/d_schedulecheck.jsp";
+	}
 }

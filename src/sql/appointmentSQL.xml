@@ -78,5 +78,12 @@
 	  select to_char(adate ,'yyyy-MM-DD HH24:MI') adate from appointment where drid = #drid# and to_char(adate ,'YYYY-MM-DD') = #adate#
 	  
 	  </select>
+	  <update id="symptomupdate" parameterClass="appoint">
+	  update appointment set symptom = #symptom# where aid = #aid# and nextadate = #nextadate#
+	  </update>
 	  
+	 
+	  <select id="symptomselect" resultClass="appoint" parameterClass="appoint">
+	  select symptom from appointment where aid = #aid# and nextadate = #nextadate#
+	  </select>
 </sqlMap>
