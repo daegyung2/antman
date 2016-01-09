@@ -36,7 +36,7 @@ public class AcademyListBean {
   	  PageNum = request.getParameter("PageNum");
   	 System.out.println(dto.getId());
   	int asid =(int)dto.getAsid();
-  
+  	System.out.println(dto.getAsid());
   	  	if(PageNum == null){
   	  		currentPage =1;
   	  	}else{
@@ -55,13 +55,12 @@ public class AcademyListBean {
        list = list.subList(page.getStartCount(), lastCount);
      
        pagingHtml = page.getPagingHtml().toString();
-       	
-       int check = (int)sqlMapClient.queryForObject("academy.idcheck",dto);
-       System.out.println(check);
+       //asid를 꺼내야한다.
+       /*int asids  = (Integer)sqlMapClient.queryForObject("academy.selectasid" , dto.getId());*/
+     
 
       request.setAttribute("totalCount",totalCount);
       request.setAttribute("list",list);
-      request.setAttribute("check",check);
       request.setAttribute("pagingHtml",pagingHtml);
       request.setAttribute("view",view);
       request.setAttribute("2drname",drname);       

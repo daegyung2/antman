@@ -21,20 +21,21 @@ public class AcademyAppointBean {
 	
 	@RequestMapping("/appointacademy.do")
 	public String appointacademy(HttpServletRequest request, AcademyDTO dto, DoctorDTO ddto){
-		
-		int check = (int)sqlMapClient.queryForObject("academy.idcheck",dto);
-		
-		if(check == 1 ){
-			
-			
-			request.setAttribute("check", check);
-			
-			return "/academylist.do";
-		}else if(check == 0){
+
+	
  	   sqlMapClient.insert("academy.insertappoint", dto);
 	 sqlMapClient.update("academy.minupdate",dto);
-	}else{}
-
+	
+	  String id = (String)request.getParameter("id");
+   
+     
+      dto.setId(id);
+    
+      String aasubject = dto.getAssubject();
+      dto.setAasubject(aasubject);
+     
+     	
+	
 	      	System.out.println(dto.getName());
 	      	
 	      	List list = sqlMapClient.queryForList("academy.selectAll",dto);
@@ -49,6 +50,7 @@ public class AcademyAppointBean {
 			int aaid = (int)sqlMapClient.queryForObject("academy.findid",dto);
 	 	   dto.setAaid(aaid);
 	 	   System.out.println(aaid);
+	 	  System.out.println(dto.getAsid());
 			sqlMapClient.delete("academy.deleteappoint", dto);
 	 		 sqlMapClient.update("academy.deletemin",dto);
 	

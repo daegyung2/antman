@@ -2,6 +2,7 @@ package admin.bean;
 
 public class AcademyDTO {
 	
+	private String symptom;
 	private String id;
 	private int drid;
 	private int asid;
@@ -39,6 +40,12 @@ public class AcademyDTO {
 	
 	
 	
+	public String getSymptom() {
+		return symptom;
+	}
+	public void setSymptom(String symptom) {
+		this.symptom = symptom;
+	}
 	public int getDrid() {
 		return drid;
 	}
