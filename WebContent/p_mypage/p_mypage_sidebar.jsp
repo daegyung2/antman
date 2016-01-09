@@ -2,14 +2,13 @@
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-
 <style type="text/css">
 	body{margin:0px; padding:0px; }
 	a{ text-decoration:none; }
 	ul{ list-style:none; margin:0px; padding:0px; }
 	li{ margin:0px; padding:0px; }
 	
-	.sidebar{width:200px; height:1350px; float:left; margin-left:35px; top:0px; position:absolute; border:1px solid #BDBDBD;}
+	.sidebar{width:200px; height:1350px; float:left; margin-left:35px; top:95px; position:absolute; border:1px solid #BDBDBD; border-top:1px solid transparent;}
 	.sidebar #sidebar_top{ width:200px; height:120px; font-size:22px; margin-top:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD; text-align:center;}
 	.sidebar #sidebar_top b{padding-right:0px;}
 	.sidebar #sidebar_top a{text-decoration:none; color:#5586EB;}

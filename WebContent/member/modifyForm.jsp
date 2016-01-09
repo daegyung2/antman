@@ -20,10 +20,15 @@
 	#container .main td{padding:5px 5px 5px 5px; }
 </style>
 
+<div id="menutop">
+	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
+</div>
+
+
 <div id="side">
 <jsp:include page="p_mypage_sidebar.jsp" flush="true | false"/>
 </div>
-
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <div id="container">
 	<div class="main">
 		<div id="title"><h2>회원정보수정</h2></div>

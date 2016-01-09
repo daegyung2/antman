@@ -49,6 +49,7 @@
 	
 </style>
 
+
 </head>
 
 <body>
@@ -72,7 +73,7 @@
     		    </c:if>
     		   
     		   <c:if test="${sessionScope.memId ne null && sessionScope.memauth eq 'E' }">
-    			<li ><a href="/antman/e_mypage.do">직원마이페이지</a></li>
+    			<li ><a href="/antman/e_mypage.do?eid=${sessionScope.memeid}&drname=${sessionScope.memname}">직원마이페이지</a></li>
     		    </c:if>
     		    
   				<c:if test="${sessionScope.memId eq null}">

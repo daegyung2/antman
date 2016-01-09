@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
     
-  
+  <head>
+  <link href="style.css" rel="stylesheet" type="text/css">
   <style type="text/css">
 	body{margin:0px; padding:0px;}
 	a{ text-decoration:none; }
@@ -35,6 +36,8 @@
 	
 </style>
 
+    
+
 </head>
 <body>
 
@@ -47,63 +50,23 @@
 	<jsp:include page="/appointment/appointmentsidebar.jsp" flush="true | false"/>
 </div>
 
-
-
-
-<link href="style.css" rel="stylesheet" type="text/css">
-<script language="JavaScript">
-
-
-    function checkIt() {
-        var userinput = eval("document.userinput");
-        if(!userinput.jumin1.value  || !userinput.jumin2.value )
-        {
-            alert("주민등록번호를 입력하세요");
-            return false;
-        }else if(userinput.agree.value == "no" ){
-        	
-            alert("고유식별번호 처리에 동의하셔야합니다.");
-            return false;
-     
-        }
-    }
-    </script>
-    
 <div id="container">	
 	<div class="main">
-		<div id="title_1"><b>회원가입</b></div>
+		<div id="title_1"><Center><b>회원가입</b></Center></div><br/><br/>
 		<div id="main_top">	
-		<font>
-		DB병원 이용 시 불편사항 및 건의, 칭찬 등에 대해서는 ‘고객의 소리’ 메뉴를 이용해 주시기 바랍니다.<br/>
-		</font>
-	
-		<div class="content">
-			<div id="title_2"><b>고유식별번호 처리에 대한 안내</b></div>
-			<div id="main_text">
-			수집하는 고유식별정보 항목 : 주민등록번호, 외국인등록번호
-			수집ㆍ이용목적 : 의료보험 적용 여부와 진료예약을 위한 목적<br/>
-			보유 및 이용 기간 : 의료법에 준함<br/>
-			개인의 고유식별정보 제공동의는 거부하실 수 있으며, 거부할 경우 서비스 사용이 일부 제한될 수 있습니다.<br/>
 		
-			</div>
-			<div id="radio">
-<form action="appointmentdetail.do" method="post" name="userinput" onSubmit="return checkIt()">
-			<INPUT type=radio name="agree" id ="yes" value="yes" checked>동의합니다.
-			<INPUT type=radio name="agree" id = "no" value="no" >동의하지 않습니다.
-			</div>
-		</div>
-		<br/><br/>
 		
     <table align="center">
     <tr>
-    <td><a href ="/antman/inputForm.do"><img src="/antman/img/P_input.png" width="320" heighr="250"></a></td>
-    <td><a href ="/antman/E_CheckForm.do"><img src="/antman/img/E_input.png" width="320" heighr="250"></a></td>
-    <td><a href ="/antman/D_CheckForm.do"><img src="/antman/img/D_input.png" width="320" heighr="250"></a></td>
+    <td><a href ="/antman/inputForm.do"><img src="/antman/img/P_input.png" width="320" height="250"></a></td>
+    <td><a href ="/antman/E_CheckForm.do"><img src="/antman/img/E_input.png" width="320" height="250"></a></td>
+    <td><a href ="/antman/D_CheckForm.do"><img src="/antman/img/D_input.png" width="320" height="250"></a></td>
     </tr>
     </table>
 		</div>
 	</div>
 </div>
+</form>
 </body>
 </html>
   

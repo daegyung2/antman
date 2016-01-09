@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 
-    <style type="text/css">
+ <style type="text/css">
 	body{margin:0px; padding:0px; }
 	a{ text-decoration:none; }
 	ul{ list-style:none; margin:0px; padding:0px; }
 	li{ margin:0px; padding:0px; }
 	
-	.sidebar{width:200px; height:1350px; float:left; margin-left:35px; top:0px; position:absolute; border:1px solid #BDBDBD;}
+	.sidebar{width:200px; height:1350px; float:left; margin-left:35px; top:95px; position:absolute; border:1px solid #BDBDBD; border-top:1px solid transparent;}
 	.sidebar #sidebar_top{ width:200px; height:120px; font-size:22px; margin-top:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD; text-align:center;}
 	.sidebar #sidebar_top b{padding-right:0px;}
 	.sidebar #sidebar_top a{text-decoration:none; color:#5586EB;}
@@ -23,7 +23,7 @@
 
 <div class="sidebar">
 	<div id="sidebar_top" >
-			<td><h3>${sessionScope.memname}</h3><font size="4"> </font><font color="#5586EB"><b>직원번호 : ${sessionScope.memEid}</b></font></td>
+			<td><h3>${sessionScope.memname}</h3><font size="4"> </font><font color="#5586EB"><b>직원번호 : ${sessionScope.memeid}</b></font></td>
 	</div>
 <ul id="nav">
 	<li><a href="/antman/appointmentmain.do" class="title">간편예약현황</a></li>
