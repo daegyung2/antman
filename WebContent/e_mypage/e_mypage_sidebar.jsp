@@ -26,10 +26,10 @@
 			<td><h3>${sessionScope.memname}</h3><font size="4"> </font><font color="#5586EB"><b>직원번호 : ${sessionScope.memeid}</b></font></td>
 	</div>
 <ul id="nav">
-	<li><a href="/antman/appointmentmain.do" class="title">간편예약현황</a></li>
-	<li><a href="/antman/.do" class="title">의료진스케줄</a></li>
+	<li><a href="/antman/e_simple.do" class="title">간편예약현황</a></li>
+	<li><a href="/antman/e_schedule.do?dpname=${sessionScope.memdpname}&name=${sessionScope.memname}" class="title">의료진스케줄</a></li>
 	<li><a href="/antman/praiseboard.do" class="title">나의칭찬</a></li>
-	<li><a href="/antman/modifyForm.do?Eid=${sessionScope.memEid}&drname=${sessionScope.memname}" class="title">회원정보수정</a></li>
+	<li><a href="/antman/modifyForm.do?Eid=${sessionScope.memeid}&drname=${sessionScope.memname}" class="title">회원정보수정</a></li>
 	<li><a href="#" class="title">회원탈퇴</a></li>
 </ul>
 </div> 
