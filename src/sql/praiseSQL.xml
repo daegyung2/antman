@@ -26,6 +26,11 @@
       <select id="selectdr" resultMap="boardRes">
       select pid,id,name,drname,subject,content,reg_date from praise where drname = #drname# order by pid desc
       </select>
+      
+      <select id="selectpraise" resultMap="boardRes">
+      select pid,id,name,drname,subject,content,reg_date from praise where id = #id# order by pid desc
+      </select>
+      
    
       <select id="viewpraise" resultMap="boardRes" parameterClass="int">
          select pid,id,name,drname,subject,content,reg_date from praise where pid = #pid# 
@@ -36,8 +41,8 @@
       </update>
 
       <insert id="insertpraise" parameterClass="praise">
-      INSERT INTO praise (pid,
-                           id,
+      INSERT INTO praise (	   pid,
+                          	   id,
                                name,
                                drname,
                                subject,
@@ -45,7 +50,7 @@
                                REG_DATE
                          )
                     VALUES (praise_SEQ.NEXTVAL,
-                          #id#,
+                            #id#,
                             #name#,
                             #drname#,
                             #subject#,

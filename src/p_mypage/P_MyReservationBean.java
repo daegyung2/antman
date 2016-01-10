@@ -27,6 +27,13 @@ public class P_MyReservationBean {
 		return "/p_mypage/MyReservation.jsp";
 	}
 	
+	@RequestMapping("/p_reservation.do")
+	public String reservationmain(HttpServletRequest request,AppointmentDTO adto){
+
+		return "/p_mypage/p_reservation.jsp";
+	}
+
+	
 }
 
 

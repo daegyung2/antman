@@ -40,6 +40,16 @@
      select * from EMPLOYEE where Eid=#Eid#
      </select>
      
+     <select id="selectdr" parameterClass="employee" resultMap="employee.dto">
+     select*from employee where dpname=#dpname#
+     </select>
+ 
+     <select id="selectdpname" resultClass="String" parameterClass="int">
+     select dpname from employee where Eid=#Eid#
+     </select>
+     
+     
+     
   <update id="updateEmimg1" parameterClass="employee" >
    update employee set emimg1=#emimg1# where Eid=#Eid#
  </update>

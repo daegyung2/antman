@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-       <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style type="text/css">
 	body{margin:0px; padding:0px; }
@@ -25,12 +27,13 @@
 
 
 <div id="side">
-<jsp:include page="p_mypage_sidebar.jsp" flush="true | false"/>
+<jsp:include page="e_mypage_sidebar.jsp" flush="true | false"/>
 </div>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
 <div id="container">
 	<div class="main">
 		<div id="title"></div>
+
 
 <center><form action="main.do" method="post">
 <H2>회원정보가 수정되었습니다.</H2>
@@ -38,5 +41,6 @@
 <input type="submit" value="메인으로가기">
 
 </form></center>
+
 </div>
 </div>

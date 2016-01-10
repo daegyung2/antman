@@ -56,7 +56,7 @@ public class PraiseWriteBean {
       
       sqlMapClient.insert("praise.insertpraise", dto);      
       
-      return "redirect:praiseboard.do";
+      return "/praisepro.jsp";
    }
    
    
