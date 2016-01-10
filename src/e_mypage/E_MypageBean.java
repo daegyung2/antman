@@ -15,6 +15,7 @@ import admin.bean.DoctorDTO;
 import admin.bean.MainBoardDTO;
 import admin.bean.ScheduleDTO;
 import admin.bean.TreatmentteamDTO;
+import praiseboard.PraiseVO;
 
 
 
@@ -25,9 +26,9 @@ public class E_MypageBean {
 	private SqlMapClientTemplate sqlMapClient;
 	
 	@RequestMapping("/e_mypage.do")
-	public String e_mypage(ScheduleDTO dto, DoctorDTO ddto, HttpServletRequest request){
+	public String e_mypage(ScheduleDTO dto, DoctorDTO ddto, HttpServletRequest request ){
 					//select dpname from employee where eid = #eid# 
-		System.out.println(dto.getEid()+1);
+		System.out.println(dto.getEid());
 		
 		String dpname = (String)sqlMapClient.queryForObject("employee.selectdpname",dto.getEid());
 		
@@ -38,8 +39,6 @@ public class E_MypageBean {
 		System.out.println(slist.size());
 		ddto.setDpname(dpname);
 		
-		
-		
 		//select name from doctor where dpname = #dpname#
 		List dlist = sqlMapClient.queryForList("doctor.selectDr", ddto);
 		
@@ -47,10 +46,9 @@ public class E_MypageBean {
 		request.setAttribute("dlist", dlist);
 		request.setAttribute("slist", slist);
 		
-		 
-		 
-		 //ºä if(dlist != null){dlist}
-		 
+
+		
+	 //ºä if(dlist != null){dlist}
 	/*	int drid = Integer.parseInt(request.getParameter("drid"));
 		 dto.setDrid(drid);
 		
@@ -63,12 +61,6 @@ public class E_MypageBean {
 	
 	
 	
-	@RequestMapping("/e_schedule.do")
-	public String e_schedule(){
-		
-		
-		return "/e_mypage/e_schedule.jsp";
-				
-	}
+
 
 }

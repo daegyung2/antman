@@ -6,36 +6,40 @@
 <!DOCTYPE html>
 
 <style type="text/css">
-	body{margin:0px; padding:0px;}
+	body{margin:0px; padding:0px; }
 	a{ text-decoration:none; }
-	ul{ list-style:none; margin:0px; padding:0px;}
+	ul{ list-style:none; margin:0px; padding:0px; }
 	li{ margin:0px; padding:0px; }
-	#menutop{width:100%; height:150px; }
-	#side{width:200px; float:left; margin-left:0px; }
 	
+	
+	#side{width:200px; float:left; margin-left:0px;}
+	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:100px; position:relative}
+	#container .main #title{width:800px; margin-left:100px; text-align:center;}
+	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
+	#container .main tr{padding:5px 5px;}
+	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:center; }
+	#container .main td{padding:5px 5px 5px 5px; }
 </style>
 
 <div id="menutop">
 	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
 
-<!-- container 시작 -->
 <div id="side">
-	<jsp:include page="/webservice/websidebar.jsp" flush="true | false"/>
+	<jsp:include page="/p_mypage/p_mypage_sidebar.jsp" flush="true | false"/>
 </div>
+
+
+<div id="container">
+	<div class="main"><br/><br/>
+		<div id="title"><center><h2>나의 칭찬 내역 </h2></center></div>
+
   <div>
-  <center>
-  <h2>칭찬합시다 </h2>  
-       
-  <br/>
-  칭찬은 하는 사람과 받는 사람, 모두를 즐겁게 합니다.<br/>
-하나의 칭찬이 또 다른 칭찬을 만들어 갈 수 있도록<br/>
-친절함이 돋보인 직원을 칭찬해 주세요.              <br/>                     
-  <br/>
-  
+   
   <c:if test="${sessionScope.memauth eq 'P'}">
   <form action="/antman/praisewrite.do" method="post">
-  <button type="submit" class="btn btn-primary btn-md" onclick=>칭찬하기</button>
+  <center><button type="submit" class="btn btn-primary btn-md" onclick=>칭찬하기</button></center>
   </form>
   </c:if>
   <br/><br/>
@@ -46,11 +50,14 @@
 	<th data-field="name">내용</th>
       </tr>
     </thead>
+   <input type="hedden" name="pid" value="${dto.pid}"/>
    
-                <c:forEach var="dto" items="${list}">
+                <c:forEach var="dto" items="${list}" >
+                
 		<tr>
-		     <td ><h3>${dto.pid}</h3></td>
-			 <td ><h3><a href="/antman/praisecontent.do?pid=${dto.pid}">${dto.subject}</a></h3>
+			
+		     <td><h3>${dto.pid}</h3></td>
+			 <td><h3><a href="/antman/praisecontent.do?pid=${dto.pid}&name=${dto.name}&id=${dto.id}">${dto.subject}</a></h3>
 				${dto.content } <br/>
 				<FONT size="2">
 				글쓴이 : ${dto.name } |
@@ -103,4 +110,3 @@
 <script type="text/javascript">
 </script>
 </body>
-</html>

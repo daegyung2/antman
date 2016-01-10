@@ -13,6 +13,7 @@
   INSERT INTO appointment(aid,name,id,jumin1,jumin2,drid,drname,adate,dpname,nextadate) values(appointment_SEQ.NEXTVAL,#name#,#id#,#jumin1#,#jumin2#,#drid#,#drname#,to_date(#adate#,'YYYY-MM-DD HH24:MI'),#dpname#,#nextadate#) 
    </insert>
    
+   
 
 <!-- 간편예약 넣기  --> 
  <typeAlias alias="simpleappoint" type="admin.bean.AppointmentSimpleDTO" />
@@ -40,10 +41,16 @@
 	 	   select name,id from appointment where drid = #drid# group by id,name
 	</select>
 	
+	<select id="selectsimple" parameterClass="simpleappoint" resultClass="simpleappoint">
+	     select * from simpleappointment order by aid desc
+	</select>
+	
 	
    <select id="selectAll" parameterClass="String" resultClass="appoint">
 		select * from appointment where id=#id# order by aid desc
    </select>
+   
+ 
   
    <!-- 선생님마이페이지에서 보는 예약내역 -->
       <select id="drappointcheck" resultClass="appoint">

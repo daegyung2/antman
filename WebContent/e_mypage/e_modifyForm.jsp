@@ -1,7 +1,6 @@
-
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>   
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="EUC-KR"%>
+   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style type="text/css">
 	body{margin:0px; padding:0px; }
@@ -26,7 +25,7 @@
 
 
 <div id="side">
-<jsp:include page="p_mypage_sidebar.jsp" flush="true | false"/>
+<jsp:include page="e_mypage_sidebar.jsp" flush="true | false"/>
 </div>
 <br/><br/><br/>
 <div id="container">
@@ -37,7 +36,7 @@
  
                                                                                    
  
-  <form action="modifyPro.do" method="post">    
+  <form action="e_modifyPro.do" method="post">    
  
       <tr>
         <th width="170">¾ÆÀÌµð</th>

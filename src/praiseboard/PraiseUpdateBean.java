@@ -27,7 +27,7 @@ public class PraiseUpdateBean {
 	public String praiseupdatepro(HttpServletRequest request,PraiseVO dto){
 		
 		sqlMapClient.update("praise.updatepraise",dto);
-
+		
 		return "redirect:praiseboard.do";
 	}
 }

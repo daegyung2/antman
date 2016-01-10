@@ -17,7 +17,7 @@
 	#container .main #title{width:800px; margin-left:100px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
 	#container .main tr{padding:5px 5px;}
-	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:left; }
+	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:center; }
 	#container .main td{padding:5px 5px 5px 5px; }
 </style>
 
@@ -31,6 +31,8 @@
 </div>
 </br></br>
 
+
+
 <div id="container">
 	<div class="main">
 		<div id="title"><center><h2>의료진 스케줄 현황</h2></center></div>
@@ -40,16 +42,37 @@
 
  
 <table width="700" border="1" align="center">
+
+<form action="/antman/praisewrite.do" method="post">  
+ 
+    <select name="drname">
+	<c:forEach var="dto" items="${dolist}" >
+	<option value="${dto.drname }">${dto.drname}</option>
+	</c:forEach>	
+</select>
+<input type="submit" value="선생님선택">
+
+</form>
 		
         <c:if test="${slist == null }">
         <center><h2>현재 의료진 스케줄이 없습니다.</h2></center>
         </c:if>
           
         <c:if test="${slist != null }" >
+       
+        <tr align="center">
+		<th width="90">진료번호</th>
+		<th width="110">진료선생님</th>
+		<th width="110">진료과</th>
+		<th width="80">진료환자</th>
+		<th width="80">진료회차</th>
+		<th width="160">진료스케쥴</th>
+		</tr>
         
-         <tr align="center"> 
+          
 	
 <c:forEach var="dto" items="${slist}">
+		<tr align="center">
 		<td>${dto.sid}</td>
 		<td>${dto.drname}</td>
 		<td>${dto.dpname}</td>

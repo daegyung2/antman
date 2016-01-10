@@ -27,11 +27,11 @@
 			<td><h3>${sessionScope.memname}</h3><font size="4"> </font><font color="#5586EB"><b>${sessionScope.memId}</b></font></td>
 	</div>
 <ul id="nav">
-	<li><a href="/antman/appointmentmain.do" class="title">진료예약</a></li>
+	<li><a href="/antman/p_reservation.do" class="title">진료예약</a></li>
 	<li><a href="/antman/p_mypage.do" class="title">나의예약현황</a></li>
-	<li><a href="/antman/praiseboard.do" class="title">칭찬하기</a></li>
+	<li><a href="/antman/praiseboard.do?id=${sessionScope.memId }&name=${sessionScope.memname}" class="title">칭찬하기</a></li>
 	<li><a href="/antman/MyQnA.do" class="title">나의상담</a></li>
-	<li><a href="/antman/modifyForm.do?drid=${sessionScope.memId }&drname=${sessionScope.memname}" class="title">회원정보수정</a></li>
+	<li><a href="/antman/modifyForm.do?id=${sessionScope.memId }&name=${sessionScope.memname}" class="title">회원정보수정</a></li>
 	<li><a href="#" class="title">회원탈퇴</a></li>
 </ul>
 </div> 

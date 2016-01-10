@@ -5,55 +5,54 @@
 
 <!DOCTYPE html>
 <style type="text/css">
-	body{margin:0px; padding:0px;}
+	body{margin:0px; padding:0px; }
 	a{ text-decoration:none; }
-	ul{ list-style:none; margin:0px; padding:0px;}
+	ul{ list-style:none; margin:0px; padding:0px; }
 	li{ margin:0px; padding:0px; }
-	#menutop{width:100%; height:150px; }
-	#side{width:200px; float:left; margin-left:0px; }
 	
+	
+	#side{width:200px; float:left; margin-left:0px;}
+	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:100px; position:relative}
+	#container .main #title{width:800px; margin-left:100px; text-align:center;}
+	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
+	#container .main tr{padding:5px 5px;}
+	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:center; }
+	#container .main td{padding:5px 5px 5px 5px; }
 </style>
 
 <div id="menutop">
 	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
 
-<!-- container 시작 -->
 <div id="side">
-	<jsp:include page="/webservice/websidebar.jsp" flush="true | false"/>
+	<jsp:include page="/p_mypage/p_mypage_sidebar.jsp" flush="true | false"/>
 </div>
-  <div>
-<html lang="en">
-<head>
-  <title>칭찬합시다</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</head>
+
+
+<div id="container">
+	<div class="main"><br/><br/>
+		<div id="title"><center><h2>칭찬합시다 </h2></center></div>
+
 <body>
 
 <div class="container">
-  <h2>칭찬합시다</h2> 
+  
   <p></p>            
-  <table class="table">
-    <thead>
+  <table border="1" width="600" height="100" align="center">
+  
       <tr>
         <th colspan="2"><h3><center>${dto.subject}</center></h3></th>
-
       </tr>
-    </thead>
-    <tbody>
+      
       <tr>
- <tr><td width="50%">작성자 : ${dto.name}</td><td width="50%">등록일 : ${dto.reg_date}</td></tr> 
-      </tr>
-      <tr>
+    <tr>
+    <td>작성자 : ${dto.name}</td><td >등록일 : ${dto.reg_date}</td>
+    </tr> 
+           <tr>
 <td colspan="2" height="200">${dto.content} </td>
       </tr>
-  
-    </tbody>
-  </table>
+    </table>
 </div>
 
 </body>
@@ -62,11 +61,11 @@
 
 <div class="container">
 <p></p>            
-  <table class="table">
+  <table align="center">
 
     <tbody>
       <tr>
- <tr><td width="50%"><img src="${dto.drimg1 }" weight="190" height="240"></td><td><h3>${dto.drname}</h3><br/> <h4> ${dto.dpname}</h4>${dto.exarea }</td></tr> 
+ <tr><td width="500"><img src="${dto.drimg1 }" weight="190" height="240"></td><td><h3>${dto.drname}</h3><br/> <h4> ${dto.dpname}</h4>${dto.exarea }</td></tr> 
       </tr>
   
     </tbody>
@@ -81,10 +80,9 @@
 <br/>
 <HR width=100% >
 <br/>
-<center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praiseupdate.do?pid=${dto.pid}'">수정하기</button>
-<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praisewrite.do'">칭찬하기</button> 
-<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praisedelete.do?pid=${dto.pid}'">삭제하기</button> 
- <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praiseboard.do'">목록으로</button></center>
+<center><button type="button" onclick="javascript:window.location='/antman/praiseupdate.do?pid=${dto.pid}&name=${dto.name}&id=${dto.id}'">수정하기</button>
+<button type="button" onclick="javascript:window.location='/antman/praisedelete.do?pid=${dto.pid}&name=${dto.name}&id=${dto.id}'">삭제하기</button> 
+ <button type="button" onclick="javascript:window.location='/antman/praiseboard.do?pid=${dto.pid}&name=${dto.name}&id=${dto.id}'">목록으로</button></center>
   </center>
 </body>
 </html>
@@ -92,3 +90,4 @@
 
 
 <input type="hidden" name="pid" value="${pid}"/>
+</div></div>
