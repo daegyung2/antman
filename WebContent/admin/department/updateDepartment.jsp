@@ -47,14 +47,14 @@
 </head>
 <body>
 
-<form action="/antman/updateDepartform.do" method="post" >
+<form action="/antman/updateDepartPro.do" method="post" enctype="multipart/form-data">
 <table width="1000" border="1" cellpadding="1" cellspacing="0">
 <tr>
 <td>부모 부서</td>
 <td>
 <select name="p_depart_id" >
 <c:forEach var="dto" items="${list }">
-<option>${dto.p_depart_id }</option>
+<option value="${dto.p_depart_id}">${dto.p_dpname }</option>
 </c:forEach>
 </select>
 ${pdto.p_dpname}

@@ -47,20 +47,20 @@
   
    <!-- 선생님마이페이지에서 보는 예약내역 -->
       <select id="drappointcheck" resultClass="appoint">
-        select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate from appointment where drid = #drid# and to_char(adate ,'YYYY-MM-DD') = #adate# order by aid desc 
+        select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate,symptom  from appointment where drid = #drid# and to_char(adate ,'YYYY-MM-DD') = #adate# order by aid desc 
         </select>
         
          <select id="drtodayappointcheck" resultClass="appoint">
-        select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate from appointment where drid = #drid# and to_char(adate , 'YYYY-MM-DD') = to_char(sysdate ,'YYYY-MM-DD') order by aid desc </select>
+        select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate,symptom from appointment where drid = #drid# and to_char(adate , 'YYYY-MM-DD') = to_char(sysdate ,'YYYY-MM-DD') order by aid desc </select>
         
            
         
             <select id="drappointnamecheck" resultClass="appoint">
-        select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate from appointment where name = #name#  order by aid desc 
+        select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate,symptom from appointment where name = #name#  order by aid desc 
         </select>
 
          <select id="drappointidcheck" resultClass="appoint">
-        select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate from appointment where  id = #id# order by aid desc 
+        select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate,symptom from appointment where  id = #id# order by aid desc 
         </select>
    
   <!-- 예약결과조회 출력하기  --> 
@@ -86,4 +86,18 @@
 	  <select id="symptomselect" resultClass="appoint" parameterClass="appoint">
 	  select symptom from appointment where aid = #aid# and nextadate = #nextadate#
 	  </select>
+	  
+	        <select id="reappointcheck" resultClass="appoint">
+        select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate,symptom  from appointment where drname = #drname# order by aid desc 
+        </select>
+        
+        <select id="jumininfo" resultClass="appoint">
+        select jumin1,jumin2  from appointment  where id = #id# group by jumin1,jumin2
+        </select>
+        
+       <select id="appointjungbok" resultClass="int" >
+  		select count(*) from appointment where adate = to_date(#adate#,'YYYY-MM-DD HH24:MI') and id = #id#
+      </select>
+        
+  
 </sqlMap>

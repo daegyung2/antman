@@ -30,7 +30,7 @@
 	#h_back #header{height:40px; margin:0 auto; position:relative;}
 	#h_back #header .grid{height:40px; position:relative; }
 	#h_back #header .grid #title{width:140px; height:38px; margin-top:7px; margin-left:0px; position:relative; z-index:200;}
-	#h_back #header .grid #title #box{width:140px; height:38px; padding-left:80px; padding-top:0px; position:relative;}
+	#h_back #header .grid #title #box{width:140px; height:38px; padding-left:40px; padding-top:0px; position:relative;}
 	#h_back #header .grid #title #box a{display:block; width:100%; height:100%; padding-top:10px;}
 	
 	#gnb{ height:40px; margin-top:-10px; border-bottom:1px solid #5586EB; padding-left:375px; position:relative;}
@@ -80,7 +80,7 @@
     			<li><a href="/antman/loginCheck.do">È¸¿ø°¡ÀÔ</a></li>
     			</c:if>
     			<c:if test="${sessionScope.memId ne null}">
-    			${sessionScope.memId }´Ô ¹Ý°©½À´Ï´Ù.
+    			<%-- ${sessionScope.memId }´Ô ¹Ý°©½À´Ï´Ù. --%>
     			<li class="first"><a href="/antman/logout.do">·Î±×¾Æ¿ô</a></li>
     			</c:if>
 

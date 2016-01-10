@@ -14,6 +14,15 @@ public class LoginDataBean {
 	private String DrId;
 	private int reg_num;
 	private String auth;
+	private String drid;
+	
+	
+	public String getDrid() {
+		return drid;
+	}
+	public void setDrid(String drid) {
+		this.drid = drid;
+	}
 	public String getId() {
 		return id;
 	}

@@ -22,7 +22,7 @@
      <sqlMap resource="/sql/MyQnASQL.xml" />
      <sqlMap resource="/sql/cultureBoardSQL.xml" />
      <sqlMap resource="/sql/academySQL.xml" />
-     
+     <sqlMap resource="/sql/scheduleresultSQL.xml" />
     
      
      
