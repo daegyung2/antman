@@ -61,9 +61,9 @@ body{  }
     <table border="1" width="1300" align="center" >
     <tr align="center">
     <td width="320" height="240"><font size="5"><a href="/antman/intro/guide.jsp"/><b>병원소개</b></a></font><br/><br/> 
-    DB Hospital 은 존경받는 병원으로서의<br/> 사회적 책임을 다하겠습니다.<br/><br/><img src="/spring/img/intro1.png" width="130" height="100"/> </td>
+    DB Hospital 은 존경받는 병원으로서의<br/> 사회적 책임을 다하겠습니다.<br/><br/><img src="/antman/img/intro1.png" width="130" height="100"/> </td>
      <td width="320" height="240"><font size="5"><a href="/antman/intro/mission.jsp"/><b>미션과비전</b></font></a><br/><br/>
-     글로벌 메디컬 콤플렉스,<br/>DB Hospital이 만들어가고 있습니다.<br/><br/><img src="/spring/img/intro5.png"/></td>
+     글로벌 메디컬 콤플렉스,<br/>DB Hospital이 만들어가고 있습니다.<br/><br/><img src="/antman/img/intro5.png"/></td>
     <td width="320" height="240"><font size="5"><a href="/antman/intro/present.jsp"/><b>현황</b></a></font><br/><br/>
           앞선 의술, <br/>더 큰 사랑을 실천하고 있습니다.<br/><br/> <img src="/antman/img/intro2.png"/></td>
     <td width="320" height="240"><font size="5"><a href="/antman/intro/greet.jsp"/><b>병원장인사말</b></a></font><br/><br/>
@@ -123,7 +123,7 @@ body{  }
 		     
           </div>
 	</div>
-	<table><tr></tr><td>여기에는 뭘 ㄴ넣냐...</td></table>
+	
 	
 </div>
 
