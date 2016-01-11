@@ -77,10 +77,10 @@
     
     <tr><td>글쓴이</td><td><input type="hidden" name="name" value="${sessionScope.memname }"/>${sessionScope.memname }</td></tr>
     <tr><td>글제목</td><td><input type="text" name="subject"/></td></tr>
-    <c:if test="${!empty  ddto.drId}">
+    <c:if test="${!empty ddto.drId}">
     <tr><td>선생님</td><td><input type="hidden" name="drname" value="${ddto.drname}"/>${ddto.drname}</td>
     </c:if>
-    <c:if test="${!empty  edto.name}">
+    <c:if test="${!empty edto.name}">
     </td></tr>
        <tr><td>직원</td><td><input type="hidden" name="ename" value="${edto.name}"/>${edto.name}</td>
     </c:if>
@@ -88,7 +88,7 @@
     <tr><td>글내용</td><td><textarea name="content" rows="2" ROWS="5" COLS="40"/></textarea></td></tr>
     <tr><td colspan="2"><input type="submit" value="칭찬하기"/><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praiseboard.do'">목록으로</button></td></tr>
     
-   
+   </form>
     </table>
  </div>
  </center>

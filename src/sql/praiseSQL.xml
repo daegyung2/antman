@@ -41,15 +41,15 @@
       </select>
       
       <update id="updatepraise" parameterClass="praise">   
-      update praise set drname = #drname#, id = #id#,  subject = #subject#, name = #name#, content = #content# where pid = #pid#
+      update praise set drname = #drname#, drid = #drid#,  subject = #subject#, name = #name#, content = #content# where pid = #pid#
       </update>
 
       <insert id="insertpraise" parameterClass="praise">
       INSERT INTO praise (	   pid,
                           	   id,
                           	   drid,
+                               drname,
                                name,
-                               ename,
                                subject,
                                CONTENT,
                                REG_DATE
@@ -57,8 +57,8 @@
                     VALUES (praise_SEQ.NEXTVAL,
                             #id#,
                             #drid#,
+                            #drname#,
                             #name#,
-                            #ename#,
                             #subject#,
                             #content#,
                             sysdate
@@ -71,7 +71,7 @@
                           	   id,
                           	   eid,
                                name,
-                               drname,
+                               ename,
                                subject,
                                CONTENT,
                                REG_DATE
@@ -80,7 +80,7 @@
                             #id#,
                             #eid#,
                             #name#,
-                            #drname#,
+                            #ename#,
                             #subject#,
                             #content#,
                             sysdate
@@ -110,6 +110,7 @@
 
       <result property="pid" column="pid"/>
       <result property="id" column="id"/>
+      <result property="drid" column="drid"/>
       <result property="name" column="name"/>
       <result property="subject" column="subject"/>
       <result property="reg_date" column="reg_date"/>
@@ -124,7 +125,7 @@
          
    
       <select id="finddoctor" resultMap="finddoctor">   
-      select * from(select aa.pid,aa.id,aa.name,aa.subject,aa.content,aa.reg_date,aa.drname,bb.major,bb.exarea,bb.dpname,bb.drimg1 from praise aa join doctor bb on aa.drname = bb.drname)where pid = #pid#    
+      select * from(select bb.drid,aa.pid,aa.id,aa.name,aa.subject,aa.content,aa.reg_date,aa.drname,bb.major,bb.exarea,bb.dpname,bb.drimg1 from praise aa join doctor bb on aa.drname = bb.drname)where pid = #pid#    
   </select>   
   
   <resultMap id="selectdepart" class="praise">
@@ -151,5 +152,8 @@
      </select>
 
   
+      <update id="updateeidpraise" parameterClass="praise">   
+      update praise set eid = #eid#, subject = #subject#, ename = #ename#, content = #content# where pid = #pid#
+      </update>
 
 </sqlMap>

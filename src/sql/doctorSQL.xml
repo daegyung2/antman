@@ -107,4 +107,9 @@
      <select id="doctorprselect" resultClass="doctor" parameterClass="int">
   		select drid,drname from DOCTOR where drId = #drId# 
   </select>
+  
+    <select id="name" resultClass="String" parameterClass ="int">   
+      select drname from doctor where drid = #drid#
+   </select> 
+  
 </sqlMap>
