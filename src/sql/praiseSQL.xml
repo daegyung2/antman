@@ -31,6 +31,10 @@
       select pid,id,name,drname,subject,content,reg_date from praise where id = #id# order by pid desc
       </select>
       
+            <select id="selectpraiseB" resultMap="boardRes">
+      select pid,id,name,drname,subject,content,reg_date from praise where eid = #eid# order by pid desc
+      </select>
+      
    
       <select id="viewpraise" resultMap="boardRes" parameterClass="int">
          select pid,id,name,drname,subject,content,reg_date from praise where pid = #pid# 

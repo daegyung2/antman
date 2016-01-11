@@ -28,7 +28,7 @@
 <ul id="nav">
 	<li><a href="/antman/e_simple.do?eid=${sessionScope.memeid}&name=${sessionScope.memname}" class="title">간편예약현황</a></li>
 	<li><a href="/antman/e_mypage.do?eid=${sessionScope.memeid}&name=${sessionScope.memname}" class="title">의료진스케줄</a></li>
-	<li><a href="/antman/praiseboard.do?eid=${sessionScope.memeid}&name=${sessionScope.memname}" class="title">나의칭찬</a></li>
+	<li><a href="/antman/e_praiseboard.do?eid=${sessionScope.memeid}&name=${sessionScope.memname}" class="title">나의칭찬</a></li>
 	<li><a href="/antman/e_modifyForm.do?Eid=${sessionScope.memeid}&drname=${sessionScope.memname}" class="title">회원정보수정</a></li>
 	<li><a href="#" class="title">회원탈퇴</a></li>
 </ul>

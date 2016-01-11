@@ -26,7 +26,7 @@
 </div>
 
 <div id="side">
-	<jsp:include page="/p_mypage/p_mypage_sidebar.jsp" flush="true | false"/>
+	<jsp:include page="/e_mypage/e_mypage_sidebar.jsp" flush="true | false"/>
 </div>
 
 
@@ -56,7 +56,7 @@
 		<tr>
 			
 		     <td><h3>${dto.pid}</h3></td>
-			 <td><h3><a href="/antman/praisecontent.do?pid=${dto.pid}&name=${dto.name}&id=${dto.id}">${dto.subject}</a></h3>
+			 <td><h3><a href="/antman/e_praisecontent.do?pid=${dto.pid}&name=${dto.name}&id=${dto.id}">${dto.subject}</a></h3>
 				${dto.content } <br/>
 				<FONT size="2">
 				±€æ¥¿Ã : ${dto.name } |
