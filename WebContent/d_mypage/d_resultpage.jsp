@@ -127,8 +127,8 @@ function checkIt() {
 <form action="/antman/scheduleresult.do" method="post">
 
 <tr>
-<th width="200">진료번호</th><td width="300" colspan = "4"><c:if test="${!empty rdto}"><input type="text" name="mid" value="${rdto.mid }">${rdto.mid }</c:if>
-<c:if test="${empty rdto}"><input type="text" name="mid" value="0"></c:if>
+<th width="200">진료번호</th><td width="300" colspan = "4"><c:if test="${!empty rdto}"><input type="hidden" name="mid" value="${rdto.mid }">${rdto.mid }</c:if>
+<c:if test="${empty rdto}"><input type="hidden" name="mid" value="0"></c:if>
 </td>
 </tr>
 <tr>
