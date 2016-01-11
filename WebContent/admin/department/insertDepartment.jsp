@@ -53,7 +53,7 @@
 <td width="200">
 <select name="p_depart_id" >
 <c:forEach var="dto" items="${list}" >
-<option value="${dto.p_depart_id }">${dto.p_depart_id }</option>
+<option value="${dto.p_depart_id }">${dto.p_dpname }</option>
 </c:forEach>
 <input type="button" value="¼±ÅÃ" />
 <!-- <input type="text" size="10" maxlength="10" name="p_dpname" /> -->

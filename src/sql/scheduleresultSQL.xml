@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="result">
+
+   <typeAlias alias="result" type="admin.bean.ScheduleResultDTO" />
+   
+   <insert id="insertresult" parameterClass="result" >
+   insert into medrecord(mid,drid,drname,dpname,id,name,jumin1,jumin2,age,
+   gender,symptom1,symptom2,symptom3,symptom4,treattype,treatdate,
+   prescription,treatconfirm)
+   
+   values(medrecord_seq.NEXTVAL,#drid#,#drname#,#dpname#,#id#,#name#,#jumin1#,#jumin2#,#age#,
+   #gender#,#symptom1#,#symptom2#,#symptom3#,#symptom4#,#treattype#,#treatdate#,
+   #prescription#,#treatconfirm#)
+   </insert>
+   
+      <select id="midselect" parameterClass="result" resultClass="result">
+   select mid from medrecord where id = #id#
+   </select>
+   
+   <select id="resultselect" parameterClass="result" resultClass="result">
+   select mid,symptom1,symptom2,symptom3,symptom4,treattype,to_char(treatdate,'YYYY-MM-DD') treatdate from medrecord where mid = #mid# and drid = #drid# and dpname = #dpname#  
+   </select>
+   
+   
+  
+   <update id="updateresult"  parameterClass="result" >
+   update medrecord set symptom1 = #symptom1# ,symptom2 = #symptom2# ,symptom3 = #symptom3# ,symptom4 = #symptom4#, 
+   treattype = #treattype# , treatdate = #treatdate# , prescription = #prescription#, treatconfirm = #treatconfirm# where mid = #mid#
+ </update>
+   
+
+   <delete id="deleteresult"  parameterClass="result" >
+   delete medrecord where mid = #mid#
+ </delete>
+   </sqlMap>

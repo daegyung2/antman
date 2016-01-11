@@ -24,9 +24,15 @@ public class ScheduleDTO {
 	private String nextadate;
 	private String view;
 	private String PageNum;
+	private String ymds;
 	
 	
-	
+	public String getYmds() {
+		return ymds;
+	}
+	public void setYmds(String ymds) {
+		this.ymds = ymds;
+	}
 	public String getPageNum() {
 		return PageNum;
 	}

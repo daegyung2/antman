@@ -93,4 +93,9 @@
   <select id="drIdCheck" resultClass="int" parameterClass="doctor">
   		select count(*) from DOCTOR where drId = #drId# and drname=#drname#
   </select>
+  
+    <select id="doctorinfo" resultClass="doctor" parameterClass="doctor">
+  		select dpname from DOCTOR where drId = #drId# 
+  </select>
+  
 </sqlMap>

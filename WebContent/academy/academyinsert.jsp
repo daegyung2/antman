@@ -57,17 +57,17 @@
 		</html>
 		</td><td><select name="hour">
 		<option value="9">9</option>
-		<option>10</option>
-		<option>11</option>
-		<option>12</option>
-		<option>1</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5</option>
-		<option>6</option>
-		<option>7</option>
-		<option>8</option></td>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+		<option value="13">1</option>
+		<option value="14">2</option>
+		<option value="15">3</option>
+		<option value="16">4</option>
+		<option value="17">5</option>
+		<option value="18">6</option>
+		<option value="19">7</option>
+		<option value="20">8</option></td>
 		<td>
 		<select name="minute">
 		<option value="00">00</option>
@@ -77,17 +77,17 @@
 		<tr>
 <td>학술행사종료시간</td><td colspan="2"><select name="houre">
 		<option value="9">9</option>
-		<option>10</option>
-		<option>11</option>
-		<option>12</option>
-		<option>1</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5</option>
-		<option>6</option>
-		<option>7</option>
-		<option>8</option></td>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+		<option value="13">1</option>
+		<option value="14">2</option>
+		<option value="15">3</option>
+		<option value="16">4</option>
+		<option value="17">5</option>
+		<option value="18">6</option>
+		<option value="19">7</option>
+		<option value="20">8</option></td>
 		
 		<td>
 		<select name="minutee">

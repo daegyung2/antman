@@ -72,7 +72,7 @@
 <td width="50">${dto.init }</td>
 <td width="100">${dto.d_info1}</td>
 <td width="200">
-<input type="button" value="수정하기" id="update" onClick="window.location='/antman/updateDepartPro.do?depart_id=${dto.depart_id}'"/>
+<input type="button" value="수정하기" id="update" onClick="window.location='/antman/updateDepartment.do?depart_id=${dto.depart_id}'"/>
 <input type="button" value="내용보기" id="content" onClick="window.location='/antman/departmentContent.do?depart_id=${dto.depart_id}'" />
 <input type="button" value="삭제하기" id="delete" onClick="goDel(${dto.depart_id},${dto.dpname });" /> <!--  onClick="window.location='/antman/deleteDepart.do?depart_id=${dto.depart_id}'"-->
 </td>

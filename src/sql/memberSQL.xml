@@ -64,5 +64,11 @@ select count(*) from member where id=#id# and passwd=#passwd#
       update member set passwd = #passwd# , phone = #phone# , e_mail = #e_mail# where id=#id#
       </update>
  
+ 	  <select id="memberidresult" resultClass="dto" parameterClass="dto">
+	  select id from member where name = #name#
+	  </select>
 
+<select id="memberinfo" resultClass="dto" parameterClass="dto">
+	  select * from member where id = #id#
+	  </select>
 </sqlMap>

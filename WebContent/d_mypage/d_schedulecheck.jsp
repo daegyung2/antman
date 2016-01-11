@@ -48,7 +48,7 @@
 	<div class="main">
 		<div id="title"><h2>진료스케줄조회</h2></div>
 		<form action = "/antman/schedulecheck.do" method="post">
-<input type="hidden" name ="drid" value="${sessionScope.memdrid}">
+<input type="text" name ="drid" value="${sessionScope.memdrid}">
 <input type="hidden" name ="drname" value="${sessionScope.memname}">
 <center>
 <table width="450" border="1">
@@ -99,7 +99,7 @@ String today = sdms.format(cal.getTime());
 
 <td>
 <form action = "/antman/schedulecheck.do" method="post">
-<input type="hidden" name ="drid" value="${sessionScope.memdrid}">
+<input type="text" name ="drid" value="${sessionScope.memdrid}">
 <input type="hidden" name ="drname" value="${sessionScope.memname}">
 
 <select name="name" >
@@ -116,7 +116,7 @@ String today = sdms.format(cal.getTime());
 
 <td>
 <form action = "/antman/schedulecheck.do" method="post">
-<input type="hidden" name ="drid" value="${sessionScope.memdrid}">
+<input type="text" name ="drid" value="${sessionScope.memdrid}">
 <input type="hidden" name ="drname" value="${sessionScope.memname}">
 <select name="id" >
 <c:forEach var="dtoid" items="${slist }">
@@ -134,9 +134,18 @@ String today = sdms.format(cal.getTime());
 </table>
 </center>
 <br/>
+<center>
+<c:if test="${see == 1}">
+의사시간이 중복됩니다. 다른시간을 선택해주십시오.
+</c:if>
+<c:if test="${see == 2}">
+환자시간이 중복됩니다. 다른시간을 선택해주십시오.
+</c:if>
+</center>
+
 <c:if test="${view eq yes}">
 <center>
-<table width="1000" border="1">
+<table width="760" border="1">
 
 <tr>
 
@@ -144,7 +153,6 @@ String today = sdms.format(cal.getTime());
 <th width="100">회차</th>
 <th width="70">아이디</th>
 <th width="90">이름</th>
-<th width="240">증상입력</th>
 <th width="70">회차선택</th>
 <th width="80">다음진료</th>
 <th width="50">시간</th>
@@ -152,28 +160,45 @@ String today = sdms.format(cal.getTime());
 <th width="50">등록</th>
 </tr>
 <tr>
-<form action = "/antman/nextscheduleupdate.do" method="post">
-<c:forEach var="dto" items="${aplist }">
+
+
+<c:forEach var="dto" items="${aplist }" varStatus="status" >
 
 <td>${dto.adate}</td>
 <td>${dto.nextadate}</td>
 <td>${dto.id}</td>
 <td>${dto.name}
+
+</td>
+<td>
+<script language="javascript">
+
+function popup()
+{
+	var yn = window.confirm("회차진료를 등록하시겠습니까?");
+	
+	if(yn) {
+		document.ggform.submit();
+	}
+	
+  
+  }
+</script>
+<form name="ggform" action = "/antman/nextscheduleupdate.do?" method="post">
+<input type="hidden" name="aid" value="${dto.aid}">
+<input type="hidden" name="id" value="${dto.id}">
+<input type="hidden" name="nextadate" value="${dto.nextadate}">
 <input type="hidden" name="name" value="${dto.name}">
 <input type="hidden" name="drname" value="${dto.drname}">
 <input type="hidden" name="dpname" value="${dto.dpname}">
-<input type="hidden" name="id" value="${dto.id}">
-<input type="hidden" name="drid" value="${dto.drid}">
 <input type="hidden" name="jumin1" value="${dto.jumin1}">
 <input type="hidden" name="jumin2" value="${dto.jumin2}">
-</td>
-<td>
-<input type="text"  name="symptom" value="${adto.symptom }"placeholder="증상을 입력하세요">&nbsp;<input type="button" value="입력" onclick="javascript:window.location='/antman/symptomupdate.do?aid=${dto.aid }&id=${dto.id}&nextadate=${dto.nextadate}'">
-<td><select name="nextdate" >
+
+<select name="nextdate" >
 <option value="2차진료">2차진료</option>
 <option>3차진료</option>
 <option>4차진료</option>
-
+</select>
 </td>
 
 <td>
@@ -193,7 +218,7 @@ String today = sdms.format(cal.getTime());
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script type="text/javascript">
 $(function() {
-   $("#sa_tourgodate1").datepicker({
+   $("#sa_tourgodate${status.count}").datepicker({
       dateFormat: 'yy-mm-dd',
       monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
       dayNamesMin: ['일','월','화','수','목','금','토'],
@@ -212,35 +237,36 @@ Calendar cal1 = Calendar.getInstance();
 String todays = sdm1.format(cal1.getTime());
 %>
 <p>
-<input type="text" id="sa_tourgodate1" name="ymds" value="<%=todays%>" size="6"/><%--value="" 안에 오늘 날짜가 표시되도록 코딩해야 함 : tourbackdate 계산 알고리즘을 응용할까?--%>
+<input type="text" id="sa_tourgodate${status.count}" name="ymds" value="<%=todays%>" size="6"/><%--value="" 안에 오늘 날짜가 표시되도록 코딩해야 함 : tourbackdate 계산 알고리즘을 응용할까?--%>
 </p>
 </body>
 </html>
 </td>
 <td><select name="hour" >
-<option value="1">9</option>
-<option>10</option>
-<option>11</option>
-<option>12</option>
-<option>1</option>
-<option>2</option>
-<option>3</option>
-<option>4</option>
-<option>5</option>
-<option>6</option>
-<option>7</option>
-<option>8</option></td>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">1</option>
+<option value="14">2</option>
+<option value="15">3</option>
+<option value="16">4</option>
+<option value="17">5</option>
+<option value="18">6</option>
+<option value="19">7</option>
+<option value="20">8</option></td>
 <td>
 <select name="minute" >
-<option value="1">00</option>
+<option value="00">00</option>
 <option>10</option>
 <option>20</option>
 <option>30</option>
 <option>40</option>
 <option>50</option>
 </td>
-<td><input type="submit" value=등록 ></td>
+<td><input type="button" value="등록" onclick="javascript:popup();"></td>
 </tr>
+
 </c:forEach>
 </table>
 </center>
@@ -258,4 +284,3 @@ String todays = sdm1.format(cal1.getTime());
 
 	</div>
 </div>
-

@@ -22,6 +22,7 @@ public class D_ScheduleCheckBean {
 	private String view = null;
 	private String no;
 	private String yes;
+	private int see;
 	@RequestMapping("schedulecheckform.do")
 	public String schedulecheckform (HttpServletRequest request, ScheduleDTO dto, AppointmentDTO adto){
 		int drid = Integer.parseInt(request.getParameter("drid"));
@@ -33,8 +34,10 @@ public class D_ScheduleCheckBean {
 	@RequestMapping("schedulecheck.do")
 	public String schedulecheck (HttpServletRequest request, ScheduleDTO dto, AppointmentDTO adto){
 		int drid = Integer.parseInt(request.getParameter("drid"));
+		
 		dto.setDrid(drid);
 		String shit = request.getParameter("drname");
+		
 		String ymd = request.getParameter("ymd");
 		adto.setAdate(ymd);
 		System.out.println(shit);
@@ -63,6 +66,7 @@ public class D_ScheduleCheckBean {
 		
 		aplist = sqlMapclient.queryForList("appointment.drtodayappointcheck" , adto);
 		}else{}
+		
 		List slist = sqlMapclient.queryForList("appointment.drsnameidcheck",adto);
 		
 		
@@ -75,10 +79,14 @@ public class D_ScheduleCheckBean {
 	}
 	
 	@RequestMapping("nextscheduleupdate.do")
-	public String nextscheduleupdate (String ymds,HttpServletRequest request, LoginDataBean ldto ,ScheduleDTO dto ,AppointmentDTO adto){
-	
+	public String nextscheduleupdate (HttpServletRequest request, LoginDataBean ldto ,ScheduleDTO dto ,AppointmentDTO adto){
+		
+		int drid = Integer.parseInt(request.getParameter("drid"));
+		System.out.println(adto.getAdate());
+		System.out.println(adto.getId());
+		dto.setDrid(drid);
 		String nextdate = request.getParameter("nextdate");
-		ymds = request.getParameter(ymds);
+		String ymds = dto.getYmds();
 		String hour = dto.getHour();
 		String minute = dto.getMinute();
 		String adate = ymds+" "+hour+":"+minute;
@@ -88,28 +96,52 @@ public class D_ScheduleCheckBean {
 
 	adto.setNextadate(nextdate);
 	dto.setNextsdate(nextdate);
-	
-	sqlMapclient.insert("appointment.nextappointupdate1",adto);
-
-	sqlMapclient.insert("schedule.nextscheduleinsert",dto);
 
 	
+	int dcheck = (Integer) sqlMapclient.queryForObject("appointment.appointjungbok",adto);//의사의 스케쥴시간과 환자 스케쥴시간이 중복되는지 검사한다.
+	int scheck = (Integer) sqlMapclient.queryForObject("schedule.schedulejungbok",dto);
+	
+	if(dcheck == 1){
+		see = 1;	
+		List slist = sqlMapclient.queryForList("appointment.drsnameidcheck",dto.getDrid());
+		request.setAttribute("slist", slist);
+		request.setAttribute("see", see);
+		return "/d_mypage/d_schedulecheck.jsp";
+	}else if(scheck == 1){
+	see = 2;
+	List slist = sqlMapclient.queryForList("appointment.drsnameidcheck",dto.getDrid());
+	request.setAttribute("slist", slist);
+	request.setAttribute("see", see);
+	return "/d_mypage/d_schedulecheck.jsp";
+	}else if(dcheck == 0 && scheck == 0){
+		sqlMapclient.insert("appointment.nextappointupdate1",adto);
+		sqlMapclient.insert("schedule.nextscheduleinsert",dto);
+	}else{}
+	
+	
 
 
+	
+	List slist = sqlMapclient.queryForList("appointment.drsnameidcheck",dto.getDrid());
+	request.setAttribute("slist", slist);
 		return "/d_mypage/d_schedulecheck.jsp";
 	}
 	
 	@RequestMapping("/symptomupdate.do")
 	public String syptomupdate (HttpServletRequest request, LoginDataBean ldto ,ScheduleDTO dto ,AppointmentDTO adto){
 		
+	
+		System.out.println(dto.getDrid()+1);/*
+		System.out.println(drid);
+		System.out.println(drname);*/
 		
 	sqlMapclient.update("appointment.symptomupdate",adto);
 	adto = (AppointmentDTO) sqlMapclient.queryForObject("appointment.symptomselect",adto);
 /*	sqlMapclient.insert("schedule.syptomupdate",dto);*/
-	
-	
+	List slist = sqlMapclient.queryForList("appointment.drsnameidcheck",dto.getDrid());
+	System.out.println(slist.size());
 	request.setAttribute("adto",adto);
-
+request.setAttribute("slist", slist);
 		return "/d_mypage/d_schedulecheck.jsp";
 	}
 }

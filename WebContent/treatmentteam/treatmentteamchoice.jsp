@@ -28,7 +28,7 @@
 </div>
 
 <div class="container">
-	<div class="sub"><b>여기에 글</b></div>
+	<div class="sub"><b>${pdto.p_dpname }</b></div>
 	<div class="main">
 	
 		<table width="1000" border="0">

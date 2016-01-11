@@ -140,7 +140,20 @@ $(function(){
 	</div>
 	<div class="quickbtn">
 		<a href="/antman/appointmentmain.do"><div id="btn01"><font color="#FFFFFF"><b>온라인 예약<br/>온라인으로 바로 예약하실 수 있습니다.</b></font></div></a>
-		<a href="/antman/p_mypage.do"><div id="btn02"><font color="#FFFFFF"><b>진료 조회<br/>진료예약 및 내역조회가 가능합니다.</b></font></div></a>
+		<c:if test="${sessionScope.memauth eq 'P' && sessionScope.memId ne null }">
+		<a href="/antman/p_mypage.do?id=${sessionScope.memId}">
+		</c:if>
+		<c:if test="${sessionScope.memId eq null }">
+		<a href="/antman/loginForm.do">
+		</c:if>
+				<c:if test="${sessionScope.memauth eq 'D' && sessionScope.memId ne null }">
+		<a href="/antman/scheduleform.do?drid=${sessionScope.memdrid}&drname=${sessionScope.memname}">
+		</c:if>
+		
+			   <c:if test="${sessionScope.memId ne null && sessionScope.memauth eq 'E' }">
+    			<a href="/antman/e_mypage.do">
+    		    </c:if>
+		<div id="btn02"><font color="#FFFFFF"><b>진료 조회<br/>진료예약 및 내역조회가 가능합니다.</b></font></div></a>
 	</div>
 	
 	<div class="boards">
