@@ -49,7 +49,7 @@
 	<th data-field="name">³»¿ë</th>
       </tr>
     </thead>
-   <input type="hedden" name="pid" value="${dto.pid}"/>
+   <input type="hidden" name="pid" value="${dto.pid}"/>
    
                 <c:forEach var="dto" items="${list}" >
                 

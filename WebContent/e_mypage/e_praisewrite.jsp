@@ -38,7 +38,7 @@
   <div><table width="600" border="1" align="center">
     
         <tr><td>칭찬할선생님</td><td>
-        <form action="/antman/p_praisewrite.do" method="post">
+        <form action="/antman/e_praisewrite.do" method="post">
     <select name="dpname">
 	<c:forEach var="dto" items="${dplist}" >
 	<option value="${dto.dpname}">${dto.dpname}</option>
@@ -47,7 +47,7 @@
  	</form>
 
  
- <form action="/antman/p_praisewrite.do" method="post">  
+ <form action="/antman/e_praisewrite.do" method="post">  
  
     <select name="drname">
 	<c:forEach var="dto" items="${drlist}" >
@@ -59,7 +59,7 @@
 </form>
 
  </td>
-	<form action="/antman/p_praisepro.do" method="post">	
+	<form action="/antman/e_praisepro.do" method="post">	
  
   
     <tr><td>아이디</td><td><input type="hidden" name="id" value="${sessionScope.memId}"/>${sessionScope.memId}</td></tr>

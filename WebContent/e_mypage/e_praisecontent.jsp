@@ -83,9 +83,9 @@
 <br/>
 <HR width=100% >
 <br/>
-<center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/p_praiseupdate.do?pid=${dto.pid}&id=${sessionScope.memId}&name=${sessionScope.memname} }'">수정하기</button> 
-<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/p_praisedelete.do?pid=${dto.pid}&id=${sessionScope.memId}&name=${sessionScope.memname}'">삭제하기</button> 
- <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/p_praiseboard.do?pid=${dto.pid}&id=${sessionScope.memId}&name=${sessionScope.memname}'">목록으로</button></center>
+<center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/e_praiseupdate.do?pid=${dto.pid}&id=${sessionScope.memId}&name=${sessionScope.memname}'">수정하기</button> 
+<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/e_praisedelete.do?pid=${dto.pid}&id=${sessionScope.memId}&name=${sessionScope.memname}'">삭제하기</button> 
+ <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/e_praiseboard.do?pid=${dto.pid}&id=${sessionScope.memId}&name=${sessionScope.memname}'">목록으로</button></center>
   </center>
 </body>
 </html>

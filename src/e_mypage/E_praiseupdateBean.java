@@ -17,8 +17,9 @@ public class E_praiseupdateBean {
 	
 
 	@RequestMapping("/e_praiseupdate.do")
-	public String p_praiseupdate(HttpServletRequest request,PraiseVO dto){
+	public String e_praiseupdate(HttpServletRequest request,PraiseVO dto){
 		int pid =(int)dto.getPid();
+		System.out.println(dto.getPid());
 		dto = (PraiseVO)sqlMapClient.queryForObject("praise.finddoctor",dto.getPid());
 		request.setAttribute("pid",pid);
 		request.setAttribute( "dto",dto );
@@ -27,7 +28,7 @@ public class E_praiseupdateBean {
 	
 	
 	@RequestMapping("/e_praiseupdatepro.do")
-	public String praiseupdatepro(HttpServletRequest request,PraiseVO dto){
+	public String e_praiseupdatepro(HttpServletRequest request,PraiseVO dto){
 		
 		sqlMapClient.update("praise.updatepraise",dto);
 

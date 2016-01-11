@@ -36,7 +36,7 @@
 		<div id="title"><h2>칭찬합시다</h2></div>
       
       
-     <form action="/antman/p_praiseupdatepro.do" method="post">
+     <form action="/antman/e_praiseupdatepro.do" method="post">
   
     <table width="600" border="1" align="center">
     <tr>
