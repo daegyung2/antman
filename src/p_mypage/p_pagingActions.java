@@ -1,6 +1,6 @@
 package p_mypage;
 
-public class pagingActions {
+public class p_pagingActions {
 
 	private int currentPage;   // 현재페이지
 	private int totalCount;	 // 전체 게시물 수
@@ -18,7 +18,7 @@ public class pagingActions {
 	
 
 	// 페이징 생성자
-	public pagingActions(int currentPage, int totalCount, int blockCount,
+	public p_pagingActions(int currentPage, int totalCount, int blockCount,
 			int blockPage, int drid) {
 		this.drid = drid;
 		this.blockCount = blockCount;
@@ -53,7 +53,7 @@ public class pagingActions {
 		// 이전 block 페이지
 		pagingHtml = new StringBuffer();
 		if (currentPage > blockPage) {
-			pagingHtml.append("<a href=/antman/scheduleform.do?PageNum="
+			pagingHtml.append("<a href=/antman/p_praiseboard.do?PageNum="
 					+ (startPage - 1) + "&drid=" + drid + ">");
 			pagingHtml.append("이전");
 			pagingHtml.append("</a>");
@@ -72,7 +72,7 @@ public class pagingActions {
 				pagingHtml.append("</font></b>");
 			} else {
 				pagingHtml
-						.append("&nbsp;<a href='/antman/scheduleform.do?PageNum=");
+						.append("&nbsp;<a href='/antman/p_praiseboard.do?PageNum=");
 				pagingHtml.append(i);
 				pagingHtml.append("&drid=" + drid);
 				pagingHtml.append("'>");
@@ -87,7 +87,7 @@ public class pagingActions {
 
 		// 다음 block 페이지
 		if (totalPage - startPage >= blockPage) {
-			pagingHtml.append("<a href=/antman/scheduleform.do?PageNum="
+			pagingHtml.append("<a href=/antman/p_praiseboard.do?PageNum="
 					+ (endPage + 1) + "&drid=" + drid + ">");
 			pagingHtml.append("다음");
 			pagingHtml.append("</a>");
