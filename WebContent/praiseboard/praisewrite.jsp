@@ -69,20 +69,20 @@
 
 	<form action="/antman/praisepro.do" method="post">	
     <tr>
-    <c:if test="${empty  ddto.drId}"><input type="text" name="drid" value="0"></c:if>
-    <c:if test="${!empty  ddto.drId}"><input type="text" name="drid" value="${ddto.drId}"></c:if>
-     <c:if test="${empty  edto.eid}"><input type="text" name="eid" value="0"></c:if>
-    <c:if test="${!empty  edto.eid}"><input type="text" name="eid" value="${edto.eid}"></c:if>
+    <c:if test="${empty  ddto.drId}"><input type="hidden" name="drid" value="0"></c:if>
+    <c:if test="${!empty  ddto.drId}"><input type="hidden" name="drid" value="${ddto.drId}"></c:if>
+     <c:if test="${empty  edto.eid}"><input type="hidden" name="eid" value="0"></c:if>
+    <c:if test="${!empty  edto.eid}"><input type="hidden" name="eid" value="${edto.eid}"></c:if>
     <td>아이디</td><td><input type="hidden" name="id" value="${sessionScope.memId }"/>${sessionScope.memId }</td></tr>
     
     <tr><td>글쓴이</td><td><input type="hidden" name="name" value="${sessionScope.memname }"/>${sessionScope.memname }</td></tr>
     <tr><td>글제목</td><td><input type="text" name="subject"/></td></tr>
     <c:if test="${!empty  ddto.drId}">
-    <tr><td>선생님</td><td><input type="text" name="drname" value="${ddto.drname}"/>
+    <tr><td>선생님</td><td><input type="hidden" name="drname" value="${ddto.drname}"/>${ddto.drname}</td>
     </c:if>
     <c:if test="${!empty  edto.name}">
     </td></tr>
-       <tr><td>직원</td><td><input type="text" name="ename" value="${edto.name}"/>
+       <tr><td>직원</td><td><input type="hidden" name="ename" value="${edto.name}"/>${edto.name}</td>
     </c:if>
     </td></tr>
     <tr><td>글내용</td><td><textarea name="content" rows="2" ROWS="5" COLS="40"/></textarea></td></tr>

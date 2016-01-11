@@ -11,8 +11,51 @@ public class EmployeeDTO {
    private String emimg4;
    private String emimg5;
    private String emdescription;
+   private int pid;
+   private String subject;
+   private String content;
+   private String reg_date;
+   private String ename;
+   private String id;
    
    
+   
+public String getId() {
+	return id;
+}
+public void setId(String id) {
+	this.id = id;
+}
+public int getPid() {
+	return pid;
+}
+public void setPid(int pid) {
+	this.pid = pid;
+}
+public String getSubject() {
+	return subject;
+}
+public void setSubject(String subject) {
+	this.subject = subject;
+}
+public String getContent() {
+	return content;
+}
+public void setContent(String content) {
+	this.content = content;
+}
+public String getReg_date() {
+	return reg_date;
+}
+public void setReg_date(String reg_date) {
+	this.reg_date = reg_date;
+}
+public String getEname() {
+	return ename;
+}
+public void setEname(String ename) {
+	this.ename = ename;
+}
 public String getEmimg1() {
 	return emimg1;
 }
