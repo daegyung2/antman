@@ -35,7 +35,7 @@
 
 <div id="container">
 	<div class="main">
-		<div id="title"><center><h2>의료진 스케줄 현황</h2></center></div>
+		<div id="title"><center><h2>의료진 스케줄 현황</h2></center></div><br/>
 
 
 
@@ -43,22 +43,23 @@
  
 <table width="700" border="1" align="center">
 
-<form action="/antman/praisewrite.do" method="post">  
- 
-    <select name="drname">
-	<c:forEach var="dto" items="${dolist}" >
-	<option value="${dto.drname }">${dto.drname}</option>
+<form action="/antman/e_mypage.do" method="post">  
+<center>
+  <input type="hidden" name="eid" value="${sessionScope.memeid }">
+    <select name="drid">
+	<c:forEach var="dto" items="${dlist}" >
+	<option value="${dto.drId}">${dto.drname}</option>
 	</c:forEach>	
 </select>
 <input type="submit" value="선생님선택">
-
-</form>
+</center>
+</form><br/><br/>
 		
-        <c:if test="${slist == null }">
+        <c:if test="${empty slist}">
         <center><h2>현재 의료진 스케줄이 없습니다.</h2></center>
         </c:if>
           
-        <c:if test="${slist != null }" >
+        <c:if test="${!empty slist}" >
        
         <tr align="center">
 		<th width="90">진료번호</th>

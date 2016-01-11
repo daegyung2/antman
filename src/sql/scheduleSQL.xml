@@ -53,7 +53,9 @@
 	  select sid,drname,dpname,name,to_char(sdate,'YYYY-MM-DD HH:MI')sdate,nextsdate from schedule where drid = #drid# order by sid desc
 	</select>
 	
-
+	<select id="drschedulecheckB" resultClass="dsche"  >
+	  select sid,drname,dpname,name,to_char(sdate,'YYYY-MM-DD HH:MI')sdate,nextsdate from schedule where drid = #drid# order by sid desc
+	</select>
 	
 	 <!-- 예약스케쥴에서 중복부분 삭제하기   --> 
 	<typeAlias alias="dsche" type="admin.bean.ScheduleDTO"/>

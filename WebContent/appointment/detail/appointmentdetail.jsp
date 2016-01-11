@@ -11,11 +11,12 @@
 
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
+	#footer{width:100%; height:300px; margin-bottom:0px;}
 	#top{width:200px; float:top; margin-left:100px; }
 	.container{width:1100px; height:1300px; margin:0 auto;  margin-left:230px; position:relative;}
 	.container .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
 	.container .sub b{font-size:22px; color:#000000;}
-	.container .main{width:1000px; height:1100px; margin-left:50px; top:30px; position:relative;}
+	.container .main{width:1000px; height:1200px; margin-left:50px; top:30px; position:relative;}
 	.ssibal {margin-left: 230px;}
 </style>
 
@@ -39,6 +40,7 @@
 	
 	
 	#side{width:200px; float:left; margin-left:0px;}
+	#footer{width:100%; height:300px; margin-bottom:0px;}
 	#container{width:1100px; height:270px; margin:0 auto;  margin-left:180px; position:relative; margin-bottom: 50px;}
 	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:-17px; position:relative}
 	#container .mains{width:1000px; height:1100px; margin-left:50px; margin-top:-17px; position:relative}
@@ -396,6 +398,12 @@ ${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='
 </div>
 
 </c:if>
+</div>
+</div>
+</div>
+
+<div id="footer">
+	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
 </div>
 
 

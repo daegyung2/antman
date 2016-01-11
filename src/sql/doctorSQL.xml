@@ -47,6 +47,10 @@
    select * from DOCTOR where drId = #drId#
  </select>
  
+  <select id="selectDrdp" resultMap="doctor.dto" parameterClass="doctor">
+   select * from DOCTOR where dpname = #dpname#
+ </select>
+ 
     <resultMap id="doctorssibal" class="doctor" >
      <result property="drId" column="drId" />
      </resultMap>
