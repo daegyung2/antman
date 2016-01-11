@@ -93,6 +93,10 @@
    <select id="selectLastNo" resultClass="int" >
          SELECT count(*) count from praise 
       </select>
+      
+      <select id="selectLastNoB" resultClass="int">
+      	select count(*) count from praise where id=#id#
+      </select>
          
        <select id="selectLastNodr" resultClass="int" >
          SELECT count(*) count from praise where drname = #drname#   

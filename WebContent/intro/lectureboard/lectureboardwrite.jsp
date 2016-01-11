@@ -11,11 +11,13 @@
 
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
-	#top{width:200px; float:top; margin-left:100px; }
-	.container{width:1100px; height:1300px; margin:0 auto;  margin-left:230px; position:relative;}
-	.container .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
-	.container .sub b{font-size:22px; color:#000000;}
-	.container .main{width:1000px; height:1100px; margin-left:50px; top:30px; position:relative;}
+	#footer{width:100%; height:300px; margin-bottom:0px;}
+	#container{width:1100px; height:1300px; margin:0 auto;  margin-left:220px; margin-top:-20px; position:relative;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; top:5px; position:relative;}
+	
+	#container .main table{width:700px; border:1px solid #BDBDBD; border-collapse:collapse; border-top:5px solid #5586EB; }
+	#container .main th{width:100px; text-align:center; padding:5px 0;}
+	#container .main td{padding:5px 0 5px 10px;}
 </style>
 
 <div id="menutop">
@@ -34,11 +36,15 @@
     <tr>
     <tr><td>글제목</td><td><input type="text" name="subject" /></td></tr>
     <tr><td>글내용</td><td><textarea name="content" rows="2" ROWS="5" COLS="40"/></textarea></td></tr>
-    <tr><td><input type="file" size="50" name="upload" /></td></tr> 
-    <tr><td colspan="2"><input type="submit" value="글 등록"/><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/lectureboard.do'">목록으로</button></td></tr>
+    <tr><td colspan="2"><input type="file" size="50" name="upload" /></td></tr> 
+    <tr><td colspan="2"><center><input type="submit" value="글 등록"/><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/lectureboard.do'">목록으로</button></center></td></tr>
     
    
     </table>
     </form>
     </div>
     </div>
+    
+    <div id="footer">
+	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
+</div>

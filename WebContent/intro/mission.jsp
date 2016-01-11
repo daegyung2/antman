@@ -11,11 +11,10 @@
 
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
+	#footer{width:100%; height:300px; margin-bottom:0px;}
 	#top{width:200px; float:top; margin-left:100px; }
-	.container{width:1100px; height:1300px; margin:0 auto;  margin-left:230px; position:relative;}
-	.container .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
-	.container .sub b{font-size:22px; color:#000000;}
-	.container .main{width:1000px; height:1100px; margin-left:50px; top:30px; position:relative;}
+	#container{width:1100px; height:2400px; margin:0 auto;  margin-left:220px; margin-top:-20px; position:relative;}
+	#container .main{width:1000px; height:2300px; margin-left:50px; top:5px; position:relative;}
 </style>
 
 <div id="menutop">
@@ -39,38 +38,42 @@
 <td>
 <font size="5"><b>Mission</b></font><br/><br/>
 <font size="4">끊임없는 도전과 열정으로 높은 수준의 진료, 교육, 연구를 성취함으로써 인류의 건강한 삶에 기여한다.</font><br/><br/>
-<img src="/spring/img/mission1.jpg" /></td>
+<img src="/antman/img/mission1.jpg" /></td>
 </tr>
 
 <tr>
 <td>
 <font size="5"><b>Vision</b></font><br/><br/><br/><br/>
-<img src="/spring/img/mission2.jpg"/></td>
+<img src="/antman/img/mission2.jpg"/></td>
 </tr>
 
 <tr>
 <td>
 <font size="5"><b>Core Value</b></font><br/><br/><br/><br/>
-<img src="/spring/img/mission3.jpg"/></td>
+<img src="/antman/img/mission3.jpg"/></td>
 </tr>
 </table>
 
 <table width="1100" border="0" cellspacing="50">
 <tr>
-<td><img src="/spring/img/mission4.gif" width="280" height="100"/></td>
-<td><img src="/spring/img/mission5.gif" width="280" height="100"/></td>
+<td><img src="/antman/img/mission4.gif" width="280" height="100"/></td>
+<td><img src="/antman/img/mission5.gif" width="280" height="100"/></td>
 </tr>
 
 <tr>
-<td><img src="/spring/img/mission6.gif" width="280" height="100"/></td>
-<td><img src="/spring/img/mission7.gif" width="280" height="100"/></td>
+<td><img src="/antman/img/mission6.gif" width="280" height="100"/></td>
+<td><img src="/antman/img/mission7.gif" width="280" height="100"/></td>
 </tr>
 
 <tr>
-<td><img src="/spring/img/mission8.gif" width="280" height="100"/></td>
+<td><img src="/antman/img/mission8.gif" width="280" height="100"/></td>
 
 </tr>
 
 </table>
 </div>
+</div>
+
+<div id="footer">
+	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
 </div>
