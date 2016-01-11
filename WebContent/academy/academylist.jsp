@@ -16,6 +16,7 @@
 	
 	.container {width:1000px; height:1300px; margin:0 auto; margin-left:220px; position:relative;}
 	.container .main{width:800px; height:1200px; margin-top:5px; }
+	.container .main .paging{width:500px; margin-left:300px; }
 	.container .main .academy{margin-left:100px; width:900px; border:1px solid #BDBDBD; border-top:2px solid #5586EB; border-collapse:collapse;}
 	.container .main .academy th{text-align:center; padding:5px 0; color:#5586EB; background:rgba(233,233,233,0.65);}
 	.container .main .academy td{padding:5px 0 5px 10px;}
@@ -50,11 +51,15 @@ ${dto.asmin}/${dto.asmax}
 </td>
 </tr>
 </c:forEach>
+<tr>
+<td colspan="5">
+<center><input type="button" value="글쓰기" onclick="javascript:window.location='/antman/academyform.do'"></center>
+</td>
+</tr>
 
 </table>
 <br/>
-<center><input type="button" value="글쓰기" onclick="javascript:window.location='/antman/academyform.do'"></center>
-<center>${pagingHtml}</center>
+<div class="paging"><center>${pagingHtml}</center></div>
 
 	</div>
 </div>
