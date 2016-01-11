@@ -11,6 +11,7 @@
 	a{ text-decoration:none; }
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
+	#footer{width:100%; height:300px; margin-bottom:0px;}
 	#container{ width:1100px; height:1500px; margin:0 auto; margin-left:250px; position:relative;}
 	#container .main{ width:1000px; height:1400px; margin-left:50px; position:relative}
 	#container .main #main_top{ width:970px; height:70px; margin-top:35px; font-size:15px; line-height:1.8;}
@@ -135,6 +136,10 @@
 		</div>
 	</div>
 </div>
+</div>
+
+<div id="footer">
+	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
 </div>
 </form>
 </body>
