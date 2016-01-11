@@ -48,7 +48,7 @@
 	<div class="main">
 		<div id="title"><h2>진료스케줄조회</h2></div>
 		<form action = "/antman/schedulecheck.do" method="post">
-<input type="text" name ="drid" value="${sessionScope.memdrid}">
+<input type="hidden" name ="drid" value="${sessionScope.memdrid}">
 <input type="hidden" name ="drname" value="${sessionScope.memname}">
 <center>
 <table width="450" border="1">
@@ -93,13 +93,13 @@ String today = sdms.format(cal.getTime());
 </body>
 </html>
 </td>
-<td>
+<td> 
 <input type="submit" value="보기"></td>
 </form>
 
 <td>
 <form action = "/antman/schedulecheck.do" method="post">
-<input type="text" name ="drid" value="${sessionScope.memdrid}">
+<input type="hidden" name ="drid" value="${sessionScope.memdrid}">
 <input type="hidden" name ="drname" value="${sessionScope.memname}">
 
 <select name="name" >
@@ -116,7 +116,7 @@ String today = sdms.format(cal.getTime());
 
 <td>
 <form action = "/antman/schedulecheck.do" method="post">
-<input type="text" name ="drid" value="${sessionScope.memdrid}">
+<input type="hidden" name ="drid" value="${sessionScope.memdrid}">
 <input type="hidden" name ="drname" value="${sessionScope.memname}">
 <select name="id" >
 <c:forEach var="dtoid" items="${slist }">
@@ -163,7 +163,7 @@ String today = sdms.format(cal.getTime());
 
 
 <c:forEach var="dto" items="${aplist }" varStatus="status" >
-
+<form action = "/antman/nextscheduleupdate.do" method="post">
 <td>${dto.adate}</td>
 <td>${dto.nextadate}</td>
 <td>${dto.id}</td>
@@ -171,20 +171,8 @@ String today = sdms.format(cal.getTime());
 
 </td>
 <td>
-<script language="javascript">
 
-function popup()
-{
-	var yn = window.confirm("회차진료를 등록하시겠습니까?");
-	
-	if(yn) {
-		document.ggform.submit();
-	}
-	
-  
-  }
-</script>
-<form name="ggform" action = "/antman/nextscheduleupdate.do?" method="post">
+<input type="hidden" name ="drid" value="${sessionScope.memdrid}">
 <input type="hidden" name="aid" value="${dto.aid}">
 <input type="hidden" name="id" value="${dto.id}">
 <input type="hidden" name="nextadate" value="${dto.nextadate}">
@@ -264,13 +252,13 @@ String todays = sdm1.format(cal1.getTime());
 <option>40</option>
 <option>50</option>
 </td>
-<td><input type="button" value="등록" onclick="javascript:popup();"></td>
+<td><input type="submit" value="등록"></td>
 </tr>
-
+</form>
 </c:forEach>
 </table>
 </center>
-</form>
+
 </td>
 </tr>
 </table>

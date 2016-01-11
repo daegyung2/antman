@@ -1,61 +1,67 @@
-<%@ page contentType="text/html; charset=utf-8" %>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
 
 <!DOCTYPE html>
 
 <style type="text/css">
-	body{margin:0px; padding:0px;}
+	body{margin:0px; padding:0px; }
 	a{ text-decoration:none; }
-	ul{ list-style:none; margin:0px; padding:0px;}
+	ul{ list-style:none; margin:0px; padding:0px; }
 	li{ margin:0px; padding:0px; }
-	#menutop{width:100%; height:150px; }
-	#side{width:200px; float:left; margin-left:0px; }
 	
+	
+	#side{width:200px; float:left; margin-left:0px;}
+	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:100px; position:relative}
+	#container .main #title{width:800px; margin-left:100px; text-align:center;}
+	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
+	#container .main tr{padding:5px 5px;}
+	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:center; }
+	#container .main td{padding:5px 5px 5px 5px; }
 </style>
 
 <div id="menutop">
 	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
 
-<!-- container ì‹œì‘ -->
 <div id="side">
-	<jsp:include page="/webservice/websidebar.jsp" flush="true | false"/>
+	<jsp:include page="/p_mypage/p_mypage_sidebar.jsp" flush="true | false"/>
 </div>
+
+
+<div id="container">
+	<div class="main"><br/><br/>
+		<div id="title"><center><h2>³ªÀÇ ÄªÂù ³»¿ª </h2></center></div>
+
   <div>
-  <center>
-  <h2>ì¹­ì°¬í•©ì‹œë‹¤ </h2>  
-       
-  <br/>
-  ì¹­ì°¬ì€ í•˜ëŠ” ì‚¬ëŒê³¼ ë°›ëŠ” ì‚¬ëŒ, ëª¨ë‘ë¥¼ ì¦ê²ê²Œ í•©ë‹ˆë‹¤.<br/>
-í•˜ë‚˜ì˜ ì¹­ì°¬ì´ ë˜ ë‹¤ë¥¸ ì¹­ì°¬ì„ ë§Œë“¤ì–´ ê°ˆ ìˆ˜ ìˆë„ë¡<br/>
-ì¹œì ˆí•¨ì´ ë‹ë³´ì¸ ì§ì›ì„ ì¹­ì°¬í•´ ì£¼ì„¸ìš”.              <br/>                     
-  <br/>
-  
+   
   <c:if test="${sessionScope.memauth eq 'P'}">
   <form action="/antman/praisewrite.do" method="post">
-  <button type="submit" class="btn btn-primary btn-md" onclick=>ì¹­ì°¬í•˜ê¸°</button>
+  <center><button type="submit" class="btn btn-primary btn-md" onclick=>ÄªÂùÇÏ±â</button></center>
   </form>
   </c:if>
   <br/><br/>
   <table width="900" align="center" border="1">
     <thead>
       <tr>
-       <th data-field="id" >ë²ˆí˜¸</th>
-	<th data-field="name">ë‚´ìš©</th>
+       <th data-field="id" >¹øÈ£</th>
+	<th data-field="name">³»¿ë</th>
       </tr>
     </thead>
+   <input type="hedden" name="pid" value="${dto.pid}"/>
    
-                <c:forEach var="dto" items="${list}">
+                <c:forEach var="dto" items="${list}" >
+                
 		<tr>
-		     <td ><h3>${dto.pid}</h3></td>
-			 <td ><h3><a href="/antman/praisecontent.do?pid=${dto.pid}">${dto.subject}</a></h3>
+			
+		     <td><h3>${dto.pid}</h3></td>
+			 <td><h3><a href="/antman/praisecontent.do?pid=${dto.pid}&name=${dto.name}&id=${dto.id}">${dto.subject}</a></h3>
 				${dto.content } <br/>
 				<FONT size="2">
-				ê¸€ì“´ì´ : ${dto.name } |
-				ì‘ì„±ì : ${dto.id } |
-				ë“±ë¡ì¼ : ${dto.reg_date} |
+				±Û¾´ÀÌ : ${dto.name } |
+				ÀÛ¼ºÀÚ : ${dto.id } |
+				µî·ÏÀÏ : ${dto.reg_date} |
 				
 			</FONT>
 		
@@ -96,11 +102,11 @@
     		
     		</c:if>-->
     
-    <!-- í˜ì´ì§• ì¶œë ¥  -->
+    <!-- ÆäÀÌÂ¡ Ãâ·Â  -->
     	                   
- <center> ${pagingHtml }</center> <!-- ìœ„ì—ë°©ì‹ìœ¼ë¡œ í•˜ë ¤ë©´ ê·€ì°¨ë„ˆì„œ ê·¸ëƒ¥ í˜ì´ì§•ì•¡ì…˜ì„ í™œìš©í•¨ ì™¼ìª½ pagingHtml ë§Œ ì¶œë ¥í•´ì£¼ë©´ ë¨.. -->
+ <center> ${pagingHtml }</center> <!-- À§¿¡¹æ½ÄÀ¸·Î ÇÏ·Á¸é ±ÍÂ÷³Ê¼­ ±×³É ÆäÀÌÂ¡¾×¼ÇÀ» È°¿ëÇÔ ¿ŞÂÊ pagingHtml ¸¸ Ãâ·ÂÇØÁÖ¸é µÊ.. -->
 
 <script type="text/javascript">
 </script>
 </body>
-</html>
+    

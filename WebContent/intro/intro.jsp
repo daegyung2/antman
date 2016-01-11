@@ -16,10 +16,7 @@
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
 	#footer{width:100%; height:300px; margin-bottom:0px;}
-	#top{width:200px; float:top; margin-left:100px; }
 	.container{width:1100px; height:1300px; margin:0 auto;  margin-left:220px; position:relative;}
-	.container .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
-	.container .sub b{font-size:22px; color:#000000;}
 	.container .main{width:1000px; height:1200px; margin-left:80px; top:30px; position:relative;}
 	.container .main .intro{margin-left:0px;}
 	.container .main table{border:1px solid #BDBDBD; }
