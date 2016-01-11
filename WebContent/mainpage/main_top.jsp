@@ -18,7 +18,7 @@
 	#l_back{ width:100%; height:30px; background:#474747; top:2px; position:absolute;}
 	#l_back #login{width:1100px; height:20px; margin:0 auto; margin-top:5px; position:relative;}
 	#l_back #login .grid{ width:1050px; height:20px; margin-left:20px; position:relative; }
-	#l_back #login .grid .login_innerbox{width:700px; height:20px; margin:0 auto; margin-right:-220px; position:relative;}
+	#l_back #login .grid .login_innerbox{width:700px; height:20px; margin:0 auto; margin-right:-180px; position:relative;}
 	#l_back #login .grid .login_innerbox ul{margin-top:-1px; z-index:100; }
 	#l_back #login .grid .login_innerbox li{float:left; padding:0 10px; position:relative;}
 	#l_back #login .grid .login_innerbox li.first{padding-left:0px;}
@@ -33,7 +33,7 @@
 	#h_back #header .grid #title #box{width:140px; height:38px; padding-left:40px; padding-top:0px; position:relative;}
 	#h_back #header .grid #title #box a{display:block; width:100%; height:100%; padding-top:10px;}
 	
-	#gnb{ height:40px; margin-top:-10px; border-bottom:1px solid #5586EB; padding-left:375px; position:relative;}
+	#gnb{ height:40px; margin-top:-10px; border-bottom:1px solid #5586EB; padding-left:530px; position:relative;}
 	#gnb>li{ float:left; line-height:10px; background:#FFFFFF; position:relative; z-index:200;}
 	#gnb li.title{padding-left:-300px;}
 	#gnb li a{ display:block; font-size:14px; font-weight:bold; padding:5px 15px; color:#000000; width:120px; }
@@ -129,14 +129,6 @@
 							<li><a href="#">검사실안내</a></li>
                 		</ul>
             		</li>
-            		<li>
-            			<a href="#">건강정보</a>
-            			<ul>
-                			<li><a href="#">의료정보</a></li>
-							<li><a href="#">건강TV</a></li>
-							<li><a href="#">건강이야기</a></li>
-                		</ul>
-                	</li>
                 	<li>
             			<a href="/antman/voc.do">웹서비스</a>
             			<ul>
@@ -145,7 +137,7 @@
                 		</ul>
                 	</li>
                 	<li>
-            			<a href="#">의학교육</a>
+            			<a href="/antman/academylist.do?id=${sessionScope.memId}">의학교육</a>
             			<ul>
                 			<li><a href="/antman/academylist.do?id=${sessionScope.memId}">학술행사일정</a></li>
 							<li><a href="#">학술영상다시보기</a></li>
