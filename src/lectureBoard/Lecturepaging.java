@@ -1,6 +1,6 @@
 package lectureBoard;
 
-public class pagingAction {
+public class Lecturepaging {
 
 	private int currentPage;   // 현재페이지
 	private int totalCount;	 // 전체 게시물 수
@@ -15,8 +15,8 @@ public class pagingAction {
 	private StringBuffer pagingHtml;
 
 	// 페이징 생성자
-	public pagingAction(int currentPage, int totalCount, int blockCount,
-			int blockPage) {
+	public Lecturepaging(int currentPage, int totalCount, int blockCount,
+			int blockPage, int blockCount2) {
 
 		this.blockCount = blockCount;
 		this.blockPage = blockPage;

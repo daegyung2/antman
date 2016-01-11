@@ -27,8 +27,7 @@
 		<select id="selectOne" resultMap="boardRes" parameterClass="int">
  		select * from lectureBoard where LEid = #LEid#
 		</select>
-		
-
+		       
 		 <select id="max" resultClass="int">
    		select max(LEid) from lectureBoard
  		</select>	

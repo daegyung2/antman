@@ -3,17 +3,24 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<style type="text/css">
-	body, ul, li, div{margin:0px; padding:0px; }
-	ul{list-style:none;}
-	body{font-size:14px; line-height:1.4; overflow-x:hidden;}
-	a{text-decoration:none; }
 
-	#menutop{width:100%; height:150px; }
-	#side{width:200px; float:left; margin-left:0px; }
-	#footer{width:100%; height:300px; margin-bottom:0px;}
-	#container{width:1100px; height:1300px; margin:0 auto;  margin-left:220px; margin-top:-20px; position:relative;}
-	#container .main{width:1000px; height:1100px; margin-left:50px; top:5px; position:relative;}
+<!DOCTYPE html>
+
+<style type="text/css">
+	body{margin:0px; padding:0px; }
+	a{ text-decoration:none; }
+	ul{ list-style:none; margin:0px; padding:0px; }
+	li{ margin:0px; padding:0px; }
+	
+	
+	#side{width:200px; float:left; margin-left:0px;}
+	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:100px; position:relative}
+	#container .main #title{width:800px; margin-left:100px; text-align:center;}
+	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
+	#container .main tr{padding:5px 5px;}
+	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:center; }
+	#container .main td{padding:5px 5px 5px 5px; }
 </style>
 
 <div id="menutop">
@@ -23,51 +30,29 @@
 <div id="side">
 	<jsp:include page="/intro/introsidebar.jsp" flush="true | false"/>
 </div>
+
+
 <div id="container">
 	<div class="main">
+		<div id="title"><center><h2><b>공지사항</b></h2></center></div><br/>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>DB Hospital</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</head>
-<head>
-    <meta charset="utf-8">
-    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>DB Hospital</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-        
-    </style>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-</head>
-<body>
-<script type="text/javascript" src="http://codemoon.esy.es/code/bootstrap-table.js"></script>   
- <div class="container">
-  <h2>뉴스 게시판 입니다.</h2>   
   <div class="container">
 
 
-  <table data-toggle="table" data-url="data2.json" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true">
+  <table  width="900" align="center" border="1" data-toggle="table" data-url="data2.json" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true">
+
+
     <thead>
       <tr>
-       <th data-field="id" align="center" >제목</th>
+       <th data-field="id" align="center" ><h3>제목 :${dto.subject}</h3></th>
       </tr>
     </thead>
    
                 
 		     
-			 <tr><td colspan="2" align="center"><h3>${dto.subject}</h3></td></tr>
+			
 			 <tr><td width="50%">등록일 : ${dto.reg_date}</td></tr> 
-			<tr><td colspan="2">${dto.content } </td></tr>
+			<tr><td colspan="2"><h2>${dto.content }</h2> </td></tr>
 			<tr></tr>
 			
   </table>
@@ -82,14 +67,14 @@
 <br/>
 <HR width=100% >
 <br/>
-  <c:if test="${sessionScope.memauth eq 'G'}"> 
+  <c:if test="${sessionScope.memauth eq 'E'}"> 
   <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/newsboardupdate.do?NEid=${dto.NEid}'">수정하기</button>
   <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/newsboarddelete.do?NEid=${dto.NEid}'">삭제하기</button>
  </c:if>
  
- <c:if test="${sessionScope.memauth eq 'P'}">
+ 
  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/newsboard.do'">목록으로</button></center>
-  </c:if>
+
 </body>
 </html>
 

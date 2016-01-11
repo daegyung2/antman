@@ -12,6 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import admin.bean.DepartmentDTO;
 import admin.bean.DoctorDTO;
+import admin.bean.LectureBoardDTO;
+import admin.bean.MainBoardDTO;
+import admin.bean.NewsBoardDTO;
 import praiseboard.pagingAction;
 
 @Controller
@@ -28,9 +31,33 @@ public class Main {
     private paigingActiondb page;
     //메인페이지
 	@RequestMapping("/main.do")
-	public String bdmain(HttpServletRequest request){
+	public String bdmain(HttpServletRequest request, NewsBoardDTO dto, MainBoardDTO dtoA, LectureBoardDTO dtoB){
 	
+		List list = sqlMapClient.queryForList("newsBoard.selectAll", dto);
+		List listA = sqlMapClient.queryForList("mainBoard.selectAll", dtoA);
+		List listB = sqlMapClient.queryForList("lectureBoard.selectAll", dtoB);
+		
+		request.setAttribute("list", list);
+		System.out.println(list.size());
+		request.setAttribute("listA", listA);
+		request.setAttribute("listB", listB);
+		
 	return "/mainpage/main.jsp";
+}
+	
+	@RequestMapping("/ex.do")
+	public String main(HttpServletRequest request, NewsBoardDTO dto, MainBoardDTO dtoA, LectureBoardDTO dtoB){
+	
+		List list = sqlMapClient.queryForList("newsBoard.selectAll", dto);
+		List listA = sqlMapClient.queryForList("mainBoard.selectAll", dtoA);
+		List listB = sqlMapClient.queryForList("lectureBoard.selectAll", dtoB);
+		
+		request.setAttribute("list", list);
+		System.out.println(list.size());
+		request.setAttribute("listA", listA);
+		request.setAttribute("listB", listB);
+		
+	return "/mainpage/ex.jsp";
 }
 	//관리자페이지 메인 
 	@RequestMapping("/adminmain.do")

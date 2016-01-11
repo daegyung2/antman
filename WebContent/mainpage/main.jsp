@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -156,12 +156,54 @@ $(function(){
 		<div id="btn02"><font color="#FFFFFF"><b>진료 조회<br/>진료예약 및 내역조회가 가능합니다.</b></font></div></a>
 	</div>
 	
+	
+	
+
+	
+	
+		<!-- 리스트 뽑아서 출력할려고 했더니 난리가 나네 난리가.. 
+		ex.jsp에 리스트 출력 테스트 함 
+		-->
 	<div class="boards">
-		<div id="board01"><a href="#"><font color="#000000"><b>공지사항</b></font></a></div>
-		<div id="board02"><a href="#"><font color="#000000"><b>뉴스</b></font></a></div>
-		<div id="board03"><a href="#"><font color="#000000"><b>강좌안내</b></font></a></div>
+		<div id="board01"><font color="#000000"><b>공지사항</b></font></a></div>
+		<%--  <table align="center" border="1">
+		  <c:forEach var="dto" items="${listA}">
+		<tr><td>
+		 <font color="#000000"><a href="/antman/mainboard.do">${dto.subject}<br/></a></font>
+		</td></tr>
+		</c:forEach>
+		</table> 
+		</div>--%>
+		
+		
+		<div id="board02"><font color="#000000"><b>뉴스</b></font></a></div>
+	<%-- 	<table align="center" border="1">
+		  <c:forEach var="dto" items="${listB}">
+		<tr>
+		 <font color="#000000"><a href="/antman/mainboard.do">${dto.subject}<br/></a></font>
+		</tr>
+		</c:forEach>
+
+</div>--%>
+		
+		
+		
+		
+		
+		<div id="board03"><a href="#"><font color="#000000"><b>강의정보</b></font></a></div>
+		<%-- <table align="center" border="1">
+		  <c:forEach var="dto" items="${listC}">
+		<tr>
+		 <font color="#000000"><a href="/antman/mainboard.do">${dto.subject}<br/></a></font>
+		</tr>
+		</c:forEach>
+		</div>
+		 --%>
+		
 		<div id="board04"><a href="#"><font color="#000000"><b>학술행사</b></font></a></div>
-	</div>
+		
+			
+		</div>
 	
 	</div>
 </div>

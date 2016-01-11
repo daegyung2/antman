@@ -33,7 +33,7 @@
 
 <div id="container">
 	<div class="main"><br/><br/>
-		<div id="title"><center><h2>나의 칭찬 내역 </h2></center></div>
+		<div id="title"><center><h2>강의정보 </h2></center></div>
 
 
 
@@ -42,10 +42,12 @@
   <div class="container">
                     
   <br/>
-  <c:if test="${sessionScope.memauth eq 'G'}">
+  <c:if test="${sessionScope.memauth eq 'E'}">
+  <center>
   <form action="/antman/lectureboardwrite.do" method="post">
-  <button type="submit" class="btn btn-primary btn-md" onclick=>글 쓰기</button>
+  <button type="submit" class="btn btn-primary btn-md" onclick=>글 쓰기</button><br/><br/>
   </form>
+  </center>
   </c:if>
   <table width="900" align="center" border="1" data-toggle="table" data-url="data2.json" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true">
     <thead>
@@ -74,6 +76,7 @@
   </table>
 
 </div>
+<center> ${pagingHtml}</center> 
 <script type="text/javascript">
 
 </script>
