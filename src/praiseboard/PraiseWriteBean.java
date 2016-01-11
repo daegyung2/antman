@@ -74,11 +74,12 @@ public class PraiseWriteBean {
    public String VIEW(HttpServletRequest request,PraiseVO dto,EmployeeDTO edto)throws Exception{
       int pid =(int)dto.getPid();
       System.out.println(dto.getPid());
-   
+    
       dto = (PraiseVO)sqlMapClient.queryForObject("praise.finddoctor",dto.getPid());
-      
-     edto = (EmployeeDTO)sqlMapClient.queryForObject("praise.findemployee",dto.getPid());
-      
+
+      System.out.println(edto.getPid());
+     edto = (EmployeeDTO)sqlMapClient.queryForObject("employee.findemployee",edto.getPid());
+ 
       System.out.println(edto);
     
       if(dto != null){
@@ -86,7 +87,7 @@ public class PraiseWriteBean {
       return "/praiseboard/praisecontent.jsp";
      }else if(edto != null){
       request.setAttribute( "edto",edto );}
-   else{}
+     else{}
       
       System.out.println(dto);
       System.out.println(edto);

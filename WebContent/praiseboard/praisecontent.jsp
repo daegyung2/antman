@@ -84,7 +84,8 @@
 <br/>
 <HR width=100% >
 <br/>
-<center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praiseupdate.do?pid=${dto.pid}'">수정하기</button>
+<c:if test="${!empty dto }"><center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praiseupdate.do?pid=${dto.pid}'">수정하기</button></c:if>
+<c:if test="${!empty edto }"><center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praiseupdate.do?pid=${edto.pid}'">수정하기</button></c:if>
 <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praisewrite.do'">칭찬하기</button> 
 <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praisedelete.do?pid=${dto.pid}'">삭제하기</button> 
  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praiseboard.do'">목록으로</button></center>

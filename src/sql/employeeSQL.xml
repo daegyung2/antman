@@ -88,4 +88,11 @@
            <select id="employeeselect" resultClass="employee">
      select name,eid from employee where eid = #eid#
      </select>
+     
+
+        <select id="findemployee" resultClass="employee" parameterClass ="int">   
+      select id,name,subject,content,to_char(reg_date,'YYYY-MM-DD HH:MI')reg_date,pid,ename,major,dpname,emimg1,emdescription from(select bb.id,bb.name,bb.subject,bb.content,bb.reg_date,bb.pid,bb.ename,aa.major,aa.dpname,aa.emimg1,aa.emdescription from employee aa join praise bb on aa.eid = bb.eid) where pid = #pid#
+   </select> 
+   
+   findemployee
 </sqlMap>
