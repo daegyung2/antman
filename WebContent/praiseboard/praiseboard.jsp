@@ -54,7 +54,7 @@
 				${dto.content } <br/>
 				<FONT size="2">
 				글쓴이 : ${dto.name } |
-				작성자 : ${dto.id } |
+				아이디 : ${dto.id } |
 				등록일 : ${dto.reg_date} |
 				
 			</FONT>

@@ -28,7 +28,7 @@ import login.bean.LoginDataBean;
 			
 			int drid = dto.getDrid();
 			ddto.setDrId(drid);
-			
+			String name =ldto.getName();
 			List slist = sqlMapclient.queryForList("appointment.drsnameidcheck",dto.getDrid());
 			
 			
@@ -43,6 +43,7 @@ import login.bean.LoginDataBean;
 			System.out.println(rdto.getMid());
 			rdto = (ScheduleResultDTO)sqlMapclient.queryForObject("result.resultselect",rdto);
 			
+			request.setAttribute("name", name);
 			request.setAttribute("ddto", ddto);
 			request.setAttribute("adto", adto);
 			request.setAttribute("ldto", ldto);

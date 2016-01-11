@@ -43,6 +43,29 @@
       <insert id="insertpraise" parameterClass="praise">
       INSERT INTO praise (	   pid,
                           	   id,
+                          	   drid,
+                               name,
+                               ename,
+                               subject,
+                               CONTENT,
+                               REG_DATE
+                         )
+                    VALUES (praise_SEQ.NEXTVAL,
+                            #id#,
+                            #drid#,
+                            #name#,
+                            #ename#,
+                            #subject#,
+                            #content#,
+                            sysdate
+                         )
+      </insert>
+
+
+<insert id="insertpraiseeid" parameterClass="praise">
+      INSERT INTO praise (	   pid,
+                          	   id,
+                          	   eid,
                                name,
                                drname,
                                subject,
@@ -51,6 +74,7 @@
                          )
                     VALUES (praise_SEQ.NEXTVAL,
                             #id#,
+                            #eid#,
                             #name#,
                             #drname#,
                             #subject#,
@@ -58,8 +82,6 @@
                             sysdate
                          )
       </insert>
-
-
    
         <delete id="deletepraise" parameterClass="praise">
          DELETE FROM praise where pid = #pid#
@@ -109,6 +131,7 @@
      
   <resultMap id="selectdoctor" class="praise">
   <result property="drname" column="drname"/>
+  <result property="drid" column="drid"/>
   </resultMap>
      
           <select id="selectdoctor" resultMap="selectdoctor" >
@@ -120,4 +143,9 @@
      </select>
 
   
+
+  
+        <select id="findemployee" resultClass="praise" parameterClass ="praise">   
+      select * from(select bb.id,bb.name,bb.subject,bb.content,bb.reg_date,bb.pid,bb.ename,aa.major,aa.dpname,aa.emimg1,aa.emdescription from employee aa join praise bb on aa.eid = bb.eid) where pid = #pid#
+  </select> 
 </sqlMap>

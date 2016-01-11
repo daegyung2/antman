@@ -86,6 +86,7 @@ function checkIt() {
 </tr>
 <tr>
 <form action="/antman/dscheduleform.do" method="post">
+<input type="hidden" name="name" value="${name}">
 <input type="hidden" name="drid" value="${sessionScope.memdrid}">
 <input type="hidden" name="drname" value="${sessionScope.memdrnamed}">
 <th width="200">아이디검색</th><td width="400" colspan = "4"><select name="id" >

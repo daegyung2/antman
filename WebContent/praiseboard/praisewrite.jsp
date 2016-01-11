@@ -21,39 +21,69 @@
 <!-- container 시작 -->
 <div id="side">
 	<jsp:include page="/webservice/websidebar.jsp" flush="true | false"/>
-</div>
+</div><center>
   <div><table width="600" border="1">
     
-        <tr><td>칭찬할선생님</td><td>
+        <tr><td>칭찬선택</td><td>
         <form action="/antman/praisewrite.do" method="post">
     <select name="dpname">
 	<c:forEach var="dto" items="${dplist}" >
 	<option value="${dto.dpname }">${dto.dpname}</option>
 	</c:forEach>
-	</select><input type="submit" value="선생님보기">   
+	</select>&nbsp;&nbsp;<input type="submit" value="선생님보기">   
  	</form>
+</td></tr>
 
- 
+<c:if test="${!empty drlist}">
+<tr><td>칭찬할선생님</td><td>
  <form action="/antman/praisewrite.do" method="post">  
  
-    <select name="drname">
+    <select name="drId">
 	<c:forEach var="dto" items="${drlist}" >
-	<option value="${dto.drname }">${dto.drname}</option>
+	<option value="${dto.drid }">${dto.drname}</option>
 	</c:forEach>	
-</select>
-<input type="submit" value="선생님선택">
+</select>&nbsp;&nbsp;<input type="submit" value="선생님선택">
 
+</form>
+</td>
+</tr>
+</c:if>
+
+
+<c:if test="${!empty delist}">
+<tr><td>칭찬할직원</td><td>
+<form action="/antman/praisewrite.do" method="post">  
+ 
+    <select name="eid">
+	<c:forEach var="dto" items="${delist}" >
+	<option value="${dto.eid }">${dto.name}</option>
+	</c:forEach>	
+</select>&nbsp;&nbsp;<input type="submit" value="직원선택">
 </form>
 
  </td>
+</tr>
+ </c:if>
+ 
+
+
 	<form action="/antman/praisepro.do" method="post">	
     <tr>
-    <input type="text" name="drid" value="${drid}">
-    <td>아이디</td><td><input type="hidden" name="name" value="${sessionScope.memId }"/>${sessionScope.memId }</td></tr>
+    <c:if test="${empty  ddto.drId}"><input type="text" name="drid" value="0"></c:if>
+    <c:if test="${!empty  ddto.drId}"><input type="text" name="drid" value="${ddto.drId}"></c:if>
+     <c:if test="${empty  edto.eid}"><input type="text" name="eid" value="0"></c:if>
+    <c:if test="${!empty  edto.eid}"><input type="text" name="eid" value="${edto.eid}"></c:if>
+    <td>아이디</td><td><input type="hidden" name="id" value="${sessionScope.memId }"/>${sessionScope.memId }</td></tr>
     
     <tr><td>글쓴이</td><td><input type="hidden" name="name" value="${sessionScope.memname }"/>${sessionScope.memname }</td></tr>
     <tr><td>글제목</td><td><input type="text" name="subject"/></td></tr>
-    <tr><td>선생님</td><td><input type="text" name="drname" value="${drname}"/></td></tr>
+    <c:if test="${!empty  ddto.drId}">
+    <tr><td>선생님</td><td><input type="text" name="drname" value="${ddto.drname}"/>
+    </c:if>
+    <c:if test="${!empty  edto.name}">
+    </td></tr>
+       <tr><td>직원</td><td><input type="text" name="ename" value="${edto.name}"/>
+    </c:if>
     </td></tr>
     <tr><td>글내용</td><td><textarea name="content" rows="2" ROWS="5" COLS="40"/></textarea></td></tr>
     <tr><td colspan="2"><input type="submit" value="칭찬하기"/><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praiseboard.do'">목록으로</button></td></tr>
@@ -61,4 +91,4 @@
    
     </table>
  </div>
- 
+ </center>

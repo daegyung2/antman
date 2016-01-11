@@ -40,16 +40,16 @@
   <table class="table">
     <thead>
       <tr>
-        <th colspan="2"><h3><center>${dto.subject}</center></h3></th>
+        <th colspan="2"><h3><center>${dto.subject}${edto.subject}</center></h3></th>
 
       </tr>
     </thead>
     <tbody>
       <tr>
- <tr><td width="50%">작성자 : ${dto.name}</td><td width="50%">등록일 : ${dto.reg_date}</td></tr> 
+ <tr><td width="50%">작성자 : ${dto.name}${edto.name}</td><td width="50%">등록일 : ${dto.reg_date}${edto.reg_date}</td></tr> 
       </tr>
       <tr>
-<td colspan="2" height="200">${dto.content} </td>
+<td colspan="2" height="200">${dto.content}${edto.content} </td>
       </tr>
   
     </tbody>
@@ -65,10 +65,13 @@
   <table class="table">
 
     <tbody>
-      <tr>
- <tr><td width="50%"><img src="${dto.drimg1 }" weight="190" height="240"></td><td><h3>${dto.drname}</h3><br/> <h4> ${dto.dpname}</h4>${dto.exarea }</td></tr> 
-      </tr>
-  
+      
+<c:if test="${!empty dto}" > <tr><td width="50%"><img src="${dto.drimg1 }" weight="190" height="240">
+</td><td><h3>${dto.drname}</h3><br/> <h4> ${dto.dpname}</h4>${dto.exarea }</td></tr> </c:if>
+      
+  <c:if test="${!empty edto}" > <tr><td width="50%"><img src="${edto.emimg1 }" weight="190" height="240">
+</td><td><h3>${edto.ename}</h3><br/> <h4> ${edto.dpname}</h4>${edto.emdescription }</td></tr> </c:if>    
+      
     </tbody>
   </table>
 </div>

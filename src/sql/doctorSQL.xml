@@ -102,4 +102,9 @@
   		select dpname from DOCTOR where drId = #drId# 
   </select>
   
+ 
+  
+     <select id="doctorprselect" resultClass="doctor" parameterClass="int">
+  		select drid,drname from DOCTOR where drId = #drId# 
+  </select>
 </sqlMap>

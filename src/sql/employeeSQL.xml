@@ -79,4 +79,13 @@
   		select count(*) from EMPLOYEE where Eid = #Eid#
 	  </select>
  
+ 
+      <select id="selectemployee" resultClass="employee">
+     select name,eid from employee where dpname = #dpname#
+     </select>
+     
+     
+           <select id="employeeselect" resultClass="employee">
+     select name,eid from employee where eid = #eid#
+     </select>
 </sqlMap>

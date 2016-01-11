@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.DepartmentDTO;
+import admin.bean.DoctorDTO;
+import admin.bean.EmployeeDTO;
 
 
 
@@ -20,31 +22,35 @@ public class PraiseWriteBean {
    
    @Autowired
    private SqlMapClientTemplate sqlMapClient;
-  String view;
+
    @RequestMapping("/praisewrite.do")
-   public String write(HttpServletRequest request , PraiseVO dto , String drname){
+   public String write(HttpServletRequest request , PraiseVO dto , DoctorDTO ddto,  EmployeeDTO edto){
 	 
       String dpname = (String)dto.getDpname();
-      System.out.println(dpname);
+      System.out.println(ddto.getDrId()+1);
       List dplist = sqlMapClient.queryForList("praise.selectdepart",dto);
       
       List drlist = sqlMapClient.queryForList("praise.selectdoctor",dto.getDpname());
       
+      List delist = sqlMapClient.queryForList("employee.selectemployee",dto.getDpname());
       /*dto = (PraiseVO)sqlMapClient.queryForObject("priase.selectdridname",drname);*/
      
- 	 if(drlist.size() == 0){
-		 view = "no";
-	 }else if (drlist.size() != 0){
-		 view = "yes";
-	 }
- 	System.out.println(view);
+      
+     ddto = (DoctorDTO) sqlMapClient.queryForObject("doctor.doctorprselect", ddto.getDrId());
+      
+     edto = (EmployeeDTO)sqlMapClient.queryForObject("employee.employeeselect", edto.getEid());
+     
+      System.out.println(ddto);
+    
+
+ 	
       
 
-      request.setAttribute("view", view);
+      request.setAttribute("delist",delist);
       request.setAttribute("dplist",dplist);
       request.setAttribute("drlist",drlist);
-      /*request.setAttribute("drid",dto);*/
-      request.setAttribute("drname",drname);
+       request.setAttribute("edto",edto);
+     request.setAttribute("ddto",ddto);
       return "/praiseboard/praisewrite.jsp";
    } 
    
@@ -52,24 +58,39 @@ public class PraiseWriteBean {
    
    
    @RequestMapping("/praisepro.do")
-   public String writepro(PraiseVO dto){
+   public String writepro(PraiseVO dto, EmployeeDTO edto){
       
+	   if(dto.getDrid() != 0){
       sqlMapClient.insert("praise.insertpraise", dto);      
-      
-      return "redirect:praiseboard.do";
+	   return "redirect:praiseboard.do";
+	   }else if(edto.getEid() != 0){
+		    sqlMapClient.insert("praise.insertpraiseeid", dto);  
+   }else{}
+		   return "redirect:praiseboard.do";
    }
    
    
    @RequestMapping("/praisecontent.do")
-   public String VIEW(HttpServletRequest request,PraiseVO dto)throws Exception{
+   public String VIEW(HttpServletRequest request,PraiseVO dto,EmployeeDTO edto)throws Exception{
       int pid =(int)dto.getPid();
       System.out.println(dto.getPid());
    
-      
       dto = (PraiseVO)sqlMapClient.queryForObject("praise.finddoctor",dto.getPid());
-   
-      request.setAttribute("pid",pid);
+      
+     edto = (EmployeeDTO)sqlMapClient.queryForObject("praise.findemployee",dto.getPid());
+      
+      System.out.println(edto);
+    
+      if(dto != null){
       request.setAttribute( "dto",dto );
+      return "/praiseboard/praisecontent.jsp";
+     }else if(edto != null){
+      request.setAttribute( "edto",edto );}
+   else{}
+      
+      System.out.println(dto);
+      System.out.println(edto);
+      request.setAttribute("pid",pid);
       return "/praiseboard/praisecontent.jsp";
    }
    
