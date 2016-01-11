@@ -14,13 +14,14 @@
 	
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
+	#footer{width:100%; height:300px; margin-bottom:0px;}
 	
-	.container {width:1000px; height:1200px; margin:0 auto; margin-left:220px; position:relative;}
+	.container {width:1000px; height:1300px; margin:0 auto; margin-left:220px; position:relative;}
 	.container .content{width:800px; height:1200px; margin-left:100px;}
 	.container .content h2{text-align:center; font-size:25px; margin-top:20px;}
 	.container .content p{text-align:center; font-size:15px; margin-top:5px; margin-right:40px; float:right;}
 	
-	.container .main{width:800px; height:1000px; margin-top:5px; }
+	.container .main{width:800px; height:1200px; margin-top:5px; }
 	.tabset{width:800px; height:1000px; margin:20px auto; padding:5px; border:1px solid #333;  }
 	.tabset .tabs{padding:0px 0px; overflow:hidden; margin-left:5px;}
 	.tabset .tabs li{float:left; margin-right:3px;}
@@ -204,5 +205,9 @@ $(function(){
 </div>				
 				
 ${pagingHtml }
+
+<div id="footer">
+	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
+</div>
 </body>
 </html>

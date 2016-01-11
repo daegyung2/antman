@@ -12,10 +12,9 @@
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
 	#top{width:200px; float:top; margin-left:100px; }
-	.container{width:1100px; height:1300px; margin:0 auto;  margin-left:230px; position:relative;}
-	.container .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
-	.container .sub b{font-size:22px; color:#000000;}
-	.container .main{width:1000px; height:1100px; margin-left:50px; top:30px; position:relative;}
+	#container{width:1100px; height:1300px; margin:0 auto;  margin-left:220px; margin-top:-20px; position:relative;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; top:5px; position:relative;}
+	#container .main table{border:1px solid #000000;}
 </style>
 
 <div id="menutop">
@@ -34,7 +33,7 @@
     <font size="6"><b>병원장 인사말</b></font><br/><br/><br/>
     <font size="5">"우리사회의 가장 어려운 이웃을 돕는다."</font><br/><br/><br/>
     <tr>
-    <td><img src="/spring/img/greet1.png"/></td>
+    <td><img src="/antman/img/greet1.png"/></td>
     <td align="center">우리 사회의 가장 어려운 이웃을 돕는다’는 DB재단의 설립이념에 따라<br/>
      1989년 6월 23일 개원한 DB hospital은 짧은 역사속에서 진료,연구,교육<br/> 전 분야에 걸쳐 국내 최고 수준의 병원으로 자리매김하였습니다.<br/><br/>
        이런 결과는 개원초부터 오직 환자 중심의 진료와 병원문화를 뿌리내리기 위해 한마음으로 노력해온<br/>
