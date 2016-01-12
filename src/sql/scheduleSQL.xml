@@ -49,7 +49,7 @@
 	</delete>
 	
 	<select id="drschedulecheck" resultClass="dsche"  >
-	  select sid,drname,dpname,name,to_char(sdate,'YYYY-MM-DD HH:MI')sdate,nextsdate from schedule where dpname = #dpname# order by sid desc
+	  select sid,drname,dpname,name,to_char(sdate,'YYYY-MM-DD HH:MI')sdate,nextsdate from schedule where drid = #drid# order by sid desc
 	</select>
 	
 	<select id="drschedulecheckB" resultClass="dsche"  >
