@@ -3,6 +3,7 @@ package admin.bean;
 public class MemberDTO {
 	
 	private String id;
+	private int drid; //원래 인트인데 String으로 바꿈
 	private int passwd;
 	private String name;
 	private int age;
@@ -10,7 +11,7 @@ public class MemberDTO {
 	private int phone;
 	private String e_mail;
 	private String getMail;
-	private String Eid;
+	private int Eid; //원래 인트인데 스트링으로 바꿈
 	private String Dreg_num;
 	private int reg_num;
 	private String auth;
@@ -20,6 +21,12 @@ public class MemberDTO {
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public int getDrid() {
+		return drid;
+	}
+	public void setDrid(int drid) {
+		this.drid = drid;
 	}
 	public int getPasswd() {
 		return passwd;
@@ -63,10 +70,10 @@ public class MemberDTO {
 	public void setGetMail(String getMail) {
 		this.getMail = getMail;
 	}
-	public String getEid() {
+	public int getEid() {
 		return Eid;
 	}
-	public void setEid(String eid) {
+	public void setEid(int eid) {
 		Eid = eid;
 	}
 	public String getDreg_num() {
@@ -87,6 +94,10 @@ public class MemberDTO {
 	public void setAuth(String auth) {
 		this.auth = auth;
 	}
+
+
+	
+	
 	
 	
 }

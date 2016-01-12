@@ -106,5 +106,60 @@
   		select count(*) from appointment where adate = to_date(#adate#,'YYYY-MM-DD HH24:MI') and id = #id#
       </select>
         
-  
+        
+   
+	        <!-- 통계용 -->
+	        
+	             <select id="appointlist" resultClass="appoint">
+	select * from appointment order by aid desc
+	</select>
+	        
+	        <select id="allcount" resultClass="int">
+	select count(*) from appointment
+	</select>
+	
+		        <select id="onecount" resultClass="int">
+	select count(*) from appointment where nextadate= '1차진료' 
+	</select>
+	
+		        <select id="twocount" resultClass="int">
+	select count(*) from appointment where nextadate= '2차진료' 
+	</select>
+	
+		        <select id="threecount" resultClass="int">
+	select count(*) from appointment where nextadate= '3차진료' 
+	</select>
+	
+		        <select id="fourcount" resultClass="int">
+	select count(*) from appointment where nextadate= '4차진료' 
+	</select>
+	
+	
+	<!-- 통계 진료과별 -->
+	
+	   <select id="appointlistdp" resultClass="appoint">
+	select * from appointment where dpname = #dpname# order by aid desc
+	</select>
+	        
+	        <select id="allcountdp" resultClass="int">
+	select count(*) from appointment where dpname = #dpname#
+	</select>
+	
+		        <select id="onecountdp" resultClass="int">
+	select count(*) from appointment where nextadate= '1차진료' and dpname = #dpname#
+	</select>
+	
+		        <select id="twocountdp" resultClass="int">
+	select count(*) from appointment where nextadate= '2차진료' and dpname = #dpname#
+	</select>
+	
+		        <select id="threecountdp" resultClass="int">
+	select count(*) from appointment where nextadate= '3차진료' and dpname = #dpname#
+	</select>
+	
+		        <select id="fourcountdp" resultClass="int">
+	select count(*) from appointment where nextadate= '4차진료' and dpname = #dpname#
+	</select>
+	
+
 </sqlMap>

@@ -27,6 +27,7 @@ public class ScheduleDTO {
 	private String ymds;
 	
 	
+	
 	public String getYmds() {
 		return ymds;
 	}
