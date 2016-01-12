@@ -26,11 +26,20 @@
 	.tabset .tabs{padding:0px 0px; overflow:hidden; margin-left:5px;}
 	.tabset .tabs li{float:left; margin-right:3px;}
 	.tabset .tabs li a{display:block; background:#5586EB; color:#FFFFFF; padding:15px 49px; font-weight:bold; }
+	.tabset .tabs li a:hover{ background:#EAEAEA; color:#333;}
 	.tabset .tabs li a.on{border:1px solid #DBDBDB; background:#FFFFFF; color:#333;}
 	.tabset .panels div{width:750px; height:900px; padding:12px 15px 6px; margin-left:10px; margin-top:20px; align:center; border:1px solid #333;}
 	.tabset .panels div .sub{width:750px; height:70px; border:1px solid #333; }
 	.tabset .panels div .sub #category{width:315px; height:70px; margin-left:10px; position:relative;}
 	.tabset .panels div .sub #title{width:315px; height:70px; margin-left:335px; position:relative;}
+	
+	#nav{ width:700px; margin:30px auto; }
+	#nav .title{ display:block; height:36px;  }
+	#nav .sub li{ line-height:3em; background:#CFF;}
+	#nav .sub li a{ display:block; width:100%; height:100%; color:#222;}
+	#nav .sub li:hover{ background: #f8f8f8;}
+	#nav .sub{ display:none;}
+	#nav li:first-child a.title{ border-top:none;}
 </style>
 
 <script type="text/javascript" src="/antman/js/jquery-1.11.2.min.js"></script>
@@ -67,52 +76,19 @@ $(function(){
 	})
 })
 
-	var isAnswerOpened = false;
-	var openAnswerId = 0;
-	function clickSubject(str){
-		if ( openAnswerId != str ) {
-			//이미 열린 다른 답변 숨기기
-			$('.viewAaqContent').attr("style","display:none");
-			//현재 활성화되어있는 질문 분류를 비활성화 시키기
-			$('.qstOn').attr("class","qstOff");
-			//현재 활성화되어있는 답변을 비활성화 시키기
-			$('.faqOpen').attr("class","faqClose");
-
-			isAnswerOpened = false;
-		}
-
-		//현재 클릭한 질문의 답변 보이기
-		if (isAnswerOpened == false) {
-
-			fnPost(
-					"/asan/custom/faq/faqDownload.do",
-					{faqId : str},
-					function(data) {
-					}
-			);
-
-			//현재 클릭한 질문의 답변 보이기
-			$('#tr' + str).removeAttr("style");
-			//현재 클릭한 질문의 분류를 활성화 시키기
-			$('#counselName'+str).attr("class","qstOn");
-			//현재 클릭한 질문의 답변을 활성화 시키기
-			$('#counselSubject'+str).attr("class","faqOpen");
-
-			isAnswerOpened = true;
-			openAnswerId = str;
-		} else {
-			//이미 열린 다른 답변 숨기기
-			$('.viewAaqContent').attr("style","display:none");
-			//$('#tr' + str).attr("style","display:none");
-			//현재 활성화되어있는 질문 분류를 비활성화 시키기
-			$('.qstOn').attr("class","qstOff");
-			//현재 활성화되어있는 답변을 비활성화 시키기
-			$('.faqOpen').attr("class","faqClose");
-
-			isAnswerOpened = false;
-			openAnswerId = 0;
-		}
-	}
+$(function(){
+	/* 만약에 클릭한 개체의 다음개체의 display값이 none값과 같은때만 실행 */
+	$('.title').click(function(){
+	 if($(this).next().css('display')=='none'){
+		$('.sub').slideUp(0);
+		$(this).next().slideDown(0);
+	 }
+		/*
+		$('.sub').hide();
+		$(this).next().show();
+		*/
+	});
+})
 	
 </script>
 
@@ -147,43 +123,38 @@ $(function(){
         	<li><a href="#panel05">홈페이지 이용</a></li>
         	</ul>   
      	<div class="panels">
-    		<div id="panel01">   		
-    			<table cellpadding="0" cellspacing="0" width="100%" class="tableLayout" border="1" >
-					<colgroup>
-						<col width="230px" />
-						<col width="570px" />
-					</colgroup>
-					<thead>
-						<tr>
-							<th scope="col">분류</th>
-							<th scope="col">제목</th>
-						</tr>
-					</thead>
-			<c:forEach var="dto" items="${list}">
-					<tbody>
-						<tr>
-							<td class="leftTd"><span>${dto.category}</span></td>
-							<td class="titleTd"><a href="#" class="faqClose"  onclick="clickSubject('518'); return false;">${dto.subject}</a></td>
-						</tr>
-						<tr style="display:block" class="viewAaqContent">
-							<tr><td class="answer" colspan="2" align="center" color="#10620A">
-							<font color="#FF00DD">
-							${dto.content}
-							</font>
-    						</td>
-						</tr>
-						<tr>
-						<td colspan="2">
-							<center>
-							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqupdate.do?fid=${dto.fid}'">수정하기</button>
-							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqdelete.do?fid=${dto.fid}'">삭제하기</button> 
-  							</center>
-  						</td>
-						</tr>
-					</tbody>
-					</c:forEach>
-			</table>
+    		<div id="panel01"> 
+    		  
+    			<table id="faq" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<th class="bar" width="200">구분</th>
+					<th colspan="2" width="500">질문내용</th>
+				</tr>
+				</table>
+					
 				
+    			<ul id="nav" >
+    				<li>
+    					<c:forEach var="dto" items="${list}">
+    					<a href="#" class="title"> 
+    					<span width="200">${dto.category}</span>
+						<span width="500">${dto.subject}</span>
+						</a>
+        				<ul class="sub">
+        					<li>
+							<tr class="answer">
+								<td>&nbsp;</td>
+								<td colspan="2">
+								<font color="#FF00DD">${dto.content}</font>
+								<center>
+									<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqupdate.do?fid=${dto.fid}'">수정하기</button>
+									<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqdelete.do?fid=${dto.fid}'">삭제하기</button> 
+  								</center>
+								</td>
+							</tr>
+						</c:forEach>
+					</li>
+        		</ul>				
         	</div>
         	<div id="panel02">test2
         		

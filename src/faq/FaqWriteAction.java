@@ -27,6 +27,8 @@ public class FaqWriteAction {
 	@RequestMapping("/faqwritepro.do")
 	public String faqwritepro(FaqDTO dto){
 		
+		String content = dto.getContent();
+		dto.setContent(content.replace("\r\n","<br />"));
 		sqlMapClient.insert("faq.insertfaq", dto);		
 		
 		return "redirect:faqboard.do";
