@@ -23,6 +23,10 @@
       	select NEid,subject,content,reg_date from newsBoard where NEid = #NEid# 
 		</select>
 		
+		 <select id="max" resultClass="int">
+   		select max(NEid) from newsBoard
+ 		</select>	
+		
 		
 
 			<insert id="insertnewsboard" parameterClass="newsBoard">
@@ -30,12 +34,14 @@
       		INSERT INTO newsBoard (NEid,
       							   subject,
                          		   content,
-                         		   REG_DATE
+                         		   REG_DATE,
+                         		   neimg
                          )
                 	 VALUES (newsBoard_SEQ.NEXTVAL,
                 	 		#subject#,
                          	#content#,
-                         	sysdate
+                         	sysdate,
+                         	neimg
                          )
 		</insert>
 		
@@ -50,4 +56,9 @@
 		 <update id="updateboard" parameterClass="newsBoard">
             update newsBoard set subject=#subject#, CONTENT=#content# where NEid=#NEid#
    		</update>	
+   		
+   		 <update id="updateneimg"  parameterClass="newsBoard" >
+  		 update newsBoard set neimg = #neimg# where NEid = #NEid#
+ 		</update>
+ 		
 </sqlMap>

@@ -41,6 +41,7 @@
   <center><button type="submit" class="btn btn-primary btn-md" onclick=>칭찬하기</button></center>
   </form>
   </c:if>
+   칭찬하려면 로그인을 해주세요!
   <br/><br/>
   <table width="900" align="center" border="1">
     <thead>
