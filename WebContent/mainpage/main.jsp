@@ -119,9 +119,9 @@ $(function(){
 	<div class="main">
 	<div id="visual">
 		<ul>
-    		<li class="bg0"><img src="\antman\img\main_image_01.jpg" alt="" /></li>
-        	<li class="bg1"><img src="\antman\img\main_image_02.jpg" alt="" /></li>
-        	<li class="bg2"><img src="\antman\img\main_image_03.jpg" alt="" /></li>
+    		<li class="bg0"><a href="#"><img src="\antman\img\main_image_01.jpg" alt="" /></a></li>
+        	<li class="bg1"><a href="#"><img src="\antman\img\main_image_02.jpg" alt="" /></a></li>
+        	<li class="bg2"><a href="#"><img src="\antman\img\main_image_03.jpg" alt="" /></a></li>
     	</ul>
 
 	<div id="btns">
