@@ -17,7 +17,7 @@
 	#container .main #title{width:800px; margin-left:100px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
 	#container .main tr{padding:5px 5px;}
-	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:left; }
+	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:center; }
 	#container .main td{padding:5px 5px 5px 5px; }
 </style>
 
@@ -25,15 +25,14 @@
 	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
 
-
 <div id="side">
-<jsp:include page="d_mypage_sidebar.jsp" flush="true | false"/>
+	<jsp:include page="/p_mypage/p_mypage_sidebar.jsp" flush="true | false"/>
 </div>
 
+
 <div id="container">
-	<div class="main"><br/><br/><br/>
-		<div id="title"><h2>문의내역</h2></div>
-		<br/>
+	<div class="main"><br/><br/>
+		<div id="title"><center><h2>문의내역 </h2></center></div>
 
 
 <table width="700" border="1" align="center">

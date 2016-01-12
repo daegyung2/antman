@@ -10,6 +10,7 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import admin.bean.AcademyDTO;
 import admin.bean.AppointmentDTO;
 import admin.bean.MyQnADTO;
 
@@ -31,37 +32,20 @@ public class P_MypageBean {
 		
 	}
 	
-	@RequestMapping("/d_answer.do")
-	public String d_answer(MyQnADTO dto, HttpServletRequest request){
-		System.out.println(dto.getDrid());
-		int drid = Integer.parseInt(request.getParameter("drid"));
-		dto.setDrid(drid);
 	
-		List list=sqlMapClient.queryForList("MyQnA.selectDr", dto.getDrid());
-	
+	@RequestMapping("/p_myacademy.do")
+	public String p_academy(AcademyDTO dto, HttpSession session, HttpServletRequest request){
+		
+		request.getAttribute("memId");
+		dto.setId((String)session.getAttribute("memId"));
+		System.out.println(dto.getId());
+	      
+		List list=sqlMapClient.queryForList("academy.selectacademy", dto.getId());
+		
 		request.setAttribute("list", list);
+		System.out.println(list.size());
 		
-		return "/d_mypage/d_answer.jsp";
-		
-	}
-	@RequestMapping("/MyQnA_Answer.do")
-	public String MyQnA_Answer(HttpServletRequest request, MyQnADTO dto){
-		
-		
-		 int qid =(int)dto.getQid();
-		 System.out.println(dto.getQid());
-	      dto = (MyQnADTO)sqlMapClient.queryForObject("MyQnA.viewMyQnA",dto.getQid());
-	      request.setAttribute("qid",qid);
-	      request.setAttribute("dto",dto);
-		return "/p_mypage/MyQnA_Answer.jsp";
-	}
-	
-	@RequestMapping("/MyQnA_AnswerPro.do")
-	public String MyQnA_AnswerPro(HttpServletRequest request, MyQnADTO dto){
-		System.out.println(dto.getQid());
-		System.out.println(dto.getAnswer());
-		sqlMapClient.update("MyQnA.updateAnswer", dto);
-		return "/p_mypage/MyQnA_AnswerPro.jsp";
+		return "/p_mypage/p_myacademy.jsp";
 	}
 	
 	

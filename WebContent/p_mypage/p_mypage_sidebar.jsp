@@ -29,6 +29,7 @@
 <ul id="nav">
 	<li><a href="/antman/p_reservation.do" class="title">진료예약</a></li>
 	<li><a href="/antman/p_mypage.do" class="title">나의예약현황</a></li>
+	<li><a href="/antman/p_myacademy.do" class="title">나의학술행사</a></li>
 	<li><a href="/antman/p_praiseboard.do?id=${sessionScope.memId }&name=${sessionScope.memname}" class="title">칭찬하기</a></li>
 	<li><a href="/antman/MyQnA.do" class="title">나의상담</a></li>
 	<li><a href="/antman/modifyForm.do?id=${sessionScope.memId }&name=${sessionScope.memname}" class="title">회원정보수정</a></li>

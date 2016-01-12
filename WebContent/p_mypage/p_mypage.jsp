@@ -16,7 +16,7 @@
 	#container .main #title{width:800px; margin-left:100px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
 	#container .main tr{padding:5px 5px;}
-	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:left; }
+	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:center; }
 	#container .main td{padding:5px 5px 5px 5px; }
 </style>
 
@@ -47,21 +47,21 @@
         
        
         <tr align="center"> 
-		<td>아이디</td>
-		<td>이름</td>
-		<td>의료진</td>
-		<td>날짜</td>
+		<th>아이디</th>
+		<th>이름</th>
+		<th>의료진</th>
+		<th>날짜</th>
 		</tr>
 	
        
         <c:if test="${list != null }" >
         <c:forEach var="dto" items="${list}">
 	
-		<tr>
-		     <td><h2>${dto.id}</h2></td>
-			 <td><h2>${dto.name}</h2></td>
-			 <td><h2>${dto.drname}</h2></td>
-			 <td><h2>${dto.adate}</h2></td>
+		<tr align="center">
+		     <td>${dto.id}</td>
+			 <td>${dto.name}</td>
+			 <td>${dto.drname}</td>
+			 <td>${dto.adate}</td>
 		</tr>
 
 </c:forEach>

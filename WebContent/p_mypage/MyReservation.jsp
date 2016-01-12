@@ -40,10 +40,10 @@
         <c:if test="${list != null }" >
         <c:forEach var="dto" items="${list}">
 		<tr>
-		     <td><h2>${dto.id}</h2></td>
-			 <td><h2>${dto.name}</h2></td>
-			 <td><h2>${dto.drname}</h2></td>
-			 <td><h2>${dto.adate}</h2></td>
+		     <td>${dto.id}</td>
+			 <td>${dto.name}</td>
+			 <td>${dto.drname}</td>
+			 <td>${dto.adate}</td>
 		</tr>
 
 </c:forEach>

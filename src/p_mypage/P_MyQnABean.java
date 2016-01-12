@@ -78,5 +78,39 @@ public class P_MyQnABean {
 		
 	}
 	
+
+	@RequestMapping("/d_answer.do")
+	public String d_answer(MyQnADTO dto, HttpServletRequest request){
+		System.out.println(dto.getDrid());
+		int drid = Integer.parseInt(request.getParameter("drid"));
+		dto.setDrid(drid);
+	
+		List list=sqlMapClient.queryForList("MyQnA.selectDr", dto.getDrid());
+	
+		request.setAttribute("list", list);
+		
+		return "/d_mypage/d_answer.jsp";
+		
+	}
+	@RequestMapping("/MyQnA_Answer.do")
+	public String MyQnA_Answer(HttpServletRequest request, MyQnADTO dto){
+		
+		
+		 int qid =(int)dto.getQid();
+		 System.out.println(dto.getQid());
+	      dto = (MyQnADTO)sqlMapClient.queryForObject("MyQnA.viewMyQnA",dto.getQid());
+	      request.setAttribute("qid",qid);
+	      request.setAttribute("dto",dto);
+		return "/p_mypage/MyQnA_Answer.jsp";
+	}
+	
+	@RequestMapping("/MyQnA_AnswerPro.do")
+	public String MyQnA_AnswerPro(HttpServletRequest request, MyQnADTO dto){
+		System.out.println(dto.getQid());
+		System.out.println(dto.getAnswer());
+		sqlMapClient.update("MyQnA.updateAnswer", dto);
+		return "/p_mypage/MyQnA_AnswerPro.jsp";
+	}
+	
 	
 }
