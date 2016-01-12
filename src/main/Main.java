@@ -48,6 +48,7 @@ public class Main {
 	@RequestMapping("/ex.do")
 	public String main(HttpServletRequest request, NewsBoardDTO dto, MainBoardDTO dtoA, LectureBoardDTO dtoB){
 	
+		//공지, 뉴스, 강의 게시판 리스트 
 		List list = sqlMapClient.queryForList("newsBoard.selectAll", dto);
 		List listA = sqlMapClient.queryForList("mainBoard.selectAll", dtoA);
 		List listB = sqlMapClient.queryForList("lectureBoard.selectAll", dtoB);
@@ -64,7 +65,7 @@ public class Main {
 	public String adminmain(HttpServletRequest request,DoctorDTO dto, DepartmentDTO depart,String PageNum ){
 		
 	
-      
+      //
         List list = sqlMapClient.queryForList("doctor.selectList",dto);
         List elist = sqlMapClient.queryForList("employee.selectList",dto);
         List dlist = sqlMapClient.queryForList("depart.selectList",dto);
