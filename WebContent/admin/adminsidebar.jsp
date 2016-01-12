@@ -33,12 +33,14 @@
    <li><a href="/antman/doctorList.do" class="title">의사등록</a></li>
    <li><a href="/antman/employeeList.do" class="title">직원등록</a></li>
    <li><a href="/antman/departmentList.do" class="title">부서등록</a></li>
-   <li><a href="/antman/p_departmentList.do" class="title">상위부서등록</a></li>
-   <li><a href="/antman/scheduleform.do?drid=${sessionScope.memdrid }&drname=${sessionScope.memname}" class="title">메인으로</a></li>
+     <li><a href="/antman/p_departmentList.do" class="title">상위부서등록</a></li>
+   <li><a href="/antman/memberinfo.do" class="title">가입자통계</a></li>
+   <li><a href="/antman/appointinfo.do" class="title">예약통계</a></li>
+   <li><a href="/antman/doctorinfo.do" class="title">스케쥴통계</a></li>
+   <li><a href="/antman/resultinfo.do" class="title">의료결과통계</a></li>
    
-   <li><a font="bold" class="title">개인서비스</a></li>
-   <li><a href="" class="title">정보수정</a></li>
-   <li><a href="" class="title">로그아웃</a></li>
+   
+  
    
 </ul>
 </div>

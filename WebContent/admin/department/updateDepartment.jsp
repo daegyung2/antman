@@ -50,7 +50,7 @@
 <form action="/antman/updateDepartPro.do" method="post" enctype="multipart/form-data">
 <table width="1000" border="1" cellpadding="1" cellspacing="0">
 <tr>
-<td>부모 부서</td>
+<th>부모 부서</th>
 <td>
 <select name="p_depart_id" >
 <c:forEach var="dto" items="${list }">
@@ -61,55 +61,55 @@ ${pdto.p_dpname}
 </td>
 </tr>
 <tr>
-<td width="200">진료과 이름</td>
+<th width="200">진료과 이름</th>
 <td><input type="text" name="dpname" size="50" maxlength="30" value="${dto.dpname }" /></td>
 </tr>
 <tr >
-<td width="200">진료과 이니셜</td>
+<th width="200">진료과 이니셜</th>
 <td><input type="text" name="init" size="20" maxlength="20" value="${dto.init }"/></td>
 </tr>
-<td width="200">진료과 사진</td>
+<th width="200">진료과 사진</th>
 <td><input type="file" size="50" name="upload" />
 </td>
 </tr>
 <tr>
-<td width="200">진료과 정보1</td>
+<th width="200">진료과 정보1</th>
 <td><input type="text" name="d_info1" size="100" maxlength="100" value="${dto.d_info1 }"/></td>
 </tr>
 <tr>
-<td width="200">진료과 정보2</td>
+<th width="200">진료과 정보2</th>
 <td><input type="text" name="d_info2" size="100" maxlength="100" value="${dto.d_info2 }"/></td>
 </tr>
 <tr>
-<td width="200">진료과 정보3</td>
+<th width="200">진료과 정보3</th>
 <td><input type="text" name="d_info3" size="100" maxlength="100" value="${dto.d_info3 }"/></td>
 </tr>
 <tr>
-<td width="200">진료과 정보4</td>
+<th width="200">진료과 정보4</th>
 <td><input type="text" name="d_info4" size="100" maxlength="100" value="${dto.d_info4 }"/></td>
 </tr>
 <tr>
-<td width="200">진료과 정보5</td>
+<th width="200">진료과 정보5</th>
 <td><input type="text" name="d_info5" size="100" maxlength="100" value="${dto.d_info5 }"/></td>
 </tr>
 <tr>
-<td width="200">진료과 정보6</td>
+<th width="200">진료과 정보6</th>
 <td><input type="text" name="d_info6" size="100" maxlength="100" value="${dto.d_info6 }"/></td>
 </tr>
 <tr>
-<td width="200">진료과 정보7</td>
+<th width="200">진료과 정보7</th>
 <td><input type="text" name="d_info7" size="100" maxlength="100" value="${dto.d_info7 }"/></td>
 </tr>
 <tr>
-<td width="200">진료과 정보8</td>
+<th width="200">진료과 정보8</th>
 <td><input type="text" name="d_info8" size="100" maxlength="100" value="${dto.d_info8 }"/></td>
 </tr>
 <tr>
-<td width="200">진료과 정보9</td>
+<th width="200">진료과 정보9</th>
 <td><input type="text" name="d_info9" size="100" maxlength="100" value="${dto.d_info9 }"/></td>
 </tr>
 <tr>
-<td width="200">진료과 정보10</td>
+<th width="200">진료과 정보10</th>
 <td><input type="text" name="d_info10" size="100" maxlength="100" value="${dto.d_info10 }"/></td>
 </tr>
 <tr>

@@ -48,9 +48,9 @@
 <body>
 <table border="1"  >
 <tr>
-<td colspan="2" align="center">
-<font size="3" color="orange" >의사 정보를 입력하는 곳입니다. 상세 정보 입력 부탁 드립니다. </font>
-</td>
+<th colspan="2" align="center">
+의사 정보를 입력하는 곳입니다. 상세 정보 입력 부탁 드립니다. </font>
+</th>
 </tr>
 <form action="/antman/insertDoctorPro.do" method="post" enctype="multipart/form-data" >
 <tr>

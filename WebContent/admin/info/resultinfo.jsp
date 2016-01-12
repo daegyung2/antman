@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <style type="text/css">
 	body, ul, li, div{margin:0px; padding:0px; }
@@ -43,17 +43,22 @@
 
 <div id="container">
 	<div class="main">
-		<div id="title"><title>스케쥴통계</title>
-
-전체스케쥴
+		<div id="title"><title>진료기록통계</title>
 <center>
-<table width="500" border="1">
-<tr><td>전체스케쥴수</td><td>1차진료수</td><td>2차진료수</td><td>3차진료수</td><td>4차진료수</td></tr>
-<tr><td>${allcount }</td><td>${one }</td><td>${two }</td><td>${three }</td><td>${four }</td></tr>
+<table width="300" border="1">
+<tr>
+<td>진료기록통계</td>
+</tr>
+<tr>
+<td>${allcount }</td>
+</tr>
 </table>
 <br/>
+
+<table width="1000" border="1">
+<tr>
 <br/>
-        <form action="/antman/doctorinfo.do" method="post">
+ <form action="/antman/resultinfo.do" method="post">
     <select name="dpname">
 	<c:forEach var="dto" items="${dplist}" >
 	<option value="${dto.dpname }">${dto.dpname}</option>
@@ -66,7 +71,7 @@
 
 <c:if test="${!empty drlist}">
 선생님검색
- <form action="/antman/doctorinfo.do" method="post">  
+ <form action="/antman/resultinfo.do" method="post">  
  
     <select name="drid">
 	<c:forEach var="dto" items="${drlist}" >
@@ -76,30 +81,40 @@
 
 </form>
 </c:if>
-
-
-<table width="1000" border ="1">
-<tr>
-<td>스케쥴번호</td>
+<br/>
+<td>기록번호</td>
+<td>진료과</td>
+<td>선생님</td>
 <td>환자아이디</td>
 <td>환자이름</td>
-<td>선생님이름</td>
-<td>진료과</td>
-<td>스케쥴시간</td>
-<td>다음진료</td>
-<tr/>
-
+<td>생년월일</td>
+<td>나이</td>
+<td>성별</td>
+<td>증상1</td>
+<td>증상2</td>
+<td>증상3</td>
+<td>증상4</td>
+<td>입력날짜</td>
+</tr>
 <tr>
-<c:forEach var="dto" items="${slist }">
-<td>${dto.sid }</td>
-<td>${dto.id }</td>
-<td>${dto.name }</td>
-<td>${dto.drname }</td>
-<td>${dto.dpname }</td>
-<td>${dto.sdate }</td>
-<td>${dto.nextsdate }</td>
-<tr/>
+<c:forEach var="dto" items="${rlist }">
+<td>${dto.mid}</td>
+<td>${dto.dpname}</td>
+<td>${dto.drname}</td>
+<td>${dto.id}</td>
+<td>${dto.name}</td>
+<td>${dto.jumin1}</td>
+<td>${dto.age}</td>
+<td>${dto.gender}</td>
+<td>${dto.symptom1}</td>
+<td>${dto.symptom2}</td>
+<td>${dto.symptom3}</td>
+<td>${dto.symptom4}</td>
+<td>${dto.treatdate}</td>
+</tr>
 </c:forEach>
 </table>
+
+
 
 </center>

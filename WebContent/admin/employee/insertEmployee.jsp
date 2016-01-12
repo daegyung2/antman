@@ -50,35 +50,35 @@
 <body>
 <table border="1" cellpadding="0" cellspacing="0">
 <tr>
-<td colspan="2">
+<th colspan="2">
 직원 정보 입력창입니다. *는 필수 입력 대상입니다.
-</td>
+</th>
 </tr>
 <form action="/antman/insertEmployeePro.do" method="post" enctype="multipart/form-data">
 <tr>
-<td>사번</td>
+<th>사번</th>
 <td>${emdto.eid }</td>
 </tr>
 <tr>
-<td>
+<th>
 이름<font color="red">*</font>
-</td>
+</th>
 <td>
 <input type="text" name="name" size="10" maxlength="15" />
 </td>
 </tr>
 <tr>
-<td>
+<th>
 전공<font color="red">*</font>
-</td>
+</th>
 <td>
 <input type="text" name="major" size="10" maxlength="15" />
 </td>
 </tr>
 <tr>
-<td>
+<th>
 소속 진료과<font color="red">*</font>
-</td>
+</th>
 <td>
 <select multiple size="5" name="dpname">
 <c:forEach var="dto" items="${list }" >
@@ -88,14 +88,14 @@
 </td>
 </tr>
 <tr>
-<td rowspan="5" align="center">사진 업로드</td>
+<th rowspan="5" align="center">사진 업로드</th>
 <td><input type="file" name="emimg" /></td></tr>
 <tr><td><input type="file" name="emimg" /></td></tr>
 <tr><td><input type="file" name="emimg" /></td></tr>
 <tr><td><input type="file" name="emimg" /></td></tr>
 <tr><td><input type="file" name="emimg" /></td></tr>
 <tr>
-<td>직원 설명</td>
+<th>직원 설명</th>
 <td><textarea name="emdescription" rows="5" cols="30" ></textarea></td>
 </tr>
 <tr>

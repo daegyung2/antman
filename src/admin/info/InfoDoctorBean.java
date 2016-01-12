@@ -28,9 +28,9 @@ public class InfoDoctorBean {
 		
 		
 		
-		if(pdto.getDpname() != null){
+		if(pdto.getDpname() != null && pdto.getDrid() == 0){
 			List slist= sqlMapClient.queryForList("schedule.schedulelistdp",sdto);
-			
+			System.out.println(slist.size());
 			int allcount = (Integer)sqlMapClient.queryForObject("schedule.allcountdp",sdto);
 			int one = (Integer)sqlMapClient.queryForObject("schedule.onecountdp",sdto);
 			int two = (Integer)sqlMapClient.queryForObject("schedule.twocountdp",sdto);
@@ -46,7 +46,9 @@ public class InfoDoctorBean {
 			request.setAttribute("dplist", dplist);
 			request.setAttribute("drlist", drlist);
 			request.setAttribute("allcount", allcount);
+			return "/admin/info/doctorinfo.jsp";
 		}else if(pdto.getDrid() != 0){
+			System.out.println(pdto.getDrid());
 			List slist= sqlMapClient.queryForList("schedule.schedulelistdr",sdto);
 			
 			int allcount = (Integer)sqlMapClient.queryForObject("schedule.allcountdr",sdto);
@@ -56,7 +58,17 @@ public class InfoDoctorBean {
 			int four = (Integer)sqlMapClient.queryForObject("schedule.fourcountdr",sdto);
 			List dplist = sqlMapClient.queryForList("praise.selectdepart",pdto);
 			List drlist = sqlMapClient.queryForList("praise.selectdoctor",pdto.getDpname());
-		
+			
+			
+			request.setAttribute("one", one);
+			request.setAttribute("two", two);
+			request.setAttribute("three", three);
+			request.setAttribute("four", four);
+			request.setAttribute("slist", slist);
+			request.setAttribute("dplist", dplist);
+			request.setAttribute("drlist", drlist);
+			request.setAttribute("allcount", allcount);
+			return "/admin/info/doctorinfo.jsp";
 		}
 		
 		

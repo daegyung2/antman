@@ -50,12 +50,12 @@
 <body>
 <table width="690" border="1">
 <tr>
-<td width="80">의사번호</td>
-<td width="100">의사 이름</td>
-<td width="110">의사 등록번호</td>
-<td width="100">전공</td>
-<td width="120">부서이름</td>
-<td width="180">비고</td>
+<th width="80">의사번호</th>
+<th width="100">의사 이름</th>
+<th width="110">의사 등록번호</th>
+<th width="100">전공</th>
+<th width="120">부서이름</th>
+<th width="180">비고</th>
 </tr>
 <c:forEach var="dto" items="${list }" >
 <tr>

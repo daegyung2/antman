@@ -48,11 +48,11 @@
 <body>
 <table width="550" border="1" cellpadding="0" cellspacing="0">
 <tr>
-<td width="70">사번</td>
-<td width="100">이름</td>
-<td width="100">전공</td>
-<td width="150">부서명</td>
-<td width="120">비고</td>
+<th width="70">사번</th>
+<th width="100">이름</th>
+<th width="100">전공</th>
+<th width="150">부서명</th>
+<th width="120">비고</th>
 </tr>
 <c:forEach var="dto" items="${list }">
 <tr>

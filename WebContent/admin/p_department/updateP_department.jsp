@@ -48,18 +48,18 @@
 <body>
 <table width="350">
 <tr>
-<td>부모 부서를 수정합니다.</td>
+<th colspan="2">부모 부서를 수정합니다.</th>
 </tr>
 <form action="/antman/updateP_departPro.do" method="post" >
 <tr>
-<td>부서 번호</td>
+<th>부서 번호</th>
 <td>${dto.p_depart_id }
 <input type="hidden" name="p_depart_id" value="${dto.p_depart_id }" />
 </td>
 </tr>
 <tr>
-<td width="150">부모 부서 수정
-</td>
+<th width="150">부모 부서 수정
+</th>
 <td width="200"><input type="text" name="p_dpname" value="${dto.p_dpname }"/></td>
 </tr>
 <tr>

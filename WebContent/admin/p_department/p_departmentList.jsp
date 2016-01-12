@@ -50,8 +50,8 @@
 
 <table width="350" border="1">
 <tr>
-<td width="150">부모 진료과 이름</td>
-<td width="200" align="center">비고</td>
+<th width="150">부모 진료과 이름</th>
+<th width="200" align="center">비고</th>
 </tr>
 <c:forEach var="dto" items="${list }" >
 <tr>
