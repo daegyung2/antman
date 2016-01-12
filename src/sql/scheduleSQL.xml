@@ -13,13 +13,12 @@
 	<result property="dpname" column="dpname"/>
 	<result property="sdate" column="sdate"/>
 	<result property="adate" column="adate"/>
-	<result property="ttview" column="ttview"/>
-	<result property="stevent" column="stevent"/>
+
 	
 	</resultMap>
 	
   <select id="selectAll" parameterClass="int" resultClass="dsche">
-       select sid,drid,drname,dpname,sdate,adate,ttview,stevent from schedule where drid = #drid#
+       select sid,drid,drname,dpname,sdate,adate from schedule where drid = #drid#
    </select>
 	  
 	 <select id="selectLastNo" resultClass="int" >
@@ -50,6 +49,10 @@
 	</delete>
 	
 	<select id="drschedulecheck" resultClass="dsche"  >
+	  select sid,drname,dpname,name,to_char(sdate,'YYYY-MM-DD HH:MI')sdate,nextsdate from schedule where drid = #drid# order by sid desc
+	</select>
+	
+	<select id="drschedulecheckA" resultClass="dsche"  >
 	  select sid,drname,dpname,name,to_char(sdate,'YYYY-MM-DD HH:MI')sdate,nextsdate from schedule where dpname = #dpname# order by sid desc
 	</select>
 	
@@ -80,5 +83,89 @@
 	<select id="drappointcheck" resultClass="dsche" parameterClass="int">
 		select * from schedule where drid = #drid#
 	</select>
+
+
+     <!-- 통계용 -->
+     
+     
+     
+     	<select id="schedulelistsc" resultClass="dsche" >
+		select sid,id,name,drid,drname,dpname,sdate,nextsdate from schedule order by sid desc
+	</select>
+
+	        <select id="allcountsc" resultClass="int">
+	select count(*) from schedule
+	</select>
+	
+		        <select id="onecountsc" resultClass="int">
+	select count(*) from schedule where nextsdate= '1차진료' 
+	</select>
+	
+		        <select id="twocountsc" resultClass="int">
+	select count(*) from schedule where nextsdate= '2차진료' 
+	</select>
+	
+		        <select id="threecountsc" resultClass="int">
+	select count(*) from schedule where nextsdate= '3차진료' 
+	</select>
+	
+		        <select id="fourcountsc" resultClass="int">
+	select count(*) from schedule where nextsdate= '4차진료' 
+	</select>
+	
+	
+	<!-- 진료과별  -->
+		<select id="schedulelistdp" resultClass="dsche" >
+		select sid,id,name,drid,drname,dpname,sdate,nextsdate from schedule where dpname = #dpname# order by sid desc
+	</select>
+
+	        <select id="allcountdp" resultClass="int">
+	select count(*) from schedule where dpname = #dpname# 
+	</select>
+	
+		        <select id="onecountdp" resultClass="int">
+	select count(*) from schedule where nextsdate= '1차진료' and dpname = #dpname# 
+	</select>
+	
+		        <select id="twocountdp" resultClass="int">
+	select count(*) from schedule where nextsdate= '2차진료' and dpname = #dpname#  
+	</select>
+	
+		        <select id="threecountdp" resultClass="int">
+	select count(*) from schedule where nextsdate= '3차진료' and dpname = #dpname#  
+	</select>
+	
+		        <select id="fourcountdp" resultClass="int">
+	select count(*) from schedule where nextsdate= '4차진료' and dpname = #dpname#  
+	</select>
+
+
+<!-- 선생별  -->
+		<select id="schedulelistdr" resultClass="dsche" >
+		select sid,id,name,drid,drname,dpname,sdate,nextsdate from schedule where drid= #drid# order by sid desc
+	</select>
+
+	        <select id="allcountdr" resultClass="int">
+	select count(*) from schedule where drid = #drid# 
+	</select>
+	
+		        <select id="onecountdr" resultClass="int">
+	select count(*) from schedule where nextsdate= '1차진료' and drid = #drid# 
+	</select>
+	
+		        <select id="twocountdr" resultClass="int">
+	select count(*) from schedule where nextsdate= '2차진료' and drid = #drid#  
+	</select>
+	
+		        <select id="threecountdr" resultClass="int">
+	select count(*) from schedule where nextsdate= '3차진료'and drid = #drid#  
+	</select>
+	
+		        <select id="fourcountdr" resultClass="int">
+	select count(*) from schedule where nextsdate= '4차진료' and drid = #drid#   
+	</select>
+
+
+
 
 </sqlMap>

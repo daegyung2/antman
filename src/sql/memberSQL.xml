@@ -19,6 +19,11 @@
       
 </resultMap>
 
+
+ <select id="memberlist" resultClass="dto">
+	select id,name,age,gender,phone,e_mail,Eid,drid from member
+	</select>
+	
 <select id="userdata" resultMap="userdata">
   select id,passwd,name,age,gender,phone,e_mail,Eid,drId,auth from MEMBER where id = #id#
 </select>
@@ -71,4 +76,9 @@ select count(*) from member where id=#id# and passwd=#passwd#
 <select id="memberinfo" resultClass="dto" parameterClass="dto">
 	  select * from member where id = #id#
 	  </select>
+	  
+	  
+	  
+	  
+	
 </sqlMap>

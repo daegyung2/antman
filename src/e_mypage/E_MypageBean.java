@@ -37,7 +37,7 @@ public class E_MypageBean {
 		dto.setDpname(dpname);			//select * from employee where dpname = #dpname# and to_char(sdate , 'YYYY-MM-DD') = to_char(sysdate , 'YYYY-MM-DD')
 		
 		if(dto.getDrid() == 0 ){
-		slist = sqlMapClient.queryForList("schedule.drschedulecheck",dto.getDpname());
+		slist = sqlMapClient.queryForList("schedule.drschedulecheckA",dto.getDpname());
 		}else if(dto.getDrid() != 0){
 		slist = sqlMapClient.queryForList("schedule.drschedulecheckB",dto.getDrid());
 		}else{}

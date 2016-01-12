@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="info">
+
+	<typeAlias alias="members" type="admin.bean.MemberDTO"/>
+	
+
+		  
+
+
+	  
+		<select id="memcount" resultClass="int">
+	select count(*) from member
+	</select>
+	
+			<select id="doctorcount" resultClass="int">
+	select count(*) from member where auth = 'D' 
+	</select>
+			<select id="employeecount" resultClass="int">
+	select count(*) from member where auth  = 'E'
+	</select>
+			<select id="paincount" resultClass="int">
+	select count(*) from member where auth = 'P' 
+	</select>
+			<select id="mancount" resultClass="int">
+	select count(*) from member where gender = '남자' 
+	</select>
+			<select id="womancount" resultClass="int">
+	select count(*) from member where gender = '여자'
+	</select> 
+	
+	<select id="one" resultClass="int">
+	  <![CDATA[select count(*) from member where age < 10]]>
+	
+	</select> 
+	
+		<select id="two" resultClass="int">
+			  <![CDATA[select count(*) from member where age >= 10 and age < 20]]>
+	</select> 
+		<select id="three" resultClass="int">
+  <![CDATA[select count(*) from member where age >= 20 and age < 30]]>
+	</select> 
+		<select id="four" resultClass="int">
+	  <![CDATA[select count(*) from member where age >= 30 and age < 40]]>
+	</select> 
+		<select id="five" resultClass="int">
+	  <![CDATA[select count(*) from member where age >= 40 and age < 50]]>
+	</select> 
+		<select id="six" resultClass="int">
+	  <![CDATA[select count(*) from member where age >= 50 and age < 60]]>
+	</select> 
+		<select id="seven" resultClass="int">
+	  <![CDATA[select count(*) from member where age >= 60 and age < 70]]>
+	</select> 
+		<select id="eight" resultClass="int">
+	  <![CDATA[select count(*) from member where age >= 70 and age < 80]]>
+	</select> 
+		<select id="nine" resultClass="int">
+	  <![CDATA[select count(*) from member where age >= 80 and age < 90]]>
+	</select> 
+		<select id="ten" resultClass="int">
+	  <![CDATA[select count(*) from member where age >= 90 and age < 100]]>
+	</select> 
+	
+	<!-- 예약통계-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</sqlMap>

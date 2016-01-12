@@ -23,7 +23,7 @@
      <sqlMap resource="/sql/cultureBoardSQL.xml" />
      <sqlMap resource="/sql/academySQL.xml" />
      <sqlMap resource="/sql/scheduleresultSQL.xml" />
-    
+    <sqlMap resource="/sql/admininfoSQL.xml" />
      
      
      

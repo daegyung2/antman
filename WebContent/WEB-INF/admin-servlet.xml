@@ -41,7 +41,7 @@
 	<context:component-scan base-package="webservice"/>
 	<context:component-scan base-package="academy"/>
   
-       
+     <context:component-scan base-package="admin.info"/>  
     <bean id="multipartResolver" 
   class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
      <property name="maxUploadSize" value="-1" />
