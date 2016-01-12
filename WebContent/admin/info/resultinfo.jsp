@@ -45,12 +45,12 @@
 	<div class="main">
 		<div id="title"><title>진료기록통계</title>
 <center>
-<table width="300" border="1">
+<table width="100" border="1">
 <tr>
-<td>진료기록통계</td>
+<th align="center">진료기록통계</th>
 </tr>
 <tr>
-<td>${allcount }</td>
+<td align="center">${allcount }</td>
 </tr>
 </table>
 <br/>
@@ -70,7 +70,7 @@
 
 
 <c:if test="${!empty drlist}">
-선생님검색
+선생님검색<br/>
  <form action="/antman/resultinfo.do" method="post">  
  
     <select name="drid">
@@ -82,19 +82,19 @@
 </form>
 </c:if>
 <br/>
-<td>기록번호</td>
-<td>진료과</td>
-<td>선생님</td>
-<td>환자아이디</td>
-<td>환자이름</td>
-<td>생년월일</td>
-<td>나이</td>
-<td>성별</td>
-<td>증상1</td>
-<td>증상2</td>
-<td>증상3</td>
-<td>증상4</td>
-<td>입력날짜</td>
+<th>기록번호</th>
+<th>진료과</th>
+<th>선생님</th>
+<th>환자아이디</th>
+<th>환자이름</th>
+<th>생년월일</th>
+<th>나이</th>
+<th>성별</th>
+<th>증상1</th>
+<th>증상2</th>
+<th>증상3</th>
+<th>증상4</th>
+<th>입력날짜</th>
 </tr>
 <tr>
 <c:forEach var="dto" items="${rlist }">

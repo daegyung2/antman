@@ -14,7 +14,14 @@
    </insert>
    
    
+   
+   <insert id="deleteappoint"  parameterClass="appoint" >
+  delete appointment where aid = #aid# and id = #id# 
+  </insert>
 
+   <insert id="deleteappointb"  parameterClass="appoint" >
+  delete appointment where id = #id# and adate = to_date(#adate#,'YYYY-MM-DD HH24:MI') and nextadate = #nextadate# 
+  </insert>
 <!-- 간편예약 넣기  --> 
  <typeAlias alias="simpleappoint" type="admin.bean.AppointmentSimpleDTO" />
 <insert id="simpleappointmentinsert"  parameterClass="simpleappoint">
@@ -47,7 +54,7 @@
 	
 	
    <select id="selectAll" parameterClass="String" resultClass="appoint">
-		select * from appointment where id=#id# order by aid desc
+		select aid,id,name,drid,jumin1,jumin2,drname,dpname,to_char(adate,'yyyy-MM-DD HH:MI')adate,nextadate,symptom from appointment where id=#id# order by aid desc
    </select>
    
  

@@ -75,7 +75,7 @@
 </c:forEach>
 
 </table>
-<input type="button" value="메인으로 가기" oncick="location.href='/antman/dbmain.do'">
+<input type="button" value="메인으로 가기" oncick="location.href='/antman/main.do'">
 <input type="button" value="마이페이지 가기" oncick="location.href='/antman/d_mypage.do'">
 
 </center>

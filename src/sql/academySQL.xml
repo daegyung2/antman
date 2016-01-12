@@ -10,6 +10,19 @@ values(academyschedule_SEQ.NEXTVAL,#drname#,#drid#,#assubject#,#ascontent#,to_da
 </insert>
   
   
+  
+  <insert id="academyupdate" parameterClass="academy">
+  
+  update academyschedule set assubject = #assubject#, ascontent = #ascontent#, astime= to_date(#astime#,'YYYY-MM-DD HH24:MI'),
+  astimeend = to_date(#astimeend#,'YYYY-MM-DD HH24:MI'),asmax = #asmax#,asstart = to_date(#asstart#,'YYYY-MM-DD HH24:MI'),
+  asend = to_date(#asstart#,'YYYY-MM-DD HH24:MI'),place = #place#,host = #host# , auth = #auth# , register = #register#,
+  asphone = #asphone#, asemail = #asemail# where asid = #asid# and drid = #drid#
+
+</insert>
+  
+    <delete id="deleteacademy"  parameterClass="academy" >
+   delete academyschedule  where asid = #asid# and drid = #drid#
+ </delete>
   <update id="academyasimg"  parameterClass="academy" >
    update academyschedule set asimg = #asimg# where asid = #asid#
  </update>
@@ -18,6 +31,7 @@ values(academyschedule_SEQ.NEXTVAL,#drname#,#drid#,#assubject#,#ascontent#,to_da
    select max(asid) from academyschedule 
  </select>
  
+
   <select id=" selectassubject" resultClass="int">
    select assubject from academyschedule 
  </select>
@@ -26,9 +40,19 @@ values(academyschedule_SEQ.NEXTVAL,#drname#,#drid#,#assubject#,#ascontent#,to_da
          SELECT count(*) count from academyschedule 
       </select>
 
+          <select id="selectLastNosc" resultClass="int" >
+         SELECT count(*) count from academyschedule where drid = #drid#
+      </select>
+      
+            <select id="academyaslistselect" resultClass="academy">
+      select asid, drid, drname, assubject,to_char(astime,'YYYY-MM-DD HH:MI') astime,to_char(astimeend,'HH:MI') astimeend,asimg,asmin,asmax,to_char(asstart,'YYYY-MM-DD HH:MI') asstart, to_char(asend,'MM-DD HH:MI') asend, place, host, auth, register, asphone, asemail, ascontent from academyschedule where drid = #drid# and asid = #asid# order by asid desc
+      </select>
       
       <select id="selectAll" resultClass="academy">
-      select asid, drid, drname, assubject,to_char(astime,'YYYY-MM-DD HH:MI') astime,to_char(astimeend,'YYYY-MM-DD HH:MI') astimeend,asimg,asmin,asmax,to_char(asstart,'YYYY-MM-DD HH:MI') asstart, to_char(asend,'YYYY-MM-DD HH:MI') asend, place, host, auth, register, asphone, asemail, ascontent from academyschedule order by asid desc
+      select asid, drid, drname, assubject,to_char(astime,'YYYY-MM-DD HH:MI') astime,to_char(astimeend,'HH:MI') astimeend,asimg,asmin,asmax,to_char(asstart,'YYYY-MM-DD HH:MI') asstart, to_char(asend,'MM-DD HH:MI') asend, place, host, auth, register, asphone, asemail, ascontent from academyschedule order by asid desc
+      </select>
+           <select id="selectAllsc" resultClass="academy">
+      select asid, drid, drname, assubject,to_char(astime,'YYYY-MM-DD HH:MI') astime,to_char(astimeend,'HH:MI') astimeend,asimg,asmin,asmax,to_char(asstart,'YYYY-MM-DD HH:MI') asstart, to_char(asend,'MM-DD HH:MI') asend, place, host, auth, register, asphone, asemail, ascontent from academyschedule where drid = #drid# order by asid desc
       </select>
       
       <select id="selectcontent" resultClass="academy">   
@@ -70,4 +94,6 @@ values(appointacademy_seq.NEXTVAL,#name#,#phone#,#email#,#aasubject#,sysdate,#dr
      <select id="asendcheck" resultClass="int" parameterClass="academy">
       <![CDATA[select count(*) from academyschedule where asend >= sysdate AND asid = #asid#]]>
 </select>
+
+
 </sqlMap>

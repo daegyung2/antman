@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+       <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <title>학술행사일정 | 의학교육</title>
@@ -29,13 +29,13 @@
 
 <!-- container 시작 -->
 <div id="side">
-	<jsp:include page="academysidebar.jsp" flush="true | false"/>
+	<jsp:include page="d_mypage_sidebar.jsp" flush="true | false"/>
 </div>
 
 <div class="container">
 	<div class="main"><table width="400" border="1">
 <tr>
-<form action="/antman/academyinsert.do" method="post"  enctype="multipart/form-data">
+<form action="/antman/sacademyinsert.do" method="post"  enctype="multipart/form-data">
 <th>학술행사제목</th><td colspan="3"><input type="text" name="assubject"></tr>
 
 <tr>

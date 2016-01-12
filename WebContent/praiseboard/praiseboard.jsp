@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <style type="text/css">
 	body{margin:0px; padding:0px; }
@@ -16,7 +15,7 @@
 	#container .main #title{width:800px; margin-left:100px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
 	#container .main tr{padding:5px 5px;}
-	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:center; }
+	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:left; }
 	#container .main td{padding:5px 5px 5px 5px; }
 </style>
 
@@ -24,14 +23,17 @@
 	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
 
-<div id="side">
-	<jsp:include page="/webservice/websidebar.jsp" flush="true | false"/>
-</div>
 
+<div id="side">
+<jsp:include page="/webservice/websidebar.jsp" flush="true | false"/>
+</div>
+</br></br>
 
 <div id="container">
-	<div class="main"><br/>
-		<div id="title"><center><h2><b>칭찬합시다</b></h2></center></div>
+	<div class="main">
+		<div id="title"><h2>칭찬합시다</h2></div>
+	
+<div class="container">
   <center>       
   <br/>
   칭찬은 하는 사람과 받는 사람, 모두를 즐겁게 합니다.<br/>

@@ -144,4 +144,19 @@ public class D_ScheduleCheckBean {
 request.setAttribute("slist", slist);
 		return "/d_mypage/d_schedulecheck.jsp";
 	}
+	
+	
+		@RequestMapping("/sscheduledelete.do")
+		public String delete(AppointmentDTO dto, ScheduleDTO sdto,HttpServletRequest request){
+			System.out.println(sdto.getId());
+			
+			sdto.setNextsdate(sdto.getNextadate());
+			
+			sdto.setSdate(dto.getAdate());
+			sqlMapclient.delete("schedule.dupdateschedule",sdto);
+			sqlMapclient.delete("appointment.deleteappoint",dto);
+			
+			return "/schedulecheck.do";
+			
+		}
 }

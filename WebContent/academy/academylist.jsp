@@ -41,7 +41,7 @@
 <tr/>
 <c:forEach var="dto" items="${list }">
 <tr>
-<td>${dto.asid}</td><td><a href="/antman/academycontent.do?id=${sessionScope.memId }&asid=${dto.asid}&drid=${dto.drid }&drname=${dto.drname }&asend=${dto.asend}">${dto.assubject}</a></td><td>${dto.astime}-${dto.astimeend}</td><td>${dto.asstart}-${dto.asend}</td>
+<td>${dto.asid}</td><td><a href="/antman/academycontent.do?id=${sessionScope.memId }&asid=${dto.asid}&drid=${dto.drid }&drname=${dto.drname }&asend=${dto.asend}">${dto.assubject}</a></td><td>${dto.astime} ~ ${dto.astimeend}</td><td>${dto.asstart} ~ ${dto.asend}</td>
 <td><c:if test="${dto.asmin ne  dto.asmax}">
 ${dto.asmin}/${dto.asmax}
 </c:if>
@@ -52,9 +52,11 @@ ${dto.asmin}/${dto.asmax}
 </tr>
 </c:forEach>
 <tr>
+<c:if test="${sessionScope.memauth eq 'D' &&  sessionScope.memId ne null }">
 <td colspan="5">
 <center><input type="button" value="±Û¾²±â" onclick="javascript:window.location='/antman/academyform.do'"></center>
 </td>
+</c:if>
 </tr>
 
 </table>

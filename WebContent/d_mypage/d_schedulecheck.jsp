@@ -145,7 +145,7 @@ String today = sdms.format(cal.getTime());
 
 <c:if test="${view eq yes}">
 <center>
-<table width="760" border="1">
+<table width="810" border="1">
 
 <tr>
 
@@ -158,6 +158,7 @@ String today = sdms.format(cal.getTime());
 <th width="50">시간</th>
 <th width="50">분</th>
 <th width="50">등록</th>
+<th width="50">삭제</th>
 </tr>
 <tr>
 
@@ -253,6 +254,7 @@ String todays = sdm1.format(cal1.getTime());
 <option>50</option>
 </td>
 <td><input type="submit" value="등록"></td>
+<td><input type="button" value="삭제" onclick="javascript:window.location='sscheduledelete.do?drid=${sessionScope.memdrid}&aid=${dto.aid }&id=${dto.id}&nextadate=${dto.nextadate}&adate=${dto.adate}'"></td>
 </tr>
 </form>
 </c:forEach>

@@ -39,9 +39,9 @@
 
 <form action = "MyReservation.do" method="post"><br/>
     
-<table width="700" border="1" align="center">
+<table width="600" border="1" align="center">
        
-        <c:if test="${list == null }">
+        <c:if test="${empty list}">
         <h2>현재 예약한 사항이 없습니다.</h2>
         </c:if>
         
@@ -51,17 +51,20 @@
 		<td>이름</td>
 		<td>의료진</td>
 		<td>날짜</td>
+		<td>취소</td>
 		</tr>
 	
        
-        <c:if test="${list != null }" >
+        <c:if test="${!empty list}" >
         <c:forEach var="dto" items="${list}">
 	
 		<tr>
-		     <td><h2>${dto.id}</h2></td>
-			 <td><h2>${dto.name}</h2></td>
-			 <td><h2>${dto.drname}</h2></td>
-			 <td><h2>${dto.adate}</h2></td>
+		     <td>${dto.id}</td>
+			 <td>${dto.name}</td>
+			 <td>${dto.drname}</td>
+			 <td>${dto.adate}</td>
+			 <td>${dto.nextadate}</td>
+			 <td><input type="button" value="취소" onclick="javascript:window.location='/antman/deleteappoint.do?aid=${dto.aid}&id=${dto.id }&adate=${dto.adate }&nextadate=${dto.nextadate}'"> </td>
 		</tr>
 
 </c:forEach>

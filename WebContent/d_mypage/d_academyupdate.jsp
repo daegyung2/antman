@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+       <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <title>학술행사일정 | 의학교육</title>
@@ -29,18 +29,18 @@
 
 <!-- container 시작 -->
 <div id="side">
-	<jsp:include page="academysidebar.jsp" flush="true | false"/>
+	<jsp:include page="d_mypage_sidebar.jsp" flush="true | false"/>
 </div>
 
 <div class="container">
 	<div class="main"><table width="400" border="1">
 <tr>
-<form action="/antman/academyinsert.do" method="post"  enctype="multipart/form-data">
-<th>학술행사제목</th><td colspan="3"><input type="text" name="assubject"></tr>
+<form action="/antman/sacademyupdatepro.do" method="post"  enctype="multipart/form-data">
+<th>학술행사제목</th><td colspan="3"><input type="text" name="assubject" value="${dto.assubject }"></tr>
 
 <tr>
 <th colspan="4">모시는글</th></tr>
-<tr><td colspan="4"><textarea name="ascontent" rows="5" cols="60" placeholder="내용을 입력하세요"></textarea></tr>
+<tr><td colspan="4"><textarea name="ascontent" rows="5" cols="60" placeholder="내용을 입력하세요">${dto.ascontent }</textarea></tr>
 
 <tr>
 <th>선생님</th><td colspan="3"><input type="hidden" name="drname" value="${sessionScope.memname}">${sessionScope.memname}<input type="hidden" name="drid" value="${sessionScope.memdrid}"></tr>
@@ -82,7 +82,7 @@
 		String today = sdm.format(cal.getTime());
 		%>
 		<p>
-		<input type="text" id="sa_tourgodate" name="ymd" value="<%=today%>" size="6"/><%--value="" 안에 오늘 날짜가 표시되도록 코딩해야 함 : tourbackdate 계산 알고리즘을 응용할까?--%>
+		<input type="text" id="sa_tourgodate" name="ymd" value="<%=today%>" size="6"/>기존시간 ${dto.astime}<%--value="" 안에 오늘 날짜가 표시되도록 코딩해야 함 : tourbackdate 계산 알고리즘을 응용할까?--%>
 		</p>
 		</body>
 		</html>
@@ -98,7 +98,9 @@
 		<option value="17">5</option>
 		<option value="18">6</option>
 		<option value="19">7</option>
-		<option value="20">8</option></td>
+		<option value="20">8</option>
+		
+		</td>
 		<td>
 		<select name="minute">
 		<option value="00">00</option>
@@ -118,7 +120,8 @@
 		<option value="17">5</option>
 		<option value="18">6</option>
 		<option value="19">7</option>
-		<option value="20">8</option></td>
+		<option value="20">8</option>
+		기존종료시간 ${dto.astimeend}</td>
 		
 		<td>
 		<select name="minutee">
@@ -176,7 +179,7 @@
 		String today1 = sdm1.format(cal1.getTime());
 		%>
 		<p>
-		<input type="text" id="sa_tourgodate1" name="asstart" value="<%=today1%>" size="6"/><%--value="" 안에 오늘 날짜가 표시되도록 코딩해야 함 : tourbackdate 계산 알고리즘을 응용할까?--%>
+		<input type="text" id="sa_tourgodate1" name="asstart" value="<%=today1%>" size="6"/>기존종료시간 ${dto.asstart}<%--value="" 안에 오늘 날짜가 표시되도록 코딩해야 함 : tourbackdate 계산 알고리즘을 응용할까?--%>
 		</p>
 		</body>
 		</html>
@@ -218,15 +221,15 @@
 		String today2 = sdm2.format(cal2.getTime());
 		%>
 		<p>
-		<input type="text" id="sa_tourgodate2" name="asend" value="<%=today2%>" size="6"/><%--value="" 안에 오늘 날짜가 표시되도록 코딩해야 함 : tourbackdate 계산 알고리즘을 응용할까?--%>
+		<input type="text" id="sa_tourgodate2" name="asend" value="<%=today2%>" size="6"/>기존종료시간 ${dto.asend}<%--value="" 안에 오늘 날짜가 표시되도록 코딩해야 함 : tourbackdate 계산 알고리즘을 응용할까?--%>
 		</p>
 		</body>
 		</html>
 		</td></tr>
 		<tr>
-		<th>장소</th><td colspan="3"><input type="text" name="place"></tr>
+		<th>장소</th><td colspan="3"><input type="text" name="place" value="${dto.place }"></tr>
 		<tr>
-		<th>주최</th><td colspan="3"><input type="text" name="host"></tr>
+		<th>주최</th><td colspan="3"><input type="text" name="host" value="${dto.host}"></tr>
 		<tr>
 		<th>강의신청대상</th><td colspan="3"><select name="auth">
 		<option value="D">의사</option>
@@ -234,16 +237,16 @@
 		<option value="P">환자</option>
 		<option value="ALL">상관없음</option></td></tr></tr>
 		<tr>
-		<th>등록방법</th><td colspan="3"><input type="text" name="register"></tr>
+		<th>등록방법</th><td colspan="3"><input type="text" name="register" value="${dto.register }"></tr>
 		<tr>
 
-		<th>이메일</th><td colspan="3"><input type="text" name="asemail"></tr>
+		<th>이메일</th><td colspan="3"><input type="text" name="asemail" value="${dto.asemail }"></tr>
 		
-				<th>문의전화</th><td colspan="3"><input type="text" name="asphone"></tr>
+				<th>문의전화</th><td colspan="3"><input type="text" name="asphone" value="${dto.asphone }"></tr>
 				<tr>
-	
+<input type="hidden" name="asid" value="${dto.asid }">
 </table>
-<input type="submit" value="등록하기">
+<input type="submit" value="수정하기">
 </form>
 </div>
 </div>

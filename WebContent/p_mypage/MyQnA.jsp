@@ -76,7 +76,7 @@
     
 <table width="1000" border="1" align="center">
        
-        <c:if test="${list == null }" >
+        <c:if test="${empty list}" >
         <h2>현재 받은 질문이 없습니다.</h2>
         </c:if>
         
@@ -87,18 +87,18 @@
         <td>의료진</td>
         <td>답변</td>
         </tr>
-        <c:if test="${list != null }" >
+        <c:if test="${!empty list}" >
         <c:forEach var="dto" items="${list}">
 		<tr align="cnenter">
-		     <td><h3>${dto.id}</h3></td>
-			 <td><h3>${dto.name}</h3></td>
-			 <td><h3>${dto.content}</h3></td>
-			 <td><h3>${dto.drname}</h3></td>
+		     <td>${dto.id}</td>
+			 <td>${dto.name}</td>
+			 <td>${dto.content}</td>
+			 <td>${dto.drname}</td>
 			<c:if test="${dto.answer != null}">
-			<td><h3>${dto.answer}</h3></td>
+			<td>${dto.answer}</td>
 			</c:if>
 			<c:if test="${dto.answer ==null }">
-			<td><h3>답변대기중입니다.</h3></td>
+			<td>답변대기중입니다.</td>
 			</c:if>
 		</tr>
 		

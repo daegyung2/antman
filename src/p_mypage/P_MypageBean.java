@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.bean.AppointmentDTO;
 import admin.bean.MyQnADTO;
+import admin.bean.ScheduleDTO;
 
 @Controller
 public class P_MypageBean {
@@ -30,6 +31,21 @@ public class P_MypageBean {
 		return "/p_mypage/p_mypage.jsp";
 		
 	}
+	
+		@RequestMapping("/deleteappoint.do")
+		public String delete(AppointmentDTO dto, ScheduleDTO sdto,HttpServletRequest request){
+			System.out.println(dto.getAdate());
+			sdto.setSdate(dto.getAdate());
+			sdto.setNextsdate(dto.getNextadate());
+			sqlMapClient.delete("appointment.deleteappoint",dto);
+			sqlMapClient.delete("schedule.dupdateschedule",sdto);
+			
+			return "/p_mypage.do";
+			
+		}
+	
+	
+	
 	
 	@RequestMapping("/d_answer.do")
 	public String d_answer(MyQnADTO dto, HttpServletRequest request){

@@ -44,6 +44,13 @@
 	</update>
 	
 	
+	
+		<delete id="dupdateschedule" parameterClass="dsche" >
+		delete schedule where id = #id# and sdate = to_date(#sdate#,'YYYY-MM-DD HH24:MI') and nextsdate = #nextsdate#
+	</delete>
+	
+	
+	
 	<delete id="scheduledelete" parameterClass="int" >
 		delete schedule where sid = #sid#
 	</delete>

@@ -48,7 +48,7 @@
 전체스케쥴
 <center>
 <table width="500" border="1">
-<tr><td>전체스케쥴수</td><td>1차진료수</td><td>2차진료수</td><td>3차진료수</td><td>4차진료수</td></tr>
+<tr><th>전체스케쥴수</th><th>1차진료수</th><th>2차진료수</th><th>3차진료수</th><th>4차진료수</th></tr>
 <tr><td>${allcount }</td><td>${one }</td><td>${two }</td><td>${three }</td><td>${four }</td></tr>
 </table>
 <br/>
@@ -78,19 +78,20 @@
 </c:if>
 
 
-<table width="1000" border ="1">
-<tr>
-<td>스케쥴번호</td>
-<td>환자아이디</td>
-<td>환자이름</td>
-<td>선생님이름</td>
-<td>진료과</td>
-<td>스케쥴시간</td>
-<td>다음진료</td>
+<table width="750" border ="1">
+<tr align="center">
+<th>스케쥴번호</th>
+<th>환자아이디</th>
+<th>환자이름</th>
+<th>선생님이름</th>
+<th>진료과</th>
+<th>스케쥴시간</th>
+<th>다음진료</th>
 <tr/>
 
-<tr>
+
 <c:forEach var="dto" items="${slist }">
+<tr align="center">
 <td>${dto.sid }</td>
 <td>${dto.id }</td>
 <td>${dto.name }</td>

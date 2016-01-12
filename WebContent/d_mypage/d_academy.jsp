@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <style type="text/css">
 	body, ul, li, div{margin:0px; padding:0px; }
 	ul{list-style:none;}
@@ -20,6 +21,7 @@
 <div id="menutop">
 	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
+
 <style type="text/css">
 	body{margin:0px; padding:0px; }
 	a{ text-decoration:none; }
@@ -29,7 +31,7 @@
 	
 	#side{width:200px; float:left; margin-left:0px;}
 	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
-	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:100px; position:relative}
+	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:-17px; position:relative}
 	#container .main #title{width:800px; margin-left:100px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
 	#container .main tr{padding:5px 5px;}
@@ -38,52 +40,39 @@
 </style>
 
 <div id="side">
-<jsp:include page="/admin/adminsidebar.jsp" flush="true | false"/>
+<jsp:include page="d_mypage_sidebar.jsp" flush="true | false"/>
 </div>
+
 
 <div id="container">
 	<div class="main">
-		<div id="title"><title>예약통계</title>
-전체예약자수
-<center>
-<table width="500" border="1">
-<tr align="center"><th>전체예약수</th><th>1차진료수</th><th>2차진료수</th><th>3차진료수</th><th>4차진료수</th></tr>
-<tr align="center"><td>${allcount }</td><td>${one }</td><td>${two }</td><td>${three }</td><td>${four }</td></tr>
-</table>
-<br/>
-        <form action="/antman/appointinfo.do" method="post">
-    <select name="dpname">
-	<c:forEach var="dto" items="${dplist}" >
-	<option value="${dto.dpname }">${dto.dpname}</option>
-	</c:forEach>
-	</select>&nbsp;&nbsp;<input type="submit" value="진료과별검색">   
- 	</form>
- 	
- 	<br/>
- 	
-
-<table width="600" border="1">
+		<div id="title"><table width="1050" border="1" class="academy">
+<tr >
+<th width="50">번호</th><th width="300">학술행사명</th><th width="200">행사시간</th><th width="200">신청기간</th><th width="100"> 학술행사인원</th><th >수정하기</th>
+<tr/>
+<c:forEach var="dto" items="${list }">
 <tr align="center">
-<th>예약번호</th>
-<th>이름</th>
-<th>진료의사</th>
-<th>예약날짜</th>
-<th>진료과</th>
-<th>차후진료</th>
-</tr>
-
-
-
-<c:forEach var="adto" items="${alist}">
-<tr align="center">
-<td>${adto.aid }</td>
-<td>${adto.name }</td>
-<td>${adto.drname }</td>
-<td>${adto.adate }</td>
-<td>${adto.dpname }</td>
-<td>${adto.nextadate }</td>
+<td>${dto.asid}</td><td><a href="/antman/dacademycontent.do?id=${sessionScope.memId }&asid=${dto.asid}&drid=${dto.drid }&drname=${dto.drname }&asend=${dto.asend}">${dto.assubject}</a></td><td>${dto.astime} ~ ${dto.astimeend}</td><td>${dto.asstart} ~ ${dto.asend}</td>
+<td><c:if test="${dto.asmin ne  dto.asmax}">
+${dto.asmin}/${dto.asmax}
+</c:if>
+<c:if test="${dto.asmin eq  dto.asmax}">
+수강인원만원
+</c:if>
+</td><td><input type="button" value="수정" onclick="javascript:window.location='/antman/dacademyupdate.do?drid=${sessionScope.memdrid}&drname=${sessionScope.memname }&asid=${dto.asid}'">
+</td>
 </tr>
 </c:forEach>
-</table>
-
+<tr>
+<td colspan="6">
+<center><input type="button" value="수강올리기" onclick="javascript:window.location='/antman/academywrite.do'">
 </center>
+</td>
+</tr>
+
+</table>
+<br/>
+<div class="paging"><center>${pagingHtml}</center></div>
+
+	</div>
+</div>
