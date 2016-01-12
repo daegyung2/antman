@@ -46,7 +46,6 @@ public class P_MypageBean {
 		}
 	
 	
-	
 
 	@RequestMapping("/p_myacademy.do")
 	public String p_academy(AcademyDTO dto, HttpSession session, HttpServletRequest request){

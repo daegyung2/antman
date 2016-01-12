@@ -47,23 +47,17 @@
         
        
         <tr align="center"> 
-
-		<td>아이디</td>
+<td>아이디</td>
 		<td>이름</td>
 		<td>의료진</td>
 		<td>날짜</td>
 		<td>취소</td>
-<th>아이디</th>
-		<th>이름</th>
-		<th>의료진</th>
-		<th>날짜</th>
 
 		</tr>
 	
        
         <c:if test="${!empty list}" >
         <c:forEach var="dto" items="${list}">
-	
 
 		<tr>
 		     <td>${dto.id}</td>
@@ -74,7 +68,6 @@
 			 <td><input type="button" value="취소" onclick="javascript:window.location='/antman/deleteappoint.do?aid=${dto.aid}&id=${dto.id }&adate=${dto.adate }&nextadate=${dto.nextadate}'"> </td>
 
 
-</tr>
 
 </c:forEach>
 </c:if>

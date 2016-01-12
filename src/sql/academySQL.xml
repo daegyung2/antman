@@ -43,7 +43,11 @@ values(academyschedule_SEQ.NEXTVAL,#drname#,#drid#,#assubject#,#ascontent#,to_da
           <select id="selectLastNosc" resultClass="int" >
          SELECT count(*) count from academyschedule where drid = #drid#
       </select>
-      
+     
+      <select id="selectacademy" resultClass="academy">
+     select*from appointacademy where id=#id#
+      </select>
+
             <select id="academyaslistselect" resultClass="academy">
       select asid, drid, drname, assubject,to_char(astime,'YYYY-MM-DD HH:MI') astime,to_char(astimeend,'HH:MI') astimeend,asimg,asmin,asmax,to_char(asstart,'YYYY-MM-DD HH:MI') asstart, to_char(asend,'MM-DD HH:MI') asend, place, host, auth, register, asphone, asemail, ascontent from academyschedule where drid = #drid# and asid = #asid# order by asid desc
       </select>
@@ -59,7 +63,7 @@ values(academyschedule_SEQ.NEXTVAL,#drname#,#drid#,#assubject#,#ascontent#,to_da
      select*from appointacademy where id=#id#
       </select>
       
-    
+
       <select id="selectcontent" resultClass="academy">   
       select asid,assubject,to_char(astime,'YYYY-MM-DD HH:MI') astime,to_char(astimeend,'HH:MI') astimeend,asimg,asmin,asmax,to_char(asstart,'YYYY-MM-DD') asstart,
       to_char(asend,'YYYY-MM-DD') asend,place,host,auth,register,asphone,asemail,ascontent,drname,drid from academyschedule where asid = #asid#    
