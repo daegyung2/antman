@@ -36,6 +36,7 @@
 	<li><a href="/antman/mainboard.do" class="title">공지사항</a></li>
 	<li><a href="/antman/newsboard.do" class="title">뉴스</a></li>
 	<li><a href="/antman/lectureboard.do" class="title">강좌안내</a></li>
+	<li><a href="/antman/cultureboard.do" class="title">문화갤러리</a></li>
 </ul>
 <div id="bookinfo">
 	<p>예약문의 <br/>

@@ -20,13 +20,13 @@ $(function(){
 		imgs.stop().fadeOut();
 		$('.bg'+currentNum).stop().fadeIn();
 	}
-	var timer = setInterval(rotateImg, 2000);
+	var timer = setInterval(rotateImg, 3000);
 	btns.click(function(){
 		clearInterval(timer);
 		currentNum = parseInt($(this).text())-1;
 		imgs.stop().fadeOut();
 		$('.bg'+currentNum).stop().fadeIn();
-		timer = setInterval(rotateImg,2000);
+		timer = setInterval(rotateImg,3000);
 	})
 })
 </script>
@@ -119,9 +119,9 @@ $(function(){
 	<div class="main">
 	<div id="visual">
 		<ul>
-    		<li class="bg0"><a href="#"><img src="\antman\img\main_image_01.jpg" alt="" /></a></li>
-        	<li class="bg1"><a href="#"><img src="\antman\img\main_image_02.jpg" alt="" /></a></li>
-        	<li class="bg2"><a href="#"><img src="\antman\img\main_image_03.jpg" alt="" /></a></li>
+    		<li class="bg0"><a href="newsboard.do"><img src="\antman\img\main_image_01.jpg" alt="" /></a></li>
+        	<li class="bg1"><a href="newsboard.do"><img src="\antman\img\main_image_02.jpg" alt="" /></a></li>
+        	<li class="bg2"><a href="newsboard.do"><img src="\antman\img\main_image_03.jpg" alt="" /></a></li>
     	</ul>
 
 	<div id="btns">

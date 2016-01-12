@@ -47,7 +47,7 @@ public class NewsBoardInsert {
 	   }
 	   
 	  
-	return "cultureboard.do";
+	return "newsboard.do";
 	
 	}
 }

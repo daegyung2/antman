@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import admin.bean.CultureBoardDTO;
 import admin.bean.LectureBoardDTO;
 import admin.bean.MainBoardDTO;
 import mainboard.pagingAction;
@@ -32,7 +33,8 @@ public class IntroBean {
 	private pagingAction page;
 	
 	@RequestMapping("/intro.do")
-	public String intro(HttpServletRequest request, MainBoardDTO dto, NewsBoardDTO dtoa, LectureBoardDTO dtob ){
+	public String intro(HttpServletRequest request, MainBoardDTO dto, NewsBoardDTO dtoa, LectureBoardDTO dtob
+			, CultureBoardDTO dtoc){
 	
 			
 			
@@ -56,10 +58,7 @@ public class IntroBean {
 		    if (page.getEndCount() < totalCountb) {
 		    	lastCountb = page.getEndCount() + 1;
 		    }
-		
-		    
-		    
-		    
+	
 		    List list = sqlMapClient.queryForList("mainBoard.selectAll",dto);
 			pagingHtml = page.getPagingHtml().toString();
 			list = list.subList(page.getStartCount(), lastCount);
@@ -71,10 +70,12 @@ public class IntroBean {
 			List listb = sqlMapClient.queryForList("lectureBoard.selectAll", dtob);
 			listb = listb.subList(page.getStartCount(), lastCountb);
 		
+			List listc = sqlMapClient.queryForList("cultureBoard.selectAll", dtoc);
+			System.out.println(listc.size());
 			request.setAttribute("list", list);
 			request.setAttribute("lista", lista);
 			request.setAttribute("listb", listb);
-		
+			request.setAttribute("listc", listc);
 		return "/intro/intro.jsp";
 	}
 	

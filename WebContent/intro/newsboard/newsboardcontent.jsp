@@ -53,6 +53,7 @@
 			
 			 <tr><td width="50%">µÓ∑œ¿œ : ${dto.reg_date}</td></tr> 
 			<tr><td colspan="2"><h2>${dto.content }</h2> </td></tr>
+			<tr><td><img src="${dto.neimg}"/></td></tr>
 			<tr></tr>
 			
   </table>

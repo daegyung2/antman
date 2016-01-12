@@ -11,16 +11,17 @@
 		<result property="subject" column="subject"/>
 		<result property="content" column="content"/>
 		<result property="reg_date" column="reg_date"/>
+		<result property="neimg" column="neimg"/>
 	</resultMap>
 	
 		
 		<!-- select 쿼리문 정의 -->
 		<select id="selectAll" resultMap="boardRes">
-		select NEid,subject,content,reg_date from newsBoard order by NEid desc
+		select NEid,subject,content,reg_date,neimg from newsBoard order by NEid desc
 		</select>
 		
 		<select id="viewnewsboard" resultMap="boardRes" parameterClass="int">
-      	select NEid,subject,content,reg_date from newsBoard where NEid = #NEid# 
+      	select NEid,subject,content,reg_date,neimg from newsBoard where NEid = #NEid# 
 		</select>
 		
 		 <select id="max" resultClass="int">
@@ -34,14 +35,14 @@
       		INSERT INTO newsBoard (NEid,
       							   subject,
                          		   content,
-                         		   REG_DATE,
-                         		   neimg
+                         		   REG_DATE
+                         		  
                          )
                 	 VALUES (newsBoard_SEQ.NEXTVAL,
                 	 		#subject#,
                          	#content#,
-                         	sysdate,
-                         	neimg
+                         	sysdate
+                         	
                          )
 		</insert>
 		
@@ -60,5 +61,9 @@
    		 <update id="updateneimg"  parameterClass="newsBoard" >
   		 update newsBoard set neimg = #neimg# where NEid = #NEid#
  		</update>
+ 		
+ 		 <update id="updatenewsboard" parameterClass="newsBoard">
+            update cultureBoard set subject=#subject#, content=#content#, neimg=#neimg# where NEid=#NEid#
+   		</update>
  		
 </sqlMap>

@@ -51,14 +51,30 @@
 
 	<div class="containers">
 
-<table width="660" border="0">
-<tr><td><br/><br/>
-<font size="5">정기간행물</font><br/><br/>
-DB hospital에서 발행되는 정기간행물 입니다.</td>
- <td><img src="/antman/img/intro6.jpg"/>
- 
-
+<table width="1000" border="0" align="center">
+<tr align="center"><td><br/><br/>
+<font size="5"><b>문화갤러리</b></font><br/><br/>
+DB hospital 문화갤러리 입니다.</td>
 </td></tr>
+</table>
+<br/>
+<table>
+<tr>
+
+<c:forEach var="dto" items="${listc}" varStatus="status" begin="1" end="6">
+			<td height="150" align="center" width="350">
+			<center>
+			<a href="/antman/cultureboard.do">
+			<img src="${dto.cuimg}" width="250" height="300"/></a><br/></center>
+			</td>
+			
+			
+				<c:if test="${status.count%3==0}">
+				<tr>
+				</c:if>
+    </c:forEach>
+
+</tr>
 </table>
 
 	</div>
