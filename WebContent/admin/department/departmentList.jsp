@@ -59,10 +59,10 @@
 <body>
 <table width="600" border="1" cellpadding="1" cellspacing="1">
 <tr>
-<td align="center">진료과 이름</td>
-<td align="center">이니셜</td>
-<td align="center">진료과 정보</td>
-<td align="center">비고</td>
+<th align="center">진료과 이름</th>
+<th align="center">이니셜</th>
+<th align="center">진료과 정보</th>
+<th align="center">비고</th>
 </tr>
 
 <c:forEach var="dto" items="${list }" >

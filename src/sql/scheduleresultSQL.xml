@@ -33,4 +33,33 @@
    <delete id="deleteresult"  parameterClass="result" >
    delete medrecord where mid = #mid#
  </delete>
+ 
+
+    <select id="resultlist" resultClass="result">
+   select mid,dpname,drname,id,name,jumin1,age,gender,
+   symptom1,symptom2,symptom3,symptom4,to_char(treatdate,'YYYY-MM-DD') treatdate from medrecord order by mid desc
+   </select>
+   
+       <select id="resultcount" resultClass="int">
+   select count(*) from medrecord order by mid desc
+   </select>
+ 
+ 
+     <select id="resultlistdp" resultClass="result">
+   select mid,dpname,drname,id,name,jumin1,age,gender,
+   symptom1,symptom2,symptom3,symptom4,to_char(treatdate,'YYYY-MM-DD') treatdate from medrecord where dpname = #dpname# order by mid desc 
+   </select>
+   
+       <select id="resultcountdp" resultClass="int">
+   select count(*) from medrecord where dpname = #dpname# order by mid desc 
+   </select>
+   
+       <select id="resultlistdr" resultClass="result">
+   select mid,dpname,drname,id,name,jumin1,age,gender,
+   symptom1,symptom2,symptom3,symptom4,to_char(treatdate,'YYYY-MM-DD') treatdate from medrecord where drid = #drid# order by mid desc
+   </select>
+   
+       <select id="resultcountdr" resultClass="int">
+   select count(*) from medrecord where drid = #drid# order by mid desc 
+   </select>
    </sqlMap>

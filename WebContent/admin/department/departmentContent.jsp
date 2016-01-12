@@ -51,59 +51,59 @@
 <body>
 <table width="500" border="1" cellpadding="1" cellspacing="0">
 <tr>
-<td width="200">부모 부서</td>
+<th width="200">부모 부서</th>
 <td>${dto.p_depart_id }.${pdto.p_dpname}</td>
 </tr>
 <tr>
-<td width="200">진료과 이름</td>
+<th width="200">진료과 이름</th>
 <td>${dto.dpname }</td>
 </tr>
 <tr >
-<td width="200">진료과 이니셜</td>
+<th width="200">진료과 이니셜</th>
 <td>${dto.init }</td>
 </tr>
 <tr >
-<td width="200">진료과 사진</td>
+<th width="200">진료과 사진</th>
 <td align="center"><img src="${dto.dpimg}" width="110" height="110"/></td>
 </tr>
 <tr>
-<td width="200">진료과 정보1</td>
+<th width="200">진료과 정보1</th>
 <td>${dto.d_info1 }</td>
 </tr>
 <tr>
-<td width="200">진료과 정보2</td>
+<th width="200">진료과 정보2</th>
 <td>${dto.d_info2 }</td>
 </tr>
 <tr>
-<td width="200">진료과 정보3</td>
+<th width="200">진료과 정보3</th>
 <td>${dto.d_info3 }</td>
 </tr>
 <tr>
-<td width="200">진료과 정보4</td>
+<th width="200">진료과 정보4</th>
 <td>${dto.d_info4 }</td>
 </tr>
 <tr>
-<td width="200">진료과 정보5</td>
+<th width="200">진료과 정보5</th>
 <td>${dto.d_info5 }</td>
 </tr>
 <tr>
-<td width="200">진료과 정보6</td>
+<th width="200">진료과 정보6</th>
 <td>${dto.d_info6 }</td>
 </tr>
 <tr>
-<td width="200">진료과 정보7</td>
+<th width="200">진료과 정보7</th>
 <td>${dto.d_info7 }</td>
 </tr>
 <tr>
-<td width="200">진료과 정보8</td>
+<th width="200">진료과 정보8</th>
 <td>${dto.d_info8 }</td>
 </tr>
 <tr>
-<td width="200">진료과 정보9</td>
+<th width="200">진료과 정보9</th>
 <td>${dto.d_info9}</td>
 </tr>
 <tr>
-<td width="200">진료과 정보10</td>
+<th width="200">진료과 정보10</th>
 <td>${dto.d_info10}</td>
 </tr>
 <tr>

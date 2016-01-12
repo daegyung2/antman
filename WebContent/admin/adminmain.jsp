@@ -32,11 +32,11 @@
 		<div id="title01" align="center">
 			<table width="690" border="1">
 			<tr>
-			<td width="80">의사번호</td>
-			<td width="100">의사 이름</td>
-			<td width="110">의사 등록번호</td>
-			<td width="100">전공</td>
-			<td width="120">부서이름</td>
+			<th width="80">의사번호</th>
+			<th width="100">의사 이름</th>
+			<th width="110">의사 등록번호</th>
+			<th width="100">전공</th>
+			<th width="120">부서이름</th>
 			</tr>
 		<c:forEach var="dto" items="${list }" begin="1" end="3" > 
 			<tr>
@@ -60,10 +60,10 @@
 		<div class="title02" align="center">
 			<table width="450" border="1" cellpadding="0" cellspacing="0">
 			<tr>
-			<td width="70">사번</td>
-			<td width="100">이름</td>
-			<td width="100">전공</td>
-			<td width="150">부서명</td>
+			<th width="70">사번</th>
+			<th width="100">이름</th>
+			<th width="100">전공</th>
+			<th width="150">부서명</th>
 			</tr>
 		<c:forEach var="dto" items="${elist }" begin="1" end="3">
 			<tr>
@@ -86,9 +86,9 @@
 		<div class="title03" align="center">
 			<table width="400" border="1" cellpadding="1" cellspacing="1">
 			<tr>
-			<td align="center">진료과 이름</td>
-			<td align="center">이니셜</td>
-			<td align="center">진료과 정보</td>
+			<th align="center">진료과 이름</th>
+			<th align="center">이니셜</th>
+			<th align="center">진료과 정보</th>
 			</tr>
 		<c:forEach var="dto" items="${dlist }" begin="1" end="3" >
 			<tr>

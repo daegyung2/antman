@@ -60,22 +60,22 @@
 <td height="50">소속 부서: ${dto.dpname }</td>
 </tr>
 <tr>
-<td align="center">전문 분야</td>
+<th align="center">전문 분야</th>
 <td> ${dto.exarea }</td>
 </tr>
-<tr><td rowspan="5" align="center">학위</td>
+<tr><th rowspan="5" align="center">학위</th>
 <td height="20">${dto.degree1 }</td></tr>
 <tr><td height="20">${dto.degree2 }</td></tr>
 <tr><td height="20">${dto.degree3 }</td></tr>
 <tr><td height="20">${dto.degree4 }</td></tr>
 <tr><td height="20">${dto.degree5 }</td></tr>
-<tr><td rowspan="5" align="center">논문 내역</td>
+<tr><th rowspan="5" align="center">논문 내역</th>
 <td height="20">${dto.report1 }</td></tr>
 <tr><td height="20">${dto.report2 }</td></tr>
 <tr><td height="20">${dto.report3 }</td></tr>
 <tr><td height="20">${dto.report4 }</td></tr>
 <tr><td height="20">${dto.report5 }</td></tr>
-<tr><td rowspan="5" align="center">등록사진</td>
+<tr><th rowspan="5" align="center">등록사진</th>
 <td align="center"><img src="${dto.drimg1 }" width="150" height="150" /></td></tr>
 <tr><td align="center"><img src="${dto.drimg2 }" width="150" height="150" /></td></tr>
 <tr><td align="center"><img src="${dto.drimg3 }" width="150" height="150" /></td></tr>

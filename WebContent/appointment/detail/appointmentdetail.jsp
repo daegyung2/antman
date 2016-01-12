@@ -366,7 +366,7 @@ String today = sdm.format(cal.getTime());
 </html>
 <input type="submit" value="진료날짜검색하기">
 </form>
-<c:if test="${sdlist ne null}">
+<c:if test="${!empty sdlist}">
   <h4 class="shitsd"><span class="group">${ymd}</span> 진료가능 시간입니다.</h4>
 <form action="/antman/appointmentdetailsearch.do" method="post">
 
@@ -385,7 +385,7 @@ ${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='
 </c:forEach>
 </table>
 </c:if>
-<c:if test="${sdlist eq null }">
+<c:if test="${empty sdlist }">
 예약시간이 없습니다.
 </c:if>
 

@@ -143,7 +143,7 @@
 		</table>
 		</center>
 		<center>${pagingHtml}</center>
-		pagenum = ${PageNum}
+	
 	</div>
 </div>
 

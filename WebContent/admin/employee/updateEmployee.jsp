@@ -49,36 +49,37 @@
 </head>
 <body>
 <table border="1" cellpadding="0" cellspacing="0">
-<tr>
-<td colspan="2">
-직원 정보 입력창입니다. *는 필수 입력 대상입니다.
-</td>
-</tr>
+
 <form action="/antman/updateEmployeePro.do" method="post" enctype="multipart/form-data">
 <tr>
-<td>사번</td>
+<th colspan="2">
+직원 정보 입력창입니다. *는 필수 입력 대상입니다.
+</th>
+</tr>
+<tr>
+<th>사번</th>
 <td>${dto.eid }</td>
 </tr>
 <tr>
-<td>
+<th>
 이름<font color="red">*</font>
-</td>
+</th>
 <td>
 <input type="text" name="name" size="10" maxlength="15" value="${dto.name}"/>
 </td>
 </tr>
 <tr>
-<td>
+<th>
 전공<font color="red">*</font>
-</td>
+</th>
 <td>
 <input type="text" name="major" size="10" maxlength="15" value="${dto.major }"/>
 </td>
 </tr>
 <tr>
-<td>
+<th>
 소속 진료과<font color="red">*</font>
-</td>
+</th>
 <td>
 <select name="dpname">
 <c:forEach var="departDTO" items="${list }" >
@@ -93,14 +94,14 @@
 </td>
 </tr>
 <tr>
-<td rowspan="5" align="center">사진 업로드</td>
+<th rowspan="5" align="center">사진 업로드</th>
 <td><input type="file" name="emimg"  value="${dto.emimg1 }"/></td></tr>
 <tr><td><input type="file" name="emimg" value="${dto.emimg2 }"/></td></tr>
 <tr><td><input type="file" name="emimg" value="${dto.emimg3 }" /></td></tr>
 <tr><td><input type="file" name="emimg" value="${dto.emimg4 }" /></td></tr>
 <tr><td><input type="file" name="emimg" value="${dto.emimg5 }" /></td></tr>
 <tr>
-<td>직원 설명</td>
+<th>직원 설명</th>
 <td><textarea name="emdescription" rows="5" cols="30" >${dto.emdescription }</textarea></td>
 </tr>
 <tr>

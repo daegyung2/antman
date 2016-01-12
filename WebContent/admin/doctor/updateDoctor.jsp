@@ -48,32 +48,32 @@
 <body>
 <table border="1" cellspacing="0" cellpadding="0" >
 <tr>
-<td colspan="2" align="center">
-<font size="3" color="orange" >의사 정보를 수정합니다. </font>
-</td>
+<th colspan="2" align="center">
+의사 정보를 수정합니다. 
+</th>
 </tr>
 <form action="/antman/updateDoctorPro.do" method="post" enctype="multipart/form-data" >
 <tr>
-<td>의사 성명</td>
+<th>의사 성명</th>
 <td><input type="text" size="10" maxlength="15" name="drname" value="${dto.drname }"/></td>
 </tr>
 <tr>
-<td>의사 등록번호</td>
+<th>의사 등록번호</th>
 <td><input type="text" size="20" maxlength="30" name="dreg_num" value="${dto.dreg_num }"/></td>
 </tr>
 <tr>
-<td>전공 진료</td>
+<th>전공 진료</th>
 <td ><input type="text" size="20" maxlength="30" name="major" value="${dto.major }"/></td>
 </tr>
 <tr>
-<td>전문 분야(,쉼표로 구분)</td>
+<th>전문 분야(,쉼표로 구분)</th>
 <td>
 <textarea rows="5" cols="50" name="exarea" value="${dto.exarea }" >
 </textarea>
 </td>
 </tr>
 <tr>
-<td>소속 부서(선택)</td>
+<th>소속 부서(선택)</th>
 <td ><select name="dpname">
 <c:forEach var="dto" items="${list}" >
 <option value="${dto.dpname }">${dto.dpname}</option>
@@ -83,7 +83,7 @@
 </td>
 </tr>
 <tr>
-<td>학위 등록</td>
+<th>학위 등록</th>
 <td height="300">
 <input type="text" size="50" maxlength="50" name="degree1" value="${dto.degree1 }" /><br />
 <input type="text" size="50" maxlength="50" name="degree2" value="${dto.degree2 }" /><br />
@@ -93,7 +93,7 @@
 </td>
 </tr>
 <tr>
-<td>논문 등록</td>
+<th>논문 등록</th>
 <td>
 <input type="text" size="50" maxlength="50" name="report1" value="${dto.report1 }" /><br />
 <input type="text" size="50" maxlength="50" name="report2" value="${dto.report2 }" /><br />
@@ -103,7 +103,7 @@
 </td>
 </tr>
 <tr>
-<td>사진 업로드</td>
+<th>사진 업로드</th>
 <td>
 <input type="file" size="50" name="drimg" /> <br />
 <input type="file" size="50" name="drimg" /> <br />
