@@ -63,7 +63,7 @@ public class PraiseWriteBean {
 	   if(dto.getDrid() != 0){
       sqlMapClient.insert("praise.insertpraise", dto);      
 	   return "redirect:praiseboard.do";
-	   }else if(edto.getEid() != 0){
+	   }else if(edto.getEname() != null){
 		    sqlMapClient.insert("praise.insertpraiseeid", dto);  
    }else{}
 		   return "redirect:praiseboard.do";

@@ -32,15 +32,10 @@
 <title>설현|의료진</title>
 
 
-<center><h2>의료진 | ${dpfdto.dpname}</h2></center>
+<center><h2>${dpfdto.drname}  | ${dpfdto.dpname}</h2></center>
 <br/>
-<br/>
-<center><table width="750" border="1">
-<td width="250"><center>${dpfdto.drname} 의료진 소개</center></td>
-<td width="250"><center>같은 진료과 의료진 전체 보기</center></td>
-<td width="250"><center>전체 의료진 검색</center></td>
-</table>
-<br/>
+
+<center>
 
 <table width="750" border="1">
 <tr>
@@ -53,20 +48,7 @@ ${dpfdto.exarea}</td></tr>
 </table>
 
 <br/>
-<table width="900" border="1">
-<td>소개 | 진료 | 학력/경력 | 언론보도 | 학술활동 | 칭찬코너</td>
-</table>
-<br/>
-<h2>진료일정</h2>
-<br/>
-<table width="900" border="1">
-<tr>
-<td width="200" rowspan="2">진료과</td><td width="300" rowspan="2">진료내용</td><td width="200" rowspan="2">예약방법</td><td width="200" colspan="2">진료시간</td></tr>
-<tr>
-<td width="100">오전</td><td width="100">오후</td>
-</tr>
-</table>
-안내·평생건강관리클리닉 회원 관련 문의 (☎ 02)3010-3817)
+
 <br/>
 <br/>
 <table width="900" border="1">
