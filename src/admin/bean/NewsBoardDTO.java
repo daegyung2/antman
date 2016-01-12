@@ -8,7 +8,14 @@ public class NewsBoardDTO {
 	private String subject;
 	private String content;
 	private Date reg_date;
+	private String neimg;
 	
+	public String getNeimg() {
+		return neimg;
+	}
+	public void setNeimg(String neimg) {
+		this.neimg = neimg;
+	}
 	public int getNEid() {
 		return NEid;
 	}

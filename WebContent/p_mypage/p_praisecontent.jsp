@@ -48,10 +48,10 @@
     <tbody>
       <tr>
  <tr align="center">
- <td width="50%">작성자 : ${dto.name}</td><td width="50%">등록일 : ${dto.reg_date}</td></tr> 
+ <td width="50%">작성자 : ${dto.name}${edto.name}</td><td width="50%">등록일 : ${dto.reg_date}</td></tr> 
            
             <tr>
-<td align="center" colspan="2" height="200">${dto.content} </td>
+<td align="center" colspan="2" height="200">${dto.content}${edto.content} </td>
       </tr>
   
     </tbody>
@@ -67,9 +67,12 @@
   <table align="center" class="table" width="700">
 
     <tbody>
-      <tr>
- <tr><td ><img src="${dto.drimg1 }" weight="190" height="240"></td><td><h3>${dto.drname}</h3><br/> <h4> ${dto.dpname}</h4>${dto.exarea }</td></tr> 
-      </tr>
+   <c:if test="${!empty dto}" > <tr><td width="50%"><img src="${dto.drimg1 }" weight="190" height="240">
+</td><td><h3>${dto.drname}</h3><br/> <h4> ${dto.dpname}</h4>${dto.exarea }</td></tr> </c:if>
+      
+  <c:if test="${!empty edto}" > <tr><td width="50%"><img src="${edto.emimg1 }" weight="190" height="240">
+</td><td><h3>${edto.ename}</h3><br/> <h4> ${edto.dpname}</h4>${edto.emdescription }</td></tr> </c:if>    
+      
   
     </tbody>
   </table>
@@ -83,9 +86,10 @@
 <br/>
 <HR width=100% >
 <br/>
-<center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/p_praiseupdate.do?pid=${dto.pid}&id=${sessionScope.memId}&name=${sessionScope.memname} }'">수정하기</button> 
-<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/p_praisedelete.do?pid=${dto.pid}&id=${sessionScope.memId}&name=${sessionScope.memname}'">삭제하기</button> 
- <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/p_praiseboard.do?pid=${dto.pid}&id=${sessionScope.memId}&name=${sessionScope.memname}'">목록으로</button></center>
+<c:if test="${!empty dto }"><center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/p_praiseupdate.do?pid=${dto.pid}'">수정하기</button></c:if>
+<c:if test="${!empty edto }"><center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/P_praiseupdate.do?pid=${edto.pid}&eid=${edto.eid }'">수정하기</button></c:if>
+<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/p_praisedelete.do?pid=${dto.pid}&name=${dto.name}'">삭제하기</button> 
+ <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/p_praiseboard.do'">목록으로</button></center>
   </center>
 </body>
 </html>
