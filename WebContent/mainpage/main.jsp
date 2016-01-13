@@ -171,7 +171,7 @@ $(function(){
 	<tr><td><b>공지사항</b></td></tr>
 	<c:forEach var="dto" items="${listA}" begin="0" end="4">
 	<tr><td>
-	<font color="#000000"><a href="/antman/mainboard.do">${dto.subject}<br/></a></font>
+	<font color="#000000"><a href="/antman/mainboardcontent.do?MBid=${dto.MBid }">${dto.subject}<br/></a></font>
 	</td></tr>
 	</c:forEach>
 	</table>
@@ -183,7 +183,7 @@ $(function(){
 	<tr><td><b>뉴스</b></td></tr>
 	<c:forEach var="dto" items="${list}" begin="0" end="4">
 	<tr><td>
-	<font color="#000000"><a href="/antman/newsboard.do">${dto.subject}<br/></a></font>
+	<font color="#000000"><a href="/antman/newsboardcontent.do?NEid=${dto.NEid}">${dto.subject}<br/></a></font>
 	</td></tr>
 	</c:forEach>
 	</table>
@@ -194,7 +194,7 @@ $(function(){
 	<tr><td><b>강좌안내</b></td></tr>
 	<c:forEach var="dto" items="${listB}" begin="0" end="4">
 	<tr><td>
-	<font color="#000000"><a href="/antman/lectureboard.do">${dto.subject}<br/></a></font>
+	<font color="#000000"><a href="/antman/lectureboardcontent.do?LEid=${dto.LEid}">${dto.subject}<br/></a></font>
 	</td></tr>
 	</c:forEach>
 	</table>
@@ -205,7 +205,7 @@ $(function(){
 	<tr><td><b>학술행사</b></td></tr>
 	<c:forEach var="dto" items="${listC}" begin="0" end="4">
 	<tr><td>
-	<font color="#000000"><a href="/antman/academylist.do">${dto.assubject}<br/></a></font>
+	<font color="#000000"><a href="/antman/academycontent.do?id=${sessionScope.memId }&asid=${dto.asid}&drid=${dto.drid }&drname=${dto.drname }&asend=${dto.asend}">${dto.assubject}<br/></a></font>
 	</td></tr>
 	</c:forEach>
 	</table>

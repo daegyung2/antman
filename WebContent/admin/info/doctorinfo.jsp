@@ -58,7 +58,9 @@
 	<c:forEach var="dto" items="${dplist}" >
 	<option value="${dto.dpname }">${dto.dpname}</option>
 	</c:forEach>
-	</select>&nbsp;&nbsp;<input type="submit" value="진료과별검색">   
+	</select>&nbsp;&nbsp;<input type="submit" value="진료과별검색"> 
+	</select>&nbsp;<input type="button" value="전체보기" onclick="javascript:window.location='/antman/doctorinfo.do'"> 
+ 	  
  	</form>
  	
  	<br/>

@@ -64,6 +64,7 @@
 	<option value="${dto.dpname }">${dto.dpname}</option>
 	</c:forEach>
 	</select>&nbsp;&nbsp;<input type="submit" value="진료과별검색">   
+	<input type="button" value="전체보기" onclick="javascript:window.location='/antman/resultinfo.do'">
  	</form>
  	
  	<br/>
