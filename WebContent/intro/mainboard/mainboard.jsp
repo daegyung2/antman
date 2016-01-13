@@ -46,9 +46,6 @@
 
 <div id="container">
 	<div class="main">
-
-<div id="container">
-	<div class="main"><br/><br/>
 		<div id="title"><center><h2>공지사항</h2></center></div>
 
 
