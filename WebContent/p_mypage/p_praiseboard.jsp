@@ -11,11 +11,14 @@
 	li{ margin:0px; padding:0px; }
 	
 	
-	#side{width:200px; float:left; margin-left:0px;}
-	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
-	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:100px; position:relative}
+	#menutop{width:100%; height:50px; }
+	#side{width:200px; float:left; margin-left:0px; }
+	#footer{width:100%; height:300px; margin-bottom:0px;}
+	#container{width:1100px; height:1326px; margin:0 auto;  margin-left:200px; position:relative;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:20px; position:relative}
 	#container .main #title{width:800px; margin-left:100px; text-align:center;}
-	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
+	#container .main .one p{margin-left:50px;}
+	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; margin-top:-30px;}
 	#container .main tr{padding:5px 5px;}
 	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:center; }
 	#container .main td{padding:5px 5px 5px 5px; }
@@ -34,14 +37,14 @@
 	<div class="main"><br/><br/>
 		<div id="title"><center><h2>나의 칭찬 내역 </h2></center></div>
 
-  <div>
+  <div class="one">
    
   <c:if test="${sessionScope.memauth eq 'P'}">
   <form action="/antman/p_praisewrite.do" method="post">
   <center><button type="submit" class="btn btn-primary btn-md" onclick=>칭찬하기</button></center>
   </form>
   </c:if>
-   칭찬하려면 로그인을 해주세요!
+  	<p> 칭찬하려면 로그인을 해주세요!</p>
   <br/><br/>
   <table width="900" align="center" border="1">
     <thead>
@@ -107,6 +110,10 @@
     	                   
  <center> ${pagingHtml }</center> <!-- 위에방식으로 하려면 귀차너서 그냥 페이징액션을 활용함 왼쪽 pagingHtml 만 출력해주면 됨.. -->
 
+</div></div>
+<div id="footer">
+	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
+</div>
 <script type="text/javascript">
 </script>
 </body>

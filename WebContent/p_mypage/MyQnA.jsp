@@ -9,13 +9,15 @@
 	li{ margin:0px; padding:0px; }
 	
 	
-	#side{width:200px; float:left; margin-left:0px;}
-	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
-	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:100px; position:relative}
+	#menutop{width:100%; height:50px; }
+	#side{width:200px; float:left; margin-left:0px; }
+	#footer{width:100%; height:300px; margin-bottom:0px;}
+	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:200px; position:relative;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:0px; position:relative}
 	#container .main #title{width:800px; margin-left:100px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
 	#container .main tr{padding:5px 5px;}
-	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:left; }
+	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:center; }
 	#container .main td{padding:5px 5px 5px 5px; }
 </style>
 
@@ -35,7 +37,7 @@
  
     <table width="600" border="1" align="center">
     
-    <tr><td>선생님 선택</td><td>
+    <tr><th>선생님 선택</th><td>
     <form action="/antman/MyQnA.do" method="post">
     <select name="dpname">
 	<c:forEach var="dto" items="${dplist}" >
@@ -60,32 +62,32 @@
 	<form action="/antman/MyQnAPro.do" method="post">	
     <tr>
     <input type="hidden" name="drid" value="${ddto.drId }">
-    <td>아이디</td><td><input type="text" name="id" value="${sessionScope.memId}"/> </td></tr>
+    <th>아이디</th><td><input type="text" name="id" value="${sessionScope.memId}"/> </td></tr>
     
-    <tr><td>글쓴이</td><td><input type="text" name="name" value="${sessionScope.memname}"/></td></tr>
-    <tr><td>글제목</td><td><input type="text" name="subject"/></td></tr>
-    <tr><td>선생님</td><td><input type="text" name="drname" value="${drname}"/></td></tr>
+    <tr><th>글쓴이</th><td><input type="text" name="name" value="${sessionScope.memname}"/></td></tr>
+    <tr><th>글제목</th><td><input type="text" name="subject"/></td></tr>
+    <tr><th>선생님</th><td><input type="text" name="drname" value="${drname}"/></td></tr>
     </td></tr>
-    <tr><td>글내용</td><td><textarea name="content" rows="5" ROWS="10" COLS="50"/></textarea></td></tr>
-    <tr><td colspan="2"><input type="submit" value="글쓰기"/><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/mypage.jsp'">목록으로</button></td></tr>
+    <tr><th>글내용</th><td><textarea name="content" rows="5" ROWS="10" COLS="50"/></textarea></td></tr>
+    <tr><td colspan="2"><center><input type="submit" value="글쓰기"/><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/mypage.jsp'">목록으로</button></center></td></tr>
     
    
     </table>
     </form>
     <br/><br/>
     
-<table width="1000" border="1" align="center">
+<table width="900" border="1" align="center">
        
         <c:if test="${empty list}" >
         <h2>현재 받은 질문이 없습니다.</h2>
         </c:if>
         
         <tr align="center">
-        <td>아이디</td>
-        <td>이름</td>
-        <td>내용</td>
-        <td>의료진</td>
-        <td>답변</td>
+        <th>아이디</th>
+        <th>이름</th>
+        <th>내용</th>
+        <th>의료진</th>
+        <th>답변</th>
         </tr>
         <c:if test="${!empty list}" >
         <c:forEach var="dto" items="${list}">
@@ -112,7 +114,9 @@
 </div>
 
 
-
+<div id="footer">
+	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
+</div>
    
 
     

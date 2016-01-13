@@ -9,9 +9,11 @@
 	li{ margin:0px; padding:0px; }
 	
 	
-	#side{width:200px; float:left; margin-left:0px;}
-	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
-	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:100px; position:relative}
+	#menutop{width:100%; height:150px; }
+	#side{width:200px; float:left; margin-left:0px; }
+	#footer{width:100%; height:300px; margin-bottom:0px;}
+	#container{width:1100px; height:1272px; margin:0 auto;  margin-left:190px; position:relative;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:-80px; position:relative}
 	#container .main #title{width:800px; margin-left:100px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
 	#container .main tr{padding:5px 5px;}
@@ -38,8 +40,8 @@
 	<c:if test="${!empty dto && empty edto}">
 
   
-    <table width="600" border="1" align="center">
-          <tr><td>칭찬선택</td><td>
+    <table width="900" border="1" align="center">
+          <tr><th>칭찬선택</th><td>
         <form action="/antman/p_praisedoctorupdate.do" method="post">
          <c:if test="${empty drid }">
     <input type="text" name="drid" value="${dto.drid}"/></c:if>
@@ -55,7 +57,7 @@
 </td></tr>
 
 <c:if test="${!empty drlist}">
-<tr><td>칭찬할선생님</td><td>
+<tr><th>칭찬할선생님</th><td>
  <form action="/antman/p_praisedoctorupdate.do" method="post">  
  <input type="text" name="pid" value="${dto.pid}"/>
     <select name="drid">
@@ -77,12 +79,12 @@
     <input type="text" name="drid" value="${drid}"/></c:if>
     
     <input type="text" name="pid" value="${dto.pid}"/></td></tr>
-    <td>아이디</td><td><input name="id" value="${dto.id}"/></td></tr>
-    <tr><td>글쓴이</td><td><input name="name" value="${dto.name}"/></td></tr>
-    <tr><td>글제목</td><td><input type="text" name="subject" value="${dto.subject}"/></td></tr>
+    <th>아이디</th><td><input name="id" value="${dto.id}"/></td></tr>
+    <tr><th>글쓴이</th><td><input name="name" value="${dto.name}"/></td></tr>
+    <tr><th>글제목</th><td><input type="text" name="subject" value="${dto.subject}"/></td></tr>
 
 
-    <tr><td>칭찬할선생님</td><td>
+    <tr><th>칭찬할선생님</th><td>
     <c:if test="${empty drname}">
     <input type="text" name="drname" value="${dto.drname}"/>
     </c:if>
@@ -92,9 +94,9 @@
     </td>
     
     </tr>
-    <tr><td>글내용</td><td><textarea name="content" rows="2" ROWS="5" COLS="40"/>${dto.content}</textarea></td></tr>
-    <tr><td colspan="2"><input type="submit" value="수정하기"/>
-    <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/p_praiseboard.do'">목록으로</button></td></tr>
+    <tr><th>글내용</th><td><textarea name="content" rows="2" ROWS="5" COLS="40"/>${dto.content}</textarea></td></tr>
+    <tr><td colspan="2"><center><input type="submit" value="수정하기"/>
+    <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/p_praiseboard.do'">목록으로</button></center></td></tr>
     </table></form>
     </c:if>
     
@@ -103,8 +105,8 @@
     	
   	<c:if test="${empty dto && !empty edto}">
   	
-    <table width="600" border="1" align="center">
-          <tr><td>칭찬선택</td><td>
+    <table width="900" border="1" align="center">
+          <tr><th>칭찬선택</th><td>
         <form action="/antman/p_praiseupdate.do" method="post">
             <c:if test="${empty eid }">
     <input type="text" name="eid" value="${edto.eid}"/></c:if>
@@ -121,7 +123,7 @@
 
 
 <c:if test="${!empty delist}">
-<tr><td>칭찬할직원</td><td>
+<tr><th>칭찬할직원</th><td>
 <form action="/antman/p_praiseupdate.do" method="post">  
  <input type="text" name="pid" value="${edto.pid}"/>
     <select name="eid">
@@ -142,10 +144,10 @@
     <input type="text" name="eid" value="${eid}"/></c:if>
     
     <input type="hidden" name="pid" value="${edto.pid}"/></td></tr>
-    <td>아이디</td><td><input name="id" value="${edto.id}"/></td></tr>
-    <tr><td>글쓴이</td><td><input name="name" value="${edto.name}"/></td></tr>
-    <tr><td>글제목</td><td><input type="text" name="subject" value="${edto.subject}"/></td></tr>
-    <tr><td>칭찬할직원</td><td>
+    <th>아이디</td><th><input name="id" value="${edto.id}"/></td></tr>
+    <tr><th>글쓴이</th><td><input name="name" value="${edto.name}"/></td></tr>
+    <tr><th>글제목</th><td><input type="text" name="subject" value="${edto.subject}"/></td></tr>
+    <tr><th>칭찬할직원</th><td>
     <c:if test="${empty name}">
     <input type="text" name="ename" value="${edto.name}"/>
     </c:if>
@@ -153,10 +155,14 @@
     <input type="text" name="ename" value="${name}"/>
     </c:if>
     </td></tr>
-    <tr><td>글내용</td><td><textarea name="content" rows="2" ROWS="5" COLS="40"/>${edto.content}</textarea></td></tr>
-    <tr><td colspan="2"><input type="submit" value="수정하기"/>
-    <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/p_praiseboard.do'">목록으로</button></td></tr>
+    <tr><th>글내용</th><td><textarea name="content" rows="2" ROWS="5" COLS="40"/>${edto.content}</textarea></td></tr>
+    <tr><td colspan="2"><center><input type="submit" value="수정하기"/>
+    <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/p_praiseboard.do'">목록으로</button></center></td></tr>
     </table></form>
     </c:if>
     
     </div></div>
+    
+    <div id="footer">
+	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
+</div>
