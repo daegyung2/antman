@@ -112,7 +112,7 @@ function checkIt() {
 <option value="${dtom.mid}">${dtom.mid}</option>
 </c:forEach>
 </select>&nbsp;<input type="submit" value="기록번호검색">
-</select>&nbsp;<input type="button" value="새로운기록">
+
 </c:if>
 <c:if test="${empty mlist}">
 진료기록이 없습니다.
@@ -231,9 +231,9 @@ ${rdto.treatdate }
 
 
 </center>
-<c:if  test="${!empty ldto && empty mlist}"> 
+<c:if  test="${!empty ldto && !empty mlist && empty rdto}"> 
  <center>
-<input type="submit" value="등록">
+<input type="submit" value="새로등록">
 </center> 
 </c:if>
 

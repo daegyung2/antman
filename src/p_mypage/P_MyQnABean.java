@@ -106,10 +106,14 @@ public class P_MyQnABean {
 	
 	@RequestMapping("/MyQnA_AnswerPro.do")
 	public String MyQnA_AnswerPro(HttpServletRequest request, MyQnADTO dto){
+		
 		System.out.println(dto.getQid());
 		System.out.println(dto.getAnswer());
 		sqlMapClient.update("MyQnA.updateAnswer", dto);
-		return "/p_mypage/MyQnA_AnswerPro.jsp";
+		List list=sqlMapClient.queryForList("MyQnA.selectDr", dto.getDrid());
+		request.setAttribute("drid", dto.getDrid());
+		request.setAttribute("list", list);
+		return "/d_answer.do";
 	}
 	
 	

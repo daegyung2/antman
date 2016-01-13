@@ -22,14 +22,7 @@
 	
 </style>
 
-<div id="menutop">
-	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
-</div>
 
-<!-- container 시작 -->
-<div id="side">
-	<jsp:include page="treatmentsidebar.jsp" flush="true | false"/>
-</div>
 
 <div class="container">
 	<div class="main">
@@ -58,7 +51,8 @@
 			[학력] ${dpfdto.degree4}<br/>
 			[학력] ${dpfdto.degree5}
 			</td></tr>
-
+			
+		
 			<th width="200"><h2>칭찬코너</h2></th><td width="600">칭찬코너 총1건 칭찬게시판글 가져오기<br/>
 			</td></tr>
 			<tr>

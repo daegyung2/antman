@@ -27,15 +27,20 @@ public class D_ScheduleBean {
 	     private int blockPage = 5;
 	     private String pagingHtml;
 	     private pagingActions page;
-	
+	     private List list;
 	@RequestMapping("scheduleform.do")
 	public String scheduleform (HttpServletRequest request,TreatmentteamDTO tdto ,ScheduleDTO dto, String PageNum, String joungbok){
 		PageNum = request.getParameter("PageNum");
 	   	 int drid = Integer.parseInt(request.getParameter("drid"));
 	   	dto.setDrid(drid);
+	   	int lastCount;
+	   	String year;
+	   	String month;
+	   	String day;
 	   	
 
-	   	  	if(PageNum == null){
+	    if (dto.getYear() == null && dto.getMonth() == null && dto.getDay() == null){
+		  	if(PageNum == null){
 	   	  		currentPage =1;
 	   	  		PageNum = "1";
 	   	  	}else{
@@ -45,27 +50,22 @@ public class D_ScheduleBean {
 	        totalCount = (Integer)sqlMapclient.queryForObject("schedule.selectLastNo" , dto);
 	        page = new pagingActions(currentPage,totalCount,blockCount,blockPage,drid);
 	        
-	        System.out.println(totalCount);
+	     
 	        
-	        int lastCount = totalCount;
+	        lastCount = totalCount;
 	        if(page.getEndCount() < totalCount){
 	            lastCount = page.getEndCount() +1;
 	        }
-	        List list = sqlMapclient.queryForList("schedule.drschedulecheck",dto.getDrid());
+	        list = sqlMapclient.queryForList("schedule.drschedulecheck",dto.getDrid());
 	        System.out.println(list.size());
 	        if(list.size() != 0) {
 	        
 	        	list = list.subList(page.getStartCount(), lastCount);//여기를 생략하면 총 list 레코드가 전부 넘어간다 - 내가받은 부트스트랩소스 자동으로 10개단위로 끊어주고 1,2,3 페이징처리해줌
-	        														//내가 받은 부트스트랩 안쓰고 페이징 처리 할려면 여기를 사용하면된다. 이부분이 레코드를 10개 단위로 끊어주기때문에.. ㅇㅋ?	
+	        }														//내가 받은 부트스트랩 안쓰고 페이징 처리 할려면 여기를 사용하면된다. 이부분이 레코드를 10개 단위로 끊어주기때문에.. ㅇㅋ?	
 	        														//나머지 페이징 폰트 모양이나 페이지넘 경로를 바꾸려면 pagingaction.java 여기를 만지도록. 그럼 20000
+        pagingHtml = page.getPagingHtml().toString();
 	        
-	        }
-	        
-	        System.out.println(list.size());
-	        pagingHtml = page.getPagingHtml().toString();
-	        
-	      
-	        System.out.println(PageNum);
+
 	    tdto = (TreatmentteamDTO) sqlMapclient.queryForObject("treatment.doctorprofile",tdto.getDrid());
 	    request.setAttribute("totalCount",totalCount);
 	    request.setAttribute("pagingHtml",pagingHtml);
@@ -73,5 +73,98 @@ public class D_ScheduleBean {
 		request.setAttribute("list", list);
 		request.setAttribute("tdto", tdto);
 		return "/d_mypage/d_schedule.jsp";
-	}
+		
+		}
+
+	   	else if(dto.getYear() != null && dto.getMonth() != null && dto.getDay().equals("no")){
+		
+		year = dto.getYear();
+		month =dto.getMonth();
+		
+		dto.setSdate(year+"-"+month);
+	
+	  	if(PageNum == null){
+	  		currentPage =1;
+	  		PageNum = "1";
+	  	}else{
+	  		currentPage = Integer.parseInt(PageNum);
+	  	}
+  
+    totalCount = (Integer)sqlMapclient.queryForObject("schedule.selectLastNom" , dto);
+    page = new pagingActions(currentPage,totalCount,blockCount,blockPage,drid);
+  
+    
+    lastCount = totalCount;
+    if(page.getEndCount() < totalCount){
+        lastCount = page.getEndCount() +1;
+    }
+    List list = sqlMapclient.queryForList("schedule.drschedulecheckm",dto);
+  
+    if(list.size() != 0) {
+    
+    	list = list.subList(page.getStartCount(), lastCount);
+    }
+    pagingHtml = page.getPagingHtml().toString();
+    	tdto = (TreatmentteamDTO) sqlMapclient.queryForObject("treatment.doctorprofile",tdto.getDrid());
+	    request.setAttribute("totalCount",totalCount);
+	    request.setAttribute("pagingHtml",pagingHtml);
+	    request.setAttribute("PageNum",PageNum);
+		request.setAttribute("list", list);
+		request.setAttribute("tdto", tdto);
+		return "/d_mypage/d_schedule.jsp";
+	
+}
+
+
+else if(dto.getYear() != null && dto.getMonth() != null && dto.getDay() != null){
+	year = dto.getYear();
+	month =dto.getMonth();
+	day = dto.getDay();
+	dto.setSdate(year+"-"+month+"-"+day);
+	System.out.println(dto.getYear());
+	System.out.println(dto.getMonth());
+	System.out.println(dto.getDay());
+	
+	System.out.println(dto.getDrid());
+	System.out.println(dto.getSdate());
+	if(PageNum == null){
+	  		currentPage =1;
+	  		PageNum = "1";
+	  	}else{
+	  		currentPage = Integer.parseInt(PageNum);
+	  	}
+  
+    totalCount = (Integer)sqlMapclient.queryForObject("schedule.selectLastNod" , dto);
+    page = new pagingActions(currentPage,totalCount,blockCount,blockPage,drid);
+  
+    lastCount = totalCount;
+    if(page.getEndCount() < totalCount){
+        lastCount = page.getEndCount() +1;
+    }
+    list = sqlMapclient.queryForList("schedule.drschedulecheckd",dto);
+    System.out.println(list.size());
+    if(list.size() != 0) {
+    
+    	list = list.subList(page.getStartCount(), lastCount);//여기를 생략하면 총 list 레코드가 전부 넘어간다 - 내가받은 부트스트랩소스 자동으로 10개단위로 끊어주고 1,2,3 페이징처리해줌
+    }														//내가 받은 부트스트랩 안쓰고 페이징 처리 할려면 여기를 사용하면된다. 이부분이 레코드를 10개 단위로 끊어주기때문에.. ㅇㅋ?	
+    														//나머지 페이징 폰트 모양이나 페이지넘 경로를 바꾸려면 pagingaction.java 여기를 만지도록. 그럼 20000
+pagingHtml = page.getPagingHtml().toString();
+    
+tdto = (TreatmentteamDTO) sqlMapclient.queryForObject("treatment.doctorprofile",tdto.getDrid());
+request.setAttribute("totalCount",totalCount);
+request.setAttribute("pagingHtml",pagingHtml);
+request.setAttribute("PageNum",PageNum);
+request.setAttribute("list", list);
+request.setAttribute("tdto", tdto);
+
+return "/d_mypage/d_schedule.jsp";
+
+
+
+	}else{}
+	    
+	
+	    
+		return "/d_mypage/d_schedule.jsp";
+}
 }
