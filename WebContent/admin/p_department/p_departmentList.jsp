@@ -58,7 +58,7 @@
 <td>${dto.p_dpname }</td>
 <td>
 <input type="button" value="수정하기" onclick="window.location='/antman/updateP_department.do?p_depart_id=${dto.p_depart_id}'" />
-<input type="button" value="삭제하기" onclick="window.location='/antman/deleteP_department.do?p_depart_id=${dto.p_depart_id}'" />
+<input type="button" value="삭제하기" onclick="window.location='/antman/deleteP_department.do?p_depart_id=${dto.p_depart_id}&dpname=${dto.dpname}'" />
 </td>
 </tr>
 </c:forEach>
