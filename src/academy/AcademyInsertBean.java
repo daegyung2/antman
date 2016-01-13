@@ -63,6 +63,6 @@ public class AcademyInsertBean {
 	   }
 		
 		
-		return "/academyform.do";
+		return "redirect:/academylist.do";
 	}
 }

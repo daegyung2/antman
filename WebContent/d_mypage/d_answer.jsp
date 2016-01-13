@@ -1,44 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+       <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
+<title>학술행사일정 | 의학교육</title>
 
 <style type="text/css">
 	body, ul, li, div{margin:0px; padding:0px; }
 	ul{list-style:none;}
-	body{font-size:14px; line-height:1.4; overflow-x:hidden;}
+	body{font-size:12px; line-height:1.4; }
 	a{text-decoration:none; }
-
+	
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
-	#top{width:200px; float:top; margin-left:100px; }
-	.container{width:1100px; height:1300px; margin:0 auto;  margin-left:230px; position:relative;}
-	.container .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
-	.container .sub b{font-size:22px; color:#000000;}
-	.container .main{width:1000px; height:1100px; margin-left:50px; top:30px; position:relative;}
-</style>
-
-<div id="menutop">
-	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
-</div>
-
-<style type="text/css">
-	body{margin:0px; padding:0px; }
-	a{ text-decoration:none; }
-	ul{ list-style:none; margin:0px; padding:0px; }
-	li{ margin:0px; padding:0px; }
+	#footer{width:100%; height:300px; margin-bottom:0px;}
 	
-	
-	#side{width:200px; float:left; margin-left:0px;}
-	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
-	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:-17px; position:relative}
-	#container .main #title{width:800px; margin-left:100px; text-align:center;}
-	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
-	#container .main tr{padding:5px 5px;}
-
-	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65);}
-	#container .main td{padding:5px 5px 5px 5px;}
-
+	.container {width:1000px; height:1300px; margin:0 auto; margin-left:220px; position:relative;}
+	.container .main{width:800px; height:1200px; margin-top:5px; }
+	.container .main .academy{margin-left:100px; width:900px; border:1px solid #BDBDBD; border-top:2px solid #5586EB; border-collapse:collapse;}
+	.container .main .academy th{text-align:center; padding:5px 0; color:#5586EB; background:rgba(233,233,233,0.65);}
+	.container .main .academy td{padding:5px 0 5px 10px;}
 
 </style>
 
@@ -46,18 +27,13 @@
 	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
 
-
+<!-- container 시작 -->
 <div id="side">
-	<jsp:include page="/p_mypage/p_mypage_sidebar.jsp" flush="true | false"/>
+	<jsp:include page="d_mypage_sidebar.jsp" flush="true | false"/>
 </div>
 
-
-	<div class="main">
-		<div id="title"><h2>문의내역</h2></div>
-		<br/>
-
-	<div class="main"><br/><br/>
-		<div id="title"><center><h2>문의내역 </h2></center></div>
+<div class="container">
+<div id="title"><center><h2>문의내역 </h2></center></div>
 
 
 
@@ -70,47 +46,43 @@
        
         <c:if test="${list ne null }" >
         <tr align="center">
-		<th>글번호</th>	
+		<th width="50">글번호</th>	
 		<th>아이디</th>
 		<th>이름</th>
 		<th>내용</th>
 		<th>의료진</th>
-		<th>답글쓰기</th>
-		
+		<th width="150">답글쓰기</th>
+		<th>등록하기</th>
 		</tr>
 
         <c:forEach var="dto" items="${list}">
+        <form action="/antman//MyQnA_AnswerPro.do">
 		<tr align="center">
-		<td>${dto.qid }<input type="hidden"  name="qid" value="${dto.qid}">
+		<td >${dto.qid }<input type="hidden"  name="qid" value="${dto.qid}">
 		     <td>${dto.id}</td>
 			 <td>${dto.name}</td>
 			 <td>${dto.content}</td>
 			 <td>${dto.drname}</td>
+			 <td ><input type = hidden name="drid" value="${sessionScope.memdrid }">
+
+
+		
+		<textarea size="50" rows="2" cols="30" name="answer">${dto.answer }</textarea>
+	
+	</td>
+	<td>
+		&nbsp;<input type="submit" value="등록"></td>
+		</form>
 		       <input type="hidden"  name="drid" value="" >
-      
-			 <td><input type="button" value="답글" onclick="javascript:window.location='/antman/MyQnA_Answer.do?drid=${sessionScope.memdrid}&drname=${sessionScope.memdrname}&qid=${dto.qid}&id=${dto.id}&name=${dto.name}&content=${dto.content}&drname=${dto.drname}'"></td>
-		</tr>
 	
 </c:forEach>
 </c:if> 
 
-<!--  <tr>
-	<td colspan ="5">
-
-		 <h2>답변등록</h2>
-
-
-		<form action="/antman/MyQnA_Answer.do">
-		<textarea size="50" rows="5" cols="50" name="answer"></textarea>
-		&nbsp;<input type="submit" value="등록">
-		</form>
-	</td>
-	</tr>
 
 
 
-   -->
-   
+
+    
 </table>
 
 </div>
