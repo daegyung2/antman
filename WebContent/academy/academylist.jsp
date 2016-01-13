@@ -41,7 +41,9 @@
 <tr/>
 <c:forEach var="dto" items="${list }">
 <tr>
-<td>${dto.asid}</td><td><a href="/antman/academycontent.do?id=${sessionScope.memId }&asid=${dto.asid}&drid=${dto.drid }&drname=${dto.drname }&asend=${dto.asend}">${dto.assubject}</a></td><td>${dto.astime} ~ ${dto.astimeend}</td><td>${dto.asstart} ~ ${dto.asend}</td>
+<td>${dto.asid}</td><td><a href="/antman/academycontent.do?id=${sessionScope.memId }&asid=${dto.asid}&drid=${dto.drid }&drname=${dto.drname }&asend=${dto.asend}">${dto.assubject}</a></td><td>${dto.astime} ~ ${dto.astimeend}</td><td>
+
+${dto.asstart} ~ ${dto.asend}</td>
 <td><c:if test="${dto.asmin ne  dto.asmax}">
 ${dto.asmin}/${dto.asmax}
 </c:if>

@@ -14,7 +14,7 @@ TEL 1688-7575 / webmaster@amc.seoul.kr<br/>
 Copyright@2014 by DB Medical Center. All Rights reserved.</center>
 </b></font>
 <br/><br/>
-<center><img src="/spring/img/foot_logo.png" width="200" height="70"/></center>
+<center><img src="/antman/img/main_logo.png" width="130" height="42"></center>
 </td></tr>
 </table>
 

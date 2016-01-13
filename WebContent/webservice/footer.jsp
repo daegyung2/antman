@@ -13,7 +13,7 @@
 	#f_back{clear:both; width:100%; height:300px; background:#474747; margin:0 auto; margin-bottom:0px; margin-top:0px; }
 	#f_back .footer{width:1300px; height:300px; margin:0 auto; position:relative;}
 	#f_back .footer .firstline{width:1200px; height:80px; position:relative;}
-	#f_back .footer .firstline #logo{width:120px; height:40px; border:1px solid #FFFFFF; top:40px; margin-left:60px; position:relative; color:#FFFFFF;}
+	#f_back .footer .firstline #logo{width:120px; height:40px; top:40px; margin-left:60px; position:relative; color:#FFFFFF;}
 	#f_back .footer .firstline .footer_innerbox{width:1050px; height:100px; margin:0 auto; margin-right:-80px; position:relative;}
 	#f_back .footer .firstline .footer_innerbox ul{margin-top:20px; }
 	#f_back .footer .firstline .footer_innerbox li{float:left; padding:0 5px; border-right:1px solid #5D5D5D;  position:relative;}
@@ -50,7 +50,7 @@
 <div id="f_back">
 	<div class="footer">
 		<div class="firstline">
-			<div id="logo">LOGO</div>
+			<div id="logo"><a href="/antman/main.do"><img src="/antman/img/main_logo.png" width="130" height="42"></a></div>
 			<div class="footer_innerbox">
   				<ul>
     				<li class="first"><a href="/antman/notready.do">환자권리장전</a></li>
