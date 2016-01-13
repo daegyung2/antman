@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import admin.bean.AcademyDTO;
 import admin.bean.DepartmentDTO;
 import admin.bean.DoctorDTO;
 import admin.bean.LectureBoardDTO;
@@ -31,35 +32,25 @@ public class Main {
     private paigingActiondb page;
     //메인페이지
 	@RequestMapping("/main.do")
-	public String bdmain(HttpServletRequest request, NewsBoardDTO dto, MainBoardDTO dtoA, LectureBoardDTO dtoB){
+	public String bdmain(HttpServletRequest request, NewsBoardDTO dto, MainBoardDTO dtoA, LectureBoardDTO dtoB,
+			AcademyDTO dtoC){
 	
 		List list = sqlMapClient.queryForList("newsBoard.selectAll", dto);
 		List listA = sqlMapClient.queryForList("mainBoard.selectAll", dtoA);
 		List listB = sqlMapClient.queryForList("lectureBoard.selectAll", dtoB);
+		List listC = sqlMapClient.queryForList("academy.selectAll", dtoC);
 		
 		request.setAttribute("list", list);
-		System.out.println(list.size());
+		
 		request.setAttribute("listA", listA);
 		request.setAttribute("listB", listB);
+		request.setAttribute("listC", listC);
+		System.out.println(listC.size());
 		
 	return "/mainpage/main.jsp";
 }
 	
-	@RequestMapping("/ex.do")
-	public String main(HttpServletRequest request, NewsBoardDTO dto, MainBoardDTO dtoA, LectureBoardDTO dtoB){
-	
-		//공지, 뉴스, 강의 게시판 리스트 
-		List list = sqlMapClient.queryForList("newsBoard.selectAll", dto);
-		List listA = sqlMapClient.queryForList("mainBoard.selectAll", dtoA);
-		List listB = sqlMapClient.queryForList("lectureBoard.selectAll", dtoB);
-		
-		request.setAttribute("list", list);
-		System.out.println(list.size());
-		request.setAttribute("listA", listA);
-		request.setAttribute("listB", listB);
-		
-	return "/mainpage/ex.jsp";
-}
+
 	//관리자페이지 메인 
 	@RequestMapping("/adminmain.do")
 	public String adminmain(HttpServletRequest request,DoctorDTO dto, DepartmentDTO depart,String PageNum ){
@@ -76,6 +67,21 @@ public class Main {
         request.setAttribute("plist",plist);   
         
 		   return "/admin/adminmain.jsp";
-}
+	}
+	
+	@RequestMapping("/mainroad.do")
+	public String mainroad(){
+		
+		return "/mainpage/road.jsp";
+		
+	}
+	
+	@RequestMapping("/sitemap.do")
+	public String sitemap(){
+		
+		return "/mainpage/sitemap.jsp";
+		
+	}
+	
 }
 	
