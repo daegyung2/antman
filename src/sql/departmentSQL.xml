@@ -35,6 +35,10 @@
  select * from department where depart_id = #depart_id#
 </select>
 
+<select id="departdeleted" resultClass ="int" parameterClass="depart">
+ select count(*) from department where depart_id = #depart_id#
+</select>
+
 <update id="update" parameterClass="depart" >
  update DEPARTMENT set P_DEPART_ID=#p_depart_id#,DPNAME=#dpname#,INIT=#init#,D_INFO1=#d_info1#,D_INFO2=#d_info2#,D_INFO3=#d_info3#
  ,D_INFO4=#d_info4#,D_INFO5=#d_info5#,D_INFO6=#d_info6#,D_INFO7=#d_info7#,D_INFO8=#d_info8#

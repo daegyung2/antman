@@ -20,11 +20,30 @@
   <select id="selectAll" parameterClass="int" resultClass="dsche">
        select sid,drid,drname,dpname,sdate,adate from schedule where drid = #drid#
    </select>
-	  
+	  <!--  월별검색    -->
 	 <select id="selectLastNo" resultClass="int" >
-         SELECT count(*) count from schedule where drid = #drid#
+         SELECT count(*) count from schedule where drid = #drid#  
+      </select>
+    
+     
+     	 <select id="selectLastNoy" resultClass="int" >
+         SELECT count(*) count from schedule where drid = #drid#  and to_char(sdate,'YYYY') =  #year#
+      </select>
+      
+           	 <select id="selectLastNom" resultClass="int" >
+         SELECT count(*) count from schedule where drid = #drid#  and to_char(sdate,'YYYY-MM') = #sdate#
       </select>
      
+                	 <select id="selectLastNod" resultClass="int" >
+         SELECT count(*) count from schedule where drid = #drid#  and to_char(sdate,'YYYY-MM-DD') = #sdate#
+      </select>
+     
+     
+      <!--  월별검색    -->
+      
+      
+      
+      
      	 <select id="schedulejungbok" resultClass="int" >
   select count(*) from schedule where sdate = to_date(#sdate#,'YYYY-MM-DD HH24:MI') and drid = #drid#
       </select>
@@ -55,9 +74,27 @@
 		delete schedule where sid = #sid#
 	</delete>
 	
+	
+	
+	<!--  월별검색    -->
+	
 	<select id="drschedulecheck" resultClass="dsche"  >
 	  select sid,drname,dpname,name,to_char(sdate,'YYYY-MM-DD HH:MI')sdate,nextsdate from schedule where drid = #drid# order by sid desc
 	</select>
+	
+		<select id="drschedulechecky" resultClass="dsche"  >
+	  select sid,drname,dpname,name,to_char(sdate,'YYYY-MM-DD HH:MI')sdate,nextsdate from schedule where drid = #drid# and to_char(sdate,'YYYY') =  #year# order by sid desc
+	</select>
+	
+			<select id="drschedulecheckm" resultClass="dsche"  >
+	  select sid,drname,dpname,name,to_char(sdate,'YYYY-MM-DD HH:MI')sdate,nextsdate from schedule where drid = #drid# and to_char(sdate,'YYYY-MM') = #sdate# order by sid desc
+	</select>
+	
+			<select id="drschedulecheckd" resultClass="dsche"  >
+SELECT sid,drname,dpname,name,to_char(sdate,'YYYY-MM-DD HH:MI')sdate,nextsdate from schedule where drid = #drid# and to_char(sdate,'YYYY-MM-DD') = #sdate# order by sid desc
+	</select>
+	
+	<!--  월별검색    -->
 	
 	<select id="drschedulecheckA" resultClass="dsche"  >
 	  select sid,drname,dpname,name,to_char(sdate,'YYYY-MM-DD HH:MI')sdate,nextsdate from schedule where dpname = #dpname# order by sid desc

@@ -42,7 +42,7 @@
 
 <div id="container">
 	<div class="main">
-		<div id="title"><h2>진료스케줄등록</h2></div>
+		<div id="title"><h2>진료스케줄등록/확인</h2></div>
 		<form action = "schedulepro.do" method="post"><br/>
 		<table width="300" border="1" align="center">
 
@@ -50,7 +50,7 @@
 		<input type="hidden" name="drname" value="${tdto.drname}">
 		<input type="hidden" name="dpname" value="${ tdto.dpname}">
 
-		<tr align="center"><th>날짜선택</th><th>시간</th><th>분</th></tr>
+		<tr align="center"><th>날짜선택</th><th>시간</th><th>분</th><th>스케쥴등록</th></tr>
 		<tr align="center"><td >
 		<%@ page import="java.util.Date"%>
 		<%@ page import="java.util.Date"%>
@@ -110,15 +110,86 @@
 		<option>20</option>
 		<option>40</option>
 		
-		</td></tr>
+		</td>
+		<td>
+		<center><input type="submit" value="스케쥴 등록"></center></td></tr>
 		</table>
-		<center><input type="submit" value="스케쥴 등록"></center>
+		
 		</form>
 		
 		<c:if test="${joungbok ne null }">
 		<center>중복된 날짜가 있습니다. 다른날짜를 선택하여 주십시오.</center>
 		</c:if><br/>
 		<center>
+		
+		
+		<form action="/antman/scheduleform.do" method="post">
+		<table table ="600" border="1">
+					<input type="hidden" name="drid" value="${tdto.drid}">
+		<input type="hidden" name="drname" value="${tdto.drname}">
+		<input type="hidden" name="dpname" value="${ tdto.dpname}">
+
+		<tr>
+		 <td>년도선택 </td><td>월선택</td><td>일선택</td><td>스케쥴검색</td></tr>
+		<tr><td><select name="year">
+		<option >2016</option>
+		<option >2017</option>
+		<option>2018</option>
+		<option>2019</option>
+		<option>2020</option>
+		</select>
+		</td>
+		
+		<td><select name="month">
+		<option value="01">1</option>
+		<option value="02">2</option>
+		<option value="03">3</option>
+		<option value="04">4</option>
+		<option value="05">5</option>
+		<option value="06">6</option>
+		<option value="07">7</option>
+		<option value="08">8</option>
+		<option value="09">9</option>
+		<option>10</option>
+		<option>11</option>
+		<option>12</option>
+		</select>
+		</td>
+
+		<td><select name="day">
+		<option value="no">없음</option>
+		<option value="01">1</option>
+		<option value="02">2</option>
+		<option value="03">3</option>
+		<option value="04">4</option>
+		<option value="05">5</option>
+		<option value="06">6</option>
+		<option value="07">7</option>
+		<option value="08">8</option>
+		<option value="09">9</option>
+		<option>10</option>
+		<option>11</option>
+		<option>13</option>
+		<option>14</option>
+		<option>15</option>
+		<option>16</option>
+		<option>17</option>
+		<option>18</option>
+		<option>19</option>
+		<option>20</option>
+		<option>21</option>
+		<option>22</option>
+		<option>23</option>
+		<option>24</option><option>25</option><option>26</option>
+		<option>27</option><option>28</option><option>29</option>
+		<option>30</option><option>31</option>
+		</select>
+		</td>
+
+		
+		<td><input type="submit" value="일별검색"></td></tr>
+		</form>
+		
 		<table width="680" border="1">
 		<tr>
 		<th width="90">진료번호</th>

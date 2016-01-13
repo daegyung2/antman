@@ -51,6 +51,18 @@ public class AppointmentDetailBean {
 	}
 	
 
+	@RequestMapping("/appointdoctorprofile.do")
+	public String doctorprofile (HttpServletRequest request , TreatmentteamDTO dpfdto){
+		System.out.println(dpfdto.getDrid());
+		dpfdto =(TreatmentteamDTO)sqlMapClient.queryForObject("treatment.doctorprofile",dpfdto.getDrid());
+		
+		request.setAttribute("dpfdto",dpfdto);
+		
+	return "appointment/detail/appointdoctorprofile.jsp";
+	}
 	
 	
 }
+	
+	
+

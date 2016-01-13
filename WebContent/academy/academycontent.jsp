@@ -16,7 +16,7 @@
 	#footer{width:100%; height:300px; margin-bottom:0px;}
 	
 	.container {width:1000px; height:1300px; margin:0 auto; margin-left:220px; position:relative;}
-	.container .main{width:800px; height:1200px; margin-top:5px; }
+	.container .main{width:800px; height:1100px; margin-top:5px; }
 	.container .main .academy{margin-left:100px; width:900px; border:1px solid #BDBDBD; border-top:2px solid #5586EB; border-collapse:collapse;}
 	.container .main .academy th{text-align:center; padding:5px 0; color:#5586EB; background:rgba(233,233,233,0.65);}
 	.container .main .academy td{padding:5px 0 5px 10px;}
@@ -66,12 +66,12 @@ ${dto.ascontent}</td>
 </tr>
 <tr align ="center">
 <td colspan ="2">
-<c:if test="${sessionScope.memId eq null}"> 
+<c:if test="${sessionScope.memId eq null && dto.asmin ne dto.asmax} "> 
 로그인후에 신청가능합니다.
 
 </c:if>
 
-<c:if test="${check == 0 && asendcheck == 1 && sessionScope.memId ne null}"> 
+<c:if test="${check == 0 && asendcheck == 1 && sessionScope.memId ne null && dto.asmin ne dto.asmax}"> 
 
 <script language="javascript">
 
@@ -105,7 +105,7 @@ function popup()
  </c:if>
  
  
-<c:if test="${check == 1 && asendcheck==1 && sessionScope.memId ne null}">
+<c:if test="${check == 1 && asendcheck==1 && sessionScope.memId ne null && dto.asmin ne dto.asmax}">
 
 <script language="javascript">
 
@@ -128,13 +128,18 @@ function popups()
 <input type="button" value = "취소하기" onclick="javascript:popups();" >
 </c:if>
 
-<c:if test="${asendcheck == 0 }">
+<c:if test="${asendcheck == 0 && dto.asmin ne dto.asmax}">
 신청기간이 종료되었습니다.
-</c:if>
 </td>
 </tr>
+</c:if>
 
 
+<c:if test="${dto.asmin eq dto.asmax}">
+신청인원이 다 찼습니다.
+</td>
+</tr>
+</c:if>
 
 </table>
 	</div>

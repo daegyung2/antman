@@ -21,7 +21,7 @@
 	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
    <link href="style.css" rel="stylesheet" type="text/css">
-<script language="JavaScript">
+<!-- <script language="JavaScript">
    function goDel(depart_id,dpname) {
 	   var yn = window.confirm(dpname+"를 삭제합니까?");
 	   
@@ -29,7 +29,7 @@
 	      location.href="/antman/deleteDepart.do?depart_id="+depart_id; 
 	   }
 	}
- </script>
+ </script> -->
 
 <style type="text/css">
 	body{margin:0px; padding:0px; }
@@ -57,8 +57,15 @@
 		<div id="title"><title>진료과 입력 창</title>
 </head>
 <body>
+
 <table width="600" border="1" cellpadding="1" cellspacing="1">
 <tr>
+
+<c:if test="${check == 1 }">
+<tr>
+<td align="center" colspan="4">
+<center><font color="red">같은 과 선생님을 전부 삭제하여야 가능합니다.</font></center>
+</td></c:if></tr>
 <th align="center">진료과 이름</th>
 <th align="center">이니셜</th>
 <th align="center">진료과 정보</th>
@@ -72,15 +79,15 @@
 <td width="50">${dto.init }</td>
 <td width="100">${dto.d_info1}</td>
 <td width="200">
-<input type="button" value="수정하기" id="update" onClick="window.location='/antman/updateDepartment.do?depart_id=${dto.depart_id}'"/>
-<input type="button" value="내용보기" id="content" onClick="window.location='/antman/departmentContent.do?depart_id=${dto.depart_id}'" />
-<input type="button" value="삭제하기" id="delete" onClick="goDel(${dto.depart_id},${dto.dpname });" /> <!--  onClick="window.location='/antman/deleteDepart.do?depart_id=${dto.depart_id}'"-->
-</td>
+<input type="button" value="수정하기" id="update" onClick="javascript:window.location='/antman/updateDepartment.do?depart_id=${dto.depart_id}'"/>
+<input type="button" value="내용보기" id="content" onClick="javascript:window.location='/antman/departmentContent.do?depart_id=${dto.depart_id}'" />
+<input type="button" value="삭제하기" onClick="javascript:window.location='/antman/deleteDepart.do?depart_id=${dto.depart_id}&dpname=${dto.dpname }'" /> <!--  onClick="window.location='/antman/deleteDepart.do?depart_id=${dto.depart_id}'"-->
+</td>											<%-- goDel(${dto.depart_id},${dto.dpname }); --%>
 </tr>
 </c:forEach>
 <tr>
 <td colspan="4">
-<input type="button" value="진료과 추가" onClick="window.location='/antman/insertDepartment.do'" />
+<input type="button" value="진료과 추가" onClick="javascript:window.location='/antman/insertDepartment.do'" />
 </td>
 </tr>
 </table>

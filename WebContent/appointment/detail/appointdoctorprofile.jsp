@@ -11,10 +11,8 @@
 	a{text-decoration:none; }
 	table{border:1px solid #BDBDBD; ce}
 
-	#menutop{width:100%; height:150px; }
-	#side{width:200px; float:left; margin-left:0px; }
-	#footer{width:100%; height:300px; margin-bottom:0px;}
-	.container{width:1100px; height:1130px; margin:0 auto;  margin-left:190px; position:relative;}
+	
+	.container{width:1100px; height:1100px; margin:0 auto; margin-left:-100px; margin-top:30px; position:relative;}
 	.container .main{width:1000px; height:1100px; margin-left:50px; top:0px; position:relative;}
 	.container .main .dprofile{margin-left:100px; width:900px; border:1px solid #BDBDBD; border-top:2px solid #5586EB; border-collapse:collapse;}
 	.container .main .dprofile th{text-align:center; padding:5px 0; color:#5586EB; background:rgba(233,233,233,0.65);}
@@ -22,14 +20,7 @@
 	
 </style>
 
-<div id="menutop">
-	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
-</div>
 
-<!-- container 시작 -->
-<div id="side">
-	<jsp:include page="treatmentsidebar.jsp" flush="true | false"/>
-</div>
 
 <div class="container">
 	<div class="main">
@@ -58,7 +49,8 @@
 			[학력] ${dpfdto.degree4}<br/>
 			[학력] ${dpfdto.degree5}
 			</td></tr>
-
+			
+		
 			<th width="200"><h2>칭찬코너</h2></th><td width="600">칭찬코너 총1건 칭찬게시판글 가져오기<br/>
 			</td></tr>
 			<tr>
@@ -71,9 +63,5 @@
 			</td></tr>
 		</table>
 	</div>
-</div>
-
-<div id="footer">
-	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
 </div>
 

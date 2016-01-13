@@ -25,6 +25,7 @@ public class ScheduleDTO {
 	private String view;
 	private String PageNum;
 	private String ymds;
+
 	
 	
 	

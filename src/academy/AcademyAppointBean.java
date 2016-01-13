@@ -54,6 +54,6 @@ public class AcademyAppointBean {
 			sqlMapClient.delete("academy.deleteappoint", dto);
 	 		 sqlMapClient.update("academy.deletemin",dto);
 	
-	return "/academylist.do";
+	return "redirect:/academylist.do";
 	}
 }

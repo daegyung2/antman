@@ -46,7 +46,7 @@
 ${dto.asmin}/${dto.asmax}
 </c:if>
 <c:if test="${dto.asmin eq  dto.asmax}">
-수강인원만원
+만원
 </c:if>
 </td>
 </tr>
