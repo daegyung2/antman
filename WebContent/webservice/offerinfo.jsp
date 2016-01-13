@@ -111,7 +111,7 @@
 
 <!-- container ½ÃÀÛ -->
 <div id="side">
-	<jsp:include page="websidebar.jsp" flush="true | false"/>
+	<jsp:include page="websidebar2.jsp" flush="true | false"/>
 </div>
 
 <div id="container">	

@@ -50,7 +50,7 @@
 <div id="f_back">
 	<div class="footer">
 		<div class="firstline">
-			<div id="logo">LOGO</div>
+			<div id="logo"></div>
 			<div class="footer_innerbox">
   				<ul>
     				<li class="first"><a href="#">환자권리장전</a></li>

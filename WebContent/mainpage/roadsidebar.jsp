@@ -54,7 +54,7 @@ $(function(){
 	body{font-size:14px; line-height:1.4; overflow-x:hidden; height:1200px;}
 	a{text-decoration:none; }
 	
-	.sidebar{width:200px; height:1350px; float:left; margin-left:35px; top:95px; position:absolute; border:1px solid #BDBDBD; border-top:1px solid transparent; border-bottom:1px solid transparent;}
+	.sidebar{width:200px; height:1350px; float:left; margin-left:35px; top:95px; position:absolute; border:1px solid #BDBDBD; border-top:1px solid transparent;}
 	.sidebar #sidebar_top{width:200px; height:120px; font-size:22px; margin-top:25px; border-top:1px solid #BDBDBD; border-bottom:1px solid #BDBDBD; text-align:right;}
 	.sidebar #sidebar_top b{padding-right:0px;}
 	.sidebar #bookinfo{width:160px; height:100px; margin-left:20px; margin-top:380px; border:1px solid #BDBDBD; text-align:center; font-size:16px; }
@@ -75,9 +75,12 @@ $(function(){
 <div class="sidebar">
 	<div id="sidebar_top">
 		<br/><br/>
-		<font color="#5586EB"><b>웹서비스</b></font>
+		<font color="#5586EB"><b>오시는길</b></font>
 	</div>
 <ul id="nav">
+<li>
+<a href="/antman/main.do" class="title"><b>HOME</b></a>
+</li>
 	<li>
     	<a href="#" class="title"><b>발급안내</b></a>
         <ul class="sub">

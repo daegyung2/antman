@@ -31,6 +31,8 @@ $(function(){
 })
 </script>
 
+
+
 <style type="text/css">
 	body, ul, li, div{margin:0px; padding:0px; }
 	ul{list-style:none; margin:0px; padding:0px; }
@@ -68,7 +70,10 @@ $(function(){
 	#container .main .boards #board04{width:310px; height:300px; margin-left:960px; margin-top:-305px; font-size:18px; text-align:center; border:2px dashed rgba(71,71,71,0.8); line-height:15em; }
 	#container .main .boards #board04 a{display:block; width:100%; height:100%;}
 	#container .main .boards #board04:hover{border:2px dashed #5586EB; background:rgba(71,71,71,0.15);}
-	
+	#container .main table{border:1px; border-collapse:collapse; border-top:2px solid #5586EB; }
+	#container .main tr{padding:5px 5px; text-align:center; }
+	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:center; }
+	#container .main td{padding:5px 5px 5px 5px; }
 	
 	/* footer 시작 */
 	#f_back{clear:both; width:100%; height:300px; background:#474747; margin:0 auto; top:100px; position:relative;}
@@ -156,7 +161,59 @@ $(function(){
 		<div id="btn02"><font color="#FFFFFF"><b>진료 조회<br/>진료예약 및 내역조회가 가능합니다.</b></font></div></a>
 	</div>
 	
+	<table width="1300" height="150" border="1" bordercolor="black">
+	<tr>
 	
+	
+	<td align="center">
+	<table border="1" width="315" align="center">
+	<tr><td><b>공지사항</b></td></tr>
+	<c:forEach var="dto" items="${listA}" begin="0" end="5">
+	<tr><td>
+	<font color="#000000"><a href="/antman/mainboard.do">${dto.subject}<br/></a></font>
+	</td></tr>
+	</c:forEach>
+	</table>
+	</td>
+	
+	
+	<td align="center">
+	<table border="1" width="315" align="center">
+	<tr><td><b>뉴스</b></td></tr>
+	<c:forEach var="dto" items="${list}" begin="0" end="5">
+	<tr><td>
+	<font color="#000000"><a href="/antman/newsboard.do">${dto.subject}<br/></a></font>
+	</td></tr>
+	</c:forEach>
+	</table>
+	</td>
+	
+	<td align="center">
+	<table border="1" width="315" align="center">
+	<tr><td><b>강좌안내</b></td></tr>
+	<c:forEach var="dto" items="${listB}" begin="0" end="5">
+	<tr><td>
+	<font color="#000000"><a href="/antman/lectureboard.do">${dto.subject}<br/></a></font>
+	</td></tr>
+	</c:forEach>
+	</table>
+	</td>
+	
+	<td align="center">
+	<table border="1" width="315" align="center">
+	<tr><td><b>학술행사</b></td></tr>
+	<c:forEach var="dto" items="${listC}" begin="0" end="5">
+	<tr><td>
+	<font color="#000000"><a href="/antman/academylist.do">${dto.assubject}<br/></a></font>
+	</td></tr>
+	</c:forEach>
+	</table>
+	</td>
+	
+	
+	
+	</tr>
+	</table>
 	
 
 	
@@ -164,33 +221,37 @@ $(function(){
 		<!-- 리스트 뽑아서 출력할려고 했더니 난리가 나네 난리가.. 
 		ex.jsp에 리스트 출력 테스트 함 
 		-->
-	<div class="boards">
+	<!-- <div class="boards">
 		<div id="board01"><font color="#000000"><b>공지사항</b></font></a></div>
-		<%--  <table align="center" border="1">
+		 -->
+		
+<%-- 	 <table align="center" border="1">
 		  <c:forEach var="dto" items="${listA}">
 		<tr><td>
 		 <font color="#000000"><a href="/antman/mainboard.do">${dto.subject}<br/></a></font>
 		</td></tr>
-		</c:forEach>
-		</table> 
-		</div>--%>
+		</c:forEach> --%>
+	
+<!-- 		</div> -->
+
+		
+		<!-- <div id="board02"><font color="#000000"><b>뉴스</b></font></a></div> --> 
 		
 		
-		<div id="board02"><font color="#000000"><b>뉴스</b></font></a></div>
-	<%-- 	<table align="center" border="1">
+<%-- 	
 		  <c:forEach var="dto" items="${listB}">
 		<tr>
 		 <font color="#000000"><a href="/antman/mainboard.do">${dto.subject}<br/></a></font>
 		</tr>
 		</c:forEach>
-
-</div>--%>
+</table> --%>
+<!-- </div> -->
 		
 		
 		
 		
-		
-		<div id="board03"><a href="#"><font color="#000000"><b>강의정보</b></font></a></div>
+		<!-- 
+		<div id="board03"><a href="#"><font color="#000000"><b>강의정보</b></font></a></div> -->
 		<%-- <table align="center" border="1">
 		  <c:forEach var="dto" items="${listC}">
 		<tr>
@@ -200,13 +261,13 @@ $(function(){
 		</div>
 		 --%>
 		
-		<div id="board04"><a href="#"><font color="#000000"><b>학술행사</b></font></a></div>
+	<!-- 	<div id="board04"><a href="#"><font color="#000000"><b>학술행사</b></font></a></div>
 		
 			
-		</div>
+		</div> -->
 	
 	</div>
-</div>
+</div><br/><br/><br/>
 <!-- footer 시작 -->
 <div id="f_back">
 	<div class="footer">

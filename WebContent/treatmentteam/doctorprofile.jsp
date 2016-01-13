@@ -14,7 +14,7 @@
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
 	#footer{width:100%; height:300px; margin-bottom:0px;}
-	.container{width:1100px; height:1300px; margin:0 auto;  margin-left:190px; position:relative;}
+	.container{width:1100px; height:1130px; margin:0 auto;  margin-left:190px; position:relative;}
 	.container .main{width:1000px; height:1100px; margin-left:50px; top:0px; position:relative;}
 	.container .main .dprofile{margin-left:100px; width:900px; border:1px solid #BDBDBD; border-top:2px solid #5586EB; border-collapse:collapse;}
 	.container .main .dprofile th{text-align:center; padding:5px 0; color:#5586EB; background:rgba(233,233,233,0.65);}

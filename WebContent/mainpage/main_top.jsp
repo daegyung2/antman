@@ -85,12 +85,14 @@
     			<li class="first"><a href="/antman/logout.do">로그아웃</a></li>
     			</c:if>
 
+    			
+    			<li><a href="/antman/mainroad.do">오시는길</a></li>
+    			<li><a href="/antman/sitemap.do">사이트맵</a></li>
     			<li><a href="#">병원둘러보기</a></li>
-    			<li><a href="#">오시는길</a></li>
     			<li><a href="#">English</a></li>
     			<li><a href="#">中文</a></li>
     			<li><a href="#">日本語</a></li>
-    			<li class="last"><a href="#">русский</a></li>
+    		
   			</ul>
 		</div>
 	</div>

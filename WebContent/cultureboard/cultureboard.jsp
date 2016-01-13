@@ -41,11 +41,11 @@
 			 <br/>
              <br/>                     
   <br/>
-  
+  <c:if test="${sessionScope.memauth eq 'E'}" >
   <form action="/antman/cultureboardwrite.do" method="post">
   <button type="submit" class="btn btn-primary btn-md" onclick=>글 쓰기</button>
   </form>
-  
+  </c:if>
   <table data-toggle="table" data-url="data2.json" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true">
  
     
@@ -53,7 +53,12 @@
     	<c:forEach var="dto" items="${list}" varStatus="status">
 			<td height="150" align="center" width="350">
 			 <td><a href="/antman/cultureboardcontent.do?cuid=${dto.cuid}">
-			<img src="${dto.cuimg}" width="250" height="300"/><br/>
+			<img src="${dto.cuimg}" width="250" height="300"/></a><br/><br/>
+				<font size="3"><b>
+				주제 : ${dto.subject}</b><br/>
+				</font>
+				일시 : ${dto.reg_date}
+				
 			</td>
 			
 			
