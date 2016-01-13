@@ -16,24 +16,24 @@
 	#side{width:200px; float:left; margin-left:0px; }
 	#footer{width:100%; height:300px; margin-bottom:0px;}
 	
-	.container {width:1000px; height:1277px; margin:0 auto; margin-left:220px; position:relative;}
-	.container .content{width:800px; height:1200px; margin-left:100px;}
-	.container .content h2{text-align:center; font-size:25px; margin-top:20px;}
-	.container .content p{text-align:center; font-size:15px; margin-top:5px; margin-right:40px; float:right;}
+	.container {width:1000px; height:1327px; margin:0 auto; margin-left:220px; position:relative;}
+	.container .content{width:800px; height:1200px; margin-left:100px; margin-top:-30px;}
+	.container .content h2{text-align:center; font-size:25px; margin-top:0px;}
+	.container .content p{text-align:center; font-size:15px; margin-top:0px; margin-right:40px; float:right;}
 	
 	.container .main{width:800px; height:1200px; margin-top:5px; }
-	.tabset{width:800px; height:1000px; margin:20px auto; padding:5px; border:1px solid #333;  }
+	.tabset{width:800px; height:1000px; margin:20px auto; padding:5px;   }
 	.tabset .tabs{padding:0px 0px; overflow:hidden; margin-left:5px;}
 	.tabset .tabs li{float:left; margin-right:3px;}
 	.tabset .tabs li a{display:block; background:#5586EB; color:#FFFFFF; padding:15px 49px; font-weight:bold; }
 	.tabset .tabs li a:hover{ background:#EAEAEA; color:#333;}
 	.tabset .tabs li a.on{border:1px solid #DBDBDB; background:#FFFFFF; color:#333;}
-	.tabset .panels div{width:750px; height:900px; padding:12px 15px 6px; margin-left:10px; margin-top:20px; align:center; border:1px solid #333;}
+	.tabset .panels div{width:750px; height:900px; padding:12px 15px 6px; margin-left:10px; margin-top:20px; align:center; }
 	.tabset .panels div .sub{width:750px; height:70px; border:1px solid #333; }
 	.tabset .panels div .sub #category{width:315px; height:70px; margin-left:10px; position:relative;}
 	.tabset .panels div .sub #title{width:315px; height:70px; margin-left:335px; position:relative;}
 	
-	#faq { width: 100%; border-top: 2px solid #283444; margin-bottom: 75px; border-bottom: 1px solid #283444; }
+	#faq { width: 100%; border-top: 2px solid #283444; margin-top:-15px; margin-bottom: 75px; border-bottom: 1px solid #283444; }
 	#faq th { font-weight: normal; color: #898989; border-bottom: 1px solid #283444; height: 42px;  }
 	#faq .bar { width: 112px; }
 	#faq td { border-bottom: 1px solid #e5e5e5; color: #6d6e72;  height: 40px; padding-left: 30px; cursor: pointer; }
