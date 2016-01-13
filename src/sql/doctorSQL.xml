@@ -46,6 +46,11 @@
  <select id="selectDr" resultMap="doctor.dto" parameterClass="doctor">
    select * from DOCTOR where drId = #drId#
  </select>
+
+   <select id="dpdoctorcheck" resultClass="int" parameterClass="doctor">
+   select count(*) from DOCTOR where dpname = #dpname#
+ </select>
+ 
  
   <select id="selectDrdp" resultMap="doctor.dto" parameterClass="doctor">
    select * from DOCTOR where dpname = #dpname#
