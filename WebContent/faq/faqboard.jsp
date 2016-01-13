@@ -16,7 +16,7 @@
 	#side{width:200px; float:left; margin-left:0px; }
 	#footer{width:100%; height:300px; margin-bottom:0px;}
 	
-	.container {width:1000px; height:1300px; margin:0 auto; margin-left:220px; position:relative;}
+	.container {width:1000px; height:1277px; margin:0 auto; margin-left:220px; position:relative;}
 	.container .content{width:800px; height:1200px; margin-left:100px;}
 	.container .content h2{text-align:center; font-size:25px; margin-top:20px;}
 	.container .content p{text-align:center; font-size:15px; margin-top:5px; margin-right:40px; float:right;}
@@ -32,6 +32,18 @@
 	.tabset .panels div .sub{width:750px; height:70px; border:1px solid #333; }
 	.tabset .panels div .sub #category{width:315px; height:70px; margin-left:10px; position:relative;}
 	.tabset .panels div .sub #title{width:315px; height:70px; margin-left:335px; position:relative;}
+	
+	#faq { width: 100%; border-top: 2px solid #283444; margin-bottom: 75px; border-bottom: 1px solid #283444; }
+	#faq th { font-weight: normal; color: #898989; border-bottom: 1px solid #283444; height: 42px;  }
+	#faq .bar { width: 112px; }
+	#faq td { border-bottom: 1px solid #e5e5e5; color: #6d6e72;  height: 40px; padding-left: 30px; cursor: pointer; }
+	#faq .off:hover td { color: #283444; }
+	#faq .init { text-align: center; padding: 0; }
+	#faq .answer { display: none; }
+	#faq .answer td { padding: 15px 30px; background: #f8f8f8; line-height: 1.5;}
+	#faq .off td:last-child { border-bottom: 1px solid #e5e5e5; width: 50px; padding: 0; }
+	#faq .on td:last-child { border-bottom: 1px solid #e5e5e5; width: 50px; padding: 0; }
+	#faq .on td { color: #283444; }
 	
 	#nav{ width:700px; margin:30px auto; }
 	#nav .title{ display:block; height:36px;  }
@@ -76,20 +88,21 @@ $(function(){
 	})
 })
 
-$(function(){
-	/* 만약에 클릭한 개체의 다음개체의 display값이 none값과 같은때만 실행 */
-	$('.title').click(function(){
-	 if($(this).next().css('display')=='none'){
-		$('.sub').slideUp(0);
-		$(this).next().slideDown(0);
-	 }
-		/*
-		$('.sub').hide();
-		$(this).next().show();
-		*/
-	});
-})
-	
+function fnAnswer(no){
+	$(".answer").slideUp(0);
+	$("#faq #title").attr("class", "off");
+	$("#faq tr:eq("+(no*2)+")").slideDown(0);
+	$("#faq tr:eq("+(no*2-1)+")").attr("class", "on");
+}
+
+/*
+function fnAnswer(no){
+	$(".answer").slideUp(0);
+	$("#faq #title").attr("class", "off");
+	$("#faq tr:eq("+(no*2)+")").slideDown(0);
+	$("#faq tr:eq("+(no*2-1)+")").attr("class", "on");
+}
+*/
 </script>
 
 </head>
@@ -124,49 +137,134 @@ $(function(){
         	</ul>   
      	<div class="panels">
     		<div id="panel01"> 
-    		  
-    			<table id="faq" cellspacing="0" cellpadding="0" border="0">
-				<tr>
-					<th class="bar" width="200">구분</th>
-					<th colspan="2" width="500">질문내용</th>
-				</tr>
-				</table>
-					
-				
-    			<ul id="nav" >
-    				<li>
-    					<c:forEach var="dto" items="${list}">
-    					<a href="#" class="title"> 
-    					<span width="200">${dto.category}</span>
-						<span width="500">${dto.subject}</span>
-						</a>
-        				<ul class="sub">
-        					<li>
-							<tr class="answer">
-								<td>&nbsp;</td>
-								<td colspan="2">
-								<font color="#FF00DD">${dto.content}</font>
-								<center>
-									<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqupdate.do?fid=${dto.fid}'">수정하기</button>
-									<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqdelete.do?fid=${dto.fid}'">삭제하기</button> 
-  								</center>
-								</td>
-							</tr>
-						</c:forEach>
-					</li>
-        		</ul>				
+    			<table id="faq" cellspacing="0" cellpadding="0" border="0" width="750">
+					<tr>
+						<th class="bar">구분</th>
+						<th colspan="2">질문내용</th>
+					</tr>
+					<c:forEach var="dto" items="${list}" varStatus="status">
+					<tr onclick="fnAnswer(${status.count});" class="off" id="title">
+						<td class="init">${dto.category}</td>
+						<td>${dto.subject}</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="answer">
+						<td colspan="3" >
+						<font color="#5586EB" size="2">
+						${dto.content}
+						</font>
+						<center>
+							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqupdate.do?fid=${dto.fid}'">수정하기</button>
+							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqdelete.do?fid=${dto.fid}'">삭제하기</button> 
+  						</center>
+						</td>
+					</tr>
+					</c:forEach>
+				</table>			
         	</div>
-        	<div id="panel02">test2
-        		
+        	<div id="panel02">
+        		<table id="faq" cellspacing="0" cellpadding="0" border="0" width="750">
+					<tr>
+						<th class="bar">구분</th>
+						<th colspan="2">질문내용</th>
+					</tr>
+					<c:forEach var="dto" items="${list}" varStatus="status">
+					<tr onclick="fnAnswer(${status.count});" class="off" id="title">
+						<td class="init">${dto.category}</td>
+						<td>${dto.subject}</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="answer">
+						<td colspan="3" >
+						<font color="#5586EB" size="2">
+						${dto.content}
+						</font>
+						<center>
+							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqupdate.do?fid=${dto.fid}'">수정하기</button>
+							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqdelete.do?fid=${dto.fid}'">삭제하기</button> 
+  						</center>
+						</td>
+					</tr>
+					</c:forEach>
+				</table>	
         	</div>
-        	<div id="panel03">test3
-        		
+        	<div id="panel03">
+        		<table id="faq" cellspacing="0" cellpadding="0" border="0" width="750">
+					<tr>
+						<th class="bar">구분</th>
+						<th colspan="2">질문내용</th>
+					</tr>
+					<c:forEach var="dto" items="${list}" varStatus="status">
+					<tr onclick="fnAnswer(${status.count});" class="off" id="title">
+						<td class="init">${dto.category}</td>
+						<td>${dto.subject}</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="answer">
+						<td colspan="3" >
+						<font color="#5586EB" size="2">
+						${dto.content}
+						</font>
+						<center>
+							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqupdate.do?fid=${dto.fid}'">수정하기</button>
+							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqdelete.do?fid=${dto.fid}'">삭제하기</button> 
+  						</center>
+						</td>
+					</tr>
+					</c:forEach>
+				</table>	
         	</div>
-        	<div id="panel04">test4
-        		
+        	<div id="panel04">
+        		<table id="faq" cellspacing="0" cellpadding="0" border="0" width="750">
+					<tr>
+						<th class="bar">구분</th>
+						<th colspan="2">질문내용</th>
+					</tr>
+					<c:forEach var="dto" items="${list}" varStatus="status">
+					<tr onclick="fnAnswer(${status.count});" class="off" id="title">
+						<td class="init">${dto.category}</td>
+						<td>${dto.subject}</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="answer">
+						<td colspan="3" >
+						<font color="#5586EB" size="2">
+						${dto.content}
+						</font>
+						<center>
+							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqupdate.do?fid=${dto.fid}'">수정하기</button>
+							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqdelete.do?fid=${dto.fid}'">삭제하기</button> 
+  						</center>
+						</td>
+					</tr>
+					</c:forEach>
+				</table>	
         	</div>
-        	<div id="panel05">test5
-        		
+        	<div id="panel05">
+        		<table id="faq" cellspacing="0" cellpadding="0" border="0" width="750">
+					<tr>
+						<th class="bar">구분</th>
+						<th colspan="2">질문내용</th>
+					</tr>
+					<c:forEach var="dto" items="${list}" varStatus="status">
+					<tr onclick="fnAnswer(${status.count});" class="off" id="title">
+						<td class="init">${dto.category}</td>
+						<td>${dto.subject}</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="answer">
+						<td colspan="3" >
+						<font color="#5586EB" size="2">
+						${dto.content}
+						</font>
+						<center>
+							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqupdate.do?fid=${dto.fid}'">수정하기</button>
+							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqdelete.do?fid=${dto.fid}'">삭제하기</button> 
+  						</center>
+						</td>
+					</tr>
+					</c:forEach>
+				</table>	
         	</div>
     	</div>
     	</div>
