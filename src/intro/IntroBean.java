@@ -3,6 +3,7 @@ package intro;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
@@ -32,8 +33,9 @@ public class IntroBean {
 	private String pagingHtml;
 	private pagingAction page;
 	
+	
 	@RequestMapping("/intro.do")
-	public String intro(HttpServletRequest request, MainBoardDTO dto, NewsBoardDTO dtoa, LectureBoardDTO dtob
+	public String intro(HttpSession session, HttpServletRequest request, MainBoardDTO dto, NewsBoardDTO dtoa, LectureBoardDTO dtob
 			, CultureBoardDTO dtoc){
 	
 			
@@ -70,9 +72,10 @@ public class IntroBean {
 			List listb = sqlMapClient.queryForList("lectureBoard.selectAll", dtob);
 			listb = listb.subList(page.getStartCount(), lastCountb);
 		
-			List listc = sqlMapClient.queryForList("cultureBoard.selectAll", dtoc);
-			System.out.println(listc.size());
-			request.setAttribute("list", list);
+			List listc = sqlMapClient.queryForList("cultureBoard.selectAll",dtoc);
+
+			
+		    request.setAttribute("list", list);
 			request.setAttribute("lista", lista);
 			request.setAttribute("listb", listb);
 			request.setAttribute("listc", listc);

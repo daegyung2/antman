@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-
 <!DOCTYPE html>
 
 <style type="text/css">
@@ -33,14 +31,8 @@
 
 <div id="container">
 	<div class="main"><br/><br/>
-		<div id="title"><center><h2>강의정보 </h2></center></div>
-
-
-
-
-
-  <div class="container">
-                    
+		<div id="title"><center><h2>강의정보</h2></center></div>
+                   
   <br/>
   <c:if test="${sessionScope.memauth eq 'E'}">
   <center>
@@ -82,7 +74,7 @@
 </script>
 </body>
 </html>
-</div></div>
+</div>
 
  <div id="footer">
 	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
