@@ -12,7 +12,7 @@
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
 	#footer{width:100%; height:300px; margin-bottom:0px;}
-	#container{ width:1100px; height:900px; margin:0 auto; margin-left:250px; position:relative;}
+	#container{ width:1100px; height:1000px; margin:0 auto; margin-left:250px; position:relative;}
 	#container .main{ width:1000px; height:800px; margin-left:50px; position:relative}
 	#container .main #main_top{ width:970px; height:70px; margin-top:35px; font-size:15px; line-height:1.8;}
 	#container .main #btn{ width:150px; height:30px; margin-top:-38px; margin-right:20px; background:#5586EB; font-size:14px; position:relative; float:right;}
