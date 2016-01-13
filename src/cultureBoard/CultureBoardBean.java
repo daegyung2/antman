@@ -21,11 +21,9 @@ public class CultureBoardBean {
 	@RequestMapping("/cultureboard.do")
 	public String cultureboard(CultureBoardDTO dto,HttpServletRequest request){
 		list = sqlMapClient.queryForList("cultureBoard.selectAll",dto);
-		System.out.println(list.size());
+		
 		request.setAttribute("list",list);
 		
-		System.out.println(dto.getContent());
-		System.out.println(dto.getCuid());
 		return "/cultureboard/cultureboard.jsp";
 	}
 

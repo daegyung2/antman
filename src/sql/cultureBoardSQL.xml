@@ -27,6 +27,8 @@
  		select * from cultureBoard where cuid = #cuid#
 		</select>
 		
+	
+		
 		 <select id="max" resultClass="int">
    		select max(cuid) from cultureBoard
  		</select>	
