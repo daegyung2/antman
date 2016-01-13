@@ -134,8 +134,11 @@
                 	<li>
             			<a href="/antman/voc.do">웹서비스</a>
             			<ul>
-                			<li><a href="#">발급안내</a></li>
-							<li><a href="#">고객서비스</a></li>
+                			<li><a href="/antman/faqboard.do">자주하는질문</a></li>
+							<li><a href="/antman/voc.do">고객의소리</a></li>
+							<li><a href="/antman/praiseboard.do">칭찬코너</a></li>
+							<li><a href="/antman/pageinquiry.do">홈페이지이용문의</a></li>
+							<li><a href="/antman/offerinfo.do">콘텐츠제공안내</a></li>
                 		</ul>
                 	</li>
                 	<li>
@@ -150,11 +153,14 @@
                 	<li>
             			<a href="/antman/intro.do">병원소개</a>
             			<ul>
-                			<li><a href="#">재단소개</a></li>
-							<li><a href="#">병원소개</a></li>
-							<li><a href="#">소식</a></li>
-							<li><a href="#">정기간행물</a></li>
-							<li><a href="#">교육장안내</a></li>
+                			<li><a href="/antman/guide.do">병원안내</a></li>
+							<li><a href="/antman/mission.do">미션과비전</a></li>
+							<li><a href="/antman/present.do">현황</a></li>
+							<li><a href="/antman/greet.do">병원장인사말</a></li>
+							<li><a href="/antman/mainboard.do">공지사항</a></li>
+							<li><a href="/antman/newsboard.do">뉴스</a></li>
+							<li><a href="/antman/lectureboard.do">강좌안내</a></li>
+							<li><a href="/antman/cultureboard.do">문화갤러리</a></li>
                 		</ul>
                 	</li>
         		</ul>

@@ -7,8 +7,7 @@
 	body{margin:0px; padding:0px;}
 	a{ text-decoration:none; }
 	#menutop{width:100%; height:150px; }
-	#side{width:200px; float:left; margin-left:0px; }
-	#container{ width:1100px; height:1500px; margin:0 auto; margin-left:250px; position:relative;}
+	#container{ width:1100px; height:1500px; margin:0 auto; margin-left:75px; position:relative;}
 	#container .main{ width:1000px; height:1400px; margin-left:50px; position:relative}
 	#container .main #main_top{ width:970px; height:70px; margin-top:35px; font-size:15px; line-height:1.8;}
 	#container .main #btn{ width:150px; height:30px; margin-top:-38px; margin-right:20px; background:#5586EB; font-size:14px; position:relative; float:right;}
@@ -50,13 +49,10 @@ function checkIt() {
 <body>
 
 <div id="menutop">
-	<jsp:include page="/webservice/webtop.jsp" flush="true | false"/>
+	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
 
 <!-- container ½ÃÀÛ -->
-<div id="side">
-	<jsp:include page="/appointment/appointmentsidebar.jsp" flush="true | false"/>
-</div>
 
 <div id="container">	
 	<div class="main">

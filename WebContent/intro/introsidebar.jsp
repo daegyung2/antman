@@ -29,7 +29,7 @@
 		<font color="#5586EB"><b><a href="/antman/intro.do"/>병원소개</a></b></font>
 	</div>
 <ul id="nav">
-	<li><a href="/antman/guide.do" class="title"/>병원소개</a></li>
+	<li><a href="/antman/guide.do" class="title"/>병원안내</a></li>
 	<li><a href="/antman/mission.do" class="title">미션과비전</a></li>
 	<li><a href="/antman/present.do" class="title">현황</a></li>
 	<li><a href="/antman/greet.do" class="title">병원장인사말</a></li>
