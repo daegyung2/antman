@@ -61,7 +61,7 @@
 <table width="600" border="1" cellpadding="1" cellspacing="1">
 <tr>
 
-<c:if test="${check == 1 }">
+<c:if test="${!empty check }">
 <tr>
 <td align="center" colspan="4">
 <center><font color="red">같은 과 선생님을 전부 삭제하여야 가능합니다.</font></center>

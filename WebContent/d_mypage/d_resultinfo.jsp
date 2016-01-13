@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <style type="text/css">
 	body, ul, li, div{margin:0px; padding:0px; }
@@ -21,7 +21,6 @@
 	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
 <style type="text/css">
-.
 	body{margin:0px; padding:0px; }
 	a{ text-decoration:none; }
 	ul{ list-style:none; margin:0px; padding:0px; }
@@ -39,34 +38,59 @@
 </style>
 
 <div id="side">
-<jsp:include page="/admin/adminsidebar.jsp" flush="true | false"/>
+<jsp:include page="d_mypage_sidebar.jsp" flush="true | false"/>
 </div>
 
 <div id="container">
 	<div class="main">
-		<div id="title"><title>부모 부서</title>
-</head>
-<body>
-
-<table width="350" border="1">
-
-<c:if test="${!empty check}">
-<tr><td colspan="2"> <font color="red">소속 하위부서를 다 삭제하셔야합니다.</font></td></tr></c:if>
+		<div id="title"><title>진료기록통계</title>
+<center>
+<table width="100" border="1">
 <tr>
-<th width="150">부모 진료과 이름</th>
-<th width="200" align="center">비고</th>
+<th align="center">진료기록통계</th>
 </tr>
-<c:forEach var="dto" items="${list }" >
 <tr>
-<td>${dto.p_dpname }</td>
-<td>
-<input type="button" value="수정하기" onclick="window.location='/antman/updateP_department.do?p_depart_id=${dto.p_depart_id}'" />
-<input type="button" value="삭제하기" onclick="window.location='/antman/deleteP_department.do?p_depart_id=${dto.p_depart_id}'" />
-</td>
+<td align="center">${allcount }</td>
+</tr>
+</table>
+<br/>
+
+<table width="1000" border="1">
+<tr>
+<br/>
+<th>기록번호</th>
+<th>진료과</th>
+<th>선생님</th>
+<th>환자아이디</th>
+<th>환자이름</th>
+<th>생년월일</th>
+<th>나이</th>
+<th>성별</th>
+<th>증상1</th>
+<th>증상2</th>
+<th>증상3</th>
+<th>증상4</th>
+<th>입력날짜</th>
+</tr>
+<tr>
+<c:forEach var="dto" items="${rlist }">
+<td>${dto.mid}</td>
+<td>${dto.dpname}</td>
+<td>${dto.drname}</td>
+<td>${dto.id}</td>
+<td>${dto.name}</td>
+<td>${dto.jumin1}</td>
+<td>${dto.age}</td>
+<td>${dto.gender}</td>
+<td>${dto.symptom1}</td>
+<td>${dto.symptom2}</td>
+<td>${dto.symptom3}</td>
+<td>${dto.symptom4}</td>
+<td>${dto.treatdate}</td>
 </tr>
 </c:forEach>
-<tr><td colspan="2"><input type="button" value="등록하기" onClick="window.location='/antman/insertP_department.do'" /></td></tr>
 </table>
-</table>
-</body>
-</html>
+
+
+
+</center>

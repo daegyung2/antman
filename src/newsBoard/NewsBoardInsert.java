@@ -26,7 +26,9 @@ public class NewsBoardInsert {
 	
 	@RequestMapping("/newsboardPro.do")
 	public String insertLecture(NewsBoardDTO dto, MultipartHttpServletRequest request)throws IllegalStateException, IOException{
-	
+		String content = dto.getContent();
+		dto.setContent(content.replace("\r\n", "<br />"));
+		
 		sqlMapClient.insert("newsBoard.insertnewsboard", dto);
  	   
 	   NEid = (int) sqlMapClient.queryForObject("newsBoard.max",dto);
@@ -37,7 +39,7 @@ public class NewsBoardInsert {
 	  
 	   if(!file.isEmpty()){
 	   String name = file.getOriginalFilename();//C:\Users\downmemory\git\antman
-	   File sf = new File("c://Users//ÅÂÈñ//git//antman//WebContent//image//neimg//"+name);
+	   File sf = new File("c://Users//downmemory//git//antman//WebContent//image//neimg//"+name);
 	   file.transferTo(sf);
 	   dto.setNeimg("/antman/image/neimg/"+name);
 	   sqlMapClient.update("newsBoard.updateneimg",dto);

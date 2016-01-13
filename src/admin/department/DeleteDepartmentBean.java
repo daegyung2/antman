@@ -20,14 +20,17 @@ public class DeleteDepartmentBean {
 		System.out.println(ddto.getDpname());
 		int check = (int) sqlMapClient.queryForObject("doctor.dpdoctorcheck",ddto);
 		
-		if(check == 1){
+		
+		
+		if(check == 0 ){
+
+			sqlMapClient.delete("depart.delete",dto.getDepart_id());
+			return "/departmentList.do";
+			}else if(check > 0){
 			
 			request.setAttribute("check", check);
-			return "/departmentList.do";
 			
-		}else if(check == 0 ){
-
-		sqlMapClient.delete("depart.delete",dto.getDepart_id());
+			
 		}
 		return "/departmentList.do";
 		

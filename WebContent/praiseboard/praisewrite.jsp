@@ -39,7 +39,50 @@
 <div class="container"><table width="600" border="1">
     
         <tr><th>칭찬선택</th><td>
-        <link href="style.css" rel="stylesheet" type="text/css">
+   
+        <form action="/antman/praisewrite.do" name ="ssibal" method="post"  >
+
+    <select name="dpname">
+	<c:forEach var="dto" items="${dplist}" >
+	<option value="${dto.dpname }">${dto.dpname}</option>
+	</c:forEach>
+	</select>&nbsp;&nbsp;<input type="submit" value="선생님보기">   
+ 	</form>
+</td></tr>
+
+<c:if test="${!empty drlist}">
+<tr><th>칭찬할선생님</th><td>
+ <form action="/antman/praisewrite.do" name="ssibaral" method="post">  
+ 
+    <select name="drId">
+	<c:forEach var="dto" items="${drlist}" >
+	<option value="${dto.drid }">${dto.drname}</option>
+	</c:forEach>	
+</select>&nbsp;&nbsp;<input type="submit" value="선생님선택">
+
+</form>
+</td>
+</tr>
+</c:if>
+
+
+<c:if test="${!empty delist}">
+<tr><th>칭찬할직원</th><td>
+<form action="/antman/praisewrite.do" name="ssibural" method="post">  
+ 
+    <select name="eid">
+	<c:forEach var="dto" items="${delist}" >
+	<option value="${dto.eid }">${dto.name}</option>
+	</c:forEach>	
+</select>&nbsp;&nbsp;<input type="submit" value="직원선택">
+</form>
+
+ </td>
+</tr>
+ </c:if>
+ 
+
+     <link href="style.css" rel="stylesheet" type="text/css">
                 <script language="JavaScript">
 
     function checkIt() {
@@ -60,50 +103,7 @@
         }
         }
     </script>
-        <form action="/antman/praisewrite.do" method="post" id="userinput" onSubmit="return checkIt()">
-
-    <select name="dpname">
-	<c:forEach var="dto" items="${dplist}" >
-	<option value="${dto.dpname }">${dto.dpname}</option>
-	</c:forEach>
-	</select>&nbsp;&nbsp;<input type="submit" value="선생님보기">   
- 	</form>
-</td></tr>
-
-<c:if test="${!empty drlist}">
-<tr><th>칭찬할선생님</th><td>
- <form action="/antman/praisewrite.do" method="post">  
- 
-    <select name="drId">
-	<c:forEach var="dto" items="${drlist}" >
-	<option value="${dto.drid }">${dto.drname}</option>
-	</c:forEach>	
-</select>&nbsp;&nbsp;<input type="submit" value="선생님선택">
-
-</form>
-</td>
-</tr>
-</c:if>
-
-
-<c:if test="${!empty delist}">
-<tr><th>칭찬할직원</th><td>
-<form action="/antman/praisewrite.do" method="post">  
- 
-    <select name="eid">
-	<c:forEach var="dto" items="${delist}" >
-	<option value="${dto.eid }">${dto.name}</option>
-	</c:forEach>	
-</select>&nbsp;&nbsp;<input type="submit" value="직원선택">
-</form>
-
- </td>
-</tr>
- </c:if>
- 
-
-
-	<form action="/antman/praisepro.do" method="post">	
+	<form action="/antman/praisepro.do"  name="userinput" method="post" onSubmit="return checkIt()">	
     <tr>
     <c:if test="${empty  ddto.drId}"><input type="hidden" name="drid" value="0"></c:if>
     <c:if test="${!empty  ddto.drId}"><input type="hidden" name="drid" value="${ddto.drId}"></c:if>
