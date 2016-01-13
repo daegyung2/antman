@@ -11,13 +11,20 @@
 
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
-	#footer{width:100%; height:300px; margin-bottom:0px;}
+	#footer{width:100%; height:300px; margin-bottom:-100px;}
 	#top{width:200px; float:top; margin-left:100px; }
-	.container{width:1100px; height:1300px; margin:0 auto;  margin-left:230px; position:relative;}
-	.container .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
-	.container .sub b{font-size:22px; color:#000000;}
-	.container .main{width:1000px; height:1200px; margin-left:50px; top:30px; position:relative;}
+	.containers{width:1100px; height:2300px; margin:0 auto;  margin-left:230px; position:relative;}
+	.containers .mains{width:1000px; height:2200px; margin-left:50px; top:30px; position:relative;}
 	.ssibal {margin-left: 230px;}
+	#containers .mains #title{width:500px; margin-left:70px; text-align:center;}
+	.container .mains table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; width:765px; margin-left:220px;}
+	.container .mains tr{padding:5px 5px;}
+	.container .mains th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65);}
+	.container .mains td{padding:5px 5px 5px 5px;}
+	.table{
+ margin-left : -15px;
+ width: 780px;
+}
 </style>
 
 <div id="menutop">
@@ -26,7 +33,7 @@
 
 <!-- container 시작 -->
 <div id="side">
-	<jsp:include page="/appointment/appointmentsidebar.jsp" flush="true | false"/>
+	<jsp:include page="/appointment/detail/detailsidebar.jsp" flush="true | false"/>
 </div>
 
 <div class="container">
@@ -42,19 +49,9 @@
 	#side{width:200px; float:left; margin-left:0px;}
 	#footer{width:100%; height:300px; margin-bottom:0px;}
 	#container{width:1100px; height:270px; margin:0 auto;  margin-left:180px; position:relative; margin-bottom: 50px;}
-	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:-17px; position:relative}
-	#container .mains{width:1000px; height:1100px; margin-left:50px; margin-top:-17px; position:relative}
-	#container .mains table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; width:765px;}
-	 
-	#container .main #title{width:500px; margin-left:-140px; text-align:center;}
-	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; width:765px;}
-	#container .main tr{padding:5px 5px;}
-	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65);}
-	#container .main td{padding:5px 5px 5px 5px;}
-	.table{
- margin-left : -15px;
- width: 780px;
-}
+	#container .main{width:1000px; height:600px; margin-left:50px; margin-top:-17px; position:relative}
+	
+	
 .shitsd{font-size : 15pt; font-weight : bold;}
 .shit{
 	
@@ -71,13 +68,10 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 			
 }
 </style>
-<div id="container">
-	<div class="main">
+<div id="containers">
+	<div class="mains">
 		<div id="title"><h2>선택내역입니다.</h2></div>
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <link href="style.css" rel="stylesheet" type="text/css">
 <script language="JavaScript">
 
 
