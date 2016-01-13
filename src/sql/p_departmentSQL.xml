@@ -30,4 +30,9 @@
    		<select id="pdepartname" resultClass="p_depart" parameterClass="p_depart" >
 		select p_dpname from p_department where p_depart_id = #p_depart_id#
 		</select>
+		
+		   		<select id="selectdepartlist" resultClass="p_depart" parameterClass="p_depart" >
+		select * from p_department
+		</select>
+		
 </sqlMap>

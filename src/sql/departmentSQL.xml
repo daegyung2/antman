@@ -36,7 +36,7 @@
 </select>
 
 <select id="departdeleted" resultClass ="int" parameterClass="depart">
- select count(*) from department where depart_id = #depart_id#
+ select count(*) from department where p_depart_id = #p_depart_id#
 </select>
 
 <update id="update" parameterClass="depart" >

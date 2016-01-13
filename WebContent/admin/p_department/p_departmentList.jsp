@@ -49,6 +49,9 @@
 <body>
 
 <table width="350" border="1">
+
+<c:if test="${!empty check}">
+<tr><td colspan="2"> <font color="red">소속 하위부서를 다 삭제하셔야합니다.</font></td></tr></c:if>
 <tr>
 <th width="150">부모 진료과 이름</th>
 <th width="200" align="center">비고</th>
@@ -58,7 +61,7 @@
 <td>${dto.p_dpname }</td>
 <td>
 <input type="button" value="수정하기" onclick="window.location='/antman/updateP_department.do?p_depart_id=${dto.p_depart_id}'" />
-<input type="button" value="삭제하기" onclick="window.location='/antman/deleteP_department.do?p_depart_id=${dto.p_depart_id}&dpname=${dto.dpname}'" />
+<input type="button" value="삭제하기" onclick="window.location='/antman/deleteP_department.do?p_depart_id=${dto.p_depart_id}'" />
 </td>
 </tr>
 </c:forEach>

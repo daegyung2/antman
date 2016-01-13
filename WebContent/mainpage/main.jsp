@@ -16,7 +16,7 @@ $(function(){
 	var currentNum = 0;
 	function rotateImg(){
 		currentNum++;
-		currentNum = currentNum%3;
+		currentNum = currentNum%4;
 		imgs.stop().fadeOut();
 		$('.bg'+currentNum).stop().fadeIn();
 	}
@@ -124,9 +124,10 @@ $(function(){
 	<div class="main">
 	<div id="visual">
 		<ul>
-    		<li class="bg0"><a href="newsboard.do"><img src="\antman\img\main_image_01.jpg" alt="" /></a></li>
-        	<li class="bg1"><a href="newsboard.do"><img src="\antman\img\main_image_02.jpg" alt="" /></a></li>
-        	<li class="bg2"><a href="newsboard.do"><img src="\antman\img\main_image_03.jpg" alt="" /></a></li>
+		<c:forEach var="dto" items="${list}" begin="0" end="6" varStatus="status">
+    		<li class="bg${status.index}"><a href="newsboardcontent.do?NEid=${dto.NEid}"><img src="${dto.neimg }" alt="" /></a></li>
+
+        	</c:forEach>
     	</ul>
 
 	<div id="btns">
@@ -161,14 +162,14 @@ $(function(){
 		<div id="btn02"><font color="#FFFFFF"><b>진료 조회<br/>진료예약 및 내역조회가 가능합니다.</b></font></div></a>
 	</div>
 	
-	<table width="1300" height="150" border="1" bordercolor="black">
+	<table width="1300" height="150" border="0" bordercolor="black">
 	<tr>
 	
 	
 	<td align="center">
 	<table border="1" width="315" align="center">
 	<tr><td><b>공지사항</b></td></tr>
-	<c:forEach var="dto" items="${listA}" begin="0" end="5">
+	<c:forEach var="dto" items="${listA}" begin="0" end="4">
 	<tr><td>
 	<font color="#000000"><a href="/antman/mainboard.do">${dto.subject}<br/></a></font>
 	</td></tr>
@@ -180,7 +181,7 @@ $(function(){
 	<td align="center">
 	<table border="1" width="315" align="center">
 	<tr><td><b>뉴스</b></td></tr>
-	<c:forEach var="dto" items="${list}" begin="0" end="5">
+	<c:forEach var="dto" items="${list}" begin="0" end="4">
 	<tr><td>
 	<font color="#000000"><a href="/antman/newsboard.do">${dto.subject}<br/></a></font>
 	</td></tr>
@@ -191,7 +192,7 @@ $(function(){
 	<td align="center">
 	<table border="1" width="315" align="center">
 	<tr><td><b>강좌안내</b></td></tr>
-	<c:forEach var="dto" items="${listB}" begin="0" end="5">
+	<c:forEach var="dto" items="${listB}" begin="0" end="4">
 	<tr><td>
 	<font color="#000000"><a href="/antman/lectureboard.do">${dto.subject}<br/></a></font>
 	</td></tr>
@@ -202,7 +203,7 @@ $(function(){
 	<td align="center">
 	<table border="1" width="315" align="center">
 	<tr><td><b>학술행사</b></td></tr>
-	<c:forEach var="dto" items="${listC}" begin="0" end="5">
+	<c:forEach var="dto" items="${listC}" begin="0" end="4">
 	<tr><td>
 	<font color="#000000"><a href="/antman/academylist.do">${dto.assubject}<br/></a></font>
 	</td></tr>

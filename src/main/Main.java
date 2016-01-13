@@ -40,8 +40,8 @@ public class Main {
 		List listB = sqlMapClient.queryForList("lectureBoard.selectAll", dtoB);
 		List listC = sqlMapClient.queryForList("academy.selectAll", dtoC);
 		
+	
 		request.setAttribute("list", list);
-		
 		request.setAttribute("listA", listA);
 		request.setAttribute("listB", listB);
 		request.setAttribute("listC", listC);
