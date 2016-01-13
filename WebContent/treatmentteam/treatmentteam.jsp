@@ -18,7 +18,7 @@
 	#side{width:200px; float:left; margin-left:0px; }
 	#footer{width:100%; height:300px; margin-bottom:0px;}
 	#top{width:200px; float:top; margin-left:100px; }
-	.containers{width:1100px; height:1125px; margin:0 auto;  margin-left:230px; position:relative;}
+	.containers{width:1100px; height:1585px; margin:0 auto;  margin-left:230px; position:relative;}
 	.containers .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
 	.containers .sub b{font-size:22px; color:#000000;}
 	.containers .main{width:1000px; height:1100px; margin-left:50px; top:30px; position:relative;}
@@ -44,7 +44,7 @@
 
 <!-- container ½ÃÀÛ -->
 <div id="side">
-	<jsp:include page="treatmentsidebar.jsp" flush="true | false"/>
+	<jsp:include page="treatmentteamsidebar.jsp" flush="true | false"/>
 </div>
 
 <div class="containers">

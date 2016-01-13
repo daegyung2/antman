@@ -15,7 +15,7 @@
 	.container{width:1100px; height:1150px; margin:0 auto;  margin-left:0px; position:relative;}
 	.container .main{width:1000px; height:1100px; margin-left:0px; top:30px; position:relative;}
 	
-	#container{width:1100px; height:1116px; margin:0 auto;  margin-left:250px; position:relative;}
+	#container{width:1100px; height:1116px; margin:0 auto;  margin-left:200px; position:relative;}
 	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:30px; position:relative}
 	#container .main #title{width:800px; margin-left:50px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
@@ -45,8 +45,8 @@
     <tr>
     <tr><th>글제목</th><td><input type="text" name="subject" value="${dto.subject}"/></td></tr>
     <tr><th>글내용</th><td><textarea name="content" value="${dto.content}" rows="2" ROWS="5" COLS="40"/></textarea></td></tr>
-    <tr><td><input type="file" size="50" name="upload" /></td></tr> 
-    <tr><td colspan="2"><input type="submit" value="글 수정"/><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/cultureboard.do'">목록으로</button></td></tr>
+    <tr><td colspan="2"><center><input type="file" size="50" name="upload" /></center></td></tr> 
+    <tr><td colspan="2"><center><input type="submit" value="글 수정"/><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/spring/cultureboard.do'">목록으로</button></center></td></tr>
     
    
     </table>

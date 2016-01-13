@@ -15,7 +15,7 @@
 	.container{width:1100px; height:1150px; margin:0 auto;  margin-left:-60px; position:relative;}
 	.container .main{width:1000px; height:1100px; margin-left:0px; top:30px; position:relative;}
 	
-	#container{width:1100px; height:1146px; margin:0 auto;  margin-left:230px; position:relative;}
+	#container{width:1100px; height:1146px; margin:0 auto;  margin-left:160px; position:relative;}
 	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:-17px; position:relative}
 	#container .main #title{width:800px; margin-left:50px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
@@ -28,24 +28,14 @@
 	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
 
-
 <div id="side">
-<jsp:include page="/intro/introsidebar.jsp" flush="true | false"/>
+	<jsp:include page="/intro/intro_mainsidebar.jsp" flush="true | false"/>
 </div>
-
 
 <div id="container">
 	<div class="main">
 		<div id="title">
-<div id="menutop">
-	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
-</div>
 
-<div id="side">
-	<jsp:include page="/intro/intro_mainsidebar.jsp" flush="true | false"/>
-</div>
-<div id="container">
-	<div class="main">
 
        <center>
     <h2>글이 수정 되었습니다.</h2>
@@ -53,6 +43,7 @@
     <input type="submit" value="메인으로"/>
    </form>
    </center>
+   </div>
    </div>
    </div>
    

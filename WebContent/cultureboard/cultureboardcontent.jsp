@@ -15,7 +15,7 @@
 	.container{width:1100px; height:1150px; margin:0 auto;  margin-left:0px; position:relative;}
 	.container .main{width:1000px; height:1100px; margin-left:0px; top:30px; position:relative;}
 	
-	#container{width:1100px; height:1146px; margin:0 auto;  margin-left:230px; position:relative;}
+	#container{width:1100px; height:1146px; margin:0 auto;  margin-left:180px; position:relative;}
 	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:-17px; position:relative}
 	#container .main #title{width:800px; margin-left:50px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
@@ -63,11 +63,11 @@
 <br/>
    <c:if test="${sessionScope.memauth eq 'E'}" >
   <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboardupdate.do?cuid=${dto.cuid}'">수정하기</button>
-  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboarddelete.do?cuid=${dto.cuid}'">삭제하기</button>
+  <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboarddelete.do?cuid=${dto.cuid}'">삭제하기</button></center>
  </c:if>
  
  
- <button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboard.do'">목록으로</button></center>
+ <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboard.do'">목록으로</button></center>
  
 </body>
 </html>

@@ -15,9 +15,10 @@
 	.container{width:1100px; height:1150px; margin:0 auto;  margin-left:0px; position:relative;}
 	.container .main{width:1000px; height:1100px; margin-left:0px; top:30px; position:relative;}
 	
-	#container{width:1100px; height:1116px; margin:0 auto;  margin-left:100px; position:relative;}
-	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:30px; position:relative}
+	#container{width:1100px; height:1206px; margin:0 auto;  margin-left:200px; margin-top:-160px; position:relative;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:100px; position:relative}
 	#container .main #title{width:800px; margin-left:50px; text-align:center;}
+	#container .main #title01 h2{margin-left:0px;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
 	#container .main tr{padding:5px 5px;}
 	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65);}
@@ -37,15 +38,15 @@
 <div id="container">
 	<div class="main">
 		<div id="title"><br/><br/>
-		<div id="title"><center><h2>문화갤러리</h2></center></div>
+		<div id="title01"><center><h2>문화갤러리</h2></center></div>
     
 <form action="/antman/cultureboardPro.do" method="post" enctype="multipart/form-data">
     <table width="750" border="1">
     <tr>
     <tr><th>글제목</th><td><input type="text" name="subject" /></td></tr>
     <tr><th>글내용</th><td><textarea name="content" rows="2" ROWS="5" COLS="40"/></textarea></td></tr>
-    <tr><td><input type="file" size="50" name="upload" /></td></tr> 
-    <tr><td colspan="2"><input type="submit" value="글 등록"/><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboard.do'">목록으로</button></td></tr>
+    <tr><td colspan="2"><center><input type="file" size="50" name="upload" /></center></td></tr> 
+    <tr><td colspan="2"><center><input type="submit" value="글 등록"/><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/cultureboard.do'">목록으로</button></center></td></tr>
     
    
     </table>
