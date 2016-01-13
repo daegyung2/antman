@@ -47,6 +47,7 @@ public class P_praiseBean {
          totalCount = (Integer)sqlMapClient.queryForObject("praise.selectLastNoB" , dto);
          page = new p_pagingActions(currentPage,totalCount,blockCount,blockPage,blockCount);
          System.out.println(totalCount);
+        //리다이렉트로 값이 안넘어가질때 이렇게 dto에 아이디를 셋 시키면 됨....
          dto.setId((String)session.getAttribute("memId"));
          int lastCount = totalCount;
          if(page.getEndCount() < totalCount){

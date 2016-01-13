@@ -61,15 +61,16 @@ DB hospital 문화갤러리 입니다.</td>
 <table>
 <tr>
 
-<c:forEach var="dto" items="${listc}" varStatus="status" begin="1" end="6">
+<c:forEach var="dto" items="${listc}" varStatus="status" begin="0" end="3">
 			<td height="150" align="center" width="350">
 			<center>
-			<a href="/antman/cultureboard.do">
-			<img src="${dto.cuimg}" width="250" height="300"/></a><br/></center>
+			<a href="/antman/cultureboardcontent.do?cuid=${cuid}">
+			<img src="${dto.cuimg}" width="200" height="280"/></a><br/>
+			</center>
 			</td>
 			
 			
-				<c:if test="${status.count%3==0}">
+				<c:if test="${status.count%4==0}">
 				<tr>
 				</c:if>
     </c:forEach>

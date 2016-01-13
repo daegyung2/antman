@@ -33,7 +33,7 @@
 	<div class="main"><br/><br/>
 		<div id="title"><center><h2>문화갤러리</h2></center></div>
 
-  <table data-toggle="table" data-url="data2.json" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true">
+  <table align="center" data-toggle="table" data-url="data2.json" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true">
     <thead>
       <tr>
        <th data-field="id" align="center" >제목</th>
@@ -41,7 +41,7 @@
     </thead>
    		    
 			<tr><td colspan="2">${dto.content } </td></tr>
-			<tr><td><img src="${dto.cuimg}"/></td></tr>
+			<tr><td><img src="${dto.cuimg}" width="700" height="800"/></td></tr>
 			<tr></tr>
 			
   </table>
