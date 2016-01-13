@@ -83,5 +83,12 @@ public class Main {
 		
 	}
 	
+	@RequestMapping("/notready.do")
+	public String notready(){
+		
+		return "/mainpage/notready.jsp";
+		
+	}
+	
 }
 	

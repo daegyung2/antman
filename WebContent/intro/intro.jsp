@@ -29,7 +29,7 @@
 
 <!-- container 시작 -->
 <div id="side">
-	<jsp:include page="introsidebar.jsp" flush="true | false"/>
+	<jsp:include page="intro_mainsidebar.jsp" flush="true | false"/>
 </div>
 
 <div class="container">
@@ -37,13 +37,13 @@
 	
 	<table width="960" border-collapse="collapse" border="1" align="center" class="intro" >
     <tr align="center">
-    <td width="240" height="240"><font size="5"><a href="/antman/intro/guide.jsp"/><b>병원소개</b></a></font><br/><br/> 
+    <td width="240" height="240"><font size="5"><a href="/antman/guide.do"/><b>병원소개</b></a></font><br/><br/> 
     DB Hospital 은 존경받는 병원으로서의<br/> 사회적 책임을 다하겠습니다.<br/><br/><img src="/antman/img/intro1.png" width="130" height="100"/> </td>
-     <td width="240" height="240"><font size="5"><a href="/antman/intro/mission.jsp"/><b>미션과비전</b></font></a><br/><br/>
+     <td width="240" height="240"><font size="5"><a href="/antman/mission.do"/><b>미션과비전</b></font></a><br/><br/>
      글로벌 메디컬 콤플렉스,<br/>DB Hospital이 만들어가고 있습니다.<br/><br/><img src="/antman/img/intro5.png"/></td>
-    <td width="240" height="240"><font size="5"><a href="/antman/intro/present.jsp"/><b>현황</b></a></font><br/><br/>
+    <td width="240" height="240"><font size="5"><a href="/antman/present.do"/><b>현황</b></a></font><br/><br/>
           앞선 의술, <br/>더 큰 사랑을 실천하고 있습니다.<br/><br/> <img src="/antman/img/intro2.png"/></td>
-    <td width="240" height="240"><font size="5"><a href="/antman/intro/greet.jsp"/><b>병원장인사말</b></a></font><br/><br/>
+    <td width="240" height="240"><font size="5"><a href="/antman/greet.do"/><b>병원장인사말</b></a></font><br/><br/>
      함께하는 우리사회를 보다 건강하게,<br/> 더불어 행복하게.<br/><br/> <img src="/antman/img/intro3.png"/></td>
     <tr>
     </table>
@@ -52,7 +52,7 @@
 	<div class="containers">
 
 <table width="1000" border="0" align="center">
-<tr align="center"><td><br/><br/>
+<tr align="center"><td>
 <font size="5"><b>문화갤러리</b></font><br/><br/>
 DB hospital 문화갤러리 입니다.</td>
 </td></tr>

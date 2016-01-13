@@ -11,8 +11,8 @@
 
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
-	#top{width:200px; float:top; margin-left:100px; }
-	#container{width:1100px; height:1300px; margin:0 auto;  margin-left:220px; margin-top:-20px; position:relative;}
+	#footer{width:100%; height:300px; margin-bottom:0px;}
+	#container{width:1100px; height:1166px; margin:0 auto;  margin-left:220px; margin-top:-20px; position:relative;}
 	#container .main{width:1000px; height:1100px; margin-left:50px; top:5px; position:relative;}
 	#container .main table{border:1px solid #000000;}
 </style>
@@ -22,7 +22,7 @@
 </div>
 
 <div id="side">
-	<jsp:include page="/intro/introsidebar.jsp" flush="true | false"/>
+	<jsp:include page="/intro/intro_mainsidebar.jsp" flush="true | false"/>
 </div>
 
 <div id="container">
@@ -56,3 +56,8 @@
     
     </div>
     </div>
+    
+    
+    <div id="footer">
+	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
+</div>

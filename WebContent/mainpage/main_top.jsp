@@ -88,10 +88,10 @@
     			
     			<li><a href="/antman/mainroad.do">오시는길</a></li>
     			<li><a href="/antman/sitemap.do">사이트맵</a></li>
-    			<li><a href="#">병원둘러보기</a></li>
-    			<li><a href="#">English</a></li>
-    			<li><a href="#">中文</a></li>
-    			<li><a href="#">日本語</a></li>
+    			<li><a href="/antman/notready.do">병원둘러보기</a></li>
+    			<li><a href="/antman/notready.do">English</a></li>
+    			<li><a href="/antman/notready.do">中文</a></li>
+    			<li><a href="/antman/notready.do">日本語</a></li>
     		
   			</ul>
 		</div>
@@ -123,12 +123,12 @@
             		<li>
             			<a href="/antman/appointmentmain.do">이용안내</a>
                 		<ul>
-                			<li><a href="#">병원안내</a></li>
-							<li><a href="#">외래진료안내</a></li>
-							<li><a href="#">응급진료안내</a></li>
-							<li><a href="#">입원진료안내</a></li>
-							<li><a href="#">가정간호안내</a></li>
-							<li><a href="#">검사실안내</a></li>
+                			<li><a href="/antman/appointmentmain.do">병원안내</a></li>
+							<li><a href="/antman/notready.do">외래진료안내</a></li>
+							<li><a href="/antman/notready.do">응급진료안내</a></li>
+							<li><a href="/antman/notready.do">입원진료안내</a></li>
+							<li><a href="/antman/notready.do">가정간호안내</a></li>
+							<li><a href="/antman/notready.do">검사실안내</a></li>
                 		</ul>
             		</li>
                 	<li>
@@ -145,9 +145,9 @@
             			<a href="/antman/academylist.do?id=${sessionScope.memId}">의학교육</a>
             			<ul>
                 			<li><a href="/antman/academylist.do?id=${sessionScope.memId}">학술행사일정</a></li>
-							<li><a href="#">학술영상다시보기</a></li>
-							<li><a href="#">의학포스터</a></li>
-							<li><a href="#">3D자료</a></li>
+							<li><a href="/antman/notready.do">학술영상다시보기</a></li>
+							<li><a href="/antman/notready.do">의학포스터</a></li>
+							<li><a href="/antman/notready.do">3D자료</a></li>
                 		</ul>
                 	</li>
                 	<li>

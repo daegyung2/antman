@@ -11,9 +11,9 @@
 
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
-	#top{width:200px; float:top; margin-left:100px; }
-	#container{width:1100px; height:1300px; margin:0 auto;  margin-left:220px; margin-top:-20px; position:relative;}
-	#container .main{width:1000px; height:1100px; margin-left:50px; top:5px; position:relative;}
+	#footer{width:100%; height:300px; margin-bottom:0px;}
+	#container{width:1100px; height:2406px; margin:0 auto;  margin-left:220px; margin-top:-20px; position:relative;}
+	#container .main{width:1000px; height:2300px; margin-left:50px; top:5px; position:relative;}
 </style>
 
 <div id="menutop">
@@ -44,7 +44,7 @@
 </td>
 
 <td width="230" align="center">
-<img src="/spring/img/intro11.gif"/><br/><br/>
+<img src="/antman/img/intro11.gif"/><br/><br/>
 <font size="4">재원환자수</font><br/><br/>
 <font size="3">912,259명</font>
 </td>
@@ -111,4 +111,8 @@
 
 </table>
 </div>
+</div>
+
+<div id="footer">
+	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
 </div>
