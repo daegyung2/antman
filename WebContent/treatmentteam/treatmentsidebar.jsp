@@ -32,7 +32,7 @@
 	<li><a href="/antman/treatmentsearch.do" class="title">의료진</a></li>
 	<li><a href="/antman/treatmentchoice.do?p_depart_id=1" class="title">진료과</a></li>
 	<li><a href="/antman/treatmentchoice.do?p_depart_id=3" class="title">암병원</a></li>
-	<li><a href="/antman/treatmentchoice.do?p_depart_id=4" class="title">어린이병원</a></li>
+	<li><a href="/antman/treatmentchoice.do?p_depart_id=9" class="title">어린이병원</a></li>
 	<li><a href="/antman/treatmentchoice.do?p_depart_id=5" class="title">심장병원</a></li>
 	<li><a href="/antman/treatmentchoice.do?p_depart_id=6" class="title">센터</a></li>
 	<li><a href="/antman/treatmentchoice.do?p_depart_id=7" class="title">클리닉</a></li>
