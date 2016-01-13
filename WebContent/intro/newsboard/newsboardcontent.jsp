@@ -50,7 +50,7 @@
 
   <div class="container">
 
-
+<center>
   <table  width="900" align="center" border="1" data-toggle="table" data-url="data2.json" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true">
 
 
@@ -64,7 +64,7 @@
 		     
 			
 			 <tr><td width="50%">등록일 : ${dto.reg_date}</td></tr> 
-			<tr><td colspan="2"><h2>${dto.content }</h2> </td></tr>
+			<tr><td colspan="2">${dto.content } </td></tr>
 			<tr><td><img src="${dto.neimg}"/></td></tr>
 			<tr></tr>
 			
@@ -78,7 +78,7 @@
   </table>
 </tr>
 <br/>
-<HR width=100% >
+
 <br/>
   <c:if test="${sessionScope.memauth eq 'E'}"> 
   <center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/newsboardupdate.do?NEid=${dto.NEid}'">수정하기</button>
@@ -91,7 +91,7 @@
 </body>
 </html>
 
-
+</center>
     </div>
     </div>
 </div></div>    

@@ -78,10 +78,11 @@
          					</table>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="b">
-                            <c:forEach var="dto" items="${lista}" varStatus="status">
-  							<table border="0">
+                            
+  							<table  width="600" border="0">
           					<tr>
-         					<td><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
+          					<c:forEach var="dto" items="${lista}" varStatus="status">
+         					<td width="200"><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
           					<c:if test="${status.count%3==0}">		
           					<tr>
 							</c:if>	
@@ -90,10 +91,11 @@
          					</c:forEach>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="messages">
-                            <c:forEach var="dto" items="${listb}" varStatus="status">
-  							<table border="0">
+                           
+  							<table width="600" border="0">
           					<tr>
-         					<td><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
+          					 <c:forEach var="dto" items="${listb}" varStatus="status">
+         					<td width="200"><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
           					<c:if test="${status.count%3==0}">		
           					<tr>
 							</c:if>	
@@ -102,10 +104,11 @@
          					</c:forEach>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="settings">
-                            <c:forEach var="dto" items="${listc}" varStatus="status">
-  							<table border="0">
+                           
+  							<table width="600" border="0">
           					<tr>
-         					<td><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
+          					 <c:forEach var="dto" items="${listc}" varStatus="status">
+         					<td width="200"><a href="/antman/treatmentsearch.do?dpname=${dto.dpname}">${dto.dpname}</a></td>
           					<c:if test="${status.count%3==0}">		
           					<tr>
 							</c:if>	

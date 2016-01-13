@@ -52,7 +52,7 @@
 <table width="500" border="1" cellpadding="1" cellspacing="0">
 <tr>
 <th width="200">부모 부서</th>
-<td>${dto.p_depart_id }.${pdto.p_dpname}</td>
+<td> ${dto.p_depart_id }.${pdto.p_dpname} </td>
 </tr>
 <tr>
 <th width="200">진료과 이름</th>
