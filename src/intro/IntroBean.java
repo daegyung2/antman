@@ -96,6 +96,11 @@ public class IntroBean {
 	
 		return "/intro/present.jsp";
 	}
+	@RequestMapping("/greet.do")
+	public String greet(){
+	
+		return "/intro/greet.jsp";
+	}
 	
 
 }

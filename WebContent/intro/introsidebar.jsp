@@ -32,7 +32,7 @@
 	<li><a href="/antman/guide.do" class="title"/>병원소개</a></li>
 	<li><a href="/antman/mission.do" class="title">미션과비전</a></li>
 	<li><a href="/antman/present.do" class="title">현황</a></li>
-	<li><a href="/antman/intro/greet.jsp" class="title">병원장인사말</a></li>
+	<li><a href="/antman/greet.do" class="title">병원장인사말</a></li>
 	<li><a href="/antman/mainboard.do" class="title">공지사항</a></li>
 	<li><a href="/antman/newsboard.do" class="title">뉴스</a></li>
 	<li><a href="/antman/lectureboard.do" class="title">강좌안내</a></li>

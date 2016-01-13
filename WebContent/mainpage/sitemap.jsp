@@ -50,20 +50,48 @@
 	<div class="main"><br/><br/>
 	<div class="title"><h2>사이트맵</h2></div>
 		
-	<table width="700" height="500">
+	<table width="900" height="300" border="1">
 	<tr>
+	
 	<td>
-	로그인 
-	</td>
-	<td>
-	회원가입 
-	</td>
-	<td>
-	ㄱ
+	<a href="/antman/loginForm.do">로그인</a><br/><br/> 
+	<a href="/antman/loginCheck.do">회원가입</a><br/><br/>
+	<a href="/antman/mainroad.do">오시는길</a><br/><br/>
+	<a href="/antman/sitemap.do">사이트맵</a><br/><br/>
 	</td>
 	
+	<td>
+	<a href="/antman/treatmentsearch.do">의료진</a><br/><br/> 
+	<a href="/antman/treatmentsearch.do">진료과</a><br/><br/>
+	<a href="/antman/appointmentsimpleform.do">간편예약</a><br/><br/>
+	<a href="/antman/appointmentmain.do">상세예약</a><br/><br/> 
+	<a href="/antman/loginForm.do">진료조회</a><br/><br/>
+	</td>
 	
-	<td></td>
+	<td>
+	<a href="/antman/mainboard.do" style="text-decoration:none">공지사항</a><br/><br/> 
+	<a href="/antman/newsboard.do" style="text-decoration:none">뉴스</a><br/><br/>
+	<a href="/antman/lectureboard.do" style="text-decoration:none">강의정보</a><br/><br/>
+	<a href="/antman/cultureboard.do" style="text-decoration:none">문화갤러리</a><br/><br/> 
+	<a href="/antman/academylist.do" style="text-decoration:none">학술행사일정</a><br/><br/> 
+	</td>
+	
+	<td>
+	<a href="/antman/faqboard.do" style="text-decoration:none">자주하는질문</a><br/><br/> 
+	<a href="/antman/praiseboard.do" style="text-decoration:none">칭찬코너</a><br/><br/>
+	<a href="/antman/pageinquiry.do" style="text-decoration:none">홈페이지이용문의</a><br/><br/>
+	<a href="/antman/offerinfo.do" style="text-decoration:none">콘텐츠 제공 문의</a><br/><br/>  
+	</td>
+	
+	<td>
+	<a href="/antman/guide.do" style="text-decoration:none">병원소개<br/><br/> 
+	<a href="/antman/mission.do" style="text-decoration:none">미션과비전<br/><br/>
+	<a href="/antman/present.do" style="text-decoration:none">현황<br/><br/>
+	<a href="/antman/greet.do" style="text-decoration:none">병원장 인사말<br/><br/>
+	</td>
+	
+
+	
 	</tr>
 	</table>
 
