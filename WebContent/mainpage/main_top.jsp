@@ -132,7 +132,7 @@
                 		</ul>
             		</li>
                 	<li>
-            			<a href="/antman/voc.do">웹서비스</a>
+            			<a href="/antman/faqboard.do">웹서비스</a>
             			<ul>
                 			<li><a href="/antman/faqboard.do">자주하는질문</a></li>
 							<li><a href="/antman/voc.do">고객의소리</a></li>

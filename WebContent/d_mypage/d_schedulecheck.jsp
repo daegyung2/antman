@@ -11,33 +11,25 @@
 
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
-	#top{width:200px; float:top; margin-left:100px; }
-	.container{width:1100px; height:1300px; margin:0 auto;  margin-left:230px; position:relative;}
+	#footer{width:100%; height:300px; margin-bottom:0px;}
+	.container{width:1100px; height:1100px; margin:0 auto;  margin-left:230px; position:relative;}
 	.container .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
 	.container .sub b{font-size:22px; color:#000000;}
 	.container .main{width:1000px; height:1100px; margin-left:50px; top:30px; position:relative;}
+	
+	#container{width:1100px; height:1247px; margin:0 auto;  margin-left:230px; position:relative;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:-17px; position:relative}
+	#container .main #title{width:800px; margin-left:0px; text-align:center;}
+	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; margin-left:-100px;}
+	#container .main tr{padding:5px 5px;}
+	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65);}
+	#container .main td{padding:5px 5px 5px 5px;}
 </style>
 
 <div id="menutop">
 	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
 </div>
 
-<style type="text/css">
-	body{margin:0px; padding:0px; }
-	a{ text-decoration:none; }
-	ul{ list-style:none; margin:0px; padding:0px; }
-	li{ margin:0px; padding:0px; }
-	
-	
-	#side{width:200px; float:left; margin-left:0px;}
-	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
-	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:-17px; position:relative}
-	#container .main #title{width:800px; margin-left:100px; text-align:center;}
-	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
-	#container .main tr{padding:5px 5px;}
-	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65);}
-	#container .main td{padding:5px 5px 5px 5px;}
-</style>
 
 <div id="side">
 <jsp:include page="d_mypage_sidebar.jsp" flush="true | false"/>
@@ -51,7 +43,7 @@
 <input type="hidden" name ="drid" value="${sessionScope.memdrid}">
 <input type="hidden" name ="drname" value="${sessionScope.memname}">
 <center>
-<table width="450" border="1">
+<table width="500" border="1">
 <tr align="center"><th>일별보기</th><th>검색</th><th>환자이름</th><th>검색</th><th>아이디</th><th>검색</th></tr>
 <tr align="center"><td><%@ page import="java.util.Date"%>
 <%@ page import="java.util.Date"%>
@@ -145,17 +137,17 @@ String today = sdms.format(cal.getTime());
 
 <c:if test="${view eq yes}">
 <center>
-<table width="810" border="1">
+<table width="850" border="1">
 
 <tr>
 
 <th width="200">진료받을날짜</th>
 <th width="100">회차</th>
-<th width="70">아이디</th>
+<th width="80">아이디</th>
 <th width="90">이름</th>
-<th width="70">회차선택</th>
-<th width="80">다음진료</th>
-<th width="50">시간</th>
+<th width="90">회차선택</th>
+<th width="90">다음진료</th>
+<th width="60">시간</th>
 <th width="50">분</th>
 <th width="50">등록</th>
 <th width="50">삭제</th>
@@ -273,4 +265,8 @@ String todays = sdm1.format(cal1.getTime());
 </c:if>
 
 	</div>
+</div>
+
+<div id="footer">
+	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
 </div>

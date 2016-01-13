@@ -162,12 +162,12 @@ $(function(){
 		<div id="btn02"><font color="#FFFFFF"><b>진료 조회<br/>진료예약 및 내역조회가 가능합니다.</b></font></div></a>
 	</div>
 	
-	<table width="1300" height="150" border="0" bordercolor="black">
+	<table width="1280" height="150" border="0" bordercolor="black">
 	<tr>
 	
 	
 	<td align="center">
-	<table border="1" width="315" align="center">
+	<table border="1" width="310" align="center">
 	<tr><td><b>공지사항</b></td></tr>
 	<c:forEach var="dto" items="${listA}" begin="0" end="4">
 	<tr><td>
@@ -179,7 +179,7 @@ $(function(){
 	
 	
 	<td align="center">
-	<table border="1" width="315" align="center">
+	<table border="1" width="310" align="center">
 	<tr><td><b>뉴스</b></td></tr>
 	<c:forEach var="dto" items="${list}" begin="0" end="4">
 	<tr><td>
@@ -190,7 +190,7 @@ $(function(){
 	</td>
 	
 	<td align="center">
-	<table border="1" width="315" align="center">
+	<table border="1" width="310" align="center">
 	<tr><td><b>강좌안내</b></td></tr>
 	<c:forEach var="dto" items="${listB}" begin="0" end="4">
 	<tr><td>
@@ -201,7 +201,7 @@ $(function(){
 	</td>
 	
 	<td align="center">
-	<table border="1" width="315" align="center">
+	<table border="1" width="310" align="center">
 	<tr><td><b>학술행사</b></td></tr>
 	<c:forEach var="dto" items="${listC}" begin="0" end="4">
 	<tr><td>
