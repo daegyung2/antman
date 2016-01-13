@@ -295,7 +295,7 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
                              <br/>
                              
                              전문분야  <h6>${tmdto.exarea}</h6>
-                             <input type="button" value="의료진 소개 더보기" onClick="window.open('/antman/doctorprofile.do?drid=${tmdto.drid}','_blank','height=700,width=1000,top=0,left=0')"/>
+                             <input type="button" value="의료진 소개 더보기" onClick="window.open('/antman/appointdoctorprofile.do?drid=${tmdto.drid}','_blank','height=700,width=1000,top=0,left=0')"/>
                              
                              </td>
                             

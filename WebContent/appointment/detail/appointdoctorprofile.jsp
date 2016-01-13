@@ -67,7 +67,3 @@
 	</div>
 </div>
 
-<div id="footer">
-	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
-</div>
-
