@@ -34,7 +34,7 @@ public class InsertDoctorProBean {
 		   MultipartFile file = (MultipartFile) fileList.get(i);
 		   if(!file.isEmpty()){//
 		   String name = file.getOriginalFilename();//C:\Users\downmemory\git\antman
-		   File sf = new File("H://antman//WebContent//image//"+name);
+		   File sf = new File("c://Users//downmemory//git//antman//WebContent//image//"+name);
 		   file.transferTo(sf);
 		   dto.setDrimg1("/antman/image/"+name);
 		   sqlMapClient.update("doctor.updateDrimg"+(i+1),dto);
