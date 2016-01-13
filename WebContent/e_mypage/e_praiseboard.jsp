@@ -11,9 +11,11 @@
 	li{ margin:0px; padding:0px; }
 	
 	
-	#side{width:200px; float:left; margin-left:0px;}
-	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
-	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:100px; position:relative}
+	#menutop{width:100%; height:50px; }
+	#side{width:200px; float:left; margin-left:0px; }
+	#footer{width:100%; height:300px; margin-bottom:0px;}
+	#container{width:1100px; height:1297px; margin:0 auto;  margin-left:190px; margin-top:50px; position:relative;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:0px; position:relative}
 	#container .main #title{width:800px; margin-left:100px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
 	#container .main tr{padding:5px 5px;}
@@ -106,6 +108,10 @@
     	                   
  <center> ${pagingHtml }</center> <!-- 위에방식으로 하려면 귀차너서 그냥 페이징액션을 활용함 왼쪽 pagingHtml 만 출력해주면 됨.. -->
 
+</div></div>
+<div id="footer">
+	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
+</div>
 <script type="text/javascript">
 </script>
 </body>
