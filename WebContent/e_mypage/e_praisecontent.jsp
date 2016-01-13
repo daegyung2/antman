@@ -10,13 +10,15 @@
 	li{ margin:0px; padding:0px; }
 	
 	
-	#side{width:200px; float:left; margin-left:0px;}
-	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
-	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:100px; position:relative}
+	#menutop{width:100%; height:150px; }
+	#side{width:200px; float:left; margin-left:0px; }
+	#footer{width:100%; height:300px; margin-bottom:0px;}
+	#container{width:1100px; height:1241px; margin:0 auto;  margin-left:190px; margin-top:-50px; position:relative;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:0px; position:relative}
 	#container .main #title{width:800px; margin-left:100px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
 	#container .main tr{padding:5px 5px;}
-	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:left; }
+	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:center; }
 	#container .main td{padding:5px 5px 5px 5px; }
 </style>
 
@@ -83,7 +85,7 @@
 
 </tr>
 <br/>
-<HR width=100% >
+<HR width="700px" >
 <br/>
 <c:if test="${!empty dto }"><center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/praisedoctorupdate.do?pid=${dto.pid}&drid=${dto.drid}'">수정하기</button></c:if>
 <c:if test="${!empty edto }"><center><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/e_praiseupdate.do?pid=${edto.pid}&eid=${edto.eid}'">수정하기</button></c:if>
@@ -98,3 +100,7 @@
 <input type="hidden" name="pid" value="${pid}"/>
 </div></div>
 </center>
+
+<div id="footer">
+	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
+</div>
