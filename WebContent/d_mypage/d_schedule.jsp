@@ -42,7 +42,7 @@
 
 <div id="container">
 	<div class="main">
-		<div id="title"><h2>진료스케줄등록/확인</h2></div>
+		<div id="title"><h2>진료스케줄 등록/확인</h2></div>
 		<form action = "schedulepro.do" method="post"><br/>
 		<table width="300" border="1" align="center">
 
@@ -117,12 +117,10 @@
 		
 		</form>
 		
-		<c:if test="${joungbok ne null }">
-		<center>중복된 날짜가 있습니다. 다른날짜를 선택하여 주십시오.</center>
-		</c:if><br/>
+	
 		<center>
 		
-		
+		<h2>진료스케줄 월/일 확인</h2>
 		<form action="/antman/scheduleform.do" method="post">
 		<table table ="600" border="1">
 					<input type="hidden" name="drid" value="${tdto.drid}">
@@ -130,7 +128,7 @@
 		<input type="hidden" name="dpname" value="${ tdto.dpname}">
 
 		<tr>
-		 <td>년도선택 </td><td>월선택</td><td>일선택</td><td>스케쥴검색</td></tr>
+		 <th>년도선택 </th><th>월선택</th><th>일선택</th><th>스케쥴검색</th></tr>
 		<tr><td><select name="year">
 		<option >2016</option>
 		<option >2017</option>
@@ -187,9 +185,13 @@
 		</td>
 
 		
-		<td><input type="submit" value="일별검색"></td></tr>
+		<td><input type="submit" value="월/일검색"></td></tr>
+		</table>
 		</form>
-		
+		<br/>
+			<c:if test="${joungbok ne null }">
+		<center>중복된 날짜가 있습니다. 다른날짜를 선택하여 주십시오.</center>
+		</c:if><br/>
 		<table width="680" border="1">
 		<tr>
 		<th width="90">진료번호</th>

@@ -20,13 +20,13 @@ $(function(){
 		imgs.stop().fadeOut();
 		$('.bg'+currentNum).stop().fadeIn();
 	}
-	var timer = setInterval(rotateImg, 3000);
+	var timer = setInterval(rotateImg, 4000);
 	btns.click(function(){
 		clearInterval(timer);
 		currentNum = parseInt($(this).text())-1;
 		imgs.stop().fadeOut();
 		$('.bg'+currentNum).stop().fadeIn();
-		timer = setInterval(rotateImg,3000);
+		timer = setInterval(rotateImg,4000);
 	})
 })
 </script>
