@@ -15,8 +15,8 @@
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
 	#footer{width:100%; height:300px; margin-bottom:0px;}
-	#container{width:1000px; height:2500px; margin:0 auto; margin-left:220px; margin-top:-70px; position:relative;}
-	#container .main{width:800px; height:2400px; margin-left:100px; margin-top:5px; }
+	#container{width:1000px; height:2451px; margin:0 auto; margin-left:220px; margin-top:-70px; position:relative;}
+	#container .main{width:800px; height:2300px; margin-left:100px; margin-top:5px; }
 	#container .main #table01{margin-left:0px;}
 </style>
 

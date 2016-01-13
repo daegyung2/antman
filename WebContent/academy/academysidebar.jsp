@@ -30,9 +30,9 @@
 	</div>
 <ul id="nav">
 	<li><a href="/antman/academylist.do?id=${sessionScope.memId}" class="title">학술행사일정</a></li>
-	<li><a href="#" class="title">학술영상다시보기</a></li>
-	<li><a href="#" class="title">의학포스터</a></li>
-	<li><a href="#" class="title">3D자료</a></li>
+	<li><a href="/antman/notready.do" class="title">학술영상다시보기</a></li>
+	<li><a href="/antman/notready.do" class="title">의학포스터</a></li>
+	<li><a href="/antman/notready.do" class="title">3D자료</a></li>
 </ul>
 <div id="bookinfo">
 	<p>예약문의 <br/>

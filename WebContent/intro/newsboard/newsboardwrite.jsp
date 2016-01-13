@@ -11,36 +11,26 @@
 
 	#menutop{width:100%; height:150px; }
 	#side{width:200px; float:left; margin-left:0px; }
-	#top{width:200px; float:top; margin-left:100px; }
-	.container{width:1100px; height:1300px; margin:0 auto;  margin-left:230px; position:relative;}
-	.container .sub{width:800px; height:50px; margin-left:80px; top:0px; position:relative;}
-	.container .sub b{font-size:22px; color:#000000;}
-	.container .main{width:1000px; height:1100px; margin-left:50px; top:30px; position:relative;}
-</style>
-
-<div id="menutop">
-	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
-</div>
-
-<style type="text/css">
-	body{margin:0px; padding:0px; }
-	a{ text-decoration:none; }
-	ul{ list-style:none; margin:0px; padding:0px; }
-	li{ margin:0px; padding:0px; }
+	#footer{width:100%; height:300px; margin-bottom:0px;}
+	.container{width:1100px; height:1150px; margin:0 auto;  margin-left:0px; position:relative;}
+	.container .main{width:1000px; height:1100px; margin-left:0px; top:30px; position:relative;}
 	
-	
-	#side{width:200px; float:left; margin-left:0px;}
-	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
-	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:-17px; position:relative}
-	#container .main #title{width:800px; margin-left:100px; text-align:center;}
+	#container{width:1100px; height:1116px; margin:0 auto;  margin-left:100px; position:relative;}
+	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:30px; position:relative}
+	#container .main #title{width:800px; margin-left:50px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
 	#container .main tr{padding:5px 5px;}
 	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65);}
 	#container .main td{padding:5px 5px 5px 5px;}
 </style>
 
+<div id="menutop">
+	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
+</div>
+
+
 <div id="side">
-<jsp:include page="/intro/introsidebar.jsp" flush="true | false"/>
+<jsp:include page="/intro/intro_mainsidebar.jsp" flush="true | false"/>
 </div>
 
 
@@ -48,11 +38,11 @@
 	<div class="main">
 		<div id="title"><center><h2>뉴스쓰기</h2></center></div>
     <form action="/antman/newsboardPro.do" method="post" enctype="multipart/form-data">
-    <center><table width="600" border="1">
+    <center><table width="750" border="1">
     <tr>
     <tr><th>글제목</th><td><input type="text" name="subject"/></td></tr>
     <tr><th>글내용</th><td><textarea name="content" rows="2" ROWS="5" COLS="40"/></textarea></td></tr>
-    <tr><td><input type="file" size="50" name="upload" /></td></tr> 
+    <tr><td colspan="2"><input type="file" size="50" name="upload" /></td></tr> 
     <tr><td colspan="2"><center><input type="submit" value="글 등록"/><button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/newsboard.do'">목록으로</button></center></td></tr>
     
    

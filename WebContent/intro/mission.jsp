@@ -13,7 +13,7 @@
 	#side{width:200px; float:left; margin-left:0px; }
 	#footer{width:100%; height:300px; margin-bottom:0px;}
 	#top{width:200px; float:top; margin-left:100px; }
-	#container{width:1100px; height:2400px; margin:0 auto;  margin-left:220px; margin-top:-20px; position:relative;}
+	#container{width:1100px; height:2406px; margin:0 auto;  margin-left:220px; margin-top:-20px; position:relative;}
 	#container .main{width:1000px; height:2300px; margin-left:50px; top:5px; position:relative;}
 </style>
 
