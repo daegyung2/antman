@@ -72,7 +72,9 @@
 로그인 후 본인의 진료예약 및 조회를<br/>
 하실 수 있습니다.<br/><br/>
 
-<c:if test="${sessionScope.memId eq null}"> 
+
+
+<c:if test="${sessionScope.memId eq null && sessionScope.memauth eq 'P'}"> 
 <input type="button" value="본인 예약하기" onclick="location.href='loginForm.do'"/>
 </c:if>
 

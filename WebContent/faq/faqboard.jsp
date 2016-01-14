@@ -123,7 +123,9 @@ function fnAnswer(no){
 	<h2>자주하는질문</h2>
 	<p><b>총 <font color="#5586EB">${Count}건</font>입니다.</b></p>
 	<form action="/antman/faqwrite.do" method="post">
+	 <c:if test="${sessionScope.memId ne null && sessionScope.memauth eq 'E'}">
   	<button type="submit" class="btn btn-primary btn-md" onclick=>질문등록하기</button>
+  	</c:if>
   	</form>                    
 	<br/>
 	<div class="main">

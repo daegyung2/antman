@@ -42,9 +42,10 @@
 하나의 칭찬이 또 다른 칭찬을 만들어 갈 수 있도록<br/>
 친절함이 돋보인 직원을 칭찬해 주세요.              <br/>  <br/>                     
                       
- 
-  
-  <c:if test="${sessionScope.memauth eq 'P'}">
+ <c:if test="${sessionScope.memId eq null}">
+  칭찬하려면 로그인을 해주세요!
+  </c:if>
+  <c:if test="${sessionScope.memId ne null && sessionScope.memauth eq 'P'}">
   <form action="/antman/praisewrite.do" method="post">
   <button type="submit" class="btn btn-primary btn-md" onclick=>칭찬하기</button>
   </form>
