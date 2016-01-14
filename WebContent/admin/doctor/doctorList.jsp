@@ -47,7 +47,7 @@
 <th width="120">부서이름</th>
 <th width="180">비고</th>
 </tr>
-<c:forEach var="dto" items="${list }" begin="1" end="10">
+<c:forEach var="dto" items="${list }" begin="0" end="11">
 <tr>
 <td width="50">${dto.drId}</td>
 <td width="100">${dto.drname }</td>

@@ -59,8 +59,7 @@
 			[학력] ${dpfdto.degree5}
 			</td></tr>
 
-			<th width="200"><h2>칭찬코너</h2></th><td width="600">칭찬코너 총1건 칭찬게시판글 가져오기<br/>
-			</td></tr>
+			
 			<tr>
 			<th width="200"><h2>학술활동</h2></th><td width="600">
 			[논문] ${dpfdto.report1}<br/>
