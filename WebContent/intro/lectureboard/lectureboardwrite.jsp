@@ -15,7 +15,7 @@
 	.container{width:1100px; height:1150px; margin:0 auto;  margin-left:0px; position:relative;}
 	.container .main{width:1000px; height:1100px; margin-left:0px; top:30px; position:relative;}
 	
-	#container{width:1100px; height:1116px; margin:0 auto;  margin-left:100px; position:relative;}
+	#container{width:1100px; height:1116px; margin:0 auto;  margin-left:200px; position:relative;}
 	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:30px; position:relative}
 	#container .main #title{width:800px; margin-left:50px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
