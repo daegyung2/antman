@@ -35,7 +35,7 @@ public class LectureBoardInsert {
 	  
 	   if(!file.isEmpty()){
 	   String name = file.getOriginalFilename();//C:\Users\downmemory\git\antman
-	   File sf = new File("c://Users//ÅÂÈñ//git//antman//WebContent//image//leimg//"+name);
+	   File sf = new File("c://Users//user1//git//antman//WebContent//image//leimg//"+name);
 	   file.transferTo(sf);
 	   dto.setLeimg("/antman/image/leimg/"+name);
 	   sqlMapClient.update("lectureBoard.updateleimg",dto);

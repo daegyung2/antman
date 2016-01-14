@@ -39,7 +39,7 @@ public class NewsBoardInsert {
 	  
 	   if(!file.isEmpty()){
 	   String name = file.getOriginalFilename();//C:\Users\downmemory\git\antman
-	   File sf = new File("c://Users//downmemory//git//antman//WebContent//image//neimg//"+name);
+	   File sf = new File("c://Users//user1//git//antman//WebContent//image//neimg//"+name);
 	   file.transferTo(sf);
 	   dto.setNeimg("/antman/image/neimg/"+name);
 	   sqlMapClient.update("newsBoard.updateneimg",dto);

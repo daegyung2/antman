@@ -36,7 +36,7 @@ public class CultureBoardInsert {
 	  
 	   if(!file.isEmpty()){
 	   String name = file.getOriginalFilename();//C:\Users\downmemory\git\antman
-	   File sf = new File("c://Users//ÅÂÈñ//git//antman//WebContent//image//cuimg//"+name);
+	   File sf = new File("c://Users//user1//git//antman//WebContent//image//cuimg//"+name);
 	   file.transferTo(sf);
 	   dto.setCuimg("/antman/image/cuimg/"+name);
 	   sqlMapClient.update("cultureBoard.updatecuimg",dto);
