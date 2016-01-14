@@ -70,7 +70,7 @@
 	#f_back{clear:both; width:100%; height:300px; background:#474747; margin:0 auto; margin-bottom:0px; margin-top:150px; }
 	#f_back .footer{width:1300px; height:300px; margin:0 auto; position:relative;}
 	#f_back .footer .firstline{width:1200px; height:80px; position:relative;}
-	#f_back .footer .firstline #logo{width:120px; height:40px; border:1px solid #FFFFFF; top:40px; margin-left:60px; position:relative; color:#FFFFFF;}
+	#f_back .footer .firstline #logo{width:120px; height:40px; top:40px; margin-left:60px; position:relative; color:#FFFFFF;}
 	#f_back .footer .firstline .footer_innerbox{width:1050px; height:100px; margin:0 auto; margin-right:-80px; position:relative;}
 	#f_back .footer .firstline .footer_innerbox ul{margin-top:20px; }
 	#f_back .footer .firstline .footer_innerbox li{float:left; padding:0 5px; border-right:1px solid #5D5D5D;  position:relative;}
@@ -255,19 +255,19 @@
 <div id="f_back">
 	<div class="footer">
 		<div class="firstline">
-			<div id="logo">LOGO</div>
+			<div id="logo"><a href="/antman/main.do"><img src="/antman/img/main_logo.png" width="130" height="42"></a></div>
 			<div class="footer_innerbox">
   				<ul>
-    				<li class="first"><a href="#">환자권리장전</a></li>
-    				<li><a href="#">개인정보처리(취급)방침</a></li>
-    				<li><a href="#">이용약관</a></li>
-    				<li><a href="#">의료정보운영방침</a></li>
-    				<li><a href="#">비급여진료비</a></li>
-    				<li><a href="#">의무기록사본발급안내</a></li>
-    				<li><a href="#">위변조문서확인</a></li>
-    				<li><a href="#">이메일 주소수집거부</a></li>
-    				<li><a href="#">원격지원서비스</a></li>
-    				<li class="last"><a href="#">홈페이지이용문의</a></li>
+    				<li class="first"><a href="/antman/notready.do">환자권리장전</a></li>
+    				<li><a href="/antman/notready.do">개인정보처리(취급)방침</a></li>
+    				<li><a href="/antman/notready.do">이용약관</a></li>
+    				<li><a href="/antman/notready.do">의료정보운영방침</a></li>
+    				<li><a href="/antman/notready.do">비급여진료비</a></li>
+    				<li><a href="/antman/notready.do">의무기록사본발급안내</a></li>
+    				<li><a href="/antman/notready.do">위변조문서확인</a></li>
+    				<li><a href="/antman/notready.do">이메일 주소수집거부</a></li>
+    				<li><a href="/antman/notready.do">원격지원서비스</a></li>
+    				<li class="last"><a href="/antman/notready.do">홈페이지이용문의</a></li>
   				</ul>
   			</div>
     	</div>
