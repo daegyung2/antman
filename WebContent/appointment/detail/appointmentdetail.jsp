@@ -21,6 +21,7 @@
 	.container .mains tr{padding:5px 5px;}
 	.container .mains th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65);}
 	.container .mains td{padding:5px 5px 5px 5px;}
+	.container .mains .shitsds table{   margin-left:230px;  }
 	.table{
  margin-left : -15px;
  width: 780px;
@@ -70,7 +71,11 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 </style>
 <div id="containers">
 	<div class="mains">
-		<div id="title"><h2>선택내역입니다.</h2></div>
+		<div id="title">
+		
+		<td>
+		
+		<h2>선택내역입니다.</h2></div>
 
 <script language="JavaScript">
 
@@ -307,9 +312,40 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 <br/>
 <br/>
 
-<div id="container">
-	<div class="mains">
-  <h4 class="shitsd"><span class="group">진료날짜</span>를 선택하세요</h4>
+<style type="text/css">
+	body{margin:0px; padding:0px; }
+	a{ text-decoration:none; }
+	ul{ list-style:none; margin:0px; padding:0px; }
+	li{ margin:0px; padding:0px; }
+	
+	
+	
+	#containerss{width:1100px; height:270px; margin:0 auto;  margin-left:120px; position:relative; margin-bottom: 50px;}
+	#containerss .mainss{width:1000px; height:600px; margin-left:50px; margin-top:-17px; position:relative}
+	#containerss .mainss table{margin-left:150px; }
+	
+.shitsd{font-size : 15pt; font-weight : bold;}
+.shit{
+	
+	font-weight : bold; 
+}
+.shits{
+	font-size : 20pt;
+	font-weight : bold; 
+}
+.group{	
+font-family:"나눔고딕","nanum gothic", sans-serif;
+			color : #4285F4 ;
+            font-weight : bold;
+			
+}
+</style>
+<div id="containerss">
+	<div class="mainss">
+	<table width="1000" border="0">
+	<tr>
+	<td>
+  <h4 ><span class="group">진료날짜</span>를 선택하세요</h4>
 <form action="/antman/appointmentdetailsearch.do" method="post">
 <input type="hidden" name="drid" value="${drid }"/>
 <input type="hidden" name="jumin1" value="${jumin1 }"/>
@@ -329,7 +365,7 @@ font-family:"나눔고딕","nanum gothic", sans-serif;
 <html>
 <head>
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<p><link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <link rel="stylesheet" href="/resources/demos/style.css">
@@ -364,7 +400,7 @@ String today = sdm.format(cal.getTime());
   <h4 class="shitsd"><span class="group">${ymd}</span> 진료가능 시간입니다.</h4>
 <form action="/antman/appointmentdetailsearch.do" method="post">
 
-<table width="600" border="1"> 
+<table width="600" border="0"> 
 <tr align="center">
 
 <td width="200">진료선생님</td><td width="200">진료과</td><td width="400">진료가능시간</td></tr>
@@ -382,8 +418,10 @@ ${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='
 <c:if test="${empty sdlist }">
 예약시간이 없습니다.
 </c:if>
-
-
+</td>
+</tr>
+</table>
+<p>
 </form>
 <br/>
 <br/>
@@ -396,9 +434,7 @@ ${addto.sdate}<input type="button" value="시간선택하기" onClick="location.href='
 </div>
 </div>
 
-<div id="footer">
-	<jsp:include page="/webservice/footer.jsp" flush="true | false"/>
-</div>
+
 
 
 

@@ -52,6 +52,6 @@
 		<div id="title">
 <center><h2>간편예약이 완료되었습니다</h2>
 
-<input type="button" value="메인으로" onclick="javascript:window.location='/antman/main.do/'">
+<input type="button" value="메인으로" onclick="javascript:window.location='/antman/main.do'">
 
 
