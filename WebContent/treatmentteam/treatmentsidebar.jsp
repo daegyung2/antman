@@ -35,7 +35,6 @@
 	<li><a href="/antman/treatmentchoice.do?p_depart_id=9" class="title">어린이병원</a></li>
 	<li><a href="/antman/treatmentchoice.do?p_depart_id=5" class="title">심장병원</a></li>
 	<li><a href="/antman/treatmentchoice.do?p_depart_id=6" class="title">센터</a></li>
-	<li><a href="/antman/treatmentchoice.do?p_depart_id=7" class="title">클리닉</a></li>
 	<li><a href="/antman/treatmentchoice.do?p_depart_id=8" class="title">기타</a></li>
 </ul>
 <div id="bookinfo">
