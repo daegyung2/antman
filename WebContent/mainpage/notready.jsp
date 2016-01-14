@@ -26,7 +26,7 @@
 
 <div id="container">
 	<div class="main">
-		<div id="title"><h2>준비 중 입니다. (ㅇㅅㅇ)/</h2></div>
+		<div id="title"><h2>준비 중입니다. (ㅇㅅㅇ)/</h2></div>
 	
 	</div>
 </div>
