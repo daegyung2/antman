@@ -180,8 +180,7 @@ body{  }
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane active" id="a">
                                         
-                      
-                                      
+
   										<table width="600"border="0">
           								<tr>
           								<c:forEach var="dto" items="${list}" varStatus="status">
@@ -194,43 +193,40 @@ body{  }
          							    </table>
                                         </div>
                                         <div role="tabpanel" class="tab-pane" id="b">
-                                        <c:forEach var="dto" items="${lista}" varStatus="status">
-  										<table border="0">
+                                       <table width="600"border="0">
           								<tr>
-         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
+          								<c:forEach var="dto" items="${lista}" varStatus="status">
+         							    <td width="200"><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td> 
           							    <c:if test="${status.count%3==0}">		
           							    <tr>
 										</c:if>	
-          							    </tr>         
-          								</table>
          							    </c:forEach>
-                                        
+         							    </tr> 
+         							    </table>
                                         </div>
                                         <div role="tabpanel" class="tab-pane" id="messages">
-                                        <c:forEach var="dto" items="${listb}" varStatus="status">
-  										<table border="0">
+                                       <table width="600"border="0">
           								<tr>
-         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
-          							     <c:if test="${status.count%3==0}">		
+          								<c:forEach var="dto" items="${listb}" varStatus="status">
+         							    <td width="200"><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td> 
+          							    <c:if test="${status.count%3==0}">		
           							    <tr>
 										</c:if>	
-          							    </tr>         
-          								</table>
          							    </c:forEach>
-                                        
+         							    </tr> 
+         							    </table>
                                         </div>
                                          <div role="tabpanel" class="tab-pane" id="settings">
-                                         <c:forEach var="dto" items="${listc}" varStatus="status">
-  										<table border="0">
+                                        <table width="600"border="0">
           								<tr>
-         							    <td><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td>
-          							      <c:if test="${status.count%3==0}">		
+          								<c:forEach var="dto" items="${listc}" varStatus="status">
+         							    <td width="200"><a href="/antman/appointmentdetailsearch.do?dpname=${dto.dpname}&jumin1=${jumin1}&jumin2=${jumin2}&name=${name}&id=${id}">${dto.dpname}</a></td> 
+          							    <c:if test="${status.count%3==0}">		
           							    <tr>
 										</c:if>	
-          							    </tr>         
-          								</table>
          							    </c:forEach>
-                                        
+         							    </tr> 
+         							    </table>
                                         </div>
 </div>
                                 </div>

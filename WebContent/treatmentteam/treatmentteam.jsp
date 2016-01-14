@@ -86,9 +86,10 @@
           					<c:if test="${status.count%3==0}">		
           					<tr>
 							</c:if>	
+							</c:forEach>
           					</tr>         
           					</table>
-         					</c:forEach>
+         					
                         </div>
                         <div role="tabpanel" class="tab-pane" id="messages">
                            
@@ -99,9 +100,10 @@
           					<c:if test="${status.count%3==0}">		
           					<tr>
 							</c:if>	
+							</c:forEach>
           					</tr>         
           					</table>
-         					</c:forEach>
+         					
                         </div>
                         <div role="tabpanel" class="tab-pane" id="settings">
                            
@@ -112,9 +114,10 @@
           					<c:if test="${status.count%3==0}">		
           					<tr>
 							</c:if>	
+								</c:forEach>
           					</tr>         
           					</table>
-         					</c:forEach>
+         				
                        </div>
 					</div>
 				</div>
