@@ -51,7 +51,8 @@
 	#footer{width:100%; height:300px; margin-bottom:0px;}
 	#container{width:1100px; height:270px; margin:0 auto;  margin-left:180px; position:relative; margin-bottom: 50px;}
 	#container .main{width:1000px; height:600px; margin-left:50px; margin-top:-17px; position:relative}
-	
+	#containers .mains #title{margin-left:150px; clear:both;}
+	#containers .mains .one{margin-left:320px; clear:both;}
 	
 .shitsd{font-size : 15pt; font-weight : bold;}
 .shit{
@@ -100,7 +101,7 @@ font-family:"³ª´®°íµñ","nanum gothic", sans-serif;
     </script>
 
  <form action="/antman/appointmentdetailpro.do" name="userinput" onSubmit="return checkIt()">
-<table width="400" border="3" >
+<table width="400" border="3" class="one">
 <tr align="center">
 
 <td width="10" >
@@ -254,7 +255,7 @@ body{  }
 <body>
 <style type="text/css">
 .shitsd{
-	margin-left : 110px;
+	margin-left : 150px;
 	font-weight : bold; 
 }
 .group{	
@@ -265,7 +266,7 @@ font-family:"³ª´®°íµñ","nanum gothic", sans-serif;
 }
 
 .table{
- margin-left : 110px;
+ margin-left : 150px;
  width: 780px;
 }
 </style>

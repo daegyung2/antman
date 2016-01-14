@@ -55,6 +55,6 @@
 </head>
 
 <body onload="initialize()">
-	<div id="map_view" style="width:500px; height:300px;"></div>
+	<div id="map_view" style="width:700px; height:400px;"></div>
 </body>
 </html>
