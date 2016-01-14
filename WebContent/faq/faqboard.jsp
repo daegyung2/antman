@@ -152,13 +152,15 @@ function fnAnswer(no){
 					</tr>
 					<tr class="answer">
 						<td colspan="3" >
-						<font color="#5586EB" size="2">
+						<font color="#0054FF" size="2">
 						${dto.content}
 						</font>
+						<c:if test="${sessionScope.memId ne null && sessionScope.memauth eq 'E'}">
 						<center>
 							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqupdate.do?fid=${dto.fid}'">수정하기</button>
 							<button type="button" class="btn btn-primary btn-md" onclick="javascript:window.location='/antman/faqdelete.do?fid=${dto.fid}'">삭제하기</button> 
   						</center>
+  						</c:if>
 						</td>
 					</tr>
 					</c:forEach>

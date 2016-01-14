@@ -20,13 +20,13 @@ $(function(){
 		imgs.stop().fadeOut();
 		$('.bg'+currentNum).stop().fadeIn();
 	}
-	var timer = setInterval(rotateImg, 4000);
+	var timer = setInterval(rotateImg, 3500);
 	btns.click(function(){
 		clearInterval(timer);
 		currentNum = parseInt($(this).text())-1;
 		imgs.stop().fadeOut();
 		$('.bg'+currentNum).stop().fadeIn();
-		timer = setInterval(rotateImg,4000);
+		timer = setInterval(rotateImg,3500);
 	})
 })
 </script>
@@ -74,6 +74,7 @@ $(function(){
 	#container .main tr{padding:5px 5px; text-align:center; }
 	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65); text-align:center; }
 	#container .main td{padding:5px 5px 5px 5px; }
+	#container .main .board{border:1px solid transparent; margin-top:-40px;}
 	
 	/* footer 시작 */
 	#f_back{clear:both; width:100%; height:300px; background:#474747; margin:0 auto; top:100px; position:relative;}
@@ -162,7 +163,7 @@ $(function(){
 		<div id="btn02"><font color="#FFFFFF"><b>진료 조회<br/>진료예약 및 내역조회가 가능합니다.</b></font></div></a>
 	</div>
 	
-	<table width="1280" height="150" border="0" bordercolor="black">
+	<table width="1280" height="150" border="0" bordercolor="black" class="board">
 	<tr>
 	
 	

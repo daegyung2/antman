@@ -35,12 +35,12 @@
 		<font color="#5586EB"><b><a href="/antman/appointmentmain.do">이용안내</a></b></font>
 	</div>
 <ul id="nav">
-	<li><a href="" class="title">병원안내</a></li>
-	<li><a href="" class="title">외래진료안내</a></li>
-	<li><a href="" class="title">응급진료안내</a></li>
-	<li><a href="" class="title">입원진료안내</a></li>
-	<li><a href="" class="title">가정간호안내</a></li>
-	<li><a href="" class="title">검사실안내</a></li>
+	<li><a href="/antman/appointmentmain.do" class="title">진료예약</a></li>
+	<li><a href="/antman/notready.do" class="title">외래진료안내</a></li>
+	<li><a href="/antman/notready.do" class="title">응급진료안내</a></li>
+	<li><a href="/antman/notready.do" class="title">입원진료안내</a></li>
+	<li><a href="/antman/notready.do" class="title">가정간호안내</a></li>
+	<li><a href="/antman/notready.do" class="title">검사실안내</a></li>
 </ul>
 <div id="bookinfo">
 	<p>예약문의 <br/>

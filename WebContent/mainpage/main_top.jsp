@@ -123,7 +123,7 @@
             		<li>
             			<a href="/antman/appointmentmain.do">이용안내</a>
                 		<ul>
-                			<li><a href="/antman/appointmentmain.do">병원안내</a></li>
+                			<li><a href="/antman/appointmentmain.do">진료예약</a></li>
 							<li><a href="/antman/notready.do">외래진료안내</a></li>
 							<li><a href="/antman/notready.do">응급진료안내</a></li>
 							<li><a href="/antman/notready.do">입원진료안내</a></li>

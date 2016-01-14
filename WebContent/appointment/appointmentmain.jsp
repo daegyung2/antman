@@ -15,23 +15,8 @@
 	#top{width:200px; float:top; margin-left:100px; }
 	.container{width:1100px; height:1270px; margin:0 auto;  margin-left:230px; position:relative;}
 	.container .main{width:1000px; height:1100px; margin-left:50px; top:30px; position:relative;}
-</style>
-
-<div id="menutop">
-	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
-</div>
-
-<!-- container 시작 -->
-
-<style type="text/css">
-	body{margin:0px; padding:0px; }
-	a{ text-decoration:none; }
-	ul{ list-style:none; margin:0px; padding:0px; }
-	li{ margin:0px; padding:0px; }
 	
-	
-	#side{width:200px; float:left; margin-left:0px;}
-	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:230px; position:relative;}
+	#container{width:1100px; height:1200px; margin:0 auto;  margin-left:250px; position:relative;}
 	#container .main{width:1000px; height:1100px; margin-left:50px; margin-top:-17px; position:relative}
 	#container .main #title{width:800px; margin-left:-23px; text-align:center;}
 	#container .main table{border:1px solid #BDBDBD; border-collapse:collapse; border-top:2px solid #5586EB; }
@@ -39,6 +24,12 @@
 	#container .main th{padding:5px 5px; color:#5586EB; background:rgba(233,233,233,0.65);}
 	#container .main td{padding:5px 5px 5px 5px;}
 </style>
+
+<div id="menutop">
+	<jsp:include page="/mainpage/main_top.jsp" flush="true | false"/>
+</div>
+
+<!-- container 시작 -->
 
 <div id="side">
 	<jsp:include page="appointmentsidebar.jsp" flush="true | false"/>
