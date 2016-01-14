@@ -27,7 +27,7 @@ public class UpdateEmployeeProBean {
 		   MultipartFile file = (MultipartFile) fileList.get(i);
 		   if(!file.isEmpty()){
 		   String name = file.getOriginalFilename();
-		   File sf = new File("H://antman//WebContent//image//"+name);
+		   File sf = new File("c://Users//user1//git//antman//WebContent//image//"+name);
 		   file.transferTo(sf);
 		   dto.setEmimg1("/antman/image/"+name);
 		   sqlMapClient.update("employee.updateEmimg"+(i+1),dto);

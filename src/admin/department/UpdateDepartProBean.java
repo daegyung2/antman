@@ -45,7 +45,7 @@ public class UpdateDepartProBean {
 		  
 		   if(!file.isEmpty()){
 		   String name = file.getOriginalFilename();//C:\Users\downmemory\git\antman
-		   File sf = new File("c://Users//downmemory//git//antman//WebContent//image//departimg//"+name);
+		   File sf = new File("c://Users//user1//git//antman//WebContent//image//departimg//"+name);
 		   file.transferTo(sf);
 		   dto.setDpimg("/antman/image/departimg/"+name);
 		   System.out.println(dto.getDpimg());

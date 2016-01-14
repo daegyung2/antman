@@ -27,7 +27,7 @@ public class UpdateDoctorProBean {
 		   MultipartFile file = (MultipartFile) fileList.get(i);
 		   if(!file.isEmpty()){
 		   String name = file.getOriginalFilename();
-		   File sf = new File("c://Users//downmemory//git//antman//WebContent//image//"+name);
+		   File sf = new File("c://Users//user1//git//antman//WebContent//image//"+name);
 		   file.transferTo(sf);
 		   dto.setDrimg1("/antman/image/"+name);
 		   sqlMapClient.update("doctor.updateDrimg"+(i+1),dto);
